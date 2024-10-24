@@ -1,0 +1,12 @@
+# List all package used with their version
+# Run `pip install -r requirements.txt´ to install all the packages
+
+# install the pytorch packages on a linux computer (from https://pytorch.org/get-started/locally/)
+torch==2.4.1
+torchaudio==2.4.1
+torchvision==0.19.1
+bed-reader
+ipykernel
+scikit-learn
+pandas
+matplotlib
