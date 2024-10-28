@@ -10,3 +10,4 @@ ipykernel
 scikit-learn
 pandas
 matplotlib
+seaborn

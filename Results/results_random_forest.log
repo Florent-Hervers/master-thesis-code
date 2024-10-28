@@ -1,0 +1,1781 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/110
+Max depth value tested: 15, min_sample_split tested: 2
+Elapsed time from start: 10m 28s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.32635
+MAE results for pheno_1: 1.48557
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33160
+MAE results for pheno_2: 2.88374
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30287
+MAE results for pheno_3: 1.24004
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29222
+MAE results for pheno_4: 1.14104
+////////////////////////////////////////////
+Iteration 2/110
+Max depth value tested: 15, min_sample_split tested: 4
+Elapsed time from start: 19m 51s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34136
+MAE results for pheno_1: 1.47761
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34046
+MAE results for pheno_2: 2.88038
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31102
+MAE results for pheno_3: 1.23518
+--------------------------------------------
+Pearson correlation for pheno_4: 0.31069
+MAE results for pheno_4: 1.13652
+////////////////////////////////////////////
+Iteration 3/110
+Max depth value tested: 15, min_sample_split tested: 6
+Elapsed time from start: 28m 50s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33309
+MAE results for pheno_1: 1.48197
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33302
+MAE results for pheno_2: 2.88700
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29699
+MAE results for pheno_3: 1.24104
+--------------------------------------------
+Pearson correlation for pheno_4: 0.31086
+MAE results for pheno_4: 1.13785
+////////////////////////////////////////////
+Iteration 4/110
+Max depth value tested: 15, min_sample_split tested: 8
+Elapsed time from start: 36m 17s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33379
+MAE results for pheno_1: 1.48482
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33435
+MAE results for pheno_2: 2.88383
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29031
+MAE results for pheno_3: 1.24068
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29703
+MAE results for pheno_4: 1.14071
+////////////////////////////////////////////
+Iteration 5/110
+Max depth value tested: 15, min_sample_split tested: 10
+Elapsed time from start: 43m 8s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33429
+MAE results for pheno_1: 1.48386
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33831
+MAE results for pheno_2: 2.88137
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29715
+MAE results for pheno_3: 1.24191
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29889
+MAE results for pheno_4: 1.14370
+////////////////////////////////////////////
+Iteration 6/110
+Max depth value tested: 15, min_sample_split tested: 12
+Elapsed time from start: 50m 1s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34065
+MAE results for pheno_1: 1.48228
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33836
+MAE results for pheno_2: 2.87685
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30000
+MAE results for pheno_3: 1.24037
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30489
+MAE results for pheno_4: 1.14032
+////////////////////////////////////////////
+Iteration 7/110
+Max depth value tested: 15, min_sample_split tested: 14
+Elapsed time from start: 56m 44s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33758
+MAE results for pheno_1: 1.48209
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33941
+MAE results for pheno_2: 2.87773
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30020
+MAE results for pheno_3: 1.23817
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30562
+MAE results for pheno_4: 1.13856
+////////////////////////////////////////////
+Iteration 8/110
+Max depth value tested: 15, min_sample_split tested: 16
+Elapsed time from start: 63m 18s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33694
+MAE results for pheno_1: 1.48355
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33912
+MAE results for pheno_2: 2.87772
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29615
+MAE results for pheno_3: 1.24018
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30060
+MAE results for pheno_4: 1.14028
+////////////////////////////////////////////
+Iteration 9/110
+Max depth value tested: 15, min_sample_split tested: 18
+Elapsed time from start: 69m 46s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33734
+MAE results for pheno_1: 1.48202
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34059
+MAE results for pheno_2: 2.87765
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29513
+MAE results for pheno_3: 1.24045
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30030
+MAE results for pheno_4: 1.13984
+////////////////////////////////////////////
+Iteration 10/110
+Max depth value tested: 15, min_sample_split tested: 20
+Elapsed time from start: 76m 11s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33594
+MAE results for pheno_1: 1.48103
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33935
+MAE results for pheno_2: 2.87722
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29545
+MAE results for pheno_3: 1.23983
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29986
+MAE results for pheno_4: 1.14011
+////////////////////////////////////////////
+Iteration 11/110
+Max depth value tested: 17, min_sample_split tested: 2
+Elapsed time from start: 86m 35s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33551
+MAE results for pheno_1: 1.47970
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34161
+MAE results for pheno_2: 2.88001
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31378
+MAE results for pheno_3: 1.23158
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30334
+MAE results for pheno_4: 1.14024
+////////////////////////////////////////////
+Iteration 12/110
+Max depth value tested: 17, min_sample_split tested: 4
+Elapsed time from start: 95m 38s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34223
+MAE results for pheno_1: 1.47745
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33534
+MAE results for pheno_2: 2.88393
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31147
+MAE results for pheno_3: 1.23775
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30582
+MAE results for pheno_4: 1.13972
+////////////////////////////////////////////
+Iteration 13/110
+Max depth value tested: 17, min_sample_split tested: 6
+Elapsed time from start: 103m 57s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33705
+MAE results for pheno_1: 1.48216
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34695
+MAE results for pheno_2: 2.86771
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30631
+MAE results for pheno_3: 1.23703
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30740
+MAE results for pheno_4: 1.13772
+////////////////////////////////////////////
+Iteration 14/110
+Max depth value tested: 17, min_sample_split tested: 8
+Elapsed time from start: 112m 4s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34121
+MAE results for pheno_1: 1.47630
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33983
+MAE results for pheno_2: 2.87716
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30952
+MAE results for pheno_3: 1.23816
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30872
+MAE results for pheno_4: 1.13744
+////////////////////////////////////////////
+Iteration 15/110
+Max depth value tested: 17, min_sample_split tested: 10
+Elapsed time from start: 119m 44s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34281
+MAE results for pheno_1: 1.47838
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33615
+MAE results for pheno_2: 2.88246
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30817
+MAE results for pheno_3: 1.23608
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30954
+MAE results for pheno_4: 1.13826
+////////////////////////////////////////////
+Iteration 16/110
+Max depth value tested: 17, min_sample_split tested: 12
+Elapsed time from start: 127m 41s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34060
+MAE results for pheno_1: 1.48098
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34320
+MAE results for pheno_2: 2.87458
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30248
+MAE results for pheno_3: 1.23929
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30331
+MAE results for pheno_4: 1.14091
+////////////////////////////////////////////
+Iteration 17/110
+Max depth value tested: 17, min_sample_split tested: 14
+Elapsed time from start: 135m 8s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34058
+MAE results for pheno_1: 1.47967
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34477
+MAE results for pheno_2: 2.87218
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30114
+MAE results for pheno_3: 1.23788
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30269
+MAE results for pheno_4: 1.14074
+////////////////////////////////////////////
+Iteration 18/110
+Max depth value tested: 17, min_sample_split tested: 16
+Elapsed time from start: 142m 50s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34256
+MAE results for pheno_1: 1.47941
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34276
+MAE results for pheno_2: 2.87664
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29947
+MAE results for pheno_3: 1.23743
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30213
+MAE results for pheno_4: 1.13880
+////////////////////////////////////////////
+Iteration 19/110
+Max depth value tested: 17, min_sample_split tested: 18
+Elapsed time from start: 150m 0s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34336
+MAE results for pheno_1: 1.47827
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34287
+MAE results for pheno_2: 2.87670
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30086
+MAE results for pheno_3: 1.23748
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30442
+MAE results for pheno_4: 1.13876
+////////////////////////////////////////////
+Iteration 20/110
+Max depth value tested: 17, min_sample_split tested: 20
+Elapsed time from start: 157m 4s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34186
+MAE results for pheno_1: 1.47753
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33952
+MAE results for pheno_2: 2.87685
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30099
+MAE results for pheno_3: 1.23851
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30419
+MAE results for pheno_4: 1.13885
+////////////////////////////////////////////
+Iteration 21/110
+Max depth value tested: 19, min_sample_split tested: 2
+Elapsed time from start: 169m 37s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33183
+MAE results for pheno_1: 1.48354
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32931
+MAE results for pheno_2: 2.88367
+--------------------------------------------
+Pearson correlation for pheno_3: 0.28799
+MAE results for pheno_3: 1.24235
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29801
+MAE results for pheno_4: 1.13934
+////////////////////////////////////////////
+Iteration 22/110
+Max depth value tested: 19, min_sample_split tested: 4
+Elapsed time from start: 180m 35s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33970
+MAE results for pheno_1: 1.47943
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34107
+MAE results for pheno_2: 2.87533
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30766
+MAE results for pheno_3: 1.23665
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30569
+MAE results for pheno_4: 1.13622
+////////////////////////////////////////////
+Iteration 23/110
+Max depth value tested: 19, min_sample_split tested: 6
+Elapsed time from start: 190m 8s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33446
+MAE results for pheno_1: 1.48260
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33749
+MAE results for pheno_2: 2.88071
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30053
+MAE results for pheno_3: 1.23944
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30046
+MAE results for pheno_4: 1.14178
+////////////////////////////////////////////
+Iteration 24/110
+Max depth value tested: 19, min_sample_split tested: 8
+Elapsed time from start: 199m 3s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33966
+MAE results for pheno_1: 1.48109
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33465
+MAE results for pheno_2: 2.88662
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30649
+MAE results for pheno_3: 1.23536
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30383
+MAE results for pheno_4: 1.14029
+////////////////////////////////////////////
+Iteration 25/110
+Max depth value tested: 19, min_sample_split tested: 10
+Elapsed time from start: 207m 35s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34046
+MAE results for pheno_1: 1.47800
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33612
+MAE results for pheno_2: 2.87989
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30339
+MAE results for pheno_3: 1.23601
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30359
+MAE results for pheno_4: 1.13862
+////////////////////////////////////////////
+Iteration 26/110
+Max depth value tested: 19, min_sample_split tested: 12
+Elapsed time from start: 215m 42s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34295
+MAE results for pheno_1: 1.47995
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33994
+MAE results for pheno_2: 2.87418
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30468
+MAE results for pheno_3: 1.23804
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30700
+MAE results for pheno_4: 1.13888
+////////////////////////////////////////////
+Iteration 27/110
+Max depth value tested: 19, min_sample_split tested: 14
+Elapsed time from start: 223m 34s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34174
+MAE results for pheno_1: 1.47842
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34108
+MAE results for pheno_2: 2.87784
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30582
+MAE results for pheno_3: 1.23816
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30730
+MAE results for pheno_4: 1.13897
+////////////////////////////////////////////
+Iteration 28/110
+Max depth value tested: 19, min_sample_split tested: 16
+Elapsed time from start: 231m 17s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34529
+MAE results for pheno_1: 1.47768
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34422
+MAE results for pheno_2: 2.87678
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30062
+MAE results for pheno_3: 1.23882
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30204
+MAE results for pheno_4: 1.14058
+////////////////////////////////////////////
+Iteration 29/110
+Max depth value tested: 19, min_sample_split tested: 18
+Elapsed time from start: 238m 43s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33936
+MAE results for pheno_1: 1.47946
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34104
+MAE results for pheno_2: 2.87948
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30103
+MAE results for pheno_3: 1.23936
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30473
+MAE results for pheno_4: 1.13942
+////////////////////////////////////////////
+Iteration 30/110
+Max depth value tested: 19, min_sample_split tested: 20
+Elapsed time from start: 246m 15s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34024
+MAE results for pheno_1: 1.47901
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34039
+MAE results for pheno_2: 2.87651
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29790
+MAE results for pheno_3: 1.23985
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30384
+MAE results for pheno_4: 1.13894
+////////////////////////////////////////////
+Iteration 31/110
+Max depth value tested: 21, min_sample_split tested: 2
+Elapsed time from start: 259m 55s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34405
+MAE results for pheno_1: 1.47764
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33282
+MAE results for pheno_2: 2.88801
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30498
+MAE results for pheno_3: 1.23293
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30454
+MAE results for pheno_4: 1.13872
+////////////////////////////////////////////
+Iteration 32/110
+Max depth value tested: 21, min_sample_split tested: 4
+Elapsed time from start: 271m 14s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.31996
+MAE results for pheno_1: 1.48844
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33629
+MAE results for pheno_2: 2.88117
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29384
+MAE results for pheno_3: 1.23706
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29567
+MAE results for pheno_4: 1.13943
+////////////////////////////////////////////
+Iteration 33/110
+Max depth value tested: 21, min_sample_split tested: 6
+Elapsed time from start: 281m 18s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34021
+MAE results for pheno_1: 1.48256
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33634
+MAE results for pheno_2: 2.88432
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30256
+MAE results for pheno_3: 1.23705
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30741
+MAE results for pheno_4: 1.13722
+////////////////////////////////////////////
+Iteration 34/110
+Max depth value tested: 21, min_sample_split tested: 8
+Elapsed time from start: 290m 29s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34188
+MAE results for pheno_1: 1.47720
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33660
+MAE results for pheno_2: 2.88054
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30424
+MAE results for pheno_3: 1.23770
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30720
+MAE results for pheno_4: 1.13740
+////////////////////////////////////////////
+Iteration 35/110
+Max depth value tested: 21, min_sample_split tested: 10
+Elapsed time from start: 299m 11s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33996
+MAE results for pheno_1: 1.48127
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34564
+MAE results for pheno_2: 2.87472
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30872
+MAE results for pheno_3: 1.23520
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30422
+MAE results for pheno_4: 1.13632
+////////////////////////////////////////////
+Iteration 36/110
+Max depth value tested: 21, min_sample_split tested: 12
+Elapsed time from start: 307m 29s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34424
+MAE results for pheno_1: 1.47882
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34192
+MAE results for pheno_2: 2.87655
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30050
+MAE results for pheno_3: 1.23675
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29901
+MAE results for pheno_4: 1.14136
+////////////////////////////////////////////
+Iteration 37/110
+Max depth value tested: 21, min_sample_split tested: 14
+Elapsed time from start: 315m 30s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33533
+MAE results for pheno_1: 1.48121
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34084
+MAE results for pheno_2: 2.87936
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29884
+MAE results for pheno_3: 1.23738
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30309
+MAE results for pheno_4: 1.13922
+////////////////////////////////////////////
+Iteration 38/110
+Max depth value tested: 21, min_sample_split tested: 16
+Elapsed time from start: 323m 12s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34049
+MAE results for pheno_1: 1.47949
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34041
+MAE results for pheno_2: 2.88043
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30459
+MAE results for pheno_3: 1.23683
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30415
+MAE results for pheno_4: 1.13919
+////////////////////////////////////////////
+Iteration 39/110
+Max depth value tested: 21, min_sample_split tested: 18
+Elapsed time from start: 330m 50s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34089
+MAE results for pheno_1: 1.47734
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34283
+MAE results for pheno_2: 2.87576
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30163
+MAE results for pheno_3: 1.23776
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30781
+MAE results for pheno_4: 1.13758
+////////////////////////////////////////////
+Iteration 40/110
+Max depth value tested: 21, min_sample_split tested: 20
+Elapsed time from start: 338m 10s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33943
+MAE results for pheno_1: 1.47906
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34155
+MAE results for pheno_2: 2.87626
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29895
+MAE results for pheno_3: 1.24057
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30492
+MAE results for pheno_4: 1.13827
+////////////////////////////////////////////
+Iteration 41/110
+Max depth value tested: 23, min_sample_split tested: 2
+Elapsed time from start: 352m 23s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.35334
+MAE results for pheno_1: 1.47025
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32563
+MAE results for pheno_2: 2.89008
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29849
+MAE results for pheno_3: 1.23584
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30010
+MAE results for pheno_4: 1.14083
+////////////////////////////////////////////
+Iteration 42/110
+Max depth value tested: 23, min_sample_split tested: 4
+Elapsed time from start: 363m 55s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.32579
+MAE results for pheno_1: 1.48637
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32958
+MAE results for pheno_2: 2.89016
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30197
+MAE results for pheno_3: 1.23725
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30106
+MAE results for pheno_4: 1.13878
+////////////////////////////////////////////
+Iteration 43/110
+Max depth value tested: 23, min_sample_split tested: 6
+Elapsed time from start: 374m 7s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33791
+MAE results for pheno_1: 1.47978
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34209
+MAE results for pheno_2: 2.87665
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30909
+MAE results for pheno_3: 1.23428
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30758
+MAE results for pheno_4: 1.13740
+////////////////////////////////////////////
+Iteration 44/110
+Max depth value tested: 23, min_sample_split tested: 8
+Elapsed time from start: 383m 27s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33742
+MAE results for pheno_1: 1.48107
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34174
+MAE results for pheno_2: 2.87479
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30365
+MAE results for pheno_3: 1.23787
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30219
+MAE results for pheno_4: 1.14121
+////////////////////////////////////////////
+Iteration 45/110
+Max depth value tested: 23, min_sample_split tested: 10
+Elapsed time from start: 392m 28s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33456
+MAE results for pheno_1: 1.48065
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34446
+MAE results for pheno_2: 2.87330
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30022
+MAE results for pheno_3: 1.23695
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30150
+MAE results for pheno_4: 1.13862
+////////////////////////////////////////////
+Iteration 46/110
+Max depth value tested: 23, min_sample_split tested: 12
+Elapsed time from start: 401m 1s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33878
+MAE results for pheno_1: 1.47887
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33774
+MAE results for pheno_2: 2.87948
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30849
+MAE results for pheno_3: 1.23597
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30685
+MAE results for pheno_4: 1.13683
+////////////////////////////////////////////
+Iteration 47/110
+Max depth value tested: 23, min_sample_split tested: 14
+Elapsed time from start: 409m 13s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33818
+MAE results for pheno_1: 1.48046
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34147
+MAE results for pheno_2: 2.87687
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29717
+MAE results for pheno_3: 1.23995
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30113
+MAE results for pheno_4: 1.14009
+////////////////////////////////////////////
+Iteration 48/110
+Max depth value tested: 23, min_sample_split tested: 16
+Elapsed time from start: 417m 12s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33861
+MAE results for pheno_1: 1.47943
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33846
+MAE results for pheno_2: 2.88236
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30153
+MAE results for pheno_3: 1.23736
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30302
+MAE results for pheno_4: 1.13764
+////////////////////////////////////////////
+Iteration 49/110
+Max depth value tested: 23, min_sample_split tested: 18
+Elapsed time from start: 424m 44s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33673
+MAE results for pheno_1: 1.48089
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33812
+MAE results for pheno_2: 2.88157
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30107
+MAE results for pheno_3: 1.23906
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30648
+MAE results for pheno_4: 1.13813
+////////////////////////////////////////////
+Iteration 50/110
+Max depth value tested: 23, min_sample_split tested: 20
+Elapsed time from start: 432m 12s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33486
+MAE results for pheno_1: 1.48051
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33754
+MAE results for pheno_2: 2.88229
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29495
+MAE results for pheno_3: 1.23917
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30217
+MAE results for pheno_4: 1.13859
+////////////////////////////////////////////
+Iteration 51/110
+Max depth value tested: 25, min_sample_split tested: 2
+Elapsed time from start: 446m 37s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33437
+MAE results for pheno_1: 1.47883
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33650
+MAE results for pheno_2: 2.88237
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30039
+MAE results for pheno_3: 1.23212
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29675
+MAE results for pheno_4: 1.14359
+////////////////////////////////////////////
+Iteration 52/110
+Max depth value tested: 25, min_sample_split tested: 4
+Elapsed time from start: 458m 3s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33236
+MAE results for pheno_1: 1.47896
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33389
+MAE results for pheno_2: 2.88211
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30359
+MAE results for pheno_3: 1.23867
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30469
+MAE results for pheno_4: 1.13747
+////////////////////////////////////////////
+Iteration 53/110
+Max depth value tested: 25, min_sample_split tested: 6
+Elapsed time from start: 468m 15s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33857
+MAE results for pheno_1: 1.47815
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34205
+MAE results for pheno_2: 2.87714
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29823
+MAE results for pheno_3: 1.23980
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30343
+MAE results for pheno_4: 1.14208
+////////////////////////////////////////////
+Iteration 54/110
+Max depth value tested: 25, min_sample_split tested: 8
+Elapsed time from start: 477m 37s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33882
+MAE results for pheno_1: 1.47893
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33675
+MAE results for pheno_2: 2.88239
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29915
+MAE results for pheno_3: 1.23719
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29930
+MAE results for pheno_4: 1.14022
+////////////////////////////////////////////
+Iteration 55/110
+Max depth value tested: 25, min_sample_split tested: 10
+Elapsed time from start: 486m 36s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34713
+MAE results for pheno_1: 1.47524
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34583
+MAE results for pheno_2: 2.87691
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30534
+MAE results for pheno_3: 1.23738
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30468
+MAE results for pheno_4: 1.13977
+////////////////////////////////////////////
+Iteration 56/110
+Max depth value tested: 25, min_sample_split tested: 12
+Elapsed time from start: 495m 17s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34198
+MAE results for pheno_1: 1.47976
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34296
+MAE results for pheno_2: 2.87803
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31261
+MAE results for pheno_3: 1.23626
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30925
+MAE results for pheno_4: 1.13750
+////////////////////////////////////////////
+Iteration 57/110
+Max depth value tested: 25, min_sample_split tested: 14
+Elapsed time from start: 503m 40s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34000
+MAE results for pheno_1: 1.47814
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34490
+MAE results for pheno_2: 2.87342
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29709
+MAE results for pheno_3: 1.23997
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30082
+MAE results for pheno_4: 1.14068
+////////////////////////////////////////////
+Iteration 58/110
+Max depth value tested: 25, min_sample_split tested: 16
+Elapsed time from start: 511m 43s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34072
+MAE results for pheno_1: 1.47829
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34110
+MAE results for pheno_2: 2.88030
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30271
+MAE results for pheno_3: 1.23739
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30362
+MAE results for pheno_4: 1.13827
+////////////////////////////////////////////
+Iteration 59/110
+Max depth value tested: 25, min_sample_split tested: 18
+Elapsed time from start: 519m 36s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33705
+MAE results for pheno_1: 1.48063
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33882
+MAE results for pheno_2: 2.88116
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30190
+MAE results for pheno_3: 1.23895
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30588
+MAE results for pheno_4: 1.13805
+////////////////////////////////////////////
+Iteration 60/110
+Max depth value tested: 25, min_sample_split tested: 20
+Elapsed time from start: 527m 22s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33498
+MAE results for pheno_1: 1.48112
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33423
+MAE results for pheno_2: 2.88423
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29667
+MAE results for pheno_3: 1.24010
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30298
+MAE results for pheno_4: 1.13813
+////////////////////////////////////////////
+Iteration 61/110
+Max depth value tested: 27, min_sample_split tested: 2
+Elapsed time from start: 541m 46s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34334
+MAE results for pheno_1: 1.47301
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33168
+MAE results for pheno_2: 2.88485
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30196
+MAE results for pheno_3: 1.23366
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30882
+MAE results for pheno_4: 1.13820
+////////////////////////////////////////////
+Iteration 62/110
+Max depth value tested: 27, min_sample_split tested: 4
+Elapsed time from start: 553m 10s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33626
+MAE results for pheno_1: 1.47693
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33876
+MAE results for pheno_2: 2.88101
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29924
+MAE results for pheno_3: 1.23699
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30885
+MAE results for pheno_4: 1.13521
+////////////////////////////////////////////
+Iteration 63/110
+Max depth value tested: 27, min_sample_split tested: 6
+Elapsed time from start: 563m 9s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33900
+MAE results for pheno_1: 1.48075
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33645
+MAE results for pheno_2: 2.88467
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30521
+MAE results for pheno_3: 1.23786
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30433
+MAE results for pheno_4: 1.14076
+////////////////////////////////////////////
+Iteration 64/110
+Max depth value tested: 27, min_sample_split tested: 8
+Elapsed time from start: 572m 25s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34414
+MAE results for pheno_1: 1.47763
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33892
+MAE results for pheno_2: 2.88386
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31226
+MAE results for pheno_3: 1.23482
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30599
+MAE results for pheno_4: 1.13970
+////////////////////////////////////////////
+Iteration 65/110
+Max depth value tested: 27, min_sample_split tested: 10
+Elapsed time from start: 581m 16s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34035
+MAE results for pheno_1: 1.47979
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34609
+MAE results for pheno_2: 2.87752
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30420
+MAE results for pheno_3: 1.23855
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30114
+MAE results for pheno_4: 1.14119
+////////////////////////////////////////////
+Iteration 66/110
+Max depth value tested: 27, min_sample_split tested: 12
+Elapsed time from start: 589m 46s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34051
+MAE results for pheno_1: 1.47927
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34049
+MAE results for pheno_2: 2.87890
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31046
+MAE results for pheno_3: 1.23715
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30621
+MAE results for pheno_4: 1.13904
+////////////////////////////////////////////
+Iteration 67/110
+Max depth value tested: 27, min_sample_split tested: 14
+Elapsed time from start: 598m 3s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33926
+MAE results for pheno_1: 1.47785
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34151
+MAE results for pheno_2: 2.87768
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30029
+MAE results for pheno_3: 1.23895
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30096
+MAE results for pheno_4: 1.14056
+////////////////////////////////////////////
+Iteration 68/110
+Max depth value tested: 27, min_sample_split tested: 16
+Elapsed time from start: 606m 15s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33832
+MAE results for pheno_1: 1.47930
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33861
+MAE results for pheno_2: 2.88260
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30184
+MAE results for pheno_3: 1.23714
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30206
+MAE results for pheno_4: 1.13931
+////////////////////////////////////////////
+Iteration 69/110
+Max depth value tested: 27, min_sample_split tested: 18
+Elapsed time from start: 614m 17s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33734
+MAE results for pheno_1: 1.48052
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33921
+MAE results for pheno_2: 2.87985
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30317
+MAE results for pheno_3: 1.23783
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30586
+MAE results for pheno_4: 1.13797
+////////////////////////////////////////////
+Iteration 70/110
+Max depth value tested: 27, min_sample_split tested: 20
+Elapsed time from start: 622m 11s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33542
+MAE results for pheno_1: 1.48124
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33497
+MAE results for pheno_2: 2.88257
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29723
+MAE results for pheno_3: 1.23978
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30292
+MAE results for pheno_4: 1.13842
+////////////////////////////////////////////
+Iteration 71/110
+Max depth value tested: 29, min_sample_split tested: 2
+Elapsed time from start: 636m 44s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.31644
+MAE results for pheno_1: 1.48717
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32760
+MAE results for pheno_2: 2.88003
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30169
+MAE results for pheno_3: 1.23247
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30202
+MAE results for pheno_4: 1.13988
+////////////////////////////////////////////
+Iteration 72/110
+Max depth value tested: 29, min_sample_split tested: 4
+Elapsed time from start: 648m 18s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33628
+MAE results for pheno_1: 1.47852
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33434
+MAE results for pheno_2: 2.88629
+--------------------------------------------
+Pearson correlation for pheno_3: 0.28784
+MAE results for pheno_3: 1.24169
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30107
+MAE results for pheno_4: 1.14000
+////////////////////////////////////////////
+Iteration 73/110
+Max depth value tested: 29, min_sample_split tested: 6
+Elapsed time from start: 658m 28s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33498
+MAE results for pheno_1: 1.48061
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33641
+MAE results for pheno_2: 2.88350
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29966
+MAE results for pheno_3: 1.23787
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30226
+MAE results for pheno_4: 1.14096
+////////////////////////////////////////////
+Iteration 74/110
+Max depth value tested: 29, min_sample_split tested: 8
+Elapsed time from start: 667m 53s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33880
+MAE results for pheno_1: 1.48043
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33851
+MAE results for pheno_2: 2.88269
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30618
+MAE results for pheno_3: 1.23617
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30233
+MAE results for pheno_4: 1.14062
+////////////////////////////////////////////
+Iteration 75/110
+Max depth value tested: 29, min_sample_split tested: 10
+Elapsed time from start: 676m 40s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33833
+MAE results for pheno_1: 1.48079
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34263
+MAE results for pheno_2: 2.87989
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30644
+MAE results for pheno_3: 1.23800
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30234
+MAE results for pheno_4: 1.14050
+////////////////////////////////////////////
+Iteration 76/110
+Max depth value tested: 29, min_sample_split tested: 12
+Elapsed time from start: 685m 15s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34066
+MAE results for pheno_1: 1.47967
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34113
+MAE results for pheno_2: 2.87835
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30989
+MAE results for pheno_3: 1.23773
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30600
+MAE results for pheno_4: 1.13947
+////////////////////////////////////////////
+Iteration 77/110
+Max depth value tested: 29, min_sample_split tested: 14
+Elapsed time from start: 693m 31s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33808
+MAE results for pheno_1: 1.47868
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34008
+MAE results for pheno_2: 2.87935
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29984
+MAE results for pheno_3: 1.23969
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29977
+MAE results for pheno_4: 1.14117
+////////////////////////////////////////////
+Iteration 78/110
+Max depth value tested: 29, min_sample_split tested: 16
+Elapsed time from start: 701m 22s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33978
+MAE results for pheno_1: 1.47887
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34036
+MAE results for pheno_2: 2.88133
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30139
+MAE results for pheno_3: 1.23704
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30203
+MAE results for pheno_4: 1.13910
+////////////////////////////////////////////
+Iteration 79/110
+Max depth value tested: 29, min_sample_split tested: 18
+Elapsed time from start: 709m 33s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33711
+MAE results for pheno_1: 1.48036
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33878
+MAE results for pheno_2: 2.88042
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30240
+MAE results for pheno_3: 1.23825
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30599
+MAE results for pheno_4: 1.13797
+////////////////////////////////////////////
+Iteration 80/110
+Max depth value tested: 29, min_sample_split tested: 20
+Elapsed time from start: 717m 29s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33519
+MAE results for pheno_1: 1.48136
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33449
+MAE results for pheno_2: 2.88371
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29725
+MAE results for pheno_3: 1.23959
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30240
+MAE results for pheno_4: 1.13849
+////////////////////////////////////////////
+Iteration 81/110
+Max depth value tested: 31, min_sample_split tested: 2
+Elapsed time from start: 732m 10s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.32994
+MAE results for pheno_1: 1.48287
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32745
+MAE results for pheno_2: 2.88439
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30943
+MAE results for pheno_3: 1.22968
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30352
+MAE results for pheno_4: 1.14010
+////////////////////////////////////////////
+Iteration 82/110
+Max depth value tested: 31, min_sample_split tested: 4
+Elapsed time from start: 743m 44s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33625
+MAE results for pheno_1: 1.47939
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33330
+MAE results for pheno_2: 2.88674
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29328
+MAE results for pheno_3: 1.24313
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30258
+MAE results for pheno_4: 1.13835
+////////////////////////////////////////////
+Iteration 83/110
+Max depth value tested: 31, min_sample_split tested: 6
+Elapsed time from start: 753m 52s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33675
+MAE results for pheno_1: 1.48086
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33577
+MAE results for pheno_2: 2.88135
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30568
+MAE results for pheno_3: 1.23737
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30478
+MAE results for pheno_4: 1.14065
+////////////////////////////////////////////
+Iteration 84/110
+Max depth value tested: 31, min_sample_split tested: 8
+Elapsed time from start: 763m 11s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33791
+MAE results for pheno_1: 1.48151
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33915
+MAE results for pheno_2: 2.88079
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30800
+MAE results for pheno_3: 1.23570
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30313
+MAE results for pheno_4: 1.14094
+////////////////////////////////////////////
+Iteration 85/110
+Max depth value tested: 31, min_sample_split tested: 10
+Elapsed time from start: 772m 0s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33805
+MAE results for pheno_1: 1.48071
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34373
+MAE results for pheno_2: 2.87931
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30457
+MAE results for pheno_3: 1.23816
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30093
+MAE results for pheno_4: 1.13980
+////////////////////////////////////////////
+Iteration 86/110
+Max depth value tested: 31, min_sample_split tested: 12
+Elapsed time from start: 780m 29s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34019
+MAE results for pheno_1: 1.47962
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34144
+MAE results for pheno_2: 2.87891
+--------------------------------------------
+Pearson correlation for pheno_3: 0.31001
+MAE results for pheno_3: 1.23738
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30562
+MAE results for pheno_4: 1.13931
+////////////////////////////////////////////
+Iteration 87/110
+Max depth value tested: 31, min_sample_split tested: 14
+Elapsed time from start: 788m 44s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33761
+MAE results for pheno_1: 1.47916
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34025
+MAE results for pheno_2: 2.87963
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29948
+MAE results for pheno_3: 1.23955
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29971
+MAE results for pheno_4: 1.14108
+////////////////////////////////////////////
+Iteration 88/110
+Max depth value tested: 31, min_sample_split tested: 16
+Elapsed time from start: 796m 40s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33934
+MAE results for pheno_1: 1.47921
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34045
+MAE results for pheno_2: 2.88178
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30096
+MAE results for pheno_3: 1.23726
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30201
+MAE results for pheno_4: 1.13928
+////////////////////////////////////////////
+Iteration 89/110
+Max depth value tested: 31, min_sample_split tested: 18
+Elapsed time from start: 804m 32s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33729
+MAE results for pheno_1: 1.48057
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33919
+MAE results for pheno_2: 2.88038
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30230
+MAE results for pheno_3: 1.23809
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30558
+MAE results for pheno_4: 1.13810
+////////////////////////////////////////////
+Iteration 90/110
+Max depth value tested: 31, min_sample_split tested: 20
+Elapsed time from start: 812m 42s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33520
+MAE results for pheno_1: 1.48137
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33453
+MAE results for pheno_2: 2.88342
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29717
+MAE results for pheno_3: 1.23952
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30223
+MAE results for pheno_4: 1.13861
+////////////////////////////////////////////
+Iteration 91/110
+Max depth value tested: 33, min_sample_split tested: 2
+Elapsed time from start: 827m 6s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.31924
+MAE results for pheno_1: 1.48523
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32554
+MAE results for pheno_2: 2.88522
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30146
+MAE results for pheno_3: 1.23024
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29638
+MAE results for pheno_4: 1.14279
+////////////////////////////////////////////
+Iteration 92/110
+Max depth value tested: 33, min_sample_split tested: 4
+Elapsed time from start: 838m 24s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33848
+MAE results for pheno_1: 1.47842
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33558
+MAE results for pheno_2: 2.88234
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29098
+MAE results for pheno_3: 1.24287
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30141
+MAE results for pheno_4: 1.13916
+////////////////////////////////////////////
+Iteration 93/110
+Max depth value tested: 33, min_sample_split tested: 6
+Elapsed time from start: 848m 18s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34015
+MAE results for pheno_1: 1.47964
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33348
+MAE results for pheno_2: 2.88527
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30555
+MAE results for pheno_3: 1.23851
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30677
+MAE results for pheno_4: 1.14079
+////////////////////////////////////////////
+Iteration 94/110
+Max depth value tested: 33, min_sample_split tested: 8
+Elapsed time from start: 857m 6s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33662
+MAE results for pheno_1: 1.48153
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33935
+MAE results for pheno_2: 2.88072
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30712
+MAE results for pheno_3: 1.23587
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30119
+MAE results for pheno_4: 1.14124
+////////////////////////////////////////////
+Iteration 95/110
+Max depth value tested: 33, min_sample_split tested: 10
+Elapsed time from start: 865m 22s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33802
+MAE results for pheno_1: 1.48084
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34381
+MAE results for pheno_2: 2.87979
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30424
+MAE results for pheno_3: 1.23847
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30034
+MAE results for pheno_4: 1.14023
+////////////////////////////////////////////
+Iteration 96/110
+Max depth value tested: 33, min_sample_split tested: 12
+Elapsed time from start: 873m 9s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34004
+MAE results for pheno_1: 1.47983
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34162
+MAE results for pheno_2: 2.87910
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30969
+MAE results for pheno_3: 1.23745
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30581
+MAE results for pheno_4: 1.13928
+////////////////////////////////////////////
+Iteration 97/110
+Max depth value tested: 33, min_sample_split tested: 14
+Elapsed time from start: 880m 42s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33791
+MAE results for pheno_1: 1.47897
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34017
+MAE results for pheno_2: 2.87949
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30009
+MAE results for pheno_3: 1.23939
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29998
+MAE results for pheno_4: 1.14109
+////////////////////////////////////////////
+Iteration 98/110
+Max depth value tested: 33, min_sample_split tested: 16
+Elapsed time from start: 888m 3s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33932
+MAE results for pheno_1: 1.47909
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34038
+MAE results for pheno_2: 2.88190
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30125
+MAE results for pheno_3: 1.23709
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30222
+MAE results for pheno_4: 1.13923
+////////////////////////////////////////////
+Iteration 99/110
+Max depth value tested: 33, min_sample_split tested: 18
+Elapsed time from start: 895m 14s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33742
+MAE results for pheno_1: 1.48044
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33931
+MAE results for pheno_2: 2.88032
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30226
+MAE results for pheno_3: 1.23813
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30552
+MAE results for pheno_4: 1.13809
+////////////////////////////////////////////
+Iteration 100/110
+Max depth value tested: 33, min_sample_split tested: 20
+Elapsed time from start: 902m 14s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33510
+MAE results for pheno_1: 1.48154
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33450
+MAE results for pheno_2: 2.88350
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29708
+MAE results for pheno_3: 1.23955
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30220
+MAE results for pheno_4: 1.13867
+////////////////////////////////////////////
+Iteration 101/110
+Max depth value tested: 35, min_sample_split tested: 2
+Elapsed time from start: 915m 8s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.32089
+MAE results for pheno_1: 1.48539
+--------------------------------------------
+Pearson correlation for pheno_2: 0.32516
+MAE results for pheno_2: 2.88587
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30561
+MAE results for pheno_3: 1.22910
+--------------------------------------------
+Pearson correlation for pheno_4: 0.29969
+MAE results for pheno_4: 1.14036
+////////////////////////////////////////////
+Iteration 102/110
+Max depth value tested: 35, min_sample_split tested: 4
+Elapsed time from start: 925m 39s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33852
+MAE results for pheno_1: 1.47809
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33644
+MAE results for pheno_2: 2.88148
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29003
+MAE results for pheno_3: 1.24371
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30242
+MAE results for pheno_4: 1.13934
+////////////////////////////////////////////
+Iteration 103/110
+Max depth value tested: 35, min_sample_split tested: 6
+Elapsed time from start: 934m 51s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34005
+MAE results for pheno_1: 1.47953
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33352
+MAE results for pheno_2: 2.88524
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30568
+MAE results for pheno_3: 1.23858
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30667
+MAE results for pheno_4: 1.14095
+////////////////////////////////////////////
+Iteration 104/110
+Max depth value tested: 35, min_sample_split tested: 8
+Elapsed time from start: 943m 32s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33709
+MAE results for pheno_1: 1.48130
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33942
+MAE results for pheno_2: 2.88089
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30702
+MAE results for pheno_3: 1.23596
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30121
+MAE results for pheno_4: 1.14110
+////////////////////////////////////////////
+Iteration 105/110
+Max depth value tested: 35, min_sample_split tested: 10
+Elapsed time from start: 951m 43s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33814
+MAE results for pheno_1: 1.48082
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34368
+MAE results for pheno_2: 2.87980
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30430
+MAE results for pheno_3: 1.23851
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30045
+MAE results for pheno_4: 1.14007
+////////////////////////////////////////////
+Iteration 106/110
+Max depth value tested: 35, min_sample_split tested: 12
+Elapsed time from start: 959m 30s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.34017
+MAE results for pheno_1: 1.47952
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34115
+MAE results for pheno_2: 2.87908
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30991
+MAE results for pheno_3: 1.23734
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30573
+MAE results for pheno_4: 1.13923
+////////////////////////////////////////////
+Iteration 107/110
+Max depth value tested: 35, min_sample_split tested: 14
+Elapsed time from start: 967m 3s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33796
+MAE results for pheno_1: 1.47888
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34030
+MAE results for pheno_2: 2.87968
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30006
+MAE results for pheno_3: 1.23944
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30019
+MAE results for pheno_4: 1.14083
+////////////////////////////////////////////
+Iteration 108/110
+Max depth value tested: 35, min_sample_split tested: 16
+Elapsed time from start: 974m 29s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33932
+MAE results for pheno_1: 1.47909
+--------------------------------------------
+Pearson correlation for pheno_2: 0.34038
+MAE results for pheno_2: 2.88190
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30125
+MAE results for pheno_3: 1.23709
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30222
+MAE results for pheno_4: 1.13923
+////////////////////////////////////////////
+Iteration 109/110
+Max depth value tested: 35, min_sample_split tested: 18
+Elapsed time from start: 981m 36s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33742
+MAE results for pheno_1: 1.48044
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33931
+MAE results for pheno_2: 2.88032
+--------------------------------------------
+Pearson correlation for pheno_3: 0.30226
+MAE results for pheno_3: 1.23813
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30552
+MAE results for pheno_4: 1.13809
+////////////////////////////////////////////
+Iteration 110/110
+Max depth value tested: 35, min_sample_split tested: 20
+Elapsed time from start: 988m 34s
+--------------------------------------------
+Pearson correlation for pheno_1: 0.33510
+MAE results for pheno_1: 1.48154
+--------------------------------------------
+Pearson correlation for pheno_2: 0.33450
+MAE results for pheno_2: 2.88350
+--------------------------------------------
+Pearson correlation for pheno_3: 0.29708
+MAE results for pheno_3: 1.23955
+--------------------------------------------
+Pearson correlation for pheno_4: 0.30220
+MAE results for pheno_4: 1.13867
+////////////////////////////////////////////
+Computation finished in 16h 28m 34s
