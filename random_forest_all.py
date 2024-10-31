@@ -10,13 +10,12 @@ def main():
     train_dataset = SNPmarkersDataset(mode="train")
     validation_dataset = SNPmarkersDataset(mode="validation")
 
-    X_train = train_dataset.input
-    Y_train = train_dataset.pheno
+    X_train = train_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
+    Y_train = train_dataset.phenos.drop(["pheno_5, pheno_6"], axis = 1).dropna()
 
-    X_validation = validation_dataset.input
-    Y_validation = validation_dataset.pheno
+    X_validation = validation_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
+    Y_validation = validation_dataset.drop(["pheno_5, pheno_6"], axis = 1).dropna()
     
-
     max_depth = [15,17,19,21,23,25,27,29,31,33,35]
     min_sample_split = [2, 4, 6, 8, 10, 12 ,14 ,16 ,18 ,20]
     nb_phenotypes = Y_validation.shape[-1]
@@ -45,11 +44,11 @@ def main():
         pd.DataFrame(MAE_results[k], 
                      index=[f"max_depth = {i}" for i in max_depth], 
                      columns=[f"min_sample_split = {i}" for i in min_sample_split]
-                     ).to_csv(f"results/random_forest_all_results_MAE_pheno_{k + 1}.csv")
+                     ).to_csv(f"Results/random_forest_all_results_MAE_pheno_{k + 1}.csv")
         pd.DataFrame(correlation_results[k], 
                      index=[f"max_depth = {i}" for i in max_depth], 
                      columns=[f"min_sample_split = {i}" for i in min_sample_split]
-                     ).to_csv(f"results/random_forest_all_results_corr_pheno_{k + 1}.csv")
+                     ).to_csv(f"Results/random_forest_all_results_corr_pheno_{k + 1}.csv")
     
     print("////////////////////////////////////////////")
     print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
