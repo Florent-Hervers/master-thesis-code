@@ -6,18 +6,19 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 import time
 import json
 import cupy as cp
+import pandas as pd
 
 def main():
     train_dataset = SNPmarkersDataset(mode="train")
     validation_dataset = SNPmarkersDataset(mode="validation")
 
-    # put everything on the GPU speed thing up
-    X_train = cp.array(train_dataset.input)
-    Y_train_gpu = cp.array(train_dataset.pheno)
-    Y_train_cpu = train_dataset.pheno
-
-    X_validation = cp.array(validation_dataset.input)
-    Y_validation = validation_dataset.pheno
+    # Put everything on the GPU speed thing up
+    X_train = cp.array(train_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"]))
+    Y_train_cpu = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]]).transpose()
+    Y_train_gpu = cp.array(Y_train_cpu)
+    
+    X_validation = cp.array(validation_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"]))
+    Y_validation = pd.DataFrame([validation_dataset.phenotypes[pheno] for pheno in ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]]).transpose()
     
     # For the three first hyper parameters, the first one is the default one.
     sub_sampling = [1, 0.5]

@@ -11,11 +11,11 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation")
 
     X_train = train_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
-    Y_train = train_dataset.phenos.drop(["pheno_5, pheno_6"], axis = 1).dropna()
-
-    X_validation = validation_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
-    Y_validation = validation_dataset.drop(["pheno_5, pheno_6"], axis = 1).dropna()
+    Y_train = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]]).transpose()
     
+    X_validation = validation_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
+    Y_validation = pd.DataFrame([validation_dataset.phenotypes[pheno] for pheno in ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]]).transpose()
+
     max_depth = [15,17,19,21,23,25,27,29,31,33,35]
     min_sample_split = [2, 4, 6, 8, 10, 12 ,14 ,16 ,18 ,20]
     nb_phenotypes = Y_validation.shape[-1]

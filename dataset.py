@@ -71,7 +71,11 @@ class SNPmarkersDataset(Dataset):
         """
 
         if set(pheno) <= set(self.phenotypes.keys()) or (type(pheno) == str and pheno in self.phenotypes.keys()):
-            indexes = list(map(lambda a: int(a.split("_")[-1]) - 1, self.phenotypes[pheno].index.to_list()))
+            if type(pheno) == str:
+                pheno = [pheno]
+            
+            indexes = pd.DataFrame([self.phenotypes[value] for value in pheno]).transpose().index.to_list()
+            indexes = list(map(lambda a: int(a.split("_")[-1]) - 1, indexes))
             data = self.__input[indexes,:]
             
             # Check that data is free of missing values
