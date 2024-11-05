@@ -5,10 +5,11 @@
 torch==2.4.1
 torchaudio==2.4.1
 torchvision==0.19.1
-bed-reader
+bed-reader==1.0.5
 ipykernel
 scikit-learn
 pandas
 matplotlib
 seaborn
 xgboost
+wandb

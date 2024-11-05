@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from typing import Union, List
 from torch.utils.data import Dataset
+import torch
 
 class SNPmarkersDataset(Dataset):
     """Create a class following the pytorch template to manage the data. \
@@ -49,6 +50,10 @@ class SNPmarkersDataset(Dataset):
             all_test_samples = all_pheno_df.loc[(~ all_pheno_df.index.isin(pheno_masked_df.index)).tolist()].drop(["col_1"], axis = 1)
             for pheno in pheno_masked_df.columns:
                 self.phenotypes[pheno] = all_test_samples[pheno].dropna()
+        
+        # TODO: update this to use all phenotypes
+        self.__valid_indexes = pd.DataFrame([self.phenotypes[value] for value in ["pheno_1", "pheno_2", "pheno_3","pheno_4"]]).transpose().index.to_list()
+        self.__valid_indexes = list(map(lambda a: int(a.split("_")[-1]) - 1, self.__valid_indexes))
 
         if not skip_check:
             try:
@@ -74,9 +79,7 @@ class SNPmarkersDataset(Dataset):
             if type(pheno) == str:
                 pheno = [pheno]
             
-            indexes = pd.DataFrame([self.phenotypes[value] for value in pheno]).transpose().index.to_list()
-            indexes = list(map(lambda a: int(a.split("_")[-1]) - 1, indexes))
-            data = self.__input[indexes,:]
+            data = self.__input[self.__valid_indexes,:]
             
             # Check that data is free of missing values
             classes, counts = np.unique(data, return_counts=True)
@@ -118,11 +121,18 @@ class SNPmarkersDataset(Dataset):
                 if np.array(self.__input[index_in_list]).all() != np.array(SNP_data[i]).all():
                     raise Exception(f"SNP data in phenotype {pheno} for id {index} isn't the same than the original data.")
 
-    
-    
-    # TODO: update these function for pytorch usage
     def __len__(self):
-        return len(self.input)
+        return len(self.__valid_indexes)
 
     def __getitem__(self, idx):
-        return self.input[idx], self.pheno.iloc[idx]
+        # Check that the label exist, if not insert nan.
+        phenotype_data = []
+
+        # TODO: update this to use all phenotypes
+        for pheno in ["pheno_1", "pheno_2", "pheno_3","pheno_4"]:
+            if "BBB2024_" + str(self.__valid_indexes[idx] + 1) not in self.phenotypes[pheno]:
+                phenotype_data.append(np.nan)
+            else:
+                phenotype_data.append(self.phenotypes[pheno].loc["BBB2024_" + str(self.__valid_indexes[idx] + 1)])
+
+        return torch.tensor(self.__input[self.__valid_indexes[idx]], dtype= torch.float), torch.tensor(phenotype_data, dtype = torch.float)

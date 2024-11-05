@@ -1,3 +1,4 @@
 *.sh
 mnist.py
 *pyc
+wandb/
