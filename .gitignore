@@ -2,3 +2,5 @@
 mnist.py
 *pyc
 wandb/
+deepGBLUP/data/
+deepGBLUP/outputs/
