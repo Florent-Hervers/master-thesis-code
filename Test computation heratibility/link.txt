@@ -1,0 +1,7 @@
+Useful links for the computation
+ - https://nce.ads.uga.edu/html/projects/programs/Linux/Temp/
+ - https://masuday.github.io/blupf90_tutorial/vc_aireml.html
+ - https://en.wikipedia.org/wiki/Heritability
+ - https://www.researchgate.net/publication/262224129_BLUPF90_and_related_programs
+ - https://github.com/yebigithub/BLUPF90_usage/blob/main/README.md
+ 
