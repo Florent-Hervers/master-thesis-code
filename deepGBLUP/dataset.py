@@ -36,15 +36,23 @@ class SNPDataset(Dataset):
 
 def load_dataset(raw_path, phen_path, h2, device='cpu'):
 
+    # ids where there is no phenotypes
+    no_pheno_ids = []
+    
     # load phen to dict
     train_ids = []
     with open(phen_path) as phen_file:
         phen = {}
         for line in phen_file:
             line_ = line.split()
-            phen[line_[0]] = float(line_[1])
-            train_ids.append(line_[0])
-
+            if line_[2] != "NA":
+                phen[line_[1]] = float(line_[2])
+                train_ids.append(line_[1])
+            else: 
+                no_pheno_ids.append(line_[1])
+            
+    # Remove the 1000 last ones for the validation set
+    train_ids = train_ids[:-1000]
 
     # Load snp and Rearrange phen data 
     raw_file = open(raw_path) # SNP
@@ -53,16 +61,22 @@ def load_dataset(raw_path, phen_path, h2, device='cpu'):
     train_X = []
     test_X = []
     train_y = []
+    test_y = []
     test_ids = []
 
     for line in tqdm(raw_file):
         line_ = line.split()
+        
+        # Skip lines where there are no phenotype
+        if line_[1] in no_pheno_ids:
+            continue
 
         if line_[1] in train_ids:
             train_X.append(line_[6:])        
             train_y.append(phen[line_[1]])
         else:
-            test_X.append(line_[6:])        
+            test_X.append(line_[6:]) 
+            test_y.append(phen[line_[1]])       
             test_ids.append(line_[1])
 
     # to tensor
@@ -71,6 +85,12 @@ def load_dataset(raw_path, phen_path, h2, device='cpu'):
     train_ids = np.array(train_ids,dtype=str)
     test_X = torch.from_numpy(np.array(test_X, dtype=np.float32))
     test_ids = np.array(test_ids,dtype=str)
+    test_y = torch.tensor(test_y, dtype=torch.float32)
+
+    # Print some infos to check the validity of spliting
+    print(f"Train_X shape: {train_X.shape}, test_X shape: {test_X.shape}")
+    print(f"Five last ids in the training set: {train_ids[-5:]}")
+    print(f"First five ids in the test set: {test_ids[0:5]}")
     
     # cal genetic effects
     X = torch.cat([train_X, test_X], dim=0)
@@ -89,7 +109,7 @@ def load_dataset(raw_path, phen_path, h2, device='cpu'):
     train_e, test_e = e[:len(train_X)], d[len(train_X):]
     
     train_dataset = SNPDataset(train_X,  train_a, train_d, train_e, train_ids, train_y)
-    test_dataset = SNPDataset(test_X, test_a, test_d, test_e, test_ids)
+    test_dataset = SNPDataset(test_X, test_a, test_d, test_e, test_ids, test_y)
     return train_dataset, test_dataset, X.shape[1], y.mean()
 
 

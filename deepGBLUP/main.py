@@ -2,6 +2,7 @@ import os
 import time
 
 import torch
+import wandb
 from torch.utils.data import DataLoader
 
 from train_test import train_model, test_model
@@ -10,20 +11,20 @@ from dataset import load_dataset
 
 ################ CONFIG ####################
 # data path
-raw_path = 'data/1000_samples.raw' # path of raw file
-phen_path = 'data/1000_samples.phen' # path of phenotype file
-bim_path = 'data/1000_samples.bim' # optional: path of bim file to save SNP effects. If you don't have bim file just type None 
+raw_path = '../Data/BBBDL_BBB2023_MD.raw' # path of raw file
+phen_path = '../Data/BBBDL_pheno_2023bbb_0twins_6traits_mask' # path of phenotype file
+bim_path = '../Data/BBBDL_BBB2023_MD.bim' # optional: path of bim file to save SNP effects. If you don't have bim file just type None 
 
 # train cofig
 lr =  1e-3 # list of cadidate learning rate
-epoch = 10 # max value of cadiate epoch
+epoch = 100   # max value of cadiate epoch
 batch_size = 16 # train batch size
 
 device = 'cuda' # type 'cpu' if you use cpu device, or type 'cuda' if you use gpu device.
 h2 = 0.37
 
 # save config
-save_path = 'outputs' # path to save results
+save_path = 'test_GBLUP' # path to save results
 
 ##############################################
 
@@ -33,6 +34,22 @@ save_path = 'outputs' # path to save results
 ##  should not modify the code below.             ##
 ####################################################
 os.makedirs(save_path, exist_ok=True)
+
+
+wandb.init(
+    project = "TFE",
+    config = {
+        "model_name": "deepGBLUP",
+        "batch size": batch_size,
+        "learning_rate": lr,
+        "nb epochs": epoch,
+        "h2": h2,
+    },
+    name = "Test corrected deepGBLUP",
+    tags = ["debug"],
+)
+
+
 s_time = time.time()
 
 # Load Dataset
@@ -46,9 +63,10 @@ model = deepGBLUP(ymean, num_snp).to(device)
 # Train model
 train_time  = train_model(
     model, train_dataloader, test_dataloader, 
-    save_path, device, lr, epoch, h2
+    save_path, device, lr, epoch, h2, save_model = False
     )
 
+"""
 # test model
 test_time = test_model(
         model, 
@@ -69,4 +87,4 @@ with open(os.path.join(save_path,'setting.txt'),'w') as save:
     save.write(f'H2: {h2}\n')
     save.write('train time\t'+str(train_time)+'\n')
     save.write('test time\t'+str(test_time)+'\n')
-    
+"""  
