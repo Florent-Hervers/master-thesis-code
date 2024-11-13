@@ -7,3 +7,4 @@ deepGBLUP/outputs/
 GBLUP/
 Regression/LassoNet/*.*
 !Regression/LassoNet/lassonet/lassonet/*.py
+!Scripts/GBLUP.sh
