@@ -1,4 +1,4 @@
-from dataset import SNPmarkersDataset
+from dataset_new import SNPmarkersDataset
 from sklearn.ensemble import RandomForestRegressor
 from scipy.stats import pearsonr
 import numpy as np
@@ -7,14 +7,18 @@ import time
 import pandas as pd
 
 def main():
-    train_dataset = SNPmarkersDataset(mode="train")
-    validation_dataset = SNPmarkersDataset(mode="validation")
+    selected_phenotypes = ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]
 
-    X_train = train_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
-    Y_train = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]]).transpose()
+    train_dataset = SNPmarkersDataset(mode="train")
+    train_dataset.set_phenotypes = selected_phenotypes
+    validation_dataset = SNPmarkersDataset(mode="validation")
+    validation_dataset.set_phenotypes = selected_phenotypes
+
+    X_train = train_dataset.get_all_SNP()
+    Y_train = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in selected_phenotypes]).transpose()
     
-    X_validation = validation_dataset.get_SNP(["pheno_1", "pheno_2", "pheno_3", "pheno_4"])
-    Y_validation = pd.DataFrame([validation_dataset.phenotypes[pheno] for pheno in ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]]).transpose()
+    X_validation = validation_dataset.get_all_SNP()
+    Y_validation = pd.DataFrame([validation_dataset.phenotypes[pheno] for pheno in selected_phenotypes]).transpose()
 
     max_depth = [15,17,19,21,23,25,27,29,31,33,35]
     min_sample_split = [2, 4, 6, 8, 10, 12 ,14 ,16 ,18 ,20]

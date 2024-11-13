@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import torch
 
 def results_heatmap(df1:      pd.DataFrame,
                     df2:      pd.DataFrame, 
@@ -41,3 +42,16 @@ def results_heatmap(df1:      pd.DataFrame,
     ax2.set_xlabel(y_label)
     ax2.tick_params(rotation=0)
     plt.show()
+
+def format_batch(dict: dict):
+    """ Convert a dictonary containing x keys, each one containing a 1-D tensor of length y to a tensor of shape (y,x).
+    This function is intended to be used to format SNPmarkersDataset batches created by a torch.utils.data.dataloader to be directly usable
+    for a model when several phenotypes are set with the `set_phenotypes` proprety.
+
+    Args:
+        dict (dict): dictionary(containing x keys, each one containing a 1-D tensor of length y) to transform to tensor. 
+
+    Returns:
+        torch.Tensor: the resulting tensor (of shape (y,x)).
+    """
+    return torch.stack([dict[key] for key in dict.keys()], dim= 1)

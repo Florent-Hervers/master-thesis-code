@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 
 from train_test import train_model, test_model
 from model import deepGBLUP
-from dataset import load_dataset
+from dataset_new import load_dataset
 
 ################ CONFIG ####################
 # data path
@@ -33,7 +33,7 @@ save_path = 'test_GBLUP' # path to save results
 ##  Users unfamiliar with python and pytorch      ##
 ##  should not modify the code below.             ##
 ####################################################
-os.makedirs(save_path, exist_ok=True)
+# os.makedirs(save_path, exist_ok=True)
 
 
 wandb.init(

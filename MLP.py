@@ -1,11 +1,12 @@
 import torch
 from torch import nn
 import torch.utils.data as data
-from dataset import SNPmarkersDataset
+from dataset_new import SNPmarkersDataset
 import torch.nn.functional as F
 import wandb
 import numpy as np
 from scipy.stats import pearsonr
+from utils import format_batch
 
 class MLP(torch.nn.Module):
     def __init__(self, nlayers: int = 1, hidden_nodes: list[int] = [], dropout: float = 0):
@@ -68,11 +69,13 @@ def main():
         tags = ["test"],
     )
     
-    train_dataset = data.DataLoader(SNPmarkersDataset(mode = "train", skip_check=True), batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
-    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
+    selected_phenotypes = ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]
+    train_dataset = SNPmarkersDataset(mode = "train")
+    train_dataset.set_phenotypes = selected_phenotypes
+    train_dataset = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
     
-    # TODO manage proprely all phenotypes
-    phenotypes_labels = validation_dataset.phenotypes.keys()
+    validation_dataset = SNPmarkersDataset(mode = "validation")
+    validation_dataset.set_phenotypes = selected_phenotypes
     validation_dataset = data.DataLoader(validation_dataset, batch_size=BATCH_SIZE, num_workers = 4)
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -90,7 +93,7 @@ def main():
         train_loss = []
         model.train()
         for x,y in train_dataset:
-            x,y = x.to(device), y.to(device)
+            x,y = x.to(device), format_batch(y).to(device)
             optimizer.zero_grad()
             output = model(x)
             loss = criteron(output, y)
@@ -111,7 +114,7 @@ def main():
         target = []
         model.eval()
         for x,y in validation_dataset:
-            x,y = x.to(device), y.to(device)
+            x,y = x.to(device), format_batch(y).to(device)
             optimizer.zero_grad()
             output = model(x)
             loss = criteron(output, y)

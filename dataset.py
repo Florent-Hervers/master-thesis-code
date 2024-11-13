@@ -7,53 +7,59 @@ import torch
 
 class SNPmarkersDataset(Dataset):
     """Create a class following the pytorch template to manage the data. \
-    Note: SNP data should be fetched using the `get_SNP()` function.
+    Note: SNP data should be fetched using the `get_all_SNP()` function.
 
     Attributes:
-        mode (str, optional): type of the data stored. Only 'train' or 'test' or 'validation' are accepted values. Defaults to "train".
-        phenotypes (dict[pd.Series]): contain the phenotypes data for the given mode. Keys are phenotypes label used in the original csv files.
-        skip_check (bool): Option to skip the checking used to speed object creation when testings. Defaults to False.
+        mode (str, optional): type of the dataset represented. Only 'train' or 'test' or 'validation' are accepted values. \
+        Modifying this value will not change the type of dataset as this variable is designed to be "read-only". Defaults to "train".
+        phenotypes (dict[pd.Series]): contain the phenotypes data for the given mode. Keys are phenotypes label used in the original phenotype files. \
+        Phenotypes are exposed as an attribute to ease the data analysis while SNP_array can only be accessed via `get_all_SNP` or `__getItem` methods.
+        set_phenotypes(str | list[str]): Default to None. Should be definied before using the dataset class by the user. Accepted string are the keys of ´self.phenotypes´
     """
     
     def __init__(self, mode = "train", skip_check = False):
-        """Create a class following the pytorch template.
+        f"""Create a class following the pytorch template.
 
         Args:
-            mode (str, optional): type of the data stored. Only 'train' or 'test' or 'validation' are accepted values. Defaults to "train".
+            mode (str, optional): type of the data stored. Only train, validation, test and local_train are accepted values. Defaults to "train".
+            skip_check (bool): Option to skip the checking used to speed object creation when testing. Defaults to False.
 
         Raises:
             AttributeError: if the mode doesn't respect the described format.
         """
+        valid_modes = set(["train", "validation", "test", "local_train"])
+
         # Define the number of samples used for the validation set
-        VALIDATION_SIZE = 1000
-        self.__input = open_bed("../Data/BBBDL_BBB2023_MD.bed").read(dtype="int8", num_threads= 8)
+        self._VALIDATION_SIZE = 1000
+        self._wantedPhenotypes = None
+
+        pheno_masked_df = pd.read_csv("../Data/BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv", index_col= 1)
+        self._snp = pd.DataFrame(open_bed("../Data/BBBDL_BBB2023_MD.bed").read(dtype="int8", num_threads= 8), index=pheno_masked_df.index)
+        pheno_masked_df = pheno_masked_df.drop(["col_1"], axis = 1).dropna(how="all")
         
-        if mode != "train" and mode != 'test' and mode != "validation":
-            raise AttributeError("the mode argument must be either 'train' or 'test' or 'validation'!")
+        if mode not in valid_modes:
+            raise AttributeError(f"the mode argument must be a value of {valid_modes}!")
         
         self.mode = mode
         self.phenotypes = {}
- 
-        pheno_masked_df = pd.read_csv("../Data/BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv", index_col= 1)
-        pheno_masked_df = pheno_masked_df.drop(["col_1"], axis = 1).dropna(how="all")
         
-        if mode == "train":   
+        if mode == "local_train":
             for pheno in pheno_masked_df.columns:
-                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:-VALIDATION_SIZE]
-            
-        if mode == "validation":
-            for pheno in pheno_masked_df.columns:
-                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[-VALIDATION_SIZE:]
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:1000]
 
-        if mode == "test":
+        elif mode == "train":   
+            for pheno in pheno_masked_df.columns:
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:-self._VALIDATION_SIZE]
+            
+        elif mode == "validation":
+            for pheno in pheno_masked_df.columns:
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[-self._VALIDATION_SIZE:]
+
+        elif mode == "test":
             all_pheno_df = pd.read_csv("../Data/BBBDL_pheno_20000bbb_6traits_processed.csv", index_col=1)
             all_test_samples = all_pheno_df.loc[(~ all_pheno_df.index.isin(pheno_masked_df.index)).tolist()].drop(["col_1"], axis = 1)
             for pheno in pheno_masked_df.columns:
                 self.phenotypes[pheno] = all_test_samples[pheno].dropna()
-        
-        # TODO: update this to use all phenotypes
-        self.__valid_indexes = pd.DataFrame([self.phenotypes[value] for value in ["pheno_1", "pheno_2", "pheno_3","pheno_4"]]).transpose().index.to_list()
-        self.__valid_indexes = list(map(lambda a: int(a.split("_")[-1]) - 1, self.__valid_indexes))
 
         if not skip_check:
             try:
@@ -61,35 +67,27 @@ class SNPmarkersDataset(Dataset):
             except Exception as e:
                 raise e
     
-    def get_SNP(self, pheno: Union[str, List[str]] ):
-        """ Fetch the SNP data related of the given phenotype of the data concerned by the mode.
-
-        Args:
-            phenotype (Union[str, List[str]]): column name of the wanted phenotypes (ie keys of phenotypes attribute). The list enable to use several phenotypes.
+    def get_all_SNP(self):
+        """ Retruns all snp arrays that have values for the phenotypes defined via `set_phenotypes proprety`
 
         Raises:
-            AttributeError: if the given phenotypes isn"t found in the original phenotype dataframe columns.
-            Exception: if the requested data contain any missing values   
+            Exception: If the proprety `set_phenotypes` isn't set.
         
         Returns:
-            List: SNP data for the given mode and phenotype
+            pd.Series: snp array for every sample in the mode (with their corresponding id from the original file)
         """
+        if self._wantedPhenotypes == None:
+            raise Exception("The proprety set_phenotypes must be set before using the dataset")
 
-        if set(pheno) <= set(self.phenotypes.keys()) or (type(pheno) == str and pheno in self.phenotypes.keys()):
-            if type(pheno) == str:
-                pheno = [pheno]
-            
-            data = self.__input[self.__valid_indexes,:]
-            
-            # Check that data is free of missing values
-            classes, counts = np.unique(data, return_counts=True)
-            if classes.all() != np.array([0, 1, 2]).all():
-                raise Exception(f"There are {counts[np.where(classes == -127)[0][0]]} missing values in the data!")
-
-            return data
+        indexes = pd.DataFrame.from_dict(self.phenotypes)[self._wantedPhenotypes].dropna(how="all").index
         
+        # Need to sort the index according to the phenotypes after selecting the index to have the correct relation snp_data-pheotype
+        # Cause by the sorting of the id when creating the indexes dataframe that doesn't follow the one used in pheno files
+        if type(self._wantedPhenotypes) == str:
+            return self._snp.loc[indexes].reindex(self.phenotypes[self._wantedPhenotypes].index)
         else:
-            raise AttributeError(f"Unknown phenotype asked. The possible values are {self.phenotypes.keys()}")
+            return self._snp.loc[indexes].reindex(self.phenotypes[self._wantedPhenotypes[0]].index)
+
         
     def check_data(self):
         """Perform some verifications on the data (of the current object) to be sure that no mistake is introduced by the preprocessing of the data.
@@ -98,41 +96,109 @@ class SNPmarkersDataset(Dataset):
             Exception: If an incoherency is detected, the argument of the error indicate where the error is detected
         """
 
-        raw_pheno_df = pd.read_csv("../Data/BBBDL_pheno_20000bbb_6traits_processed.csv", index_col=1)
-        raw_pheno_df = raw_pheno_df.drop(["col_1"], axis = 1)   
+        # Check that data is free of missing values
+        classes, counts = np.unique(self._snp, return_counts=True)
+        if classes.all() != np.array([0, 1, 2]).all():
+            raise Exception(f"There are {counts[np.where(classes == -127)[0][0]]} missing values in the data!")
+            
+        raw_pheno_df = pd.read_csv("../Data/BBBDL_pheno_20000bbb_6traits_processed.csv", index_col=1)  
 
         for pheno in self.phenotypes.keys():
-            # Drop the na induced by the merge of the differents series
-            pheno_data = self.phenotypes[pheno]
-
-            # Check that shapes are coherant with what expected
-            SNP_data = self.get_SNP(pheno)
-            if pheno_data.shape[0] != SNP_data.shape[0]:
-                raise Exception(f"The number of sample of phenotype {pheno_data.shape[0]} and SNP data {SNP_data.shape[0]} are not coherant for {pheno}.")
+            for index in self.phenotypes[pheno].index:
+                if index not in self._snp.index:
+                    raise Exception(f"No SNP array found for index {index}")
+                if raw_pheno_df[pheno].loc[index] != self.phenotypes[pheno].loc[index]:
+                    raise Exception(f"Uncoherant value in dataset for the index {index}, phenotype {pheno}")
             
-            for i in range(SNP_data.shape[0]):
-                # First check that the phenotype linked to the id is the same than in the raw file
-                index = pheno_data.index[i]
-                if pheno_data.iloc[i] != raw_pheno_df[pheno].loc[index]:
-                    raise Exception(f"Phenotype {pheno} linked to id {index} ({pheno_data.iloc[i]}) isn't the same than the one in original data ({raw_pheno_df[pheno].loc[index]}).")
-
-                # Then check that the SNP_data is the same than the one given by the function
-                index_in_list = int(index.split("_")[1]) - 1
-                if np.array(self.__input[index_in_list]).all() != np.array(SNP_data[i]).all():
-                    raise Exception(f"SNP data in phenotype {pheno} for id {index} isn't the same than the original data.")
+            if (self.mode == "validation"):
+                if len(self.phenotypes[pheno].index) != self._VALIDATION_SIZE:
+                    raise Exception(f"There isn't {self._VALIDATION_SIZE} samples in the validation set but rather {len(self.phenotypes[pheno].index)}")
 
     def __len__(self):
-        return len(self.__valid_indexes)
+        """Return the length of the dataset for the selected mode and phenotype
+
+        Raises:
+            Exception: If the proprety `set_phenotypes` isn't set.
+
+        Returns:
+            int: length of the dataset
+        """
+        if self._wantedPhenotypes == None:
+            raise Exception("The proprety set_phenotypes must be set before using the dataset")
+
+        if type(self._wantedPhenotypes) == str:
+            return len(self.phenotypes[self._wantedPhenotypes].index)
+        else:
+            return len(self.phenotypes[self._wantedPhenotypes[0]].index)
 
     def __getitem__(self, idx):
+        """Return the snp data and selected phenotype (via the proprety `set_phenotypes`) given an index
+
+        Args:
+            idx (int): index in the dataset.
+
+        Raises:
+            Exception: If the proprety `set_phenotypes` isn't set.
+
+        Returns:
+            (pd.Series, float | dict): first item is the snp array, the second one type depend on the number of phenoype wanted. If more than one return a dict, otherwise a float
+        """
+        if self._wantedPhenotypes == None:
+            raise Exception("The proprety set_phenotypes must be set before using the dataset")
+        
+        if type(self._wantedPhenotypes) == str:
+            index = self.phenotypes[self._wantedPhenotypes].index[idx]
+        else:
+            index = self.phenotypes[self._wantedPhenotypes[0]].index[idx]
+        
         # Check that the label exist, if not insert nan.
-        phenotype_data = []
+        if type(self._wantedPhenotypes) == list:
+            phenotype_data = {}
 
-        # TODO: update this to use all phenotypes
-        for pheno in ["pheno_1", "pheno_2", "pheno_3","pheno_4"]:
-            if "BBB2024_" + str(self.__valid_indexes[idx] + 1) not in self.phenotypes[pheno]:
-                phenotype_data.append(np.nan)
-            else:
-                phenotype_data.append(self.phenotypes[pheno].loc["BBB2024_" + str(self.__valid_indexes[idx] + 1)])
+            for pheno in self._wantedPhenotypes:
+                phenotype_data[pheno] = self.phenotypes[pheno].loc[index]
 
-        return torch.tensor(self.__input[self.__valid_indexes[idx]], dtype= torch.float), torch.tensor(phenotype_data, dtype = torch.float)
+            return torch.tensor(self._snp.loc[index], dtype=torch.float), phenotype_data
+        else:
+            return torch.tensor(self._snp.loc[index], dtype=torch.float) , self.phenotypes[self._wantedPhenotypes].loc[index]
+    
+    @property
+    def set_phenotypes(self):
+        """Define the phenotype(s) to returns when using getItem functions. Note that the inputed string should be the name of the columns of the original dataframe.
+        If several phenotypes are entered, only combinaision allowed are the one where all samples in the dataset have a value for all selected phenotypes in order to avoid introducing nan in the loss.
+
+        Returns:
+            str/List[str]: the name of the phenotype returned (or the list of phenotypes if user selected more than one)
+        """
+        return self._wantedPhenotypes
+
+    @set_phenotypes.setter
+    def set_phenotypes(self, value):
+        if type(value) != str and type(value) != list:
+            raise Exception("This variable expect either a string or a list of strings")
+        
+        # Convert the list to str if only one item in the list to have an appropriate behaviour in getitem
+        if type(value) == list and len(value) == 1 and type(value[0]) == str:
+            value =  value[0]
+        
+        iterable = value
+        if type(value) == str:
+            iterable = [value]
+        
+        for item in iterable:
+            if type(item) != str:
+                raise Exception("This variable expect either a string or a list of strings")
+            if item not in self.phenotypes.keys():
+                raise Exception(f"The phenotypes {item} isn't found in the phenotypes")
+        
+        # Check that the given phenotypes are compatible to avoid nan in the loss
+        if type(value) == list:
+            df = pd.DataFrame.from_dict(self.phenotypes)[value].dropna(how='all')
+            if df.shape != df.dropna(how='any').shape:
+                raise Exception("The given phenotypes aren't compatible as they aren't definied for every phenotype!")
+ 
+        self._wantedPhenotypes = value
+
+    @set_phenotypes.deleter
+    def set_phenotypes(self):
+        del self._wantedPhenotypes

@@ -4,3 +4,6 @@ mnist.py
 wandb/
 deepGBLUP/data/
 deepGBLUP/outputs/
+GBLUP/
+Regression/LassoNet/*.*
+!Regression/LassoNet/lassonet/lassonet/*.py
