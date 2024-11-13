@@ -69,7 +69,7 @@ def main():
                     print(f"    - MAE : {MAE_results[:,i,j,k]}")
                     print(f"    - Correlation : {correlation_results[:,i,j,k]}")
                     print(f"Elapsed time from start: {int((time.time() - start_time) // 60)}m {int((time.time() - start_time) % 60)}s")
-                    exit(0)
+
     print("////////////////////////////////////////////")
     print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
 
