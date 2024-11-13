@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 
 from train_test import train_model, test_model
 from model import deepGBLUP
-from dataset_new import load_dataset
+from dataset import load_dataset
 
 ################ CONFIG ####################
 # data path
@@ -45,7 +45,7 @@ wandb.init(
         "nb epochs": epoch,
         "h2": h2,
     },
-    name = "Test corrected deepGBLUP",
+    name = "Test corrected deepGBLUP with updated dataset",
     tags = ["debug"],
 )
 

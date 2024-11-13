@@ -1,0 +1,2221 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 1
+Results:
+    - MAE : [1.54449549 2.99643526 1.26254818 1.15475027]
+    - Correlation : [0.30890567 0.31331658 0.34850416 0.34918909]
+Elapsed time from start: 0m 44s
+////////////////////////////////////////////
+Iteration 2/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 4
+Results:
+    - MAE : [1.53807609 2.9907423  1.23634946 1.17902382]
+    - Correlation : [0.31646162 0.31357451 0.40466421 0.33640311]
+Elapsed time from start: 1m 27s
+////////////////////////////////////////////
+Iteration 3/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 8
+Results:
+    - MAE : [1.58090255 3.01659581 1.25589272 1.19429943]
+    - Correlation : [0.28094347 0.31575474 0.3707122  0.29519963]
+Elapsed time from start: 2m 10s
+////////////////////////////////////////////
+Iteration 4/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 12
+Results:
+    - MAE : [1.52614885 2.95011649 1.24875197 1.19421645]
+    - Correlation : [0.33686804 0.34662167 0.36260897 0.34208889]
+Elapsed time from start: 2m 51s
+////////////////////////////////////////////
+Iteration 5/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 16
+Results:
+    - MAE : [1.54342179 3.0339374  1.24923495 1.16913229]
+    - Correlation : [0.32694697 0.29751948 0.37468218 0.35619314]
+Elapsed time from start: 3m 32s
+////////////////////////////////////////////
+Iteration 6/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 20
+Results:
+    - MAE : [1.51871539 2.98511285 1.28656243 1.18565257]
+    - Correlation : [0.33479064 0.32466419 0.33893643 0.32203016]
+Elapsed time from start: 4m 13s
+////////////////////////////////////////////
+Iteration 7/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 24
+Results:
+    - MAE : [1.52986754 2.96112323 1.27488234 1.19839409]
+    - Correlation : [0.32372734 0.33870417 0.35628103 0.32198047]
+Elapsed time from start: 4m 53s
+////////////////////////////////////////////
+Iteration 8/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 28
+Results:
+    - MAE : [1.55879809 2.9435074  1.25359116 1.18859576]
+    - Correlation : [0.31795211 0.32835064 0.36922082 0.34263692]
+Elapsed time from start: 5m 33s
+////////////////////////////////////////////
+Iteration 9/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 32
+Results:
+    - MAE : [1.52557718 3.02093303 1.24689513 1.16287004]
+    - Correlation : [0.3535828  0.31167721 0.38165749 0.34765571]
+Elapsed time from start: 6m 12s
+////////////////////////////////////////////
+Iteration 10/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 36
+Results:
+    - MAE : [1.56583932 2.98476767 1.25873935 1.18362877]
+    - Correlation : [0.31155292 0.33210728 0.37697489 0.35059956]
+Elapsed time from start: 6m 52s
+////////////////////////////////////////////
+Iteration 11/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.3
+    - min_sample_split: 40
+Results:
+    - MAE : [1.55747653 3.019522   1.23608328 1.1541043 ]
+    - Correlation : [0.30683585 0.30518294 0.36193423 0.3525306 ]
+Elapsed time from start: 7m 31s
+////////////////////////////////////////////
+Iteration 12/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 1
+Results:
+    - MAE : [1.44510973 2.81029642 1.19251687 1.10293219]
+    - Correlation : [0.3715855  0.38317569 0.37938121 0.36875022]
+Elapsed time from start: 8m 19s
+////////////////////////////////////////////
+Iteration 13/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 4
+Results:
+    - MAE : [1.44763122 2.82106013 1.18904265 1.10418694]
+    - Correlation : [0.37655413 0.38212042 0.38784062 0.38536664]
+Elapsed time from start: 9m 5s
+////////////////////////////////////////////
+Iteration 14/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 8
+Results:
+    - MAE : [1.44106311 2.82323043 1.19116957 1.09330618]
+    - Correlation : [0.38236632 0.37888487 0.40600202 0.40104665]
+Elapsed time from start: 9m 51s
+////////////////////////////////////////////
+Iteration 15/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 12
+Results:
+    - MAE : [1.44023178 2.81429522 1.18761172 1.09621248]
+    - Correlation : [0.38509138 0.37622814 0.41593443 0.39239892]
+Elapsed time from start: 10m 37s
+////////////////////////////////////////////
+Iteration 16/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 16
+Results:
+    - MAE : [1.44416915 2.82874443 1.19353645 1.09465832]
+    - Correlation : [0.3775205  0.36841382 0.39158525 0.39742878]
+Elapsed time from start: 11m 23s
+////////////////////////////////////////////
+Iteration 17/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 20
+Results:
+    - MAE : [1.43981298 2.80329514 1.19154472 1.09977205]
+    - Correlation : [0.37402951 0.38252043 0.39582958 0.38593135]
+Elapsed time from start: 12m 8s
+////////////////////////////////////////////
+Iteration 18/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 24
+Results:
+    - MAE : [1.44345725 2.80969607 1.18475956 1.10733755]
+    - Correlation : [0.37082191 0.37810361 0.41696814 0.38481967]
+Elapsed time from start: 12m 53s
+////////////////////////////////////////////
+Iteration 19/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 28
+Results:
+    - MAE : [1.43519228 2.81000199 1.19156372 1.10083583]
+    - Correlation : [0.38588466 0.378739   0.40178008 0.37605598]
+Elapsed time from start: 13m 38s
+////////////////////////////////////////////
+Iteration 20/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 32
+Results:
+    - MAE : [1.44345427 2.8323104  1.19414918 1.10592993]
+    - Correlation : [0.38493459 0.36583418 0.39196168 0.38225827]
+Elapsed time from start: 14m 23s
+////////////////////////////////////////////
+Iteration 21/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 36
+Results:
+    - MAE : [1.44560472 2.81217924 1.19148915 1.09319965]
+    - Correlation : [0.38214246 0.39091591 0.38334953 0.38907834]
+Elapsed time from start: 15m 8s
+////////////////////////////////////////////
+Iteration 22/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.05
+    - min_sample_split: 40
+Results:
+    - MAE : [1.43565839 2.8074606  1.19381509 1.10612033]
+    - Correlation : [0.38015437 0.38777888 0.38431491 0.37675183]
+Elapsed time from start: 15m 53s
+////////////////////////////////////////////
+Iteration 23/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 1
+Results:
+    - MAE : [1.44913505 2.81275412 1.18759003 1.11503503]
+    - Correlation : [0.36755898 0.39186392 0.39405509 0.36346461]
+Elapsed time from start: 16m 40s
+////////////////////////////////////////////
+Iteration 24/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 4
+Results:
+    - MAE : [1.45908102 2.82610051 1.1897196  1.09640136]
+    - Correlation : [0.37824358 0.375085   0.38820207 0.38854234]
+Elapsed time from start: 17m 26s
+////////////////////////////////////////////
+Iteration 25/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 8
+Results:
+    - MAE : [1.4564718  2.83965485 1.19225479 1.10642943]
+    - Correlation : [0.37411533 0.37262804 0.38869192 0.35966039]
+Elapsed time from start: 18m 11s
+////////////////////////////////////////////
+Iteration 26/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 12
+Results:
+    - MAE : [1.44973696 2.78529343 1.18713104 1.1027454 ]
+    - Correlation : [0.37721138 0.40494976 0.43103097 0.40188599]
+Elapsed time from start: 18m 56s
+////////////////////////////////////////////
+Iteration 27/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 16
+Results:
+    - MAE : [1.45070516 2.79426498 1.18923482 1.10537177]
+    - Correlation : [0.3696939  0.3982654  0.39029935 0.40284546]
+Elapsed time from start: 19m 40s
+////////////////////////////////////////////
+Iteration 28/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 20
+Results:
+    - MAE : [1.44287399 2.81588703 1.19329198 1.11340151]
+    - Correlation : [0.36883661 0.37395207 0.40330342 0.38828215]
+Elapsed time from start: 20m 24s
+////////////////////////////////////////////
+Iteration 29/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 24
+Results:
+    - MAE : [1.45012415 2.82515256 1.18927425 1.09471055]
+    - Correlation : [0.39571571 0.39523226 0.41931037 0.40814651]
+Elapsed time from start: 21m 7s
+////////////////////////////////////////////
+Iteration 30/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 28
+Results:
+    - MAE : [1.45069129 2.80123324 1.19328366 1.08701075]
+    - Correlation : [0.38197736 0.39138109 0.41385399 0.39821523]
+Elapsed time from start: 21m 51s
+////////////////////////////////////////////
+Iteration 31/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 32
+Results:
+    - MAE : [1.45467146 2.80223751 1.20002198 1.10529367]
+    - Correlation : [0.36256225 0.38852579 0.38952435 0.39196776]
+Elapsed time from start: 22m 33s
+////////////////////////////////////////////
+Iteration 32/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 36
+Results:
+    - MAE : [1.45280656 2.77446262 1.18697592 1.09896213]
+    - Correlation : [0.36758529 0.41129598 0.40869948 0.39165509]
+Elapsed time from start: 23m 16s
+////////////////////////////////////////////
+Iteration 33/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.1
+    - min_sample_split: 40
+Results:
+    - MAE : [1.44935636 2.82656544 1.19514133 1.10718202]
+    - Correlation : [0.37144205 0.38432715 0.38660089 0.37894567]
+Elapsed time from start: 23m 59s
+////////////////////////////////////////////
+Iteration 34/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 1
+Results:
+    - MAE : [1.4625328  2.84209739 1.19999421 1.10985755]
+    - Correlation : [0.36406586 0.36674369 0.39171334 0.38021727]
+Elapsed time from start: 24m 44s
+////////////////////////////////////////////
+Iteration 35/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 4
+Results:
+    - MAE : [1.46516565 2.85423942 1.20047089 1.14599231]
+    - Correlation : [0.35330235 0.35297972 0.37720077 0.33366002]
+Elapsed time from start: 25m 29s
+////////////////////////////////////////////
+Iteration 36/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 8
+Results:
+    - MAE : [1.46393102 2.84707815 1.20149405 1.12162977]
+    - Correlation : [0.3689667  0.36050162 0.38518882 0.36678371]
+Elapsed time from start: 26m 13s
+////////////////////////////////////////////
+Iteration 37/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 12
+Results:
+    - MAE : [1.47851679 2.79882805 1.2014384  1.1270582 ]
+    - Correlation : [0.34222529 0.39094678 0.40868658 0.37221924]
+Elapsed time from start: 26m 57s
+////////////////////////////////////////////
+Iteration 38/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 16
+Results:
+    - MAE : [1.47929736 2.83430055 1.2038295  1.09364946]
+    - Correlation : [0.35499713 0.36757208 0.38875932 0.41787759]
+Elapsed time from start: 27m 40s
+////////////////////////////////////////////
+Iteration 39/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 20
+Results:
+    - MAE : [1.4608384  2.83586496 1.22358456 1.12872724]
+    - Correlation : [0.38146622 0.3660738  0.35739858 0.36562047]
+Elapsed time from start: 28m 22s
+////////////////////////////////////////////
+Iteration 40/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 24
+Results:
+    - MAE : [1.46961763 2.8702458  1.21152487 1.12162773]
+    - Correlation : [0.34584428 0.34559264 0.39367621 0.38530804]
+Elapsed time from start: 29m 5s
+////////////////////////////////////////////
+Iteration 41/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 28
+Results:
+    - MAE : [1.48894968 2.84801896 1.19692483 1.12168786]
+    - Correlation : [0.34435105 0.35219427 0.40633972 0.37555412]
+Elapsed time from start: 29m 46s
+////////////////////////////////////////////
+Iteration 42/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 32
+Results:
+    - MAE : [1.46532746 2.85284047 1.21982097 1.11082687]
+    - Correlation : [0.37012769 0.36639427 0.38472232 0.36640414]
+Elapsed time from start: 30m 28s
+////////////////////////////////////////////
+Iteration 43/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 36
+Results:
+    - MAE : [1.47098034 2.8847     1.19303753 1.12576404]
+    - Correlation : [0.35728948 0.36101097 0.38862841 0.35418671]
+Elapsed time from start: 31m 9s
+////////////////////////////////////////////
+Iteration 44/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.15
+    - min_sample_split: 40
+Results:
+    - MAE : [1.45449576 2.8347013  1.19286221 1.10266088]
+    - Correlation : [0.38406574 0.37300478 0.40909183 0.37195675]
+Elapsed time from start: 31m 50s
+////////////////////////////////////////////
+Iteration 45/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 1
+Results:
+    - MAE : [1.51770684 2.87269402 1.22023491 1.13541081]
+    - Correlation : [0.32288577 0.36389107 0.35412563 0.33435279]
+Elapsed time from start: 32m 35s
+////////////////////////////////////////////
+Iteration 46/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 4
+Results:
+    - MAE : [1.51207834 2.93403924 1.22611573 1.13083156]
+    - Correlation : [0.33153019 0.32112935 0.36496022 0.39638411]
+Elapsed time from start: 33m 19s
+////////////////////////////////////////////
+Iteration 47/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 8
+Results:
+    - MAE : [1.5017376  2.89782209 1.2244869  1.1260974 ]
+    - Correlation : [0.32707616 0.3603776  0.36311112 0.37950946]
+Elapsed time from start: 34m 3s
+////////////////////////////////////////////
+Iteration 48/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 12
+Results:
+    - MAE : [1.47210626 2.86730422 1.21396561 1.1326538 ]
+    - Correlation : [0.37498354 0.37096466 0.40568904 0.37476145]
+Elapsed time from start: 34m 45s
+////////////////////////////////////////////
+Iteration 49/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 16
+Results:
+    - MAE : [1.53299417 2.92444407 1.20565531 1.13337616]
+    - Correlation : [0.30897078 0.32404642 0.3961825  0.36121717]
+Elapsed time from start: 35m 28s
+////////////////////////////////////////////
+Iteration 50/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 20
+Results:
+    - MAE : [1.50287371 2.86095236 1.2258478  1.15364643]
+    - Correlation : [0.34097785 0.35243019 0.37718139 0.34929485]
+Elapsed time from start: 36m 10s
+////////////////////////////////////////////
+Iteration 51/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 24
+Results:
+    - MAE : [1.47711558 2.86200062 1.22252295 1.12233122]
+    - Correlation : [0.35123008 0.35903252 0.38815066 0.38621488]
+Elapsed time from start: 36m 51s
+////////////////////////////////////////////
+Iteration 52/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 28
+Results:
+    - MAE : [1.51903455 2.95527831 1.22685973 1.15039642]
+    - Correlation : [0.33806092 0.30436282 0.39090209 0.34942971]
+Elapsed time from start: 37m 32s
+////////////////////////////////////////////
+Iteration 53/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 32
+Results:
+    - MAE : [1.50645505 2.87569829 1.22620393 1.13068063]
+    - Correlation : [0.34222182 0.36952124 0.38504784 0.37785048]
+Elapsed time from start: 38m 13s
+////////////////////////////////////////////
+Iteration 54/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 36
+Results:
+    - MAE : [1.50394707 2.8791548  1.23523234 1.13447502]
+    - Correlation : [0.33346391 0.34688648 0.37649553 0.35428975]
+Elapsed time from start: 38m 53s
+////////////////////////////////////////////
+Iteration 55/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.2
+    - min_sample_split: 40
+Results:
+    - MAE : [1.51311332 2.87362708 1.24139902 1.13898233]
+    - Correlation : [0.33974898 0.36113056 0.34586756 0.36247075]
+Elapsed time from start: 39m 34s
+////////////////////////////////////////////
+Iteration 56/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 1
+Results:
+    - MAE : [1.52869825 2.93106307 1.24360244 1.15656666]
+    - Correlation : [0.32595209 0.35015844 0.3500975  0.33767457]
+Elapsed time from start: 40m 18s
+////////////////////////////////////////////
+Iteration 57/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 4
+Results:
+    - MAE : [1.54543617 3.02855443 1.22452359 1.14911094]
+    - Correlation : [0.30538428 0.272441   0.3535933  0.35309135]
+Elapsed time from start: 41m 1s
+////////////////////////////////////////////
+Iteration 58/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 8
+Results:
+    - MAE : [1.51911679 2.92363387 1.24888777 1.15193011]
+    - Correlation : [0.31494665 0.32765278 0.34714132 0.33557691]
+Elapsed time from start: 41m 44s
+////////////////////////////////////////////
+Iteration 59/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 12
+Results:
+    - MAE : [1.58081398 2.93126318 1.24041308 1.15765849]
+    - Correlation : [0.28601485 0.31999966 0.3736637  0.36150703]
+Elapsed time from start: 42m 26s
+////////////////////////////////////////////
+Iteration 60/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 16
+Results:
+    - MAE : [1.52144413 2.92441314 1.27153116 1.15011717]
+    - Correlation : [0.32867008 0.33905001 0.33154784 0.37694275]
+Elapsed time from start: 43m 8s
+////////////////////////////////////////////
+Iteration 61/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 20
+Results:
+    - MAE : [1.52936659 2.91480952 1.25679393 1.18857194]
+    - Correlation : [0.33323794 0.34522088 0.35435175 0.32110143]
+Elapsed time from start: 43m 49s
+////////////////////////////////////////////
+Iteration 62/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 24
+Results:
+    - MAE : [1.52897139 2.93178675 1.21685278 1.15686102]
+    - Correlation : [0.33525669 0.3244529  0.40534095 0.35103718]
+Elapsed time from start: 44m 30s
+////////////////////////////////////////////
+Iteration 63/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 28
+Results:
+    - MAE : [1.46443572 2.9415353  1.23950758 1.14825185]
+    - Correlation : [0.3742645  0.320449   0.39419234 0.38685106]
+Elapsed time from start: 45m 10s
+////////////////////////////////////////////
+Iteration 64/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 32
+Results:
+    - MAE : [1.51910713 2.90863644 1.26831211 1.13496425]
+    - Correlation : [0.32968559 0.34995078 0.35138441 0.38722335]
+Elapsed time from start: 45m 50s
+////////////////////////////////////////////
+Iteration 65/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 36
+Results:
+    - MAE : [1.52365756 2.97483102 1.23901702 1.15025552]
+    - Correlation : [0.33478243 0.30386586 0.38405338 0.36691638]
+Elapsed time from start: 46m 30s
+////////////////////////////////////////////
+Iteration 66/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.25
+    - min_sample_split: 40
+Results:
+    - MAE : [1.53999439 2.88038028 1.23750773 1.16588008]
+    - Correlation : [0.30141806 0.34214832 0.38185895 0.32886632]
+Elapsed time from start: 47m 9s
+////////////////////////////////////////////
+Iteration 67/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 1
+Results:
+    - MAE : [1.59886029 3.01087919 1.32659662 1.21822382]
+    - Correlation : [0.29051928 0.32889804 0.29977328 0.28023457]
+Elapsed time from start: 47m 53s
+////////////////////////////////////////////
+Iteration 68/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 4
+Results:
+    - MAE : [1.57948529 3.02792208 1.2707734  1.20203239]
+    - Correlation : [0.2728856  0.30421831 0.34002382 0.36858444]
+Elapsed time from start: 48m 36s
+////////////////////////////////////////////
+Iteration 69/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 8
+Results:
+    - MAE : [1.62751507 2.98682585 1.2868384  1.19882948]
+    - Correlation : [0.26640376 0.30938505 0.35823104 0.33588788]
+Elapsed time from start: 49m 17s
+////////////////////////////////////////////
+Iteration 70/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 12
+Results:
+    - MAE : [1.56543615 3.01236557 1.30992551 1.20452573]
+    - Correlation : [0.29089242 0.32076203 0.33462418 0.30763768]
+Elapsed time from start: 49m 59s
+////////////////////////////////////////////
+Iteration 71/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 16
+Results:
+    - MAE : [1.55305371 3.06117916 1.25794314 1.21217505]
+    - Correlation : [0.30614384 0.2854723  0.38202858 0.31741432]
+Elapsed time from start: 50m 40s
+////////////////////////////////////////////
+Iteration 72/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 20
+Results:
+    - MAE : [1.56343837 3.03919281 1.29992096 1.21643329]
+    - Correlation : [0.31649243 0.28965712 0.35631607 0.30901777]
+Elapsed time from start: 51m 20s
+////////////////////////////////////////////
+Iteration 73/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 24
+Results:
+    - MAE : [1.56948293 3.05934662 1.27691236 1.18506275]
+    - Correlation : [0.32677657 0.28953999 0.33767373 0.30532744]
+Elapsed time from start: 52m 0s
+////////////////////////////////////////////
+Iteration 74/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 28
+Results:
+    - MAE : [1.56466425 3.04228389 1.28337035 1.17845079]
+    - Correlation : [0.3113196  0.32143916 0.36733486 0.34844571]
+Elapsed time from start: 52m 39s
+////////////////////////////////////////////
+Iteration 75/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 32
+Results:
+    - MAE : [1.54961226 3.0213108  1.2600859  1.19615336]
+    - Correlation : [0.33777145 0.31884615 0.3605584  0.3246076 ]
+Elapsed time from start: 53m 18s
+////////////////////////////////////////////
+Iteration 76/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 36
+Results:
+    - MAE : [1.57473    3.07980674 1.27146207 1.19102679]
+    - Correlation : [0.30510068 0.27247971 0.37740271 0.33101125]
+Elapsed time from start: 53m 57s
+////////////////////////////////////////////
+Iteration 77/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.35
+    - min_sample_split: 40
+Results:
+    - MAE : [1.553962   3.04364525 1.26161372 1.18164138]
+    - Correlation : [0.31363241 0.29963691 0.37846305 0.34031466]
+Elapsed time from start: 54m 36s
+////////////////////////////////////////////
+Iteration 78/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 1
+Results:
+    - MAE : [1.59523002 3.15672831 1.28564712 1.23021667]
+    - Correlation : [0.2656202  0.26860436 0.32737482 0.24261683]
+Elapsed time from start: 55m 19s
+////////////////////////////////////////////
+Iteration 79/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 4
+Results:
+    - MAE : [1.59428877 3.08018974 1.30821721 1.20422943]
+    - Correlation : [0.30582599 0.28924602 0.30455647 0.30588978]
+Elapsed time from start: 56m 1s
+////////////////////////////////////////////
+Iteration 80/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 8
+Results:
+    - MAE : [1.62007064 3.11763397 1.3218987  1.22075178]
+    - Correlation : [0.29801553 0.27613754 0.33537158 0.33365492]
+Elapsed time from start: 56m 43s
+////////////////////////////////////////////
+Iteration 81/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 12
+Results:
+    - MAE : [1.60421403 3.05313206 1.33099025 1.24500032]
+    - Correlation : [0.28449376 0.30757967 0.31750583 0.31264879]
+Elapsed time from start: 57m 24s
+////////////////////////////////////////////
+Iteration 82/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 16
+Results:
+    - MAE : [1.601967   3.11903763 1.30810104 1.23314186]
+    - Correlation : [0.2806585  0.27398043 0.33812388 0.33245531]
+Elapsed time from start: 58m 4s
+////////////////////////////////////////////
+Iteration 83/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 20
+Results:
+    - MAE : [1.62053881 3.11565075 1.28375911 1.21643987]
+    - Correlation : [0.27879422 0.28694687 0.36431258 0.33011103]
+Elapsed time from start: 58m 44s
+////////////////////////////////////////////
+Iteration 84/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 24
+Results:
+    - MAE : [1.60829708 3.14369191 1.29757656 1.21529079]
+    - Correlation : [0.29389906 0.25191333 0.34562707 0.33204941]
+Elapsed time from start: 59m 24s
+////////////////////////////////////////////
+Iteration 85/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 28
+Results:
+    - MAE : [1.63030456 3.15757597 1.31267342 1.18532321]
+    - Correlation : [0.25629965 0.28148599 0.3510196  0.33756218]
+Elapsed time from start: 60m 3s
+////////////////////////////////////////////
+Iteration 86/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 32
+Results:
+    - MAE : [1.65752793 3.14590432 1.30212732 1.22690765]
+    - Correlation : [0.26648325 0.26106533 0.35548387 0.32514789]
+Elapsed time from start: 60m 42s
+////////////////////////////////////////////
+Iteration 87/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 36
+Results:
+    - MAE : [1.6184176  3.05108373 1.32362795 1.2389782 ]
+    - Correlation : [0.29353809 0.30432077 0.31391526 0.33216133]
+Elapsed time from start: 61m 21s
+////////////////////////////////////////////
+Iteration 88/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.4
+    - min_sample_split: 40
+Results:
+    - MAE : [1.5957304  3.0495985  1.30636358 1.21492196]
+    - Correlation : [0.27355858 0.30223501 0.32887294 0.322606  ]
+Elapsed time from start: 61m 59s
+////////////////////////////////////////////
+Iteration 89/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 1
+Results:
+    - MAE : [1.6284011  3.1322345  1.30883994 1.23536486]
+    - Correlation : [0.29831537 0.27093281 0.29796695 0.32483109]
+Elapsed time from start: 62m 42s
+////////////////////////////////////////////
+Iteration 90/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 4
+Results:
+    - MAE : [1.65197319 3.28396939 1.31584498 1.25579505]
+    - Correlation : [0.25304921 0.23772204 0.29387047 0.3074556 ]
+Elapsed time from start: 63m 24s
+////////////////////////////////////////////
+Iteration 91/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 8
+Results:
+    - MAE : [1.69076503 3.22683739 1.34658306 1.25499285]
+    - Correlation : [0.20842265 0.24449646 0.28439971 0.28812723]
+Elapsed time from start: 64m 5s
+////////////////////////////////////////////
+Iteration 92/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 12
+Results:
+    - MAE : [1.62526086 3.14823271 1.34047747 1.24527783]
+    - Correlation : [0.26933351 0.27501606 0.33297923 0.28163684]
+Elapsed time from start: 64m 46s
+////////////////////////////////////////////
+Iteration 93/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 16
+Results:
+    - MAE : [1.64657834 3.19764825 1.35000911 1.24788966]
+    - Correlation : [0.25873112 0.24811633 0.33340269 0.30261917]
+Elapsed time from start: 65m 26s
+////////////////////////////////////////////
+Iteration 94/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 20
+Results:
+    - MAE : [1.65055648 3.12618264 1.31245482 1.23100304]
+    - Correlation : [0.27326047 0.29272031 0.34139941 0.32803822]
+Elapsed time from start: 66m 5s
+////////////////////////////////////////////
+Iteration 95/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 24
+Results:
+    - MAE : [1.66535816 3.1341658  1.37918304 1.24943911]
+    - Correlation : [0.2594249  0.29053165 0.28062827 0.29072098]
+Elapsed time from start: 66m 45s
+////////////////////////////////////////////
+Iteration 96/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 28
+Results:
+    - MAE : [1.64251276 3.16863895 1.35501617 1.25330915]
+    - Correlation : [0.29375582 0.27704606 0.30181319 0.28046156]
+Elapsed time from start: 67m 24s
+////////////////////////////////////////////
+Iteration 97/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 32
+Results:
+    - MAE : [1.64340537 3.15788811 1.33944081 1.23333489]
+    - Correlation : [0.27730842 0.27913566 0.31601202 0.33336248]
+Elapsed time from start: 68m 2s
+////////////////////////////////////////////
+Iteration 98/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 36
+Results:
+    - MAE : [1.62132461 3.03254681 1.31333875 1.206707  ]
+    - Correlation : [0.29432266 0.30580758 0.35655244 0.32269305]
+Elapsed time from start: 68m 41s
+////////////////////////////////////////////
+Iteration 99/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.45
+    - min_sample_split: 40
+Results:
+    - MAE : [1.64810528 3.09188861 1.28082264 1.27116977]
+    - Correlation : [0.27847147 0.29570631 0.40426239 0.31389443]
+Elapsed time from start: 69m 19s
+////////////////////////////////////////////
+Iteration 100/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 1
+Results:
+    - MAE : [1.7273731  3.17250344 1.36239295 1.25609444]
+    - Correlation : [0.2194751  0.25173475 0.30790685 0.28561655]
+Elapsed time from start: 70m 2s
+////////////////////////////////////////////
+Iteration 101/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 4
+Results:
+    - MAE : [1.60735056 3.14244999 1.36422858 1.26487418]
+    - Correlation : [0.30487245 0.27575903 0.31998123 0.27585691]
+Elapsed time from start: 70m 44s
+////////////////////////////////////////////
+Iteration 102/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 8
+Results:
+    - MAE : [1.7037802  3.23595262 1.31728706 1.31118138]
+    - Correlation : [0.2396724  0.23640194 0.36036794 0.24354258]
+Elapsed time from start: 71m 25s
+////////////////////////////////////////////
+Iteration 103/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 12
+Results:
+    - MAE : [1.72037034 3.18634775 1.3255906  1.29418982]
+    - Correlation : [0.22703701 0.28758645 0.36364741 0.25266879]
+Elapsed time from start: 72m 5s
+////////////////////////////////////////////
+Iteration 104/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 16
+Results:
+    - MAE : [1.65317421 3.19518761 1.35641987 1.25537607]
+    - Correlation : [0.26254764 0.25448701 0.32376169 0.3160482 ]
+Elapsed time from start: 72m 44s
+////////////////////////////////////////////
+Iteration 105/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 20
+Results:
+    - MAE : [1.71588749 3.18811747 1.36786526 1.24074766]
+    - Correlation : [0.22172846 0.27324286 0.29861816 0.30407021]
+Elapsed time from start: 73m 24s
+////////////////////////////////////////////
+Iteration 106/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 24
+Results:
+    - MAE : [1.68659969 3.18054531 1.38902457 1.25109064]
+    - Correlation : [0.25325128 0.28754636 0.30727228 0.32759266]
+Elapsed time from start: 74m 3s
+////////////////////////////////////////////
+Iteration 107/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 28
+Results:
+    - MAE : [1.70698943 3.22650995 1.35804138 1.31316418]
+    - Correlation : [0.26887643 0.2500208  0.34374796 0.28926464]
+Elapsed time from start: 74m 41s
+////////////////////////////////////////////
+Iteration 108/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 32
+Results:
+    - MAE : [1.68423778 3.19311763 1.33213674 1.28450346]
+    - Correlation : [0.26462095 0.25304051 0.32845272 0.28203932]
+Elapsed time from start: 75m 20s
+////////////////////////////////////////////
+Iteration 109/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 36
+Results:
+    - MAE : [1.67569948 3.17812671 1.37024579 1.2590029 ]
+    - Correlation : [0.25278389 0.26156037 0.30699417 0.28441531]
+Elapsed time from start: 75m 58s
+////////////////////////////////////////////
+Iteration 110/220 finished
+Hyper parameters tested:
+    - sub_sampling: 1
+    - learning_rate: 0.5
+    - min_sample_split: 40
+Results:
+    - MAE : [1.66712517 3.16996646 1.36865936 1.28493306]
+    - Correlation : [0.26684428 0.29024317 0.29913438 0.28886476]
+Elapsed time from start: 76m 37s
+////////////////////////////////////////////
+Iteration 111/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 1
+Results:
+    - MAE : [1.68632686 3.20095927 1.37519191 1.27143019]
+    - Correlation : [0.26391582 0.29017281 0.25574759 0.29959547]
+Elapsed time from start: 77m 21s
+////////////////////////////////////////////
+Iteration 112/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 4
+Results:
+    - MAE : [1.69051432 3.2274475  1.35703285 1.27152034]
+    - Correlation : [0.24723654 0.27826498 0.28457618 0.30594616]
+Elapsed time from start: 78m 3s
+////////////////////////////////////////////
+Iteration 113/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 8
+Results:
+    - MAE : [1.70436633 3.20326649 1.34672269 1.26943028]
+    - Correlation : [0.25379694 0.28725197 0.28411047 0.30341609]
+Elapsed time from start: 78m 44s
+////////////////////////////////////////////
+Iteration 114/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 12
+Results:
+    - MAE : [1.67392068 3.26946993 1.36485235 1.26618043]
+    - Correlation : [0.23945652 0.26703935 0.30238989 0.32740693]
+Elapsed time from start: 79m 25s
+////////////////////////////////////////////
+Iteration 115/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 16
+Results:
+    - MAE : [1.68757018 3.25357946 1.35718684 1.29399347]
+    - Correlation : [0.26080124 0.26769333 0.29371101 0.23981614]
+Elapsed time from start: 80m 4s
+////////////////////////////////////////////
+Iteration 116/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 20
+Results:
+    - MAE : [1.67831715 3.19728933 1.38311187 1.26733616]
+    - Correlation : [0.27409766 0.27969696 0.30907218 0.2948605 ]
+Elapsed time from start: 80m 43s
+////////////////////////////////////////////
+Iteration 117/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 24
+Results:
+    - MAE : [1.66475633 3.28627527 1.3418565  1.25900032]
+    - Correlation : [0.28971378 0.23732577 0.2843762  0.26486988]
+Elapsed time from start: 81m 22s
+////////////////////////////////////////////
+Iteration 118/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 28
+Results:
+    - MAE : [1.65955095 3.24718121 1.39939312 1.24121922]
+    - Correlation : [0.28477491 0.26649839 0.28801335 0.3310688 ]
+Elapsed time from start: 82m 0s
+////////////////////////////////////////////
+Iteration 119/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 32
+Results:
+    - MAE : [1.67131874 3.22454115 1.3147071  1.30576412]
+    - Correlation : [0.28452079 0.27960859 0.33497642 0.23437473]
+Elapsed time from start: 82m 38s
+////////////////////////////////////////////
+Iteration 120/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 36
+Results:
+    - MAE : [1.71161522 3.31041286 1.37850081 1.28913428]
+    - Correlation : [0.2405585  0.25097998 0.26708262 0.25204245]
+Elapsed time from start: 83m 15s
+////////////////////////////////////////////
+Iteration 121/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.3
+    - min_sample_split: 40
+Results:
+    - MAE : [1.60758073 3.18699443 1.33592808 1.26159486]
+    - Correlation : [0.3457291  0.30127495 0.33492289 0.32319118]
+Elapsed time from start: 83m 53s
+////////////////////////////////////////////
+Iteration 122/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 1
+Results:
+    - MAE : [1.44682622 2.82010718 1.2046662  1.10445654]
+    - Correlation : [0.36897383 0.3715234  0.36550448 0.37685117]
+Elapsed time from start: 84m 37s
+////////////////////////////////////////////
+Iteration 123/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 4
+Results:
+    - MAE : [1.44816261 2.81111373 1.20704265 1.10351707]
+    - Correlation : [0.3732034  0.38034293 0.35477895 0.3563846 ]
+Elapsed time from start: 85m 21s
+////////////////////////////////////////////
+Iteration 124/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 8
+Results:
+    - MAE : [1.45738361 2.84879309 1.20510581 1.10592863]
+    - Correlation : [0.36129537 0.36095483 0.36134398 0.37891764]
+Elapsed time from start: 86m 4s
+////////////////////////////////////////////
+Iteration 125/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 12
+Results:
+    - MAE : [1.45651939 2.83121546 1.201263   1.1052176 ]
+    - Correlation : [0.34974485 0.36438327 0.37371681 0.36339828]
+Elapsed time from start: 86m 48s
+////////////////////////////////////////////
+Iteration 126/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 16
+Results:
+    - MAE : [1.44224147 2.82869422 1.19542637 1.10185548]
+    - Correlation : [0.38290715 0.36636817 0.37500387 0.38059282]
+Elapsed time from start: 87m 31s
+////////////////////////////////////////////
+Iteration 127/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 20
+Results:
+    - MAE : [1.45623281 2.79696366 1.20500724 1.10255986]
+    - Correlation : [0.37136249 0.38026882 0.35665121 0.3644809 ]
+Elapsed time from start: 88m 14s
+////////////////////////////////////////////
+Iteration 128/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 24
+Results:
+    - MAE : [1.44890691 2.79868023 1.19434248 1.104774  ]
+    - Correlation : [0.36999484 0.37621003 0.38994618 0.38916096]
+Elapsed time from start: 88m 57s
+////////////////////////////////////////////
+Iteration 129/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 28
+Results:
+    - MAE : [1.4480685  2.8309698  1.20007939 1.09876138]
+    - Correlation : [0.37220781 0.37267968 0.37483157 0.37125454]
+Elapsed time from start: 89m 39s
+////////////////////////////////////////////
+Iteration 130/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 32
+Results:
+    - MAE : [1.45057193 2.82266008 1.19743513 1.092364  ]
+    - Correlation : [0.37281662 0.36640226 0.38200236 0.38449879]
+Elapsed time from start: 90m 21s
+////////////////////////////////////////////
+Iteration 131/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 36
+Results:
+    - MAE : [1.45033183 2.81997226 1.19654361 1.1025196 ]
+    - Correlation : [0.36223571 0.37543313 0.37515407 0.3709026 ]
+Elapsed time from start: 91m 3s
+////////////////////////////////////////////
+Iteration 132/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.05
+    - min_sample_split: 40
+Results:
+    - MAE : [1.45263256 2.82369518 1.20211662 1.10269562]
+    - Correlation : [0.36562338 0.36868953 0.36207734 0.37047368]
+Elapsed time from start: 91m 45s
+////////////////////////////////////////////
+Iteration 133/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 1
+Results:
+    - MAE : [1.48270316 2.84224591 1.21128159 1.1230586 ]
+    - Correlation : [0.33997384 0.37254907 0.36308909 0.36449838]
+Elapsed time from start: 92m 30s
+////////////////////////////////////////////
+Iteration 134/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 4
+Results:
+    - MAE : [1.46440105 2.86416114 1.21949042 1.11779919]
+    - Correlation : [0.37086045 0.35169985 0.3388379  0.3558241 ]
+Elapsed time from start: 93m 13s
+////////////////////////////////////////////
+Iteration 135/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 8
+Results:
+    - MAE : [1.44727093 2.87482262 1.20847553 1.12816367]
+    - Correlation : [0.3701198  0.34278698 0.36984301 0.36445598]
+Elapsed time from start: 93m 55s
+////////////////////////////////////////////
+Iteration 136/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 12
+Results:
+    - MAE : [1.44833816 2.87590528 1.21007947 1.10945768]
+    - Correlation : [0.37575237 0.3578685  0.37719266 0.36730847]
+Elapsed time from start: 94m 37s
+////////////////////////////////////////////
+Iteration 137/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 16
+Results:
+    - MAE : [1.47540166 2.86953902 1.22419862 1.12114312]
+    - Correlation : [0.35053481 0.35260117 0.37479246 0.37395059]
+Elapsed time from start: 95m 19s
+////////////////////////////////////////////
+Iteration 138/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 20
+Results:
+    - MAE : [1.4832327  2.8523491  1.23276658 1.12780881]
+    - Correlation : [0.34156326 0.37462118 0.32892711 0.38755426]
+Elapsed time from start: 96m 0s
+////////////////////////////////////////////
+Iteration 139/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 24
+Results:
+    - MAE : [1.46598433 2.88310644 1.20702485 1.12327399]
+    - Correlation : [0.36427009 0.3525628  0.37151764 0.36239352]
+Elapsed time from start: 96m 40s
+////////////////////////////////////////////
+Iteration 140/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 28
+Results:
+    - MAE : [1.45050564 2.85248938 1.2251553  1.13166466]
+    - Correlation : [0.38799571 0.34973967 0.34530212 0.37591527]
+Elapsed time from start: 97m 21s
+////////////////////////////////////////////
+Iteration 141/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 32
+Results:
+    - MAE : [1.45364284 2.83413359 1.22162284 1.109463  ]
+    - Correlation : [0.37741578 0.37788316 0.3503502  0.38616044]
+Elapsed time from start: 98m 1s
+////////////////////////////////////////////
+Iteration 142/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 36
+Results:
+    - MAE : [1.45586302 2.85141236 1.21397212 1.12353475]
+    - Correlation : [0.387527   0.37616429 0.35847729 0.36478677]
+Elapsed time from start: 98m 41s
+////////////////////////////////////////////
+Iteration 143/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.1
+    - min_sample_split: 40
+Results:
+    - MAE : [1.45722641 2.88070134 1.20910347 1.11108245]
+    - Correlation : [0.36778375 0.34828049 0.37365171 0.37480722]
+Elapsed time from start: 99m 21s
+////////////////////////////////////////////
+Iteration 144/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 1
+Results:
+    - MAE : [1.51450935 2.95445399 1.24671914 1.16069278]
+    - Correlation : [0.32557602 0.33372108 0.32834826 0.3522578 ]
+Elapsed time from start: 100m 5s
+////////////////////////////////////////////
+Iteration 145/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 4
+Results:
+    - MAE : [1.52735172 2.91471387 1.23979408 1.14488902]
+    - Correlation : [0.30578291 0.35063497 0.35718209 0.34535285]
+Elapsed time from start: 100m 48s
+////////////////////////////////////////////
+Iteration 146/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 8
+Results:
+    - MAE : [1.47497787 2.93014499 1.2283834  1.14643218]
+    - Correlation : [0.36114583 0.34794673 0.37711131 0.34956555]
+Elapsed time from start: 101m 30s
+////////////////////////////////////////////
+Iteration 147/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 12
+Results:
+    - MAE : [1.52785319 2.93110168 1.24821921 1.14009563]
+    - Correlation : [0.31172845 0.36151983 0.35796886 0.37897318]
+Elapsed time from start: 102m 11s
+////////////////////////////////////////////
+Iteration 148/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 16
+Results:
+    - MAE : [1.50372841 2.98238899 1.22283646 1.16299179]
+    - Correlation : [0.33113595 0.30167304 0.38501793 0.35171917]
+Elapsed time from start: 102m 51s
+////////////////////////////////////////////
+Iteration 149/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 20
+Results:
+    - MAE : [1.52387584 2.94734037 1.25039504 1.14274236]
+    - Correlation : [0.3340461  0.34386376 0.33327495 0.35781688]
+Elapsed time from start: 103m 32s
+////////////////////////////////////////////
+Iteration 150/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 24
+Results:
+    - MAE : [1.47676881 2.94516467 1.2264131  1.15633262]
+    - Correlation : [0.35145859 0.35160556 0.37473818 0.35869981]
+Elapsed time from start: 104m 11s
+////////////////////////////////////////////
+Iteration 151/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 28
+Results:
+    - MAE : [1.52896412 2.90606809 1.23190548 1.14295381]
+    - Correlation : [0.31390667 0.35783283 0.35287415 0.34654499]
+Elapsed time from start: 104m 51s
+////////////////////////////////////////////
+Iteration 152/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 32
+Results:
+    - MAE : [1.51074437 2.91146281 1.23788861 1.1560217 ]
+    - Correlation : [0.3528967  0.36174782 0.37552938 0.34319313]
+Elapsed time from start: 105m 30s
+////////////////////////////////////////////
+Iteration 153/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 36
+Results:
+    - MAE : [1.48831836 2.9160305  1.22403303 1.14691774]
+    - Correlation : [0.36149667 0.35429159 0.37867687 0.31698223]
+Elapsed time from start: 106m 9s
+////////////////////////////////////////////
+Iteration 154/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.15
+    - min_sample_split: 40
+Results:
+    - MAE : [1.48378995 2.94224247 1.26231777 1.14058798]
+    - Correlation : [0.36010379 0.33180838 0.31416363 0.36032324]
+Elapsed time from start: 106m 48s
+////////////////////////////////////////////
+Iteration 155/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 1
+Results:
+    - MAE : [1.55013715 3.05768097 1.29778286 1.19688188]
+    - Correlation : [0.32670298 0.27922642 0.30525077 0.32645371]
+Elapsed time from start: 107m 32s
+////////////////////////////////////////////
+Iteration 156/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 4
+Results:
+    - MAE : [1.55122909 3.0028887  1.2687623  1.14858898]
+    - Correlation : [0.31536    0.32957421 0.31760667 0.36109208]
+Elapsed time from start: 108m 14s
+////////////////////////////////////////////
+Iteration 157/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 8
+Results:
+    - MAE : [1.53493377 3.00711237 1.28982276 1.1745405 ]
+    - Correlation : [0.31920642 0.31552955 0.3276759  0.34350464]
+Elapsed time from start: 108m 55s
+////////////////////////////////////////////
+Iteration 158/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 12
+Results:
+    - MAE : [1.5569413  3.03019944 1.30388051 1.20521891]
+    - Correlation : [0.31391951 0.31761703 0.31220045 0.30079031]
+Elapsed time from start: 109m 36s
+////////////////////////////////////////////
+Iteration 159/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 16
+Results:
+    - MAE : [1.58923466 2.98148186 1.26727161 1.16524057]
+    - Correlation : [0.31564838 0.33515806 0.33595082 0.33570992]
+Elapsed time from start: 110m 16s
+////////////////////////////////////////////
+Iteration 160/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 20
+Results:
+    - MAE : [1.57513256 3.01429312 1.29803906 1.19086343]
+    - Correlation : [0.30189226 0.32382535 0.31149871 0.32660377]
+Elapsed time from start: 110m 56s
+////////////////////////////////////////////
+Iteration 161/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 24
+Results:
+    - MAE : [1.55191301 3.07454025 1.29342205 1.16559884]
+    - Correlation : [0.30801821 0.29836682 0.3053492  0.35655323]
+Elapsed time from start: 111m 35s
+////////////////////////////////////////////
+Iteration 162/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 28
+Results:
+    - MAE : [1.51085073 3.10952128 1.275049   1.1728376 ]
+    - Correlation : [0.35877156 0.2529339  0.3196738  0.34268676]
+Elapsed time from start: 112m 13s
+////////////////////////////////////////////
+Iteration 163/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 32
+Results:
+    - MAE : [1.54043346 2.98636484 1.27423275 1.2041468 ]
+    - Correlation : [0.33428939 0.33451073 0.35104074 0.3017197 ]
+Elapsed time from start: 112m 52s
+////////////////////////////////////////////
+Iteration 164/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 36
+Results:
+    - MAE : [1.53875751 2.95433767 1.28632495 1.18057612]
+    - Correlation : [0.33569573 0.36766528 0.32195953 0.34218164]
+Elapsed time from start: 113m 30s
+////////////////////////////////////////////
+Iteration 165/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.2
+    - min_sample_split: 40
+Results:
+    - MAE : [1.53473561 2.9027176  1.2640993  1.14077445]
+    - Correlation : [0.35014028 0.35925122 0.3510995  0.38122966]
+Elapsed time from start: 114m 8s
+////////////////////////////////////////////
+Iteration 166/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 1
+Results:
+    - MAE : [1.61955611 3.15505651 1.32067972 1.25588121]
+    - Correlation : [0.27485168 0.28891379 0.29286252 0.28427188]
+Elapsed time from start: 114m 53s
+////////////////////////////////////////////
+Iteration 167/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 4
+Results:
+    - MAE : [1.63883412 3.11942268 1.2957397  1.21276526]
+    - Correlation : [0.2669549  0.28530253 0.32459819 0.3112475 ]
+Elapsed time from start: 115m 35s
+////////////////////////////////////////////
+Iteration 168/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 8
+Results:
+    - MAE : [1.57629528 3.12312455 1.32491393 1.20747325]
+    - Correlation : [0.32735529 0.3088148  0.31211618 0.32442779]
+Elapsed time from start: 116m 16s
+////////////////////////////////////////////
+Iteration 169/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 12
+Results:
+    - MAE : [1.6109133  3.17526597 1.31182309 1.21684572]
+    - Correlation : [0.28098469 0.2822777  0.29987492 0.3072804 ]
+Elapsed time from start: 116m 57s
+////////////////////////////////////////////
+Iteration 170/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 16
+Results:
+    - MAE : [1.62369565 3.12225124 1.33073493 1.21132075]
+    - Correlation : [0.28661233 0.31071069 0.31691817 0.3112584 ]
+Elapsed time from start: 117m 37s
+////////////////////////////////////////////
+Iteration 171/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 20
+Results:
+    - MAE : [1.63137521 3.10503839 1.33358112 1.23963   ]
+    - Correlation : [0.26584324 0.30986792 0.29915605 0.31654372]
+Elapsed time from start: 118m 16s
+////////////////////////////////////////////
+Iteration 172/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 24
+Results:
+    - MAE : [1.60676762 3.08432844 1.31369218 1.23185762]
+    - Correlation : [0.30736733 0.31557934 0.31868814 0.35441753]
+Elapsed time from start: 118m 54s
+////////////////////////////////////////////
+Iteration 173/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 28
+Results:
+    - MAE : [1.60540846 3.07311282 1.32200752 1.20058772]
+    - Correlation : [0.29640983 0.32017086 0.3195266  0.30807   ]
+Elapsed time from start: 119m 33s
+////////////////////////////////////////////
+Iteration 174/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 32
+Results:
+    - MAE : [1.58257081 3.15662671 1.32155877 1.20309255]
+    - Correlation : [0.3338398  0.2827136  0.31767842 0.33560721]
+Elapsed time from start: 120m 11s
+////////////////////////////////////////////
+Iteration 175/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 36
+Results:
+    - MAE : [1.57605806 3.16608561 1.29958562 1.20570947]
+    - Correlation : [0.33306016 0.27624049 0.34646589 0.32494549]
+Elapsed time from start: 120m 49s
+////////////////////////////////////////////
+Iteration 176/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.25
+    - min_sample_split: 40
+Results:
+    - MAE : [1.6046781  3.09039786 1.31155954 1.22706264]
+    - Correlation : [0.31040345 0.32257853 0.32751826 0.32817598]
+Elapsed time from start: 121m 27s
+////////////////////////////////////////////
+Iteration 177/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 1
+Results:
+    - MAE : [1.73362339 3.40625186 1.43348522 1.33573052]
+    - Correlation : [0.25783731 0.25217354 0.2759058  0.26444606]
+Elapsed time from start: 122m 11s
+////////////////////////////////////////////
+Iteration 178/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 4
+Results:
+    - MAE : [1.75002361 3.33715502 1.43730808 1.32013424]
+    - Correlation : [0.23914875 0.24800515 0.25063086 0.25534604]
+Elapsed time from start: 122m 52s
+////////////////////////////////////////////
+Iteration 179/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 8
+Results:
+    - MAE : [1.73374409 3.40160116 1.39244507 1.31996075]
+    - Correlation : [0.23702527 0.26514632 0.3018781  0.28859173]
+Elapsed time from start: 123m 34s
+////////////////////////////////////////////
+Iteration 180/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 12
+Results:
+    - MAE : [1.7940478  3.35009307 1.43353453 1.33130953]
+    - Correlation : [0.20465693 0.26553382 0.24746128 0.2697262 ]
+Elapsed time from start: 124m 14s
+////////////////////////////////////////////
+Iteration 181/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 16
+Results:
+    - MAE : [1.76124738 3.35452494 1.38738015 1.35138434]
+    - Correlation : [0.26119647 0.25665247 0.31296779 0.25878908]
+Elapsed time from start: 124m 54s
+////////////////////////////////////////////
+Iteration 182/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 20
+Results:
+    - MAE : [1.72323402 3.39140759 1.4512707  1.37122747]
+    - Correlation : [0.26776824 0.2493422  0.2761443  0.23707616]
+Elapsed time from start: 125m 33s
+////////////////////////////////////////////
+Iteration 183/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 24
+Results:
+    - MAE : [1.77282324 3.32693055 1.4346413  1.32730231]
+    - Correlation : [0.24750236 0.25429084 0.28684303 0.26649054]
+Elapsed time from start: 126m 11s
+////////////////////////////////////////////
+Iteration 184/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 28
+Results:
+    - MAE : [1.76967471 3.26229543 1.39743468 1.31406941]
+    - Correlation : [0.21695203 0.3021754  0.26431201 0.30783681]
+Elapsed time from start: 126m 49s
+////////////////////////////////////////////
+Iteration 185/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 32
+Results:
+    - MAE : [1.68060004 3.32173967 1.38939073 1.34943552]
+    - Correlation : [0.26399874 0.25170324 0.28840902 0.27487588]
+Elapsed time from start: 127m 27s
+////////////////////////////////////////////
+Iteration 186/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 36
+Results:
+    - MAE : [1.73345047 3.48014905 1.38498369 1.28665914]
+    - Correlation : [0.27377096 0.20781491 0.28305215 0.31840206]
+Elapsed time from start: 128m 5s
+////////////////////////////////////////////
+Iteration 187/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.35
+    - min_sample_split: 40
+Results:
+    - MAE : [1.66672799 3.3386497  1.46307612 1.29144399]
+    - Correlation : [0.28284575 0.3020013  0.24797047 0.29303574]
+Elapsed time from start: 128m 42s
+////////////////////////////////////////////
+Iteration 188/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 1
+Results:
+    - MAE : [1.81647086 3.37419356 1.52727086 1.37905089]
+    - Correlation : [0.2081481  0.29850108 0.23574474 0.25926057]
+Elapsed time from start: 129m 26s
+////////////////////////////////////////////
+Iteration 189/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 4
+Results:
+    - MAE : [1.78562685 3.47514986 1.44740521 1.4103084 ]
+    - Correlation : [0.21658252 0.20917696 0.24608399 0.23654095]
+Elapsed time from start: 130m 8s
+////////////////////////////////////////////
+Iteration 190/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 8
+Results:
+    - MAE : [1.80823794 3.50019666 1.45646079 1.42137104]
+    - Correlation : [0.24803949 0.22638043 0.2528077  0.237355  ]
+Elapsed time from start: 130m 50s
+////////////////////////////////////////////
+Iteration 191/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 12
+Results:
+    - MAE : [1.90017857 3.50954245 1.51965645 1.34842516]
+    - Correlation : [0.1855763  0.23243815 0.20581389 0.26997292]
+Elapsed time from start: 131m 30s
+////////////////////////////////////////////
+Iteration 192/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 16
+Results:
+    - MAE : [1.86480322 3.45714463 1.48760667 1.40943464]
+    - Correlation : [0.18299189 0.26034599 0.25887281 0.22905305]
+Elapsed time from start: 132m 9s
+////////////////////////////////////////////
+Iteration 193/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 20
+Results:
+    - MAE : [1.80740003 3.57498941 1.50221828 1.38421396]
+    - Correlation : [0.23245027 0.17223566 0.25375228 0.25858537]
+Elapsed time from start: 132m 48s
+////////////////////////////////////////////
+Iteration 194/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 24
+Results:
+    - MAE : [1.73479043 3.52802356 1.44854167 1.40205922]
+    - Correlation : [0.25503997 0.23190079 0.27382754 0.27138455]
+Elapsed time from start: 133m 26s
+////////////////////////////////////////////
+Iteration 195/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 28
+Results:
+    - MAE : [1.87560484 3.50271207 1.49416792 1.41630884]
+    - Correlation : [0.22511462 0.22281866 0.24506687 0.28165088]
+Elapsed time from start: 134m 4s
+////////////////////////////////////////////
+Iteration 196/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 32
+Results:
+    - MAE : [1.81683034 3.48578642 1.43834693 1.3184721 ]
+    - Correlation : [0.24689024 0.24828701 0.25798287 0.29976587]
+Elapsed time from start: 134m 42s
+////////////////////////////////////////////
+Iteration 197/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 36
+Results:
+    - MAE : [1.8009886  3.40038929 1.45719977 1.35522029]
+    - Correlation : [0.27392107 0.24622525 0.26281848 0.2706452 ]
+Elapsed time from start: 135m 20s
+////////////////////////////////////////////
+Iteration 198/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.4
+    - min_sample_split: 40
+Results:
+    - MAE : [1.83184877 3.49393316 1.48561195 1.3809063 ]
+    - Correlation : [0.2159693  0.24956883 0.26467894 0.24460465]
+Elapsed time from start: 135m 57s
+////////////////////////////////////////////
+Iteration 199/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 1
+Results:
+    - MAE : [1.92307597 3.6617164  1.56009283 1.46747965]
+    - Correlation : [0.21986174 0.22313553 0.20258714 0.25472828]
+Elapsed time from start: 136m 40s
+////////////////////////////////////////////
+Iteration 200/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 4
+Results:
+    - MAE : [1.91188264 3.69986955 1.49721321 1.49507061]
+    - Correlation : [0.20792193 0.22698708 0.2712928  0.21943312]
+Elapsed time from start: 137m 22s
+////////////////////////////////////////////
+Iteration 201/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 8
+Results:
+    - MAE : [1.86478843 3.73707596 1.57242845 1.41425591]
+    - Correlation : [0.22262648 0.2002926  0.20448519 0.30887408]
+Elapsed time from start: 138m 3s
+////////////////////////////////////////////
+Iteration 202/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 12
+Results:
+    - MAE : [1.98761298 3.66113178 1.56386701 1.47242811]
+    - Correlation : [0.16885992 0.24838128 0.19139832 0.24747827]
+Elapsed time from start: 138m 43s
+////////////////////////////////////////////
+Iteration 203/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 16
+Results:
+    - MAE : [1.97441419 3.57751246 1.55828643 1.45095262]
+    - Correlation : [0.19568546 0.2545911  0.24147917 0.23793358]
+Elapsed time from start: 139m 23s
+////////////////////////////////////////////
+Iteration 204/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 20
+Results:
+    - MAE : [1.96509823 3.66503807 1.51618789 1.40811071]
+    - Correlation : [0.19879386 0.22374013 0.21269849 0.23458282]
+Elapsed time from start: 140m 2s
+////////////////////////////////////////////
+Iteration 205/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 24
+Results:
+    - MAE : [1.92233844 3.57428632 1.54213534 1.42934479]
+    - Correlation : [0.21569386 0.23090796 0.22291946 0.26662921]
+Elapsed time from start: 140m 41s
+////////////////////////////////////////////
+Iteration 206/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 28
+Results:
+    - MAE : [1.92880866 3.63376518 1.54215292 1.43816629]
+    - Correlation : [0.19379265 0.2297791  0.23515415 0.25982404]
+Elapsed time from start: 141m 19s
+////////////////////////////////////////////
+Iteration 207/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 32
+Results:
+    - MAE : [1.85174954 3.55859145 1.57377217 1.43149171]
+    - Correlation : [0.24182975 0.23832995 0.21722124 0.25310642]
+Elapsed time from start: 141m 56s
+////////////////////////////////////////////
+Iteration 208/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 36
+Results:
+    - MAE : [1.91312618 3.57801177 1.48395552 1.44727741]
+    - Correlation : [0.2229272  0.24393746 0.27438231 0.23769207]
+Elapsed time from start: 142m 34s
+////////////////////////////////////////////
+Iteration 209/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.45
+    - min_sample_split: 40
+Results:
+    - MAE : [1.83388165 3.4928257  1.53269546 1.40751089]
+    - Correlation : [0.29954097 0.26054823 0.26690199 0.2616601 ]
+Elapsed time from start: 143m 11s
+////////////////////////////////////////////
+Iteration 210/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 1
+Results:
+    - MAE : [1.8976218  3.74131043 1.61662655 1.56312586]
+    - Correlation : [0.21596969 0.20914514 0.20906448 0.1750687 ]
+Elapsed time from start: 143m 55s
+////////////////////////////////////////////
+Iteration 211/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 4
+Results:
+    - MAE : [1.98420177 3.787101   1.58946646 1.50314733]
+    - Correlation : [0.18178815 0.22398273 0.26415177 0.25118855]
+Elapsed time from start: 144m 37s
+////////////////////////////////////////////
+Iteration 212/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 8
+Results:
+    - MAE : [1.94974974 3.87481083 1.5920773  1.47648292]
+    - Correlation : [0.19170462 0.19461045 0.25971059 0.26362567]
+Elapsed time from start: 145m 18s
+////////////////////////////////////////////
+Iteration 213/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 12
+Results:
+    - MAE : [1.96954964 3.79212788 1.62648884 1.46256603]
+    - Correlation : [0.21720519 0.20157606 0.19453755 0.27931545]
+Elapsed time from start: 145m 58s
+////////////////////////////////////////////
+Iteration 214/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 16
+Results:
+    - MAE : [2.05637231 3.80523585 1.59547711 1.53711094]
+    - Correlation : [0.18976114 0.20216737 0.27416706 0.19930173]
+Elapsed time from start: 146m 38s
+////////////////////////////////////////////
+Iteration 215/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 20
+Results:
+    - MAE : [1.96059162 3.74156493 1.66101403 1.52460537]
+    - Correlation : [0.24071862 0.24514193 0.21667214 0.25240682]
+Elapsed time from start: 147m 18s
+////////////////////////////////////////////
+Iteration 216/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 24
+Results:
+    - MAE : [2.085987   3.84424366 1.63772974 1.50118567]
+    - Correlation : [0.17480882 0.18320686 0.23105688 0.25575213]
+Elapsed time from start: 147m 56s
+////////////////////////////////////////////
+Iteration 217/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 28
+Results:
+    - MAE : [1.90349053 3.76674969 1.62663381 1.46225476]
+    - Correlation : [0.26337017 0.21688682 0.19413372 0.24744794]
+Elapsed time from start: 148m 35s
+////////////////////////////////////////////
+Iteration 218/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 32
+Results:
+    - MAE : [1.96953092 3.83297802 1.60653584 1.49416664]
+    - Correlation : [0.22767708 0.22241536 0.24812328 0.23967931]
+Elapsed time from start: 149m 12s
+////////////////////////////////////////////
+Iteration 219/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 36
+Results:
+    - MAE : [1.98782091 3.90189872 1.62134474 1.45466023]
+    - Correlation : [0.20867177 0.20791323 0.19835919 0.26673889]
+Elapsed time from start: 149m 50s
+////////////////////////////////////////////
+Iteration 220/220 finished
+Hyper parameters tested:
+    - sub_sampling: 0.5
+    - learning_rate: 0.5
+    - min_sample_split: 40
+Results:
+    - MAE : [1.96345305 3.73580822 1.56921179 1.480199  ]
+    - Correlation : [0.22903822 0.26280742 0.25883951 0.22606103]
+Elapsed time from start: 150m 28s
+////////////////////////////////////////////
+Computation finished in 2h 30m 28s
