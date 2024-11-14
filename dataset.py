@@ -1,9 +1,10 @@
 from bed_reader import open_bed
 import pandas as pd
 import numpy as np
-from typing import Union, List
+from typing import List
 from torch.utils.data import Dataset
 import torch
+import os
 
 class SNPmarkersDataset(Dataset):
     """Create a class following the pytorch template to manage the data. \
@@ -17,25 +18,51 @@ class SNPmarkersDataset(Dataset):
         set_phenotypes(str | list[str]): Default to None. Should be definied before using the dataset class by the user. Accepted string are the keys of ´self.phenotypes´
     """
     
-    def __init__(self, mode = "train", skip_check = False):
-        f"""Create a class following the pytorch template.
+    def __init__(
+        self, mode = "train", 
+        dir_path = "../Data", 
+        skip_check = False, 
+        bed_filename = "BBBDL_BBB2023_MD.bed", 
+        pheno_filename = "BBBDL_pheno_20000bbb_6traits_processed.csv", 
+        mask_pheno_filename = "BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv"
+    ):
+        """Create a class following the pytorch template.
 
         Args:
             mode (str, optional): type of the data stored. Only train, validation, test and local_train are accepted values. Defaults to "train".
-            skip_check (bool): Option to skip the checking used to speed object creation when testing. Defaults to False.
+            dir_path (str, optional): Argument used to specify the path to the data directory. Defaults to "../Data/".
+            skip_check (bool, optional): Option to skip the checking used to speed object creation when testing. Defaults to False.
+            bed_filename (str, optional): name of the bed file containing the snp array data. Defaults to "BBBDL_BBB2023_MD.bed".
+            pheno_filename (str, optional): File containing the phenotypes in csv format. The file must have an unused column as first column. \
+            The second one will be the one used as index. A header containing the name of each column must be provided with the first empty column named "col_1". \
+            Keys to access phenotypes will be infered from this header. Defaults to "BBBDL_pheno_20000bbb_6traits_processed.csv".
+            mask_pheno_filename (str,optional): File where phenotypes of all samples that must be used for the test dataset are masked (ie set to NA). \
+            This file must follow the same format than the one given in pheno_filename.
 
         Raises:
             AttributeError: if the mode doesn't respect the described format.
+            IOError: if an error occured when opening one of the files
         """
         valid_modes = set(["train", "validation", "test", "local_train"])
 
         # Define the number of samples used for the validation set
         self._VALIDATION_SIZE = 1000
-        self._wantedPhenotypes = None
+        # Define variable to remember the phenotype to use in the different functions
+        self._wantedPhenotypes: str | List[str] = None
+        # Define the path to the phenotypes file for the check_data function
+        self._pheno_filepath = os.path.join(dir_path, pheno_filename)
 
-        pheno_masked_df = pd.read_csv("../Data/BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv", index_col= 1)
-        self._snp = pd.DataFrame(open_bed("../Data/BBBDL_BBB2023_MD.bed").read(dtype="int8", num_threads= 8), index=pheno_masked_df.index)
-        pheno_masked_df = pheno_masked_df.drop(["col_1"], axis = 1).dropna(how="all")
+        try:
+            bed_file_data = open_bed(os.path.join(dir_path, bed_filename)).read(dtype="int8", num_threads= 8)
+        except Exception as e:
+            raise IOError(f"The following error occured when trying to read the bed file: {e.args}")
+        
+        try:
+            pheno_masked_df = pd.read_csv(os.path.join(dir_path, mask_pheno_filename), index_col= 1)
+            self._snp = pd.DataFrame(bed_file_data, index=pheno_masked_df.index)
+            pheno_masked_df = pheno_masked_df.drop(["col_1"], axis = 1).dropna(how="all")
+        except Exception as e:
+            raise IOError(f"The following error occured when trying to read the masked phenotype file: {e.args}")
         
         if mode not in valid_modes:
             raise AttributeError(f"the mode argument must be a value of {valid_modes}!")
@@ -56,10 +83,13 @@ class SNPmarkersDataset(Dataset):
                 self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[-self._VALIDATION_SIZE:]
 
         elif mode == "test":
-            all_pheno_df = pd.read_csv("../Data/BBBDL_pheno_20000bbb_6traits_processed.csv", index_col=1)
-            all_test_samples = all_pheno_df.loc[(~ all_pheno_df.index.isin(pheno_masked_df.index)).tolist()].drop(["col_1"], axis = 1)
-            for pheno in pheno_masked_df.columns:
-                self.phenotypes[pheno] = all_test_samples[pheno].dropna()
+            try:
+                all_pheno_df = pd.read_csv(self._pheno_filepath, index_col=1)
+                all_test_samples = all_pheno_df.loc[(~ all_pheno_df.index.isin(pheno_masked_df.index)).tolist()].drop(["col_1"], axis = 1)
+                for pheno in pheno_masked_df.columns:
+                    self.phenotypes[pheno] = all_test_samples[pheno].dropna()
+            except Exception as e:
+                raise IOError(f"The following error occured when trying to open the phenotype file: {e.args}")
 
         if not skip_check:
             try:
@@ -100,8 +130,11 @@ class SNPmarkersDataset(Dataset):
         classes, counts = np.unique(self._snp, return_counts=True)
         if classes.all() != np.array([0, 1, 2]).all():
             raise Exception(f"There are {counts[np.where(classes == -127)[0][0]]} missing values in the data!")
-            
-        raw_pheno_df = pd.read_csv("../Data/BBBDL_pheno_20000bbb_6traits_processed.csv", index_col=1)  
+
+        try: 
+            raw_pheno_df = pd.read_csv(self._pheno_filepath, index_col=1)
+        except Exception as e:
+                raise IOError(f"The following error occured when trying to open the phenotype file: {e.args}")  
 
         for pheno in self.phenotypes.keys():
             for index in self.phenotypes[pheno].index:
