@@ -1,10 +1,10 @@
-*.sh
 mnist.py
 *pyc
 wandb/
 deepGBLUP/data/
 deepGBLUP/outputs/
-GBLUP/
+GBLUP/*.*
+GBLUP/*/*
+!GBLUP/*/*.pred
 Regression/LassoNet/*.*
 !Regression/LassoNet/lassonet/lassonet/*.py
-!Scripts/GBLUP.sh
