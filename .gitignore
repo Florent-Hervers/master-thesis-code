@@ -8,3 +8,4 @@ GBLUP/*/*
 !GBLUP/*/*.pred
 Regression/LassoNet/*.*
 !Regression/LassoNet/lassonet/lassonet/*.py
+*.zip
