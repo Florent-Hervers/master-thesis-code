@@ -1,4 +1,4 @@
-from dataset_new import SNPmarkersDataset
+from dataset import SNPmarkersDataset
 from Regression.LassoNet.lassonet.lassonet.interfaces import LassoNetRegressor
 from torch.optim import Adam
 from functools import partial

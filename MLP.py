@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 import torch.utils.data as data
-from dataset_new import SNPmarkersDataset
+from dataset import SNPmarkersDataset
 import torch.nn.functional as F
 import wandb
 import numpy as np
