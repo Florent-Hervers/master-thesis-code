@@ -5,6 +5,7 @@ from typing import List
 from torch.utils.data import Dataset
 import torch
 import os
+import time
 
 class SNPmarkersDataset(Dataset):
     """Create a class following the pytorch template to manage the data. \
@@ -24,7 +25,8 @@ class SNPmarkersDataset(Dataset):
         skip_check = False, 
         bed_filename = "BBBDL_BBB2023_MD.bed", 
         pheno_filename = "BBBDL_pheno_20000bbb_6traits_processed.csv", 
-        mask_pheno_filename = "BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv"
+        mask_pheno_filename = "BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv",
+        date_filename = "BBBDL_pedi_full_list.txt"
     ):
         """Create a class following the pytorch template.
 
@@ -38,13 +40,15 @@ class SNPmarkersDataset(Dataset):
             Keys to access phenotypes will be infered from this header. Defaults to "BBBDL_pheno_20000bbb_6traits_processed.csv".
             mask_pheno_filename (str,optional): File where phenotypes of all samples that must be used for the test dataset are masked (ie set to NA). \
             This file must follow the same format than the one given in pheno_filename.
+            date_filename (str | None, optional): File used to sort samples by their birth dates. The file must be a csv file with three columns separated by tabs \
+            The first columns must contain the id of the animal and the birth date must be the thrid and last columns formated in yyyymmdd (where y=year, m=month, d=day). \
+            The second columns will be used. Note that the all masked samples must be born after the ones in the training/validation set for the sorting to be relevant. \
+            Setting this parameter to None will prevent the sorting.
 
         Raises:
             AttributeError: if the mode doesn't respect the described format.
             IOError: if an error occured when opening one of the files
         """
-        valid_modes = set(["train", "validation", "test", "local_train"])
-
         # Define the number of samples used for the validation set
         self._VALIDATION_SIZE = 1000
         # Define variable to remember the phenotype to use in the different functions
@@ -58,18 +62,35 @@ class SNPmarkersDataset(Dataset):
             raise IOError(f"The following error occured when trying to read the bed file: {e.args}")
         
         try:
-            pheno_masked_df = pd.read_csv(os.path.join(dir_path, mask_pheno_filename), index_col= 1)
+            pheno_masked_df = pd.read_csv(os.path.join(dir_path, mask_pheno_filename), index_col= 1).drop(["col_1"], axis = 1)
             self._snp = pd.DataFrame(bed_file_data, index=pheno_masked_df.index)
-            pheno_masked_df = pheno_masked_df.drop(["col_1"], axis = 1).dropna(how="all")
         except Exception as e:
             raise IOError(f"The following error occured when trying to read the masked phenotype file: {e.args}")
         
+        valid_modes = set(["train", "validation", "test", "local_train"])
         if mode not in valid_modes:
             raise AttributeError(f"the mode argument must be a value of {valid_modes}!")
-        
         self.mode = mode
-        self.phenotypes = {}
-        
+
+        if date_filename is not None:
+            sorted_index = pd.read_csv(
+                os.path.join(dir_path, date_filename), 
+                sep = "\t", 
+                names=["id", 'sex', "birth_date"], 
+                index_col = 0, 
+                converters= {"birth_date": lambda date: time.strptime(str(date),"%Y%m%d")}
+            ).sort_values("birth_date")
+
+            train_indexes = pheno_masked_df.dropna(how="all").index
+            test_indexes = list(set(pheno_masked_df.index) -  set(train_indexes))
+            assert max(sorted_index.loc[train_indexes, "birth_date"]) < min(sorted_index.loc[test_indexes, "birth_date"]), "All samples non masked should be borned before the ones used in the test set"
+
+            pheno_masked_df = pheno_masked_df.reindex(sorted_index.index)
+
+        # Removal of the masked samples is done after the sorting to be able to use the id of all sample within the dataframe
+        pheno_masked_df = pheno_masked_df.dropna(how="all")
+
+        self.phenotypes = {}        
         if mode == "local_train":
             for pheno in pheno_masked_df.columns:
                 self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:1000]
