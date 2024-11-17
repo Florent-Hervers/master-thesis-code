@@ -38,8 +38,8 @@ def results_heatmap(df1:      pd.DataFrame,
 
     sns.heatmap(df2, annot = True, cmap = "YlGnBu", fmt= ".3f", linecolor="black", linewidths=0.5, ax=ax2)
     ax2.set_title(title2, font=subtitle_font)
-    ax2.set_ylabel(x_label)
-    ax2.set_xlabel(y_label)
+    ax2.set_xlabel(x_label)
+    ax2.set_ylabel(y_label)
     ax2.tick_params(rotation=0)
     plt.show()
 
