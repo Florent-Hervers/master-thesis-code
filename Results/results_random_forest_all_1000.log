@@ -1,0 +1,1253 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/77
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 36m 20s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39975
+MAE results for ep_res: 1.33663
+--------------------------------------------
+Pearson correlation for de_res: 0.38247
+MAE results for de_res: 2.70167
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36762
+MAE results for FESSEp_res: 1.04775
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40818
+MAE results for FESSEa_res: 1.11392
+////////////////////////////////////////////
+Iteration 2/77
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 60m 29s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39528
+MAE results for ep_res: 1.34124
+--------------------------------------------
+Pearson correlation for de_res: 0.38355
+MAE results for de_res: 2.70091
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35998
+MAE results for FESSEp_res: 1.05050
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40697
+MAE results for FESSEa_res: 1.11703
+////////////////////////////////////////////
+Iteration 3/77
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 78m 38s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39932
+MAE results for ep_res: 1.33881
+--------------------------------------------
+Pearson correlation for de_res: 0.38581
+MAE results for de_res: 2.69870
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36147
+MAE results for FESSEp_res: 1.04944
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40830
+MAE results for FESSEa_res: 1.11716
+////////////////////////////////////////////
+Iteration 4/77
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 85m 59s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40102
+MAE results for ep_res: 1.34186
+--------------------------------------------
+Pearson correlation for de_res: 0.37933
+MAE results for de_res: 2.70547
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36449
+MAE results for FESSEp_res: 1.04980
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41524
+MAE results for FESSEa_res: 1.11624
+////////////////////////////////////////////
+Iteration 5/77
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 86m 45s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39625
+MAE results for ep_res: 1.35148
+--------------------------------------------
+Pearson correlation for de_res: 0.37289
+MAE results for de_res: 2.72284
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35755
+MAE results for FESSEp_res: 1.05715
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40039
+MAE results for FESSEa_res: 1.12890
+////////////////////////////////////////////
+Iteration 6/77
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 87m 9s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39579
+MAE results for ep_res: 1.35943
+--------------------------------------------
+Pearson correlation for de_res: 0.37305
+MAE results for de_res: 2.72757
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36384
+MAE results for FESSEp_res: 1.05762
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41103
+MAE results for FESSEa_res: 1.12851
+////////////////////////////////////////////
+Iteration 7/77
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 87m 15s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38497
+MAE results for ep_res: 1.37169
+--------------------------------------------
+Pearson correlation for de_res: 0.36559
+MAE results for de_res: 2.74603
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34502
+MAE results for FESSEp_res: 1.06637
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.38649
+MAE results for FESSEa_res: 1.14179
+////////////////////////////////////////////
+Iteration 8/77
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 129m 33s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39640
+MAE results for ep_res: 1.33721
+--------------------------------------------
+Pearson correlation for de_res: 0.38989
+MAE results for de_res: 2.69158
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36753
+MAE results for FESSEp_res: 1.04747
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41296
+MAE results for FESSEa_res: 1.11187
+////////////////////////////////////////////
+Iteration 9/77
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 158m 12s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39844
+MAE results for ep_res: 1.33802
+--------------------------------------------
+Pearson correlation for de_res: 0.38361
+MAE results for de_res: 2.69904
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35903
+MAE results for FESSEp_res: 1.04929
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40964
+MAE results for FESSEa_res: 1.11393
+////////////////////////////////////////////
+Iteration 10/77
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 179m 44s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39788
+MAE results for ep_res: 1.33931
+--------------------------------------------
+Pearson correlation for de_res: 0.39024
+MAE results for de_res: 2.69476
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36651
+MAE results for FESSEp_res: 1.04609
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41687
+MAE results for FESSEa_res: 1.11329
+////////////////////////////////////////////
+Iteration 11/77
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 188m 22s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40112
+MAE results for ep_res: 1.34113
+--------------------------------------------
+Pearson correlation for de_res: 0.38912
+MAE results for de_res: 2.69820
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37112
+MAE results for FESSEp_res: 1.04575
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41704
+MAE results for FESSEa_res: 1.11369
+////////////////////////////////////////////
+Iteration 12/77
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 189m 15s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40081
+MAE results for ep_res: 1.35066
+--------------------------------------------
+Pearson correlation for de_res: 0.38015
+MAE results for de_res: 2.71931
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36574
+MAE results for FESSEp_res: 1.05323
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41022
+MAE results for FESSEa_res: 1.12569
+////////////////////////////////////////////
+Iteration 13/77
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 189m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39264
+MAE results for ep_res: 1.35769
+--------------------------------------------
+Pearson correlation for de_res: 0.36818
+MAE results for de_res: 2.72828
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35778
+MAE results for FESSEp_res: 1.05731
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40260
+MAE results for FESSEa_res: 1.12603
+////////////////////////////////////////////
+Iteration 14/77
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 189m 51s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39636
+MAE results for ep_res: 1.36814
+--------------------------------------------
+Pearson correlation for de_res: 0.37127
+MAE results for de_res: 2.74515
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36174
+MAE results for FESSEp_res: 1.06125
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41195
+MAE results for FESSEa_res: 1.13334
+////////////////////////////////////////////
+Iteration 15/77
+Max depth value tested: 19, max nb of features used per tree: 18152
+Elapsed time from start: 236m 51s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40041
+MAE results for ep_res: 1.33704
+--------------------------------------------
+Pearson correlation for de_res: 0.38835
+MAE results for de_res: 2.69409
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36037
+MAE results for FESSEp_res: 1.04725
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41410
+MAE results for FESSEa_res: 1.11213
+////////////////////////////////////////////
+Iteration 16/77
+Max depth value tested: 19, max nb of features used per tree: 12101
+Elapsed time from start: 268m 13s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40016
+MAE results for ep_res: 1.33521
+--------------------------------------------
+Pearson correlation for de_res: 0.39113
+MAE results for de_res: 2.69470
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36143
+MAE results for FESSEp_res: 1.04873
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41623
+MAE results for FESSEa_res: 1.11147
+////////////////////////////////////////////
+Iteration 17/77
+Max depth value tested: 19, max nb of features used per tree: 9076
+Elapsed time from start: 291m 52s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40665
+MAE results for ep_res: 1.33626
+--------------------------------------------
+Pearson correlation for de_res: 0.38539
+MAE results for de_res: 2.69294
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36723
+MAE results for FESSEp_res: 1.04858
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41845
+MAE results for FESSEa_res: 1.11199
+////////////////////////////////////////////
+Iteration 18/77
+Max depth value tested: 19, max nb of features used per tree: 3630
+Elapsed time from start: 301m 26s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40825
+MAE results for ep_res: 1.33670
+--------------------------------------------
+Pearson correlation for de_res: 0.38970
+MAE results for de_res: 2.69781
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37095
+MAE results for FESSEp_res: 1.04561
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42339
+MAE results for FESSEa_res: 1.11490
+////////////////////////////////////////////
+Iteration 19/77
+Max depth value tested: 19, max nb of features used per tree: 363
+Elapsed time from start: 302m 27s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39171
+MAE results for ep_res: 1.35252
+--------------------------------------------
+Pearson correlation for de_res: 0.38289
+MAE results for de_res: 2.71427
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36504
+MAE results for FESSEp_res: 1.05221
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40921
+MAE results for FESSEa_res: 1.12337
+////////////////////////////////////////////
+Iteration 20/77
+Max depth value tested: 19, max nb of features used per tree: 190
+Elapsed time from start: 302m 58s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40085
+MAE results for ep_res: 1.35440
+--------------------------------------------
+Pearson correlation for de_res: 0.38939
+MAE results for de_res: 2.71670
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36295
+MAE results for FESSEp_res: 1.05399
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41414
+MAE results for FESSEa_res: 1.12472
+////////////////////////////////////////////
+Iteration 21/77
+Max depth value tested: 19, max nb of features used per tree: 36
+Elapsed time from start: 303m 5s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38471
+MAE results for ep_res: 1.37359
+--------------------------------------------
+Pearson correlation for de_res: 0.36199
+MAE results for de_res: 2.75026
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35332
+MAE results for FESSEp_res: 1.06446
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39632
+MAE results for FESSEa_res: 1.13755
+////////////////////////////////////////////
+Iteration 22/77
+Max depth value tested: 21, max nb of features used per tree: 18152
+Elapsed time from start: 352m 42s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40441
+MAE results for ep_res: 1.33613
+--------------------------------------------
+Pearson correlation for de_res: 0.39346
+MAE results for de_res: 2.68886
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37101
+MAE results for FESSEp_res: 1.04614
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41921
+MAE results for FESSEa_res: 1.10985
+////////////////////////////////////////////
+Iteration 23/77
+Max depth value tested: 21, max nb of features used per tree: 12101
+Elapsed time from start: 385m 59s
+--------------------------------------------
+Pearson correlation for ep_res: 0.41513
+MAE results for ep_res: 1.33135
+--------------------------------------------
+Pearson correlation for de_res: 0.39329
+MAE results for de_res: 2.69357
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37685
+MAE results for FESSEp_res: 1.04553
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42606
+MAE results for FESSEa_res: 1.10795
+////////////////////////////////////////////
+Iteration 24/77
+Max depth value tested: 21, max nb of features used per tree: 9076
+Elapsed time from start: 411m 5s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40221
+MAE results for ep_res: 1.33782
+--------------------------------------------
+Pearson correlation for de_res: 0.38751
+MAE results for de_res: 2.69823
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37334
+MAE results for FESSEp_res: 1.04564
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41877
+MAE results for FESSEa_res: 1.11342
+////////////////////////////////////////////
+Iteration 25/77
+Max depth value tested: 21, max nb of features used per tree: 3630
+Elapsed time from start: 421m 12s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40742
+MAE results for ep_res: 1.33865
+--------------------------------------------
+Pearson correlation for de_res: 0.39444
+MAE results for de_res: 2.69332
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37234
+MAE results for FESSEp_res: 1.04715
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42408
+MAE results for FESSEa_res: 1.11048
+////////////////////////////////////////////
+Iteration 26/77
+Max depth value tested: 21, max nb of features used per tree: 363
+Elapsed time from start: 422m 14s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38522
+MAE results for ep_res: 1.35562
+--------------------------------------------
+Pearson correlation for de_res: 0.37208
+MAE results for de_res: 2.72239
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36543
+MAE results for FESSEp_res: 1.05285
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40631
+MAE results for FESSEa_res: 1.12429
+////////////////////////////////////////////
+Iteration 27/77
+Max depth value tested: 21, max nb of features used per tree: 190
+Elapsed time from start: 422m 47s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38862
+MAE results for ep_res: 1.35860
+--------------------------------------------
+Pearson correlation for de_res: 0.36739
+MAE results for de_res: 2.73179
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35661
+MAE results for FESSEp_res: 1.05655
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40547
+MAE results for FESSEa_res: 1.12641
+////////////////////////////////////////////
+Iteration 28/77
+Max depth value tested: 21, max nb of features used per tree: 36
+Elapsed time from start: 422m 54s
+--------------------------------------------
+Pearson correlation for ep_res: 0.37587
+MAE results for ep_res: 1.37287
+--------------------------------------------
+Pearson correlation for de_res: 0.35801
+MAE results for de_res: 2.74594
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34639
+MAE results for FESSEp_res: 1.06439
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39028
+MAE results for FESSEa_res: 1.13911
+////////////////////////////////////////////
+Iteration 29/77
+Max depth value tested: 23, max nb of features used per tree: 18152
+Elapsed time from start: 473m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39652
+MAE results for ep_res: 1.33986
+--------------------------------------------
+Pearson correlation for de_res: 0.39614
+MAE results for de_res: 2.69079
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36354
+MAE results for FESSEp_res: 1.04928
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40984
+MAE results for FESSEa_res: 1.11446
+////////////////////////////////////////////
+Iteration 30/77
+Max depth value tested: 23, max nb of features used per tree: 12101
+Elapsed time from start: 507m 56s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40342
+MAE results for ep_res: 1.33824
+--------------------------------------------
+Pearson correlation for de_res: 0.38460
+MAE results for de_res: 2.70048
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35913
+MAE results for FESSEp_res: 1.04787
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41756
+MAE results for FESSEa_res: 1.11017
+////////////////////////////////////////////
+Iteration 31/77
+Max depth value tested: 23, max nb of features used per tree: 9076
+Elapsed time from start: 533m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40541
+MAE results for ep_res: 1.33653
+--------------------------------------------
+Pearson correlation for de_res: 0.38907
+MAE results for de_res: 2.69927
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36631
+MAE results for FESSEp_res: 1.04774
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41047
+MAE results for FESSEa_res: 1.11298
+////////////////////////////////////////////
+Iteration 32/77
+Max depth value tested: 23, max nb of features used per tree: 3630
+Elapsed time from start: 544m 4s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39693
+MAE results for ep_res: 1.34164
+--------------------------------------------
+Pearson correlation for de_res: 0.38007
+MAE results for de_res: 2.70511
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36957
+MAE results for FESSEp_res: 1.04731
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41075
+MAE results for FESSEa_res: 1.11557
+////////////////////////////////////////////
+Iteration 33/77
+Max depth value tested: 23, max nb of features used per tree: 363
+Elapsed time from start: 545m 10s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39366
+MAE results for ep_res: 1.35162
+--------------------------------------------
+Pearson correlation for de_res: 0.36787
+MAE results for de_res: 2.72128
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36022
+MAE results for FESSEp_res: 1.05105
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40771
+MAE results for FESSEa_res: 1.12078
+////////////////////////////////////////////
+Iteration 34/77
+Max depth value tested: 23, max nb of features used per tree: 190
+Elapsed time from start: 545m 45s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39368
+MAE results for ep_res: 1.35725
+--------------------------------------------
+Pearson correlation for de_res: 0.37279
+MAE results for de_res: 2.72395
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36408
+MAE results for FESSEp_res: 1.05473
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40014
+MAE results for FESSEa_res: 1.12710
+////////////////////////////////////////////
+Iteration 35/77
+Max depth value tested: 23, max nb of features used per tree: 36
+Elapsed time from start: 545m 52s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38440
+MAE results for ep_res: 1.37159
+--------------------------------------------
+Pearson correlation for de_res: 0.36406
+MAE results for de_res: 2.74506
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35249
+MAE results for FESSEp_res: 1.06160
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39878
+MAE results for FESSEa_res: 1.13585
+////////////////////////////////////////////
+Iteration 36/77
+Max depth value tested: 25, max nb of features used per tree: 18152
+Elapsed time from start: 597m 14s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40496
+MAE results for ep_res: 1.33561
+--------------------------------------------
+Pearson correlation for de_res: 0.38907
+MAE results for de_res: 2.69315
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36698
+MAE results for FESSEp_res: 1.04773
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41864
+MAE results for FESSEa_res: 1.11032
+////////////////////////////////////////////
+Iteration 37/77
+Max depth value tested: 25, max nb of features used per tree: 12101
+Elapsed time from start: 631m 38s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40251
+MAE results for ep_res: 1.33754
+--------------------------------------------
+Pearson correlation for de_res: 0.38937
+MAE results for de_res: 2.69784
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37469
+MAE results for FESSEp_res: 1.04575
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41716
+MAE results for FESSEa_res: 1.11122
+////////////////////////////////////////////
+Iteration 38/77
+Max depth value tested: 25, max nb of features used per tree: 9076
+Elapsed time from start: 657m 42s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40250
+MAE results for ep_res: 1.33648
+--------------------------------------------
+Pearson correlation for de_res: 0.38031
+MAE results for de_res: 2.70730
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36106
+MAE results for FESSEp_res: 1.04866
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41590
+MAE results for FESSEa_res: 1.11165
+////////////////////////////////////////////
+Iteration 39/77
+Max depth value tested: 25, max nb of features used per tree: 3630
+Elapsed time from start: 668m 6s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40724
+MAE results for ep_res: 1.33841
+--------------------------------------------
+Pearson correlation for de_res: 0.38623
+MAE results for de_res: 2.70546
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36908
+MAE results for FESSEp_res: 1.04761
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41415
+MAE results for FESSEa_res: 1.11606
+////////////////////////////////////////////
+Iteration 40/77
+Max depth value tested: 25, max nb of features used per tree: 363
+Elapsed time from start: 669m 11s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38425
+MAE results for ep_res: 1.35603
+--------------------------------------------
+Pearson correlation for de_res: 0.36624
+MAE results for de_res: 2.72534
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36239
+MAE results for FESSEp_res: 1.05339
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40559
+MAE results for FESSEa_res: 1.12456
+////////////////////////////////////////////
+Iteration 41/77
+Max depth value tested: 25, max nb of features used per tree: 190
+Elapsed time from start: 669m 45s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39538
+MAE results for ep_res: 1.35500
+--------------------------------------------
+Pearson correlation for de_res: 0.37076
+MAE results for de_res: 2.72863
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35687
+MAE results for FESSEp_res: 1.05669
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40563
+MAE results for FESSEa_res: 1.12699
+////////////////////////////////////////////
+Iteration 42/77
+Max depth value tested: 25, max nb of features used per tree: 36
+Elapsed time from start: 669m 53s
+--------------------------------------------
+Pearson correlation for ep_res: 0.37320
+MAE results for ep_res: 1.37373
+--------------------------------------------
+Pearson correlation for de_res: 0.35269
+MAE results for de_res: 2.75479
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35195
+MAE results for FESSEp_res: 1.06276
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40285
+MAE results for FESSEa_res: 1.13470
+////////////////////////////////////////////
+Iteration 43/77
+Max depth value tested: 27, max nb of features used per tree: 18152
+Elapsed time from start: 721m 53s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39993
+MAE results for ep_res: 1.33674
+--------------------------------------------
+Pearson correlation for de_res: 0.38945
+MAE results for de_res: 2.69660
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36963
+MAE results for FESSEp_res: 1.04660
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41668
+MAE results for FESSEa_res: 1.11231
+////////////////////////////////////////////
+Iteration 44/77
+Max depth value tested: 27, max nb of features used per tree: 12101
+Elapsed time from start: 756m 54s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40333
+MAE results for ep_res: 1.33498
+--------------------------------------------
+Pearson correlation for de_res: 0.39147
+MAE results for de_res: 2.69687
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36976
+MAE results for FESSEp_res: 1.04590
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41794
+MAE results for FESSEa_res: 1.11332
+////////////////////////////////////////////
+Iteration 45/77
+Max depth value tested: 27, max nb of features used per tree: 9076
+Elapsed time from start: 783m 14s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39944
+MAE results for ep_res: 1.33837
+--------------------------------------------
+Pearson correlation for de_res: 0.38697
+MAE results for de_res: 2.69628
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36526
+MAE results for FESSEp_res: 1.04998
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41231
+MAE results for FESSEa_res: 1.11349
+////////////////////////////////////////////
+Iteration 46/77
+Max depth value tested: 27, max nb of features used per tree: 3630
+Elapsed time from start: 793m 45s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40586
+MAE results for ep_res: 1.33950
+--------------------------------------------
+Pearson correlation for de_res: 0.38645
+MAE results for de_res: 2.70081
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36912
+MAE results for FESSEp_res: 1.04649
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41411
+MAE results for FESSEa_res: 1.11414
+////////////////////////////////////////////
+Iteration 47/77
+Max depth value tested: 27, max nb of features used per tree: 363
+Elapsed time from start: 794m 49s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39307
+MAE results for ep_res: 1.35135
+--------------------------------------------
+Pearson correlation for de_res: 0.37318
+MAE results for de_res: 2.72258
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36007
+MAE results for FESSEp_res: 1.05485
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40165
+MAE results for FESSEa_res: 1.12465
+////////////////////////////////////////////
+Iteration 48/77
+Max depth value tested: 27, max nb of features used per tree: 190
+Elapsed time from start: 795m 24s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39767
+MAE results for ep_res: 1.35400
+--------------------------------------------
+Pearson correlation for de_res: 0.37856
+MAE results for de_res: 2.72441
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37084
+MAE results for FESSEp_res: 1.05216
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41331
+MAE results for FESSEa_res: 1.12611
+////////////////////////////////////////////
+Iteration 49/77
+Max depth value tested: 27, max nb of features used per tree: 36
+Elapsed time from start: 795m 32s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38518
+MAE results for ep_res: 1.37186
+--------------------------------------------
+Pearson correlation for de_res: 0.36168
+MAE results for de_res: 2.74982
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36257
+MAE results for FESSEp_res: 1.05869
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40476
+MAE results for FESSEa_res: 1.13507
+////////////////////////////////////////////
+Iteration 50/77
+Max depth value tested: 29, max nb of features used per tree: 18152
+Elapsed time from start: 847m 47s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39684
+MAE results for ep_res: 1.33896
+--------------------------------------------
+Pearson correlation for de_res: 0.39066
+MAE results for de_res: 2.69586
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36933
+MAE results for FESSEp_res: 1.04743
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41897
+MAE results for FESSEa_res: 1.10878
+////////////////////////////////////////////
+Iteration 51/77
+Max depth value tested: 29, max nb of features used per tree: 12101
+Elapsed time from start: 882m 57s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39699
+MAE results for ep_res: 1.33635
+--------------------------------------------
+Pearson correlation for de_res: 0.38317
+MAE results for de_res: 2.69899
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35857
+MAE results for FESSEp_res: 1.04969
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41047
+MAE results for FESSEa_res: 1.11108
+////////////////////////////////////////////
+Iteration 52/77
+Max depth value tested: 29, max nb of features used per tree: 9076
+Elapsed time from start: 909m 50s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39799
+MAE results for ep_res: 1.33861
+--------------------------------------------
+Pearson correlation for de_res: 0.39411
+MAE results for de_res: 2.69494
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36782
+MAE results for FESSEp_res: 1.04812
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41756
+MAE results for FESSEa_res: 1.11241
+////////////////////////////////////////////
+Iteration 53/77
+Max depth value tested: 29, max nb of features used per tree: 3630
+Elapsed time from start: 920m 39s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40923
+MAE results for ep_res: 1.33765
+--------------------------------------------
+Pearson correlation for de_res: 0.38496
+MAE results for de_res: 2.70404
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37471
+MAE results for FESSEp_res: 1.04594
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41837
+MAE results for FESSEa_res: 1.11320
+////////////////////////////////////////////
+Iteration 54/77
+Max depth value tested: 29, max nb of features used per tree: 363
+Elapsed time from start: 921m 46s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40449
+MAE results for ep_res: 1.34778
+--------------------------------------------
+Pearson correlation for de_res: 0.37688
+MAE results for de_res: 2.71675
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36893
+MAE results for FESSEp_res: 1.05119
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41827
+MAE results for FESSEa_res: 1.12184
+////////////////////////////////////////////
+Iteration 55/77
+Max depth value tested: 29, max nb of features used per tree: 190
+Elapsed time from start: 922m 23s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39335
+MAE results for ep_res: 1.35560
+--------------------------------------------
+Pearson correlation for de_res: 0.37523
+MAE results for de_res: 2.72301
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36055
+MAE results for FESSEp_res: 1.05279
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41184
+MAE results for FESSEa_res: 1.12401
+////////////////////////////////////////////
+Iteration 56/77
+Max depth value tested: 29, max nb of features used per tree: 36
+Elapsed time from start: 922m 31s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38474
+MAE results for ep_res: 1.37209
+--------------------------------------------
+Pearson correlation for de_res: 0.36571
+MAE results for de_res: 2.75416
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36292
+MAE results for FESSEp_res: 1.05915
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40252
+MAE results for FESSEa_res: 1.13734
+////////////////////////////////////////////
+Iteration 57/77
+Max depth value tested: 31, max nb of features used per tree: 18152
+Elapsed time from start: 975m 27s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39931
+MAE results for ep_res: 1.33854
+--------------------------------------------
+Pearson correlation for de_res: 0.38916
+MAE results for de_res: 2.69585
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36365
+MAE results for FESSEp_res: 1.04918
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41362
+MAE results for FESSEa_res: 1.11164
+////////////////////////////////////////////
+Iteration 58/77
+Max depth value tested: 31, max nb of features used per tree: 12101
+Elapsed time from start: 1011m 5s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39736
+MAE results for ep_res: 1.33826
+--------------------------------------------
+Pearson correlation for de_res: 0.38677
+MAE results for de_res: 2.69856
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36310
+MAE results for FESSEp_res: 1.04875
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41411
+MAE results for FESSEa_res: 1.11251
+////////////////////////////////////////////
+Iteration 59/77
+Max depth value tested: 31, max nb of features used per tree: 9076
+Elapsed time from start: 1037m 58s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39938
+MAE results for ep_res: 1.33862
+--------------------------------------------
+Pearson correlation for de_res: 0.39298
+MAE results for de_res: 2.69657
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36507
+MAE results for FESSEp_res: 1.04944
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42370
+MAE results for FESSEa_res: 1.11326
+////////////////////////////////////////////
+Iteration 60/77
+Max depth value tested: 31, max nb of features used per tree: 3630
+Elapsed time from start: 1048m 46s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40811
+MAE results for ep_res: 1.33746
+--------------------------------------------
+Pearson correlation for de_res: 0.38310
+MAE results for de_res: 2.70326
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37111
+MAE results for FESSEp_res: 1.04872
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41471
+MAE results for FESSEa_res: 1.11530
+////////////////////////////////////////////
+Iteration 61/77
+Max depth value tested: 31, max nb of features used per tree: 363
+Elapsed time from start: 1049m 54s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39577
+MAE results for ep_res: 1.34949
+--------------------------------------------
+Pearson correlation for de_res: 0.37588
+MAE results for de_res: 2.71860
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36283
+MAE results for FESSEp_res: 1.05289
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40759
+MAE results for FESSEa_res: 1.12473
+////////////////////////////////////////////
+Iteration 62/77
+Max depth value tested: 31, max nb of features used per tree: 190
+Elapsed time from start: 1050m 29s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39675
+MAE results for ep_res: 1.35468
+--------------------------------------------
+Pearson correlation for de_res: 0.37025
+MAE results for de_res: 2.72697
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36684
+MAE results for FESSEp_res: 1.05297
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41472
+MAE results for FESSEa_res: 1.12394
+////////////////////////////////////////////
+Iteration 63/77
+Max depth value tested: 31, max nb of features used per tree: 36
+Elapsed time from start: 1050m 38s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38457
+MAE results for ep_res: 1.37233
+--------------------------------------------
+Pearson correlation for de_res: 0.36954
+MAE results for de_res: 2.74689
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36527
+MAE results for FESSEp_res: 1.05978
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40994
+MAE results for FESSEa_res: 1.13415
+////////////////////////////////////////////
+Iteration 64/77
+Max depth value tested: 33, max nb of features used per tree: 18152
+Elapsed time from start: 1103m 24s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40174
+MAE results for ep_res: 1.33796
+--------------------------------------------
+Pearson correlation for de_res: 0.38938
+MAE results for de_res: 2.69647
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36635
+MAE results for FESSEp_res: 1.04754
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41692
+MAE results for FESSEa_res: 1.11041
+////////////////////////////////////////////
+Iteration 65/77
+Max depth value tested: 33, max nb of features used per tree: 12101
+Elapsed time from start: 1138m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39943
+MAE results for ep_res: 1.33641
+--------------------------------------------
+Pearson correlation for de_res: 0.38736
+MAE results for de_res: 2.69603
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36601
+MAE results for FESSEp_res: 1.04787
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41488
+MAE results for FESSEa_res: 1.11195
+////////////////////////////////////////////
+Iteration 66/77
+Max depth value tested: 33, max nb of features used per tree: 9076
+Elapsed time from start: 1165m 9s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40132
+MAE results for ep_res: 1.33696
+--------------------------------------------
+Pearson correlation for de_res: 0.39320
+MAE results for de_res: 2.69234
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37031
+MAE results for FESSEp_res: 1.04885
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42392
+MAE results for FESSEa_res: 1.11217
+////////////////////////////////////////////
+Iteration 67/77
+Max depth value tested: 33, max nb of features used per tree: 3630
+Elapsed time from start: 1175m 56s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40857
+MAE results for ep_res: 1.33774
+--------------------------------------------
+Pearson correlation for de_res: 0.38642
+MAE results for de_res: 2.70165
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37064
+MAE results for FESSEp_res: 1.04853
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41434
+MAE results for FESSEa_res: 1.11589
+////////////////////////////////////////////
+Iteration 68/77
+Max depth value tested: 33, max nb of features used per tree: 363
+Elapsed time from start: 1176m 55s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39938
+MAE results for ep_res: 1.34882
+--------------------------------------------
+Pearson correlation for de_res: 0.37242
+MAE results for de_res: 2.72215
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37175
+MAE results for FESSEp_res: 1.04967
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41074
+MAE results for FESSEa_res: 1.12275
+////////////////////////////////////////////
+Iteration 69/77
+Max depth value tested: 33, max nb of features used per tree: 190
+Elapsed time from start: 1177m 27s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39362
+MAE results for ep_res: 1.35512
+--------------------------------------------
+Pearson correlation for de_res: 0.37213
+MAE results for de_res: 2.72628
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36247
+MAE results for FESSEp_res: 1.05494
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41360
+MAE results for FESSEa_res: 1.12393
+////////////////////////////////////////////
+Iteration 70/77
+Max depth value tested: 33, max nb of features used per tree: 36
+Elapsed time from start: 1177m 34s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38778
+MAE results for ep_res: 1.36994
+--------------------------------------------
+Pearson correlation for de_res: 0.37357
+MAE results for de_res: 2.74354
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36609
+MAE results for FESSEp_res: 1.05978
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41183
+MAE results for FESSEa_res: 1.13364
+////////////////////////////////////////////
+Iteration 71/77
+Max depth value tested: 35, max nb of features used per tree: 18152
+Elapsed time from start: 1229m 31s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40278
+MAE results for ep_res: 1.33827
+--------------------------------------------
+Pearson correlation for de_res: 0.39172
+MAE results for de_res: 2.69466
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36584
+MAE results for FESSEp_res: 1.04865
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41787
+MAE results for FESSEa_res: 1.10986
+////////////////////////////////////////////
+Iteration 72/77
+Max depth value tested: 35, max nb of features used per tree: 12101
+Elapsed time from start: 1263m 55s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39778
+MAE results for ep_res: 1.33709
+--------------------------------------------
+Pearson correlation for de_res: 0.38637
+MAE results for de_res: 2.69731
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36756
+MAE results for FESSEp_res: 1.04718
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41655
+MAE results for FESSEa_res: 1.11162
+////////////////////////////////////////////
+Iteration 73/77
+Max depth value tested: 35, max nb of features used per tree: 9076
+Elapsed time from start: 1289m 58s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40146
+MAE results for ep_res: 1.33652
+--------------------------------------------
+Pearson correlation for de_res: 0.39539
+MAE results for de_res: 2.69279
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36834
+MAE results for FESSEp_res: 1.04882
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42338
+MAE results for FESSEa_res: 1.11225
+////////////////////////////////////////////
+Iteration 74/77
+Max depth value tested: 35, max nb of features used per tree: 3630
+Elapsed time from start: 1299m 25s
+--------------------------------------------
+Pearson correlation for ep_res: 0.41013
+MAE results for ep_res: 1.33771
+--------------------------------------------
+Pearson correlation for de_res: 0.38609
+MAE results for de_res: 2.70268
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37307
+MAE results for FESSEp_res: 1.04842
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41518
+MAE results for FESSEa_res: 1.11518
+////////////////////////////////////////////
+Iteration 75/77
+Max depth value tested: 35, max nb of features used per tree: 363
+Elapsed time from start: 1300m 23s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40187
+MAE results for ep_res: 1.34910
+--------------------------------------------
+Pearson correlation for de_res: 0.37462
+MAE results for de_res: 2.71982
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37015
+MAE results for FESSEp_res: 1.05051
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40982
+MAE results for FESSEa_res: 1.12262
+////////////////////////////////////////////
+Iteration 76/77
+Max depth value tested: 35, max nb of features used per tree: 190
+Elapsed time from start: 1300m 52s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39579
+MAE results for ep_res: 1.35401
+--------------------------------------------
+Pearson correlation for de_res: 0.36935
+MAE results for de_res: 2.72653
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36622
+MAE results for FESSEp_res: 1.05340
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41427
+MAE results for FESSEa_res: 1.12357
+////////////////////////////////////////////
+Iteration 77/77
+Max depth value tested: 35, max nb of features used per tree: 36
+Elapsed time from start: 1301m 0s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38716
+MAE results for ep_res: 1.37071
+--------------------------------------------
+Pearson correlation for de_res: 0.37454
+MAE results for de_res: 2.74550
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35797
+MAE results for FESSEp_res: 1.06082
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40659
+MAE results for FESSEa_res: 1.13537
+////////////////////////////////////////////
+Computation finished in 21h 41m 1s
