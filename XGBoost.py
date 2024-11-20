@@ -20,9 +20,10 @@ def main():
     MAE_results = np.zeros((len(sub_sampling), len(learning_rates), len(max_depth)))
     correlation_results = np.zeros((len(sub_sampling), len(learning_rates), len(max_depth)))
 
-    start_time = time.time()
-    iteration_counter = 0
     for pheno in phenotypes:
+        start_time = time.time()
+        iteration_counter = 0
+        
         train_dataset.set_phenotypes = pheno
         validation_dataset.set_phenotypes = pheno
 

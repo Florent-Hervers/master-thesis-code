@@ -21,9 +21,9 @@ def main():
     MAE_results = np.zeros((len(max_depth), len(max_features)))
     correlation_results = np.zeros((len(max_depth), len(max_features)))
     
-    start_time = time.time()
-
     for phenotype in phenotypes:
+        start_time = time.time()
+        
         # Skip the first one as already done in a previous run
         if phenotype == "ep_res":
             continue
@@ -65,8 +65,8 @@ def main():
                     columns=[f"max_features = {i}" for i in max_features]
                     ).to_csv(f"Results/random_forest_1000_results_corr_{phenotype}.csv")
         
-    print("////////////////////////////////////////////")
-    print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
+        print("////////////////////////////////////////////")
+        print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
 
 if __name__ == "__main__":
     main()
