@@ -6,6 +6,8 @@ import torch.nn.functional as F
 import wandb
 import numpy as np
 from scipy.stats import pearsonr
+import random
+import os
 
 class MLP(torch.nn.Module):
     def __init__(self, nlayers: int = 1, hidden_nodes: list[int] = [], dropout: float = 0):
@@ -42,6 +44,14 @@ class LinearBlock(torch.nn.Module):
         return F.relu(self.fc(x))
 
 def main():
+    # Fix all seed to ensure reproducible results
+    # From https://docs.nvidia.com/cuda/cublas/index.html#results-reproducibility
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
+    torch.manual_seed(2307)
+    np.random.seed(7032)
+    torch.use_deterministic_algorithms(True)
+    random.seed(3072)
+
     BATCH_SIZE = 64
     LEARNING_RATE = 1e-3
     DROPOUT = 0.25
@@ -67,10 +77,10 @@ def main():
             "scheduler_step_size": SCHEDULER_STEP_SIZE,
         },
         name = RUN_NAME,
-        tags = ["test"],
+        tags = ["debug"],
     )
     
-    train_dataset = SNPmarkersDataset(mode = "local_train", skip_check=True)
+    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True)
     validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
     selected_phenotypes = list(train_dataset.phenotypes.keys())
 
@@ -79,10 +89,20 @@ def main():
 
     for phenotype in selected_phenotypes:
         train_dataset.set_phenotypes = phenotype
-        train_dataloader = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
+
+        # Define function and seed to fix the loading via the dataloader (from https://pytorch.org/docs/stable/notes/randomness.html#pytorch)
+        def seed_worker(worker_id):
+            worker_seed = torch.initial_seed() % 2**32
+            np.random.seed(worker_seed)
+            random.seed(worker_seed)
+
+        g = torch.Generator()
+        g.manual_seed(7230)
+
+        train_dataloader = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4, worker_init_fn=seed_worker, generator=g)
         
         validation_dataset.set_phenotypes = phenotype
-        validation_dataloader = data.DataLoader(validation_dataset, batch_size=BATCH_SIZE, num_workers = 4)
+        validation_dataloader = data.DataLoader(validation_dataset, batch_size=BATCH_SIZE, num_workers = 4, worker_init_fn=seed_worker, generator=g)
 
         model = MLP(nlayers=N_LAYERS, hidden_nodes= HIDDEN_NODES, dropout= DROPOUT)
         print(f"Model architecture : \n {model}")
