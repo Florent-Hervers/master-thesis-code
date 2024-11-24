@@ -55,13 +55,13 @@ def main():
     BATCH_SIZE = 64
     LEARNING_RATE = 1e-3
     DROPOUT = 0.25
-    N_LAYERS = 10
-    HIDDEN_NODES = [1024, 1024, 1024, 1024, 768 ,512, 512, 512, 512]
-    N_EPOCHS = 350
+    N_LAYERS = 2
+    HIDDEN_NODES = [1024]
+    N_EPOCHS = 200
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
-    MODEL_NAME = "Deep_MLP"
-    RUN_NAME = "deep_MLP 1 model per phenotype with seed"
+    MODEL_NAME = "shallow_MLP"
+    RUN_NAME = "shallow_MLP 1 model per phenotype with seed"
 
     wandb.init(
         project = "TFE",
