@@ -9,7 +9,7 @@
 folder='GBLUP'
 
 # Prefix for the subfolder name in the folder with results
-pheno_prefix='pheno_'
+phenotypes=("ep_res" "de_res" "FESSEp_res" "FESSEa_res" "size_res" "MUSC_res")
 
 # Filepath to the bed file
 bed_file='../Data/BBBDL_BBB2023_MD'
@@ -33,18 +33,22 @@ n_threads=8
 # ---------------------------------------------------------------------------------------
 
 mkdir $folder
-ldak6.linux --calc-kins-direct $folder/$grm_name --bfile $bed_file --ignore-weights YES --power -1 --allow-multi YES --max-threads $n_threads
-
-for i in $(seq 1 $end)
-do 
-    path="$folder/$pheno_prefix$i/"
-    mkdir $path
-    ldak6.linux --reml $path$reml_name --grm $folder/$grm_name --pheno $pheno_file --mpheno $i --max-threads $n_threads
-    ldak6.linux --calc-blups $path$gblup_name --remlfile "$path$reml_name.reml" --grm $folder/$grm_name --bfile $bed_file --max-threads $n_threads --allow-multi YES --check-root NO
-
-    if [ $i == 2 ]; then
-        break
+for method in "Yang" "VanRaden"
+do
+    if [ "$method" == "Yang" ]; then
+        power=-1
+    else
+        power=0
     fi
+    ldak6.linux --calc-kins-direct $folder/$grm_name\_$method --bfile $bed_file --ignore-weights YES --power $power --allow-multi YES --max-threads $n_threads
+
+    for i in $(seq 0 $((end - 1)))
+    do 
+        path="$folder/${phenotypes[$i]}/"
+        mkdir $path
+        ldak6.linux --reml $path$reml_name\_$method --grm $folder/$grm_name\_$method --pheno $pheno_file --mpheno $i --max-threads $n_threads
+        ldak6.linux --calc-blups $path$gblup_name\_$method --remlfile "$path${reml_name}_$method.reml" --grm $folder/$grm_name\_$method --bfile $bed_file --max-threads $n_threads --allow-multi YES --check-root NO
+    done
 done
 
 # ---------------------------------------------------------------------------------------
