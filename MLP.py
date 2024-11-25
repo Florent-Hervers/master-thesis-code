@@ -55,13 +55,13 @@ def main():
     BATCH_SIZE = 64
     LEARNING_RATE = 1e-3
     DROPOUT = 0.25
-    N_LAYERS = 2
-    HIDDEN_NODES = [1024]
+    N_LAYERS = 10
+    HIDDEN_NODES = [1024, 1024, 1024, 1024, 768 ,512, 512, 512, 512]
     N_EPOCHS = 200
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
-    MODEL_NAME = "shallow_MLP"
-    RUN_NAME = "shallow_MLP 1 model per phenotype with seed"
+    MODEL_NAME = "Deep_MLP"
+    RUN_NAME = "rerun size_res"
 
     wandb.init(
         project = "TFE",
@@ -82,7 +82,7 @@ def main():
     
     train_dataset = SNPmarkersDataset(mode = "train", skip_check=True)
     validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
-    selected_phenotypes = list(train_dataset.phenotypes.keys())
+    selected_phenotypes = ["size_res"] # list(train_dataset.phenotypes.keys())
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
