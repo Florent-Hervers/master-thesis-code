@@ -11,5 +11,6 @@ Regression/LassoNet/*.*
 !Regression/LassoNet/entry.py
 !Regression/LassoNet/files.py
 !Regression/LassoNet/model.py
+!Regression/LassoNet/param_space.yaml
 !Regression/LassoNet/lassonet/lassonet/*.py
 *.zip
