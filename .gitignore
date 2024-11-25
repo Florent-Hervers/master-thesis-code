@@ -7,5 +7,9 @@ GBLUP/*.*
 GBLUP/*/*
 !GBLUP/*/*.pred
 Regression/LassoNet/*.*
+!Regression/LassoNet/bo.py
+!Regression/LassoNet/entry.py
+!Regression/LassoNet/files.py
+!Regression/LassoNet/model.py
 !Regression/LassoNet/lassonet/lassonet/*.py
 *.zip
