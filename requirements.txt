@@ -14,5 +14,6 @@ seaborn
 xgboost
 wandb
 tqdm
-
 sortedcontainers
+bayesian-optimization
+omegaconf
