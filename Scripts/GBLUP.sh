@@ -46,7 +46,7 @@ do
     do 
         path="$folder/${phenotypes[$i]}/"
         mkdir $path
-        ldak6.linux --reml $path$reml_name\_$method --grm $folder/$grm_name\_$method --pheno $pheno_file --mpheno $i --max-threads $n_threads
+        ldak6.linux --reml $path$reml_name\_$method --grm $folder/$grm_name\_$method --pheno $pheno_file --mpheno $(( i + 1)) --max-threads $n_threads
         ldak6.linux --calc-blups $path$gblup_name\_$method --remlfile "$path${reml_name}_$method.reml" --grm $folder/$grm_name\_$method --bfile $bed_file --max-threads $n_threads --allow-multi YES --check-root NO
     done
 done
