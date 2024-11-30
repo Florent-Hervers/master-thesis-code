@@ -20,7 +20,7 @@ from tqdm import tqdm
 
 from .model import LassoNet
 from .cox import CoxPHLoss, concordance_index
-from sklearn.metrics import mean_squared_error
+from scipy.stats import pearsonr
 
 
 def abstractattr(f):
@@ -40,7 +40,7 @@ class HistoryItem:
     l2_regularization_skip: float
     selected: torch.BoolTensor
     n_iters: int
-
+    correlation: float
     def log(item):
         print(
             f"{item.n_iters} epochs, "
@@ -298,8 +298,7 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
             randperm = torch.randperm
         batch_size = min(batch_size, n_train)
 
-        pbar = tqdm(range(epochs))
-        for epoch in pbar:
+        for epoch in range(epochs):
             indices = randperm(n_train)
             model.train()
             loss = 0
@@ -332,11 +331,6 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
 
                 optimizer.step(closure)
                 model.prox(lambda_=lambda_ * optimizer.param_groups[0]["lr"], M=self.M)
-            pbar.update(1)
-            pbar.set_postfix({"loss":loss})
-            if self.verbose>1:
-                print("epoch:", epoch)
-                print("loss:", loss)
 
             if epoch == 0:
                 # fallback to running loss of first epoch
@@ -353,8 +347,9 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
                 real_loss = loss
                 n_iters = epoch + 1
             if patience is not None and epochs_since_best_val_obj == patience:
+                print(f"Final training epoch {epoch} for lambda {lambda_:.5f} finished. Train loss: {loss:.3f}. Validation objective: {val_obj:.3f}")
                 break
-
+           
         if self.backtrack:
             self.model.load_state_dict(best_state_dict)
             val_obj = real_best_val_obj
@@ -377,6 +372,7 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
             l2_regularization_skip=l2_regularization_skip,
             selected=self.model.input_mask().cpu(),
             n_iters=n_iters,
+            correlation=self.score(X_val,y_val)
         )
 
     @abstractmethod
@@ -579,9 +575,14 @@ class LassoNetRegressor(
         return ans
 
     def score(self, X, y, sample_weight=None):
-        y_pred = self.predict(X)
+        y_pred = self.predict(X.cpu())
 
-        return mean_squared_error(y, y_pred, sample_weight=sample_weight)
+        if len(y_pred.shape) > 1:
+            y_pred = y_pred.view(-1)
+        if len(y.shape) > 1:
+            y = y.view(-1)
+        
+        return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
 
 
 class LassoNetClassifier(

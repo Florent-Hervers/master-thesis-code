@@ -1,9 +1,7 @@
-import os
-from lassonet.lassonet import LassoNetRegressorCV, plot_cv
+from lassonet.lassonet import LassoNetRegressor
 import torch
 from functools import partial
-import matplotlib.pyplot as plt
-from files import make_filename, make_sure_dir
+from math import isnan
 
 
 def collate_params(bo_config, **params):
@@ -22,43 +20,36 @@ def collate_params(bo_config, **params):
     return collated_params
 
 
-def validate_params(**params):
-    if params['hidden_layer2_features'] <= 0:
-        params.pop('hidden_layer2_features')
-    return params
-
-
 def cv_eval_model(ds_tuple, bo_config, **params):
-    train_feature, train_label, test_feature, test_label = ds_tuple
+    train_feature, train_label, val_feature, val_label = ds_tuple
 
     params = collate_params(bo_config, **params)
-    params = validate_params(**params)
 
-    model = LassoNetRegressorCV(
-        hidden_dims=(params['hidden_layer1_features'],
-                     params['hidden_layer2_features'])
-        if params['hidden_layer2_features'] > 0
-        else (params['hidden_layer1_features'],),
-        # lambda_start=0.1,
-        # path_multiplier=1.2,
+    model = LassoNetRegressor(
+        hidden_dims=(params['hidden_layer1_features'],),
+        lambda_start= 1.0,
+        path_multiplier= 1.2,
         M=params['M'],
-        optim=(
-            partial(torch.optim.Adam, lr=params['learning_rate']),
-            partial(torch.optim.SGD, lr=params['learning_rate'], momentum=0.9),
-        ),
-        batch_size=params['batch_size'],
+        optim=partial(torch.optim.Adam, lr=params['learning_rate']),
+        batch_size= 64,
         device='cuda',
         random_state=42,
         torch_seed=42,
     )
 
-    model.path(train_feature, train_label)
-    testing_mse = model.score(test_feature, test_label)
-    print("Best model mse", testing_mse)
-    print("Lambda =", model.best_lambda_)
+    results = model.path(train_feature, train_label, X_val=val_feature, y_val=val_label)
+    
+    results_to_print = sorted(results, key=lambda a: a.correlation)
+    
+    # Case where all features are not chosen and the model only return a constant vector
+    if isnan(results_to_print[-1].correlation):
+        results_to_print.pop()
 
-    plot_cv(model, test_feature, test_label)
-    plt.savefig(os.path.join(make_sure_dir(
-        bo_config['output_path']), make_filename(params, postfix='.png')))
-
-    return -testing_mse
+    print("//////////////////////////////////////////////////////////////////////////////////")
+    for item in results_to_print[:-1]:
+        print(f"Lambda: {item.lambda_:.4f} / Correlation: {item.correlation:.3f}")
+    print("Best model correlation", results_to_print[-1].correlation)
+    print("Lambda =", results_to_print[-1].lambda_)
+    print("//////////////////////////////////////////////////////////////////////////////////")
+    
+    return results_to_print[-1].correlation

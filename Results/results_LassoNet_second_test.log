@@ -1,0 +1,1899 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.312. Validation objective: 1.698
+Final training epoch 33 for lambda 1.20000 finished. Train loss: 1.390. Validation objective: 57.722
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 10 for lambda 2.07360 finished. Train loss: 1.501. Validation objective: 8.390
+Final training epoch 10 for lambda 2.48832 finished. Train loss: 1.414. Validation objective: 50.551
+Final training epoch 14 for lambda 2.98598 finished. Train loss: 1.443. Validation objective: 25.064
+Final training epoch 17 for lambda 3.58318 finished. Train loss: 2.535. Validation objective: 187.274
+Final training epoch 11 for lambda 4.29982 finished. Train loss: 2.698. Validation objective: 30.840
+Final training epoch 14 for lambda 5.15978 finished. Train loss: 1.417. Validation objective: 40.096
+Final training epoch 25 for lambda 6.19174 finished. Train loss: 1.935. Validation objective: 25.448
+Final training epoch 10 for lambda 7.43008 finished. Train loss: 1.437. Validation objective: 32.254
+Final training epoch 19 for lambda 8.91610 finished. Train loss: 2.029. Validation objective: 243.514
+Final training epoch 10 for lambda 10.69932 finished. Train loss: 2.273. Validation objective: 380.661
+Final training epoch 18 for lambda 12.83918 finished. Train loss: 1.453. Validation objective: 73.126
+Final training epoch 19 for lambda 15.40702 finished. Train loss: 2.161. Validation objective: 36.448
+Final training epoch 28 for lambda 18.48843 finished. Train loss: 1.527. Validation objective: 23.327
+Final training epoch 9 for lambda 22.18611 finished. Train loss: 1.530. Validation objective: 130.175
+Final training epoch 14 for lambda 26.62333 finished. Train loss: 1.473. Validation objective: 25.878
+Final training epoch 12 for lambda 31.94800 finished. Train loss: 1.535. Validation objective: 27.128
+Final training epoch 15 for lambda 38.33760 finished. Train loss: 1.491. Validation objective: 49.859
+Final training epoch 20 for lambda 46.00512 finished. Train loss: 1.520. Validation objective: 172.423
+Final training epoch 12 for lambda 55.20614 finished. Train loss: 1.505. Validation objective: 33.952
+Final training epoch 11 for lambda 66.24737 finished. Train loss: 1.486. Validation objective: 39.072
+Final training epoch 9 for lambda 79.49685 finished. Train loss: 1.481. Validation objective: 57.723
+Final training epoch 14 for lambda 95.39622 finished. Train loss: 1.518. Validation objective: 38.317
+Final training epoch 11 for lambda 114.47546 finished. Train loss: 1.488. Validation objective: 58.101
+Final training epoch 29 for lambda 137.37055 finished. Train loss: 1.494. Validation objective: 32.575
+Final training epoch 49 for lambda 164.84466 finished. Train loss: 1.495. Validation objective: 17.923
+Final training epoch 11 for lambda 197.81359 finished. Train loss: 1.506. Validation objective: 13.874
+Final training epoch 25 for lambda 237.37631 finished. Train loss: 1.512. Validation objective: 7.556
+Final training epoch 33 for lambda 284.85158 finished. Train loss: 1.528. Validation objective: 3.768
+Final training epoch 14 for lambda 341.82189 finished. Train loss: 1.548. Validation objective: 2.083
+Final training epoch 11 for lambda 410.18627 finished. Train loss: 1.562. Validation objective: 1.631
+Final training epoch 14 for lambda 492.22352 finished. Train loss: 1.565. Validation objective: 1.430
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 410.1863 / Correlation: 0.164
+Lambda: 341.8219 / Correlation: 0.243
+Lambda: 1.4400 / Correlation: 0.295
+Lambda: 3.5832 / Correlation: 0.301
+Lambda: 237.3763 / Correlation: 0.315
+Lambda: 284.8516 / Correlation: 0.322
+Lambda: 1.7280 / Correlation: 0.328
+Lambda: 1.0000 / Correlation: 0.329
+Lambda: 0.0000 / Correlation: 0.340
+Lambda: 46.0051 / Correlation: 0.358
+Lambda: 164.8447 / Correlation: 0.363
+Lambda: 137.3706 / Correlation: 0.363
+Lambda: 8.9161 / Correlation: 0.368
+Lambda: 114.4755 / Correlation: 0.368
+Lambda: 197.8136 / Correlation: 0.370
+Lambda: 55.2061 / Correlation: 0.374
+Lambda: 95.3962 / Correlation: 0.377
+Lambda: 31.9480 / Correlation: 0.382
+Lambda: 22.1861 / Correlation: 0.386
+Lambda: 4.2998 / Correlation: 0.387
+Lambda: 79.4968 / Correlation: 0.388
+Lambda: 15.4070 / Correlation: 0.392
+Lambda: 18.4884 / Correlation: 0.394
+Lambda: 26.6233 / Correlation: 0.394
+Lambda: 38.3376 / Correlation: 0.394
+Lambda: 66.2474 / Correlation: 0.397
+Lambda: 7.4301 / Correlation: 0.398
+Lambda: 2.0736 / Correlation: 0.403
+Lambda: 6.1917 / Correlation: 0.403
+Lambda: 10.6993 / Correlation: 0.403
+Lambda: 12.8392 / Correlation: 0.404
+Lambda: 5.1598 / Correlation: 0.411
+Lambda: 2.9860 / Correlation: 0.417
+Lambda: 1.2000 / Correlation: 0.432
+Best model correlation 0.43404362
+Lambda = 2.48832
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 0.494. Validation objective: 1.671
+Final training epoch 97 for lambda 2.07360 finished. Train loss: 2.466. Validation objective: 7.625
+Final training epoch 98 for lambda 2.48832 finished. Train loss: 1.430. Validation objective: 86.148
+Final training epoch 38 for lambda 2.98598 finished. Train loss: 1.494. Validation objective: 36.943
+Final training epoch 13 for lambda 3.58318 finished. Train loss: 1.376. Validation objective: 25.345
+Final training epoch 15 for lambda 4.29982 finished. Train loss: 1.328. Validation objective: 28.329
+Final training epoch 57 for lambda 5.15978 finished. Train loss: 1.370. Validation objective: 43.578
+Final training epoch 17 for lambda 6.19174 finished. Train loss: 1.335. Validation objective: 56.771
+Final training epoch 14 for lambda 7.43008 finished. Train loss: 1.375. Validation objective: 18.274
+Final training epoch 18 for lambda 8.91610 finished. Train loss: 1.355. Validation objective: 19.987
+Final training epoch 19 for lambda 10.69932 finished. Train loss: 1.342. Validation objective: 25.139
+Final training epoch 13 for lambda 12.83918 finished. Train loss: 1.423. Validation objective: 26.788
+Final training epoch 16 for lambda 15.40702 finished. Train loss: 1.367. Validation objective: 35.250
+Final training epoch 18 for lambda 18.48843 finished. Train loss: 1.385. Validation objective: 71.307
+Final training epoch 15 for lambda 22.18611 finished. Train loss: 1.389. Validation objective: 43.769
+Final training epoch 20 for lambda 26.62333 finished. Train loss: 1.407. Validation objective: 44.208
+Final training epoch 18 for lambda 31.94800 finished. Train loss: 1.377. Validation objective: 45.921
+Final training epoch 15 for lambda 38.33760 finished. Train loss: 1.402. Validation objective: 50.928
+Final training epoch 11 for lambda 46.00512 finished. Train loss: 1.404. Validation objective: 54.655
+Final training epoch 17 for lambda 55.20614 finished. Train loss: 1.441. Validation objective: 61.915
+Final training epoch 11 for lambda 66.24737 finished. Train loss: 1.411. Validation objective: 77.655
+Final training epoch 19 for lambda 79.49685 finished. Train loss: 1.409. Validation objective: 73.257
+Final training epoch 11 for lambda 95.39622 finished. Train loss: 1.429. Validation objective: 69.939
+Final training epoch 35 for lambda 114.47546 finished. Train loss: 1.453. Validation objective: 65.172
+Final training epoch 11 for lambda 137.37055 finished. Train loss: 1.429. Validation objective: 66.977
+Final training epoch 35 for lambda 164.84466 finished. Train loss: 1.431. Validation objective: 62.263
+Final training epoch 39 for lambda 197.81359 finished. Train loss: 1.467. Validation objective: 51.624
+Final training epoch 22 for lambda 237.37631 finished. Train loss: 1.459. Validation objective: 55.958
+Final training epoch 22 for lambda 284.85158 finished. Train loss: 1.448. Validation objective: 60.871
+Final training epoch 16 for lambda 341.82189 finished. Train loss: 1.455. Validation objective: 54.302
+Final training epoch 12 for lambda 410.18627 finished. Train loss: 1.470. Validation objective: 45.726
+Final training epoch 22 for lambda 492.22352 finished. Train loss: 1.475. Validation objective: 31.387
+Final training epoch 26 for lambda 590.66823 finished. Train loss: 1.482. Validation objective: 22.544
+Final training epoch 10 for lambda 708.80187 finished. Train loss: 1.488. Validation objective: 15.475
+Final training epoch 50 for lambda 850.56225 finished. Train loss: 1.510. Validation objective: 8.531
+Final training epoch 33 for lambda 1020.67470 finished. Train loss: 1.527. Validation objective: 4.257
+Final training epoch 21 for lambda 1224.80964 finished. Train loss: 1.551. Validation objective: 3.188
+Final training epoch 20 for lambda 1469.77157 finished. Train loss: 1.562. Validation objective: 1.757
+Final training epoch 14 for lambda 1763.72588 finished. Train loss: 1.565. Validation objective: 1.438
+Final training epoch 10 for lambda 2116.47106 finished. Train loss: 1.564. Validation objective: 1.414
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.0736 / Correlation: -0.180
+Lambda: 1763.7259 / Correlation: 0.045
+Lambda: 1469.7716 / Correlation: 0.287
+Lambda: 1224.8096 / Correlation: 0.314
+Lambda: 1020.6747 / Correlation: 0.318
+Lambda: 0.0000 / Correlation: 0.342
+Lambda: 410.1863 / Correlation: 0.371
+Lambda: 708.8019 / Correlation: 0.374
+Lambda: 850.5622 / Correlation: 0.374
+Lambda: 590.6682 / Correlation: 0.375
+Lambda: 492.2235 / Correlation: 0.378
+Lambda: 341.8219 / Correlation: 0.391
+Lambda: 237.3763 / Correlation: 0.391
+Lambda: 2.9860 / Correlation: 0.391
+Lambda: 95.3962 / Correlation: 0.394
+Lambda: 197.8136 / Correlation: 0.397
+Lambda: 164.8447 / Correlation: 0.401
+Lambda: 79.4968 / Correlation: 0.404
+Lambda: 55.2061 / Correlation: 0.404
+Lambda: 10.6993 / Correlation: 0.406
+Lambda: 137.3706 / Correlation: 0.408
+Lambda: 8.9161 / Correlation: 0.408
+Lambda: 1.0000 / Correlation: 0.409
+Lambda: 66.2474 / Correlation: 0.409
+Lambda: 284.8516 / Correlation: 0.412
+Lambda: 31.9480 / Correlation: 0.412
+Lambda: 2.4883 / Correlation: 0.414
+Lambda: 38.3376 / Correlation: 0.415
+Lambda: 46.0051 / Correlation: 0.417
+Lambda: 7.4301 / Correlation: 0.417
+Lambda: 18.4884 / Correlation: 0.420
+Lambda: 15.4070 / Correlation: 0.421
+Lambda: 114.4755 / Correlation: 0.421
+Lambda: 6.1917 / Correlation: 0.421
+Lambda: 22.1861 / Correlation: 0.424
+Lambda: 12.8392 / Correlation: 0.424
+Lambda: 4.2998 / Correlation: 0.428
+Lambda: 5.1598 / Correlation: 0.428
+Lambda: 26.6233 / Correlation: 0.430
+Lambda: 3.5832 / Correlation: 0.431
+Lambda: 1.2000 / Correlation: 0.444
+Lambda: 1.4400 / Correlation: 0.449
+Best model correlation 0.45008594
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 1.995. Validation objective: 4.465
+Final training epoch 80 for lambda 1.00000 finished. Train loss: 1.512. Validation objective: 158.175
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.000.
+  warnings.warn(
+Final training epoch 11 for lambda 1.20000 finished. Train loss: 1.852. Validation objective: 345.713
+Final training epoch 13 for lambda 1.44000 finished. Train loss: 1.589. Validation objective: 242.573
+Final training epoch 24 for lambda 1.72800 finished. Train loss: 1.805. Validation objective: 268.874
+Final training epoch 21 for lambda 2.07360 finished. Train loss: 1.826. Validation objective: 323.521
+Final training epoch 17 for lambda 2.48832 finished. Train loss: 1.710. Validation objective: 388.673
+Final training epoch 13 for lambda 2.98598 finished. Train loss: 1.725. Validation objective: 438.743
+Final training epoch 95 for lambda 3.58318 finished. Train loss: 2.980. Validation objective: 164.886
+Final training epoch 40 for lambda 4.29982 finished. Train loss: 45.764. Validation objective: 596.543
+Final training epoch 21 for lambda 5.15978 finished. Train loss: 4.214. Validation objective: 2882.304
+Final training epoch 11 for lambda 6.19174 finished. Train loss: 1.565. Validation objective: 145.407
+Final training epoch 19 for lambda 7.43008 finished. Train loss: 9.305. Validation objective: 73.729
+Final training epoch 14 for lambda 8.91610 finished. Train loss: 1.508. Validation objective: 99.685
+Final training epoch 32 for lambda 10.69932 finished. Train loss: 3.023. Validation objective: 24.602
+Final training epoch 9 for lambda 12.83918 finished. Train loss: 2.173. Validation objective: 39.028
+Final training epoch 17 for lambda 15.40702 finished. Train loss: 1.793. Validation objective: 398.983
+Final training epoch 16 for lambda 18.48843 finished. Train loss: 1.494. Validation objective: 30.940
+Final training epoch 43 for lambda 22.18611 finished. Train loss: 1.502. Validation objective: 8.485
+Final training epoch 24 for lambda 26.62333 finished. Train loss: 1.525. Validation objective: 6.187
+Final training epoch 21 for lambda 31.94800 finished. Train loss: 1.546. Validation objective: 2.332
+Final training epoch 17 for lambda 38.33760 finished. Train loss: 1.562. Validation objective: 1.627
+Final training epoch 13 for lambda 46.00512 finished. Train loss: 1.565. Validation objective: 1.436
+Final training epoch 13 for lambda 55.20614 finished. Train loss: 1.565. Validation objective: 1.424
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.2000 / Correlation: -0.226
+Lambda: 46.0051 / Correlation: 0.035
+Lambda: 1.7280 / Correlation: 0.169
+Lambda: 38.3376 / Correlation: 0.174
+Lambda: 10.6993 / Correlation: 0.230
+Lambda: 0.0000 / Correlation: 0.234
+Lambda: 3.5832 / Correlation: 0.234
+Lambda: 15.4070 / Correlation: 0.267
+Lambda: 31.9480 / Correlation: 0.289
+Lambda: 7.4301 / Correlation: 0.292
+Lambda: 2.0736 / Correlation: 0.294
+Lambda: 2.4883 / Correlation: 0.320
+Lambda: 4.2998 / Correlation: 0.326
+Lambda: 1.4400 / Correlation: 0.331
+Lambda: 26.6233 / Correlation: 0.335
+Lambda: 5.1598 / Correlation: 0.346
+Lambda: 12.8392 / Correlation: 0.355
+Lambda: 22.1861 / Correlation: 0.362
+Lambda: 1.0000 / Correlation: 0.367
+Lambda: 6.1917 / Correlation: 0.368
+Lambda: 18.4884 / Correlation: 0.372
+Lambda: 8.9161 / Correlation: 0.382
+Best model correlation 0.38860214
+Lambda = 2.9859839999999997
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.546. Validation objective: 1.848
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.200.
+  warnings.warn(
+Final training epoch 50 for lambda 1.44000 finished. Train loss: 1.378. Validation objective: 36.365
+Final training epoch 54 for lambda 1.72800 finished. Train loss: 1.399. Validation objective: 9.948
+Final training epoch 22 for lambda 2.07360 finished. Train loss: 1.392. Validation objective: 32.177
+Final training epoch 30 for lambda 2.48832 finished. Train loss: 1.406. Validation objective: 12.394
+Final training epoch 34 for lambda 2.98598 finished. Train loss: 1.458. Validation objective: 15.571
+Final training epoch 15 for lambda 3.58318 finished. Train loss: 1.458. Validation objective: 15.743
+Final training epoch 13 for lambda 4.29982 finished. Train loss: 1.444. Validation objective: 10.874
+Final training epoch 48 for lambda 5.15978 finished. Train loss: 1.477. Validation objective: 3.343
+Final training epoch 10 for lambda 6.19174 finished. Train loss: 1.623. Validation objective: 3.688
+Final training epoch 40 for lambda 7.43008 finished. Train loss: 1.490. Validation objective: 14.789
+Final training epoch 18 for lambda 8.91610 finished. Train loss: 1.462. Validation objective: 13.868
+Final training epoch 29 for lambda 10.69932 finished. Train loss: 1.482. Validation objective: 5.273
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.500. Validation objective: 3.729
+Final training epoch 48 for lambda 15.40702 finished. Train loss: 1.518. Validation objective: 2.064
+Final training epoch 14 for lambda 18.48843 finished. Train loss: 1.541. Validation objective: 1.706
+Final training epoch 11 for lambda 22.18611 finished. Train loss: 1.561. Validation objective: 1.503
+Final training epoch 10 for lambda 26.62333 finished. Train loss: 1.564. Validation objective: 1.421
+Final training epoch 9 for lambda 31.94800 finished. Train loss: 1.565. Validation objective: 1.422
+Final training epoch 9 for lambda 38.33760 finished. Train loss: 1.565. Validation objective: 1.421
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 26.6233 / Correlation: 0.046
+Lambda: 31.9480 / Correlation: 0.050
+Lambda: 22.1861 / Correlation: 0.286
+Lambda: 15.4070 / Correlation: 0.329
+Lambda: 0.0000 / Correlation: 0.352
+Lambda: 1.2000 / Correlation: 0.355
+Lambda: 18.4884 / Correlation: 0.356
+Lambda: 7.4301 / Correlation: 0.359
+Lambda: 6.1917 / Correlation: 0.376
+Lambda: 5.1598 / Correlation: 0.382
+Lambda: 8.9161 / Correlation: 0.383
+Lambda: 1.0000 / Correlation: 0.385
+Lambda: 12.8392 / Correlation: 0.388
+Lambda: 10.6993 / Correlation: 0.391
+Lambda: 3.5832 / Correlation: 0.395
+Lambda: 4.2998 / Correlation: 0.396
+Lambda: 1.7280 / Correlation: 0.405
+Lambda: 2.4883 / Correlation: 0.405
+Lambda: 2.9860 / Correlation: 0.406
+Lambda: 1.4400 / Correlation: 0.426
+Best model correlation 0.44620875
+Lambda = 2.0736
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 0.652. Validation objective: 1.694
+Final training epoch 93 for lambda 2.07360 finished. Train loss: 1.364. Validation objective: 9.783
+Final training epoch 12 for lambda 2.98598 finished. Train loss: 1.347. Validation objective: 9.913
+Final training epoch 92 for lambda 4.29982 finished. Train loss: 1.420. Validation objective: 19.778
+Final training epoch 46 for lambda 5.15978 finished. Train loss: 1.429. Validation objective: 21.775
+Final training epoch 12 for lambda 6.19174 finished. Train loss: 1.360. Validation objective: 18.845
+Final training epoch 34 for lambda 7.43008 finished. Train loss: 1.446. Validation objective: 38.003
+Final training epoch 19 for lambda 8.91610 finished. Train loss: 1.330. Validation objective: 20.523
+Final training epoch 15 for lambda 10.69932 finished. Train loss: 1.356. Validation objective: 23.958
+Final training epoch 11 for lambda 12.83918 finished. Train loss: 1.372. Validation objective: 52.452
+Final training epoch 35 for lambda 15.40702 finished. Train loss: 1.394. Validation objective: 24.098
+Final training epoch 22 for lambda 18.48843 finished. Train loss: 1.379. Validation objective: 33.257
+Final training epoch 45 for lambda 22.18611 finished. Train loss: 1.394. Validation objective: 38.724
+Final training epoch 32 for lambda 26.62333 finished. Train loss: 1.430. Validation objective: 43.872
+Final training epoch 26 for lambda 31.94800 finished. Train loss: 1.723. Validation objective: 43.224
+Final training epoch 23 for lambda 38.33760 finished. Train loss: 1.444. Validation objective: 60.839
+Final training epoch 15 for lambda 46.00512 finished. Train loss: 1.430. Validation objective: 44.483
+Final training epoch 19 for lambda 55.20614 finished. Train loss: 1.441. Validation objective: 40.824
+Final training epoch 19 for lambda 66.24737 finished. Train loss: 1.444. Validation objective: 58.697
+Final training epoch 18 for lambda 79.49685 finished. Train loss: 1.417. Validation objective: 57.427
+Final training epoch 27 for lambda 95.39622 finished. Train loss: 1.418. Validation objective: 60.814
+Final training epoch 16 for lambda 114.47546 finished. Train loss: 1.422. Validation objective: 60.927
+Final training epoch 19 for lambda 137.37055 finished. Train loss: 1.429. Validation objective: 54.970
+Final training epoch 30 for lambda 164.84466 finished. Train loss: 1.435. Validation objective: 81.917
+Final training epoch 23 for lambda 197.81359 finished. Train loss: 1.442. Validation objective: 56.428
+Final training epoch 26 for lambda 237.37631 finished. Train loss: 1.456. Validation objective: 47.863
+Final training epoch 15 for lambda 284.85158 finished. Train loss: 1.474. Validation objective: 65.899
+Final training epoch 24 for lambda 341.82189 finished. Train loss: 1.460. Validation objective: 44.869
+Final training epoch 11 for lambda 410.18627 finished. Train loss: 1.476. Validation objective: 43.664
+Final training epoch 14 for lambda 492.22352 finished. Train loss: 1.477. Validation objective: 103.790
+Final training epoch 25 for lambda 590.66823 finished. Train loss: 1.473. Validation objective: 38.172
+Final training epoch 26 for lambda 708.80187 finished. Train loss: 1.482. Validation objective: 24.414
+Final training epoch 41 for lambda 850.56225 finished. Train loss: 1.491. Validation objective: 13.283
+Final training epoch 12 for lambda 1020.67470 finished. Train loss: 1.500. Validation objective: 11.773
+Final training epoch 24 for lambda 1224.80964 finished. Train loss: 1.525. Validation objective: 5.304
+Final training epoch 16 for lambda 1469.77157 finished. Train loss: 1.549. Validation objective: 4.079
+Final training epoch 21 for lambda 1763.72588 finished. Train loss: 1.560. Validation objective: 1.771
+Final training epoch 12 for lambda 2116.47106 finished. Train loss: 1.565. Validation objective: 1.455
+Final training epoch 10 for lambda 2539.76527 finished. Train loss: 1.565. Validation objective: 1.416
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2116.4711 / Correlation: 0.179
+Lambda: 1763.7259 / Correlation: 0.209
+Lambda: 1469.7716 / Correlation: 0.274
+Lambda: 1224.8096 / Correlation: 0.325
+Lambda: 38.3376 / Correlation: 0.330
+Lambda: 0.0000 / Correlation: 0.350
+Lambda: 492.2235 / Correlation: 0.365
+Lambda: 1020.6747 / Correlation: 0.373
+Lambda: 284.8516 / Correlation: 0.380
+Lambda: 850.5622 / Correlation: 0.383
+Lambda: 31.9480 / Correlation: 0.383
+Lambda: 708.8019 / Correlation: 0.383
+Lambda: 66.2474 / Correlation: 0.389
+Lambda: 1.0000 / Correlation: 0.392
+Lambda: 590.6682 / Correlation: 0.394
+Lambda: 341.8219 / Correlation: 0.400
+Lambda: 46.0051 / Correlation: 0.402
+Lambda: 410.1863 / Correlation: 0.406
+Lambda: 95.3962 / Correlation: 0.407
+Lambda: 137.3706 / Correlation: 0.408
+Lambda: 15.4070 / Correlation: 0.410
+Lambda: 79.4968 / Correlation: 0.411
+Lambda: 114.4755 / Correlation: 0.412
+Lambda: 164.8447 / Correlation: 0.413
+Lambda: 197.8136 / Correlation: 0.414
+Lambda: 7.4301 / Correlation: 0.416
+Lambda: 26.6233 / Correlation: 0.419
+Lambda: 237.3763 / Correlation: 0.419
+Lambda: 55.2061 / Correlation: 0.423
+Lambda: 22.1861 / Correlation: 0.425
+Lambda: 12.8392 / Correlation: 0.426
+Lambda: 10.6993 / Correlation: 0.427
+Lambda: 3.5832 / Correlation: 0.428
+Lambda: 1.4400 / Correlation: 0.429
+Lambda: 1.2000 / Correlation: 0.431
+Lambda: 18.4884 / Correlation: 0.432
+Lambda: 8.9161 / Correlation: 0.432
+Lambda: 4.2998 / Correlation: 0.434
+Lambda: 5.1598 / Correlation: 0.437
+Lambda: 6.1917 / Correlation: 0.439
+Lambda: 2.4883 / Correlation: 0.439
+Lambda: 1.7280 / Correlation: 0.442
+Lambda: 2.0736 / Correlation: 0.447
+Best model correlation 0.44909632
+Lambda = 2.9859839999999997
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.184. Validation objective: 1.787
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.000.
+  warnings.warn(
+Final training epoch 15 for lambda 1.20000 finished. Train loss: 1.492. Validation objective: 9.617
+Final training epoch 20 for lambda 1.44000 finished. Train loss: 1.659. Validation objective: 108.762
+Final training epoch 27 for lambda 1.72800 finished. Train loss: 1.507. Validation objective: 5.844
+Final training epoch 10 for lambda 2.07360 finished. Train loss: 2.454. Validation objective: 231.362
+Final training epoch 17 for lambda 2.48832 finished. Train loss: 1.422. Validation objective: 28.115
+Final training epoch 14 for lambda 2.98598 finished. Train loss: 1.423. Validation objective: 31.567
+Final training epoch 16 for lambda 3.58318 finished. Train loss: 1.429. Validation objective: 41.129
+Final training epoch 39 for lambda 4.29982 finished. Train loss: 1.451. Validation objective: 17.567
+Final training epoch 15 for lambda 5.15978 finished. Train loss: 1.610. Validation objective: 101.202
+Final training epoch 15 for lambda 6.19174 finished. Train loss: 1.430. Validation objective: 51.339
+Final training epoch 17 for lambda 7.43008 finished. Train loss: 1.429. Validation objective: 38.399
+Final training epoch 12 for lambda 8.91610 finished. Train loss: 1.701. Validation objective: 21.492
+Final training epoch 11 for lambda 10.69932 finished. Train loss: 1.465. Validation objective: 29.636
+Final training epoch 32 for lambda 12.83918 finished. Train loss: 1.462. Validation objective: 35.904
+Final training epoch 12 for lambda 15.40702 finished. Train loss: 1.467. Validation objective: 35.569
+Final training epoch 28 for lambda 18.48843 finished. Train loss: 1.503. Validation objective: 33.828
+Final training epoch 17 for lambda 22.18611 finished. Train loss: 1.486. Validation objective: 36.727
+Final training epoch 11 for lambda 26.62333 finished. Train loss: 1.478. Validation objective: 25.527
+Final training epoch 21 for lambda 31.94800 finished. Train loss: 1.480. Validation objective: 17.778
+Final training epoch 28 for lambda 38.33760 finished. Train loss: 1.488. Validation objective: 11.386
+Final training epoch 38 for lambda 46.00512 finished. Train loss: 1.506. Validation objective: 6.300
+Final training epoch 12 for lambda 55.20614 finished. Train loss: 1.507. Validation objective: 4.104
+Final training epoch 27 for lambda 66.24737 finished. Train loss: 1.525. Validation objective: 2.898
+Final training epoch 22 for lambda 79.49685 finished. Train loss: 1.548. Validation objective: 1.768
+Final training epoch 11 for lambda 95.39622 finished. Train loss: 1.562. Validation objective: 1.726
+Final training epoch 10 for lambda 114.47546 finished. Train loss: 1.565. Validation objective: 1.423
+Final training epoch 9 for lambda 137.37055 finished. Train loss: 1.566. Validation objective: 1.419
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 114.4755 / Correlation: 0.058
+Lambda: 1.4400 / Correlation: 0.246
+Lambda: 95.3962 / Correlation: 0.247
+Lambda: 79.4968 / Correlation: 0.252
+Lambda: 2.0736 / Correlation: 0.262
+Lambda: 0.0000 / Correlation: 0.302
+Lambda: 66.2474 / Correlation: 0.327
+Lambda: 55.2061 / Correlation: 0.331
+Lambda: 1.2000 / Correlation: 0.345
+Lambda: 46.0051 / Correlation: 0.357
+Lambda: 38.3376 / Correlation: 0.358
+Lambda: 5.1598 / Correlation: 0.367
+Lambda: 31.9480 / Correlation: 0.369
+Lambda: 18.4884 / Correlation: 0.379
+Lambda: 26.6233 / Correlation: 0.382
+Lambda: 1.0000 / Correlation: 0.384
+Lambda: 22.1861 / Correlation: 0.387
+Lambda: 1.7280 / Correlation: 0.389
+Lambda: 15.4070 / Correlation: 0.391
+Lambda: 4.2998 / Correlation: 0.391
+Lambda: 8.9161 / Correlation: 0.391
+Lambda: 12.8392 / Correlation: 0.404
+Lambda: 7.4301 / Correlation: 0.404
+Lambda: 10.6993 / Correlation: 0.406
+Lambda: 6.1917 / Correlation: 0.420
+Lambda: 3.5832 / Correlation: 0.422
+Lambda: 2.9860 / Correlation: 0.424
+Best model correlation 0.42452428
+Lambda = 2.48832
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 1.254. Validation objective: 2.080
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 22 for lambda 1.72800 finished. Train loss: 1.364. Validation objective: 21.400
+Final training epoch 26 for lambda 2.07360 finished. Train loss: 1.386. Validation objective: 15.046
+Final training epoch 13 for lambda 2.48832 finished. Train loss: 1.477. Validation objective: 46.357
+Final training epoch 10 for lambda 2.98598 finished. Train loss: 1.390. Validation objective: 23.699
+Final training epoch 24 for lambda 3.58318 finished. Train loss: 1.507. Validation objective: 18.009
+Final training epoch 15 for lambda 4.29982 finished. Train loss: 1.489. Validation objective: 73.013
+Final training epoch 38 for lambda 5.15978 finished. Train loss: 3.449. Validation objective: 68.358
+Final training epoch 24 for lambda 6.19174 finished. Train loss: 1.520. Validation objective: 40.343
+Final training epoch 20 for lambda 7.43008 finished. Train loss: 1.426. Validation objective: 20.345
+Final training epoch 14 for lambda 8.91610 finished. Train loss: 1.443. Validation objective: 97.444
+Final training epoch 22 for lambda 10.69932 finished. Train loss: 1.473. Validation objective: 10.206
+Final training epoch 11 for lambda 12.83918 finished. Train loss: 3.383. Validation objective: 102.648
+Final training epoch 10 for lambda 15.40702 finished. Train loss: 1.478. Validation objective: 12.718
+Final training epoch 28 for lambda 18.48843 finished. Train loss: 2.898. Validation objective: 221.025
+Final training epoch 22 for lambda 22.18611 finished. Train loss: 1.458. Validation objective: 26.306
+Final training epoch 38 for lambda 26.62333 finished. Train loss: 1.464. Validation objective: 16.224
+Final training epoch 20 for lambda 31.94800 finished. Train loss: 3.075. Validation objective: 616.027
+Final training epoch 12 for lambda 38.33760 finished. Train loss: 1.485. Validation objective: 30.399
+Final training epoch 22 for lambda 46.00512 finished. Train loss: 1.473. Validation objective: 20.897
+Final training epoch 15 for lambda 55.20614 finished. Train loss: 1.494. Validation objective: 16.805
+Final training epoch 10 for lambda 66.24737 finished. Train loss: 1.501. Validation objective: 31.443
+Final training epoch 10 for lambda 79.49685 finished. Train loss: 1.573. Validation objective: 66.573
+Final training epoch 10 for lambda 95.39622 finished. Train loss: 1.563. Validation objective: 85.170
+Final training epoch 10 for lambda 114.47546 finished. Train loss: 1.502. Validation objective: 27.694
+Final training epoch 20 for lambda 137.37055 finished. Train loss: 1.497. Validation objective: 25.028
+Final training epoch 49 for lambda 164.84466 finished. Train loss: 1.499. Validation objective: 10.579
+Final training epoch 37 for lambda 197.81359 finished. Train loss: 1.500. Validation objective: 6.966
+Final training epoch 50 for lambda 237.37631 finished. Train loss: 1.513. Validation objective: 3.642
+Final training epoch 20 for lambda 284.85158 finished. Train loss: 1.531. Validation objective: 2.332
+Final training epoch 21 for lambda 341.82189 finished. Train loss: 1.554. Validation objective: 1.653
+Final training epoch 13 for lambda 410.18627 finished. Train loss: 1.563. Validation objective: 1.501
+Final training epoch 10 for lambda 492.22352 finished. Train loss: 1.566. Validation objective: 1.415
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 410.1863 / Correlation: 0.210
+Lambda: 18.4884 / Correlation: 0.212
+Lambda: 341.8219 / Correlation: 0.256
+Lambda: 4.2998 / Correlation: 0.260
+Lambda: 12.8392 / Correlation: 0.267
+Lambda: 284.8516 / Correlation: 0.312
+Lambda: 237.3763 / Correlation: 0.318
+Lambda: 8.9161 / Correlation: 0.331
+Lambda: 0.0000 / Correlation: 0.348
+Lambda: 137.3706 / Correlation: 0.354
+Lambda: 95.3962 / Correlation: 0.359
+Lambda: 164.8447 / Correlation: 0.361
+Lambda: 79.4968 / Correlation: 0.362
+Lambda: 114.4755 / Correlation: 0.365
+Lambda: 1.0000 / Correlation: 0.376
+Lambda: 31.9480 / Correlation: 0.383
+Lambda: 197.8136 / Correlation: 0.384
+Lambda: 46.0051 / Correlation: 0.384
+Lambda: 10.6993 / Correlation: 0.384
+Lambda: 2.4883 / Correlation: 0.385
+Lambda: 66.2474 / Correlation: 0.386
+Lambda: 15.4070 / Correlation: 0.386
+Lambda: 1.4400 / Correlation: 0.389
+Lambda: 55.2061 / Correlation: 0.390
+Lambda: 38.3376 / Correlation: 0.390
+Lambda: 1.2000 / Correlation: 0.392
+Lambda: 22.1861 / Correlation: 0.399
+Lambda: 26.6233 / Correlation: 0.401
+Lambda: 5.1598 / Correlation: 0.412
+Lambda: 2.0736 / Correlation: 0.415
+Lambda: 3.5832 / Correlation: 0.415
+Lambda: 6.1917 / Correlation: 0.417
+Lambda: 2.9860 / Correlation: 0.418
+Lambda: 7.4301 / Correlation: 0.419
+Best model correlation 0.44449747
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.305. Validation objective: 1.865
+Final training epoch 61 for lambda 1.72800 finished. Train loss: 1.439. Validation objective: 53.131
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 15 for lambda 2.07360 finished. Train loss: 1.444. Validation objective: 26.054
+Final training epoch 15 for lambda 2.48832 finished. Train loss: 1.400. Validation objective: 26.663
+Final training epoch 12 for lambda 2.98598 finished. Train loss: 1.400. Validation objective: 47.635
+Final training epoch 13 for lambda 3.58318 finished. Train loss: 1.442. Validation objective: 34.056
+Final training epoch 14 for lambda 4.29982 finished. Train loss: 1.414. Validation objective: 51.805
+Final training epoch 22 for lambda 5.15978 finished. Train loss: 5.530. Validation objective: 32.711
+Final training epoch 18 for lambda 6.19174 finished. Train loss: 5.572. Validation objective: 29.970
+Final training epoch 16 for lambda 7.43008 finished. Train loss: 1.414. Validation objective: 34.366
+Final training epoch 15 for lambda 8.91610 finished. Train loss: 1.528. Validation objective: 135.905
+Final training epoch 19 for lambda 10.69932 finished. Train loss: 1.559. Validation objective: 22.590
+Final training epoch 25 for lambda 12.83918 finished. Train loss: 1.601. Validation objective: 40.272
+Final training epoch 23 for lambda 15.40702 finished. Train loss: 2.546. Validation objective: 166.327
+Final training epoch 10 for lambda 18.48843 finished. Train loss: 1.948. Validation objective: 158.630
+Final training epoch 15 for lambda 22.18611 finished. Train loss: 1.459. Validation objective: 36.360
+Final training epoch 25 for lambda 26.62333 finished. Train loss: 1.551. Validation objective: 148.724
+Final training epoch 35 for lambda 31.94800 finished. Train loss: 1.650. Validation objective: 6.433
+Final training epoch 9 for lambda 38.33760 finished. Train loss: 3.574. Validation objective: 336.366
+Final training epoch 25 for lambda 46.00512 finished. Train loss: 1.572. Validation objective: 29.040
+Final training epoch 10 for lambda 55.20614 finished. Train loss: 1.484. Validation objective: 30.922
+Final training epoch 11 for lambda 66.24737 finished. Train loss: 1.483. Validation objective: 28.009
+Final training epoch 14 for lambda 79.49685 finished. Train loss: 1.499. Validation objective: 29.262
+Final training epoch 31 for lambda 95.39622 finished. Train loss: 1.519. Validation objective: 17.366
+Final training epoch 14 for lambda 114.47546 finished. Train loss: 1.480. Validation objective: 24.002
+Final training epoch 15 for lambda 137.37055 finished. Train loss: 1.495. Validation objective: 26.332
+Final training epoch 16 for lambda 164.84466 finished. Train loss: 1.491. Validation objective: 26.277
+Final training epoch 24 for lambda 197.81359 finished. Train loss: 1.486. Validation objective: 16.833
+Final training epoch 45 for lambda 237.37631 finished. Train loss: 1.502. Validation objective: 7.520
+Final training epoch 11 for lambda 284.85158 finished. Train loss: 1.513. Validation objective: 4.995
+Final training epoch 16 for lambda 341.82189 finished. Train loss: 1.526. Validation objective: 3.219
+Final training epoch 12 for lambda 410.18627 finished. Train loss: 1.552. Validation objective: 2.015
+Final training epoch 18 for lambda 492.22352 finished. Train loss: 1.564. Validation objective: 1.440
+Final training epoch 12 for lambda 590.66823 finished. Train loss: 1.564. Validation objective: 1.431
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 18.4884 / Correlation: 0.027
+Lambda: 492.2235 / Correlation: 0.192
+Lambda: 410.1863 / Correlation: 0.289
+Lambda: 26.6233 / Correlation: 0.296
+Lambda: 341.8219 / Correlation: 0.319
+Lambda: 0.0000 / Correlation: 0.335
+Lambda: 284.8516 / Correlation: 0.342
+Lambda: 237.3763 / Correlation: 0.352
+Lambda: 38.3376 / Correlation: 0.357
+Lambda: 197.8136 / Correlation: 0.367
+Lambda: 46.0051 / Correlation: 0.369
+Lambda: 164.8447 / Correlation: 0.376
+Lambda: 31.9480 / Correlation: 0.376
+Lambda: 79.4968 / Correlation: 0.378
+Lambda: 1.2000 / Correlation: 0.379
+Lambda: 137.3706 / Correlation: 0.380
+Lambda: 15.4070 / Correlation: 0.380
+Lambda: 95.3962 / Correlation: 0.381
+Lambda: 66.2474 / Correlation: 0.382
+Lambda: 1.0000 / Correlation: 0.384
+Lambda: 114.4755 / Correlation: 0.387
+Lambda: 55.2061 / Correlation: 0.387
+Lambda: 1.4400 / Correlation: 0.387
+Lambda: 8.9161 / Correlation: 0.391
+Lambda: 2.0736 / Correlation: 0.393
+Lambda: 12.8392 / Correlation: 0.399
+Lambda: 7.4301 / Correlation: 0.407
+Lambda: 10.6993 / Correlation: 0.410
+Lambda: 6.1917 / Correlation: 0.411
+Lambda: 22.1861 / Correlation: 0.414
+Lambda: 5.1598 / Correlation: 0.416
+Lambda: 3.5832 / Correlation: 0.422
+Lambda: 2.4883 / Correlation: 0.431
+Lambda: 4.2998 / Correlation: 0.437
+Lambda: 1.7280 / Correlation: 0.439
+Best model correlation 0.44639096
+Lambda = 2.9859839999999997
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.023. Validation objective: 1.834
+Final training epoch 76 for lambda 1.00000 finished. Train loss: 1.294. Validation objective: 43.413
+Final training epoch 44 for lambda 1.20000 finished. Train loss: 1.333. Validation objective: 36.138
+Final training epoch 47 for lambda 1.44000 finished. Train loss: 1.566. Validation objective: 50.794
+Final training epoch 82 for lambda 1.72800 finished. Train loss: 1.388. Validation objective: 20.068
+Final training epoch 40 for lambda 2.07360 finished. Train loss: 1.470. Validation objective: 25.309
+Final training epoch 14 for lambda 2.48832 finished. Train loss: 1.433. Validation objective: 36.321
+Final training epoch 33 for lambda 2.98598 finished. Train loss: 1.379. Validation objective: 13.691
+Final training epoch 39 for lambda 3.58318 finished. Train loss: 1.397. Validation objective: 8.029
+Final training epoch 21 for lambda 4.29982 finished. Train loss: 1.539. Validation objective: 12.649
+Final training epoch 13 for lambda 5.15978 finished. Train loss: 1.381. Validation objective: 17.841
+Final training epoch 36 for lambda 6.19174 finished. Train loss: 1.474. Validation objective: 96.948
+Final training epoch 27 for lambda 7.43008 finished. Train loss: 1.422. Validation objective: 16.640
+Final training epoch 19 for lambda 8.91610 finished. Train loss: 1.423. Validation objective: 16.551
+Final training epoch 10 for lambda 10.69932 finished. Train loss: 1.444. Validation objective: 21.644
+Final training epoch 20 for lambda 12.83918 finished. Train loss: 1.430. Validation objective: 19.814
+Final training epoch 16 for lambda 15.40702 finished. Train loss: 1.440. Validation objective: 21.135
+Final training epoch 14 for lambda 18.48843 finished. Train loss: 1.436. Validation objective: 31.744
+Final training epoch 15 for lambda 22.18611 finished. Train loss: 1.443. Validation objective: 23.785
+Final training epoch 14 for lambda 26.62333 finished. Train loss: 1.516. Validation objective: 23.976
+Final training epoch 28 for lambda 31.94800 finished. Train loss: 1.457. Validation objective: 24.778
+Final training epoch 24 for lambda 38.33760 finished. Train loss: 1.486. Validation objective: 32.135
+Final training epoch 14 for lambda 46.00512 finished. Train loss: 1.521. Validation objective: 31.383
+Final training epoch 18 for lambda 55.20614 finished. Train loss: 1.502. Validation objective: 88.627
+Final training epoch 20 for lambda 66.24737 finished. Train loss: 1.491. Validation objective: 18.879
+Final training epoch 9 for lambda 79.49685 finished. Train loss: 1.476. Validation objective: 39.537
+Final training epoch 13 for lambda 95.39622 finished. Train loss: 1.485. Validation objective: 50.455
+Final training epoch 23 for lambda 114.47546 finished. Train loss: 1.480. Validation objective: 66.812
+Final training epoch 17 for lambda 137.37055 finished. Train loss: 1.471. Validation objective: 39.756
+Final training epoch 13 for lambda 164.84466 finished. Train loss: 1.472. Validation objective: 50.478
+Final training epoch 19 for lambda 197.81359 finished. Train loss: 1.495. Validation objective: 35.901
+Final training epoch 45 for lambda 237.37631 finished. Train loss: 1.482. Validation objective: 32.205
+Final training epoch 27 for lambda 284.85158 finished. Train loss: 1.485. Validation objective: 22.176
+Final training epoch 15 for lambda 341.82189 finished. Train loss: 1.490. Validation objective: 17.176
+Final training epoch 36 for lambda 410.18627 finished. Train loss: 1.506. Validation objective: 11.290
+Final training epoch 19 for lambda 492.22352 finished. Train loss: 1.518. Validation objective: 6.673
+Final training epoch 14 for lambda 590.66823 finished. Train loss: 1.533. Validation objective: 3.186
+Final training epoch 17 for lambda 708.80187 finished. Train loss: 1.554. Validation objective: 2.100
+Final training epoch 14 for lambda 850.56225 finished. Train loss: 1.563. Validation objective: 1.650
+Final training epoch 10 for lambda 1020.67470 finished. Train loss: 1.565. Validation objective: 1.417
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 850.5622 / Correlation: 0.122
+Lambda: 708.8019 / Correlation: 0.281
+Lambda: 55.2061 / Correlation: 0.330
+Lambda: 0.0000 / Correlation: 0.337
+Lambda: 410.1863 / Correlation: 0.343
+Lambda: 341.8219 / Correlation: 0.344
+Lambda: 590.6682 / Correlation: 0.362
+Lambda: 284.8516 / Correlation: 0.365
+Lambda: 492.2235 / Correlation: 0.367
+Lambda: 6.1917 / Correlation: 0.378
+Lambda: 137.3706 / Correlation: 0.379
+Lambda: 237.3763 / Correlation: 0.382
+Lambda: 12.8392 / Correlation: 0.384
+Lambda: 197.8136 / Correlation: 0.387
+Lambda: 4.2998 / Correlation: 0.391
+Lambda: 1.4400 / Correlation: 0.392
+Lambda: 10.6993 / Correlation: 0.394
+Lambda: 8.9161 / Correlation: 0.394
+Lambda: 95.3962 / Correlation: 0.396
+Lambda: 38.3376 / Correlation: 0.396
+Lambda: 164.8447 / Correlation: 0.396
+Lambda: 79.4968 / Correlation: 0.396
+Lambda: 66.2474 / Correlation: 0.397
+Lambda: 114.4755 / Correlation: 0.398
+Lambda: 26.6233 / Correlation: 0.398
+Lambda: 22.1861 / Correlation: 0.398
+Lambda: 18.4884 / Correlation: 0.399
+Lambda: 2.9860 / Correlation: 0.400
+Lambda: 7.4301 / Correlation: 0.405
+Lambda: 46.0051 / Correlation: 0.405
+Lambda: 31.9480 / Correlation: 0.406
+Lambda: 15.4070 / Correlation: 0.411
+Lambda: 3.5832 / Correlation: 0.412
+Lambda: 2.0736 / Correlation: 0.416
+Lambda: 5.1598 / Correlation: 0.424
+Lambda: 2.4883 / Correlation: 0.428
+Lambda: 1.7280 / Correlation: 0.430
+Lambda: 1.0000 / Correlation: 0.458
+Best model correlation 0.4587007
+Lambda = 1.2
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.127. Validation objective: 1.683
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 71 for lambda 1.72800 finished. Train loss: 1.383. Validation objective: 33.469
+Final training epoch 48 for lambda 2.07360 finished. Train loss: 1.363. Validation objective: 19.558
+Final training epoch 18 for lambda 2.48832 finished. Train loss: 1.313. Validation objective: 22.669
+Final training epoch 16 for lambda 2.98598 finished. Train loss: 1.326. Validation objective: 26.331
+Final training epoch 28 for lambda 3.58318 finished. Train loss: 1.356. Validation objective: 34.125
+Final training epoch 35 for lambda 4.29982 finished. Train loss: 1.491. Validation objective: 75.161
+Final training epoch 11 for lambda 5.15978 finished. Train loss: 1.431. Validation objective: 47.937
+Final training epoch 13 for lambda 6.19174 finished. Train loss: 1.376. Validation objective: 26.997
+Final training epoch 11 for lambda 7.43008 finished. Train loss: 1.383. Validation objective: 23.777
+Final training epoch 11 for lambda 8.91610 finished. Train loss: 1.432. Validation objective: 24.392
+Final training epoch 18 for lambda 10.69932 finished. Train loss: 1.454. Validation objective: 58.195
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.572. Validation objective: 72.880
+Final training epoch 10 for lambda 15.40702 finished. Train loss: 1.489. Validation objective: 25.270
+Final training epoch 14 for lambda 18.48843 finished. Train loss: 1.721. Validation objective: 18.810
+Final training epoch 11 for lambda 22.18611 finished. Train loss: 1.712. Validation objective: 98.824
+Final training epoch 13 for lambda 26.62333 finished. Train loss: 1.479. Validation objective: 22.917
+Final training epoch 15 for lambda 31.94800 finished. Train loss: 1.507. Validation objective: 27.495
+Final training epoch 21 for lambda 38.33760 finished. Train loss: 1.527. Validation objective: 25.230
+Final training epoch 17 for lambda 46.00512 finished. Train loss: 1.493. Validation objective: 27.633
+Final training epoch 27 for lambda 55.20614 finished. Train loss: 1.492. Validation objective: 34.708
+Final training epoch 22 for lambda 66.24737 finished. Train loss: 1.473. Validation objective: 32.534
+Final training epoch 20 for lambda 79.49685 finished. Train loss: 1.476. Validation objective: 31.192
+Final training epoch 16 for lambda 95.39622 finished. Train loss: 1.492. Validation objective: 29.797
+Final training epoch 30 for lambda 114.47546 finished. Train loss: 1.474. Validation objective: 26.722
+Final training epoch 16 for lambda 137.37055 finished. Train loss: 1.502. Validation objective: 21.639
+Final training epoch 47 for lambda 164.84466 finished. Train loss: 1.496. Validation objective: 10.771
+Final training epoch 30 for lambda 197.81359 finished. Train loss: 1.492. Validation objective: 6.074
+Final training epoch 33 for lambda 237.37631 finished. Train loss: 1.507. Validation objective: 4.727
+Final training epoch 12 for lambda 284.85158 finished. Train loss: 1.527. Validation objective: 3.608
+Final training epoch 11 for lambda 341.82189 finished. Train loss: 1.553. Validation objective: 2.243
+Final training epoch 13 for lambda 410.18627 finished. Train loss: 1.561. Validation objective: 1.617
+Final training epoch 11 for lambda 492.22352 finished. Train loss: 1.566. Validation objective: 1.425
+Final training epoch 9 for lambda 590.66823 finished. Train loss: 1.566. Validation objective: 1.416
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 492.2235 / Correlation: 0.168
+Lambda: 22.1861 / Correlation: 0.199
+Lambda: 410.1863 / Correlation: 0.249
+Lambda: 341.8219 / Correlation: 0.291
+Lambda: 0.0000 / Correlation: 0.319
+Lambda: 284.8516 / Correlation: 0.331
+Lambda: 12.8392 / Correlation: 0.347
+Lambda: 197.8136 / Correlation: 0.349
+Lambda: 164.8447 / Correlation: 0.356
+Lambda: 31.9480 / Correlation: 0.359
+Lambda: 137.3706 / Correlation: 0.368
+Lambda: 237.3763 / Correlation: 0.370
+Lambda: 1.2000 / Correlation: 0.377
+Lambda: 79.4968 / Correlation: 0.378
+Lambda: 18.4884 / Correlation: 0.378
+Lambda: 15.4070 / Correlation: 0.381
+Lambda: 1.4400 / Correlation: 0.382
+Lambda: 1.0000 / Correlation: 0.383
+Lambda: 95.3962 / Correlation: 0.384
+Lambda: 10.6993 / Correlation: 0.389
+Lambda: 55.2061 / Correlation: 0.391
+Lambda: 114.4755 / Correlation: 0.393
+Lambda: 2.4883 / Correlation: 0.394
+Lambda: 7.4301 / Correlation: 0.397
+Lambda: 46.0051 / Correlation: 0.397
+Lambda: 26.6233 / Correlation: 0.401
+Lambda: 66.2474 / Correlation: 0.404
+Lambda: 38.3376 / Correlation: 0.405
+Lambda: 8.9161 / Correlation: 0.410
+Lambda: 6.1917 / Correlation: 0.419
+Lambda: 2.0736 / Correlation: 0.425
+Lambda: 2.9860 / Correlation: 0.427
+Lambda: 5.1598 / Correlation: 0.432
+Lambda: 4.2998 / Correlation: 0.435
+Lambda: 3.5832 / Correlation: 0.435
+Best model correlation 0.4478158
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.367. Validation objective: 1.893
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 40 for lambda 1.72800 finished. Train loss: 1.368. Validation objective: 25.907
+Final training epoch 28 for lambda 2.07360 finished. Train loss: 1.448. Validation objective: 52.479
+Final training epoch 26 for lambda 2.48832 finished. Train loss: 1.409. Validation objective: 20.839
+Final training epoch 18 for lambda 2.98598 finished. Train loss: 1.372. Validation objective: 15.243
+Final training epoch 21 for lambda 3.58318 finished. Train loss: 2.521. Validation objective: 105.910
+Final training epoch 11 for lambda 4.29982 finished. Train loss: 1.413. Validation objective: 19.896
+Final training epoch 14 for lambda 5.15978 finished. Train loss: 1.662. Validation objective: 114.581
+Final training epoch 12 for lambda 6.19174 finished. Train loss: 1.419. Validation objective: 28.772
+Final training epoch 10 for lambda 7.43008 finished. Train loss: 1.399. Validation objective: 25.621
+Final training epoch 22 for lambda 8.91610 finished. Train loss: 1.406. Validation objective: 26.956
+Final training epoch 16 for lambda 10.69932 finished. Train loss: 1.427. Validation objective: 26.112
+Final training epoch 22 for lambda 12.83918 finished. Train loss: 1.543. Validation objective: 17.583
+Final training epoch 10 for lambda 15.40702 finished. Train loss: 1.451. Validation objective: 19.504
+Final training epoch 32 for lambda 18.48843 finished. Train loss: 1.467. Validation objective: 10.659
+Final training epoch 11 for lambda 22.18611 finished. Train loss: 1.661. Validation objective: 579.969
+Final training epoch 18 for lambda 26.62333 finished. Train loss: 1.508. Validation objective: 30.391
+Final training epoch 34 for lambda 31.94800 finished. Train loss: 1.561. Validation objective: 68.334
+Final training epoch 15 for lambda 38.33760 finished. Train loss: 1.465. Validation objective: 13.148
+Final training epoch 14 for lambda 46.00512 finished. Train loss: 1.490. Validation objective: 11.889
+Final training epoch 13 for lambda 55.20614 finished. Train loss: 1.475. Validation objective: 13.326
+Final training epoch 39 for lambda 66.24737 finished. Train loss: 1.484. Validation objective: 8.083
+Final training epoch 18 for lambda 79.49685 finished. Train loss: 1.486. Validation objective: 6.025
+Final training epoch 27 for lambda 95.39622 finished. Train loss: 1.507. Validation objective: 3.481
+Final training epoch 18 for lambda 114.47546 finished. Train loss: 1.522. Validation objective: 2.522
+Final training epoch 14 for lambda 137.37055 finished. Train loss: 1.548. Validation objective: 2.288
+Final training epoch 15 for lambda 164.84466 finished. Train loss: 1.561. Validation objective: 1.540
+Final training epoch 12 for lambda 197.81359 finished. Train loss: 1.564. Validation objective: 1.435
+Final training epoch 10 for lambda 237.37631 finished. Train loss: 1.565. Validation objective: 1.439
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 197.8136 / Correlation: 0.085
+Lambda: 3.5832 / Correlation: 0.098
+Lambda: 164.8447 / Correlation: 0.177
+Lambda: 137.3706 / Correlation: 0.298
+Lambda: 1.4400 / Correlation: 0.331
+Lambda: 0.0000 / Correlation: 0.342
+Lambda: 22.1861 / Correlation: 0.351
+Lambda: 114.4755 / Correlation: 0.357
+Lambda: 1.0000 / Correlation: 0.361
+Lambda: 95.3962 / Correlation: 0.363
+Lambda: 31.9480 / Correlation: 0.366
+Lambda: 55.2061 / Correlation: 0.368
+Lambda: 5.1598 / Correlation: 0.371
+Lambda: 1.2000 / Correlation: 0.376
+Lambda: 18.4884 / Correlation: 0.378
+Lambda: 46.0051 / Correlation: 0.382
+Lambda: 26.6233 / Correlation: 0.382
+Lambda: 38.3376 / Correlation: 0.383
+Lambda: 79.4968 / Correlation: 0.384
+Lambda: 66.2474 / Correlation: 0.385
+Lambda: 8.9161 / Correlation: 0.401
+Lambda: 7.4301 / Correlation: 0.401
+Lambda: 10.6993 / Correlation: 0.402
+Lambda: 15.4070 / Correlation: 0.404
+Lambda: 12.8392 / Correlation: 0.409
+Lambda: 2.9860 / Correlation: 0.414
+Lambda: 6.1917 / Correlation: 0.423
+Lambda: 2.4883 / Correlation: 0.426
+Lambda: 4.2998 / Correlation: 0.430
+Lambda: 2.0736 / Correlation: 0.441
+Best model correlation 0.44141448
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 1.204. Validation objective: 1.831
+Final training epoch 76 for lambda 1.00000 finished. Train loss: 1.359. Validation objective: 61.363
+Final training epoch 65 for lambda 1.44000 finished. Train loss: 1.544. Validation objective: 3.357
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 34 for lambda 1.72800 finished. Train loss: 1.392. Validation objective: 30.729
+Final training epoch 14 for lambda 2.07360 finished. Train loss: 1.351. Validation objective: 28.347
+Final training epoch 49 for lambda 2.48832 finished. Train loss: 2.784. Validation objective: 412.281
+Final training epoch 20 for lambda 2.98598 finished. Train loss: 1.395. Validation objective: 24.612
+Final training epoch 19 for lambda 3.58318 finished. Train loss: 1.388. Validation objective: 24.229
+Final training epoch 19 for lambda 4.29982 finished. Train loss: 1.397. Validation objective: 22.948
+Final training epoch 25 for lambda 5.15978 finished. Train loss: 1.526. Validation objective: 36.536
+Final training epoch 34 for lambda 6.19174 finished. Train loss: 1.543. Validation objective: 14.251
+Final training epoch 29 for lambda 7.43008 finished. Train loss: 1.436. Validation objective: 11.967
+Final training epoch 16 for lambda 8.91610 finished. Train loss: 1.497. Validation objective: 152.479
+Final training epoch 11 for lambda 10.69932 finished. Train loss: 1.439. Validation objective: 18.450
+Final training epoch 14 for lambda 12.83918 finished. Train loss: 1.462. Validation objective: 18.980
+Final training epoch 25 for lambda 15.40702 finished. Train loss: 1.524. Validation objective: 25.634
+Final training epoch 20 for lambda 18.48843 finished. Train loss: 2.324. Validation objective: 22.197
+Final training epoch 19 for lambda 22.18611 finished. Train loss: 1.482. Validation objective: 23.271
+Final training epoch 12 for lambda 26.62333 finished. Train loss: 1.490. Validation objective: 67.421
+Final training epoch 12 for lambda 31.94800 finished. Train loss: 1.609. Validation objective: 165.837
+Final training epoch 13 for lambda 38.33760 finished. Train loss: 1.461. Validation objective: 39.139
+Final training epoch 44 for lambda 46.00512 finished. Train loss: 1.474. Validation objective: 30.426
+Final training epoch 11 for lambda 55.20614 finished. Train loss: 1.471. Validation objective: 18.055
+Final training epoch 12 for lambda 66.24737 finished. Train loss: 1.504. Validation objective: 15.141
+Final training epoch 16 for lambda 79.49685 finished. Train loss: 1.487. Validation objective: 15.366
+Final training epoch 29 for lambda 95.39622 finished. Train loss: 1.490. Validation objective: 9.770
+Final training epoch 61 for lambda 114.47546 finished. Train loss: 1.496. Validation objective: 4.813
+Final training epoch 10 for lambda 137.37055 finished. Train loss: 1.520. Validation objective: 3.333
+Final training epoch 15 for lambda 164.84466 finished. Train loss: 1.536. Validation objective: 2.399
+Final training epoch 18 for lambda 197.81359 finished. Train loss: 1.558. Validation objective: 1.683
+Final training epoch 15 for lambda 237.37631 finished. Train loss: 1.565. Validation objective: 1.604
+Final training epoch 10 for lambda 284.85158 finished. Train loss: 1.565. Validation objective: 1.419
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 197.8136 / Correlation: 0.214
+Lambda: 237.3763 / Correlation: 0.275
+Lambda: 164.8447 / Correlation: 0.287
+Lambda: 137.3706 / Correlation: 0.299
+Lambda: 26.6233 / Correlation: 0.322
+Lambda: 2.4883 / Correlation: 0.323
+Lambda: 0.0000 / Correlation: 0.329
+Lambda: 114.4755 / Correlation: 0.331
+Lambda: 46.0051 / Correlation: 0.351
+Lambda: 31.9480 / Correlation: 0.353
+Lambda: 95.3962 / Correlation: 0.363
+Lambda: 66.2474 / Correlation: 0.367
+Lambda: 55.2061 / Correlation: 0.373
+Lambda: 79.4968 / Correlation: 0.374
+Lambda: 1.2000 / Correlation: 0.381
+Lambda: 6.1917 / Correlation: 0.396
+Lambda: 22.1861 / Correlation: 0.396
+Lambda: 8.9161 / Correlation: 0.399
+Lambda: 5.1598 / Correlation: 0.399
+Lambda: 18.4884 / Correlation: 0.399
+Lambda: 12.8392 / Correlation: 0.400
+Lambda: 10.6993 / Correlation: 0.400
+Lambda: 38.3376 / Correlation: 0.403
+Lambda: 1.4400 / Correlation: 0.404
+Lambda: 7.4301 / Correlation: 0.410
+Lambda: 2.9860 / Correlation: 0.417
+Lambda: 15.4070 / Correlation: 0.418
+Lambda: 4.2998 / Correlation: 0.420
+Lambda: 3.5832 / Correlation: 0.424
+Lambda: 2.0736 / Correlation: 0.426
+Lambda: 1.0000 / Correlation: 0.437
+Best model correlation 0.439347
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 0.793. Validation objective: 1.748
+Final training epoch 90 for lambda 1.20000 finished. Train loss: 1.070. Validation objective: 18.665
+Final training epoch 63 for lambda 1.44000 finished. Train loss: 1.029. Validation objective: 19.291
+Final training epoch 90 for lambda 1.72800 finished. Train loss: 1.070. Validation objective: 17.805
+Final training epoch 12 for lambda 4.29982 finished. Train loss: 1.706. Validation objective: 20.653
+Final training epoch 25 for lambda 5.15978 finished. Train loss: 1.385. Validation objective: 19.649
+Final training epoch 45 for lambda 6.19174 finished. Train loss: 1.390. Validation objective: 9.526
+Final training epoch 12 for lambda 7.43008 finished. Train loss: 1.368. Validation objective: 24.472
+Final training epoch 18 for lambda 8.91610 finished. Train loss: 1.362. Validation objective: 15.944
+Final training epoch 10 for lambda 10.69932 finished. Train loss: 1.371. Validation objective: 23.842
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.426. Validation objective: 40.921
+Final training epoch 24 for lambda 15.40702 finished. Train loss: 1.403. Validation objective: 22.686
+Final training epoch 14 for lambda 18.48843 finished. Train loss: 1.470. Validation objective: 75.746
+Final training epoch 34 for lambda 22.18611 finished. Train loss: 1.368. Validation objective: 54.663
+Final training epoch 34 for lambda 26.62333 finished. Train loss: 1.430. Validation objective: 31.339
+Final training epoch 12 for lambda 31.94800 finished. Train loss: 1.473. Validation objective: 64.774
+Final training epoch 22 for lambda 38.33760 finished. Train loss: 1.461. Validation objective: 63.872
+Final training epoch 21 for lambda 46.00512 finished. Train loss: 1.430. Validation objective: 58.753
+Final training epoch 11 for lambda 55.20614 finished. Train loss: 1.441. Validation objective: 103.961
+Final training epoch 25 for lambda 66.24737 finished. Train loss: 1.414. Validation objective: 62.080
+Final training epoch 28 for lambda 79.49685 finished. Train loss: 1.403. Validation objective: 61.183
+Final training epoch 11 for lambda 95.39622 finished. Train loss: 1.483. Validation objective: 72.685
+Final training epoch 21 for lambda 114.47546 finished. Train loss: 1.451. Validation objective: 66.534
+Final training epoch 12 for lambda 137.37055 finished. Train loss: 1.479. Validation objective: 95.564
+Final training epoch 11 for lambda 164.84466 finished. Train loss: 1.449. Validation objective: 94.374
+Final training epoch 10 for lambda 197.81359 finished. Train loss: 1.458. Validation objective: 108.445
+Final training epoch 29 for lambda 237.37631 finished. Train loss: 1.460. Validation objective: 68.549
+Final training epoch 14 for lambda 284.85158 finished. Train loss: 1.470. Validation objective: 65.197
+Final training epoch 15 for lambda 341.82189 finished. Train loss: 1.487. Validation objective: 54.014
+Final training epoch 12 for lambda 410.18627 finished. Train loss: 1.477. Validation objective: 75.938
+Final training epoch 10 for lambda 492.22352 finished. Train loss: 1.486. Validation objective: 70.258
+Final training epoch 16 for lambda 590.66823 finished. Train loss: 1.486. Validation objective: 57.962
+Final training epoch 23 for lambda 708.80187 finished. Train loss: 1.470. Validation objective: 46.855
+Final training epoch 10 for lambda 850.56225 finished. Train loss: 1.477. Validation objective: 35.117
+Final training epoch 40 for lambda 1020.67470 finished. Train loss: 1.483. Validation objective: 20.560
+Final training epoch 12 for lambda 1224.80964 finished. Train loss: 1.500. Validation objective: 13.510
+Final training epoch 12 for lambda 1469.77157 finished. Train loss: 1.516. Validation objective: 8.220
+Final training epoch 18 for lambda 1763.72588 finished. Train loss: 1.535. Validation objective: 3.562
+Final training epoch 38 for lambda 2116.47106 finished. Train loss: 1.559. Validation objective: 1.869
+Final training epoch 10 for lambda 2539.76527 finished. Train loss: 1.564. Validation objective: 1.562
+Final training epoch 10 for lambda 3047.71832 finished. Train loss: 1.565. Validation objective: 1.417
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 95.3962 / Correlation: 0.031
+Lambda: 2539.7653 / Correlation: 0.217
+Lambda: 38.3376 / Correlation: 0.283
+Lambda: 1763.7259 / Correlation: 0.286
+Lambda: 2116.4711 / Correlation: 0.290
+Lambda: 0.0000 / Correlation: 0.334
+Lambda: 10.6993 / Correlation: 0.342
+Lambda: 1469.7716 / Correlation: 0.342
+Lambda: 1224.8096 / Correlation: 0.344
+Lambda: 18.4884 / Correlation: 0.358
+Lambda: 1020.6747 / Correlation: 0.368
+Lambda: 4.2998 / Correlation: 0.373
+Lambda: 590.6682 / Correlation: 0.379
+Lambda: 31.9480 / Correlation: 0.387
+Lambda: 492.2235 / Correlation: 0.387
+Lambda: 341.8219 / Correlation: 0.391
+Lambda: 708.8019 / Correlation: 0.391
+Lambda: 1.0000 / Correlation: 0.396
+Lambda: 114.4755 / Correlation: 0.397
+Lambda: 410.1863 / Correlation: 0.399
+Lambda: 850.5622 / Correlation: 0.401
+Lambda: 237.3763 / Correlation: 0.402
+Lambda: 197.8136 / Correlation: 0.403
+Lambda: 1.7280 / Correlation: 0.405
+Lambda: 1.4400 / Correlation: 0.406
+Lambda: 66.2474 / Correlation: 0.407
+Lambda: 164.8447 / Correlation: 0.409
+Lambda: 284.8516 / Correlation: 0.412
+Lambda: 137.3706 / Correlation: 0.417
+Lambda: 79.4968 / Correlation: 0.421
+Lambda: 46.0051 / Correlation: 0.423
+Lambda: 8.9161 / Correlation: 0.423
+Lambda: 55.2061 / Correlation: 0.424
+Lambda: 15.4070 / Correlation: 0.426
+Lambda: 7.4301 / Correlation: 0.428
+Lambda: 26.6233 / Correlation: 0.429
+Lambda: 1.2000 / Correlation: 0.432
+Lambda: 22.1861 / Correlation: 0.432
+Lambda: 2.9860 / Correlation: 0.432
+Lambda: 6.1917 / Correlation: 0.434
+Lambda: 12.8392 / Correlation: 0.436
+Lambda: 3.5832 / Correlation: 0.441
+Lambda: 5.1598 / Correlation: 0.444
+Lambda: 2.4883 / Correlation: 0.448
+Best model correlation 0.4512532
+Lambda = 2.0736
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 0.650. Validation objective: 1.624
+Final training epoch 19 for lambda 1.44000 finished. Train loss: 0.775. Validation objective: 23.315
+Final training epoch 88 for lambda 2.07360 finished. Train loss: 1.073. Validation objective: 20.013
+Final training epoch 90 for lambda 3.58318 finished. Train loss: 1.227. Validation objective: 9.891
+Final training epoch 42 for lambda 4.29982 finished. Train loss: 1.342. Validation objective: 12.666
+Final training epoch 23 for lambda 5.15978 finished. Train loss: 1.268. Validation objective: 19.085
+Final training epoch 21 for lambda 6.19174 finished. Train loss: 1.313. Validation objective: 15.581
+Final training epoch 10 for lambda 7.43008 finished. Train loss: 1.265. Validation objective: 16.944
+Final training epoch 22 for lambda 8.91610 finished. Train loss: 1.354. Validation objective: 14.014
+Final training epoch 29 for lambda 10.69932 finished. Train loss: 1.320. Validation objective: 16.166
+Final training epoch 18 for lambda 12.83918 finished. Train loss: 1.330. Validation objective: 18.545
+Final training epoch 14 for lambda 15.40702 finished. Train loss: 1.326. Validation objective: 58.635
+Final training epoch 13 for lambda 18.48843 finished. Train loss: 1.330. Validation objective: 25.267
+Final training epoch 18 for lambda 22.18611 finished. Train loss: 1.387. Validation objective: 29.810
+Final training epoch 11 for lambda 26.62333 finished. Train loss: 1.395. Validation objective: 39.667
+Final training epoch 12 for lambda 31.94800 finished. Train loss: 1.340. Validation objective: 38.009
+Final training epoch 19 for lambda 38.33760 finished. Train loss: 1.358. Validation objective: 39.821
+Final training epoch 39 for lambda 46.00512 finished. Train loss: 1.366. Validation objective: 40.754
+Final training epoch 37 for lambda 55.20614 finished. Train loss: 1.354. Validation objective: 39.433
+Final training epoch 26 for lambda 66.24737 finished. Train loss: 1.390. Validation objective: 36.810
+Final training epoch 34 for lambda 79.49685 finished. Train loss: 1.405. Validation objective: 31.708
+Final training epoch 21 for lambda 95.39622 finished. Train loss: 1.418. Validation objective: 32.158
+Final training epoch 26 for lambda 114.47546 finished. Train loss: 1.448. Validation objective: 26.944
+Final training epoch 19 for lambda 137.37055 finished. Train loss: 1.448. Validation objective: 27.996
+Final training epoch 17 for lambda 164.84466 finished. Train loss: 1.450. Validation objective: 27.146
+Final training epoch 10 for lambda 197.81359 finished. Train loss: 1.451. Validation objective: 33.675
+Final training epoch 20 for lambda 237.37631 finished. Train loss: 1.473. Validation objective: 33.562
+Final training epoch 12 for lambda 284.85158 finished. Train loss: 1.462. Validation objective: 32.735
+Final training epoch 21 for lambda 341.82189 finished. Train loss: 1.487. Validation objective: 28.660
+Final training epoch 17 for lambda 410.18627 finished. Train loss: 1.497. Validation objective: 32.101
+Final training epoch 21 for lambda 492.22352 finished. Train loss: 1.452. Validation objective: 33.690
+Final training epoch 52 for lambda 590.66823 finished. Train loss: 1.471. Validation objective: 22.527
+Final training epoch 23 for lambda 708.80187 finished. Train loss: 1.469. Validation objective: 20.512
+Final training epoch 30 for lambda 850.56225 finished. Train loss: 1.491. Validation objective: 13.416
+Final training epoch 22 for lambda 1020.67470 finished. Train loss: 1.509. Validation objective: 8.523
+Final training epoch 18 for lambda 1224.80964 finished. Train loss: 1.520. Validation objective: 6.100
+Final training epoch 19 for lambda 1469.77157 finished. Train loss: 1.543. Validation objective: 4.348
+Final training epoch 26 for lambda 1763.72588 finished. Train loss: 1.562. Validation objective: 2.442
+Final training epoch 10 for lambda 2116.47106 finished. Train loss: 1.564. Validation objective: 1.499
+Final training epoch 11 for lambda 2539.76527 finished. Train loss: 1.565. Validation objective: 1.430
+Final training epoch 12 for lambda 3047.71832 finished. Train loss: 1.565. Validation objective: 1.420
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2116.4711 / Correlation: 0.119
+Lambda: 2539.7653 / Correlation: 0.164
+Lambda: 1469.7716 / Correlation: 0.310
+Lambda: 1763.7259 / Correlation: 0.338
+Lambda: 1224.8096 / Correlation: 0.341
+Lambda: 1.0000 / Correlation: 0.351
+Lambda: 1.2000 / Correlation: 0.354
+Lambda: 0.0000 / Correlation: 0.355
+Lambda: 1.4400 / Correlation: 0.357
+Lambda: 708.8019 / Correlation: 0.368
+Lambda: 590.6682 / Correlation: 0.372
+Lambda: 1020.6747 / Correlation: 0.377
+Lambda: 492.2235 / Correlation: 0.385
+Lambda: 850.5622 / Correlation: 0.387
+Lambda: 284.8516 / Correlation: 0.387
+Lambda: 341.8219 / Correlation: 0.392
+Lambda: 410.1863 / Correlation: 0.398
+Lambda: 1.7280 / Correlation: 0.399
+Lambda: 237.3763 / Correlation: 0.406
+Lambda: 55.2061 / Correlation: 0.413
+Lambda: 197.8136 / Correlation: 0.415
+Lambda: 164.8447 / Correlation: 0.416
+Lambda: 137.3706 / Correlation: 0.416
+Lambda: 46.0051 / Correlation: 0.424
+Lambda: 95.3962 / Correlation: 0.428
+Lambda: 38.3376 / Correlation: 0.428
+Lambda: 7.4301 / Correlation: 0.428
+Lambda: 31.9480 / Correlation: 0.429
+Lambda: 79.4968 / Correlation: 0.429
+Lambda: 2.0736 / Correlation: 0.429
+Lambda: 66.2474 / Correlation: 0.430
+Lambda: 114.4755 / Correlation: 0.431
+Lambda: 2.4883 / Correlation: 0.433
+Lambda: 8.9161 / Correlation: 0.436
+Lambda: 15.4070 / Correlation: 0.436
+Lambda: 12.8392 / Correlation: 0.436
+Lambda: 2.9860 / Correlation: 0.437
+Lambda: 22.1861 / Correlation: 0.439
+Lambda: 26.6233 / Correlation: 0.440
+Lambda: 3.5832 / Correlation: 0.441
+Lambda: 5.1598 / Correlation: 0.442
+Lambda: 10.6993 / Correlation: 0.444
+Lambda: 6.1917 / Correlation: 0.444
+Lambda: 4.2998 / Correlation: 0.446
+Best model correlation 0.4506991
+Lambda = 18.48842588950363
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 106 for lambda 0.00000 finished. Train loss: 1.625. Validation objective: 1.804
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 43 for lambda 1.72800 finished. Train loss: 1.638. Validation objective: 33.824
+Final training epoch 15 for lambda 2.07360 finished. Train loss: 1.370. Validation objective: 24.666
+Final training epoch 16 for lambda 2.48832 finished. Train loss: 1.321. Validation objective: 30.991
+Final training epoch 16 for lambda 2.98598 finished. Train loss: 1.438. Validation objective: 21.329
+Final training epoch 13 for lambda 3.58318 finished. Train loss: 1.373. Validation objective: 27.677
+Final training epoch 21 for lambda 4.29982 finished. Train loss: 1.409. Validation objective: 32.014
+Final training epoch 13 for lambda 5.15978 finished. Train loss: 4.612. Validation objective: 26.033
+Final training epoch 25 for lambda 6.19174 finished. Train loss: 1.405. Validation objective: 29.256
+Final training epoch 22 for lambda 7.43008 finished. Train loss: 1.430. Validation objective: 30.360
+Final training epoch 15 for lambda 8.91610 finished. Train loss: 1.438. Validation objective: 30.037
+Final training epoch 22 for lambda 10.69932 finished. Train loss: 1.451. Validation objective: 31.615
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.686. Validation objective: 319.609
+Final training epoch 26 for lambda 15.40702 finished. Train loss: 1.946. Validation objective: 216.647
+Final training epoch 16 for lambda 18.48843 finished. Train loss: 1.454. Validation objective: 15.011
+Final training epoch 13 for lambda 22.18611 finished. Train loss: 1.481. Validation objective: 10.398
+Final training epoch 15 for lambda 26.62333 finished. Train loss: 2.259. Validation objective: 8.422
+Final training epoch 9 for lambda 31.94800 finished. Train loss: 1.594. Validation objective: 12.092
+Final training epoch 11 for lambda 38.33760 finished. Train loss: 1.477. Validation objective: 14.240
+Final training epoch 15 for lambda 46.00512 finished. Train loss: 1.605. Validation objective: 9.254
+Final training epoch 44 for lambda 55.20614 finished. Train loss: 1.504. Validation objective: 5.171
+Final training epoch 35 for lambda 66.24737 finished. Train loss: 1.510. Validation objective: 3.274
+Final training epoch 10 for lambda 79.49685 finished. Train loss: 1.534. Validation objective: 2.222
+Final training epoch 14 for lambda 95.39622 finished. Train loss: 1.554. Validation objective: 1.628
+Final training epoch 12 for lambda 114.47546 finished. Train loss: 1.564. Validation objective: 1.450
+Final training epoch 11 for lambda 137.37055 finished. Train loss: 1.565. Validation objective: 1.422
+Final training epoch 9 for lambda 164.84466 finished. Train loss: 1.565. Validation objective: 1.428
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 137.3706 / Correlation: 0.020
+Lambda: 15.4070 / Correlation: 0.108
+Lambda: 114.4755 / Correlation: 0.205
+Lambda: 95.3962 / Correlation: 0.298
+Lambda: 1.0000 / Correlation: 0.302
+Lambda: 0.0000 / Correlation: 0.306
+Lambda: 12.8392 / Correlation: 0.337
+Lambda: 79.4968 / Correlation: 0.353
+Lambda: 1.7280 / Correlation: 0.353
+Lambda: 66.2474 / Correlation: 0.361
+Lambda: 26.6233 / Correlation: 0.361
+Lambda: 31.9480 / Correlation: 0.361
+Lambda: 55.2061 / Correlation: 0.367
+Lambda: 1.4400 / Correlation: 0.370
+Lambda: 1.2000 / Correlation: 0.375
+Lambda: 22.1861 / Correlation: 0.385
+Lambda: 8.9161 / Correlation: 0.388
+Lambda: 46.0051 / Correlation: 0.388
+Lambda: 38.3376 / Correlation: 0.389
+Lambda: 5.1598 / Correlation: 0.392
+Lambda: 18.4884 / Correlation: 0.394
+Lambda: 2.9860 / Correlation: 0.397
+Lambda: 10.6993 / Correlation: 0.399
+Lambda: 6.1917 / Correlation: 0.399
+Lambda: 3.5832 / Correlation: 0.402
+Lambda: 4.2998 / Correlation: 0.405
+Lambda: 7.4301 / Correlation: 0.419
+Lambda: 2.4883 / Correlation: 0.422
+Best model correlation 0.4455373
+Lambda = 2.0736
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 0.634. Validation objective: 1.686
+Final training epoch 11 for lambda 1.72800 finished. Train loss: 1.546. Validation objective: 71.582
+Final training epoch 11 for lambda 2.07360 finished. Train loss: 1.420. Validation objective: 41.710
+Final training epoch 43 for lambda 2.98598 finished. Train loss: 1.474. Validation objective: 17.275
+Final training epoch 29 for lambda 3.58318 finished. Train loss: 1.398. Validation objective: 13.955
+Final training epoch 13 for lambda 4.29982 finished. Train loss: 1.520. Validation objective: 21.667
+Final training epoch 11 for lambda 5.15978 finished. Train loss: 1.464. Validation objective: 321.812
+Final training epoch 23 for lambda 6.19174 finished. Train loss: 1.418. Validation objective: 21.789
+Final training epoch 21 for lambda 7.43008 finished. Train loss: 1.425. Validation objective: 23.893
+Final training epoch 25 for lambda 8.91610 finished. Train loss: 1.392. Validation objective: 75.028
+Final training epoch 29 for lambda 10.69932 finished. Train loss: 1.427. Validation objective: 26.003
+Final training epoch 19 for lambda 12.83918 finished. Train loss: 1.408. Validation objective: 30.721
+Final training epoch 14 for lambda 15.40702 finished. Train loss: 1.480. Validation objective: 30.690
+Final training epoch 10 for lambda 18.48843 finished. Train loss: 1.463. Validation objective: 39.018
+Final training epoch 14 for lambda 22.18611 finished. Train loss: 1.438. Validation objective: 38.368
+Final training epoch 16 for lambda 26.62333 finished. Train loss: 1.492. Validation objective: 34.366
+Final training epoch 16 for lambda 31.94800 finished. Train loss: 1.445. Validation objective: 46.155
+Final training epoch 13 for lambda 38.33760 finished. Train loss: 1.466. Validation objective: 58.552
+Final training epoch 21 for lambda 46.00512 finished. Train loss: 1.446. Validation objective: 59.810
+Final training epoch 23 for lambda 55.20614 finished. Train loss: 1.440. Validation objective: 56.648
+Final training epoch 18 for lambda 66.24737 finished. Train loss: 1.461. Validation objective: 54.583
+Final training epoch 22 for lambda 79.49685 finished. Train loss: 1.494. Validation objective: 56.929
+Final training epoch 10 for lambda 95.39622 finished. Train loss: 1.463. Validation objective: 57.136
+Final training epoch 17 for lambda 114.47546 finished. Train loss: 1.463. Validation objective: 70.033
+Final training epoch 11 for lambda 137.37055 finished. Train loss: 1.473. Validation objective: 57.768
+Final training epoch 12 for lambda 164.84466 finished. Train loss: 1.461. Validation objective: 52.117
+Final training epoch 22 for lambda 197.81359 finished. Train loss: 1.475. Validation objective: 62.386
+Final training epoch 11 for lambda 237.37631 finished. Train loss: 1.464. Validation objective: 65.794
+Final training epoch 13 for lambda 284.85158 finished. Train loss: 1.465. Validation objective: 67.323
+Final training epoch 53 for lambda 341.82189 finished. Train loss: 1.473. Validation objective: 32.966
+Final training epoch 35 for lambda 410.18627 finished. Train loss: 1.495. Validation objective: 21.690
+Final training epoch 55 for lambda 492.22352 finished. Train loss: 1.504. Validation objective: 13.466
+Final training epoch 21 for lambda 590.66823 finished. Train loss: 1.513. Validation objective: 9.266
+Final training epoch 11 for lambda 708.80187 finished. Train loss: 1.520. Validation objective: 6.391
+Final training epoch 27 for lambda 850.56225 finished. Train loss: 1.539. Validation objective: 4.654
+Final training epoch 17 for lambda 1020.67470 finished. Train loss: 1.558. Validation objective: 1.960
+Final training epoch 15 for lambda 1224.80964 finished. Train loss: 1.563. Validation objective: 1.458
+Final training epoch 10 for lambda 1469.77157 finished. Train loss: 1.565. Validation objective: 1.418
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1224.8096 / Correlation: 0.151
+Lambda: 1020.6747 / Correlation: 0.233
+Lambda: 708.8019 / Correlation: 0.298
+Lambda: 850.5622 / Correlation: 0.309
+Lambda: 0.0000 / Correlation: 0.322
+Lambda: 79.4968 / Correlation: 0.336
+Lambda: 590.6682 / Correlation: 0.352
+Lambda: 492.2235 / Correlation: 0.358
+Lambda: 341.8219 / Correlation: 0.365
+Lambda: 410.1863 / Correlation: 0.367
+Lambda: 5.1598 / Correlation: 0.367
+Lambda: 2.4883 / Correlation: 0.377
+Lambda: 284.8516 / Correlation: 0.387
+Lambda: 38.3376 / Correlation: 0.391
+Lambda: 66.2474 / Correlation: 0.392
+Lambda: 3.5832 / Correlation: 0.392
+Lambda: 2.9860 / Correlation: 0.392
+Lambda: 95.3962 / Correlation: 0.398
+Lambda: 237.3763 / Correlation: 0.398
+Lambda: 164.8447 / Correlation: 0.400
+Lambda: 137.3706 / Correlation: 0.402
+Lambda: 114.4755 / Correlation: 0.402
+Lambda: 6.1917 / Correlation: 0.404
+Lambda: 1.7280 / Correlation: 0.406
+Lambda: 197.8136 / Correlation: 0.410
+Lambda: 12.8392 / Correlation: 0.412
+Lambda: 26.6233 / Correlation: 0.413
+Lambda: 1.4400 / Correlation: 0.414
+Lambda: 55.2061 / Correlation: 0.414
+Lambda: 10.6993 / Correlation: 0.415
+Lambda: 46.0051 / Correlation: 0.415
+Lambda: 15.4070 / Correlation: 0.416
+Lambda: 22.1861 / Correlation: 0.416
+Lambda: 31.9480 / Correlation: 0.417
+Lambda: 4.2998 / Correlation: 0.419
+Lambda: 7.4301 / Correlation: 0.423
+Lambda: 8.9161 / Correlation: 0.425
+Lambda: 18.4884 / Correlation: 0.427
+Lambda: 1.0000 / Correlation: 0.428
+Lambda: 2.0736 / Correlation: 0.429
+Best model correlation 0.44957548
+Lambda = 1.2
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 2.216. Validation objective: 2.579
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.200.
+  warnings.warn(
+Final training epoch 32 for lambda 1.44000 finished. Train loss: 1.411. Validation objective: 16.870
+Final training epoch 31 for lambda 1.72800 finished. Train loss: 1.422. Validation objective: 15.010
+Final training epoch 15 for lambda 2.07360 finished. Train loss: 1.403. Validation objective: 24.655
+Final training epoch 16 for lambda 2.48832 finished. Train loss: 1.390. Validation objective: 27.532
+Final training epoch 48 for lambda 2.98598 finished. Train loss: 1.403. Validation objective: 31.012
+Final training epoch 24 for lambda 3.58318 finished. Train loss: 1.397. Validation objective: 19.101
+Final training epoch 36 for lambda 4.29982 finished. Train loss: 1.412. Validation objective: 18.298
+Final training epoch 23 for lambda 5.15978 finished. Train loss: 1.624. Validation objective: 165.280
+Final training epoch 16 for lambda 6.19174 finished. Train loss: 1.430. Validation objective: 14.848
+Final training epoch 14 for lambda 7.43008 finished. Train loss: 1.570. Validation objective: 11.138
+Final training epoch 12 for lambda 8.91610 finished. Train loss: 1.495. Validation objective: 13.399
+Final training epoch 23 for lambda 10.69932 finished. Train loss: 1.441. Validation objective: 12.957
+Final training epoch 16 for lambda 12.83918 finished. Train loss: 1.463. Validation objective: 11.632
+Final training epoch 16 for lambda 15.40702 finished. Train loss: 1.597. Validation objective: 345.020
+Final training epoch 13 for lambda 18.48843 finished. Train loss: 1.977. Validation objective: 878.439
+Final training epoch 10 for lambda 22.18611 finished. Train loss: 1.471. Validation objective: 15.034
+Final training epoch 18 for lambda 26.62333 finished. Train loss: 1.473. Validation objective: 16.058
+Final training epoch 23 for lambda 31.94800 finished. Train loss: 1.477. Validation objective: 12.916
+Final training epoch 14 for lambda 38.33760 finished. Train loss: 1.479. Validation objective: 13.805
+Final training epoch 21 for lambda 46.00512 finished. Train loss: 1.500. Validation objective: 6.441
+Final training epoch 37 for lambda 55.20614 finished. Train loss: 1.512. Validation objective: 4.166
+Final training epoch 20 for lambda 66.24737 finished. Train loss: 1.521. Validation objective: 3.193
+Final training epoch 12 for lambda 79.49685 finished. Train loss: 1.541. Validation objective: 1.972
+Final training epoch 18 for lambda 95.39622 finished. Train loss: 1.559. Validation objective: 1.484
+Final training epoch 10 for lambda 114.47546 finished. Train loss: 1.565. Validation objective: 1.427
+Final training epoch 9 for lambda 137.37055 finished. Train loss: 1.565. Validation objective: 1.425
+Final training epoch 9 for lambda 164.84466 finished. Train loss: 1.565. Validation objective: 1.418
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 137.3706 / Correlation: 0.066
+Lambda: 114.4755 / Correlation: 0.216
+Lambda: 95.3962 / Correlation: 0.222
+Lambda: 1.0000 / Correlation: 0.277
+Lambda: 79.4968 / Correlation: 0.287
+Lambda: 18.4884 / Correlation: 0.316
+Lambda: 5.1598 / Correlation: 0.322
+Lambda: 0.0000 / Correlation: 0.331
+Lambda: 55.2061 / Correlation: 0.340
+Lambda: 46.0051 / Correlation: 0.360
+Lambda: 66.2474 / Correlation: 0.372
+Lambda: 38.3376 / Correlation: 0.374
+Lambda: 1.2000 / Correlation: 0.377
+Lambda: 31.9480 / Correlation: 0.380
+Lambda: 26.6233 / Correlation: 0.387
+Lambda: 8.9161 / Correlation: 0.390
+Lambda: 10.6993 / Correlation: 0.392
+Lambda: 12.8392 / Correlation: 0.392
+Lambda: 22.1861 / Correlation: 0.394
+Lambda: 6.1917 / Correlation: 0.397
+Lambda: 2.9860 / Correlation: 0.398
+Lambda: 7.4301 / Correlation: 0.402
+Lambda: 4.2998 / Correlation: 0.409
+Lambda: 15.4070 / Correlation: 0.412
+Lambda: 2.4883 / Correlation: 0.412
+Lambda: 3.5832 / Correlation: 0.418
+Lambda: 1.7280 / Correlation: 0.420
+Lambda: 1.4400 / Correlation: 0.424
+Best model correlation 0.4299552
+Lambda = 2.0736
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 1.229. Validation objective: 1.931
+Final training epoch 39 for lambda 1.20000 finished. Train loss: 1.474. Validation objective: 51.808
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.200.
+  warnings.warn(
+Final training epoch 18 for lambda 1.44000 finished. Train loss: 1.587. Validation objective: 5.590
+Final training epoch 39 for lambda 1.72800 finished. Train loss: 1.468. Validation objective: 9.401
+Final training epoch 9 for lambda 2.07360 finished. Train loss: 1.420. Validation objective: 12.976
+Final training epoch 15 for lambda 2.48832 finished. Train loss: 1.428. Validation objective: 51.599
+Final training epoch 23 for lambda 2.98598 finished. Train loss: 1.426. Validation objective: 21.387
+Final training epoch 16 for lambda 3.58318 finished. Train loss: 1.551. Validation objective: 123.141
+Final training epoch 29 for lambda 4.29982 finished. Train loss: 2.730. Validation objective: 34.553
+Final training epoch 42 for lambda 5.15978 finished. Train loss: 1.414. Validation objective: 27.998
+Final training epoch 14 for lambda 6.19174 finished. Train loss: 1.429. Validation objective: 23.126
+Final training epoch 12 for lambda 7.43008 finished. Train loss: 1.428. Validation objective: 36.226
+Final training epoch 26 for lambda 8.91610 finished. Train loss: 1.443. Validation objective: 45.887
+Final training epoch 25 for lambda 10.69932 finished. Train loss: 1.814. Validation objective: 24.698
+Final training epoch 11 for lambda 12.83918 finished. Train loss: 1.467. Validation objective: 21.941
+Final training epoch 13 for lambda 15.40702 finished. Train loss: 1.519. Validation objective: 23.861
+Final training epoch 15 for lambda 18.48843 finished. Train loss: 1.594. Validation objective: 24.732
+Final training epoch 20 for lambda 22.18611 finished. Train loss: 1.486. Validation objective: 39.194
+Final training epoch 13 for lambda 26.62333 finished. Train loss: 1.486. Validation objective: 30.046
+Final training epoch 14 for lambda 31.94800 finished. Train loss: 1.484. Validation objective: 15.561
+Final training epoch 19 for lambda 38.33760 finished. Train loss: 1.485. Validation objective: 19.801
+Final training epoch 69 for lambda 46.00512 finished. Train loss: 1.487. Validation objective: 6.190
+Final training epoch 13 for lambda 55.20614 finished. Train loss: 1.505. Validation objective: 4.978
+Final training epoch 14 for lambda 66.24737 finished. Train loss: 1.517. Validation objective: 3.730
+Final training epoch 38 for lambda 79.49685 finished. Train loss: 1.534. Validation objective: 2.691
+Final training epoch 10 for lambda 95.39622 finished. Train loss: 1.555. Validation objective: 1.757
+Final training epoch 13 for lambda 114.47546 finished. Train loss: 1.565. Validation objective: 1.453
+Final training epoch 10 for lambda 137.37055 finished. Train loss: 1.565. Validation objective: 1.428
+Final training epoch 9 for lambda 164.84466 finished. Train loss: 1.565. Validation objective: 1.421
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 137.3706 / Correlation: 0.075
+Lambda: 114.4755 / Correlation: 0.127
+Lambda: 95.3962 / Correlation: 0.259
+Lambda: 1.4400 / Correlation: 0.271
+Lambda: 0.0000 / Correlation: 0.298
+Lambda: 79.4968 / Correlation: 0.313
+Lambda: 55.2061 / Correlation: 0.339
+Lambda: 66.2474 / Correlation: 0.348
+Lambda: 46.0051 / Correlation: 0.353
+Lambda: 31.9480 / Correlation: 0.371
+Lambda: 2.4883 / Correlation: 0.373
+Lambda: 22.1861 / Correlation: 0.376
+Lambda: 38.3376 / Correlation: 0.378
+Lambda: 3.5832 / Correlation: 0.380
+Lambda: 15.4070 / Correlation: 0.393
+Lambda: 1.7280 / Correlation: 0.395
+Lambda: 12.8392 / Correlation: 0.396
+Lambda: 10.6993 / Correlation: 0.398
+Lambda: 26.6233 / Correlation: 0.398
+Lambda: 18.4884 / Correlation: 0.401
+Lambda: 1.0000 / Correlation: 0.402
+Lambda: 6.1917 / Correlation: 0.403
+Lambda: 4.2998 / Correlation: 0.403
+Lambda: 7.4301 / Correlation: 0.405
+Lambda: 5.1598 / Correlation: 0.409
+Lambda: 2.0736 / Correlation: 0.412
+Lambda: 1.2000 / Correlation: 0.415
+Lambda: 8.9161 / Correlation: 0.417
+Best model correlation 0.4211648
+Lambda = 2.9859839999999997
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 0.629. Validation objective: 1.660
+Final training epoch 87 for lambda 1.20000 finished. Train loss: 1.264. Validation objective: 15.396
+Final training epoch 20 for lambda 2.98598 finished. Train loss: 2.849. Validation objective: 6.227
+Final training epoch 15 for lambda 3.58318 finished. Train loss: 1.400. Validation objective: 24.440
+Final training epoch 70 for lambda 4.29982 finished. Train loss: 1.355. Validation objective: 8.453
+Final training epoch 12 for lambda 5.15978 finished. Train loss: 1.353. Validation objective: 9.652
+Final training epoch 48 for lambda 6.19174 finished. Train loss: 1.347. Validation objective: 10.098
+Final training epoch 30 for lambda 7.43008 finished. Train loss: 1.398. Validation objective: 12.317
+Final training epoch 10 for lambda 8.91610 finished. Train loss: 1.455. Validation objective: 62.451
+Final training epoch 41 for lambda 10.69932 finished. Train loss: 1.306. Validation objective: 25.997
+Final training epoch 15 for lambda 12.83918 finished. Train loss: 1.349. Validation objective: 24.966
+Final training epoch 26 for lambda 15.40702 finished. Train loss: 1.400. Validation objective: 40.745
+Final training epoch 27 for lambda 18.48843 finished. Train loss: 1.424. Validation objective: 27.488
+Final training epoch 11 for lambda 22.18611 finished. Train loss: 1.383. Validation objective: 24.959
+Final training epoch 16 for lambda 26.62333 finished. Train loss: 1.553. Validation objective: 29.295
+Final training epoch 33 for lambda 31.94800 finished. Train loss: 1.436. Validation objective: 51.564
+Final training epoch 23 for lambda 38.33760 finished. Train loss: 1.423. Validation objective: 37.654
+Final training epoch 22 for lambda 46.00512 finished. Train loss: 1.415. Validation objective: 34.983
+Final training epoch 12 for lambda 55.20614 finished. Train loss: 1.433. Validation objective: 37.023
+Final training epoch 16 for lambda 66.24737 finished. Train loss: 1.467. Validation objective: 41.033
+Final training epoch 27 for lambda 79.49685 finished. Train loss: 1.436. Validation objective: 43.899
+Final training epoch 12 for lambda 95.39622 finished. Train loss: 1.433. Validation objective: 44.405
+Final training epoch 32 for lambda 114.47546 finished. Train loss: 1.455. Validation objective: 28.871
+Final training epoch 14 for lambda 137.37055 finished. Train loss: 1.472. Validation objective: 47.165
+Final training epoch 11 for lambda 164.84466 finished. Train loss: 1.502. Validation objective: 27.919
+Final training epoch 19 for lambda 197.81359 finished. Train loss: 1.482. Validation objective: 34.957
+Final training epoch 10 for lambda 237.37631 finished. Train loss: 1.468. Validation objective: 36.562
+Final training epoch 15 for lambda 284.85158 finished. Train loss: 1.465. Validation objective: 44.874
+Final training epoch 21 for lambda 341.82189 finished. Train loss: 1.485. Validation objective: 33.576
+Final training epoch 23 for lambda 410.18627 finished. Train loss: 1.478. Validation objective: 38.572
+Final training epoch 28 for lambda 492.22352 finished. Train loss: 1.464. Validation objective: 30.980
+Final training epoch 57 for lambda 590.66823 finished. Train loss: 1.481. Validation objective: 17.342
+Final training epoch 16 for lambda 708.80187 finished. Train loss: 1.500. Validation objective: 15.604
+Final training epoch 28 for lambda 850.56225 finished. Train loss: 1.497. Validation objective: 8.721
+Final training epoch 28 for lambda 1020.67470 finished. Train loss: 1.517. Validation objective: 6.534
+Final training epoch 11 for lambda 1224.80964 finished. Train loss: 1.539. Validation objective: 3.294
+Final training epoch 29 for lambda 1469.77157 finished. Train loss: 1.557. Validation objective: 1.716
+Final training epoch 10 for lambda 1763.72588 finished. Train loss: 1.563. Validation objective: 1.437
+Final training epoch 10 for lambda 2116.47106 finished. Train loss: 1.565. Validation objective: 1.424
+Final training epoch 9 for lambda 2539.76527 finished. Train loss: 1.565. Validation objective: 1.420
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.9860 / Correlation: -0.225
+Lambda: 2116.4711 / Correlation: 0.064
+Lambda: 1763.7259 / Correlation: 0.111
+Lambda: 1469.7716 / Correlation: 0.236
+Lambda: 1224.8096 / Correlation: 0.281
+Lambda: 850.5622 / Correlation: 0.352
+Lambda: 1020.6747 / Correlation: 0.353
+Lambda: 31.9480 / Correlation: 0.354
+Lambda: 0.0000 / Correlation: 0.355
+Lambda: 1.0000 / Correlation: 0.375
+Lambda: 492.2235 / Correlation: 0.378
+Lambda: 341.8219 / Correlation: 0.385
+Lambda: 708.8019 / Correlation: 0.385
+Lambda: 590.6682 / Correlation: 0.385
+Lambda: 95.3962 / Correlation: 0.388
+Lambda: 284.8516 / Correlation: 0.390
+Lambda: 410.1863 / Correlation: 0.392
+Lambda: 237.3763 / Correlation: 0.399
+Lambda: 8.9161 / Correlation: 0.403
+Lambda: 197.8136 / Correlation: 0.403
+Lambda: 164.8447 / Correlation: 0.405
+Lambda: 137.3706 / Correlation: 0.405
+Lambda: 18.4884 / Correlation: 0.408
+Lambda: 79.4968 / Correlation: 0.409
+Lambda: 10.6993 / Correlation: 0.410
+Lambda: 114.4755 / Correlation: 0.411
+Lambda: 22.1861 / Correlation: 0.417
+Lambda: 26.6233 / Correlation: 0.418
+Lambda: 38.3376 / Correlation: 0.419
+Lambda: 46.0051 / Correlation: 0.421
+Lambda: 15.4070 / Correlation: 0.422
+Lambda: 7.4301 / Correlation: 0.422
+Lambda: 12.8392 / Correlation: 0.423
+Lambda: 3.5832 / Correlation: 0.424
+Lambda: 55.2061 / Correlation: 0.425
+Lambda: 66.2474 / Correlation: 0.426
+Lambda: 2.4883 / Correlation: 0.432
+Lambda: 6.1917 / Correlation: 0.435
+Lambda: 4.2998 / Correlation: 0.439
+Lambda: 5.1598 / Correlation: 0.440
+Lambda: 2.0736 / Correlation: 0.446
+Lambda: 1.4400 / Correlation: 0.447
+Lambda: 1.7280 / Correlation: 0.453
+Best model correlation 0.45783618
+Lambda = 1.2
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 0.592. Validation objective: 1.641
+Final training epoch 72 for lambda 1.72800 finished. Train loss: 1.299. Validation objective: 17.950
+Final training epoch 26 for lambda 2.07360 finished. Train loss: 1.405. Validation objective: 38.442
+Final training epoch 11 for lambda 2.98598 finished. Train loss: 1.395. Validation objective: 28.030
+Final training epoch 32 for lambda 4.29982 finished. Train loss: 1.373. Validation objective: 9.281
+Final training epoch 14 for lambda 5.15978 finished. Train loss: 1.385. Validation objective: 9.449
+Final training epoch 11 for lambda 6.19174 finished. Train loss: 1.367. Validation objective: 9.872
+Final training epoch 29 for lambda 7.43008 finished. Train loss: 1.453. Validation objective: 10.920
+Final training epoch 17 for lambda 8.91610 finished. Train loss: 1.441. Validation objective: 17.223
+Final training epoch 25 for lambda 10.69932 finished. Train loss: 1.440. Validation objective: 36.383
+Final training epoch 25 for lambda 12.83918 finished. Train loss: 1.434. Validation objective: 23.017
+Final training epoch 14 for lambda 15.40702 finished. Train loss: 1.364. Validation objective: 23.813
+Final training epoch 30 for lambda 18.48843 finished. Train loss: 1.428. Validation objective: 30.718
+Final training epoch 14 for lambda 22.18611 finished. Train loss: 1.588. Validation objective: 31.073
+Final training epoch 11 for lambda 26.62333 finished. Train loss: 1.493. Validation objective: 73.473
+Final training epoch 11 for lambda 31.94800 finished. Train loss: 1.579. Validation objective: 106.758
+Final training epoch 14 for lambda 38.33760 finished. Train loss: 1.423. Validation objective: 36.560
+Final training epoch 14 for lambda 46.00512 finished. Train loss: 1.431. Validation objective: 60.236
+Final training epoch 22 for lambda 55.20614 finished. Train loss: 1.481. Validation objective: 63.549
+Final training epoch 12 for lambda 66.24737 finished. Train loss: 1.423. Validation objective: 53.805
+Final training epoch 20 for lambda 79.49685 finished. Train loss: 1.451. Validation objective: 61.497
+Final training epoch 17 for lambda 95.39622 finished. Train loss: 1.487. Validation objective: 77.287
+Final training epoch 34 for lambda 114.47546 finished. Train loss: 1.477. Validation objective: 73.476
+Final training epoch 24 for lambda 137.37055 finished. Train loss: 1.470. Validation objective: 110.451
+Final training epoch 37 for lambda 164.84466 finished. Train loss: 1.493. Validation objective: 50.040
+Final training epoch 10 for lambda 197.81359 finished. Train loss: 1.474. Validation objective: 60.524
+Final training epoch 18 for lambda 237.37631 finished. Train loss: 1.457. Validation objective: 52.822
+Final training epoch 12 for lambda 284.85158 finished. Train loss: 1.491. Validation objective: 59.105
+Final training epoch 25 for lambda 341.82189 finished. Train loss: 1.455. Validation objective: 70.974
+Final training epoch 20 for lambda 410.18627 finished. Train loss: 1.451. Validation objective: 53.330
+Final training epoch 27 for lambda 492.22352 finished. Train loss: 1.476. Validation objective: 66.452
+Final training epoch 20 for lambda 590.66823 finished. Train loss: 1.463. Validation objective: 59.051
+Final training epoch 23 for lambda 708.80187 finished. Train loss: 1.481. Validation objective: 43.385
+Final training epoch 53 for lambda 850.56225 finished. Train loss: 1.477. Validation objective: 25.637
+Final training epoch 44 for lambda 1020.67470 finished. Train loss: 1.493. Validation objective: 13.816
+Final training epoch 52 for lambda 1224.80964 finished. Train loss: 1.495. Validation objective: 10.012
+Final training epoch 14 for lambda 1469.77157 finished. Train loss: 1.512. Validation objective: 7.524
+Final training epoch 19 for lambda 1763.72588 finished. Train loss: 1.539. Validation objective: 4.943
+Final training epoch 20 for lambda 2116.47106 finished. Train loss: 1.557. Validation objective: 1.875
+Final training epoch 16 for lambda 2539.76527 finished. Train loss: 1.563. Validation objective: 1.483
+Final training epoch 10 for lambda 3047.71832 finished. Train loss: 1.565. Validation objective: 1.419
+Final training epoch 9 for lambda 3657.26199 finished. Train loss: 1.565. Validation objective: 1.426
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 3047.7183 / Correlation: 0.154
+Lambda: 2116.4711 / Correlation: 0.180
+Lambda: 2539.7653 / Correlation: 0.185
+Lambda: 1763.7259 / Correlation: 0.313
+Lambda: 3.5832 / Correlation: 0.325
+Lambda: 1224.8096 / Correlation: 0.327
+Lambda: 1469.7716 / Correlation: 0.351
+Lambda: 0.0000 / Correlation: 0.355
+Lambda: 15.4070 / Correlation: 0.368
+Lambda: 1020.6747 / Correlation: 0.373
+Lambda: 7.4301 / Correlation: 0.373
+Lambda: 850.5622 / Correlation: 0.373
+Lambda: 2.4883 / Correlation: 0.374
+Lambda: 137.3706 / Correlation: 0.382
+Lambda: 22.1861 / Correlation: 0.382
+Lambda: 31.9480 / Correlation: 0.388
+Lambda: 197.8136 / Correlation: 0.389
+Lambda: 4.2998 / Correlation: 0.389
+Lambda: 114.4755 / Correlation: 0.390
+Lambda: 410.1863 / Correlation: 0.391
+Lambda: 164.8447 / Correlation: 0.391
+Lambda: 237.3763 / Correlation: 0.391
+Lambda: 708.8019 / Correlation: 0.392
+Lambda: 590.6682 / Correlation: 0.397
+Lambda: 6.1917 / Correlation: 0.397
+Lambda: 95.3962 / Correlation: 0.399
+Lambda: 492.2235 / Correlation: 0.400
+Lambda: 341.8219 / Correlation: 0.401
+Lambda: 5.1598 / Correlation: 0.402
+Lambda: 10.6993 / Correlation: 0.406
+Lambda: 66.2474 / Correlation: 0.407
+Lambda: 55.2061 / Correlation: 0.407
+Lambda: 284.8516 / Correlation: 0.408
+Lambda: 46.0051 / Correlation: 0.410
+Lambda: 12.8392 / Correlation: 0.410
+Lambda: 2.0736 / Correlation: 0.410
+Lambda: 8.9161 / Correlation: 0.413
+Lambda: 1.0000 / Correlation: 0.414
+Lambda: 26.6233 / Correlation: 0.415
+Lambda: 18.4884 / Correlation: 0.415
+Lambda: 38.3376 / Correlation: 0.415
+Lambda: 79.4968 / Correlation: 0.420
+Lambda: 2.9860 / Correlation: 0.436
+Lambda: 1.2000 / Correlation: 0.439
+Lambda: 1.4400 / Correlation: 0.449
+Best model correlation 0.45197996
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 1.426. Validation objective: 1.772
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 74 for lambda 1.72800 finished. Train loss: 7.436. Validation objective: 34.408
+Final training epoch 40 for lambda 2.07360 finished. Train loss: 1.380. Validation objective: 15.644
+Final training epoch 44 for lambda 2.48832 finished. Train loss: 1.616. Validation objective: 72.288
+Final training epoch 40 for lambda 2.98598 finished. Train loss: 1.414. Validation objective: 41.577
+Final training epoch 69 for lambda 3.58318 finished. Train loss: 1.446. Validation objective: 5.650
+Final training epoch 33 for lambda 4.29982 finished. Train loss: 1.451. Validation objective: 6.705
+Final training epoch 10 for lambda 5.15978 finished. Train loss: 1.487. Validation objective: 7.187
+Final training epoch 11 for lambda 6.19174 finished. Train loss: 1.458. Validation objective: 11.411
+Final training epoch 13 for lambda 7.43008 finished. Train loss: 1.460. Validation objective: 10.211
+Final training epoch 27 for lambda 8.91610 finished. Train loss: 1.455. Validation objective: 6.727
+Final training epoch 20 for lambda 10.69932 finished. Train loss: 1.469. Validation objective: 5.058
+Final training epoch 30 for lambda 12.83918 finished. Train loss: 1.471. Validation objective: 3.945
+Final training epoch 10 for lambda 15.40702 finished. Train loss: 1.485. Validation objective: 3.304
+Final training epoch 17 for lambda 18.48843 finished. Train loss: 1.511. Validation objective: 2.420
+Final training epoch 16 for lambda 22.18611 finished. Train loss: 1.532. Validation objective: 1.837
+Final training epoch 20 for lambda 26.62333 finished. Train loss: 1.551. Validation objective: 1.611
+Final training epoch 11 for lambda 31.94800 finished. Train loss: 1.563. Validation objective: 1.451
+Final training epoch 10 for lambda 38.33760 finished. Train loss: 1.566. Validation objective: 1.425
+Final training epoch 9 for lambda 46.00512 finished. Train loss: 1.565. Validation objective: 1.422
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 38.3376 / Correlation: 0.131
+Lambda: 31.9480 / Correlation: 0.223
+Lambda: 0.0000 / Correlation: 0.308
+Lambda: 26.6233 / Correlation: 0.309
+Lambda: 22.1861 / Correlation: 0.337
+Lambda: 5.1598 / Correlation: 0.349
+Lambda: 1.4400 / Correlation: 0.355
+Lambda: 1.0000 / Correlation: 0.358
+Lambda: 2.4883 / Correlation: 0.362
+Lambda: 18.4884 / Correlation: 0.366
+Lambda: 3.5832 / Correlation: 0.375
+Lambda: 1.2000 / Correlation: 0.377
+Lambda: 1.7280 / Correlation: 0.378
+Lambda: 6.1917 / Correlation: 0.381
+Lambda: 10.6993 / Correlation: 0.388
+Lambda: 15.4070 / Correlation: 0.389
+Lambda: 8.9161 / Correlation: 0.400
+Lambda: 7.4301 / Correlation: 0.400
+Lambda: 12.8392 / Correlation: 0.401
+Lambda: 4.2998 / Correlation: 0.402
+Lambda: 2.0736 / Correlation: 0.417
+Best model correlation 0.43402946
+Lambda = 2.9859839999999997
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 1.335. Validation objective: 1.735
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 17 for lambda 1.72800 finished. Train loss: 1.462. Validation objective: 11.336
+Final training epoch 9 for lambda 2.07360 finished. Train loss: 1.419. Validation objective: 16.009
+Final training epoch 85 for lambda 2.48832 finished. Train loss: 1.387. Validation objective: 28.340
+Final training epoch 14 for lambda 2.98598 finished. Train loss: 1.538. Validation objective: 22.913
+Final training epoch 34 for lambda 3.58318 finished. Train loss: 1.438. Validation objective: 9.278
+Final training epoch 10 for lambda 4.29982 finished. Train loss: 1.418. Validation objective: 12.623
+Final training epoch 13 for lambda 5.15978 finished. Train loss: 1.389. Validation objective: 26.721
+Final training epoch 18 for lambda 6.19174 finished. Train loss: 1.373. Validation objective: 45.533
+Final training epoch 20 for lambda 7.43008 finished. Train loss: 1.625. Validation objective: 54.890
+Final training epoch 38 for lambda 8.91610 finished. Train loss: 1.462. Validation objective: 20.307
+Final training epoch 17 for lambda 10.69932 finished. Train loss: 1.436. Validation objective: 17.228
+Final training epoch 20 for lambda 12.83918 finished. Train loss: 1.452. Validation objective: 13.884
+Final training epoch 10 for lambda 15.40702 finished. Train loss: 1.456. Validation objective: 18.638
+Final training epoch 27 for lambda 18.48843 finished. Train loss: 1.827. Validation objective: 154.853
+Final training epoch 13 for lambda 22.18611 finished. Train loss: 1.463. Validation objective: 21.358
+Final training epoch 13 for lambda 26.62333 finished. Train loss: 1.465. Validation objective: 18.314
+Final training epoch 23 for lambda 31.94800 finished. Train loss: 1.486. Validation objective: 10.994
+Final training epoch 11 for lambda 38.33760 finished. Train loss: 1.515. Validation objective: 149.943
+Final training epoch 11 for lambda 46.00512 finished. Train loss: 1.470. Validation objective: 31.014
+Final training epoch 34 for lambda 55.20614 finished. Train loss: 1.481. Validation objective: 33.862
+Final training epoch 17 for lambda 66.24737 finished. Train loss: 1.468. Validation objective: 40.844
+Final training epoch 13 for lambda 79.49685 finished. Train loss: 1.475. Validation objective: 32.894
+Final training epoch 19 for lambda 95.39622 finished. Train loss: 1.538. Validation objective: 24.149
+Final training epoch 12 for lambda 114.47546 finished. Train loss: 1.478. Validation objective: 34.237
+Final training epoch 19 for lambda 137.37055 finished. Train loss: 1.480. Validation objective: 27.658
+Final training epoch 20 for lambda 164.84466 finished. Train loss: 1.484. Validation objective: 19.884
+Final training epoch 32 for lambda 197.81359 finished. Train loss: 1.494. Validation objective: 10.130
+Final training epoch 26 for lambda 237.37631 finished. Train loss: 1.514. Validation objective: 5.487
+Final training epoch 33 for lambda 284.85158 finished. Train loss: 1.523. Validation objective: 3.820
+Final training epoch 13 for lambda 341.82189 finished. Train loss: 1.542. Validation objective: 2.271
+Final training epoch 14 for lambda 410.18627 finished. Train loss: 1.561. Validation objective: 1.640
+Final training epoch 10 for lambda 492.22352 finished. Train loss: 1.565. Validation objective: 1.439
+Final training epoch 10 for lambda 590.66823 finished. Train loss: 1.565. Validation objective: 1.414
+Final training epoch 9 for lambda 708.80187 finished. Train loss: 1.565. Validation objective: 1.418
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 590.6682 / Correlation: 0.009
+Lambda: 492.2235 / Correlation: 0.036
+Lambda: 18.4884 / Correlation: 0.037
+Lambda: 410.1863 / Correlation: 0.193
+Lambda: 341.8219 / Correlation: 0.303
+Lambda: 0.0000 / Correlation: 0.313
+Lambda: 284.8516 / Correlation: 0.320
+Lambda: 237.3763 / Correlation: 0.329
+Lambda: 197.8136 / Correlation: 0.351
+Lambda: 95.3962 / Correlation: 0.369
+Lambda: 137.3706 / Correlation: 0.375
+Lambda: 1.4400 / Correlation: 0.375
+Lambda: 1.2000 / Correlation: 0.379
+Lambda: 66.2474 / Correlation: 0.380
+Lambda: 15.4070 / Correlation: 0.384
+Lambda: 38.3376 / Correlation: 0.385
+Lambda: 22.1861 / Correlation: 0.388
+Lambda: 164.8447 / Correlation: 0.391
+Lambda: 31.9480 / Correlation: 0.392
+Lambda: 1.0000 / Correlation: 0.394
+Lambda: 79.4968 / Correlation: 0.397
+Lambda: 8.9161 / Correlation: 0.397
+Lambda: 55.2061 / Correlation: 0.398
+Lambda: 2.9860 / Correlation: 0.402
+Lambda: 26.6233 / Correlation: 0.402
+Lambda: 114.4755 / Correlation: 0.402
+Lambda: 46.0051 / Correlation: 0.404
+Lambda: 12.8392 / Correlation: 0.406
+Lambda: 10.6993 / Correlation: 0.409
+Lambda: 3.5832 / Correlation: 0.413
+Lambda: 4.2998 / Correlation: 0.421
+Lambda: 2.0736 / Correlation: 0.424
+Lambda: 5.1598 / Correlation: 0.428
+Lambda: 2.4883 / Correlation: 0.430
+Lambda: 7.4301 / Correlation: 0.431
+Lambda: 1.7280 / Correlation: 0.432
+Best model correlation 0.43351477
+Lambda = 6.191736422399999
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 106 for lambda 0.00000 finished. Train loss: 0.790. Validation objective: 1.883
+Final training epoch 88 for lambda 1.72800 finished. Train loss: 1.553. Validation objective: 32.915
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 13 for lambda 2.07360 finished. Train loss: 1.436. Validation objective: 11.125
+Final training epoch 57 for lambda 2.48832 finished. Train loss: 1.384. Validation objective: 11.364
+Final training epoch 14 for lambda 2.98598 finished. Train loss: 1.430. Validation objective: 45.134
+Final training epoch 13 for lambda 3.58318 finished. Train loss: 1.439. Validation objective: 40.914
+Final training epoch 12 for lambda 4.29982 finished. Train loss: 1.347. Validation objective: 22.252
+Final training epoch 13 for lambda 5.15978 finished. Train loss: 1.361. Validation objective: 22.863
+Final training epoch 17 for lambda 6.19174 finished. Train loss: 1.559. Validation objective: 114.129
+Final training epoch 11 for lambda 7.43008 finished. Train loss: 1.392. Validation objective: 37.965
+Final training epoch 12 for lambda 8.91610 finished. Train loss: 1.360. Validation objective: 63.357
+Final training epoch 10 for lambda 10.69932 finished. Train loss: 1.517. Validation objective: 33.737
+Final training epoch 20 for lambda 12.83918 finished. Train loss: 1.405. Validation objective: 56.590
+Final training epoch 19 for lambda 15.40702 finished. Train loss: 1.401. Validation objective: 79.318
+Final training epoch 15 for lambda 18.48843 finished. Train loss: 1.649. Validation objective: 47.265
+Final training epoch 11 for lambda 22.18611 finished. Train loss: 1.398. Validation objective: 129.434
+Final training epoch 13 for lambda 26.62333 finished. Train loss: 1.443. Validation objective: 76.124
+Final training epoch 10 for lambda 31.94800 finished. Train loss: 1.405. Validation objective: 62.200
+Final training epoch 17 for lambda 38.33760 finished. Train loss: 1.411. Validation objective: 62.202
+Final training epoch 21 for lambda 46.00512 finished. Train loss: 1.404. Validation objective: 61.195
+Final training epoch 15 for lambda 55.20614 finished. Train loss: 1.422. Validation objective: 71.798
+Final training epoch 24 for lambda 66.24737 finished. Train loss: 1.452. Validation objective: 71.311
+Final training epoch 25 for lambda 79.49685 finished. Train loss: 1.455. Validation objective: 86.538
+Final training epoch 18 for lambda 95.39622 finished. Train loss: 1.430. Validation objective: 82.548
+Final training epoch 19 for lambda 114.47546 finished. Train loss: 1.457. Validation objective: 79.665
+Final training epoch 12 for lambda 137.37055 finished. Train loss: 1.455. Validation objective: 80.398
+Final training epoch 14 for lambda 164.84466 finished. Train loss: 1.464. Validation objective: 91.154
+Final training epoch 13 for lambda 197.81359 finished. Train loss: 1.481. Validation objective: 66.254
+Final training epoch 14 for lambda 237.37631 finished. Train loss: 1.460. Validation objective: 89.113
+Final training epoch 17 for lambda 284.85158 finished. Train loss: 1.479. Validation objective: 97.430
+Final training epoch 14 for lambda 341.82189 finished. Train loss: 1.480. Validation objective: 66.741
+Final training epoch 23 for lambda 410.18627 finished. Train loss: 1.498. Validation objective: 55.212
+Final training epoch 32 for lambda 492.22352 finished. Train loss: 1.496. Validation objective: 33.989
+Final training epoch 56 for lambda 590.66823 finished. Train loss: 1.489. Validation objective: 17.714
+Final training epoch 33 for lambda 708.80187 finished. Train loss: 1.503. Validation objective: 11.270
+Final training epoch 21 for lambda 850.56225 finished. Train loss: 1.516. Validation objective: 7.358
+Final training epoch 13 for lambda 1020.67470 finished. Train loss: 1.533. Validation objective: 4.197
+Final training epoch 30 for lambda 1224.80964 finished. Train loss: 1.553. Validation objective: 2.520
+Final training epoch 11 for lambda 1469.77157 finished. Train loss: 1.564. Validation objective: 1.533
+Final training epoch 13 for lambda 1763.72588 finished. Train loss: 1.565. Validation objective: 1.417
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1469.7716 / Correlation: 0.120
+Lambda: 1224.8096 / Correlation: 0.234
+Lambda: 1.0000 / Correlation: 0.323
+Lambda: 1020.6747 / Correlation: 0.329
+Lambda: 0.0000 / Correlation: 0.341
+Lambda: 492.2235 / Correlation: 0.356
+Lambda: 2.9860 / Correlation: 0.358
+Lambda: 590.6682 / Correlation: 0.360
+Lambda: 850.5622 / Correlation: 0.363
+Lambda: 708.8019 / Correlation: 0.369
+Lambda: 410.1863 / Correlation: 0.383
+Lambda: 197.8136 / Correlation: 0.384
+Lambda: 237.3763 / Correlation: 0.385
+Lambda: 1.4400 / Correlation: 0.385
+Lambda: 164.8447 / Correlation: 0.386
+Lambda: 284.8516 / Correlation: 0.394
+Lambda: 137.3706 / Correlation: 0.394
+Lambda: 1.2000 / Correlation: 0.395
+Lambda: 341.8219 / Correlation: 0.395
+Lambda: 66.2474 / Correlation: 0.404
+Lambda: 6.1917 / Correlation: 0.404
+Lambda: 46.0051 / Correlation: 0.406
+Lambda: 55.2061 / Correlation: 0.409
+Lambda: 18.4884 / Correlation: 0.410
+Lambda: 79.4968 / Correlation: 0.410
+Lambda: 38.3376 / Correlation: 0.412
+Lambda: 95.3962 / Correlation: 0.412
+Lambda: 114.4755 / Correlation: 0.414
+Lambda: 10.6993 / Correlation: 0.415
+Lambda: 26.6233 / Correlation: 0.416
+Lambda: 8.9161 / Correlation: 0.417
+Lambda: 22.1861 / Correlation: 0.418
+Lambda: 4.2998 / Correlation: 0.418
+Lambda: 1.7280 / Correlation: 0.418
+Lambda: 12.8392 / Correlation: 0.420
+Lambda: 31.9480 / Correlation: 0.420
+Lambda: 2.0736 / Correlation: 0.422
+Lambda: 5.1598 / Correlation: 0.422
+Lambda: 7.4301 / Correlation: 0.423
+Lambda: 15.4070 / Correlation: 0.424
+Lambda: 3.5832 / Correlation: 0.427
+Best model correlation 0.42995992
+Lambda = 2.48832
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.199. Validation objective: 1.719
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 45 for lambda 1.72800 finished. Train loss: 1.418. Validation objective: 26.244
+Final training epoch 24 for lambda 2.07360 finished. Train loss: 1.418. Validation objective: 13.199
+Final training epoch 17 for lambda 2.48832 finished. Train loss: 1.494. Validation objective: 29.374
+Final training epoch 11 for lambda 2.98598 finished. Train loss: 1.480. Validation objective: 11.052
+Final training epoch 9 for lambda 3.58318 finished. Train loss: 1.381. Validation objective: 22.082
+Final training epoch 33 for lambda 4.29982 finished. Train loss: 1.417. Validation objective: 13.039
+Final training epoch 13 for lambda 5.15978 finished. Train loss: 1.403. Validation objective: 16.174
+Final training epoch 22 for lambda 6.19174 finished. Train loss: 1.407. Validation objective: 19.554
+Final training epoch 36 for lambda 7.43008 finished. Train loss: 1.926. Validation objective: 38.830
+Final training epoch 10 for lambda 8.91610 finished. Train loss: 1.399. Validation objective: 27.590
+Final training epoch 18 for lambda 10.69932 finished. Train loss: 1.466. Validation objective: 200.973
+Final training epoch 14 for lambda 12.83918 finished. Train loss: 1.851. Validation objective: 33.819
+Final training epoch 39 for lambda 15.40702 finished. Train loss: 1.495. Validation objective: 26.144
+Final training epoch 32 for lambda 18.48843 finished. Train loss: 1.453. Validation objective: 24.408
+Final training epoch 10 for lambda 22.18611 finished. Train loss: 1.494. Validation objective: 32.182
+Final training epoch 21 for lambda 26.62333 finished. Train loss: 1.461. Validation objective: 31.665
+Final training epoch 15 for lambda 31.94800 finished. Train loss: 1.568. Validation objective: 59.168
+Final training epoch 14 for lambda 38.33760 finished. Train loss: 1.470. Validation objective: 30.730
+Final training epoch 13 for lambda 46.00512 finished. Train loss: 1.476. Validation objective: 30.244
+Final training epoch 18 for lambda 55.20614 finished. Train loss: 1.479. Validation objective: 34.680
+Final training epoch 40 for lambda 66.24737 finished. Train loss: 1.516. Validation objective: 26.872
+Final training epoch 22 for lambda 79.49685 finished. Train loss: 1.467. Validation objective: 29.703
+Final training epoch 18 for lambda 95.39622 finished. Train loss: 1.499. Validation objective: 29.885
+Final training epoch 35 for lambda 114.47546 finished. Train loss: 1.478. Validation objective: 20.498
+Final training epoch 23 for lambda 137.37055 finished. Train loss: 1.490. Validation objective: 14.141
+Final training epoch 33 for lambda 164.84466 finished. Train loss: 1.495. Validation objective: 9.145
+Final training epoch 30 for lambda 197.81359 finished. Train loss: 1.499. Validation objective: 4.992
+Final training epoch 31 for lambda 237.37631 finished. Train loss: 1.519. Validation objective: 3.989
+Final training epoch 14 for lambda 284.85158 finished. Train loss: 1.541. Validation objective: 2.181
+Final training epoch 23 for lambda 341.82189 finished. Train loss: 1.557. Validation objective: 1.640
+Final training epoch 19 for lambda 410.18627 finished. Train loss: 1.564. Validation objective: 1.421
+Final training epoch 9 for lambda 492.22352 finished. Train loss: 1.566. Validation objective: 1.420
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 410.1863 / Correlation: 0.063
+Lambda: 341.8219 / Correlation: 0.217
+Lambda: 284.8516 / Correlation: 0.274
+Lambda: 10.6993 / Correlation: 0.291
+Lambda: 1.0000 / Correlation: 0.329
+Lambda: 0.0000 / Correlation: 0.339
+Lambda: 2.4883 / Correlation: 0.343
+Lambda: 197.8136 / Correlation: 0.345
+Lambda: 164.8447 / Correlation: 0.350
+Lambda: 1.4400 / Correlation: 0.353
+Lambda: 237.3763 / Correlation: 0.355
+Lambda: 137.3706 / Correlation: 0.368
+Lambda: 31.9480 / Correlation: 0.370
+Lambda: 114.4755 / Correlation: 0.371
+Lambda: 1.2000 / Correlation: 0.374
+Lambda: 95.3962 / Correlation: 0.382
+Lambda: 79.4968 / Correlation: 0.383
+Lambda: 46.0051 / Correlation: 0.385
+Lambda: 66.2474 / Correlation: 0.391
+Lambda: 26.6233 / Correlation: 0.392
+Lambda: 12.8392 / Correlation: 0.393
+Lambda: 55.2061 / Correlation: 0.393
+Lambda: 4.2998 / Correlation: 0.401
+Lambda: 38.3376 / Correlation: 0.402
+Lambda: 7.4301 / Correlation: 0.402
+Lambda: 15.4070 / Correlation: 0.406
+Lambda: 8.9161 / Correlation: 0.406
+Lambda: 2.9860 / Correlation: 0.406
+Lambda: 22.1861 / Correlation: 0.412
+Lambda: 18.4884 / Correlation: 0.414
+Lambda: 2.0736 / Correlation: 0.415
+Lambda: 6.1917 / Correlation: 0.415
+Lambda: 5.1598 / Correlation: 0.418
+Lambda: 3.5832 / Correlation: 0.424
+Best model correlation 0.4362303
+Lambda = 1.728
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 1.263. Validation objective: 1.778
+Final training epoch 96 for lambda 1.00000 finished. Train loss: 1.291. Validation objective: 51.070
+Final training epoch 79 for lambda 1.44000 finished. Train loss: 1.363. Validation objective: 20.139
+Final training epoch 31 for lambda 1.72800 finished. Train loss: 1.565. Validation objective: 36.928
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:488: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 19 for lambda 2.07360 finished. Train loss: 1.398. Validation objective: 27.587
+Final training epoch 12 for lambda 2.48832 finished. Train loss: 1.338. Validation objective: 28.648
+Final training epoch 21 for lambda 2.98598 finished. Train loss: 1.385. Validation objective: 18.454
+Final training epoch 34 for lambda 3.58318 finished. Train loss: 1.402. Validation objective: 11.569
+Final training epoch 23 for lambda 4.29982 finished. Train loss: 2.489. Validation objective: 77.794
+Final training epoch 24 for lambda 5.15978 finished. Train loss: 1.429. Validation objective: 15.225
+Final training epoch 14 for lambda 6.19174 finished. Train loss: 1.424. Validation objective: 18.637
+Final training epoch 24 for lambda 7.43008 finished. Train loss: 1.415. Validation objective: 24.766
+Final training epoch 29 for lambda 8.91610 finished. Train loss: 1.419. Validation objective: 25.571
+Final training epoch 17 for lambda 10.69932 finished. Train loss: 1.410. Validation objective: 28.593
+Final training epoch 24 for lambda 12.83918 finished. Train loss: 1.510. Validation objective: 65.086
+Final training epoch 16 for lambda 15.40702 finished. Train loss: 1.886. Validation objective: 20.285
+Final training epoch 13 for lambda 18.48843 finished. Train loss: 1.450. Validation objective: 16.130
+Final training epoch 24 for lambda 22.18611 finished. Train loss: 1.585. Validation objective: 11.329
+Final training epoch 24 for lambda 26.62333 finished. Train loss: 1.648. Validation objective: 6.752
+Final training epoch 9 for lambda 31.94800 finished. Train loss: 1.472. Validation objective: 27.166
+Final training epoch 16 for lambda 38.33760 finished. Train loss: 1.492. Validation objective: 51.880
+Final training epoch 22 for lambda 46.00512 finished. Train loss: 1.468. Validation objective: 32.558
+Final training epoch 41 for lambda 55.20614 finished. Train loss: 1.469. Validation objective: 20.786
+Final training epoch 21 for lambda 66.24737 finished. Train loss: 1.481. Validation objective: 15.439
+Final training epoch 21 for lambda 79.49685 finished. Train loss: 1.486. Validation objective: 11.192
+Final training epoch 46 for lambda 95.39622 finished. Train loss: 1.484. Validation objective: 7.152
+Final training epoch 26 for lambda 114.47546 finished. Train loss: 1.500. Validation objective: 5.132
+Final training epoch 10 for lambda 137.37055 finished. Train loss: 1.514. Validation objective: 4.151
+Final training epoch 23 for lambda 164.84466 finished. Train loss: 1.532. Validation objective: 2.701
+Final training epoch 26 for lambda 197.81359 finished. Train loss: 1.554. Validation objective: 1.737
+Final training epoch 13 for lambda 237.37631 finished. Train loss: 1.564. Validation objective: 1.508
+Final training epoch 10 for lambda 284.85158 finished. Train loss: 1.565. Validation objective: 1.429
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:585: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 237.3763 / Correlation: 0.149
+Lambda: 197.8136 / Correlation: 0.258
+Lambda: 4.2998 / Correlation: 0.288
+Lambda: 164.8447 / Correlation: 0.295
+Lambda: 0.0000 / Correlation: 0.323
+Lambda: 3.5832 / Correlation: 0.344
+Lambda: 2.9860 / Correlation: 0.349
+Lambda: 114.4755 / Correlation: 0.350
+Lambda: 95.3962 / Correlation: 0.355
+Lambda: 26.6233 / Correlation: 0.359
+Lambda: 12.8392 / Correlation: 0.362
+Lambda: 38.3376 / Correlation: 0.363
+Lambda: 1.7280 / Correlation: 0.370
+Lambda: 66.2474 / Correlation: 0.371
+Lambda: 8.9161 / Correlation: 0.372
+Lambda: 137.3706 / Correlation: 0.373
+Lambda: 46.0051 / Correlation: 0.375
+Lambda: 22.1861 / Correlation: 0.384
+Lambda: 7.4301 / Correlation: 0.387
+Lambda: 6.1917 / Correlation: 0.390
+Lambda: 1.2000 / Correlation: 0.392
+Lambda: 2.4883 / Correlation: 0.393
+Lambda: 31.9480 / Correlation: 0.394
+Lambda: 55.2061 / Correlation: 0.396
+Lambda: 15.4070 / Correlation: 0.396
+Lambda: 10.6993 / Correlation: 0.405
+Lambda: 18.4884 / Correlation: 0.407
+Lambda: 79.4968 / Correlation: 0.411
+Lambda: 5.1598 / Correlation: 0.411
+Lambda: 2.0736 / Correlation: 0.435
+Lambda: 1.4400 / Correlation: 0.437
+Best model correlation 0.4647347
+Lambda = 1.0
+//////////////////////////////////////////////////////////////////////////////////
+Best parameters found: {'target': np.float64(0.4647347033023834), 'params': {'M': np.float64(15.046258632435428), 'hidden_layer1_features': np.float64(749.2476902335738), 'learning_rate': np.float64(0.0006977980249950953)}}

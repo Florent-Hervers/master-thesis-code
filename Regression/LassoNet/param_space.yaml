@@ -9,16 +9,10 @@ setting:
 param_scope:
   learning_rate:
     is_discrete: false
-    value: [1e-4, 1e-5]
-  batch_size:
-    is_discrete: true
-    value: [64, 4096]
+    value: [1e-3, 1e-5]
   hidden_layer1_features:
     is_discrete: true
-    value: [512, 1024] #从512到1024之间到所有整数
-  hidden_layer2_features:
-    is_discrete: true
-    value: [0, 256] # 等于0的时候相当于只有一层
+    value: [512, 2048] #从512到1024之间到所有整数
   M:
     is_discrete: false
     value: [0,20]

@@ -38,7 +38,6 @@ def bo_search(dataset_tuple, bo_config_filepath):
         n_iter=bo_setting['bo_iterations'],
     )
 
-    # Max -MSE value:
-    optim_mse=-optimizer.max['target']
+    print(f"Best parameters found: {optimizer.max}")
 
-    return optim_mse, optimizer.max
+    return optimizer.max, optimizer.max
