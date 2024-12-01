@@ -6,6 +6,7 @@ from model import cv_eval_model
 import os
 from functools import partial
 from files import make_filename, make_sure_dir
+import time
 
 def parse_bo_param_scope(bo_param_scope):
     scope = {}
@@ -17,7 +18,7 @@ def parse_bo_param_scope(bo_param_scope):
     
     return scope
 
-def bo_search(dataset_tuple, bo_config_filepath):
+def bo_search(dataset_tuple, start_time, bo_config_filepath):
     """
     Return optimum MSE point
     """
@@ -38,6 +39,9 @@ def bo_search(dataset_tuple, bo_config_filepath):
         n_iter=bo_setting['bo_iterations'],
     )
 
-    print(f"Best parameters found: {optimizer.max}")
+    print("-------------------------------------------------------------------------------------")
+    print(f"Optimal parameters: {optimizer.max}")
+
+    print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
 
     return optimizer.max, optimizer.max

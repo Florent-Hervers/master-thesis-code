@@ -26,12 +26,13 @@ def cv_eval_model(ds_tuple, bo_config, **params):
     params = collate_params(bo_config, **params)
 
     model = LassoNetRegressor(
-        hidden_dims=(params['hidden_layer1_features'],),
+        hidden_dims=(1024, 1024, 1024, 1024, 768 ,512, 512, 512, 512),
         lambda_start= 1.0,
         path_multiplier= 1.2,
         M=params['M'],
         optim=partial(torch.optim.Adam, lr=params['learning_rate']),
         batch_size= 64,
+        dropout=0.25,
         device='cuda',
         random_state=42,
         torch_seed=42,
@@ -43,13 +44,14 @@ def cv_eval_model(ds_tuple, bo_config, **params):
     
     # Case where all features are not chosen and the model only return a constant vector
     if isnan(results_to_print[-1].correlation):
-        results_to_print.pop()
+        results_to_print.pop() 
 
     print("//////////////////////////////////////////////////////////////////////////////////")
     for item in results_to_print[:-1]:
-        print(f"Lambda: {item.lambda_:.4f} / Correlation: {item.correlation:.3f}")
+        print(f"Lambda: {item.lambda_:.4f} / Correlation: {item.correlation:.3f} / Nb features: {sum(item.selected)}")
     print("Best model correlation", results_to_print[-1].correlation)
     print("Lambda =", results_to_print[-1].lambda_)
+    print(f"Nb features: {sum(results_to_print[-1].selected)}")
     print("//////////////////////////////////////////////////////////////////////////////////")
     
     return results_to_print[-1].correlation

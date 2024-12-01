@@ -15,5 +15,5 @@
 conda activate TFE
 
 # Run your Python script
-cd ~/TFE/Code/
+cd ~/TFE/Code/Regression/LassoNet
 python -u entry.py

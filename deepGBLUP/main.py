@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 
 from train_test import train_model, test_model
 from model import deepGBLUP
-from dataset import load_dataset
+from dataset_deepGBLUP import load_dataset
 
 ################ CONFIG ####################
 # data path

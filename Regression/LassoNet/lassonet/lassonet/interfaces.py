@@ -274,12 +274,14 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
 
         def validation_obj():
             with torch.no_grad():
-                return (
+                model.eval()
+                return_value = (
                     self.criterion(model(X_val), y_val).item()
                     + lambda_ * model.l1_regularization_skip().item()
                     + self.gamma * model.l2_regularization().item()
                     + self.gamma_skip * model.l2_regularization_skip().item()
                 )
+                return return_value
 
         best_val_obj = validation_obj()
         epochs_since_best_val_obj = 0
@@ -575,6 +577,7 @@ class LassoNetRegressor(
         return ans
 
     def score(self, X, y, sample_weight=None):
+        self.model.eval()
         y_pred = self.predict(X.cpu())
 
         if len(y_pred.shape) > 1:
