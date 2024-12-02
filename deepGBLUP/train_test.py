@@ -20,7 +20,6 @@ def train_model(model, train_dataloader, test_dataloader, save_path, device, lr,
     log = open(os.path.join(save_path,'log.txt'),'w')
     log.close()
     """
-    
     s_time = time.time()
     model.train()
     train_loss = []
@@ -34,7 +33,7 @@ def train_model(model, train_dataloader, test_dataloader, save_path, device, lr,
             pred_y = model(X) 
 
             pa = perdictive_ability(pred_y, true_y, h2)
-            pred_y = pred_y +a +d +e_
+            pred_y = pred_y #+a +d +e_
             loss = (pred_y - true_y).abs().mean()
 
             train_loss.append(loss.cpu().detach())
@@ -103,7 +102,7 @@ def test_model(model, test_dataloader, device, save_path, epoch):
     wandb.log({
             "epoch": epoch, 
             "validation_loss": np.array(val_loss).mean(),
-            "correlation pheno_1": pearsonr(pred_y, true_y).statistic,
+            "correlation ep_res": pearsonr(pred_y, true_y).statistic,
         }
     )
     running_time = time.time() - s_time

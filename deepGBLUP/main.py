@@ -16,12 +16,12 @@ phen_path = '../Data/BBBDL_pheno_2023bbb_0twins_6traits_mask' # path of phenotyp
 bim_path = '../Data/BBBDL_BBB2023_MD.bim' # optional: path of bim file to save SNP effects. If you don't have bim file just type None 
 
 # train cofig
-lr =  1e-3 # list of cadidate learning rate
-epoch = 100   # max value of cadiate epoch
-batch_size = 16 # train batch size
+lr =  5e-4 # list of cadidate learning rate
+epoch = 350   # max value of cadiate epoch
+batch_size = 64 # train batch size
 
 device = 'cuda' # type 'cpu' if you use cpu device, or type 'cuda' if you use gpu device.
-h2 = 0.37
+h2 = 0.30533
 
 # save config
 save_path = 'test_GBLUP' # path to save results
@@ -36,6 +36,14 @@ save_path = 'test_GBLUP' # path to save results
 # os.makedirs(save_path, exist_ok=True)
 
 
+
+s_time = time.time()
+
+# Load Dataset
+train_dataset, test_dataset, num_snp, ymean = load_dataset(raw_path, phen_path, h2, device)
+train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
 wandb.init(
     project = "TFE",
     config = {
@@ -45,17 +53,9 @@ wandb.init(
         "nb epochs": epoch,
         "h2": h2,
     },
-    name = "Test corrected deepGBLUP with updated dataset",
+    name = "Test deepGBLUP with correct heritability",
     tags = ["debug"],
 )
-
-
-s_time = time.time()
-
-# Load Dataset
-train_dataset, test_dataset, num_snp, ymean = load_dataset(raw_path, phen_path, h2, device)
-train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 # Load model
 model = deepGBLUP(ymean, num_snp).to(device)
