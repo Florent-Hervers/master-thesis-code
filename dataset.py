@@ -111,6 +111,8 @@ class SNPmarkersDataset(Dataset):
                     self.phenotypes[pheno] = all_test_samples[pheno].dropna()
             except Exception as e:
                 raise IOError(f"The following error occured when trying to open the phenotype file: {e.args}")
+        
+        self.pheno_std = {}
 
         if not skip_check:
             try:
@@ -214,7 +216,7 @@ class SNPmarkersDataset(Dataset):
 
             return torch.tensor(self._snp.loc[index], dtype=torch.float), phenotype_data
         else:
-            return torch.tensor(self._snp.loc[index], dtype=torch.float) , self.phenotypes[self._wantedPhenotypes].loc[index]
+            return torch.tensor(self._snp.loc[index], dtype=torch.float) , self.phenotypes[self._wantedPhenotypes].loc[index] / self.pheno_std[self._wantedPhenotypes]
     
     @property
     def set_phenotypes(self):
@@ -252,6 +254,10 @@ class SNPmarkersDataset(Dataset):
                 raise Exception("The given phenotypes aren't compatible as they aren't definied for every phenotype!")
  
         self._wantedPhenotypes = value
+        
+        # Also recompute the standard deviation for the selected phenotypes
+        for pheno in iterable:
+            self.pheno_std[pheno] = np.std(self.phenotypes[pheno])
 
     @set_phenotypes.deleter
     def set_phenotypes(self):
