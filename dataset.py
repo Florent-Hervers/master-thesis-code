@@ -14,9 +14,11 @@ class SNPmarkersDataset(Dataset):
     Attributes:
         mode (str, optional): type of the dataset represented. Only 'train' or 'test' or 'validation' are accepted values. \
         Modifying this value will not change the type of dataset as this variable is designed to be "read-only". Defaults to "train".
-        phenotypes (dict[pd.Series]): contain the phenotypes data for the given mode. Keys are phenotypes label used in the original phenotype files. \
+        phenotypes (dict[str, pd.Series]): contain the phenotypes data for the given mode. Keys are phenotypes label used in the original phenotype files. \
         Phenotypes are exposed as an attribute to ease the data analysis while SNP_array can only be accessed via `get_all_SNP` or `__getItem` methods.
         set_phenotypes(str | list[str]): Default to None. Should be definied before using the dataset class by the user. Accepted string are the keys of ´self.phenotypes´
+        pheno_std(dict[str, float]): Store the standard deviasion of the selected phenotypes. Keys are phenotypes label used in the original phenotype files. \
+        Return a empty dictonary if set_phenotypes isn't set.
     """
     
     def __init__(
@@ -188,7 +190,8 @@ class SNPmarkersDataset(Dataset):
             return len(self.phenotypes[self._wantedPhenotypes[0]].index)
 
     def __getitem__(self, idx):
-        """Return the snp data and selected phenotype (via the proprety `set_phenotypes`) given an index
+        """Return the snp data and selected phenotype (via the proprety `set_phenotypes`) given an index. \
+        The value of the phenotype data returned will be normelized.
 
         Args:
             idx (int): index in the dataset.
@@ -212,7 +215,7 @@ class SNPmarkersDataset(Dataset):
             phenotype_data = {}
 
             for pheno in self._wantedPhenotypes:
-                phenotype_data[pheno] = self.phenotypes[pheno].loc[index]
+                phenotype_data[pheno] = self.phenotypes[pheno].loc[index] / self.pheno_std[self._wantedPhenotypes]
 
             return torch.tensor(self._snp.loc[index], dtype=torch.float), phenotype_data
         else:
