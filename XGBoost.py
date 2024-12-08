@@ -6,6 +6,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 import time
 import json
 import cupy as cp
+from utils import print_elapsed_time
 
 def main():
     
@@ -30,10 +31,13 @@ def main():
         # Put everything on the GPU speed thing up
         X_train = cp.array(train_dataset.get_all_SNP())
         Y_train_cpu = np.array(train_dataset.phenotypes[pheno]).ravel()
+        Y_train_cpu /= train_dataset.pheno_std[pheno]
         Y_train_gpu = cp.array(Y_train_cpu)
         
         X_validation = cp.array(validation_dataset.get_all_SNP())
         Y_validation = np.array(validation_dataset.phenotypes[pheno]).ravel()
+        Y_validation /= validation_dataset.pheno_std[pheno]
+
 
         for i,sub_sampling_value in enumerate(sub_sampling):
             for j,learning_rates_value in enumerate(learning_rates):
@@ -48,7 +52,7 @@ def main():
                     model = model.fit(X_train, Y_train_gpu)
                     validation_predictions = model.predict(X_validation)
                     
-                    MAE_results[i,j,k] = mean_absolute_error(Y_validation, validation_predictions)
+                    MAE_results[i,j,k] = mean_absolute_error(Y_validation * validation_dataset.pheno_std[pheno], validation_predictions* validation_dataset.pheno_std[pheno]) 
                     correlation_results[i,j,k] = pearsonr(Y_validation, validation_predictions).statistic
                         
                     iteration_counter += 1
@@ -59,15 +63,15 @@ def main():
                     print(f"    - sub_sampling: {sub_sampling_value}")
                     print(f"    - learning_rate: {learning_rates_value}")
                     print(f"    - depth: {depth}")
-                    print(f"Elapsed time from start: {int((time.time() - start_time) // 60)}m {int((time.time() - start_time) % 60)}s")
+                    print(f"Elapsed time from start: {print_elapsed_time(start_time)}")
                     print(f"Results:")
                     print(f"    - MAE : {MAE_results[i,j,k]}")
                     print(f"    - Correlation : {correlation_results[i,j,k]}")
 
         print("////////////////////////////////////////////")
-        print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
+        print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/xgboost_{pheno}_1000_results.json", "w") as f:
+        with open(f"Results/xgboost_{pheno}_normalized_1000_results.json", "w") as f:
             results = {
                 "dim_0_values": sub_sampling,
                 "dim_0_label": "sub_sampling",
