@@ -2,6 +2,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
+import time
+import numpy as np
+from scipy.stats import pearsonr
+from torch.nn import Module, L1Loss
+from torch.utils.data import DataLoader
+from torch.optim import Optimizer
+from torch.optim.lr_scheduler import LRScheduler
+import wandb
+from typing import Union
 
 def results_heatmap(df1:      pd.DataFrame,
                     df2:      pd.DataFrame, 
@@ -56,16 +65,6 @@ def format_batch(dict: dict):
     """
     return torch.stack([dict[key] for key in dict.keys()], dim= 1)
 
-
-import numpy as np
-from scipy.stats import pearsonr
-from torch.nn import Module, L1Loss
-from torch.utils.data import DataLoader
-from torch.optim import Optimizer
-from torch.optim.lr_scheduler import LRScheduler
-import wandb
-from typing import Union
-
 def train_DL_model(
         model: Module,
         optimizer : Optimizer,
@@ -76,6 +75,7 @@ def train_DL_model(
         scheduler: Union[None, LRScheduler] = None,
         phenotype: Union[str, None] = None,
         log_wandb: bool = True,
+        initial_phenotype = None,
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
 
@@ -89,6 +89,7 @@ def train_DL_model(
             scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
             phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
             log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
+            initial_phenotype(np.array | None, optionnal): If the model compute a residual phenotype, you can provide the suffix to see the evolution of correlation of the final prediction. Defaults to None.
         
     """
 
@@ -143,6 +144,11 @@ def train_DL_model(
             # Resize the vectors to be accepted in the pearsonr function
             predicted = predicted.reshape((predicted.shape[0],))
             target = target.reshape((target.shape[0],))
+
+            if initial_phenotype is not None:
+                initial_phenotype = initial_phenotype.reshape((initial_phenotype.shape[0],))
+                predicted = initial_phenotype + predicted
+                target = initial_phenotype + target
             
             if scheduler is not None:
                 scheduler.step()
@@ -156,3 +162,17 @@ def train_DL_model(
                 )
         print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
             f"{f' Correlation: {pearsonr(predicted, target).statistic}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
+        
+def print_elapsed_time(start_time: float):
+    """Returns elapsed time following the format d h m s
+
+    Args:
+        start_time (float): the start time taken with the `time.time` function
+
+    Returns:
+        str: the formatted time elapsed from the given time
+    """
+    days, rem = divmod(time.time() - start_time, 24 * 3600)
+    hours, rem = divmod(rem, 3600)
+    minutes, secondes = divmod(rem, 60)
+    return f"{int(days)}d {int(hours)}h {int(minutes)}m {int(secondes)}s"
