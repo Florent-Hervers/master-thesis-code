@@ -7,6 +7,7 @@ import time
 import json
 import cupy as cp
 import pandas as pd
+from utils import print_elapsed_time
 
 def main():
     selected_phenotypes = ["ep_res","de_res","FESSEp_res","FESSEa_res"]
@@ -19,16 +20,20 @@ def main():
     # Put everything on the GPU speed thing up
     X_train = cp.array(train_dataset.get_all_SNP())
     Y_train_cpu = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in selected_phenotypes]).transpose()
+    for pheno in Y_train_cpu:
+        Y_train_cpu[pheno] /= train_dataset.pheno_std[pheno]
     Y_train_gpu = cp.array(Y_train_cpu)
     
     X_validation = cp.array(validation_dataset.get_all_SNP())
     Y_validation = pd.DataFrame([validation_dataset.phenotypes[pheno] for pheno in selected_phenotypes]).transpose()
+    for pheno in Y_validation:
+        Y_validation[pheno] /= validation_dataset.pheno_std[pheno]
 
     sub_sampling = [1, 0.5]
     learning_rates = [0.5, 0.4, 0.3, 0.2, 0.1, 0.01, 0.001, 0.0005, 0.0001]
-    max_depth = [12, 11, 10, 9, 8, 7, 6]
+    max_depth = [10, 9, 8, 7, 6, 5, 4, 3, 2]
 
-    nb_phenotypes = Y_validation.shape[-1]
+    nb_phenotypes = len(selected_phenotypes)
     MAE_results = np.zeros((nb_phenotypes, len(sub_sampling), len(learning_rates), len(max_depth)))
     correlation_results = np.zeros((nb_phenotypes, len(sub_sampling), len(learning_rates), len(max_depth)))
 
@@ -48,7 +53,7 @@ def main():
                 validation_predictions = model.predict(X_validation)
                 
                 for m in range(nb_phenotypes):
-                    MAE_results[m,i,j,k] = mean_absolute_error(Y_validation.iloc[:, m], validation_predictions[:, m])
+                    MAE_results[m,i,j,k] = mean_absolute_error(Y_validation.iloc[:, m] * validation_dataset.pheno_std[selected_phenotypes[m]], validation_predictions[:, m] * validation_dataset.pheno_std[selected_phenotypes[m]]) 
                     correlation_results[m,i,j,k] = pearsonr(Y_validation.iloc[:, m], validation_predictions[:, m]).statistic
                     
                 iteration_counter += 1
@@ -59,15 +64,15 @@ def main():
                 print(f"    - sub_sampling: {sub_sampling_value}")
                 print(f"    - learning_rate: {learning_rates_value}")
                 print(f"    - depth: {depth}")
-                print(f"Elapsed time from start: {int((time.time() - start_time) // 60)}m {int((time.time() - start_time) % 60)}s")
+                print(f"Elapsed time from start: {print_elapsed_time(start_time)}")
                 print(f"Results:")
                 print(f"    - MAE : {MAE_results[:,i,j,k]}")
                 print(f"    - Correlation : {correlation_results[:,i,j,k]}")
 
     print("////////////////////////////////////////////")
-    print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
+    print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-    with open("Results/xgboost_all_1000_results.json", "w") as f:
+    with open("Results/xgboost_all_normelized_1000_results.json", "w") as f:
         results = {
             "dim_0_values": Y_validation.columns.to_list(),
             "dim_0_label": "phenotypes",
