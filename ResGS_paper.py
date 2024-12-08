@@ -5,7 +5,7 @@ from dataset import SNPmarkersDataset
 from utils import train_DL_model, print_elapsed_time
 from torch.utils.data import DataLoader
 from scipy.stats import pearsonr
-from sklearn.svm import LinearSVR
+from sklearn.svm import SVR
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from torch.utils.data import Dataset
@@ -83,7 +83,7 @@ def main():
             if model_str == "Ridge":
                 model = Ridge(random_state=2307)
             elif model_str == "support vector machine":
-                model = LinearSVR(random_state=2307)
+                model = SVR()
             elif model_str == "RandomForest":
                 continue
                 model = RandomForestRegressor(n_jobs=-1, random_state=2307)
@@ -104,8 +104,14 @@ def main():
         y_train_pre = bestTraditionalModel.predict(X_train)
         y_pre = bestTraditionalModel.predict(X_val)
 
+        print(f"Sample of original y_train: {y_train[0:10]}")
+        print(f"Sample of original y_val: {y_val[0:10]}")
+        
         y_train = y_train - y_train_pre
         y_val = y_val - y_pre
+
+        print(f"Sample of residual y_train: {y_train[0:10]}")
+        print(f"Sample of residual y_val: {y_val[0:10]}")
 
         residual_train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.float32), y_train.to_numpy(dtype=np.float32))
         residual_validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.float32), y_val.to_numpy(dtype=np.float32))
