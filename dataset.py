@@ -28,7 +28,8 @@ class SNPmarkersDataset(Dataset):
         bed_filename = "BBBDL_BBB2023_MD.bed", 
         pheno_filename = "BBBDL_pheno_20000bbb_6traits_processed.csv", 
         mask_pheno_filename = "BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv",
-        date_filename = "BBBDL_pedi_full_list.txt"
+        date_filename = "BBBDL_pedi_full_list.txt",
+        normalize = True,
     ):
         """Create a class following the pytorch template.
 
@@ -46,6 +47,7 @@ class SNPmarkersDataset(Dataset):
             The first columns must contain the id of the animal and the birth date must be the thrid and last columns formated in yyyymmdd (where y=year, m=month, d=day). \
             The second columns will be used. Note that the all masked samples must be born after the ones in the training/validation set for the sorting to be relevant. \
             Setting this parameter to None will prevent the sorting.
+            normalize (bool): define if the phenotypes outputed by the function getitem should be normalized. Defaults to True.
 
         Raises:
             AttributeError: if the mode doesn't respect the described format.
@@ -57,6 +59,8 @@ class SNPmarkersDataset(Dataset):
         self._wantedPhenotypes: str | List[str] = None
         # Define the path to the phenotypes file for the check_data function
         self._pheno_filepath = os.path.join(dir_path, pheno_filename)
+
+        self.normalize = normalize
 
         try:
             bed_file_data = open_bed(os.path.join(dir_path, bed_filename)).read(dtype="int8", num_threads= 8)
@@ -191,7 +195,7 @@ class SNPmarkersDataset(Dataset):
 
     def __getitem__(self, idx):
         """Return the snp data and selected phenotype (via the proprety `set_phenotypes`) given an index. \
-        The value of the phenotype data returned will be normelized.
+        The value of the phenotype data returned will be normalized.
 
         Args:
             idx (int): index in the dataset.
@@ -215,11 +219,17 @@ class SNPmarkersDataset(Dataset):
             phenotype_data = {}
 
             for pheno in self._wantedPhenotypes:
-                phenotype_data[pheno] = self.phenotypes[pheno].loc[index] / self.pheno_std[self._wantedPhenotypes]
+                if self.normalize:
+                    phenotype_data[pheno] = self.phenotypes[pheno].loc[index] / self.pheno_std[self._wantedPhenotypes]
+                else:
+                    phenotype_data[pheno] = self.phenotypes[pheno].loc[index]
 
             return torch.tensor(self._snp.loc[index], dtype=torch.float), phenotype_data
         else:
-            return torch.tensor(self._snp.loc[index], dtype=torch.float) , self.phenotypes[self._wantedPhenotypes].loc[index] / self.pheno_std[self._wantedPhenotypes]
+            target = self.phenotypes[self._wantedPhenotypes].loc[index]
+            if self.normalize:
+                target /= self.pheno_std[self._wantedPhenotypes]
+            return torch.tensor(self._snp.loc[index], dtype=torch.float) , target
     
     @property
     def set_phenotypes(self):
