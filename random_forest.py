@@ -16,17 +16,13 @@ def main():
     train_dataset.set_phenotypes = phenotypes[0]
     X_train = train_dataset.get_all_SNP()
 
-    max_depth = [15,17,19,21,23,25,27,29,31,33,35]
+    max_depth = np.arange(1,16)
     max_features = [0.5, 1/3, 0.25, 0.1, 0.01, int(np.sqrt(X_train.shape[-1])), 0.001]
     MAE_results = np.zeros((len(max_depth), len(max_features)))
     correlation_results = np.zeros((len(max_depth), len(max_features)))
     
     for phenotype in phenotypes:
         start_time = time.time()
-        
-        # Skip the first one as already done in a previous run
-        if phenotype == "ep_res":
-            continue
 
         train_dataset.set_phenotypes = phenotype
         validation_dataset.set_phenotypes = phenotype
