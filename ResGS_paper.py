@@ -63,7 +63,7 @@ def main():
     
     train_dataset = SNPmarkersDataset(mode = "train")
     validation_dataset = SNPmarkersDataset(mode = "validation")
-    selected_phenotypes = list(train_dataset.phenotypes.keys())
+    selected_phenotypes = ["ep_res"] #list(train_dataset.phenotypes.keys())
 
     for phenotype in selected_phenotypes:
         start_time = time.time()
