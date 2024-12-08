@@ -55,3 +55,104 @@ def format_batch(dict: dict):
         torch.Tensor: the resulting tensor (of shape (y,x)).
     """
     return torch.stack([dict[key] for key in dict.keys()], dim= 1)
+
+
+import numpy as np
+from scipy.stats import pearsonr
+from torch.nn import Module, L1Loss
+from torch.utils.data import DataLoader
+from torch.optim import Optimizer
+from torch.optim.lr_scheduler import LRScheduler
+import wandb
+from typing import Union
+
+def train_DL_model(
+        model: Module,
+        optimizer : Optimizer,
+        train_dataloader: DataLoader,
+        validation_dataloader: DataLoader,
+        n_epoch: int,
+        criterion = L1Loss(),
+        scheduler: Union[None, LRScheduler] = None,
+        phenotype: Union[str, None] = None,
+        log_wandb: bool = True,
+    ):
+    """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
+
+        Args:
+            model (Module): The model to train.
+            optimizer (Optimizer): Optimizer used to train the given model.
+            train_dataloader (DataLoader): Dataloader containing the training dataset.
+            validation_dataloader (DataLoader): Dataloader containing the training dataset.
+            n_epoch (int): number of epoch to train the model
+            criterion (_type_, optional): Function to use as loss function. Defaults to L1Loss().
+            scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
+            phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
+            log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
+        
+    """
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    torch.cuda.empty_cache()
+
+    print(f"Model architecture : \n {model}")
+    print(f"Numbers of parameters: {sum(p.numel() for p in model.parameters())}")
+    model.to(device)
+
+    for epoch in range(n_epoch):
+        train_loss = []
+        model.train()
+        for x,y in train_dataloader:
+            x,y = x.to(device), y.to(device)
+            optimizer.zero_grad()
+            output = model(x)
+            y = y.view(-1,1)
+            loss = criterion(output, y)
+            train_loss.append(loss.cpu().detach())
+            loss.backward()
+            optimizer.step()
+        
+        if log_wandb:
+            wandb.log({
+                    "epoch": epoch, 
+                    f"train_loss {f'{phenotype}'  if phenotype is not None else ''}": np.array(train_loss).mean()
+                }
+            )
+
+        print(f"Finished training for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''}.",
+              f"{f'Train loss: {np.array(train_loss).mean()} ' if not log_wandb else ''}")
+
+        val_loss = []
+        predicted = []
+        target = []
+        with torch.no_grad():
+            model.eval()
+            for x,y in validation_dataloader:
+                x,y = x.to(device), y.to(device)
+                output = model(x)
+                y = y.view(-1,1)
+                loss = criterion(output, y)
+                val_loss.append(loss.cpu().detach())
+                if len(predicted) == 0:
+                    predicted = output.cpu().detach()
+                    target = y.cpu().detach()
+                else:
+                    predicted = np.concatenate((predicted, output.cpu().detach()), axis = 0)
+                    target = np.concatenate((target, y.cpu().detach()), axis = 0)
+        
+            # Resize the vectors to be accepted in the pearsonr function
+            predicted = predicted.reshape((predicted.shape[0],))
+            target = target.reshape((target.shape[0],))
+            
+            if scheduler is not None:
+                scheduler.step()
+            
+            if log_wandb:
+                wandb.log({
+                        "epoch": epoch, 
+                        f"validation_loss {f'{phenotype}' if phenotype is not None else ''}": np.array(val_loss).mean(),
+                        f"correlation {f'{phenotype}' if phenotype is not None else ''}": pearsonr(predicted, target).statistic,
+                    }
+                )
+        print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
+            f"{f' Correlation: {pearsonr(predicted, target).statistic}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")

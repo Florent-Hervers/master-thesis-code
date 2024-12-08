@@ -5,7 +5,7 @@ from dataset import SNPmarkersDataset
 import torch.nn.functional as F
 import wandb
 import numpy as np
-from scipy.stats import pearsonr
+from utils import train_DL_model
 import random
 import os
 
@@ -50,16 +50,16 @@ def main():
     g = torch.Generator()
     g.manual_seed(7230)
 
-    BATCH_SIZE = 64
+    BATCH_SIZE = 256
     LEARNING_RATE = 1e-3
     DROPOUT = 0.25
-    N_LAYERS = 2
-    HIDDEN_NODES = [1024]
+    N_LAYERS = 10
+    HIDDEN_NODES = [1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
     N_EPOCHS = 200
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
-    MODEL_NAME = "Shallow_MLP"
-    RUN_NAME = "Test shallow MLP"
+    MODEL_NAME = "Deep_MLP"
+    RUN_NAME = "Test deep MLP"
 
     wandb.init(
         project = "TFE",
@@ -82,9 +82,6 @@ def main():
     validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
     selected_phenotypes = ["ep_res"] #list(train_dataset.phenotypes.keys())
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    torch.cuda.empty_cache()
-
     for phenotype in selected_phenotypes:
         train_dataset.set_phenotypes = phenotype
 
@@ -100,65 +97,20 @@ def main():
         validation_dataloader = data.DataLoader(validation_dataset, batch_size=BATCH_SIZE, num_workers = 4, worker_init_fn=seed_worker, generator=g)
 
         model = MLP(nlayers=N_LAYERS, hidden_nodes= HIDDEN_NODES, dropout= DROPOUT)
-        print(f"Model architecture : \n {model}")
-        print(f"Numbers of parameters: {sum(p.numel() for p in model.parameters())}")
-
         optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = SCHEDULER_STEP_SIZE, gamma = SCHEDULER_REDUCE_RATIO)
-        criteron = torch.nn.L1Loss()
-        model.to(device)
-        for epoch in range(N_EPOCHS):
-            train_loss = []
-            model.train()
-            for x,y in train_dataloader:
-                x,y = x.to(device), y.to(device)
-                optimizer.zero_grad()
-                output = model(x)
-                y = y.view(-1,1)
-                loss = criteron(output, y)
-                train_loss.append(loss.cpu().detach())
-                loss.backward()
-                optimizer.step()
-            
-            wandb.log({
-                    "epoch": epoch, 
-                    f"train_loss {phenotype}": np.array(train_loss).mean()
-                }
-            )
+        criterion = torch.nn.L1Loss()
 
-            print(f"Finished training for epoch {epoch} for {phenotype}.")
-
-            val_loss = []
-            predicted = []
-            target = []
-            with torch.no_grad():
-                model.eval()
-                for x,y in validation_dataloader:
-                    x,y = x.to(device), y.to(device)
-                    output = model(x)
-                    y = y.view(-1,1)
-                    loss = criteron(output, y)
-                    val_loss.append(loss.cpu().detach())
-                    if len(predicted) == 0:
-                        predicted = output.cpu().detach()
-                        target = y.cpu().detach()
-                    else:
-                        predicted = np.concatenate((predicted, output.cpu().detach()), axis = 0)
-                        target = np.concatenate((target, y.cpu().detach()), axis = 0)
-            
-                # Resize the vectors to be accepted in the pearsonr function
-                predicted = predicted.reshape((predicted.shape[0],))
-                target = target.reshape((target.shape[0],))
-                scheduler.step()
-                wandb.log({
-                        "epoch": epoch, 
-                        f"validation_loss {phenotype}": np.array(val_loss).mean(),
-                        f"correlation {phenotype}": pearsonr(predicted, target).statistic,
-                    }
-                )
-                print(f"Validation step for epoch {epoch} for {phenotype} finished!")
-            
-        # TODO add model saving step every x epoch 
+        train_DL_model(
+            model,
+            optimizer,
+            train_dataloader,
+            validation_dataloader,
+            N_EPOCHS,
+            criterion,
+            scheduler=scheduler,
+            phenotype=phenotype,
+        )
 
 if __name__ == "__main__":
     main()
