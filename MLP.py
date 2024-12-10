@@ -7,7 +7,6 @@ import wandb
 import numpy as np
 from utils import train_DL_model
 import random
-import os
 
 class MLP(torch.nn.Module):
     def __init__(self, nlayers: int = 1, hidden_nodes: list[int] = [], dropout: float = 0):
@@ -59,7 +58,7 @@ def main():
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
     MODEL_NAME = "Deep_MLP"
-    RUN_NAME = "Test deep MLP"
+    RUN_NAME = "Rerun deep MLP"
 
     wandb.init(
         project = "TFE",
@@ -78,9 +77,9 @@ def main():
         tags = ["debug"],
     )
     
-    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True)
-    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
-    selected_phenotypes = ["ep_res"] #list(train_dataset.phenotypes.keys())
+    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True, normalize=False)
+    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True, normalize=False)
+    selected_phenotypes = list(train_dataset.phenotypes.keys())
 
     for phenotype in selected_phenotypes:
         train_dataset.set_phenotypes = phenotype
