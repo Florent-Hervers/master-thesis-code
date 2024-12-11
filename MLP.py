@@ -52,13 +52,13 @@ def main():
     BATCH_SIZE = 256
     LEARNING_RATE = 1e-3
     DROPOUT = 0.25
-    N_LAYERS = 10
-    HIDDEN_NODES = [1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
+    N_LAYERS = 2
+    HIDDEN_NODES = [1024] # [1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
     N_EPOCHS = 200
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
-    MODEL_NAME = "Deep_MLP"
-    RUN_NAME = "Rerun deep MLP"
+    MODEL_NAME = "Shallow_MLP"
+    RUN_NAME = "Rerun shallow MLP"
 
     wandb.init(
         project = "TFE",
