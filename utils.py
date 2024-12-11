@@ -18,7 +18,8 @@ def results_heatmap(df1:      pd.DataFrame,
                     title1:   str,
                     title2:   str,
                     x_label:  str,
-                    y_label:  str):
+                    y_label:  str,
+                    vertical: bool = False):
     """Display the heatmap of the two given dataframes. They should have the
     same index and columns values for a appropriate comparaison.
 
@@ -35,17 +36,20 @@ def results_heatmap(df1:      pd.DataFrame,
     subtitle_font =  {"size": 14}
     title_font = {"weight": "bold" ,"size": 18}
     
-    fig,(ax1, ax2) = plt.subplots(1,2, figsize=(17 , 6.5))
+    if not vertical:
+        fig,(ax1, ax2) = plt.subplots(1,2, figsize=(17 , 6.5))
+    else:
+        fig,(ax1, ax2) = plt.subplots(2,1, figsize=(17 , 10))
 
     fig.suptitle(suptitle, font=title_font)
-    sns.heatmap(df1, annot= True, cmap = "YlGnBu", fmt= ".3f", linecolor="black", linewidths=0.5, ax= ax1)
+    sns.heatmap(df1, annot= True, cmap = "mako", fmt= ".3f", linecolor="black", linewidths=0.5, ax= ax1)
     plt.yticks(rotation=0)
     ax1.set_title(title1, font=subtitle_font)
     ax1.set_xlabel(x_label)
     ax1.set_ylabel(y_label)
     ax1.tick_params(rotation=0)
 
-    sns.heatmap(df2, annot = True, cmap = "YlGnBu", fmt= ".3f", linecolor="black", linewidths=0.5, ax=ax2)
+    sns.heatmap(df2, annot = True, cmap = "mako", fmt= ".3f", linecolor="black", linewidths=0.5, ax=ax2)
     ax2.set_title(title2, font=subtitle_font)
     ax2.set_xlabel(x_label)
     ax2.set_ylabel(y_label)
