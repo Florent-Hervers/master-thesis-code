@@ -4,7 +4,7 @@
 #
 #SBATCH --job-name=random_forest                        # Name of the job 
 #SBATCH --export=ALL                                    # Export all environment variables
-#SBATCH --output=results_random_forest_2_1000.log         # Log-file (important!)
+#SBATCH --output=results_random_forest_1000.log         # Log-file (important!)
 #SBATCH --cpus-per-task=64                              # Number of CPU cores to allocate
 #SBATCH --mem-per-cpu=100M                              # Memory to allocate per allocated CPU core
 #SBATCH --gres=gpu:0                                    # Number of GPU's
