@@ -41,16 +41,16 @@ class LinearBlock(torch.nn.Module):
         return F.relu(self.fc(x))
 
 def main():
-    BATCH_SIZE = 64
+    BATCH_SIZE = 256
     LEARNING_RATE = 1e-3
     DROPOUT = 0.25
     N_LAYERS = 10
     HIDDEN_NODES = [1024, 1024, 1024, 1024, 768 ,512, 512, 512, 512]
-    N_EPOCHS = 350
+    N_EPOCHS = 200
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
-    MODEL_NAME = "Deep_MLP"
-    RUN_NAME = "First try deep_MLP"
+    MODEL_NAME = "Deep_MLP_all"
+    RUN_NAME = "Rerun deep_MLP_all"
 
     wandb.init(
         project = "TFE",
@@ -66,17 +66,17 @@ def main():
             "scheduler_step_size": SCHEDULER_STEP_SIZE,
         },
         name = RUN_NAME,
-        tags = ["test"],
+        tags = ["debug"],
     )
     
-    selected_phenotypes = ["pheno_1", "pheno_2", "pheno_3", "pheno_4"]
-    train_dataset = SNPmarkersDataset(mode = "train")
+    selected_phenotypes = ["ep_res", "de_res", "FESSEp_res", "FESSEa_res"]
+    train_dataset = SNPmarkersDataset(mode = "train", normalize=False)
     train_dataset.set_phenotypes = selected_phenotypes
-    train_dataset = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
+    train_dataloader = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
     
-    validation_dataset = SNPmarkersDataset(mode = "validation")
+    validation_dataset = SNPmarkersDataset(mode = "validation", normalize=False)
     validation_dataset.set_phenotypes = selected_phenotypes
-    validation_dataset = data.DataLoader(validation_dataset, batch_size=BATCH_SIZE, num_workers = 4)
+    validation_dataloader = data.DataLoader(validation_dataset, batch_size=BATCH_SIZE, num_workers = 4)
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
@@ -87,16 +87,16 @@ def main():
 
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = SCHEDULER_STEP_SIZE, gamma = SCHEDULER_REDUCE_RATIO)
-    criteron = torch.nn.L1Loss()
+    criterion = torch.nn.L1Loss()
     model.to(device)
     for epoch in range(N_EPOCHS):
         train_loss = []
         model.train()
-        for x,y in train_dataset:
+        for x,y in train_dataloader:
             x,y = x.to(device), format_batch(y).to(device)
             optimizer.zero_grad()
             output = model(x)
-            loss = criteron(output, y)
+            loss = criterion(output, y)
             train_loss.append(loss.cpu().detach())
             loss.backward()
             optimizer.step()
@@ -112,32 +112,32 @@ def main():
         val_loss = []
         predicted = []
         target = []
-        model.eval()
-        for x,y in validation_dataset:
-            x,y = x.to(device), format_batch(y).to(device)
-            optimizer.zero_grad()
-            output = model(x)
-            loss = criteron(output, y)
-            val_loss.append(loss.cpu().detach())
-            if len(predicted) == 0:
-                predicted = output.cpu().detach()
-                target = y.cpu().detach()
-            else:
-                predicted = np.concatenate((predicted, output.cpu().detach()), axis = 0)
-                target = np.concatenate((target, y.cpu().detach()), axis = 0)
-            loss.backward()
-            optimizer.step()
+        with torch.no_grad():
+            model.eval()
+            for x,y in validation_dataloader:
+                x,y = x.to(device), format_batch(y).to(device)
+                output = model(x)
+                loss = criterion(output, y)
+                val_loss.append(loss.cpu().detach())
+                if len(predicted) == 0:
+                    predicted = output.cpu().detach()
+                    target = y.cpu().detach()
+                else:
+                    predicted = np.concatenate((predicted, output.cpu().detach()), axis = 0)
+                    target = np.concatenate((target, y.cpu().detach()), axis = 0)
         
         scheduler.step()
         wandb.log({
-                "epoch": epoch, 
-                "validation_loss": np.array(val_loss).mean(),
-                "correlation pheno_1": pearsonr(predicted[:, 0], target[:, 0]).statistic,
-                "correlation pheno_2": pearsonr(predicted[:, 1], target[:, 1]).statistic,
-                "correlation pheno_3": pearsonr(predicted[:, 2], target[:, 2]).statistic,
-                "correlation pheno_4": pearsonr(predicted[:, 3], target[:, 3]).statistic,
-            }
-        )
+            "epoch": epoch, 
+            "validation_loss all phenotypes": np.array(val_loss).mean(),
+        })
+        
+        for k, pheno in enumerate(selected_phenotypes):
+            wandb.log({
+                "epoch": epoch,
+                f"correlation {pheno}": pearsonr(predicted[:, k], target[:, k]).statistic,
+            })
+            
         print(f"Validation step for epoch {epoch} finished!")
     
     # TODO add model saving step every x epoch 

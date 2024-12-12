@@ -2,9 +2,9 @@
 #
 # Slurm arguments
 #
-#SBATCH --job-name=MLP                          # Name of the job 
+#SBATCH --job-name=MLP_all                      # Name of the job 
 #SBATCH --export=ALL                            # Export all environment variables
-#SBATCH --output=results_MLP.log                # Log-file (important!)
+#SBATCH --output=results_MLP_all.log            # Log-file (important!)
 #SBATCH --cpus-per-task=4                       # Number of CPU cores to allocate
 #SBATCH --mem-per-cpu=1G                        # Memory to allocate per allocated CPU core
 #SBATCH --gres=gpu:1                            # Number of GPU's
