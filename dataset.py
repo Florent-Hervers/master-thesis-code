@@ -220,7 +220,7 @@ class SNPmarkersDataset(Dataset):
 
             for pheno in self._wantedPhenotypes:
                 if self.normalize:
-                    phenotype_data[pheno] = self.phenotypes[pheno].loc[index] / self.pheno_std[self._wantedPhenotypes]
+                    phenotype_data[pheno] = self.phenotypes[pheno].loc[index] / self.pheno_std[pheno]
                 else:
                     phenotype_data[pheno] = self.phenotypes[pheno].loc[index]
 
