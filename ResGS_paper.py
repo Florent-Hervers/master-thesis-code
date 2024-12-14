@@ -39,7 +39,7 @@ def main():
     CHANNEL_FACTOR2 = 1.1
     NFILTERS = 64
     MODEL_NAME = "ResGS paper"
-    RUN_NAME = "Run ResGS paper"
+    RUN_NAME = "Run ResGS paper with normalized residual"
 
     wandb.init(
         project = "TFE",
@@ -110,11 +110,20 @@ def main():
         y_train = y_train - y_train_pre
         y_val = y_val - y_pre
 
+        y_train = y_train.to_numpy(dtype=np.float32)
+        y_val = y_val.to_numpy(dtype=np.float32)
+
+        # Normalize phenotypes in order to have comparable distribution during the validation and during the training
+        y_train = (y_train - y_train.mean()) / y_train.std()
+        mean_val = y_val.mean()
+        std_val = y_val.std()
+        y_val = (y_val - y_val.mean()) / y_val.std()
+
         print(f"Sample of residual y_train: {y_train[0:10]}")
         print(f"Sample of residual y_val: {y_val[0:10]}")
 
-        residual_train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.float32), y_train.to_numpy(dtype=np.float32))
-        residual_validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.float32), y_val.to_numpy(dtype=np.float32))
+        residual_train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.float32), y_train)
+        residual_validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.float32), y_val)
 
         train_dataloader = DataLoader(residual_train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
         validation_dataloader = DataLoader(residual_validation_dataset, batch_size=BATCH_SIZE, num_workers = 4)
@@ -132,6 +141,8 @@ def main():
             n_epoch=N_EPOCHS,
             phenotype=phenotype,
             initial_phenotype = y_pre,
+            validation_mean=mean_val,
+            validation_std=std_val
         )
 
 if __name__ == "__main__":

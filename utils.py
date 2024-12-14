@@ -80,6 +80,8 @@ def train_DL_model(
         phenotype: Union[str, None] = None,
         log_wandb: bool = True,
         initial_phenotype = None,
+        validation_mean: float = 0,
+        validation_std: float = 1,
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
 
@@ -93,7 +95,11 @@ def train_DL_model(
             scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
             phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
             log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
-            initial_phenotype(np.array | None, optionnal): If the model compute a residual phenotype, you can provide the suffix to see the evolution of correlation of the final prediction. Defaults to None.
+            initial_phenotype(np.array | None, optionnal): If the model compute a residual phenotype, you can provide the basis to see the evolution of correlation of the final prediction. Defaults to None.
+            validation_mean (float, optional): mean of the phenotypes from the validation set that was substratcted when normalizing the validation phenotype. \
+            This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 0.
+            validation_std (float, optional): standard deviation of the phenotypes from the validation set that was used as denominator when normalizing the validation phenotype. \
+            This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 1.
         
     """
 
@@ -136,6 +142,11 @@ def train_DL_model(
                 x,y = x.to(device), y.to(device)
                 output = model(x)
                 y = y.view(-1,1)
+                
+                # Scale back the values in order to have the validation loss on the unscaled values
+                output = (output * validation_std) + validation_mean
+                y = (y * validation_std) + validation_mean
+                
                 loss = criterion(output, y)
                 val_loss.append(loss.cpu().detach())
                 if len(predicted) == 0:
