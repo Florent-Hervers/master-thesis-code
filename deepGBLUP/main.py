@@ -21,7 +21,7 @@ epoch = 350   # max value of cadiate epoch
 batch_size = 64 # train batch size
 
 device = 'cuda' # type 'cpu' if you use cpu device, or type 'cuda' if you use gpu device.
-h2 = 0.30533
+h2 = [0.30533, 0.340504, 0.379522, 0.330629, 0.432115, 0.382769]
 
 # save config
 save_path = 'test_GBLUP' # path to save results
@@ -34,15 +34,6 @@ save_path = 'test_GBLUP' # path to save results
 ##  should not modify the code below.             ##
 ####################################################
 # os.makedirs(save_path, exist_ok=True)
-
-
-
-s_time = time.time()
-
-# Load Dataset
-train_dataset, test_dataset, num_snp, ymean = load_dataset(raw_path, phen_path, h2, device)
-train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 wandb.init(
     project = "TFE",
@@ -57,13 +48,22 @@ wandb.init(
     tags = ["debug"],
 )
 
-# Load model
-model = deepGBLUP(ymean, num_snp).to(device)
 
-# Train model
-train_time  = train_model(
-    model, train_dataloader, test_dataloader, 
-    save_path, device, lr, epoch, h2, save_model = False
+s_time = time.time()
+
+for i, phenotype in enumerate(["ep_res", "de_res", "FESSEp_res", "FESSEa_res", "size_res", "MUSC_res"]):
+    # Load Dataset
+    train_dataset, test_dataset, num_snp, ymean = load_dataset(raw_path, phen_path, h2[i], device, phenotype)
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+    # Load model
+    model = deepGBLUP(ymean, num_snp).to(device)
+
+    # Train model
+    train_time  = train_model(
+        model, train_dataloader, test_dataloader, 
+        save_path, device, lr, epoch, h2[i], save_model = False, phenotype=phenotype
     )
 
 """

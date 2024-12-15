@@ -39,22 +39,21 @@ class SNPDataset(Dataset):
                 'id':self.ids[idx]
             }
 
-def load_dataset(raw_path, phen_path, h2, device='cpu'):
+def load_dataset(raw_path, phen_path, h2, device='cpu', phenotype = "ep_res"):
 
     train_dataset = SNPmarkersDataset("train")
     validation_dataset = SNPmarkersDataset("validation")
-    selected_phenotypes = "ep_res"
 
-    train_dataset.set_phenotypes = selected_phenotypes
-    validation_dataset.set_phenotypes = selected_phenotypes
+    train_dataset.set_phenotypes = phenotype
+    validation_dataset.set_phenotypes = phenotype
 
     # to tensor
     train_X = torch.tensor(train_dataset.get_all_SNP().values, dtype= torch.float32)
-    train_y = torch.tensor(train_dataset.phenotypes[selected_phenotypes].values, dtype=torch.float32)
+    train_y = torch.tensor(train_dataset.phenotypes[phenotype].values, dtype=torch.float32)
     #train_ids = np.array(train_ids,dtype=str)
     test_X = torch.tensor(validation_dataset.get_all_SNP().values, dtype=torch.float32)
     #test_ids = np.array(test_ids,dtype=str)
-    test_y = torch.tensor(validation_dataset.phenotypes[selected_phenotypes].values, dtype=torch.float32)
+    test_y = torch.tensor(validation_dataset.phenotypes[phenotype].values, dtype=torch.float32)
 
     # Print some infos to check the validity of spliting
     print(f"Example of train sample: {train_X[0]}")

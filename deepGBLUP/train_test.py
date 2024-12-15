@@ -9,7 +9,7 @@ from scipy.stats import pearsonr
 from tqdm import tqdm
 from utils import perdictive_ability
 
-def train_model(model, train_dataloader, test_dataloader, save_path, device, lr, epoch, h2, save_model):
+def train_model(model, train_dataloader, test_dataloader, save_path, device, lr, epoch, h2, save_model, phenotype):
 
    
     model._init_weights()
@@ -56,10 +56,10 @@ def train_model(model, train_dataloader, test_dataloader, save_path, device, lr,
         """
         wandb.log({
                 "epoch": e, 
-                "train_loss": np.array(train_loss).mean()
+                f"train_loss {phenotype}": np.array(train_loss).mean()
             }
         )
-        test_model(model, test_dataloader, device, save_path, e)
+        test_model(model, test_dataloader, device, save_path, e, phenotype)
 
     running_time = time.time() - s_time
 
@@ -71,7 +71,7 @@ def train_model(model, train_dataloader, test_dataloader, save_path, device, lr,
 
 
 
-def test_model(model, test_dataloader, device, save_path, epoch):
+def test_model(model, test_dataloader, device, save_path, epoch, phenotype):
 
 
     model.eval()
@@ -101,8 +101,8 @@ def test_model(model, test_dataloader, device, save_path, epoch):
     ids = np.concatenate(ids)
     wandb.log({
             "epoch": epoch, 
-            "validation_loss": np.array(val_loss).mean(),
-            "correlation ep_res": pearsonr(pred_y, true_y).statistic,
+            f"validation_loss {phenotype}": np.array(val_loss).mean(),
+            f"correlation {phenotype}": pearsonr(pred_y, true_y).statistic,
         }
     )
     running_time = time.time() - s_time

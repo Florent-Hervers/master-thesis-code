@@ -66,7 +66,7 @@ def main():
     g = torch.Generator()
     g.manual_seed(7230)
 
-    BATCH_SIZE = 64
+    BATCH_SIZE = 32
     LEARNING_RATE = 5e-4
     DROPOUT = 0
     N_EMBEDDING = 8
