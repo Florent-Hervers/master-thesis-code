@@ -33,7 +33,7 @@ def train_model(model, train_dataloader, test_dataloader, save_path, device, lr,
             pred_y = model(X) 
 
             pa = perdictive_ability(pred_y, true_y, h2)
-            pred_y = pred_y #+a +d +e_
+            pred_y = pred_y +a +d +e_
             loss = (pred_y - true_y).abs().mean()
 
             train_loss.append(loss.cpu().detach())

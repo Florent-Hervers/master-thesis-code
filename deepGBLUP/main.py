@@ -44,7 +44,7 @@ wandb.init(
         "nb epochs": epoch,
         "h2": h2,
     },
-    name = "Test deepGBLUP with correct heritability",
+    name = "Test corrected deepGBLUP with correct heritability",
     tags = ["debug"],
 )
 
