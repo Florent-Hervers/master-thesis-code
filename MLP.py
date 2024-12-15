@@ -58,7 +58,7 @@ def main():
     SCHEDULER_STEP_SIZE = 20
     SCHEDULER_REDUCE_RATIO = 0.5
     MODEL_NAME = "Shallow_MLP"
-    RUN_NAME = "Rerun shallow MLP"
+    RUN_NAME = "Shallow MLP with normalization"
 
     wandb.init(
         project = "TFE",
@@ -77,8 +77,8 @@ def main():
         tags = ["debug"],
     )
     
-    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True, normalize=False)
-    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True, normalize=False)
+    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True, normalize=True)
+    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True, normalize=True)
     selected_phenotypes = list(train_dataset.phenotypes.keys())
 
     for phenotype in selected_phenotypes:
@@ -109,6 +109,7 @@ def main():
             criterion,
             scheduler=scheduler,
             phenotype=phenotype,
+            validation_std=validation_dataset.pheno_std[phenotype]
         )
 
 if __name__ == "__main__":
