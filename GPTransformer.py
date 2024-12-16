@@ -96,8 +96,8 @@ def main():
         tags = ["debug"],
     )
 
-    train_dataset = SNPmarkersDataset(mode = "train", normalize=False)
-    validation_dataset = SNPmarkersDataset(mode = "validation", normalize=False)
+    train_dataset = SNPmarkersDataset(mode = "train", normalize=True)
+    validation_dataset = SNPmarkersDataset(mode = "validation", normalize=True)
     selected_phenotypes = list(train_dataset.phenotypes.keys())
 
     for phenotype in selected_phenotypes:
@@ -107,6 +107,7 @@ def main():
         y_train = []
         X_val = []
         y_val = []
+        validation_std = 0
         for mode in modes:
             dataset = SNPmarkersDataset(mode = mode, skip_check=True)
             dataset.set_phenotypes = phenotype
@@ -117,10 +118,11 @@ def main():
             # Save the results to avoid fetching two times the sames values later on
             if mode == "train":
                 X_train = X
-                y_train = y
+                y_train = y / dataset.pheno_std[phenotype]
             if mode == "validation":
                 X_val = X
-                y_val = y
+                y_val = y / dataset.pheno_std[phenotype]
+                validation_std = dataset.pheno_std[phenotype]
 
             mi += mutual_info_regression(X,y, n_jobs=-1, discrete_features=True, random_state=2307)
 
@@ -160,6 +162,7 @@ def main():
             N_EPOCHS,
             criterion,
             phenotype=phenotype,
+            validation_std= validation_std
         )
     
 if __name__ == "__main__":
