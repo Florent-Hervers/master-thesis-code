@@ -1,0 +1,4147 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/98
+Max depth value tested: 5, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 3m 16s
+--------------------------------------------
+Pearson correlation for ep_res: 0.35713
+MAE results for ep_res: 1.45223
+////////////////////////////////////////////
+Iteration 2/98
+Max depth value tested: 5, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 5m 28s
+--------------------------------------------
+Pearson correlation for ep_res: 0.36559
+MAE results for ep_res: 1.45281
+////////////////////////////////////////////
+Iteration 3/98
+Max depth value tested: 5, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 7m 7s
+--------------------------------------------
+Pearson correlation for ep_res: 0.36303
+MAE results for ep_res: 1.45317
+////////////////////////////////////////////
+Iteration 4/98
+Max depth value tested: 5, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 7m 47s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38218
+MAE results for ep_res: 1.45395
+////////////////////////////////////////////
+Iteration 5/98
+Max depth value tested: 5, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 7m 52s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38408
+MAE results for ep_res: 1.46676
+////////////////////////////////////////////
+Iteration 6/98
+Max depth value tested: 5, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 7m 56s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38561
+MAE results for ep_res: 1.47123
+////////////////////////////////////////////
+Iteration 7/98
+Max depth value tested: 5, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 7m 58s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38399
+MAE results for ep_res: 1.48428
+////////////////////////////////////////////
+Iteration 8/98
+Max depth value tested: 6, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 12m 11s
+--------------------------------------------
+Pearson correlation for ep_res: 0.36728
+MAE results for ep_res: 1.44280
+////////////////////////////////////////////
+Iteration 9/98
+Max depth value tested: 6, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 15m 1s
+--------------------------------------------
+Pearson correlation for ep_res: 0.37385
+MAE results for ep_res: 1.44396
+////////////////////////////////////////////
+Iteration 10/98
+Max depth value tested: 6, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 17m 9s
+--------------------------------------------
+Pearson correlation for ep_res: 0.37483
+MAE results for ep_res: 1.44358
+////////////////////////////////////////////
+Iteration 11/98
+Max depth value tested: 6, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 18m 1s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38694
+MAE results for ep_res: 1.44498
+////////////////////////////////////////////
+Iteration 12/98
+Max depth value tested: 6, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 18m 8s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38769
+MAE results for ep_res: 1.45858
+////////////////////////////////////////////
+Iteration 13/98
+Max depth value tested: 6, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 18m 12s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38884
+MAE results for ep_res: 1.46325
+////////////////////////////////////////////
+Iteration 14/98
+Max depth value tested: 6, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 18m 14s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39049
+MAE results for ep_res: 1.47686
+////////////////////////////////////////////
+Iteration 15/98
+Max depth value tested: 7, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 23m 32s
+--------------------------------------------
+Pearson correlation for ep_res: 0.37590
+MAE results for ep_res: 1.43579
+////////////////////////////////////////////
+Iteration 16/98
+Max depth value tested: 7, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 27m 6s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38078
+MAE results for ep_res: 1.43482
+////////////////////////////////////////////
+Iteration 17/98
+Max depth value tested: 7, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 29m 48s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38646
+MAE results for ep_res: 1.43342
+////////////////////////////////////////////
+Iteration 18/98
+Max depth value tested: 7, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 30m 54s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38695
+MAE results for ep_res: 1.43836
+////////////////////////////////////////////
+Iteration 19/98
+Max depth value tested: 7, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 31m 2s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39261
+MAE results for ep_res: 1.45039
+////////////////////////////////////////////
+Iteration 20/98
+Max depth value tested: 7, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 31m 6s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39162
+MAE results for ep_res: 1.45527
+////////////////////////////////////////////
+Iteration 21/98
+Max depth value tested: 7, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 31m 9s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38243
+MAE results for ep_res: 1.47284
+////////////////////////////////////////////
+Iteration 22/98
+Max depth value tested: 8, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 37m 49s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38545
+MAE results for ep_res: 1.42709
+////////////////////////////////////////////
+Iteration 23/98
+Max depth value tested: 8, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 42m 19s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38401
+MAE results for ep_res: 1.42860
+////////////////////////////////////////////
+Iteration 24/98
+Max depth value tested: 8, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 45m 41s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38931
+MAE results for ep_res: 1.42639
+////////////////////////////////////////////
+Iteration 25/98
+Max depth value tested: 8, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 47m 7s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39682
+MAE results for ep_res: 1.43044
+////////////////////////////////////////////
+Iteration 26/98
+Max depth value tested: 8, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 47m 17s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39405
+MAE results for ep_res: 1.44412
+////////////////////////////////////////////
+Iteration 27/98
+Max depth value tested: 8, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 47m 22s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39791
+MAE results for ep_res: 1.44834
+////////////////////////////////////////////
+Iteration 28/98
+Max depth value tested: 8, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 47m 25s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38619
+MAE results for ep_res: 1.46613
+////////////////////////////////////////////
+Iteration 29/98
+Max depth value tested: 9, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 55m 47s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39478
+MAE results for ep_res: 1.41994
+////////////////////////////////////////////
+Iteration 30/98
+Max depth value tested: 9, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 1m 21s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38985
+MAE results for ep_res: 1.42279
+////////////////////////////////////////////
+Iteration 31/98
+Max depth value tested: 9, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 5m 33s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38906
+MAE results for ep_res: 1.42377
+////////////////////////////////////////////
+Iteration 32/98
+Max depth value tested: 9, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 7m 16s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39304
+MAE results for ep_res: 1.42674
+////////////////////////////////////////////
+Iteration 33/98
+Max depth value tested: 9, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 7m 27s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39067
+MAE results for ep_res: 1.43966
+////////////////////////////////////////////
+Iteration 34/98
+Max depth value tested: 9, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 7m 34s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39959
+MAE results for ep_res: 1.44295
+////////////////////////////////////////////
+Iteration 35/98
+Max depth value tested: 9, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 7m 36s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38836
+MAE results for ep_res: 1.45915
+////////////////////////////////////////////
+Iteration 36/98
+Max depth value tested: 10, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 17m 51s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39668
+MAE results for ep_res: 1.41728
+////////////////////////////////////////////
+Iteration 37/98
+Max depth value tested: 10, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 24m 44s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39893
+MAE results for ep_res: 1.41665
+////////////////////////////////////////////
+Iteration 38/98
+Max depth value tested: 10, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 30m 0s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40075
+MAE results for ep_res: 1.41498
+////////////////////////////////////////////
+Iteration 39/98
+Max depth value tested: 10, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 32m 8s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40644
+MAE results for ep_res: 1.41759
+////////////////////////////////////////////
+Iteration 40/98
+Max depth value tested: 10, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 32m 22s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39455
+MAE results for ep_res: 1.43578
+////////////////////////////////////////////
+Iteration 41/98
+Max depth value tested: 10, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 32m 33s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38942
+MAE results for ep_res: 1.44157
+////////////////////////////////////////////
+Iteration 42/98
+Max depth value tested: 10, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 32m 35s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39495
+MAE results for ep_res: 1.45680
+////////////////////////////////////////////
+Iteration 43/98
+Max depth value tested: 11, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 45m 13s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39565
+MAE results for ep_res: 1.41401
+////////////////////////////////////////////
+Iteration 44/98
+Max depth value tested: 11, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 53m 41s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40373
+MAE results for ep_res: 1.41275
+////////////////////////////////////////////
+Iteration 45/98
+Max depth value tested: 11, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 0m 8s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40267
+MAE results for ep_res: 1.41326
+////////////////////////////////////////////
+Iteration 46/98
+Max depth value tested: 11, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 2m 46s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40267
+MAE results for ep_res: 1.41753
+////////////////////////////////////////////
+Iteration 47/98
+Max depth value tested: 11, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 3m 3s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39524
+MAE results for ep_res: 1.43119
+////////////////////////////////////////////
+Iteration 48/98
+Max depth value tested: 11, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 3m 12s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39531
+MAE results for ep_res: 1.43830
+////////////////////////////////////////////
+Iteration 49/98
+Max depth value tested: 11, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 3m 15s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38460
+MAE results for ep_res: 1.45463
+////////////////////////////////////////////
+Iteration 50/98
+Max depth value tested: 12, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 18m 35s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39908
+MAE results for ep_res: 1.41112
+////////////////////////////////////////////
+Iteration 51/98
+Max depth value tested: 12, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 28m 54s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39609
+MAE results for ep_res: 1.41458
+////////////////////////////////////////////
+Iteration 52/98
+Max depth value tested: 12, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 36m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40271
+MAE results for ep_res: 1.41228
+////////////////////////////////////////////
+Iteration 53/98
+Max depth value tested: 12, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 39m 54s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40231
+MAE results for ep_res: 1.41509
+////////////////////////////////////////////
+Iteration 54/98
+Max depth value tested: 12, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 40m 14s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39269
+MAE results for ep_res: 1.43182
+////////////////////////////////////////////
+Iteration 55/98
+Max depth value tested: 12, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 40m 25s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39710
+MAE results for ep_res: 1.43467
+////////////////////////////////////////////
+Iteration 56/98
+Max depth value tested: 12, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 40m 28s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39021
+MAE results for ep_res: 1.45167
+////////////////////////////////////////////
+Iteration 57/98
+Max depth value tested: 13, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 58m 48s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40907
+MAE results for ep_res: 1.40757
+////////////////////////////////////////////
+Iteration 58/98
+Max depth value tested: 13, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 11m 10s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39732
+MAE results for ep_res: 1.41296
+////////////////////////////////////////////
+Iteration 59/98
+Max depth value tested: 13, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 20m 31s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39755
+MAE results for ep_res: 1.41211
+////////////////////////////////////////////
+Iteration 60/98
+Max depth value tested: 13, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 24m 19s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40603
+MAE results for ep_res: 1.41530
+////////////////////////////////////////////
+Iteration 61/98
+Max depth value tested: 13, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 24m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39724
+MAE results for ep_res: 1.42951
+////////////////////////////////////////////
+Iteration 62/98
+Max depth value tested: 13, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 24m 56s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39378
+MAE results for ep_res: 1.43573
+////////////////////////////////////////////
+Iteration 63/98
+Max depth value tested: 13, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 24m 59s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39288
+MAE results for ep_res: 1.44988
+////////////////////////////////////////////
+Iteration 64/98
+Max depth value tested: 14, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 46m 15s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39444
+MAE results for ep_res: 1.41192
+////////////////////////////////////////////
+Iteration 65/98
+Max depth value tested: 14, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 0m 26s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40655
+MAE results for ep_res: 1.40871
+////////////////////////////////////////////
+Iteration 66/98
+Max depth value tested: 14, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 11m 13s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40730
+MAE results for ep_res: 1.40954
+////////////////////////////////////////////
+Iteration 67/98
+Max depth value tested: 14, max nb of features used per tree: 3630
+Elapsed time from start: 0d 4h 15m 35s
+--------------------------------------------
+Pearson correlation for ep_res: 0.41099
+MAE results for ep_res: 1.41183
+////////////////////////////////////////////
+Iteration 68/98
+Max depth value tested: 14, max nb of features used per tree: 363
+Elapsed time from start: 0d 4h 16m 2s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40348
+MAE results for ep_res: 1.42609
+////////////////////////////////////////////
+Iteration 69/98
+Max depth value tested: 14, max nb of features used per tree: 190
+Elapsed time from start: 0d 4h 16m 17s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40396
+MAE results for ep_res: 1.43052
+////////////////////////////////////////////
+Iteration 70/98
+Max depth value tested: 14, max nb of features used per tree: 36
+Elapsed time from start: 0d 4h 16m 21s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38540
+MAE results for ep_res: 1.45123
+////////////////////////////////////////////
+Iteration 71/98
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 0d 4h 40m 19s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40218
+MAE results for ep_res: 1.40933
+////////////////////////////////////////////
+Iteration 72/98
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 56m 25s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40625
+MAE results for ep_res: 1.41012
+////////////////////////////////////////////
+Iteration 73/98
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 0d 5h 8m 36s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40923
+MAE results for ep_res: 1.40813
+////////////////////////////////////////////
+Iteration 74/98
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 0d 5h 13m 31s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40621
+MAE results for ep_res: 1.41276
+////////////////////////////////////////////
+Iteration 75/98
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 0d 5h 14m 2s
+--------------------------------------------
+Pearson correlation for ep_res: 0.41047
+MAE results for ep_res: 1.42409
+////////////////////////////////////////////
+Iteration 76/98
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 0d 5h 14m 18s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39620
+MAE results for ep_res: 1.43365
+////////////////////////////////////////////
+Iteration 77/98
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 0d 5h 14m 22s
+--------------------------------------------
+Pearson correlation for ep_res: 0.38514
+MAE results for ep_res: 1.45081
+////////////////////////////////////////////
+Iteration 78/98
+Max depth value tested: 16, max nb of features used per tree: 18152
+Elapsed time from start: 0d 5h 41m 1s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40676
+MAE results for ep_res: 1.40590
+////////////////////////////////////////////
+Iteration 79/98
+Max depth value tested: 16, max nb of features used per tree: 12101
+Elapsed time from start: 0d 5h 58m 52s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40732
+MAE results for ep_res: 1.40806
+////////////////////////////////////////////
+Iteration 80/98
+Max depth value tested: 16, max nb of features used per tree: 9076
+Elapsed time from start: 0d 6h 12m 20s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40357
+MAE results for ep_res: 1.41138
+////////////////////////////////////////////
+Iteration 81/98
+Max depth value tested: 16, max nb of features used per tree: 3630
+Elapsed time from start: 0d 6h 17m 48s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40310
+MAE results for ep_res: 1.41468
+////////////////////////////////////////////
+Iteration 82/98
+Max depth value tested: 16, max nb of features used per tree: 363
+Elapsed time from start: 0d 6h 18m 21s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39662
+MAE results for ep_res: 1.42944
+////////////////////////////////////////////
+Iteration 83/98
+Max depth value tested: 16, max nb of features used per tree: 190
+Elapsed time from start: 0d 6h 18m 40s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40680
+MAE results for ep_res: 1.42984
+////////////////////////////////////////////
+Iteration 84/98
+Max depth value tested: 16, max nb of features used per tree: 36
+Elapsed time from start: 0d 6h 18m 44s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39547
+MAE results for ep_res: 1.44878
+////////////////////////////////////////////
+Iteration 85/98
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 0d 6h 47m 43s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40583
+MAE results for ep_res: 1.40811
+////////////////////////////////////////////
+Iteration 86/98
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 0d 7h 7m 39s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40115
+MAE results for ep_res: 1.41085
+////////////////////////////////////////////
+Iteration 87/98
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 0d 7h 22m 36s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40796
+MAE results for ep_res: 1.40768
+////////////////////////////////////////////
+Iteration 88/98
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 0d 7h 28m 35s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40525
+MAE results for ep_res: 1.41284
+////////////////////////////////////////////
+Iteration 89/98
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 0d 7h 29m 11s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40489
+MAE results for ep_res: 1.42760
+////////////////////////////////////////////
+Iteration 90/98
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 0d 7h 29m 31s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40290
+MAE results for ep_res: 1.43310
+////////////////////////////////////////////
+Iteration 91/98
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 0d 7h 29m 36s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39115
+MAE results for ep_res: 1.44862
+////////////////////////////////////////////
+Iteration 92/98
+Max depth value tested: 18, max nb of features used per tree: 18152
+Elapsed time from start: 0d 8h 1m 27s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40591
+MAE results for ep_res: 1.40562
+////////////////////////////////////////////
+Iteration 93/98
+Max depth value tested: 18, max nb of features used per tree: 12101
+Elapsed time from start: 0d 8h 22m 49s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39801
+MAE results for ep_res: 1.41239
+////////////////////////////////////////////
+Iteration 94/98
+Max depth value tested: 18, max nb of features used per tree: 9076
+Elapsed time from start: 0d 8h 38m 46s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40367
+MAE results for ep_res: 1.41083
+////////////////////////////////////////////
+Iteration 95/98
+Max depth value tested: 18, max nb of features used per tree: 3630
+Elapsed time from start: 0d 8h 45m 11s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40288
+MAE results for ep_res: 1.41299
+////////////////////////////////////////////
+Iteration 96/98
+Max depth value tested: 18, max nb of features used per tree: 363
+Elapsed time from start: 0d 8h 45m 50s
+--------------------------------------------
+Pearson correlation for ep_res: 0.40323
+MAE results for ep_res: 1.42926
+////////////////////////////////////////////
+Iteration 97/98
+Max depth value tested: 18, max nb of features used per tree: 190
+Elapsed time from start: 0d 8h 46m 11s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39823
+MAE results for ep_res: 1.43211
+////////////////////////////////////////////
+Iteration 98/98
+Max depth value tested: 18, max nb of features used per tree: 36
+Elapsed time from start: 0d 8h 46m 16s
+--------------------------------------------
+Pearson correlation for ep_res: 0.39160
+MAE results for ep_res: 1.44737
+////////////////////////////////////////////
+Computation finished in 0d 8h 46m 16s
+////////////////////////////////////////////
+Iteration 1/98
+Max depth value tested: 5, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 3m 19s
+--------------------------------------------
+Pearson correlation for de_res: 0.38197
+MAE results for de_res: 2.76156
+////////////////////////////////////////////
+Iteration 2/98
+Max depth value tested: 5, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 5m 32s
+--------------------------------------------
+Pearson correlation for de_res: 0.37819
+MAE results for de_res: 2.76393
+////////////////////////////////////////////
+Iteration 3/98
+Max depth value tested: 5, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 7m 12s
+--------------------------------------------
+Pearson correlation for de_res: 0.37879
+MAE results for de_res: 2.76509
+////////////////////////////////////////////
+Iteration 4/98
+Max depth value tested: 5, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 7m 53s
+--------------------------------------------
+Pearson correlation for de_res: 0.37219
+MAE results for de_res: 2.77333
+////////////////////////////////////////////
+Iteration 5/98
+Max depth value tested: 5, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 7m 58s
+--------------------------------------------
+Pearson correlation for de_res: 0.36474
+MAE results for de_res: 2.79660
+////////////////////////////////////////////
+Iteration 6/98
+Max depth value tested: 5, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 8m 2s
+--------------------------------------------
+Pearson correlation for de_res: 0.36526
+MAE results for de_res: 2.80367
+////////////////////////////////////////////
+Iteration 7/98
+Max depth value tested: 5, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 8m 4s
+--------------------------------------------
+Pearson correlation for de_res: 0.36018
+MAE results for de_res: 2.82451
+////////////////////////////////////////////
+Iteration 8/98
+Max depth value tested: 6, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 12m 23s
+--------------------------------------------
+Pearson correlation for de_res: 0.38208
+MAE results for de_res: 2.75091
+////////////////////////////////////////////
+Iteration 9/98
+Max depth value tested: 6, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 15m 16s
+--------------------------------------------
+Pearson correlation for de_res: 0.38103
+MAE results for de_res: 2.75417
+////////////////////////////////////////////
+Iteration 10/98
+Max depth value tested: 6, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 17m 27s
+--------------------------------------------
+Pearson correlation for de_res: 0.38095
+MAE results for de_res: 2.75446
+////////////////////////////////////////////
+Iteration 11/98
+Max depth value tested: 6, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 18m 20s
+--------------------------------------------
+Pearson correlation for de_res: 0.37667
+MAE results for de_res: 2.76045
+////////////////////////////////////////////
+Iteration 12/98
+Max depth value tested: 6, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 18m 26s
+--------------------------------------------
+Pearson correlation for de_res: 0.36728
+MAE results for de_res: 2.78341
+////////////////////////////////////////////
+Iteration 13/98
+Max depth value tested: 6, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 18m 30s
+--------------------------------------------
+Pearson correlation for de_res: 0.36993
+MAE results for de_res: 2.78897
+////////////////////////////////////////////
+Iteration 14/98
+Max depth value tested: 6, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 18m 32s
+--------------------------------------------
+Pearson correlation for de_res: 0.36242
+MAE results for de_res: 2.81332
+////////////////////////////////////////////
+Iteration 15/98
+Max depth value tested: 7, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 24m 7s
+--------------------------------------------
+Pearson correlation for de_res: 0.38913
+MAE results for de_res: 2.73612
+////////////////////////////////////////////
+Iteration 16/98
+Max depth value tested: 7, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 27m 48s
+--------------------------------------------
+Pearson correlation for de_res: 0.38806
+MAE results for de_res: 2.73849
+////////////////////////////////////////////
+Iteration 17/98
+Max depth value tested: 7, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 30m 35s
+--------------------------------------------
+Pearson correlation for de_res: 0.38483
+MAE results for de_res: 2.74303
+////////////////////////////////////////////
+Iteration 18/98
+Max depth value tested: 7, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 31m 43s
+--------------------------------------------
+Pearson correlation for de_res: 0.37589
+MAE results for de_res: 2.75160
+////////////////////////////////////////////
+Iteration 19/98
+Max depth value tested: 7, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 31m 50s
+--------------------------------------------
+Pearson correlation for de_res: 0.37708
+MAE results for de_res: 2.76926
+////////////////////////////////////////////
+Iteration 20/98
+Max depth value tested: 7, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 31m 55s
+--------------------------------------------
+Pearson correlation for de_res: 0.36959
+MAE results for de_res: 2.77962
+////////////////////////////////////////////
+Iteration 21/98
+Max depth value tested: 7, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 31m 57s
+--------------------------------------------
+Pearson correlation for de_res: 0.36199
+MAE results for de_res: 2.80559
+////////////////////////////////////////////
+Iteration 22/98
+Max depth value tested: 8, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 38m 55s
+--------------------------------------------
+Pearson correlation for de_res: 0.39286
+MAE results for de_res: 2.72683
+////////////////////////////////////////////
+Iteration 23/98
+Max depth value tested: 8, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 43m 35s
+--------------------------------------------
+Pearson correlation for de_res: 0.38777
+MAE results for de_res: 2.73311
+////////////////////////////////////////////
+Iteration 24/98
+Max depth value tested: 8, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 47m 7s
+--------------------------------------------
+Pearson correlation for de_res: 0.39016
+MAE results for de_res: 2.73239
+////////////////////////////////////////////
+Iteration 25/98
+Max depth value tested: 8, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 48m 33s
+--------------------------------------------
+Pearson correlation for de_res: 0.38304
+MAE results for de_res: 2.74094
+////////////////////////////////////////////
+Iteration 26/98
+Max depth value tested: 8, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 48m 42s
+--------------------------------------------
+Pearson correlation for de_res: 0.37480
+MAE results for de_res: 2.75856
+////////////////////////////////////////////
+Iteration 27/98
+Max depth value tested: 8, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 48m 48s
+--------------------------------------------
+Pearson correlation for de_res: 0.36894
+MAE results for de_res: 2.77211
+////////////////////////////////////////////
+Iteration 28/98
+Max depth value tested: 8, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 48m 50s
+--------------------------------------------
+Pearson correlation for de_res: 0.36037
+MAE results for de_res: 2.79466
+////////////////////////////////////////////
+Iteration 29/98
+Max depth value tested: 9, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 57m 36s
+--------------------------------------------
+Pearson correlation for de_res: 0.39585
+MAE results for de_res: 2.72181
+////////////////////////////////////////////
+Iteration 30/98
+Max depth value tested: 9, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 3m 25s
+--------------------------------------------
+Pearson correlation for de_res: 0.39536
+MAE results for de_res: 2.72019
+////////////////////////////////////////////
+Iteration 31/98
+Max depth value tested: 9, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 7m 52s
+--------------------------------------------
+Pearson correlation for de_res: 0.39314
+MAE results for de_res: 2.72409
+////////////////////////////////////////////
+Iteration 32/98
+Max depth value tested: 9, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 9m 38s
+--------------------------------------------
+Pearson correlation for de_res: 0.37993
+MAE results for de_res: 2.73760
+////////////////////////////////////////////
+Iteration 33/98
+Max depth value tested: 9, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 9m 50s
+--------------------------------------------
+Pearson correlation for de_res: 0.37518
+MAE results for de_res: 2.75763
+////////////////////////////////////////////
+Iteration 34/98
+Max depth value tested: 9, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 9m 57s
+--------------------------------------------
+Pearson correlation for de_res: 0.37045
+MAE results for de_res: 2.76283
+////////////////////////////////////////////
+Iteration 35/98
+Max depth value tested: 9, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 9m 59s
+--------------------------------------------
+Pearson correlation for de_res: 0.35921
+MAE results for de_res: 2.78541
+////////////////////////////////////////////
+Iteration 36/98
+Max depth value tested: 10, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 20m 54s
+--------------------------------------------
+Pearson correlation for de_res: 0.40269
+MAE results for de_res: 2.71098
+////////////////////////////////////////////
+Iteration 37/98
+Max depth value tested: 10, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 28m 14s
+--------------------------------------------
+Pearson correlation for de_res: 0.38912
+MAE results for de_res: 2.71882
+////////////////////////////////////////////
+Iteration 38/98
+Max depth value tested: 10, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 33m 45s
+--------------------------------------------
+Pearson correlation for de_res: 0.39129
+MAE results for de_res: 2.71902
+////////////////////////////////////////////
+Iteration 39/98
+Max depth value tested: 10, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 35m 59s
+--------------------------------------------
+Pearson correlation for de_res: 0.38982
+MAE results for de_res: 2.72536
+////////////////////////////////////////////
+Iteration 40/98
+Max depth value tested: 10, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 36m 13s
+--------------------------------------------
+Pearson correlation for de_res: 0.38263
+MAE results for de_res: 2.74563
+////////////////////////////////////////////
+Iteration 41/98
+Max depth value tested: 10, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 36m 21s
+--------------------------------------------
+Pearson correlation for de_res: 0.37607
+MAE results for de_res: 2.75703
+////////////////////////////////////////////
+Iteration 42/98
+Max depth value tested: 10, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 36m 23s
+--------------------------------------------
+Pearson correlation for de_res: 0.36525
+MAE results for de_res: 2.77884
+////////////////////////////////////////////
+Iteration 43/98
+Max depth value tested: 11, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 49m 50s
+--------------------------------------------
+Pearson correlation for de_res: 0.39134
+MAE results for de_res: 2.71421
+////////////////////////////////////////////
+Iteration 44/98
+Max depth value tested: 11, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 58m 50s
+--------------------------------------------
+Pearson correlation for de_res: 0.39404
+MAE results for de_res: 2.71680
+////////////////////////////////////////////
+Iteration 45/98
+Max depth value tested: 11, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 5m 40s
+--------------------------------------------
+Pearson correlation for de_res: 0.40203
+MAE results for de_res: 2.71223
+////////////////////////////////////////////
+Iteration 46/98
+Max depth value tested: 11, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 8m 26s
+--------------------------------------------
+Pearson correlation for de_res: 0.39068
+MAE results for de_res: 2.72302
+////////////////////////////////////////////
+Iteration 47/98
+Max depth value tested: 11, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 8m 43s
+--------------------------------------------
+Pearson correlation for de_res: 0.37965
+MAE results for de_res: 2.74469
+////////////////////////////////////////////
+Iteration 48/98
+Max depth value tested: 11, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 8m 56s
+--------------------------------------------
+Pearson correlation for de_res: 0.37377
+MAE results for de_res: 2.75109
+////////////////////////////////////////////
+Iteration 49/98
+Max depth value tested: 11, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 9m 1s
+--------------------------------------------
+Pearson correlation for de_res: 0.36884
+MAE results for de_res: 2.77260
+////////////////////////////////////////////
+Iteration 50/98
+Max depth value tested: 12, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 25m 48s
+--------------------------------------------
+Pearson correlation for de_res: 0.40141
+MAE results for de_res: 2.70752
+////////////////////////////////////////////
+Iteration 51/98
+Max depth value tested: 12, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 37m 9s
+--------------------------------------------
+Pearson correlation for de_res: 0.39382
+MAE results for de_res: 2.71286
+////////////////////////////////////////////
+Iteration 52/98
+Max depth value tested: 12, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 45m 42s
+--------------------------------------------
+Pearson correlation for de_res: 0.38707
+MAE results for de_res: 2.71973
+////////////////////////////////////////////
+Iteration 53/98
+Max depth value tested: 12, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 49m 3s
+--------------------------------------------
+Pearson correlation for de_res: 0.38450
+MAE results for de_res: 2.72537
+////////////////////////////////////////////
+Iteration 54/98
+Max depth value tested: 12, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 49m 24s
+--------------------------------------------
+Pearson correlation for de_res: 0.38321
+MAE results for de_res: 2.74027
+////////////////////////////////////////////
+Iteration 55/98
+Max depth value tested: 12, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 49m 35s
+--------------------------------------------
+Pearson correlation for de_res: 0.37279
+MAE results for de_res: 2.75118
+////////////////////////////////////////////
+Iteration 56/98
+Max depth value tested: 12, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 49m 38s
+--------------------------------------------
+Pearson correlation for de_res: 0.37307
+MAE results for de_res: 2.76695
+////////////////////////////////////////////
+Iteration 57/98
+Max depth value tested: 13, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 8m 47s
+--------------------------------------------
+Pearson correlation for de_res: 0.40148
+MAE results for de_res: 2.70411
+////////////////////////////////////////////
+Iteration 58/98
+Max depth value tested: 13, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 21m 49s
+--------------------------------------------
+Pearson correlation for de_res: 0.40086
+MAE results for de_res: 2.70807
+////////////////////////////////////////////
+Iteration 59/98
+Max depth value tested: 13, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 31m 35s
+--------------------------------------------
+Pearson correlation for de_res: 0.39606
+MAE results for de_res: 2.71472
+////////////////////////////////////////////
+Iteration 60/98
+Max depth value tested: 13, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 35m 33s
+--------------------------------------------
+Pearson correlation for de_res: 0.38319
+MAE results for de_res: 2.72614
+////////////////////////////////////////////
+Iteration 61/98
+Max depth value tested: 13, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 35m 58s
+--------------------------------------------
+Pearson correlation for de_res: 0.37821
+MAE results for de_res: 2.74285
+////////////////////////////////////////////
+Iteration 62/98
+Max depth value tested: 13, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 36m 11s
+--------------------------------------------
+Pearson correlation for de_res: 0.37530
+MAE results for de_res: 2.74570
+////////////////////////////////////////////
+Iteration 63/98
+Max depth value tested: 13, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 36m 15s
+--------------------------------------------
+Pearson correlation for de_res: 0.36366
+MAE results for de_res: 2.76744
+////////////////////////////////////////////
+Iteration 64/98
+Max depth value tested: 14, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 58m 49s
+--------------------------------------------
+Pearson correlation for de_res: 0.39822
+MAE results for de_res: 2.70621
+////////////////////////////////////////////
+Iteration 65/98
+Max depth value tested: 14, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 13m 57s
+--------------------------------------------
+Pearson correlation for de_res: 0.39118
+MAE results for de_res: 2.71065
+////////////////////////////////////////////
+Iteration 66/98
+Max depth value tested: 14, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 25m 16s
+--------------------------------------------
+Pearson correlation for de_res: 0.39427
+MAE results for de_res: 2.71569
+////////////////////////////////////////////
+Iteration 67/98
+Max depth value tested: 14, max nb of features used per tree: 3630
+Elapsed time from start: 0d 4h 29m 49s
+--------------------------------------------
+Pearson correlation for de_res: 0.38940
+MAE results for de_res: 2.71876
+////////////////////////////////////////////
+Iteration 68/98
+Max depth value tested: 14, max nb of features used per tree: 363
+Elapsed time from start: 0d 4h 30m 17s
+--------------------------------------------
+Pearson correlation for de_res: 0.38093
+MAE results for de_res: 2.73725
+////////////////////////////////////////////
+Iteration 69/98
+Max depth value tested: 14, max nb of features used per tree: 190
+Elapsed time from start: 0d 4h 30m 32s
+--------------------------------------------
+Pearson correlation for de_res: 0.38029
+MAE results for de_res: 2.74730
+////////////////////////////////////////////
+Iteration 70/98
+Max depth value tested: 14, max nb of features used per tree: 36
+Elapsed time from start: 0d 4h 30m 36s
+--------------------------------------------
+Pearson correlation for de_res: 0.37461
+MAE results for de_res: 2.76166
+////////////////////////////////////////////
+Iteration 71/98
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 0d 4h 55m 53s
+--------------------------------------------
+Pearson correlation for de_res: 0.40122
+MAE results for de_res: 2.70438
+////////////////////////////////////////////
+Iteration 72/98
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 0d 5h 12m 46s
+--------------------------------------------
+Pearson correlation for de_res: 0.39428
+MAE results for de_res: 2.71305
+////////////////////////////////////////////
+Iteration 73/98
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 0d 5h 25m 30s
+--------------------------------------------
+Pearson correlation for de_res: 0.39856
+MAE results for de_res: 2.71250
+////////////////////////////////////////////
+Iteration 74/98
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 0d 5h 30m 41s
+--------------------------------------------
+Pearson correlation for de_res: 0.38636
+MAE results for de_res: 2.72091
+////////////////////////////////////////////
+Iteration 75/98
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 0d 5h 31m 12s
+--------------------------------------------
+Pearson correlation for de_res: 0.38920
+MAE results for de_res: 2.73082
+////////////////////////////////////////////
+Iteration 76/98
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 0d 5h 31m 29s
+--------------------------------------------
+Pearson correlation for de_res: 0.38492
+MAE results for de_res: 2.73824
+////////////////////////////////////////////
+Iteration 77/98
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 0d 5h 31m 33s
+--------------------------------------------
+Pearson correlation for de_res: 0.37994
+MAE results for de_res: 2.75785
+////////////////////////////////////////////
+Iteration 78/98
+Max depth value tested: 16, max nb of features used per tree: 18152
+Elapsed time from start: 0d 5h 59m 29s
+--------------------------------------------
+Pearson correlation for de_res: 0.40932
+MAE results for de_res: 2.69835
+////////////////////////////////////////////
+Iteration 79/98
+Max depth value tested: 16, max nb of features used per tree: 12101
+Elapsed time from start: 0d 6h 18m 16s
+--------------------------------------------
+Pearson correlation for de_res: 0.39190
+MAE results for de_res: 2.71518
+////////////////////////////////////////////
+Iteration 80/98
+Max depth value tested: 16, max nb of features used per tree: 9076
+Elapsed time from start: 0d 6h 32m 23s
+--------------------------------------------
+Pearson correlation for de_res: 0.39952
+MAE results for de_res: 2.71057
+////////////////////////////////////////////
+Iteration 81/98
+Max depth value tested: 16, max nb of features used per tree: 3630
+Elapsed time from start: 0d 6h 38m 1s
+--------------------------------------------
+Pearson correlation for de_res: 0.38371
+MAE results for de_res: 2.72073
+////////////////////////////////////////////
+Iteration 82/98
+Max depth value tested: 16, max nb of features used per tree: 363
+Elapsed time from start: 0d 6h 38m 35s
+--------------------------------------------
+Pearson correlation for de_res: 0.38692
+MAE results for de_res: 2.73013
+////////////////////////////////////////////
+Iteration 83/98
+Max depth value tested: 16, max nb of features used per tree: 190
+Elapsed time from start: 0d 6h 38m 54s
+--------------------------------------------
+Pearson correlation for de_res: 0.37920
+MAE results for de_res: 2.74218
+////////////////////////////////////////////
+Iteration 84/98
+Max depth value tested: 16, max nb of features used per tree: 36
+Elapsed time from start: 0d 6h 38m 58s
+--------------------------------------------
+Pearson correlation for de_res: 0.36648
+MAE results for de_res: 2.76787
+////////////////////////////////////////////
+Iteration 85/98
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 0d 7h 9m 7s
+--------------------------------------------
+Pearson correlation for de_res: 0.40536
+MAE results for de_res: 2.70475
+////////////////////////////////////////////
+Iteration 86/98
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 0d 7h 29m 24s
+--------------------------------------------
+Pearson correlation for de_res: 0.40094
+MAE results for de_res: 2.71182
+////////////////////////////////////////////
+Iteration 87/98
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 0d 7h 44m 32s
+--------------------------------------------
+Pearson correlation for de_res: 0.39877
+MAE results for de_res: 2.71148
+////////////////////////////////////////////
+Iteration 88/98
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 0d 7h 50m 43s
+--------------------------------------------
+Pearson correlation for de_res: 0.39009
+MAE results for de_res: 2.71634
+////////////////////////////////////////////
+Iteration 89/98
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 0d 7h 51m 21s
+--------------------------------------------
+Pearson correlation for de_res: 0.38031
+MAE results for de_res: 2.73573
+////////////////////////////////////////////
+Iteration 90/98
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 0d 7h 51m 41s
+--------------------------------------------
+Pearson correlation for de_res: 0.37886
+MAE results for de_res: 2.74255
+////////////////////////////////////////////
+Iteration 91/98
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 0d 7h 51m 45s
+--------------------------------------------
+Pearson correlation for de_res: 0.36015
+MAE results for de_res: 2.76537
+////////////////////////////////////////////
+Iteration 92/98
+Max depth value tested: 18, max nb of features used per tree: 18152
+Elapsed time from start: 0d 8h 23m 54s
+--------------------------------------------
+Pearson correlation for de_res: 0.39850
+MAE results for de_res: 2.70505
+////////////////////////////////////////////
+Iteration 93/98
+Max depth value tested: 18, max nb of features used per tree: 12101
+Elapsed time from start: 0d 8h 45m 50s
+--------------------------------------------
+Pearson correlation for de_res: 0.39159
+MAE results for de_res: 2.71343
+////////////////////////////////////////////
+Iteration 94/98
+Max depth value tested: 18, max nb of features used per tree: 9076
+Elapsed time from start: 0d 9h 2m 21s
+--------------------------------------------
+Pearson correlation for de_res: 0.39967
+MAE results for de_res: 2.71067
+////////////////////////////////////////////
+Iteration 95/98
+Max depth value tested: 18, max nb of features used per tree: 3630
+Elapsed time from start: 0d 9h 8m 56s
+--------------------------------------------
+Pearson correlation for de_res: 0.39230
+MAE results for de_res: 2.71667
+////////////////////////////////////////////
+Iteration 96/98
+Max depth value tested: 18, max nb of features used per tree: 363
+Elapsed time from start: 0d 9h 9m 36s
+--------------------------------------------
+Pearson correlation for de_res: 0.37965
+MAE results for de_res: 2.73649
+////////////////////////////////////////////
+Iteration 97/98
+Max depth value tested: 18, max nb of features used per tree: 190
+Elapsed time from start: 0d 9h 9m 57s
+--------------------------------------------
+Pearson correlation for de_res: 0.37783
+MAE results for de_res: 2.74265
+////////////////////////////////////////////
+Iteration 98/98
+Max depth value tested: 18, max nb of features used per tree: 36
+Elapsed time from start: 0d 9h 10m 2s
+--------------------------------------------
+Pearson correlation for de_res: 0.37658
+MAE results for de_res: 2.75731
+////////////////////////////////////////////
+Computation finished in 0d 9h 10m 2s
+////////////////////////////////////////////
+Iteration 1/98
+Max depth value tested: 5, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 3m 13s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.31272
+MAE results for FESSEp_res: 1.11177
+////////////////////////////////////////////
+Iteration 2/98
+Max depth value tested: 5, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 5m 22s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.31720
+MAE results for FESSEp_res: 1.11419
+////////////////////////////////////////////
+Iteration 3/98
+Max depth value tested: 5, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 7m 0s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.32349
+MAE results for FESSEp_res: 1.11376
+////////////////////////////////////////////
+Iteration 4/98
+Max depth value tested: 5, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 7m 41s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34509
+MAE results for FESSEp_res: 1.11540
+////////////////////////////////////////////
+Iteration 5/98
+Max depth value tested: 5, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 7m 46s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36149
+MAE results for FESSEp_res: 1.12423
+////////////////////////////////////////////
+Iteration 6/98
+Max depth value tested: 5, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 7m 50s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35888
+MAE results for FESSEp_res: 1.12764
+////////////////////////////////////////////
+Iteration 7/98
+Max depth value tested: 5, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 7m 52s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35126
+MAE results for FESSEp_res: 1.13812
+////////////////////////////////////////////
+Iteration 8/98
+Max depth value tested: 6, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 12m 2s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.32408
+MAE results for FESSEp_res: 1.10602
+////////////////////////////////////////////
+Iteration 9/98
+Max depth value tested: 6, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 14m 51s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.33168
+MAE results for FESSEp_res: 1.10671
+////////////////////////////////////////////
+Iteration 10/98
+Max depth value tested: 6, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 16m 59s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.33112
+MAE results for FESSEp_res: 1.10802
+////////////////////////////////////////////
+Iteration 11/98
+Max depth value tested: 6, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 17m 51s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34979
+MAE results for FESSEp_res: 1.10880
+////////////////////////////////////////////
+Iteration 12/98
+Max depth value tested: 6, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 18m 2s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36360
+MAE results for FESSEp_res: 1.11772
+////////////////////////////////////////////
+Iteration 13/98
+Max depth value tested: 6, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 18m 7s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35948
+MAE results for FESSEp_res: 1.12255
+////////////////////////////////////////////
+Iteration 14/98
+Max depth value tested: 6, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 18m 10s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35996
+MAE results for FESSEp_res: 1.13270
+////////////////////////////////////////////
+Iteration 15/98
+Max depth value tested: 7, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 23m 30s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.33728
+MAE results for FESSEp_res: 1.09975
+////////////////////////////////////////////
+Iteration 16/98
+Max depth value tested: 7, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 27m 3s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34159
+MAE results for FESSEp_res: 1.10100
+////////////////////////////////////////////
+Iteration 17/98
+Max depth value tested: 7, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 29m 44s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34585
+MAE results for FESSEp_res: 1.10252
+////////////////////////////////////////////
+Iteration 18/98
+Max depth value tested: 7, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 30m 51s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35292
+MAE results for FESSEp_res: 1.10366
+////////////////////////////////////////////
+Iteration 19/98
+Max depth value tested: 7, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 30m 59s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36367
+MAE results for FESSEp_res: 1.11332
+////////////////////////////////////////////
+Iteration 20/98
+Max depth value tested: 7, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 31m 4s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35727
+MAE results for FESSEp_res: 1.11793
+////////////////////////////////////////////
+Iteration 21/98
+Max depth value tested: 7, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 31m 7s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35505
+MAE results for FESSEp_res: 1.12869
+////////////////////////////////////////////
+Iteration 22/98
+Max depth value tested: 8, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 37m 44s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34246
+MAE results for FESSEp_res: 1.09531
+////////////////////////////////////////////
+Iteration 23/98
+Max depth value tested: 8, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 42m 11s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34477
+MAE results for FESSEp_res: 1.09649
+////////////////////////////////////////////
+Iteration 24/98
+Max depth value tested: 8, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 45m 32s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34702
+MAE results for FESSEp_res: 1.09775
+////////////////////////////////////////////
+Iteration 25/98
+Max depth value tested: 8, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 46m 54s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36004
+MAE results for FESSEp_res: 1.09926
+////////////////////////////////////////////
+Iteration 26/98
+Max depth value tested: 8, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 47m 4s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36646
+MAE results for FESSEp_res: 1.10850
+////////////////////////////////////////////
+Iteration 27/98
+Max depth value tested: 8, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 47m 10s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35696
+MAE results for FESSEp_res: 1.11384
+////////////////////////////////////////////
+Iteration 28/98
+Max depth value tested: 8, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 47m 12s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35551
+MAE results for FESSEp_res: 1.12575
+////////////////////////////////////////////
+Iteration 29/98
+Max depth value tested: 9, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 55m 11s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.34932
+MAE results for FESSEp_res: 1.09087
+////////////////////////////////////////////
+Iteration 30/98
+Max depth value tested: 9, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 0m 35s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35159
+MAE results for FESSEp_res: 1.09304
+////////////////////////////////////////////
+Iteration 31/98
+Max depth value tested: 9, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 4m 43s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35523
+MAE results for FESSEp_res: 1.09330
+////////////////////////////////////////////
+Iteration 32/98
+Max depth value tested: 9, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 6m 26s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36311
+MAE results for FESSEp_res: 1.09368
+////////////////////////////////////////////
+Iteration 33/98
+Max depth value tested: 9, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 6m 37s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36801
+MAE results for FESSEp_res: 1.10578
+////////////////////////////////////////////
+Iteration 34/98
+Max depth value tested: 9, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 6m 52s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36517
+MAE results for FESSEp_res: 1.10828
+////////////////////////////////////////////
+Iteration 35/98
+Max depth value tested: 9, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 6m 54s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36149
+MAE results for FESSEp_res: 1.12064
+////////////////////////////////////////////
+Iteration 36/98
+Max depth value tested: 10, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 16m 40s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35275
+MAE results for FESSEp_res: 1.08840
+////////////////////////////////////////////
+Iteration 37/98
+Max depth value tested: 10, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 23m 22s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35759
+MAE results for FESSEp_res: 1.08902
+////////////////////////////////////////////
+Iteration 38/98
+Max depth value tested: 10, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 28m 32s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36247
+MAE results for FESSEp_res: 1.08751
+////////////////////////////////////////////
+Iteration 39/98
+Max depth value tested: 10, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 30m 40s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36173
+MAE results for FESSEp_res: 1.09355
+////////////////////////////////////////////
+Iteration 40/98
+Max depth value tested: 10, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 30m 55s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36863
+MAE results for FESSEp_res: 1.10145
+////////////////////////////////////////////
+Iteration 41/98
+Max depth value tested: 10, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 31m 3s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35688
+MAE results for FESSEp_res: 1.10561
+////////////////////////////////////////////
+Iteration 42/98
+Max depth value tested: 10, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 31m 6s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35963
+MAE results for FESSEp_res: 1.11816
+////////////////////////////////////////////
+Iteration 43/98
+Max depth value tested: 11, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 43m 16s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35709
+MAE results for FESSEp_res: 1.08560
+////////////////////////////////////////////
+Iteration 44/98
+Max depth value tested: 11, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 51m 32s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35489
+MAE results for FESSEp_res: 1.08843
+////////////////////////////////////////////
+Iteration 45/98
+Max depth value tested: 11, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 57m 50s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36267
+MAE results for FESSEp_res: 1.08812
+////////////////////////////////////////////
+Iteration 46/98
+Max depth value tested: 11, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 0m 26s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36981
+MAE results for FESSEp_res: 1.08887
+////////////////////////////////////////////
+Iteration 47/98
+Max depth value tested: 11, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 0m 43s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37641
+MAE results for FESSEp_res: 1.09785
+////////////////////////////////////////////
+Iteration 48/98
+Max depth value tested: 11, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 0m 53s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36747
+MAE results for FESSEp_res: 1.10187
+////////////////////////////////////////////
+Iteration 49/98
+Max depth value tested: 11, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 0m 56s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35990
+MAE results for FESSEp_res: 1.11422
+////////////////////////////////////////////
+Iteration 50/98
+Max depth value tested: 12, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 15m 30s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36443
+MAE results for FESSEp_res: 1.08193
+////////////////////////////////////////////
+Iteration 51/98
+Max depth value tested: 12, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 25m 29s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35922
+MAE results for FESSEp_res: 1.08403
+////////////////////////////////////////////
+Iteration 52/98
+Max depth value tested: 12, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 33m 2s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36127
+MAE results for FESSEp_res: 1.08668
+////////////////////////////////////////////
+Iteration 53/98
+Max depth value tested: 12, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 36m 9s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36969
+MAE results for FESSEp_res: 1.08859
+////////////////////////////////////////////
+Iteration 54/98
+Max depth value tested: 12, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 36m 30s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37354
+MAE results for FESSEp_res: 1.09623
+////////////////////////////////////////////
+Iteration 55/98
+Max depth value tested: 12, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 36m 41s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36848
+MAE results for FESSEp_res: 1.09950
+////////////////////////////////////////////
+Iteration 56/98
+Max depth value tested: 12, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 36m 45s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36303
+MAE results for FESSEp_res: 1.11386
+////////////////////////////////////////////
+Iteration 57/98
+Max depth value tested: 13, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 54m 20s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36025
+MAE results for FESSEp_res: 1.08374
+////////////////////////////////////////////
+Iteration 58/98
+Max depth value tested: 13, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 6m 11s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36044
+MAE results for FESSEp_res: 1.08287
+////////////////////////////////////////////
+Iteration 59/98
+Max depth value tested: 13, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 15m 11s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36346
+MAE results for FESSEp_res: 1.08382
+////////////////////////////////////////////
+Iteration 60/98
+Max depth value tested: 13, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 18m 53s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37575
+MAE results for FESSEp_res: 1.08576
+////////////////////////////////////////////
+Iteration 61/98
+Max depth value tested: 13, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 19m 17s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.38442
+MAE results for FESSEp_res: 1.09271
+////////////////////////////////////////////
+Iteration 62/98
+Max depth value tested: 13, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 19m 31s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36928
+MAE results for FESSEp_res: 1.09910
+////////////////////////////////////////////
+Iteration 63/98
+Max depth value tested: 13, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 19m 34s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36221
+MAE results for FESSEp_res: 1.11075
+////////////////////////////////////////////
+Iteration 64/98
+Max depth value tested: 14, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 40m 1s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36754
+MAE results for FESSEp_res: 1.07871
+////////////////////////////////////////////
+Iteration 65/98
+Max depth value tested: 14, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 53m 54s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36865
+MAE results for FESSEp_res: 1.08204
+////////////////////////////////////////////
+Iteration 66/98
+Max depth value tested: 14, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 4m 24s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36200
+MAE results for FESSEp_res: 1.08383
+////////////////////////////////////////////
+Iteration 67/98
+Max depth value tested: 14, max nb of features used per tree: 3630
+Elapsed time from start: 0d 4h 8m 45s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37228
+MAE results for FESSEp_res: 1.08670
+////////////////////////////////////////////
+Iteration 68/98
+Max depth value tested: 14, max nb of features used per tree: 363
+Elapsed time from start: 0d 4h 9m 13s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37410
+MAE results for FESSEp_res: 1.09621
+////////////////////////////////////////////
+Iteration 69/98
+Max depth value tested: 14, max nb of features used per tree: 190
+Elapsed time from start: 0d 4h 9m 28s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36492
+MAE results for FESSEp_res: 1.10109
+////////////////////////////////////////////
+Iteration 70/98
+Max depth value tested: 14, max nb of features used per tree: 36
+Elapsed time from start: 0d 4h 9m 32s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37218
+MAE results for FESSEp_res: 1.10714
+////////////////////////////////////////////
+Iteration 71/98
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 0d 4h 33m 2s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36096
+MAE results for FESSEp_res: 1.08091
+////////////////////////////////////////////
+Iteration 72/98
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 48m 54s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37430
+MAE results for FESSEp_res: 1.07766
+////////////////////////////////////////////
+Iteration 73/98
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 0d 5h 0m 53s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36664
+MAE results for FESSEp_res: 1.08261
+////////////////////////////////////////////
+Iteration 74/98
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 0d 5h 5m 49s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37552
+MAE results for FESSEp_res: 1.08537
+////////////////////////////////////////////
+Iteration 75/98
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 0d 5h 6m 19s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37175
+MAE results for FESSEp_res: 1.09338
+////////////////////////////////////////////
+Iteration 76/98
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 0d 5h 6m 36s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37070
+MAE results for FESSEp_res: 1.09814
+////////////////////////////////////////////
+Iteration 77/98
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 0d 5h 6m 40s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36543
+MAE results for FESSEp_res: 1.10675
+////////////////////////////////////////////
+Iteration 78/98
+Max depth value tested: 16, max nb of features used per tree: 18152
+Elapsed time from start: 0d 5h 32m 42s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.35750
+MAE results for FESSEp_res: 1.08062
+////////////////////////////////////////////
+Iteration 79/98
+Max depth value tested: 16, max nb of features used per tree: 12101
+Elapsed time from start: 0d 5h 50m 17s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36608
+MAE results for FESSEp_res: 1.08071
+////////////////////////////////////////////
+Iteration 80/98
+Max depth value tested: 16, max nb of features used per tree: 9076
+Elapsed time from start: 0d 6h 3m 43s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36862
+MAE results for FESSEp_res: 1.08141
+////////////////////////////////////////////
+Iteration 81/98
+Max depth value tested: 16, max nb of features used per tree: 3630
+Elapsed time from start: 0d 6h 9m 8s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36519
+MAE results for FESSEp_res: 1.08737
+////////////////////////////////////////////
+Iteration 82/98
+Max depth value tested: 16, max nb of features used per tree: 363
+Elapsed time from start: 0d 6h 9m 42s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.38074
+MAE results for FESSEp_res: 1.09117
+////////////////////////////////////////////
+Iteration 83/98
+Max depth value tested: 16, max nb of features used per tree: 190
+Elapsed time from start: 0d 6h 10m 1s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37453
+MAE results for FESSEp_res: 1.09813
+////////////////////////////////////////////
+Iteration 84/98
+Max depth value tested: 16, max nb of features used per tree: 36
+Elapsed time from start: 0d 6h 10m 5s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36254
+MAE results for FESSEp_res: 1.10957
+////////////////////////////////////////////
+Iteration 85/98
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 0d 6h 38m 44s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37174
+MAE results for FESSEp_res: 1.07858
+////////////////////////////////////////////
+Iteration 86/98
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 0d 6h 58m 14s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36606
+MAE results for FESSEp_res: 1.08084
+////////////////////////////////////////////
+Iteration 87/98
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 0d 7h 13m 4s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37645
+MAE results for FESSEp_res: 1.07974
+////////////////////////////////////////////
+Iteration 88/98
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 0d 7h 19m 4s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37402
+MAE results for FESSEp_res: 1.08336
+////////////////////////////////////////////
+Iteration 89/98
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 0d 7h 19m 41s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36975
+MAE results for FESSEp_res: 1.09467
+////////////////////////////////////////////
+Iteration 90/98
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 0d 7h 20m 2s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.38138
+MAE results for FESSEp_res: 1.09515
+////////////////////////////////////////////
+Iteration 91/98
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 0d 7h 20m 6s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36666
+MAE results for FESSEp_res: 1.10830
+////////////////////////////////////////////
+Iteration 92/98
+Max depth value tested: 18, max nb of features used per tree: 18152
+Elapsed time from start: 0d 7h 51m 19s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37114
+MAE results for FESSEp_res: 1.07705
+////////////////////////////////////////////
+Iteration 93/98
+Max depth value tested: 18, max nb of features used per tree: 12101
+Elapsed time from start: 0d 8h 12m 23s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37128
+MAE results for FESSEp_res: 1.07963
+////////////////////////////////////////////
+Iteration 94/98
+Max depth value tested: 18, max nb of features used per tree: 9076
+Elapsed time from start: 0d 8h 28m 12s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36988
+MAE results for FESSEp_res: 1.08188
+////////////////////////////////////////////
+Iteration 95/98
+Max depth value tested: 18, max nb of features used per tree: 3630
+Elapsed time from start: 0d 8h 34m 36s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.38002
+MAE results for FESSEp_res: 1.08175
+////////////////////////////////////////////
+Iteration 96/98
+Max depth value tested: 18, max nb of features used per tree: 363
+Elapsed time from start: 0d 8h 35m 15s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.38174
+MAE results for FESSEp_res: 1.09326
+////////////////////////////////////////////
+Iteration 97/98
+Max depth value tested: 18, max nb of features used per tree: 190
+Elapsed time from start: 0d 8h 35m 37s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.37112
+MAE results for FESSEp_res: 1.09757
+////////////////////////////////////////////
+Iteration 98/98
+Max depth value tested: 18, max nb of features used per tree: 36
+Elapsed time from start: 0d 8h 35m 42s
+--------------------------------------------
+Pearson correlation for FESSEp_res: 0.36790
+MAE results for FESSEp_res: 1.10602
+////////////////////////////////////////////
+Computation finished in 0d 8h 35m 42s
+////////////////////////////////////////////
+Iteration 1/98
+Max depth value tested: 5, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 3m 10s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.34943
+MAE results for FESSEa_res: 1.14744
+////////////////////////////////////////////
+Iteration 2/98
+Max depth value tested: 5, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 5m 17s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.35963
+MAE results for FESSEa_res: 1.14689
+////////////////////////////////////////////
+Iteration 3/98
+Max depth value tested: 5, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 6m 54s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.36471
+MAE results for FESSEa_res: 1.14747
+////////////////////////////////////////////
+Iteration 4/98
+Max depth value tested: 5, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 7m 34s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.38442
+MAE results for FESSEa_res: 1.14556
+////////////////////////////////////////////
+Iteration 5/98
+Max depth value tested: 5, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 7m 40s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39880
+MAE results for FESSEa_res: 1.15465
+////////////////////////////////////////////
+Iteration 6/98
+Max depth value tested: 5, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 7m 43s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40156
+MAE results for FESSEa_res: 1.15916
+////////////////////////////////////////////
+Iteration 7/98
+Max depth value tested: 5, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 7m 45s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39686
+MAE results for FESSEa_res: 1.17110
+////////////////////////////////////////////
+Iteration 8/98
+Max depth value tested: 6, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 11m 49s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.36812
+MAE results for FESSEa_res: 1.13835
+////////////////////////////////////////////
+Iteration 9/98
+Max depth value tested: 6, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 14m 34s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.37071
+MAE results for FESSEa_res: 1.13933
+////////////////////////////////////////////
+Iteration 10/98
+Max depth value tested: 6, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 16m 39s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.38124
+MAE results for FESSEa_res: 1.13903
+////////////////////////////////////////////
+Iteration 11/98
+Max depth value tested: 6, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 17m 30s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39058
+MAE results for FESSEa_res: 1.13868
+////////////////////////////////////////////
+Iteration 12/98
+Max depth value tested: 6, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 17m 37s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40247
+MAE results for FESSEa_res: 1.14870
+////////////////////////////////////////////
+Iteration 13/98
+Max depth value tested: 6, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 17m 41s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40206
+MAE results for FESSEa_res: 1.15249
+////////////////////////////////////////////
+Iteration 14/98
+Max depth value tested: 6, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 17m 43s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40080
+MAE results for FESSEa_res: 1.16484
+////////////////////////////////////////////
+Iteration 15/98
+Max depth value tested: 7, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 22m 50s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.38195
+MAE results for FESSEa_res: 1.13071
+////////////////////////////////////////////
+Iteration 16/98
+Max depth value tested: 7, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 26m 18s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.38555
+MAE results for FESSEa_res: 1.13163
+////////////////////////////////////////////
+Iteration 17/98
+Max depth value tested: 7, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 28m 56s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.38757
+MAE results for FESSEa_res: 1.13150
+////////////////////////////////////////////
+Iteration 18/98
+Max depth value tested: 7, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 30m 1s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40572
+MAE results for FESSEa_res: 1.13090
+////////////////////////////////////////////
+Iteration 19/98
+Max depth value tested: 7, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 30m 9s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40585
+MAE results for FESSEa_res: 1.14141
+////////////////////////////////////////////
+Iteration 20/98
+Max depth value tested: 7, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 30m 14s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41014
+MAE results for FESSEa_res: 1.14590
+////////////////////////////////////////////
+Iteration 21/98
+Max depth value tested: 7, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 30m 17s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40177
+MAE results for FESSEa_res: 1.15901
+////////////////////////////////////////////
+Iteration 22/98
+Max depth value tested: 8, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 36m 41s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39714
+MAE results for FESSEa_res: 1.12290
+////////////////////////////////////////////
+Iteration 23/98
+Max depth value tested: 8, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 40m 59s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39518
+MAE results for FESSEa_res: 1.12432
+////////////////////////////////////////////
+Iteration 24/98
+Max depth value tested: 8, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 44m 17s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39835
+MAE results for FESSEa_res: 1.12595
+////////////////////////////////////////////
+Iteration 25/98
+Max depth value tested: 8, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 45m 40s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41479
+MAE results for FESSEa_res: 1.12344
+////////////////////////////////////////////
+Iteration 26/98
+Max depth value tested: 8, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 45m 50s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41030
+MAE results for FESSEa_res: 1.13719
+////////////////////////////////////////////
+Iteration 27/98
+Max depth value tested: 8, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 45m 55s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40470
+MAE results for FESSEa_res: 1.14270
+////////////////////////////////////////////
+Iteration 28/98
+Max depth value tested: 8, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 45m 58s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40227
+MAE results for FESSEa_res: 1.15479
+////////////////////////////////////////////
+Iteration 29/98
+Max depth value tested: 9, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 53m 52s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39789
+MAE results for FESSEa_res: 1.12024
+////////////////////////////////////////////
+Iteration 30/98
+Max depth value tested: 9, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 59m 11s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.39967
+MAE results for FESSEa_res: 1.11967
+////////////////////////////////////////////
+Iteration 31/98
+Max depth value tested: 9, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 3m 14s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40538
+MAE results for FESSEa_res: 1.12058
+////////////////////////////////////////////
+Iteration 32/98
+Max depth value tested: 9, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 4m 56s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41049
+MAE results for FESSEa_res: 1.12065
+////////////////////////////////////////////
+Iteration 33/98
+Max depth value tested: 9, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 5m 8s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41219
+MAE results for FESSEa_res: 1.13216
+////////////////////////////////////////////
+Iteration 34/98
+Max depth value tested: 9, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 5m 15s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40856
+MAE results for FESSEa_res: 1.13680
+////////////////////////////////////////////
+Iteration 35/98
+Max depth value tested: 9, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 5m 17s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40540
+MAE results for FESSEa_res: 1.15170
+////////////////////////////////////////////
+Iteration 36/98
+Max depth value tested: 10, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 15m 4s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40514
+MAE results for FESSEa_res: 1.11545
+////////////////////////////////////////////
+Iteration 37/98
+Max depth value tested: 10, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 21m 41s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41046
+MAE results for FESSEa_res: 1.11593
+////////////////////////////////////////////
+Iteration 38/98
+Max depth value tested: 10, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 26m 43s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41186
+MAE results for FESSEa_res: 1.11774
+////////////////////////////////////////////
+Iteration 39/98
+Max depth value tested: 10, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 28m 49s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42229
+MAE results for FESSEa_res: 1.11712
+////////////////////////////////////////////
+Iteration 40/98
+Max depth value tested: 10, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 29m 4s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41405
+MAE results for FESSEa_res: 1.12823
+////////////////////////////////////////////
+Iteration 41/98
+Max depth value tested: 10, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 29m 12s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41480
+MAE results for FESSEa_res: 1.13136
+////////////////////////////////////////////
+Iteration 42/98
+Max depth value tested: 10, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 29m 14s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40195
+MAE results for FESSEa_res: 1.14755
+////////////////////////////////////////////
+Iteration 43/98
+Max depth value tested: 11, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 41m 10s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40893
+MAE results for FESSEa_res: 1.11230
+////////////////////////////////////////////
+Iteration 44/98
+Max depth value tested: 11, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 49m 15s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41762
+MAE results for FESSEa_res: 1.11237
+////////////////////////////////////////////
+Iteration 45/98
+Max depth value tested: 11, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 55m 22s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42117
+MAE results for FESSEa_res: 1.11007
+////////////////////////////////////////////
+Iteration 46/98
+Max depth value tested: 11, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 57m 56s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41341
+MAE results for FESSEa_res: 1.11567
+////////////////////////////////////////////
+Iteration 47/98
+Max depth value tested: 11, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 58m 13s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41446
+MAE results for FESSEa_res: 1.12515
+////////////////////////////////////////////
+Iteration 48/98
+Max depth value tested: 11, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 58m 23s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41685
+MAE results for FESSEa_res: 1.12973
+////////////////////////////////////////////
+Iteration 49/98
+Max depth value tested: 11, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 58m 26s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40790
+MAE results for FESSEa_res: 1.14426
+////////////////////////////////////////////
+Iteration 50/98
+Max depth value tested: 12, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 12m 58s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41561
+MAE results for FESSEa_res: 1.10822
+////////////////////////////////////////////
+Iteration 51/98
+Max depth value tested: 12, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 22m 43s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41604
+MAE results for FESSEa_res: 1.10891
+////////////////////////////////////////////
+Iteration 52/98
+Max depth value tested: 12, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 30m 11s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42081
+MAE results for FESSEa_res: 1.11006
+////////////////////////////////////////////
+Iteration 53/98
+Max depth value tested: 12, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 33m 18s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.43001
+MAE results for FESSEa_res: 1.10902
+////////////////////////////////////////////
+Iteration 54/98
+Max depth value tested: 12, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 33m 39s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42474
+MAE results for FESSEa_res: 1.12071
+////////////////////////////////////////////
+Iteration 55/98
+Max depth value tested: 12, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 33m 50s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42192
+MAE results for FESSEa_res: 1.12634
+////////////////////////////////////////////
+Iteration 56/98
+Max depth value tested: 12, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 33m 53s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40049
+MAE results for FESSEa_res: 1.14229
+////////////////////////////////////////////
+Iteration 57/98
+Max depth value tested: 13, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 51m 10s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41982
+MAE results for FESSEa_res: 1.10552
+////////////////////////////////////////////
+Iteration 58/98
+Max depth value tested: 13, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 2m 53s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41537
+MAE results for FESSEa_res: 1.10863
+////////////////////////////////////////////
+Iteration 59/98
+Max depth value tested: 13, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 11m 54s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42554
+MAE results for FESSEa_res: 1.10526
+////////////////////////////////////////////
+Iteration 60/98
+Max depth value tested: 13, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 15m 38s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42627
+MAE results for FESSEa_res: 1.10766
+////////////////////////////////////////////
+Iteration 61/98
+Max depth value tested: 13, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 16m 2s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41598
+MAE results for FESSEa_res: 1.12377
+////////////////////////////////////////////
+Iteration 62/98
+Max depth value tested: 13, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 16m 15s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42200
+MAE results for FESSEa_res: 1.12337
+////////////////////////////////////////////
+Iteration 63/98
+Max depth value tested: 13, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 16m 19s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40722
+MAE results for FESSEa_res: 1.13915
+////////////////////////////////////////////
+Iteration 64/98
+Max depth value tested: 14, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 36m 35s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41322
+MAE results for FESSEa_res: 1.10802
+////////////////////////////////////////////
+Iteration 65/98
+Max depth value tested: 14, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 50m 17s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41611
+MAE results for FESSEa_res: 1.10808
+////////////////////////////////////////////
+Iteration 66/98
+Max depth value tested: 14, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 0m 36s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42714
+MAE results for FESSEa_res: 1.10608
+////////////////////////////////////////////
+Iteration 67/98
+Max depth value tested: 14, max nb of features used per tree: 3630
+Elapsed time from start: 0d 4h 4m 53s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42501
+MAE results for FESSEa_res: 1.10869
+////////////////////////////////////////////
+Iteration 68/98
+Max depth value tested: 14, max nb of features used per tree: 363
+Elapsed time from start: 0d 4h 5m 21s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41749
+MAE results for FESSEa_res: 1.11910
+////////////////////////////////////////////
+Iteration 69/98
+Max depth value tested: 14, max nb of features used per tree: 190
+Elapsed time from start: 0d 4h 5m 36s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42677
+MAE results for FESSEa_res: 1.12172
+////////////////////////////////////////////
+Iteration 70/98
+Max depth value tested: 14, max nb of features used per tree: 36
+Elapsed time from start: 0d 4h 5m 39s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41068
+MAE results for FESSEa_res: 1.13844
+////////////////////////////////////////////
+Iteration 71/98
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 0d 4h 28m 40s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41878
+MAE results for FESSEa_res: 1.10452
+////////////////////////////////////////////
+Iteration 72/98
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 44m 23s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42597
+MAE results for FESSEa_res: 1.10470
+////////////////////////////////////////////
+Iteration 73/98
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 56m 19s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42602
+MAE results for FESSEa_res: 1.10559
+////////////////////////////////////////////
+Iteration 74/98
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 0d 5h 1m 15s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42144
+MAE results for FESSEa_res: 1.10954
+////////////////////////////////////////////
+Iteration 75/98
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 0d 5h 1m 46s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42106
+MAE results for FESSEa_res: 1.11845
+////////////////////////////////////////////
+Iteration 76/98
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 0d 5h 2m 3s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42124
+MAE results for FESSEa_res: 1.12063
+////////////////////////////////////////////
+Iteration 77/98
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 0d 5h 2m 8s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41327
+MAE results for FESSEa_res: 1.13604
+////////////////////////////////////////////
+Iteration 78/98
+Max depth value tested: 16, max nb of features used per tree: 18152
+Elapsed time from start: 0d 5h 28m 10s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42049
+MAE results for FESSEa_res: 1.10413
+////////////////////////////////////////////
+Iteration 79/98
+Max depth value tested: 16, max nb of features used per tree: 12101
+Elapsed time from start: 0d 5h 45m 39s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42295
+MAE results for FESSEa_res: 1.10291
+////////////////////////////////////////////
+Iteration 80/98
+Max depth value tested: 16, max nb of features used per tree: 9076
+Elapsed time from start: 0d 5h 59m 7s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42680
+MAE results for FESSEa_res: 1.10384
+////////////////////////////////////////////
+Iteration 81/98
+Max depth value tested: 16, max nb of features used per tree: 3630
+Elapsed time from start: 0d 6h 4m 40s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42966
+MAE results for FESSEa_res: 1.10632
+////////////////////////////////////////////
+Iteration 82/98
+Max depth value tested: 16, max nb of features used per tree: 363
+Elapsed time from start: 0d 6h 5m 14s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41915
+MAE results for FESSEa_res: 1.11824
+////////////////////////////////////////////
+Iteration 83/98
+Max depth value tested: 16, max nb of features used per tree: 190
+Elapsed time from start: 0d 6h 5m 33s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42175
+MAE results for FESSEa_res: 1.12137
+////////////////////////////////////////////
+Iteration 84/98
+Max depth value tested: 16, max nb of features used per tree: 36
+Elapsed time from start: 0d 6h 5m 37s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41966
+MAE results for FESSEa_res: 1.13353
+////////////////////////////////////////////
+Iteration 85/98
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 0d 6h 34m 7s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42040
+MAE results for FESSEa_res: 1.10363
+////////////////////////////////////////////
+Iteration 86/98
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 0d 6h 53m 22s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42774
+MAE results for FESSEa_res: 1.10329
+////////////////////////////////////////////
+Iteration 87/98
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 0d 7h 7m 53s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42842
+MAE results for FESSEa_res: 1.10309
+////////////////////////////////////////////
+Iteration 88/98
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 0d 7h 13m 49s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42634
+MAE results for FESSEa_res: 1.10643
+////////////////////////////////////////////
+Iteration 89/98
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 0d 7h 14m 26s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42208
+MAE results for FESSEa_res: 1.11905
+////////////////////////////////////////////
+Iteration 90/98
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 0d 7h 14m 46s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41993
+MAE results for FESSEa_res: 1.12089
+////////////////////////////////////////////
+Iteration 91/98
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 0d 7h 14m 51s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40772
+MAE results for FESSEa_res: 1.13612
+////////////////////////////////////////////
+Iteration 92/98
+Max depth value tested: 18, max nb of features used per tree: 18152
+Elapsed time from start: 0d 7h 45m 13s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.41673
+MAE results for FESSEa_res: 1.10550
+////////////////////////////////////////////
+Iteration 93/98
+Max depth value tested: 18, max nb of features used per tree: 12101
+Elapsed time from start: 0d 8h 5m 44s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42409
+MAE results for FESSEa_res: 1.10293
+////////////////////////////////////////////
+Iteration 94/98
+Max depth value tested: 18, max nb of features used per tree: 9076
+Elapsed time from start: 0d 8h 21m 16s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.43761
+MAE results for FESSEa_res: 1.10030
+////////////////////////////////////////////
+Iteration 95/98
+Max depth value tested: 18, max nb of features used per tree: 3630
+Elapsed time from start: 0d 8h 27m 38s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42486
+MAE results for FESSEa_res: 1.10570
+////////////////////////////////////////////
+Iteration 96/98
+Max depth value tested: 18, max nb of features used per tree: 363
+Elapsed time from start: 0d 8h 28m 18s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42852
+MAE results for FESSEa_res: 1.11639
+////////////////////////////////////////////
+Iteration 97/98
+Max depth value tested: 18, max nb of features used per tree: 190
+Elapsed time from start: 0d 8h 28m 41s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.42287
+MAE results for FESSEa_res: 1.12034
+////////////////////////////////////////////
+Iteration 98/98
+Max depth value tested: 18, max nb of features used per tree: 36
+Elapsed time from start: 0d 8h 28m 47s
+--------------------------------------------
+Pearson correlation for FESSEa_res: 0.40479
+MAE results for FESSEa_res: 1.13419
+////////////////////////////////////////////
+Computation finished in 0d 8h 28m 47s
+////////////////////////////////////////////
+Iteration 1/98
+Max depth value tested: 5, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 3m 21s
+--------------------------------------------
+Pearson correlation for size_res: 0.30366
+MAE results for size_res: 5.92731
+////////////////////////////////////////////
+Iteration 2/98
+Max depth value tested: 5, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 5m 35s
+--------------------------------------------
+Pearson correlation for size_res: 0.30605
+MAE results for size_res: 5.93106
+////////////////////////////////////////////
+Iteration 3/98
+Max depth value tested: 5, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 7m 17s
+--------------------------------------------
+Pearson correlation for size_res: 0.30613
+MAE results for size_res: 5.93295
+////////////////////////////////////////////
+Iteration 4/98
+Max depth value tested: 5, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 7m 57s
+--------------------------------------------
+Pearson correlation for size_res: 0.31049
+MAE results for size_res: 5.94268
+////////////////////////////////////////////
+Iteration 5/98
+Max depth value tested: 5, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 8m 3s
+--------------------------------------------
+Pearson correlation for size_res: 0.32336
+MAE results for size_res: 5.96553
+////////////////////////////////////////////
+Iteration 6/98
+Max depth value tested: 5, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 8m 6s
+--------------------------------------------
+Pearson correlation for size_res: 0.31943
+MAE results for size_res: 5.97911
+////////////////////////////////////////////
+Iteration 7/98
+Max depth value tested: 5, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 8m 8s
+--------------------------------------------
+Pearson correlation for size_res: 0.30670
+MAE results for size_res: 6.00498
+////////////////////////////////////////////
+Iteration 8/98
+Max depth value tested: 6, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 12m 33s
+--------------------------------------------
+Pearson correlation for size_res: 0.31328
+MAE results for size_res: 5.90798
+////////////////////////////////////////////
+Iteration 9/98
+Max depth value tested: 6, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 15m 31s
+--------------------------------------------
+Pearson correlation for size_res: 0.31407
+MAE results for size_res: 5.91367
+////////////////////////////////////////////
+Iteration 10/98
+Max depth value tested: 6, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 17m 46s
+--------------------------------------------
+Pearson correlation for size_res: 0.31897
+MAE results for size_res: 5.91038
+////////////////////////////////////////////
+Iteration 11/98
+Max depth value tested: 6, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 18m 40s
+--------------------------------------------
+Pearson correlation for size_res: 0.32557
+MAE results for size_res: 5.92214
+////////////////////////////////////////////
+Iteration 12/98
+Max depth value tested: 6, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 18m 46s
+--------------------------------------------
+Pearson correlation for size_res: 0.32828
+MAE results for size_res: 5.94787
+////////////////////////////////////////////
+Iteration 13/98
+Max depth value tested: 6, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 18m 50s
+--------------------------------------------
+Pearson correlation for size_res: 0.31824
+MAE results for size_res: 5.96377
+////////////////////////////////////////////
+Iteration 14/98
+Max depth value tested: 6, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 18m 52s
+--------------------------------------------
+Pearson correlation for size_res: 0.31918
+MAE results for size_res: 5.98878
+////////////////////////////////////////////
+Iteration 15/98
+Max depth value tested: 7, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 24m 42s
+--------------------------------------------
+Pearson correlation for size_res: 0.32252
+MAE results for size_res: 5.89273
+////////////////////////////////////////////
+Iteration 16/98
+Max depth value tested: 7, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 28m 35s
+--------------------------------------------
+Pearson correlation for size_res: 0.32290
+MAE results for size_res: 5.89536
+////////////////////////////////////////////
+Iteration 17/98
+Max depth value tested: 7, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 31m 30s
+--------------------------------------------
+Pearson correlation for size_res: 0.32433
+MAE results for size_res: 5.90020
+////////////////////////////////////////////
+Iteration 18/98
+Max depth value tested: 7, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 32m 40s
+--------------------------------------------
+Pearson correlation for size_res: 0.31820
+MAE results for size_res: 5.91382
+////////////////////////////////////////////
+Iteration 19/98
+Max depth value tested: 7, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 32m 48s
+--------------------------------------------
+Pearson correlation for size_res: 0.32529
+MAE results for size_res: 5.93569
+////////////////////////////////////////////
+Iteration 20/98
+Max depth value tested: 7, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 32m 53s
+--------------------------------------------
+Pearson correlation for size_res: 0.32573
+MAE results for size_res: 5.94905
+////////////////////////////////////////////
+Iteration 21/98
+Max depth value tested: 7, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 32m 55s
+--------------------------------------------
+Pearson correlation for size_res: 0.32593
+MAE results for size_res: 5.97748
+////////////////////////////////////////////
+Iteration 22/98
+Max depth value tested: 8, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 40m 30s
+--------------------------------------------
+Pearson correlation for size_res: 0.32907
+MAE results for size_res: 5.88081
+////////////////////////////////////////////
+Iteration 23/98
+Max depth value tested: 8, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 45m 36s
+--------------------------------------------
+Pearson correlation for size_res: 0.33196
+MAE results for size_res: 5.87612
+////////////////////////////////////////////
+Iteration 24/98
+Max depth value tested: 8, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 49m 26s
+--------------------------------------------
+Pearson correlation for size_res: 0.33790
+MAE results for size_res: 5.87816
+////////////////////////////////////////////
+Iteration 25/98
+Max depth value tested: 8, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 50m 57s
+--------------------------------------------
+Pearson correlation for size_res: 0.32999
+MAE results for size_res: 5.89739
+////////////////////////////////////////////
+Iteration 26/98
+Max depth value tested: 8, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 51m 7s
+--------------------------------------------
+Pearson correlation for size_res: 0.34042
+MAE results for size_res: 5.91814
+////////////////////////////////////////////
+Iteration 27/98
+Max depth value tested: 8, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 51m 13s
+--------------------------------------------
+Pearson correlation for size_res: 0.32145
+MAE results for size_res: 5.93791
+////////////////////////////////////////////
+Iteration 28/98
+Max depth value tested: 8, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 51m 15s
+--------------------------------------------
+Pearson correlation for size_res: 0.33166
+MAE results for size_res: 5.96715
+////////////////////////////////////////////
+Iteration 29/98
+Max depth value tested: 9, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 0m 50s
+--------------------------------------------
+Pearson correlation for size_res: 0.33964
+MAE results for size_res: 5.86634
+////////////////////////////////////////////
+Iteration 30/98
+Max depth value tested: 9, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 7m 16s
+--------------------------------------------
+Pearson correlation for size_res: 0.33541
+MAE results for size_res: 5.86933
+////////////////////////////////////////////
+Iteration 31/98
+Max depth value tested: 9, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 12m 10s
+--------------------------------------------
+Pearson correlation for size_res: 0.33596
+MAE results for size_res: 5.87264
+////////////////////////////////////////////
+Iteration 32/98
+Max depth value tested: 9, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 14m 7s
+--------------------------------------------
+Pearson correlation for size_res: 0.34105
+MAE results for size_res: 5.87653
+////////////////////////////////////////////
+Iteration 33/98
+Max depth value tested: 9, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 14m 20s
+--------------------------------------------
+Pearson correlation for size_res: 0.34204
+MAE results for size_res: 5.90785
+////////////////////////////////////////////
+Iteration 34/98
+Max depth value tested: 9, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 14m 27s
+--------------------------------------------
+Pearson correlation for size_res: 0.32371
+MAE results for size_res: 5.92420
+////////////////////////////////////////////
+Iteration 35/98
+Max depth value tested: 9, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 14m 29s
+--------------------------------------------
+Pearson correlation for size_res: 0.31582
+MAE results for size_res: 5.95693
+////////////////////////////////////////////
+Iteration 36/98
+Max depth value tested: 10, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 26m 43s
+--------------------------------------------
+Pearson correlation for size_res: 0.34422
+MAE results for size_res: 5.85582
+////////////////////////////////////////////
+Iteration 37/98
+Max depth value tested: 10, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 34m 53s
+--------------------------------------------
+Pearson correlation for size_res: 0.35169
+MAE results for size_res: 5.84061
+////////////////////////////////////////////
+Iteration 38/98
+Max depth value tested: 10, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 41m 4s
+--------------------------------------------
+Pearson correlation for size_res: 0.33535
+MAE results for size_res: 5.86385
+////////////////////////////////////////////
+Iteration 39/98
+Max depth value tested: 10, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 43m 34s
+--------------------------------------------
+Pearson correlation for size_res: 0.33787
+MAE results for size_res: 5.87588
+////////////////////////////////////////////
+Iteration 40/98
+Max depth value tested: 10, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 43m 49s
+--------------------------------------------
+Pearson correlation for size_res: 0.35177
+MAE results for size_res: 5.88616
+////////////////////////////////////////////
+Iteration 41/98
+Max depth value tested: 10, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 44m 0s
+--------------------------------------------
+Pearson correlation for size_res: 0.33458
+MAE results for size_res: 5.91708
+////////////////////////////////////////////
+Iteration 42/98
+Max depth value tested: 10, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 44m 4s
+--------------------------------------------
+Pearson correlation for size_res: 0.33076
+MAE results for size_res: 5.94201
+////////////////////////////////////////////
+Iteration 43/98
+Max depth value tested: 11, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 59m 13s
+--------------------------------------------
+Pearson correlation for size_res: 0.34649
+MAE results for size_res: 5.84122
+////////////////////////////////////////////
+Iteration 44/98
+Max depth value tested: 11, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 9m 18s
+--------------------------------------------
+Pearson correlation for size_res: 0.33830
+MAE results for size_res: 5.84670
+////////////////////////////////////////////
+Iteration 45/98
+Max depth value tested: 11, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 16m 53s
+--------------------------------------------
+Pearson correlation for size_res: 0.33423
+MAE results for size_res: 5.86182
+////////////////////////////////////////////
+Iteration 46/98
+Max depth value tested: 11, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 19m 52s
+--------------------------------------------
+Pearson correlation for size_res: 0.34570
+MAE results for size_res: 5.86392
+////////////////////////////////////////////
+Iteration 47/98
+Max depth value tested: 11, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 20m 10s
+--------------------------------------------
+Pearson correlation for size_res: 0.33764
+MAE results for size_res: 5.89233
+////////////////////////////////////////////
+Iteration 48/98
+Max depth value tested: 11, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 20m 20s
+--------------------------------------------
+Pearson correlation for size_res: 0.34403
+MAE results for size_res: 5.90425
+////////////////////////////////////////////
+Iteration 49/98
+Max depth value tested: 11, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 20m 23s
+--------------------------------------------
+Pearson correlation for size_res: 0.32627
+MAE results for size_res: 5.94091
+////////////////////////////////////////////
+Iteration 50/98
+Max depth value tested: 12, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 38m 46s
+--------------------------------------------
+Pearson correlation for size_res: 0.34039
+MAE results for size_res: 5.84953
+////////////////////////////////////////////
+Iteration 51/98
+Max depth value tested: 12, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 50m 56s
+--------------------------------------------
+Pearson correlation for size_res: 0.34991
+MAE results for size_res: 5.84249
+////////////////////////////////////////////
+Iteration 52/98
+Max depth value tested: 12, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 0m 7s
+--------------------------------------------
+Pearson correlation for size_res: 0.33612
+MAE results for size_res: 5.85711
+////////////////////////////////////////////
+Iteration 53/98
+Max depth value tested: 12, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 3m 42s
+--------------------------------------------
+Pearson correlation for size_res: 0.34294
+MAE results for size_res: 5.86279
+////////////////////////////////////////////
+Iteration 54/98
+Max depth value tested: 12, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 4m 3s
+--------------------------------------------
+Pearson correlation for size_res: 0.33387
+MAE results for size_res: 5.88615
+////////////////////////////////////////////
+Iteration 55/98
+Max depth value tested: 12, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 4m 14s
+--------------------------------------------
+Pearson correlation for size_res: 0.34307
+MAE results for size_res: 5.89070
+////////////////////////////////////////////
+Iteration 56/98
+Max depth value tested: 12, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 4m 17s
+--------------------------------------------
+Pearson correlation for size_res: 0.31479
+MAE results for size_res: 5.93940
+////////////////////////////////////////////
+Iteration 57/98
+Max depth value tested: 13, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 26m 5s
+--------------------------------------------
+Pearson correlation for size_res: 0.34481
+MAE results for size_res: 5.83331
+////////////////////////////////////////////
+Iteration 58/98
+Max depth value tested: 13, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 40m 16s
+--------------------------------------------
+Pearson correlation for size_res: 0.33867
+MAE results for size_res: 5.84364
+////////////////////////////////////////////
+Iteration 59/98
+Max depth value tested: 13, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 51m 6s
+--------------------------------------------
+Pearson correlation for size_res: 0.33205
+MAE results for size_res: 5.84933
+////////////////////////////////////////////
+Iteration 60/98
+Max depth value tested: 13, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 55m 21s
+--------------------------------------------
+Pearson correlation for size_res: 0.33778
+MAE results for size_res: 5.85787
+////////////////////////////////////////////
+Iteration 61/98
+Max depth value tested: 13, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 55m 45s
+--------------------------------------------
+Pearson correlation for size_res: 0.33889
+MAE results for size_res: 5.88393
+////////////////////////////////////////////
+Iteration 62/98
+Max depth value tested: 13, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 55m 59s
+--------------------------------------------
+Pearson correlation for size_res: 0.32865
+MAE results for size_res: 5.89251
+////////////////////////////////////////////
+Iteration 63/98
+Max depth value tested: 13, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 56m 2s
+--------------------------------------------
+Pearson correlation for size_res: 0.32070
+MAE results for size_res: 5.93088
+////////////////////////////////////////////
+Iteration 64/98
+Max depth value tested: 14, max nb of features used per tree: 18152
+Elapsed time from start: 0d 4h 21m 30s
+--------------------------------------------
+Pearson correlation for size_res: 0.34862
+MAE results for size_res: 5.83740
+////////////////////////////////////////////
+Iteration 65/98
+Max depth value tested: 14, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 38m 11s
+--------------------------------------------
+Pearson correlation for size_res: 0.35057
+MAE results for size_res: 5.83440
+////////////////////////////////////////////
+Iteration 66/98
+Max depth value tested: 14, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 50m 35s
+--------------------------------------------
+Pearson correlation for size_res: 0.34078
+MAE results for size_res: 5.84714
+////////////////////////////////////////////
+Iteration 67/98
+Max depth value tested: 14, max nb of features used per tree: 3630
+Elapsed time from start: 0d 4h 55m 27s
+--------------------------------------------
+Pearson correlation for size_res: 0.34942
+MAE results for size_res: 5.85006
+////////////////////////////////////////////
+Iteration 68/98
+Max depth value tested: 14, max nb of features used per tree: 363
+Elapsed time from start: 0d 4h 55m 55s
+--------------------------------------------
+Pearson correlation for size_res: 0.34774
+MAE results for size_res: 5.87054
+////////////////////////////////////////////
+Iteration 69/98
+Max depth value tested: 14, max nb of features used per tree: 190
+Elapsed time from start: 0d 4h 56m 10s
+--------------------------------------------
+Pearson correlation for size_res: 0.34955
+MAE results for size_res: 5.88106
+////////////////////////////////////////////
+Iteration 70/98
+Max depth value tested: 14, max nb of features used per tree: 36
+Elapsed time from start: 0d 4h 56m 14s
+--------------------------------------------
+Pearson correlation for size_res: 0.32509
+MAE results for size_res: 5.92301
+////////////////////////////////////////////
+Iteration 71/98
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 0d 5h 24m 22s
+--------------------------------------------
+Pearson correlation for size_res: 0.34622
+MAE results for size_res: 5.83022
+////////////////////////////////////////////
+Iteration 72/98
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 0d 5h 42m 58s
+--------------------------------------------
+Pearson correlation for size_res: 0.33600
+MAE results for size_res: 5.85378
+////////////////////////////////////////////
+Iteration 73/98
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 0d 5h 56m 58s
+--------------------------------------------
+Pearson correlation for size_res: 0.35225
+MAE results for size_res: 5.82836
+////////////////////////////////////////////
+Iteration 74/98
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 0d 6h 2m 26s
+--------------------------------------------
+Pearson correlation for size_res: 0.33884
+MAE results for size_res: 5.85191
+////////////////////////////////////////////
+Iteration 75/98
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 0d 6h 2m 58s
+--------------------------------------------
+Pearson correlation for size_res: 0.33151
+MAE results for size_res: 5.87938
+////////////////////////////////////////////
+Iteration 76/98
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 0d 6h 3m 16s
+--------------------------------------------
+Pearson correlation for size_res: 0.34904
+MAE results for size_res: 5.87742
+////////////////////////////////////////////
+Iteration 77/98
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 0d 6h 3m 20s
+--------------------------------------------
+Pearson correlation for size_res: 0.32288
+MAE results for size_res: 5.91608
+////////////////////////////////////////////
+Iteration 78/98
+Max depth value tested: 16, max nb of features used per tree: 18152
+Elapsed time from start: 0d 6h 33m 58s
+--------------------------------------------
+Pearson correlation for size_res: 0.33825
+MAE results for size_res: 5.83496
+////////////////////////////////////////////
+Iteration 79/98
+Max depth value tested: 16, max nb of features used per tree: 12101
+Elapsed time from start: 0d 6h 54m 56s
+--------------------------------------------
+Pearson correlation for size_res: 0.35571
+MAE results for size_res: 5.82536
+////////////////////////////////////////////
+Iteration 80/98
+Max depth value tested: 16, max nb of features used per tree: 9076
+Elapsed time from start: 0d 7h 10m 43s
+--------------------------------------------
+Pearson correlation for size_res: 0.34654
+MAE results for size_res: 5.83538
+////////////////////////////////////////////
+Iteration 81/98
+Max depth value tested: 16, max nb of features used per tree: 3630
+Elapsed time from start: 0d 7h 16m 55s
+--------------------------------------------
+Pearson correlation for size_res: 0.34157
+MAE results for size_res: 5.85265
+////////////////////////////////////////////
+Iteration 82/98
+Max depth value tested: 16, max nb of features used per tree: 363
+Elapsed time from start: 0d 7h 17m 31s
+--------------------------------------------
+Pearson correlation for size_res: 0.33758
+MAE results for size_res: 5.87660
+////////////////////////////////////////////
+Iteration 83/98
+Max depth value tested: 16, max nb of features used per tree: 190
+Elapsed time from start: 0d 7h 17m 50s
+--------------------------------------------
+Pearson correlation for size_res: 0.32842
+MAE results for size_res: 5.88788
+////////////////////////////////////////////
+Iteration 84/98
+Max depth value tested: 16, max nb of features used per tree: 36
+Elapsed time from start: 0d 7h 17m 55s
+--------------------------------------------
+Pearson correlation for size_res: 0.32800
+MAE results for size_res: 5.91089
+////////////////////////////////////////////
+Iteration 85/98
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 0d 7h 51m 20s
+--------------------------------------------
+Pearson correlation for size_res: 0.35906
+MAE results for size_res: 5.82058
+////////////////////////////////////////////
+Iteration 86/98
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 0d 8h 14m 10s
+--------------------------------------------
+Pearson correlation for size_res: 0.34240
+MAE results for size_res: 5.84033
+////////////////////////////////////////////
+Iteration 87/98
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 0d 8h 31m 5s
+--------------------------------------------
+Pearson correlation for size_res: 0.34258
+MAE results for size_res: 5.83481
+////////////////////////////////////////////
+Iteration 88/98
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 0d 8h 37m 43s
+--------------------------------------------
+Pearson correlation for size_res: 0.33924
+MAE results for size_res: 5.85363
+////////////////////////////////////////////
+Iteration 89/98
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 0d 8h 38m 21s
+--------------------------------------------
+Pearson correlation for size_res: 0.34521
+MAE results for size_res: 5.86875
+////////////////////////////////////////////
+Iteration 90/98
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 0d 8h 38m 42s
+--------------------------------------------
+Pearson correlation for size_res: 0.32533
+MAE results for size_res: 5.89975
+////////////////////////////////////////////
+Iteration 91/98
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 0d 8h 38m 47s
+--------------------------------------------
+Pearson correlation for size_res: 0.32927
+MAE results for size_res: 5.91654
+////////////////////////////////////////////
+Iteration 92/98
+Max depth value tested: 18, max nb of features used per tree: 18152
+Elapsed time from start: 0d 9h 13m 58s
+--------------------------------------------
+Pearson correlation for size_res: 0.33996
+MAE results for size_res: 5.84286
+////////////////////////////////////////////
+Iteration 93/98
+Max depth value tested: 18, max nb of features used per tree: 12101
+Elapsed time from start: 0d 9h 37m 17s
+--------------------------------------------
+Pearson correlation for size_res: 0.34261
+MAE results for size_res: 5.83853
+////////////////////////////////////////////
+Iteration 94/98
+Max depth value tested: 18, max nb of features used per tree: 9076
+Elapsed time from start: 0d 9h 54m 41s
+--------------------------------------------
+Pearson correlation for size_res: 0.35487
+MAE results for size_res: 5.82221
+////////////////////////////////////////////
+Iteration 95/98
+Max depth value tested: 18, max nb of features used per tree: 3630
+Elapsed time from start: 0d 10h 1m 37s
+--------------------------------------------
+Pearson correlation for size_res: 0.35728
+MAE results for size_res: 5.84295
+////////////////////////////////////////////
+Iteration 96/98
+Max depth value tested: 18, max nb of features used per tree: 363
+Elapsed time from start: 0d 10h 2m 18s
+--------------------------------------------
+Pearson correlation for size_res: 0.33266
+MAE results for size_res: 5.88164
+////////////////////////////////////////////
+Iteration 97/98
+Max depth value tested: 18, max nb of features used per tree: 190
+Elapsed time from start: 0d 10h 2m 41s
+--------------------------------------------
+Pearson correlation for size_res: 0.33673
+MAE results for size_res: 5.89006
+////////////////////////////////////////////
+Iteration 98/98
+Max depth value tested: 18, max nb of features used per tree: 36
+Elapsed time from start: 0d 10h 2m 45s
+--------------------------------------------
+Pearson correlation for size_res: 0.31802
+MAE results for size_res: 5.91228
+////////////////////////////////////////////
+Computation finished in 0d 10h 2m 45s
+////////////////////////////////////////////
+Iteration 1/98
+Max depth value tested: 5, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 3m 7s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.36648
+MAE results for MUSC_res: 1.23904
+////////////////////////////////////////////
+Iteration 2/98
+Max depth value tested: 5, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 5m 10s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.37174
+MAE results for MUSC_res: 1.23923
+////////////////////////////////////////////
+Iteration 3/98
+Max depth value tested: 5, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 6m 45s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.37635
+MAE results for MUSC_res: 1.23951
+////////////////////////////////////////////
+Iteration 4/98
+Max depth value tested: 5, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 7m 24s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.38606
+MAE results for MUSC_res: 1.24000
+////////////////////////////////////////////
+Iteration 5/98
+Max depth value tested: 5, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 7m 29s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39554
+MAE results for MUSC_res: 1.24931
+////////////////////////////////////////////
+Iteration 6/98
+Max depth value tested: 5, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 7m 32s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40175
+MAE results for MUSC_res: 1.25260
+////////////////////////////////////////////
+Iteration 7/98
+Max depth value tested: 5, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 7m 34s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40626
+MAE results for MUSC_res: 1.26435
+////////////////////////////////////////////
+Iteration 8/98
+Max depth value tested: 6, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 11m 40s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.38194
+MAE results for MUSC_res: 1.23094
+////////////////////////////////////////////
+Iteration 9/98
+Max depth value tested: 6, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 14m 25s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.38444
+MAE results for MUSC_res: 1.23119
+////////////////////////////////////////////
+Iteration 10/98
+Max depth value tested: 6, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 16m 28s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39269
+MAE results for MUSC_res: 1.22964
+////////////////////////////////////////////
+Iteration 11/98
+Max depth value tested: 6, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 17m 20s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39982
+MAE results for MUSC_res: 1.23159
+////////////////////////////////////////////
+Iteration 12/98
+Max depth value tested: 6, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 17m 26s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40323
+MAE results for MUSC_res: 1.24181
+////////////////////////////////////////////
+Iteration 13/98
+Max depth value tested: 6, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 17m 30s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40781
+MAE results for MUSC_res: 1.24537
+////////////////////////////////////////////
+Iteration 14/98
+Max depth value tested: 6, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 17m 32s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40614
+MAE results for MUSC_res: 1.25804
+////////////////////////////////////////////
+Iteration 15/98
+Max depth value tested: 7, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 22m 52s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39301
+MAE results for MUSC_res: 1.22173
+////////////////////////////////////////////
+Iteration 16/98
+Max depth value tested: 7, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 26m 27s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39664
+MAE results for MUSC_res: 1.22291
+////////////////////////////////////////////
+Iteration 17/98
+Max depth value tested: 7, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 29m 9s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39754
+MAE results for MUSC_res: 1.22349
+////////////////////////////////////////////
+Iteration 18/98
+Max depth value tested: 7, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 30m 17s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40633
+MAE results for MUSC_res: 1.22415
+////////////////////////////////////////////
+Iteration 19/98
+Max depth value tested: 7, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 30m 24s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40765
+MAE results for MUSC_res: 1.23475
+////////////////////////////////////////////
+Iteration 20/98
+Max depth value tested: 7, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 30m 29s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40808
+MAE results for MUSC_res: 1.23951
+////////////////////////////////////////////
+Iteration 21/98
+Max depth value tested: 7, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 30m 31s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39980
+MAE results for MUSC_res: 1.25372
+////////////////////////////////////////////
+Iteration 22/98
+Max depth value tested: 8, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 37m 26s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.39972
+MAE results for MUSC_res: 1.21604
+////////////////////////////////////////////
+Iteration 23/98
+Max depth value tested: 8, max nb of features used per tree: 12101
+Elapsed time from start: 0d 0h 42m 3s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40521
+MAE results for MUSC_res: 1.21639
+////////////////////////////////////////////
+Iteration 24/98
+Max depth value tested: 8, max nb of features used per tree: 9076
+Elapsed time from start: 0d 0h 45m 32s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40628
+MAE results for MUSC_res: 1.21735
+////////////////////////////////////////////
+Iteration 25/98
+Max depth value tested: 8, max nb of features used per tree: 3630
+Elapsed time from start: 0d 0h 47m 0s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40877
+MAE results for MUSC_res: 1.21930
+////////////////////////////////////////////
+Iteration 26/98
+Max depth value tested: 8, max nb of features used per tree: 363
+Elapsed time from start: 0d 0h 47m 10s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41001
+MAE results for MUSC_res: 1.22839
+////////////////////////////////////////////
+Iteration 27/98
+Max depth value tested: 8, max nb of features used per tree: 190
+Elapsed time from start: 0d 0h 47m 16s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41320
+MAE results for MUSC_res: 1.23134
+////////////////////////////////////////////
+Iteration 28/98
+Max depth value tested: 8, max nb of features used per tree: 36
+Elapsed time from start: 0d 0h 47m 18s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40655
+MAE results for MUSC_res: 1.24733
+////////////////////////////////////////////
+Iteration 29/98
+Max depth value tested: 9, max nb of features used per tree: 18152
+Elapsed time from start: 0d 0h 55m 59s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40948
+MAE results for MUSC_res: 1.20987
+////////////////////////////////////////////
+Iteration 30/98
+Max depth value tested: 9, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 1m 54s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41065
+MAE results for MUSC_res: 1.21120
+////////////////////////////////////////////
+Iteration 31/98
+Max depth value tested: 9, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 6m 24s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41185
+MAE results for MUSC_res: 1.21296
+////////////////////////////////////////////
+Iteration 32/98
+Max depth value tested: 9, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 8m 14s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41515
+MAE results for MUSC_res: 1.21343
+////////////////////////////////////////////
+Iteration 33/98
+Max depth value tested: 9, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 8m 26s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42224
+MAE results for MUSC_res: 1.22164
+////////////////////////////////////////////
+Iteration 34/98
+Max depth value tested: 9, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 8m 33s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41687
+MAE results for MUSC_res: 1.22741
+////////////////////////////////////////////
+Iteration 35/98
+Max depth value tested: 9, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 8m 35s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40611
+MAE results for MUSC_res: 1.24301
+////////////////////////////////////////////
+Iteration 36/98
+Max depth value tested: 10, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 19m 39s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41320
+MAE results for MUSC_res: 1.20486
+////////////////////////////////////////////
+Iteration 37/98
+Max depth value tested: 10, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 27m 10s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40731
+MAE results for MUSC_res: 1.21133
+////////////////////////////////////////////
+Iteration 38/98
+Max depth value tested: 10, max nb of features used per tree: 9076
+Elapsed time from start: 0d 1h 32m 49s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41889
+MAE results for MUSC_res: 1.20837
+////////////////////////////////////////////
+Iteration 39/98
+Max depth value tested: 10, max nb of features used per tree: 3630
+Elapsed time from start: 0d 1h 35m 7s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41959
+MAE results for MUSC_res: 1.20987
+////////////////////////////////////////////
+Iteration 40/98
+Max depth value tested: 10, max nb of features used per tree: 363
+Elapsed time from start: 0d 1h 35m 22s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41917
+MAE results for MUSC_res: 1.21841
+////////////////////////////////////////////
+Iteration 41/98
+Max depth value tested: 10, max nb of features used per tree: 190
+Elapsed time from start: 0d 1h 35m 30s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41095
+MAE results for MUSC_res: 1.22457
+////////////////////////////////////////////
+Iteration 42/98
+Max depth value tested: 10, max nb of features used per tree: 36
+Elapsed time from start: 0d 1h 35m 32s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41298
+MAE results for MUSC_res: 1.23854
+////////////////////////////////////////////
+Iteration 43/98
+Max depth value tested: 11, max nb of features used per tree: 18152
+Elapsed time from start: 0d 1h 49m 25s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41731
+MAE results for MUSC_res: 1.20391
+////////////////////////////////////////////
+Iteration 44/98
+Max depth value tested: 11, max nb of features used per tree: 12101
+Elapsed time from start: 0d 1h 58m 44s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41988
+MAE results for MUSC_res: 1.20435
+////////////////////////////////////////////
+Iteration 45/98
+Max depth value tested: 11, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 5m 53s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41898
+MAE results for MUSC_res: 1.20582
+////////////////////////////////////////////
+Iteration 46/98
+Max depth value tested: 11, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 8m 45s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42650
+MAE results for MUSC_res: 1.20611
+////////////////////////////////////////////
+Iteration 47/98
+Max depth value tested: 11, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 9m 3s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42226
+MAE results for MUSC_res: 1.21550
+////////////////////////////////////////////
+Iteration 48/98
+Max depth value tested: 11, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 9m 13s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41623
+MAE results for MUSC_res: 1.22031
+////////////////////////////////////////////
+Iteration 49/98
+Max depth value tested: 11, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 9m 16s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41882
+MAE results for MUSC_res: 1.23375
+////////////////////////////////////////////
+Iteration 50/98
+Max depth value tested: 12, max nb of features used per tree: 18152
+Elapsed time from start: 0d 2h 26m 16s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42631
+MAE results for MUSC_res: 1.19860
+////////////////////////////////////////////
+Iteration 51/98
+Max depth value tested: 12, max nb of features used per tree: 12101
+Elapsed time from start: 0d 2h 37m 37s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42336
+MAE results for MUSC_res: 1.20269
+////////////////////////////////////////////
+Iteration 52/98
+Max depth value tested: 12, max nb of features used per tree: 9076
+Elapsed time from start: 0d 2h 46m 11s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42195
+MAE results for MUSC_res: 1.20266
+////////////////////////////////////////////
+Iteration 53/98
+Max depth value tested: 12, max nb of features used per tree: 3630
+Elapsed time from start: 0d 2h 49m 39s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.43048
+MAE results for MUSC_res: 1.20351
+////////////////////////////////////////////
+Iteration 54/98
+Max depth value tested: 12, max nb of features used per tree: 363
+Elapsed time from start: 0d 2h 50m 0s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41977
+MAE results for MUSC_res: 1.21474
+////////////////////////////////////////////
+Iteration 55/98
+Max depth value tested: 12, max nb of features used per tree: 190
+Elapsed time from start: 0d 2h 50m 11s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41942
+MAE results for MUSC_res: 1.21797
+////////////////////////////////////////////
+Iteration 56/98
+Max depth value tested: 12, max nb of features used per tree: 36
+Elapsed time from start: 0d 2h 50m 15s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42242
+MAE results for MUSC_res: 1.23012
+////////////////////////////////////////////
+Iteration 57/98
+Max depth value tested: 13, max nb of features used per tree: 18152
+Elapsed time from start: 0d 3h 10m 31s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42568
+MAE results for MUSC_res: 1.19797
+////////////////////////////////////////////
+Iteration 58/98
+Max depth value tested: 13, max nb of features used per tree: 12101
+Elapsed time from start: 0d 3h 24m 9s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42487
+MAE results for MUSC_res: 1.19965
+////////////////////////////////////////////
+Iteration 59/98
+Max depth value tested: 13, max nb of features used per tree: 9076
+Elapsed time from start: 0d 3h 34m 27s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42506
+MAE results for MUSC_res: 1.20318
+////////////////////////////////////////////
+Iteration 60/98
+Max depth value tested: 13, max nb of features used per tree: 3630
+Elapsed time from start: 0d 3h 38m 36s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42997
+MAE results for MUSC_res: 1.20018
+////////////////////////////////////////////
+Iteration 61/98
+Max depth value tested: 13, max nb of features used per tree: 363
+Elapsed time from start: 0d 3h 39m 1s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42763
+MAE results for MUSC_res: 1.20704
+////////////////////////////////////////////
+Iteration 62/98
+Max depth value tested: 13, max nb of features used per tree: 190
+Elapsed time from start: 0d 3h 39m 15s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41580
+MAE results for MUSC_res: 1.21837
+////////////////////////////////////////////
+Iteration 63/98
+Max depth value tested: 13, max nb of features used per tree: 36
+Elapsed time from start: 0d 3h 39m 19s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41304
+MAE results for MUSC_res: 1.23089
+////////////////////////////////////////////
+Iteration 64/98
+Max depth value tested: 14, max nb of features used per tree: 18152
+Elapsed time from start: 0d 4h 3m 30s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42905
+MAE results for MUSC_res: 1.19650
+////////////////////////////////////////////
+Iteration 65/98
+Max depth value tested: 14, max nb of features used per tree: 12101
+Elapsed time from start: 0d 4h 19m 10s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42351
+MAE results for MUSC_res: 1.20007
+////////////////////////////////////////////
+Iteration 66/98
+Max depth value tested: 14, max nb of features used per tree: 9076
+Elapsed time from start: 0d 4h 31m 15s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42551
+MAE results for MUSC_res: 1.20072
+////////////////////////////////////////////
+Iteration 67/98
+Max depth value tested: 14, max nb of features used per tree: 3630
+Elapsed time from start: 0d 4h 36m 4s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42629
+MAE results for MUSC_res: 1.20224
+////////////////////////////////////////////
+Iteration 68/98
+Max depth value tested: 14, max nb of features used per tree: 363
+Elapsed time from start: 0d 4h 36m 33s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42177
+MAE results for MUSC_res: 1.21016
+////////////////////////////////////////////
+Iteration 69/98
+Max depth value tested: 14, max nb of features used per tree: 190
+Elapsed time from start: 0d 4h 36m 49s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42682
+MAE results for MUSC_res: 1.21276
+////////////////////////////////////////////
+Iteration 70/98
+Max depth value tested: 14, max nb of features used per tree: 36
+Elapsed time from start: 0d 4h 36m 53s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40951
+MAE results for MUSC_res: 1.22870
+////////////////////////////////////////////
+Iteration 71/98
+Max depth value tested: 15, max nb of features used per tree: 18152
+Elapsed time from start: 0d 5h 3m 48s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42308
+MAE results for MUSC_res: 1.19867
+////////////////////////////////////////////
+Iteration 72/98
+Max depth value tested: 15, max nb of features used per tree: 12101
+Elapsed time from start: 0d 5h 21m 46s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42789
+MAE results for MUSC_res: 1.19729
+////////////////////////////////////////////
+Iteration 73/98
+Max depth value tested: 15, max nb of features used per tree: 9076
+Elapsed time from start: 0d 5h 35m 32s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42599
+MAE results for MUSC_res: 1.20015
+////////////////////////////////////////////
+Iteration 74/98
+Max depth value tested: 15, max nb of features used per tree: 3630
+Elapsed time from start: 0d 5h 41m 0s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.43497
+MAE results for MUSC_res: 1.19949
+////////////////////////////////////////////
+Iteration 75/98
+Max depth value tested: 15, max nb of features used per tree: 363
+Elapsed time from start: 0d 5h 41m 32s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42593
+MAE results for MUSC_res: 1.20863
+////////////////////////////////////////////
+Iteration 76/98
+Max depth value tested: 15, max nb of features used per tree: 190
+Elapsed time from start: 0d 5h 41m 50s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42360
+MAE results for MUSC_res: 1.21568
+////////////////////////////////////////////
+Iteration 77/98
+Max depth value tested: 15, max nb of features used per tree: 36
+Elapsed time from start: 0d 5h 41m 54s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.40925
+MAE results for MUSC_res: 1.22664
+////////////////////////////////////////////
+Iteration 78/98
+Max depth value tested: 16, max nb of features used per tree: 18152
+Elapsed time from start: 0d 6h 12m 21s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42654
+MAE results for MUSC_res: 1.19648
+////////////////////////////////////////////
+Iteration 79/98
+Max depth value tested: 16, max nb of features used per tree: 12101
+Elapsed time from start: 0d 6h 33m 3s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42610
+MAE results for MUSC_res: 1.19822
+////////////////////////////////////////////
+Iteration 80/98
+Max depth value tested: 16, max nb of features used per tree: 9076
+Elapsed time from start: 0d 6h 48m 47s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42615
+MAE results for MUSC_res: 1.19999
+////////////////////////////////////////////
+Iteration 81/98
+Max depth value tested: 16, max nb of features used per tree: 3630
+Elapsed time from start: 0d 6h 54m 58s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42890
+MAE results for MUSC_res: 1.20018
+////////////////////////////////////////////
+Iteration 82/98
+Max depth value tested: 16, max nb of features used per tree: 363
+Elapsed time from start: 0d 6h 55m 34s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42271
+MAE results for MUSC_res: 1.21076
+////////////////////////////////////////////
+Iteration 83/98
+Max depth value tested: 16, max nb of features used per tree: 190
+Elapsed time from start: 0d 6h 55m 54s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42389
+MAE results for MUSC_res: 1.21258
+////////////////////////////////////////////
+Iteration 84/98
+Max depth value tested: 16, max nb of features used per tree: 36
+Elapsed time from start: 0d 6h 55m 58s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41856
+MAE results for MUSC_res: 1.22432
+////////////////////////////////////////////
+Iteration 85/98
+Max depth value tested: 17, max nb of features used per tree: 18152
+Elapsed time from start: 0d 7h 29m 23s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42834
+MAE results for MUSC_res: 1.19518
+////////////////////////////////////////////
+Iteration 86/98
+Max depth value tested: 17, max nb of features used per tree: 12101
+Elapsed time from start: 0d 7h 51m 20s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42474
+MAE results for MUSC_res: 1.20127
+////////////////////////////////////////////
+Iteration 87/98
+Max depth value tested: 17, max nb of features used per tree: 9076
+Elapsed time from start: 0d 8h 8m 5s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42407
+MAE results for MUSC_res: 1.19870
+////////////////////////////////////////////
+Iteration 88/98
+Max depth value tested: 17, max nb of features used per tree: 3630
+Elapsed time from start: 0d 8h 14m 42s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42620
+MAE results for MUSC_res: 1.20217
+////////////////////////////////////////////
+Iteration 89/98
+Max depth value tested: 17, max nb of features used per tree: 363
+Elapsed time from start: 0d 8h 15m 22s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42108
+MAE results for MUSC_res: 1.20928
+////////////////////////////////////////////
+Iteration 90/98
+Max depth value tested: 17, max nb of features used per tree: 190
+Elapsed time from start: 0d 8h 15m 43s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42619
+MAE results for MUSC_res: 1.21276
+////////////////////////////////////////////
+Iteration 91/98
+Max depth value tested: 17, max nb of features used per tree: 36
+Elapsed time from start: 0d 8h 15m 48s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41013
+MAE results for MUSC_res: 1.22980
+////////////////////////////////////////////
+Iteration 92/98
+Max depth value tested: 18, max nb of features used per tree: 18152
+Elapsed time from start: 0d 8h 50m 52s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42399
+MAE results for MUSC_res: 1.19811
+////////////////////////////////////////////
+Iteration 93/98
+Max depth value tested: 18, max nb of features used per tree: 12101
+Elapsed time from start: 0d 9h 14m 29s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42371
+MAE results for MUSC_res: 1.19914
+////////////////////////////////////////////
+Iteration 94/98
+Max depth value tested: 18, max nb of features used per tree: 9076
+Elapsed time from start: 0d 9h 32m 20s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42564
+MAE results for MUSC_res: 1.20079
+////////////////////////////////////////////
+Iteration 95/98
+Max depth value tested: 18, max nb of features used per tree: 3630
+Elapsed time from start: 0d 9h 39m 17s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.43375
+MAE results for MUSC_res: 1.19755
+////////////////////////////////////////////
+Iteration 96/98
+Max depth value tested: 18, max nb of features used per tree: 363
+Elapsed time from start: 0d 9h 39m 59s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42189
+MAE results for MUSC_res: 1.20865
+////////////////////////////////////////////
+Iteration 97/98
+Max depth value tested: 18, max nb of features used per tree: 190
+Elapsed time from start: 0d 9h 40m 22s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.42881
+MAE results for MUSC_res: 1.21028
+////////////////////////////////////////////
+Iteration 98/98
+Max depth value tested: 18, max nb of features used per tree: 36
+Elapsed time from start: 0d 9h 40m 27s
+--------------------------------------------
+Pearson correlation for MUSC_res: 0.41622
+MAE results for MUSC_res: 1.22509
+////////////////////////////////////////////
+Computation finished in 0d 9h 40m 27s
