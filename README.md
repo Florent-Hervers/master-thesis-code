@@ -19,9 +19,11 @@ applied to multi-task genome-wide prediction](https://pubmed.ncbi.nlm.nih.gov/39
 - **dataset.py**: implements a class representing the dataset that is usable by ML models and by pytorch deep learning models.
 - **utils.py**: contain various useful functions reused in several files accros the repository.
 - **requirements.txt**: described all dependencies to run every code of the repository.
-- Notebooks endings by `local.ipynb` are desinged to be used to test models locally (without any gpu available).
+- Notebooks endings by `_local.ipynb` are desinged to be used to test models locally (without any gpu available).
+- `_all.py` implements the same models but instead of having one model per phenotype, we use one model to predict four phenotype directly
 - Pythons files are implementing the model who run on the cluster. All results are generated from the models described in those files.
 - `.sbatch` files described the resources asked to the Slurm job to run the models in the cluster. Note that some of the requirements may be way higher than required if the model required low computing power/memory.
 
 ### Citation/acknoledgements
 - The ResGS model was originally proposed in this [paper](https://link.springer.com/article/10.1007/s00122-024-04649-2). The code used here is a translation in pytorch of their tensorflow implementation that's can be modified. All modifications done can be followed thanks to the commit history of this repository. The original code repository of the model can be found [here](https://github.com/996184745/code-for-ResGS)
+- The GPTransformer model was originally proposed in this [paper](: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.761402/full). As there was no code repository linked with this paper. The model was implemented from scratch based on the explanations in the article.
