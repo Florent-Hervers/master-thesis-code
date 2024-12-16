@@ -26,4 +26,4 @@ applied to multi-task genome-wide prediction](https://pubmed.ncbi.nlm.nih.gov/39
 
 ### Citation/acknoledgements
 - The ResGS model was originally proposed in this [paper](https://link.springer.com/article/10.1007/s00122-024-04649-2). The code used here is a translation in pytorch of their tensorflow implementation that's can be modified. All modifications done can be followed thanks to the commit history of this repository. The original code repository of the model can be found [here](https://github.com/996184745/code-for-ResGS)
-- The GPTransformer model was originally proposed in this [paper](: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.761402/full). As there was no code repository linked with this paper. The model was implemented from scratch based on the explanations in the article.
+- The GPTransformer model was originally proposed in this [paper](https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.761402/full). As there was no code repository linked with this paper. The model was implemented from scratch based on the explanations in the article.
