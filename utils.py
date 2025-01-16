@@ -82,6 +82,8 @@ def train_DL_model(
         initial_phenotype = None,
         validation_mean: float = 0,
         validation_std: float = 1,
+        early_stop_threshold: float = 0,
+        early_stop_n_epoch: int = 10,
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
 
@@ -95,13 +97,19 @@ def train_DL_model(
             scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
             phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
             log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
-            initial_phenotype(np.array | None, optionnal): If the model compute a residual phenotype, you can provide the basis to see the evolution of correlation of the final prediction. Defaults to None.
+            initial_phenotype (np.array | None, optionnal): If the model compute a residual phenotype, you can provide the basis to see the evolution of correlation of the final prediction. Defaults to None.
             validation_mean (float, optional): mean of the phenotypes from the validation set that was substratcted when normalizing the validation phenotype. \
             This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 0.
             validation_std (float, optional): standard deviation of the phenotypes from the validation set that was used as denominator when normalizing the validation phenotype. \
             This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 1.
-        
+            early_stop_threshold (float, optional): percentage of the maximum correlation below the early stop counter stop incrementing. This value should stay between 0 and 1 included. Defaults to 0.
+            early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
     """
+    if early_stop_threshold > 1 and early_stop_threshold < 0:
+        raise Exception("Early stop threshold should be between 0 and 1")
+    
+    if early_stop_n_epoch > n_epoch:
+        raise Exception(f"Number of epoch before performing early stop '{early_stop_n_epoch})should be less that the max amount of epoch ({n_epoch})")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
@@ -109,6 +117,22 @@ def train_DL_model(
     print(f"Model architecture : \n {model}")
     print(f"Numbers of parameters: {sum(p.numel() for p in model.parameters())}")
     model.to(device)
+
+    max_correlation = 0
+    early_stop_counter = 0
+
+    # Define the keys for the dictonary used by wandb to avoid mispelling mistakes
+    correlation_key = f"correlation {f'{phenotype}' if phenotype is not None else ''}"
+    train_loss_key = f"train_loss {f'{phenotype}'  if phenotype is not None else ''}"
+    epoch_key = "epoch"
+    validation_loss_key = f"validation_loss {f'{phenotype}' if phenotype is not None else ''}"
+    
+    # Define metrics to improve the results display
+    if log_wandb:
+        wandb.define_metric(correlation_key, step_metric=epoch_key, summary='max')
+        wandb.define_metric(train_loss_key, step_metric=epoch_key, summary='none')
+        wandb.define_metric(validation_loss_key, step_metric=epoch_key, summary='none')
+        wandb.define_metric(epoch_key, hidden=True, summary='none')
 
     for epoch in range(n_epoch):
         train_loss = []
@@ -125,8 +149,8 @@ def train_DL_model(
         
         if log_wandb:
             wandb.log({
-                    "epoch": epoch, 
-                    f"train_loss {f'{phenotype}'  if phenotype is not None else ''}": np.array(train_loss).mean()
+                    epoch_key: epoch, 
+                    train_loss_key: np.array(train_loss).mean()
                 }
             )
 
@@ -168,16 +192,25 @@ def train_DL_model(
             if scheduler is not None:
                 scheduler.step()
             
+            correlation = pearsonr(predicted, target).statistic
             if log_wandb:
-                wandb.log({
-                        "epoch": epoch, 
-                        f"validation_loss {f'{phenotype}' if phenotype is not None else ''}": np.array(val_loss).mean(),
-                        f"correlation {f'{phenotype}' if phenotype is not None else ''}": pearsonr(predicted, target).statistic,
-                    }
-                )
+                wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})
+            
         print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
             f"{f' Correlation: {pearsonr(predicted, target).statistic}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
         
+        if correlation > max_correlation:
+            max_correlation = correlation
+        
+        if correlation < early_stop_threshold * max_correlation:
+            early_stop_counter +=1
+        else:
+            early_stop_counter = 0
+        
+        if early_stop_counter >= early_stop_n_epoch:
+            print(f"Early stop condition met. Best correlation observed: {max_correlation}")
+            break
+
 def print_elapsed_time(start_time: float):
     """Returns elapsed time following the format d h m s
 

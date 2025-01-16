@@ -29,7 +29,7 @@ class SNPmarkersDataset(Dataset):
         pheno_filename = "BBBDL_pheno_20000bbb_6traits_processed.csv", 
         mask_pheno_filename = "BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv",
         date_filename = "BBBDL_pedi_full_list.txt",
-        normalize = True,
+        normalize = False,
     ):
         """Create a class following the pytorch template.
 
