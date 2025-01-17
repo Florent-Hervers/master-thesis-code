@@ -83,7 +83,7 @@ if __name__ == "__main__":
     for phenotype in ["ep_res", "size_res", "de_res"]:
         sweep_config = {
             "name": f"Shallow_MLP {phenotype} full hyperparameter tuning 2",
-            "method": "grid",
+            "method": "random",
             "metric": {
                 "goal": "maximize",
                 "name": f"correlation {phenotype}.max"
