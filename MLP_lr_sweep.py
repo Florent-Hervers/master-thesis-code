@@ -16,30 +16,29 @@ def main():
     g = torch.Generator()
     g.manual_seed(7230)
 
-    BATCH_SIZE = 256
-    DROPOUT = 0.25
     N_LAYERS = 2
-    HIDDEN_NODES = [1024] #[1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
     N_EPOCHS = 200
+    EARLY_STOP_THRESHOLD = 0.9
+    EARLY_STOP_N_EPOCH = 10
     MODEL_NAME = "Shallow_MLP"
 
-    run = wandb.init(
-        project = "TFE",
+    wandb.init(
         config = {
             "model_name": MODEL_NAME,
-            "batch size": BATCH_SIZE,
-            "dropout": DROPOUT,
             "nb layers": N_LAYERS,
-            "hidden layers size": HIDDEN_NODES,
             "nb epochs": N_EPOCHS,
+            "early stop threshold": EARLY_STOP_THRESHOLD,
+            "early stop nb epoch": EARLY_STOP_N_EPOCH,
         },
         tags = ["tuning"],
     )
-    run.name = f"{MODEL_NAME} with lr = {wandb.config.learning_rate:.3E}"
+    BATCH_SIZE = wandb.config.batch_size
+    DROPOUT = wandb.config.dropout
+    HIDDEN_NODES = [wandb.config.hidden_layer_size] #[1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
 
-    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True, normalize=True)
-    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True, normalize=True)
-    phenotype = list(train_dataset.phenotypes.keys())[0]
+    train_dataset = SNPmarkersDataset(mode = "train", skip_check=True)
+    validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
+    phenotype = wandb.config.phenotype
 
     train_dataset.set_phenotypes = phenotype
 
@@ -66,28 +65,42 @@ def main():
         N_EPOCHS,
         criterion,
         phenotype=phenotype,
-        early_stop_n_epoch= 10,
-        early_stop_threshold=0.9,
+        early_stop_n_epoch=EARLY_STOP_N_EPOCH,
+        early_stop_threshold=EARLY_STOP_THRESHOLD,
     )
 
 if __name__ == "__main__":
-    sweep_config = {
-        "name": "Shallow_MLP ep_res lr tuning",
-        "method": "grid",
-        "metric": {
-            "goal": "maximize",
-            "name": "correlation ep_res.max"
-        },
-        "parameters": {
-            "learning_rate": {
-                # np.linspace(1e-3,1e-6,20)
-                "values": [1.00000000e-03, 9.47421053e-04, 8.94842105e-04, 8.42263158e-04,
-        7.89684211e-04, 7.37105263e-04, 6.84526316e-04, 6.31947368e-04,
-        5.79368421e-04, 5.26789474e-04, 4.74210526e-04, 4.21631579e-04,
-        3.69052632e-04, 3.16473684e-04, 2.63894737e-04, 2.11315789e-04,
-        1.58736842e-04, 1.06157895e-04, 5.35789474e-05, 1.00000000e-06]
-            }
-        },
-    }
-    sweep_id = wandb.sweep(sweep=sweep_config, project="TFE")
-    wandb.agent(sweep_id, function=main)
+    for phenotype in ["ep_res", "size_res", "de_res"]:
+        sweep_config = {
+            "name": f"Shallow_MLP {phenotype} full hyperparameter tuning",
+            "method": "bayes",
+            "metric": {
+                "goal": "maximize",
+                "name": "correlation ep_res.max"
+            },
+            "parameters": {
+                "phenotype": {
+                    "value": phenotype
+                },
+                "learning_rate": {
+                    # np.linspace(1e-3,1e-6,10)
+                    "values": [1.00e-03, 8.89e-04, 7.78e-04, 6.67e-04, 5.56e-04, 4.45e-04,
+        3.34e-04, 2.23e-04, 1.12e-04, 1.00e-06]
+                },
+                #list(map(lambda v: 2**v, range(3,14))
+                "hidden_layer_size": {
+                    "values": [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
+                },
+                #np.arange(0.05,0.55,0.05)
+                "dropout": {
+                    "values": [0.05, 0.1 , 0.15, 0.2 , 0.25, 0.3 , 0.35, 0.4 , 0.45, 0.5 ]
+                },
+                #list(map(lambda v: 2**v, range(3,10))
+                "batch_size": {
+                    "values": [8, 16, 32, 64, 128, 256, 512, 1024]
+                }
+            },
+            "run_cap": 75,
+        }
+        sweep_id = wandb.sweep(sweep=sweep_config, project="TFE")
+        wandb.agent(sweep_id, function=main)

@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=4                       # Number of CPU cores to allocate
 #SBATCH --mem-per-cpu=1G                        # Memory to allocate per allocated CPU core
 #SBATCH --gres=gpu:1                            # Number of GPU's
-#SBATCH --time=3-00:00:00                       # Max execution time
+#SBATCH --time=10-00:00:00                      # Max execution time
 #
 
 # Activate your Anaconda environment
