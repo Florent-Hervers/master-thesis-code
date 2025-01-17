@@ -82,24 +82,22 @@ def main():
 if __name__ == "__main__":
     for phenotype in ["ep_res", "size_res", "de_res"]:
         sweep_config = {
-            "name": f"Shallow_MLP {phenotype} full hyperparameter tuning 2",
+            "name": f"Deep_MLP {phenotype} full hyperparameter tuning 2",
             "method": "random",
             "metric": {
                 "goal": "maximize",
                 "name": f"correlation {phenotype}.max"
             },
             "parameters": {
-                "phenotype": {
-                    "value": phenotype
-                },
+                "phenotype": {"value": phenotype},
                 "learning_rate": {
                     # np.linspace(1e-3,1e-6,10)
                     "values": [1.00e-03, 8.89e-04, 7.78e-04, 6.67e-04, 5.56e-04, 4.45e-04,
         3.34e-04, 2.23e-04, 1.12e-04, 1.00e-06]
                 },
-                #list(map(lambda v: 2**v, range(3,14))
+                #list(map(lambda v: 2**v, range(5,14))
                 "hidden_layer_size": {
-                    "values": [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
+                    "values": [32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
                 },
                 #np.arange(0.05,0.55,0.05)
                 "dropout": {
