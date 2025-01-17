@@ -16,11 +16,11 @@ def main():
     g = torch.Generator()
     g.manual_seed(7230)
 
-    N_LAYERS = 2
+    N_LAYERS = 10
     N_EPOCHS = 200
     EARLY_STOP_THRESHOLD = 0.9
     EARLY_STOP_N_EPOCH = 10
-    MODEL_NAME = "Shallow_MLP"
+    MODEL_NAME = "Deep_MLP"
 
     wandb.init(
         config = {
@@ -34,7 +34,17 @@ def main():
     )
     BATCH_SIZE = wandb.config.batch_size
     DROPOUT = wandb.config.dropout
-    HIDDEN_NODES = [wandb.config.hidden_layer_size] #[1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
+    HIDDEN_NODES = [
+        wandb.config.hidden_layer_size,
+        wandb.config.hidden_layer_size,
+        wandb.config.hidden_layer_size,
+        wandb.config.hidden_layer_size,
+        wandb.config.hidden_layer_size - (wandb.config.hidden_layer_size // 4),
+        wandb.config.hidden_layer_size // 2,
+        wandb.config.hidden_layer_size // 2,
+        wandb.config.hidden_layer_size // 2,
+        wandb.config.hidden_layer_size // 2,
+    ]
 
     train_dataset = SNPmarkersDataset(mode = "train", skip_check=True)
     validation_dataset = SNPmarkersDataset(mode = "validation", skip_check=True)
@@ -72,7 +82,7 @@ def main():
 if __name__ == "__main__":
     for phenotype in ["ep_res", "size_res", "de_res"]:
         sweep_config = {
-            "name": f"Shallow_MLP {phenotype} full hyperparameter tuning",
+            "name": f"Deep_MLP {phenotype} full hyperparameter tuning",
             "method": "bayes",
             "metric": {
                 "goal": "maximize",
@@ -87,9 +97,9 @@ if __name__ == "__main__":
                     "values": [1.00e-03, 8.89e-04, 7.78e-04, 6.67e-04, 5.56e-04, 4.45e-04,
         3.34e-04, 2.23e-04, 1.12e-04, 1.00e-06]
                 },
-                #list(map(lambda v: 2**v, range(3,14))
+                #list(map(lambda v: 2**v, range(5,14))
                 "hidden_layer_size": {
-                    "values": [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
+                    "values": [32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
                 },
                 #np.arange(0.05,0.55,0.05)
                 "dropout": {
