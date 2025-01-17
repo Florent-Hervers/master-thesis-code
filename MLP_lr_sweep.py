@@ -18,10 +18,10 @@ def main():
 
     BATCH_SIZE = 256
     DROPOUT = 0.25
-    N_LAYERS = 10
-    HIDDEN_NODES = [1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
+    N_LAYERS = 2
+    HIDDEN_NODES = [1024] #[1024, 1024, 1024, 1024, 728, 512, 512, 512, 512]
     N_EPOCHS = 200
-    MODEL_NAME = "Deep_MLP"
+    MODEL_NAME = "Shallow_MLP"
 
     run = wandb.init(
         project = "TFE",
@@ -72,7 +72,7 @@ def main():
 
 if __name__ == "__main__":
     sweep_config = {
-        "name": "Deep_MLP ep_res lr tuning",
+        "name": "Shallow_MLP ep_res lr tuning",
         "method": "grid",
         "metric": {
             "goal": "maximize",
