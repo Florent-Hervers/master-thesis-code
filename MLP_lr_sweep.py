@@ -82,16 +82,14 @@ def main():
 if __name__ == "__main__":
     for phenotype in ["ep_res", "size_res", "de_res"]:
         sweep_config = {
-            "name": f"Deep_MLP {phenotype} full hyperparameter tuning",
-            "method": "bayes",
+            "name": f"Deep_MLP {phenotype} full hyperparameter tuning 2",
+            "method": "grid",
             "metric": {
                 "goal": "maximize",
-                "name": "correlation ep_res.max"
+                "name": f"correlation {phenotype}.max"
             },
             "parameters": {
-                "phenotype": {
-                    "value": phenotype
-                },
+                "phenotype": {"value": phenotype},
                 "learning_rate": {
                     # np.linspace(1e-3,1e-6,10)
                     "values": [1.00e-03, 8.89e-04, 7.78e-04, 6.67e-04, 5.56e-04, 4.45e-04,
@@ -110,7 +108,7 @@ if __name__ == "__main__":
                     "values": [8, 16, 32, 64, 128, 256, 512, 1024]
                 }
             },
-            "run_cap": 75,
+            "run_cap": 50,
         }
         sweep_id = wandb.sweep(sweep=sweep_config, project="TFE")
         wandb.agent(sweep_id, function=main)
