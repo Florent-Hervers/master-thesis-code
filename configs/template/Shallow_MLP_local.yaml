@@ -1,0 +1,27 @@
+config:
+  hidden_size: 16
+  batch_size: 32
+  learning_rate: 1e-3
+  dropout: 0.25
+
+train_function:
+  _target_: utils.train_DL_model
+  model:
+    _target_: MLP.MLP
+    dropout: ${template.config.dropout}
+    nlayers: 2
+    hidden_nodes: 
+      - ${template.config.hidden_size}
+  early_stop_threshold: 0
+  early_stop_n_epoch: ${template.train_function.n_epoch}
+  n_epoch: 5
+  log_wandb: False
+  optimizer:
+    _target_: utils.get_partial_optimizer
+    optimizer_name: "Adam"
+    lr: ${template.config.learning_rate}
+  criterion:
+    _target_: torch.nn.L1Loss
+  train_dataloader: ??
+  validation_dataloader: ??
+    

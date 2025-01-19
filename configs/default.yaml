@@ -1,0 +1,4 @@
+defaults:
+  - template: ???
+  - data: SNP_markers
+  - optional sweep: ??

@@ -10,7 +10,10 @@ from torch.utils.data import DataLoader
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
 import wandb
-from typing import Union
+from typing import Union, List
+from functools import partial
+
+from dataset import SNPmarkersDataset
 
 def results_heatmap(df1:      pd.DataFrame,
                     df2:      pd.DataFrame, 
@@ -71,7 +74,7 @@ def format_batch(dict: dict):
 
 def train_DL_model(
         model: Module,
-        optimizer : Optimizer,
+        optimizer : Union[Optimizer, partial],
         train_dataloader: DataLoader,
         validation_dataloader: DataLoader,
         n_epoch: int,
@@ -89,7 +92,8 @@ def train_DL_model(
 
         Args:
             model (Module): The model to train.
-            optimizer (Optimizer): Optimizer used to train the given model.
+            optimizer (Optimizer or functool.partial): Optimizer used to train the given model. \
+            A partial optimizer (without the model parameters) can be used instead of the already instansitated object.
             train_dataloader (DataLoader): Dataloader containing the training dataset.
             validation_dataloader (DataLoader): Dataloader containing the training dataset.
             n_epoch (int): number of epoch to train the model
@@ -110,6 +114,15 @@ def train_DL_model(
     
     if early_stop_n_epoch > n_epoch:
         raise Exception(f"Number of epoch before performing early stop '{early_stop_n_epoch})should be less that the max amount of epoch ({n_epoch})")
+
+    if type(optimizer) == partial:
+        try:
+            optimizer = optimizer(model.parameters())
+        except Exception as e:
+            raise Exception(f"The following error occured when completing the optimizer: {e.args}")
+
+        assert type(optimizer) != Optimizer, \
+            "The partial optimizer given don't yield a Optimizer class when the model parameters are given"
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
@@ -224,3 +237,13 @@ def print_elapsed_time(start_time: float):
     hours, rem = divmod(rem, 3600)
     minutes, secondes = divmod(rem, 60)
     return f"{int(days)}d {int(hours)}h {int(minutes)}m {int(secondes)}s"
+
+
+from hydra.utils import instantiate
+from omegaconf import DictConfig
+import functools
+import hydra
+from hydra.utils import call, instantiate
+
+def get_partial_optimizer(optimizer_name: str, **kwargs):
+    return functools.partial(getattr(torch.optim, optimizer_name), **kwargs)
