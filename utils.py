@@ -12,8 +12,11 @@ from torch.optim.lr_scheduler import LRScheduler
 import wandb
 from typing import Union, List
 from functools import partial
+from hydra.utils import instantiate
+from omegaconf import DictConfig, OmegaConf
+import functools
+from hydra.utils import call, instantiate
 
-from dataset import SNPmarkersDataset
 
 def results_heatmap(df1:      pd.DataFrame,
                     df2:      pd.DataFrame, 
@@ -238,12 +241,101 @@ def print_elapsed_time(start_time: float):
     minutes, secondes = divmod(rem, 60)
     return f"{int(days)}d {int(hours)}h {int(minutes)}m {int(secondes)}s"
 
-
-from hydra.utils import instantiate
-from omegaconf import DictConfig
-import functools
-import hydra
-from hydra.utils import call, instantiate
-
 def get_partial_optimizer(optimizer_name: str, **kwargs):
+    """Dummy function use to produced a partial optimizer from a hydra config file. This solution enable to consider \
+    the optimization class not as a string (due to hydra) but as the function to call
+
+    Args:
+        optimizer_name (str): Name of the optimizer to use (should be a class of torch.optim)
+
+    Returns:
+        functools.partial: a partial function waiting the model parameters to yield the torch optimizer.
+    """
     return functools.partial(getattr(torch.optim, optimizer_name), **kwargs)
+
+def train_from_config(phenotype: str, run_cfg: DictConfig):
+    """Launch the training based on the parameters from the hydra config files.
+
+    Args:
+        phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
+        run_cfg (DictConfig): hydra config file fetch using the compose API.
+
+    Raises:
+        Exception: in case of unknown dataset class
+    """
+    if run_cfg.data.train_dataset._target_ == "dataset.SNPmarkersDataset":
+        train_dataset= instantiate(run_cfg.data.train_dataset)
+        train_dataset.set_phenotypes = phenotype
+        validation_dataset = instantiate(run_cfg.data.validation_dataset)
+        validation_dataset.set_phenotypes = phenotype
+
+        # Define custom resolver for the computation of the hidden_nodes for Deep_MLP (See https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html)
+        OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
+        OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
+
+        call(run_cfg.template.train_function,
+            phenotype = phenotype, 
+            train_dataloader = instantiate(run_cfg.data.train_dataloader, dataset=train_dataset),
+            validation_dataloader = instantiate(run_cfg.data.validation_dataloader, dataset=validation_dataset))
+    else:
+        raise Exception(f"Dataset template {run_cfg.data.train_dataset._target_} not supported yet")
+
+def list_of_strings(arg):
+    """Function defining a custom class for argument parsing."""
+    return arg.split(',')
+
+def get_clean_config(run_cfg: dict):
+    """Create a clean dictionary can only contain useful info on the current run based on the hydra config.
+
+    Args:
+        run_cfg (dict): hydra config file fetch using the compose API.
+
+    Returns:
+        dict: clean dictionary usable as config for the wandb run.
+    """
+    
+    # Define custom resolver for the computation of the hidden_nodes for Deep_MLP (See https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html)
+    OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
+    OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
+
+    dict_cfg = OmegaConf.to_container(run_cfg, resolve=True)
+    # Contain a clean version of the config that only keep relevant info
+    wandb_cfg = {}
+
+    # Remove useless data and process the data from some keys that has interesting info for the logging
+    dict_cfg["data"]["train_dataset"].pop("skip_check")
+    dict_cfg["data"]["train_dataset"]["dataset"] = dict_cfg["data"]["train_dataset"].pop("_target_").split(".")[-1]
+    wandb_cfg["train_dataset"] = dict_cfg["data"]["train_dataset"]
+    
+    dict_cfg["data"]["validation_dataset"].pop("skip_check")
+    dict_cfg["data"]["validation_dataset"]["dataset"] = dict_cfg["data"]["validation_dataset"].pop("_target_").split(".")[-1]
+    wandb_cfg["validation_dataset"] = dict_cfg["data"]["validation_dataset"]
+    
+    dict_cfg["template"]["train_function"]["model"].pop("dropout")
+    dict_cfg["template"]["train_function"]["model"]["architecture"] = dict_cfg["template"]["train_function"]["model"].pop("_target_").split(".")[-1]
+
+    for k,v in dict_cfg["template"]["train_function"]["model"].items():
+        wandb_cfg[k] = v
+
+    dict_cfg["template"]["train_function"]["optimizer"].pop("_target_")
+    dict_cfg["template"]["train_function"]["optimizer"]["optimizer"] = dict_cfg["template"]["train_function"]["optimizer"].pop("optimizer_name")
+    for k,v in dict_cfg["template"]["train_function"]["optimizer"].items():
+        wandb_cfg[k] = v
+    
+    wandb_cfg["criterion"] = dict_cfg["template"]["train_function"]["criterion"].pop("_target_").split()[-1]
+
+    # Remove the previously preprocessed keys
+    dict_cfg["template"]["train_function"].pop("model")
+    dict_cfg["template"]["train_function"].pop("optimizer")
+    dict_cfg["template"]["train_function"].pop("criterion")
+
+    # Remove useless keys before the merging
+    dict_cfg["template"]["train_function"].pop("log_wandb")
+    dict_cfg["template"]["train_function"].pop("train_dataloader")
+    dict_cfg["template"]["train_function"].pop("validation_dataloader")
+    dict_cfg["template"]["train_function"].pop("_target_")
+
+    for k,v in dict_cfg["template"]["train_function"].items():
+        wandb_cfg[k] = v
+    
+    return wandb_cfg

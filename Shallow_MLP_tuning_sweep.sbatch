@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u sweep.py -s configs/sweeps/Shallow_MLP_tuning.yaml -t Shallow_MLP -d SNP_markers -p size_res,de_res
+python -u sweep.py -s Shallow_MLP_tuning -t Shallow_MLP -d SNP_markers -p size_res,de_res

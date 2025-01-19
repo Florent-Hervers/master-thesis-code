@@ -24,4 +24,5 @@ train_function:
     _target_: torch.nn.L1Loss
   train_dataloader: ??
   validation_dataloader: ??
+  phenotype: ??
     
