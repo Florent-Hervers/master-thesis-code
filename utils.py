@@ -311,7 +311,6 @@ def get_clean_config(run_cfg: dict):
     dict_cfg["data"]["validation_dataset"]["dataset"] = dict_cfg["data"]["validation_dataset"].pop("_target_").split(".")[-1]
     wandb_cfg["validation_dataset"] = dict_cfg["data"]["validation_dataset"]
     
-    dict_cfg["template"]["train_function"]["model"].pop("dropout")
     dict_cfg["template"]["train_function"]["model"]["architecture"] = dict_cfg["template"]["train_function"]["model"].pop("_target_").split(".")[-1]
 
     for k,v in dict_cfg["template"]["train_function"]["model"].items():
@@ -333,6 +332,7 @@ def get_clean_config(run_cfg: dict):
     dict_cfg["template"]["train_function"].pop("log_wandb")
     dict_cfg["template"]["train_function"].pop("train_dataloader")
     dict_cfg["template"]["train_function"].pop("validation_dataloader")
+    dict_cfg["template"]["train_function"].pop("phenotype")
     dict_cfg["template"]["train_function"].pop("_target_")
 
     for k,v in dict_cfg["template"]["train_function"].items():
