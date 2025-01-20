@@ -1,10 +1,11 @@
+import warnings
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 import time
 import numpy as np
-from scipy.stats import pearsonr
+from scipy.stats import pearsonr, ConstantInputWarning
 from torch.nn import Module, L1Loss
 from torch.utils.data import DataLoader
 from torch.optim import Optimizer
@@ -208,17 +209,29 @@ def train_DL_model(
             if scheduler is not None:
                 scheduler.step()
             
-            correlation = pearsonr(predicted, target).statistic
-            if log_wandb:
-                wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})
             
+        with warnings.catch_warnings(record=True) as w:
+            correlation = pearsonr(predicted, target).statistic
+            if len(w) > 0:
+                if log_wandb:
+                    wandb.finish(1)
+                print(f"Stop execution as model converged to outputing always the same value ({predicted[0]})")
+                for warning in w:
+                    print(warning)
+                
+                return
+            
+        if log_wandb:
+            wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})
+        
         print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
-            f"{f' Correlation: {pearsonr(predicted, target).statistic}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
+            f"{f' Correlation: {correlation}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
         
         if correlation > max_correlation:
             max_correlation = correlation
         
-        if correlation < early_stop_threshold * max_correlation:
+        # Take the absolute value such that small oscillation arround zero doesn't reset the counter
+        if abs(correlation) < early_stop_threshold * max_correlation:
             early_stop_counter +=1
         else:
             early_stop_counter = 0

@@ -1,8 +1,8 @@
 config:
-  hidden_size: 1024
-  batch_size: 256
-  learning_rate: 1e-3
-  dropout: 0.25
+  hidden_size: 2048
+  batch_size: 16
+  learning_rate: 8.89e-4
+  dropout: 0.2
 
 train_function:
   _target_: utils.train_DL_model
@@ -23,7 +23,7 @@ train_function:
   early_stop_threshold: 0.95
   early_stop_n_epoch: 15
   n_epoch: 200
-  log_wandb: True
+  log_wandb: False
   optimizer:
     _target_: utils.get_partial_optimizer
     optimizer_name: "Adam"

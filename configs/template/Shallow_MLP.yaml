@@ -12,8 +12,8 @@ train_function:
     nlayers: 2
     hidden_nodes: 
       - ${template.config.hidden_size}
-  early_stop_threshold: 0.9
-  early_stop_n_epoch: 10
+  early_stop_threshold: 0.95
+  early_stop_n_epoch: 15
   n_epoch: 200
   log_wandb: True
   optimizer:
