@@ -213,11 +213,11 @@ def train_DL_model(
         with warnings.catch_warnings(record=True) as w:
             correlation = pearsonr(predicted, target).statistic
             if len(w) > 0:
-                if log_wandb:
-                    wandb.finish(1)
                 print(f"Stop execution as model converged to outputing always the same value ({predicted[0]})")
                 for warning in w:
                     print(warning)
+                if log_wandb:
+                    wandb.finish(1)
                 
                 return
             
@@ -232,6 +232,8 @@ def train_DL_model(
         
         # Take the absolute value such that small oscillation arround zero doesn't reset the counter
         if abs(correlation) < early_stop_threshold * max_correlation:
+            if early_stop_counter == 0:
+                print(f"Start early stop counter, current threshold is {early_stop_threshold * max_correlation}")
             early_stop_counter +=1
         else:
             early_stop_counter = 0
