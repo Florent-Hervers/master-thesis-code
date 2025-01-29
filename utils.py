@@ -130,9 +130,19 @@ def train_DL_model(
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
-
+    print(f"Device used: {device}")
     print(f"Model architecture : \n {model}")
     print(f"Numbers of parameters: {sum(p.numel() for p in model.parameters())}")
+    print(f"Optimizer used: {optimizer}")
+    
+    train_features, train_labels = next(iter(train_dataloader))
+    print(f"Train feature batch shape: {train_features.size()}")
+    print(f"Train labels batch shape: {train_labels.size()}")
+    
+    val_features, val_labels = next(iter(train_dataloader))
+    print(f"Validation feature batch shape: {val_features.size()}")
+    print(f"Validation labels batch shape: {val_labels.size()}")
+
     model.to(device)
 
     max_correlation = 0
@@ -318,6 +328,8 @@ def get_clean_config(run_cfg: dict):
     wandb_cfg = {}
 
     # Remove useless data and process the data from some keys that has interesting info for the logging
+    wandb_cfg["batch_size"] = dict_cfg["template"]["config"]["batch_size"]
+    
     dict_cfg["data"]["train_dataset"].pop("skip_check")
     dict_cfg["data"]["train_dataset"]["dataset"] = dict_cfg["data"]["train_dataset"].pop("_target_").split(".")[-1]
     wandb_cfg["train_dataset"] = dict_cfg["data"]["train_dataset"]

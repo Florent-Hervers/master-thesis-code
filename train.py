@@ -19,8 +19,7 @@ if __name__ == "__main__":
             config_name="default",
             overrides=[f"template={args.template}", f"data={args.data}"]
         )
-    print(get_clean_config(run_cfg))
-    exit(0)
+
     if run_cfg.template.train_function.log_wandb:
         wandb.init(
             name = args.wandb_run_name,
