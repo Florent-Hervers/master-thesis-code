@@ -1,30 +1,30 @@
 import os
-from omegaconf import OmegaConf
-from hydra import initialize, compose
-
-from argparse import ArgumentParser
 import yaml
 import wandb
+
+from argparse import ArgumentParser
+from omegaconf import OmegaConf
+from hydra import initialize, compose
 from functools import partial
 from utils import train_from_config, list_of_strings, get_clean_config
 from omegaconf import DictConfig
 
-def update_config_and_train(phenotype: str, run_cfg: DictConfig, wandb_cfg: dict):
+def update_config_and_train(phenotype: str, run_cfg: DictConfig):
     """Wrapper launching the wandb run and that update the config file with the parameters chosen by the sweep agent.
 
     Args:
         phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
-        run_cfg (DictConfig): hydra config file fetch using the compose API.
-        wandb_cfg (dict): dictionary given to wandb as config.
+        run_cfg (DictConfig): hydra config file fetched using the compose API.
     """
-    wandb.init(
-        config = wandb_cfg,
+    run = wandb.init(
         tags = ["tuning"]
     )
 
     # Update values in config based on what's chosen by the agent
     for k in OmegaConf.to_container(run_cfg.template.config, resolve=True).keys():
         run_cfg.template.config[k] = wandb.config[k]
+
+    run.config.update(get_clean_config(run_cfg))
 
     train_from_config(phenotype, run_cfg)
 
@@ -58,6 +58,4 @@ if __name__ == "__main__":
                 overrides=[f"template={args.template}", f"data={args.data}"]
             )
         
-        wandb_cfg = get_clean_config(run_cfg)
-        
-        wandb.agent(sweep_id, function=partial(update_config_and_train, phenotype, run_cfg, wandb_cfg))
+        wandb.agent(sweep_id, function=partial(update_config_and_train, phenotype, run_cfg))
