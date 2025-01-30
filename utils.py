@@ -366,3 +366,50 @@ def get_clean_config(run_cfg: dict):
         wandb_cfg[k] = v
     
     return wandb_cfg
+
+def results_1_dimentions(array1:      list,
+                         array2:      list, 
+                         x_values:    list,
+                         suptitle:    str,
+                         title1:      str,
+                         title2:      str,
+                         x_label:     str,
+                         y1_label:    str,
+                         y2_label:    str,
+                         vertical:    bool = False):
+    """Display the evolution of two given metrics given a parameter.
+
+    Args:
+        array1 (list): first letric data array
+        array2 (list): second metric data array
+        x_values(list): parameter values used
+        suptitle (str): title of the whole plot
+        title1 (str): title for the first graph
+        title2 (str): title for the second graph
+        x_label (str): label for the x-axis
+        y1_label (str): label for the y-axis of the first graph
+        y2_label (str): label for the y-axis of the second graph 
+    """
+    
+    subtitle_font =  {"size": 14}
+    title_font = {"weight": "bold" ,"size": 18}
+    
+    if not vertical:
+        fig,(ax1, ax2) = plt.subplots(1,2, figsize=(17 , 6.5))
+    else:
+        fig,(ax1, ax2) = plt.subplots(2,1, figsize=(17 , 10))
+
+    fig.suptitle(suptitle, font=title_font)
+    sns.scatterplot(x=x_values, y=array1, ax=ax1)
+    plt.yticks(rotation=0)
+    ax1.set_title(title1, font=subtitle_font)
+    ax1.set_xlabel(x_label)
+    ax1.set_ylabel(y1_label)
+    ax1.tick_params(rotation=0)
+
+    sns.scatterplot(x=x_values, y=array2, ax=ax2)
+    ax2.set_title(title2, font=subtitle_font)
+    ax2.set_xlabel(x_label)
+    ax2.set_ylabel(y2_label)
+    ax2.tick_params(rotation=0)
+    plt.show()
