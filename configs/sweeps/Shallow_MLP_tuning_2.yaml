@@ -1,0 +1,18 @@
+name: "Second Shallow_MLP ?? full hyperparameter tuning"
+method: random
+metric: 
+  goal: maximize
+  name: "correlation ??.max"
+parameters:
+  learning_rate: 
+      values: [1.00e-02, 5.0e-03, 1.00e-03, 5.00e-04]
+  hidden_size: 
+      values: [512, 1024, 2048, 4096, 8192, 12288, 16384]
+  dropout: 
+      values: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+  batch_size: 
+      values: [128, 256, 512, 1024]
+# +/- 3 times the higher range of parameters
+run_cap: 25
+
+
