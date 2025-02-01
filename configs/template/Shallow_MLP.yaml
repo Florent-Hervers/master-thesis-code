@@ -25,4 +25,5 @@ train_function:
   train_dataloader: ??
   validation_dataloader: ??
   phenotype: ??
+  display_evolution_threshold: 0.8
     

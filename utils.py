@@ -16,6 +16,7 @@ from functools import partial
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 import functools
+import PIL
 from hydra.utils import call, instantiate
 
 
@@ -91,6 +92,7 @@ def train_DL_model(
         validation_std: float = 1,
         early_stop_threshold: float = 0,
         early_stop_n_epoch: int = 10,
+        display_evolution_threshold: float = 2.0, 
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
 
@@ -112,6 +114,7 @@ def train_DL_model(
             This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 1.
             early_stop_threshold (float, optional): percentage of the maximum correlation below the early stop counter stop incrementing. This value should stay between 0 and 1 included. Defaults to 0.
             early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
+            display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
     """
     if early_stop_threshold > 1 and early_stop_threshold < 0:
         raise Exception("Early stop threshold should be between 0 and 1")
@@ -147,6 +150,10 @@ def train_DL_model(
 
     max_correlation = 0
     early_stop_counter = 0
+
+    # Initially set to 2 (an unobtainable correlation) to detect easily the first iteration
+    previous_correlation = 2
+    previous_predictions = []
 
     # Define the keys for the dictonary used by wandb to avoid mispelling mistakes
     correlation_key = f"correlation {f'{phenotype}' if phenotype is not None else ''}"
@@ -219,38 +226,54 @@ def train_DL_model(
             if scheduler is not None:
                 scheduler.step()
             
-            
-        with warnings.catch_warnings(record=True) as w:
-            correlation = pearsonr(predicted, target).statistic
-            if len(w) > 0:
-                print(f"Stop execution as model converged to outputing always the same value ({predicted[0]})")
-                for warning in w:
-                    print(warning)
-                if log_wandb:
-                    wandb.finish(1)
+            with warnings.catch_warnings(record=True) as w:
+                correlation = pearsonr(predicted, target).statistic
+                if len(w) > 0:
+                    print(f"Stop execution as model converged to outputing always the same value ({predicted[0]})")
+                    for warning in w:
+                        print(warning)
+                    if log_wandb:
+                        wandb.finish(1)
+                    
+                    return
                 
-                return
+            if log_wandb:
+                wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})
             
-        if log_wandb:
-            wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})
-        
-        print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
-            f"{f' Correlation: {correlation}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
-        
-        if correlation > max_correlation:
-            max_correlation = correlation
-        
-        # Take the absolute value such that small oscillation arround zero doesn't reset the counter
-        if abs(correlation) < early_stop_threshold * max_correlation:
-            if early_stop_counter == 0:
-                print(f"Start early stop counter, current threshold is {early_stop_threshold * max_correlation}")
-            early_stop_counter +=1
-        else:
-            early_stop_counter = 0
-        
-        if early_stop_counter >= early_stop_n_epoch:
-            print(f"Early stop condition met. Best correlation observed: {max_correlation}")
-            break
+            print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
+                f"{f' Correlation: {correlation}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
+            
+            if correlation > max_correlation:
+                max_correlation = correlation
+
+            if log_wandb:
+
+                if previous_correlation - correlation > display_evolution_threshold * max_correlation and \
+                        previous_correlation <= 1 and previous_correlation >= -1:
+                    wandb.log({"visualization": wandb.Image(compare_correlation(
+                            previous_predictions,
+                            predicted,
+                            target,
+                            epoch
+                        ))})
+                    
+                previous_correlation = correlation
+                previous_predictions = predicted
+
+
+            # ---------------------------------- Early stop management --------------------------------------------
+            
+            # Take the absolute value such that small oscillation arround zero doesn't reset the counter
+            if abs(correlation) < early_stop_threshold * max_correlation:
+                if early_stop_counter == 0:
+                    print(f"Start early stop counter, current threshold is {early_stop_threshold * max_correlation}")
+                early_stop_counter +=1
+            else:
+                early_stop_counter = 0
+            
+            if early_stop_counter >= early_stop_n_epoch:
+                print(f"Early stop condition met. Best correlation observed: {max_correlation}")
+                break
 
 def print_elapsed_time(start_time: float):
     """Returns elapsed time following the format d h m s
@@ -413,3 +436,49 @@ def results_1_dimentions(array1:      list,
     ax2.set_ylabel(y2_label)
     ax2.tick_params(rotation=0)
     plt.show()
+
+def compare_correlation( prediction_before:     list,
+                         prediction_after:      list, 
+                         target:                list,
+                         epoch:                 int):
+    """Display the comparaison of two sucessive output of the model.
+
+    Args:
+        prediction_before (list): first output of the model.
+        prediction_after (list): output of the next epoch of the model.
+        target (list): True values of the validation set.
+        epoch (int): Epoch of the prediction_after.
+    """
+    
+    subtitle_font =  {"size": 14}
+    title_font = {"weight": "bold" ,"size": 18}
+    
+    fig,(ax1, ax2) = plt.subplots(1,2, figsize=(17 , 6.5))
+
+    fig.suptitle(f"Evolution of the predicted values (on the validation set) between epoch {epoch -1} and {epoch}", font=title_font)
+    sns.scatterplot(x=target, y=prediction_before, ax=ax1)
+    plt.yticks(rotation=0)
+    ax1.plot(np.unique(target), 
+         np.poly1d(np.polyfit(target, prediction_before, 1))
+         (np.unique(target)), color='red')
+    ax1.set_title(f"Epoch {epoch - 1}. Correlation: {pearsonr(target, prediction_before).statistic:.5f}", font=subtitle_font)
+    ax1.set_xlabel("Target")
+    ax1.set_ylabel("Predictions")
+    ax1.tick_params(rotation=0)
+
+    sns.scatterplot(x=target, y=prediction_after, ax=ax2)
+    ax2.plot(np.unique(target), 
+         np.poly1d(np.polyfit(target, prediction_after, 1))
+         (np.unique(target)), color='red')
+    ax2.set_title(f"Epoch {epoch}. Correlation: {pearsonr(target, prediction_after).statistic:.5f}", font=subtitle_font)
+    ax2.set_xlabel("Target")
+    ax2.set_ylabel("Predictions")
+    ax2.tick_params(rotation=0)
+    
+    # Draw the figure as it's not display
+    fig.canvas.draw()
+
+    # Convert the image into an np array for the display via wandb
+    data = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+    data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+    return data

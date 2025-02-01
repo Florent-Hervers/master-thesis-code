@@ -15,7 +15,7 @@ train_function:
   early_stop_threshold: 0
   early_stop_n_epoch: ${template.train_function.n_epoch}
   n_epoch: 5
-  log_wandb: False
+  log_wandb: True
   optimizer:
     _target_: utils.get_partial_optimizer
     optimizer_name: "Adam"
@@ -25,4 +25,5 @@ train_function:
   train_dataloader: ??
   validation_dataloader: ??
   phenotype: ??
+  display_evolution_threshold: -1
     

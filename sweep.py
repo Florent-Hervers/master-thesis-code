@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
-    with open(os.path.join("configs/sweeps",args.sweep_config + ".yaml"), "r") as f:
+    with open(os.path.join("Configs/sweeps",args.sweep_config + ".yaml"), "r") as f:
         sweep_cfg = yaml.safe_load(f)
     
     for i,phenotype in enumerate(args.phenotypes):
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         sweep_cfg["metric"]["name"] = " ".join([w.replace(str_to_replace, phenotype) for w in sweep_cfg["metric"]["name"].split()])
         
         sweep_id = wandb.sweep(sweep=sweep_cfg, project="TFE")
-        with initialize(version_base=None, config_path="configs"):
+        with initialize(version_base=None, config_path="Configs"):
             run_cfg = compose(
                 config_name="default",
                 overrides=[f"template={args.template}", f"data={args.data}"]

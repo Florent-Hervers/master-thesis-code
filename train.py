@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    with initialize(version_base=None, config_path="configs"):
+    with initialize(version_base=None, config_path="Configs"):
         run_cfg = compose(
             config_name="default",
             overrides=[f"template={args.template}", f"data={args.data}"]
