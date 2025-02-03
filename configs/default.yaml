@@ -1,4 +1,5 @@
 defaults:
-  - template: ???
+  - model_config: ???
   - data: SNP_markers
+  - train_function_config: ??
   - optional sweep: ??

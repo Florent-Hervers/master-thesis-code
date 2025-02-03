@@ -168,6 +168,13 @@ def train_DL_model(
         wandb.define_metric(validation_loss_key, step_metric=epoch_key, summary='none')
         wandb.define_metric(epoch_key, hidden=True, summary='none')
 
+        wandb.config["early_stop_threshold"] = early_stop_threshold
+        wandb.config["early_stop_n_epoch"] = early_stop_n_epoch
+        wandb.config["display_evolution_threshold"] = display_evolution_threshold
+        wandb.config["n_epoch"] = n_epoch
+        wandb.config["optimizer"] = type(optimizer)
+        wandb.config["criterion"] = type(criterion)
+        
     for epoch in range(n_epoch):
         train_loss = []
         model.train()
@@ -320,12 +327,13 @@ def train_from_config(phenotype: str, run_cfg: DictConfig):
         OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
         OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
 
-        call(run_cfg.template.train_function,
+        call(run_cfg.train_function_config,
             phenotype = phenotype, 
-            train_dataloader = instantiate(run_cfg.data.train_dataloader, dataset=train_dataset),
-            validation_dataloader = instantiate(run_cfg.data.validation_dataloader, dataset=validation_dataset))
+            model= instantiate(run_cfg.model_config.model),
+            train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
+            validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset))
     else:
-        raise Exception(f"Dataset template {run_cfg.data.train_dataset._target_} not supported yet")
+        raise Exception(f"Dataset template {run_cfg.train_dataset._target_} not supported yet")
 
 def list_of_strings(arg):
     """Function defining a custom class for argument parsing."""
@@ -345,49 +353,10 @@ def get_clean_config(run_cfg: dict):
     OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
     OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
 
-    dict_cfg = OmegaConf.to_container(run_cfg, resolve=True)
-    # Contain a clean version of the config that only keep relevant info
-    wandb_cfg = {}
-
-    # Remove useless data and process the data from some keys that has interesting info for the logging
-    wandb_cfg["batch_size"] = dict_cfg["template"]["config"]["batch_size"]
-    
-    dict_cfg["data"]["train_dataset"].pop("skip_check")
-    dict_cfg["data"]["train_dataset"]["dataset"] = dict_cfg["data"]["train_dataset"].pop("_target_").split(".")[-1]
-    wandb_cfg["train_dataset"] = dict_cfg["data"]["train_dataset"]
-    
-    dict_cfg["data"]["validation_dataset"].pop("skip_check")
-    dict_cfg["data"]["validation_dataset"]["dataset"] = dict_cfg["data"]["validation_dataset"].pop("_target_").split(".")[-1]
-    wandb_cfg["validation_dataset"] = dict_cfg["data"]["validation_dataset"]
-    
-    dict_cfg["template"]["train_function"]["model"]["architecture"] = dict_cfg["template"]["train_function"]["model"].pop("_target_").split(".")[-1]
-
-    for k,v in dict_cfg["template"]["train_function"]["model"].items():
-        wandb_cfg[k] = v
-
-    dict_cfg["template"]["train_function"]["optimizer"].pop("_target_")
-    dict_cfg["template"]["train_function"]["optimizer"]["optimizer"] = dict_cfg["template"]["train_function"]["optimizer"].pop("optimizer_name")
-    for k,v in dict_cfg["template"]["train_function"]["optimizer"].items():
-        wandb_cfg[k] = v
-    
-    wandb_cfg["criterion"] = dict_cfg["template"]["train_function"]["criterion"].pop("_target_").split()[-1]
-
-    # Remove the previously preprocessed keys
-    dict_cfg["template"]["train_function"].pop("model")
-    dict_cfg["template"]["train_function"].pop("optimizer")
-    dict_cfg["template"]["train_function"].pop("criterion")
-
-    # Remove useless keys before the merging
-    dict_cfg["template"]["train_function"].pop("log_wandb")
-    dict_cfg["template"]["train_function"].pop("train_dataloader")
-    dict_cfg["template"]["train_function"].pop("validation_dataloader")
-    dict_cfg["template"]["train_function"].pop("phenotype")
-    dict_cfg["template"]["train_function"].pop("_target_")
-
-    for k,v in dict_cfg["template"]["train_function"].items():
-        wandb_cfg[k] = v
-    
+    wandb_cfg = OmegaConf.to_container(run_cfg, resolve=True)
+    wandb_cfg.pop("train_function_config")
     return wandb_cfg
+
 
 def results_1_dimentions(array1:      list,
                          array2:      list, 

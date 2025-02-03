@@ -20,11 +20,14 @@ def update_config_and_train(phenotype: str, run_cfg: DictConfig):
         tags = ["tuning"]
     )
 
-    # Update values in config based on what's chosen by the agent
-    for k in OmegaConf.to_container(run_cfg.template.config, resolve=True).keys():
-        run_cfg.template.config[k] = wandb.config[k]
+    wandb_config = get_clean_config(run_cfg)
 
-    run.config.update(get_clean_config(run_cfg))
+    # Update values in config based on what's chosen by the agent
+    for k in wandb_config["model_config"].keys():
+        if k != "model":
+            wandb_config["model_config"][k] = wandb.config[k]
+
+    run.config.update(wandb_config)
 
     train_from_config(phenotype, run_cfg)
 
@@ -32,10 +35,10 @@ if __name__ == "__main__":
     parser = ArgumentParser()
 
     parser.add_argument("--sweep_config", "-s", required=True, type=str, help="Name of the file (without file extention) to use for the sweep configuration (should be found in configs/sweeps)")
-    parser.add_argument("--template", "-t", required=True, type=str, help="Name of the file (without file extention) to use for the training (should be found in configs/template)")
+    parser.add_argument("--model", "-m", required=True, type=str, help="Name of the file (without file extention) to create the model to train (should be found in configs/model_config)")
     parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
     parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
-    
+    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
 
     args = parser.parse_args()
     
@@ -43,7 +46,7 @@ if __name__ == "__main__":
         sweep_cfg = yaml.safe_load(f)
     
     for i,phenotype in enumerate(args.phenotypes):
-        
+
         # As the config isn't reset, we have to keep track of the previous phenotype for an appropriate update
         str_to_replace = "??"
         if i > 0:
@@ -55,7 +58,7 @@ if __name__ == "__main__":
         with initialize(version_base=None, config_path="Configs"):
             run_cfg = compose(
                 config_name="default",
-                overrides=[f"template={args.template}", f"data={args.data}"]
+                overrides=[f"model_config={args.model}", f"data={args.data}", f"train_function_config={args.train_function}"]
             )
         
         wandb.agent(sweep_id, function=partial(update_config_and_train, phenotype, run_cfg))

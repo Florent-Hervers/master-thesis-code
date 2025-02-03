@@ -1,0 +1,26 @@
+_target_: utils.train_DL_model
+model: ??
+early_stop_threshold: 0
+early_stop_n_epoch: ${train_function_config.n_epoch}
+n_epoch: 5
+log_wandb: False
+optimizer:
+  _target_: utils.get_partial_optimizer
+  optimizer_name: "Adam"
+  lr: ${model_config.learning_rate}
+criterion:
+  _target_: torch.nn.L1Loss
+train_dataloader:
+  _target_: torch.utils.data.DataLoader
+  dataset: ??
+  batch_size: ${model_config.batch_size}
+  shuffle: True
+  num_workers: 4
+validation_dataloader:
+  _target_: torch.utils.data.DataLoader
+  dataset: ??
+  batch_size: ${model_config.batch_size}
+  shuffle: False
+  num_workers: 4
+phenotype: ??
+display_evolution_threshold: -1

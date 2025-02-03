@@ -19,5 +19,5 @@ cd ~/TFE/Code/
 
 for i in $(seq 2 5)
     do  
-    python -u train.py -t Shallow_MLP_promising -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test promising hyperparameters $i"
+    python -u train.py -m Shallow_MLP_promising -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test promising hyperparameters $i" -f basic_train_function
     done

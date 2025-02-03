@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -t test -d SNP_markers -p ep_res
+python -u train.py -t test -d SNP_markers -p ep_res -m Deep_MLP -f basic_train_function
