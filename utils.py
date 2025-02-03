@@ -4,19 +4,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 import time
+import random
 import numpy as np
-from scipy.stats import pearsonr, ConstantInputWarning
+from scipy.stats import pearsonr
 from torch.nn import Module, L1Loss
 from torch.utils.data import DataLoader
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
 import wandb
-from typing import Union, List
+from typing import Union
 from functools import partial
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 import functools
-import PIL
 from hydra.utils import call, instantiate
 
 
@@ -116,6 +116,11 @@ def train_DL_model(
             early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
             display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
     """
+
+    torch.manual_seed(2307)
+    np.random.seed(7032)
+    random.seed(3072)
+
     if early_stop_threshold > 1 and early_stop_threshold < 0:
         raise Exception("Early stop threshold should be between 0 and 1")
     
@@ -307,33 +312,43 @@ def get_partial_optimizer(optimizer_name: str, **kwargs):
     """
     return functools.partial(getattr(torch.optim, optimizer_name), **kwargs)
 
-def train_from_config(phenotype: str, run_cfg: DictConfig):
-    """Launch the training based on the parameters from the hydra config files.
+def train_from_config(
+        phenotype: str,
+        run_cfg: DictConfig,
+        train_dataset = None,
+        validation_dataset = None,
+        model = None):
+    """Launch the training based on the parameters from the hydra config files. 
+    Custom datasets and model can be provided with the optionals arguments (In the case they depend they have an argument that depend on the data for example).
 
     Args:
         phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
         run_cfg (DictConfig): hydra config file fetch using the compose API.
+        train_dataset (optional): the ready to use train dataset object to use. If None, a default one will be created from the config. Defaults to None.
+        validation_dataset (optional): the ready to use validation dataset object to use. If None, a default one will be created from the config. Defaults to None.
+        model (optional): the model object to train. If None, a default one will be created from the config. Defaults to None.
 
     Raises:
         Exception: in case of unknown dataset class
     """
-    if run_cfg.data.train_dataset._target_ == "dataset.SNPmarkersDataset":
+    if model == None:
+        model = instantiate(run_cfg.model_config.model)
+    if train_dataset == None:
         train_dataset= instantiate(run_cfg.data.train_dataset)
         train_dataset.set_phenotypes = phenotype
+    if validation_dataset == None:
         validation_dataset = instantiate(run_cfg.data.validation_dataset)
         validation_dataset.set_phenotypes = phenotype
 
-        # Define custom resolver for the computation of the hidden_nodes for Deep_MLP (See https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html)
-        OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
-        OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
+    # Define custom resolver for the computation of the hidden_nodes for Deep_MLP (See https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html)
+    OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
+    OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
 
-        call(run_cfg.train_function_config,
-            phenotype = phenotype, 
-            model= instantiate(run_cfg.model_config.model),
-            train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
-            validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset))
-    else:
-        raise Exception(f"Dataset template {run_cfg.train_dataset._target_} not supported yet")
+    call(run_cfg.train_function_config,
+        phenotype = phenotype, 
+        model= model,
+        train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
+        validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset))
 
 def list_of_strings(arg):
     """Function defining a custom class for argument parsing."""
