@@ -1,0 +1,11 @@
+batch_size : 32
+learning_rate : 5e-4
+n_embedding : 8
+n_heads : 2
+n_layers : 2
+hidden_nodes : 256
+n_epochs : 200
+mutual_info_threshold : 0.02
+model_name : "GPTransformer"
+early_stop_threshold: 0.95
+early_stop_n_epoch: 15

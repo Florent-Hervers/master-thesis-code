@@ -234,8 +234,7 @@ def train_DL_model(
                         print(warning)
                     if log_wandb:
                         wandb.finish(1)
-                    
-                    return
+                    exit(1)
                 
             if log_wandb:
                 wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})

@@ -1,53 +1,19 @@
 import torch
-from torch import nn
 import torch.utils.data as data
 from dataset import SNPmarkersDataset
 import wandb
-from utils import train_DL_model
+from utils import train_DL_model, list_of_strings
 import numpy as np
 import random
 from torch.utils.data import Dataset
 from sklearn.feature_selection import mutual_info_regression
-
-
-class TransformerBlock(nn.Module):
-    def __init__(self, embedding_size, n_hidden, n_heads):
-        super(TransformerBlock, self).__init__()
-
-        self.multihead = nn.MultiheadAttention(embedding_size, n_heads, batch_first=True)
-        self.norm1 = nn.LayerNorm(embedding_size)
-        self.fc1 = nn.Linear(embedding_size, n_hidden)
-        self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(n_hidden, embedding_size)
-        self.norm2 = nn.LayerNorm(embedding_size)
-    
-    def forward(self, x):
-        y, _ = self.multihead(x,x,x)
-        y = self.norm1(x + y)
-        z = self.fc1(y)
-        z = self.fc2(self.relu(z))
-        return self.norm2(y + z)
-    
-class GPTransformer(nn.Module):
-    def __init__(self,  n_features, embedding_size, n_hidden, n_heads, n_blocks):
-        super(GPTransformer, self).__init__()
-        self.n_features = n_features
-        self.embedding_size = embedding_size
-        self.embedding = nn.Linear(n_features, n_features * embedding_size) #nn.Embedding(3, embedding_size)
-        self.transformer = nn.Sequential(
-            *[TransformerBlock(embedding_size, n_hidden, n_heads) for _ in range(n_blocks)]
-        )
-        self.output = nn.Linear(embedding_size * n_features, 1)
-    
-    def forward(self, x):
-        x = self.embedding(x) #(x.int())
-        x = x.view((x.shape[0], self.n_features, self.embedding_size))
-        x = self.transformer(x)
-        return self.output(x.view(x.shape[0], -1))
-
+from argparse import ArgumentParser
+import json
+from hydra import compose,initialize
+from omegaconf import OmegaConf
+from Models.GPTransformer import GPTransformer
 
 class SNPResidualDataset(Dataset):
-
     def __init__(self, X, y):
         self.X = X
         self.y = y
@@ -57,7 +23,17 @@ class SNPResidualDataset(Dataset):
     
     def __getitem__(self, index):
         return self.X[index], self.y[index]
+
+
+def convert_categorical_to_frequency(data, path = "gptranformer_embedding_data.json"):
+    with open(path,"r") as f:
+        freq_data = json.load(f)
     
+    results = []
+    for sample in data:
+        func = lambda t: [freq_data[str(t[0])]["p"]**2, 2*freq_data[str(t[0])]["p"]*freq_data[str(t[0])]["q"],freq_data[str(t[0])]["q"]**2].__getitem__(t[1])
+        results.append(list(map(func, enumerate(sample))))
+    return np.array(results, dtype=np.float32)
 
 def main():
     torch.manual_seed(2307)
@@ -66,39 +42,51 @@ def main():
     g = torch.Generator()
     g.manual_seed(7230)
 
-    BATCH_SIZE = 32
-    LEARNING_RATE = 5e-4
-    DROPOUT = 0
-    N_EMBEDDING = 8
-    N_HEADS = 2
-    N_LAYERS = 2
-    HIDDEN_NODES = 256
-    N_EPOCHS = 200
-    MUTUAL_INFO_THRESHOLD = 0.02
-    MODEL_NAME = "GPTransformer"
-    RUN_NAME = "First run GPTransformer"
+
+    parser = ArgumentParser()
+    parser.add_argument(
+        "-e",
+        "--encoding",
+        choices=["categorial", "frequency"],
+        required=True,
+        help="Encoding of the input of the model to use (see paper for more detail)"
+    )
+    parser.add_argument(
+        "--template",
+        "-t",
+        required=True,
+        type=str, 
+        help="Name of the file (without file extention) to use for the training (should be found in configs/template)"
+    )
+    parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
+    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
+    
+    args = parser.parse_args()
+
+    with initialize(version_base=None, config_path="Configs/template"):
+        cfg = compose(
+            config_name= args.template,
+        )
+
+    BATCH_SIZE = int(cfg.batch_size)
+    LEARNING_RATE = cfg.learning_rate
+    N_EMBEDDING = int(cfg.n_embedding)
+    N_HEADS = int(cfg.n_heads)
+    N_LAYERS = int(cfg.n_layers)
+    HIDDEN_NODES = int(cfg.hidden_nodes)
+    N_EPOCHS = int(cfg.n_epochs)
+    MUTUAL_INFO_THRESHOLD = cfg.mutual_info_threshold
 
     wandb.init(
         project = "TFE",
-        config = {
-            "model_name": MODEL_NAME,
-            "batch size": BATCH_SIZE,
-            "learning_rate": LEARNING_RATE,
-            "dropout": DROPOUT,
-            "nb layers": N_LAYERS,
-            "hidden layers size": HIDDEN_NODES,
-            "nb epochs": N_EPOCHS,
-            "nb attention heads": N_HEADS,
-            "embedding size": N_EMBEDDING
-
-        },
-        name = RUN_NAME,
+        config = OmegaConf.to_object(cfg),
+        name = args.wandb_run_name,
         tags = ["debug"],
     )
 
-    train_dataset = SNPmarkersDataset(mode = "train", normalize=True)
-    validation_dataset = SNPmarkersDataset(mode = "validation", normalize=True)
-    selected_phenotypes = list(train_dataset.phenotypes.keys())
+    train_dataset = SNPmarkersDataset(mode = "train")
+    validation_dataset = SNPmarkersDataset(mode = "validation")
+    selected_phenotypes = args.phenotypes
 
     for phenotype in selected_phenotypes:
         mi = np.zeros(36304)
@@ -107,7 +95,6 @@ def main():
         y_train = []
         X_val = []
         y_val = []
-        validation_std = 0
         for mode in modes:
             dataset = SNPmarkersDataset(mode = mode, skip_check=True)
             dataset.set_phenotypes = phenotype
@@ -118,22 +105,24 @@ def main():
             # Save the results to avoid fetching two times the sames values later on
             if mode == "train":
                 X_train = X
-                y_train = y / dataset.pheno_std[phenotype]
+                y_train = y 
             if mode == "validation":
                 X_val = X
-                y_val = y / dataset.pheno_std[phenotype]
-                validation_std = dataset.pheno_std[phenotype]
-
+                y_val = y 
             mi += mutual_info_regression(X,y, n_jobs=-1, discrete_features=True, random_state=2307)
 
         # Divide the number of modes to obtain the average mutual information
         mi /= len(modes)
-        indexes = indexes = np.where(mi > MUTUAL_INFO_THRESHOLD)[0]
+        indexes = np.where(mi > MUTUAL_INFO_THRESHOLD)[0]
         print(f"Nb of selected features: {len(indexes)}")
 
-        # - 1 is used to shoft the [0,1,2] range to the [-1,0,1] used in the paper  
-        train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.float32) - 1, y_train.to_numpy(dtype=np.float32))
-        validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.float32) - 1, y_val.to_numpy(dtype=np.float32))
+        if args.encoding == "categorical":
+            # - 1 is used to shoft the [0,1,2] range to the [-1,0,1] used in the paper  
+            train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.float32) - 1, y_train.to_numpy(dtype=np.float32))
+            validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.float32) - 1, y_val.to_numpy(dtype=np.float32))
+        elif args.encoding == "frequency":
+            train_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_train[indexes].to_numpy()), y_train.to_numpy(dtype=np.float32))
+            validation_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_val[indexes].to_numpy()), y_val.to_numpy(dtype=np.float32))
         
         # Define function and seed to fix the loading via the dataloader (from https://pytorch.org/docs/stable/notes/randomness.html#pytorch)
         def seed_worker(worker_id):
@@ -162,7 +151,8 @@ def main():
             N_EPOCHS,
             criterion,
             phenotype=phenotype,
-            validation_std= validation_std
+            early_stop_n_epoch=cfg.early_stop_n_epoch,
+            early_stop_threshold=cfg.early_stop_threshold,
         )
     
 if __name__ == "__main__":
