@@ -17,3 +17,4 @@ Regression/LassoNet/*.*
 *.zip
 .VSCodeCounter/
 outputs/
+__pycache__/
