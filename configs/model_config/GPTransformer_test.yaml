@@ -4,7 +4,7 @@ n_embedding : 8
 n_heads : 2
 n_blocks : 2
 n_hidden : 256
-mutual_info_threshold : 0.03
+mutual_info_threshold : 0.015
 model:
   _target_: Models.GPTransformer.GPTransformer
   n_features: ??
