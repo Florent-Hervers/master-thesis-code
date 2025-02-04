@@ -1,0 +1,246 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 1.0
+Elapsed time from start: 0d 1h 4m 29s
+Results:
+    - MAE : 1.2278403609236732
+    - Correlation : 0.47333308765711346
+////////////////////////////////////////////
+Iteration 2/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 3.25
+Elapsed time from start: 0d 3h 33m 52s
+Results:
+    - MAE : 1.2355048150277577
+    - Correlation : 0.47835777975964383
+////////////////////////////////////////////
+Iteration 3/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 5.5
+Elapsed time from start: 0d 6h 20m 41s
+Results:
+    - MAE : 1.2451698312465602
+    - Correlation : 0.47383169582065804
+////////////////////////////////////////////
+Iteration 4/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 7.75
+Elapsed time from start: 0d 9h 10m 21s
+Results:
+    - MAE : 1.2486062455013525
+    - Correlation : 0.47079348615321664
+////////////////////////////////////////////
+Iteration 5/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 10.0
+Elapsed time from start: 0d 12h 1m 8s
+Results:
+    - MAE : 1.2494749364940967
+    - Correlation : 0.46979241460978316
+////////////////////////////////////////////
+Iteration 6/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 1.0
+Elapsed time from start: 0d 12h 55m 2s
+Results:
+    - MAE : 1.2275226530054586
+    - Correlation : 0.4746487573860999
+////////////////////////////////////////////
+Iteration 7/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 3.25
+Elapsed time from start: 0d 15h 25m 36s
+Results:
+    - MAE : 1.241429492865463
+    - Correlation : 0.4741374953321158
+////////////////////////////////////////////
+Iteration 8/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 5.5
+Elapsed time from start: 0d 18h 23m 21s
+Results:
+    - MAE : 1.2568163487955566
+    - Correlation : 0.4662505065104595
+////////////////////////////////////////////
+Iteration 9/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 7.75
+Elapsed time from start: 0d 21h 28m 4s
+Results:
+    - MAE : 1.262636678579223
+    - Correlation : 0.462571096618467
+////////////////////////////////////////////
+Iteration 10/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 10.0
+Elapsed time from start: 1d 0h 33m 25s
+Results:
+    - MAE : 1.2650482422193254
+    - Correlation : 0.46044489491294555
+////////////////////////////////////////////
+Iteration 11/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 5.5e-05
+    - c: 1.0
+Elapsed time from start: 1d 1h 13m 7s
+Results:
+    - MAE : 1.2306482282641833
+    - Correlation : 0.473152627228203
+////////////////////////////////////////////
+Iteration 12/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 5.5e-05
+    - c: 3.25
+Elapsed time from start: 1d 3h 35m 50s
+Results:
+    - MAE : 1.2559006722424941
+    - Correlation : 0.46659205021147154
+////////////////////////////////////////////
+Iteration 13/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 5.5e-05
+    - c: 5.5
+Elapsed time from start: 1d 6h 50m 47s
+Results:
+    - MAE : 1.2757374109539488
+    - Correlation : 0.4581170282221807
+////////////////////////////////////////////
+Iteration 14/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 5.5e-05
+    - c: 7.75
+Elapsed time from start: 1d 10h 25m 38s
+Results:
+    - MAE : 1.2878566508646434
+    - Correlation : 0.4512580336919736
+////////////////////////////////////////////
+Iteration 15/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 5.5e-05
+    - c: 10.0
+Elapsed time from start: 1d 14h 7m 20s
+Results:
+    - MAE : 1.2933132412660386
+    - Correlation : 0.44836702463170025
+////////////////////////////////////////////
+Iteration 16/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 3.2500000000000004e-05
+    - c: 1.0
+Elapsed time from start: 1d 14h 45m 56s
+Results:
+    - MAE : 1.232050219698148
+    - Correlation : 0.47196368500245783
+////////////////////////////////////////////
+Iteration 17/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 3.2500000000000004e-05
+    - c: 3.25
+Elapsed time from start: 1d 16h 24m 13s
+Results:
+    - MAE : 1.2663746118286234
+    - Correlation : 0.45883436118775617
+////////////////////////////////////////////
+Iteration 18/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 3.2500000000000004e-05
+    - c: 5.5
+Elapsed time from start: 1d 19h 17m 52s
+Results:
+    - MAE : 1.2934781315629498
+    - Correlation : 0.4495248992968648
+////////////////////////////////////////////
+Iteration 19/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 3.2500000000000004e-05
+    - c: 7.75
+Elapsed time from start: 1d 23h 6m 35s
+Results:
+    - MAE : 1.3115298593437787
+    - Correlation : 0.4428600014840931
+////////////////////////////////////////////
+Iteration 20/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 3.2500000000000004e-05
+    - c: 10.0
+Elapsed time from start: 2d 3h 28m 12s
+Results:
+    - MAE : 1.326479168494916
+    - Correlation : 0.43661605143112403
+////////////////////////////////////////////
+Iteration 21/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 1e-05
+    - c: 1.0
+Elapsed time from start: 2d 4h 8m 58s
+Results:
+    - MAE : 1.234837169121864
+    - Correlation : 0.4630383242861505
+////////////////////////////////////////////
+Iteration 22/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 1e-05
+    - c: 3.25
+Elapsed time from start: 2d 4h 50m 2s
+Results:
+    - MAE : 1.2478061912943048
+    - Correlation : 0.4642740827617451
+////////////////////////////////////////////
+Iteration 23/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 1e-05
+    - c: 5.5
+Elapsed time from start: 2d 5h 32m 51s
+Results:
+    - MAE : 1.2707825789462073
+    - Correlation : 0.45142565931653256
+////////////////////////////////////////////
+Iteration 24/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 1e-05
+    - c: 7.75
+Elapsed time from start: 2d 6h 23m 20s
+Results:
+    - MAE : 1.2887851841372406
+    - Correlation : 0.4452578997040259
+////////////////////////////////////////////
+Iteration 25/25 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 1e-05
+    - c: 10.0
+Elapsed time from start: 2d 7h 40m 25s
+Results:
+    - MAE : 1.3030875884546091
+    - Correlation : 0.4410155453669852
+////////////////////////////////////////////
+Computation finished in 2d 7h 40m 25s
