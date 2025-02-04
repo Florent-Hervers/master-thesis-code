@@ -13,7 +13,7 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = list(train_dataset.phenotypes)
     
-    lambdas = np.linspace(10050, 13000, 60)
+    lambdas = np.linspace(13050, 16000, 60)
 
     MAE_results = np.zeros((len(lambdas)))
     correlation_results = np.zeros((len(lambdas)))
@@ -55,7 +55,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished for {pheno} in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/ridge_8_{pheno}.json", "w") as f:
+        with open(f"Results/ridge_9_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": lambdas.tolist(),
                 "dim_0_label": "lambda",
