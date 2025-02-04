@@ -1,0 +1,48 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/3 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 1.0
+Elapsed time from start: 0d 1h 21m 45s
+Results:
+    - MAE : 1.2340203984420244
+    - Correlation : 0.4683704308699895
+////////////////////////////////////////////
+Iteration 2/3 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 3.25
+Elapsed time from start: 0d 4h 15m 1s
+Results:
+    - MAE : 1.233312760177825
+    - Correlation : 0.47934164325606976
+////////////////////////////////////////////
+Iteration 3/3 for phenotype ep_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 5.5
+Elapsed time from start: 0d 7h 23m 50s
+Results:
+    - MAE : 1.240523077197167
+    - Correlation : 0.4770531535177616
+////////////////////////////////////////////
+Computation finished in 0d 7h 23m 50s
