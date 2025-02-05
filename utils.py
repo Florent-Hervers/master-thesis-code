@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 import time
-import random
 import numpy as np
 from scipy.stats import pearsonr
 from torch.nn import Module, L1Loss
@@ -116,11 +115,6 @@ def train_DL_model(
             early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
             display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
     """
-
-    torch.manual_seed(2307)
-    np.random.seed(7032)
-    random.seed(3072)
-
     if early_stop_threshold > 1 and early_stop_threshold < 0:
         raise Exception("Early stop threshold should be between 0 and 1")
     
@@ -323,7 +317,7 @@ def train_from_config(
 
     Args:
         phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
-        run_cfg (DictConfig): hydra config file fetch using the compose API.
+        run_cfg (DictConfig): DictConfig object build from the hydra config. This object should be the output of the `hydra.compose` function with the default config file.
         train_dataset (optional): the ready to use train dataset object to use. If None, a default one will be created from the config. Defaults to None.
         validation_dataset (optional): the ready to use validation dataset object to use. If None, a default one will be created from the config. Defaults to None.
         model (optional): the model object to train. If None, a default one will be created from the config. Defaults to None.
@@ -340,10 +334,6 @@ def train_from_config(
         validation_dataset = instantiate(run_cfg.data.validation_dataset)
         validation_dataset.set_phenotypes = phenotype
 
-    # Define custom resolver for the computation of the hidden_nodes for Deep_MLP (See https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html)
-    OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
-    OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
-
     call(run_cfg.train_function_config,
         phenotype = phenotype, 
         model= model,
@@ -354,11 +344,11 @@ def list_of_strings(arg):
     """Function defining a custom class for argument parsing."""
     return arg.split(',')
 
-def get_clean_config(run_cfg: dict):
+def get_clean_config(run_cfg: DictConfig):
     """Create a clean dictionary can only contain useful info on the current run based on the hydra config.
 
     Args:
-        run_cfg (dict): hydra config file fetch using the compose API.
+        run_cfg (DictConfig): hydra config file fetch using the compose API.
 
     Returns:
         dict: clean dictionary usable as config for the wandb run.
@@ -369,6 +359,9 @@ def get_clean_config(run_cfg: dict):
     OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
 
     wandb_cfg = OmegaConf.to_container(run_cfg, resolve=True)
+    for k,v in wandb_cfg["model_config"].items():
+        wandb_cfg[k] = v
+
     wandb_cfg.pop("train_function_config")
     return wandb_cfg
 

@@ -3,7 +3,6 @@ import yaml
 import wandb
 
 from argparse import ArgumentParser
-from omegaconf import OmegaConf
 from hydra import initialize, compose
 from functools import partial
 from utils import train_from_config, list_of_strings, get_clean_config
@@ -20,14 +19,12 @@ def update_config_and_train(phenotype: str, run_cfg: DictConfig):
         tags = ["tuning"]
     )
 
-    wandb_config = get_clean_config(run_cfg)
-
     # Update values in config based on what's chosen by the agent
-    for k in wandb_config["model_config"].keys():
-        if k != "model":
-            wandb_config["model_config"][k] = wandb.config[k]
+    for k in run_cfg["model_config"].keys():
+        if k in wandb.config.keys():
+            run_cfg["model_config"][k] = wandb.config[k]
 
-    run.config.update(wandb_config)
+    run.config.update(get_clean_config(run_cfg))
 
     train_from_config(phenotype, run_cfg)
 
