@@ -1,0 +1,2551 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/60 for phenotype ep_res finished
+Lambda tested : 13050.0
+Elapsed time from start: 0d 0h 2m 54s
+Results:
+    - MAE : 1.2840135373795998
+    - Correlation : 0.454986543658519
+////////////////////////////////////////////
+Iteration 2/60 for phenotype ep_res finished
+Lambda tested : 13100.0
+Elapsed time from start: 0d 0h 5m 50s
+Results:
+    - MAE : 1.2837975122425576
+    - Correlation : 0.45508296805165926
+////////////////////////////////////////////
+Iteration 3/60 for phenotype ep_res finished
+Lambda tested : 13150.0
+Elapsed time from start: 0d 0h 8m 45s
+Results:
+    - MAE : 1.283582206321659
+    - Correlation : 0.45517886012343706
+////////////////////////////////////////////
+Iteration 4/60 for phenotype ep_res finished
+Lambda tested : 13200.0
+Elapsed time from start: 0d 0h 11m 41s
+Results:
+    - MAE : 1.2833676150894462
+    - Correlation : 0.45527422407567114
+////////////////////////////////////////////
+Iteration 5/60 for phenotype ep_res finished
+Lambda tested : 13250.0
+Elapsed time from start: 0d 0h 14m 38s
+Results:
+    - MAE : 1.2831537340617822
+    - Correlation : 0.45536906406206523
+////////////////////////////////////////////
+Iteration 6/60 for phenotype ep_res finished
+Lambda tested : 13300.0
+Elapsed time from start: 0d 0h 17m 41s
+Results:
+    - MAE : 1.28294115069141
+    - Correlation : 0.45546338418894367
+////////////////////////////////////////////
+Iteration 7/60 for phenotype ep_res finished
+Lambda tested : 13350.0
+Elapsed time from start: 0d 0h 20m 35s
+Results:
+    - MAE : 1.282730396358476
+    - Correlation : 0.45555718851597216
+////////////////////////////////////////////
+Iteration 8/60 for phenotype ep_res finished
+Lambda tested : 13400.0
+Elapsed time from start: 0d 0h 23m 32s
+Results:
+    - MAE : 1.282521160915958
+    - Correlation : 0.4556504810568676
+////////////////////////////////////////////
+Iteration 9/60 for phenotype ep_res finished
+Lambda tested : 13450.0
+Elapsed time from start: 0d 0h 26m 29s
+Results:
+    - MAE : 1.282313034233017
+    - Correlation : 0.45574326578009017
+////////////////////////////////////////////
+Iteration 10/60 for phenotype ep_res finished
+Lambda tested : 13500.0
+Elapsed time from start: 0d 0h 29m 25s
+Results:
+    - MAE : 1.2821055912338948
+    - Correlation : 0.4558355466095259
+////////////////////////////////////////////
+Iteration 11/60 for phenotype ep_res finished
+Lambda tested : 13550.0
+Elapsed time from start: 0d 0h 32m 22s
+Results:
+    - MAE : 1.2818988276799945
+    - Correlation : 0.4559273274251547
+////////////////////////////////////////////
+Iteration 12/60 for phenotype ep_res finished
+Lambda tested : 13600.0
+Elapsed time from start: 0d 0h 35m 19s
+Results:
+    - MAE : 1.2816927393725854
+    - Correlation : 0.4560186120637066
+////////////////////////////////////////////
+Iteration 13/60 for phenotype ep_res finished
+Lambda tested : 13650.0
+Elapsed time from start: 0d 0h 38m 17s
+Results:
+    - MAE : 1.2814873221522962
+    - Correlation : 0.45610940431930447
+////////////////////////////////////////////
+Iteration 14/60 for phenotype ep_res finished
+Lambda tested : 13700.0
+Elapsed time from start: 0d 0h 41m 13s
+Results:
+    - MAE : 1.2812825975182158
+    - Correlation : 0.4561997079440959
+////////////////////////////////////////////
+Iteration 15/60 for phenotype ep_res finished
+Lambda tested : 13750.0
+Elapsed time from start: 0d 0h 44m 10s
+Results:
+    - MAE : 1.2810828453465548
+    - Correlation : 0.45628952664887384
+////////////////////////////////////////////
+Iteration 16/60 for phenotype ep_res finished
+Lambda tested : 13800.0
+Elapsed time from start: 0d 0h 47m 8s
+Results:
+    - MAE : 1.2808847532789018
+    - Correlation : 0.4563788641036835
+////////////////////////////////////////////
+Iteration 17/60 for phenotype ep_res finished
+Lambda tested : 13850.0
+Elapsed time from start: 0d 0h 50m 5s
+Results:
+    - MAE : 1.2806872970639633
+    - Correlation : 0.45646772393842044
+////////////////////////////////////////////
+Iteration 18/60 for phenotype ep_res finished
+Lambda tested : 13900.0
+Elapsed time from start: 0d 0h 53m 1s
+Results:
+    - MAE : 1.2804911440205806
+    - Correlation : 0.45655610974341676
+////////////////////////////////////////////
+Iteration 19/60 for phenotype ep_res finished
+Lambda tested : 13950.0
+Elapsed time from start: 0d 0h 55m 55s
+Results:
+    - MAE : 1.2802968351311699
+    - Correlation : 0.45664402507001595
+////////////////////////////////////////////
+Iteration 20/60 for phenotype ep_res finished
+Lambda tested : 14000.0
+Elapsed time from start: 0d 0h 58m 48s
+Results:
+    - MAE : 1.280103835689792
+    - Correlation : 0.45673147343113835
+////////////////////////////////////////////
+Iteration 21/60 for phenotype ep_res finished
+Lambda tested : 14050.0
+Elapsed time from start: 0d 1h 1m 43s
+Results:
+    - MAE : 1.2799138479341823
+    - Correlation : 0.4568184583018355
+////////////////////////////////////////////
+Iteration 22/60 for phenotype ep_res finished
+Lambda tested : 14100.0
+Elapsed time from start: 0d 1h 4m 37s
+Results:
+    - MAE : 1.279724457122024
+    - Correlation : 0.456904983119835
+////////////////////////////////////////////
+Iteration 23/60 for phenotype ep_res finished
+Lambda tested : 14150.0
+Elapsed time from start: 0d 1h 7m 32s
+Results:
+    - MAE : 1.2795356597583354
+    - Correlation : 0.45699105128607526
+////////////////////////////////////////////
+Iteration 24/60 for phenotype ep_res finished
+Lambda tested : 14200.0
+Elapsed time from start: 0d 1h 10m 29s
+Results:
+    - MAE : 1.279347809019727
+    - Correlation : 0.4570766661652308
+////////////////////////////////////////////
+Iteration 25/60 for phenotype ep_res finished
+Lambda tested : 14250.0
+Elapsed time from start: 0d 1h 13m 26s
+Results:
+    - MAE : 1.2791623998897863
+    - Correlation : 0.4571618310862279
+////////////////////////////////////////////
+Iteration 26/60 for phenotype ep_res finished
+Lambda tested : 14300.0
+Elapsed time from start: 0d 1h 16m 24s
+Results:
+    - MAE : 1.2789775684160858
+    - Correlation : 0.45724654934275133
+////////////////////////////////////////////
+Iteration 27/60 for phenotype ep_res finished
+Lambda tested : 14350.0
+Elapsed time from start: 0d 1h 19m 20s
+Results:
+    - MAE : 1.2787933112448513
+    - Correlation : 0.4573308241937418
+////////////////////////////////////////////
+Iteration 28/60 for phenotype ep_res finished
+Lambda tested : 14400.0
+Elapsed time from start: 0d 1h 22m 17s
+Results:
+    - MAE : 1.2786117449408299
+    - Correlation : 0.4574146588638855
+////////////////////////////////////////////
+Iteration 29/60 for phenotype ep_res finished
+Lambda tested : 14450.0
+Elapsed time from start: 0d 1h 25m 14s
+Results:
+    - MAE : 1.2784326466745544
+    - Correlation : 0.4574980565440932
+////////////////////////////////////////////
+Iteration 30/60 for phenotype ep_res finished
+Lambda tested : 14500.0
+Elapsed time from start: 0d 1h 28m 9s
+Results:
+    - MAE : 1.278254094429607
+    - Correlation : 0.45758102039197235
+////////////////////////////////////////////
+Iteration 31/60 for phenotype ep_res finished
+Lambda tested : 14550.0
+Elapsed time from start: 0d 1h 31m 5s
+Results:
+    - MAE : 1.278076085104201
+    - Correlation : 0.4576635535322914
+////////////////////////////////////////////
+Iteration 32/60 for phenotype ep_res finished
+Lambda tested : 14600.0
+Elapsed time from start: 0d 1h 34m 2s
+Results:
+    - MAE : 1.2778986156231464
+    - Correlation : 0.45774565905743436
+////////////////////////////////////////////
+Iteration 33/60 for phenotype ep_res finished
+Lambda tested : 14650.0
+Elapsed time from start: 0d 1h 36m 56s
+Results:
+    - MAE : 1.2777216829375397
+    - Correlation : 0.4578273400278481
+////////////////////////////////////////////
+Iteration 34/60 for phenotype ep_res finished
+Lambda tested : 14700.0
+Elapsed time from start: 0d 1h 39m 53s
+Results:
+    - MAE : 1.2775452840244603
+    - Correlation : 0.45790859947248275
+////////////////////////////////////////////
+Iteration 35/60 for phenotype ep_res finished
+Lambda tested : 14750.0
+Elapsed time from start: 0d 1h 42m 49s
+Results:
+    - MAE : 1.2773694158866702
+    - Correlation : 0.4579894403892235
+////////////////////////////////////////////
+Iteration 36/60 for phenotype ep_res finished
+Lambda tested : 14800.0
+Elapsed time from start: 0d 1h 45m 44s
+Results:
+    - MAE : 1.277194274061904
+    - Correlation : 0.45806986574531544
+////////////////////////////////////////////
+Iteration 37/60 for phenotype ep_res finished
+Lambda tested : 14850.0
+Elapsed time from start: 0d 1h 48m 40s
+Results:
+    - MAE : 1.2770203581932724
+    - Correlation : 0.45814987847778105
+////////////////////////////////////////////
+Iteration 38/60 for phenotype ep_res finished
+Lambda tested : 14900.0
+Elapsed time from start: 0d 1h 51m 38s
+Results:
+    - MAE : 1.2768469628494081
+    - Correlation : 0.45822948149383
+////////////////////////////////////////////
+Iteration 39/60 for phenotype ep_res finished
+Lambda tested : 14950.0
+Elapsed time from start: 0d 1h 54m 33s
+Results:
+    - MAE : 1.2766740851321738
+    - Correlation : 0.4583086776712632
+////////////////////////////////////////////
+Iteration 40/60 for phenotype ep_res finished
+Lambda tested : 15000.0
+Elapsed time from start: 0d 1h 57m 32s
+Results:
+    - MAE : 1.2765017221677546
+    - Correlation : 0.45838746985886847
+////////////////////////////////////////////
+Iteration 41/60 for phenotype ep_res finished
+Lambda tested : 15050.0
+Elapsed time from start: 0d 2h 0m 25s
+Results:
+    - MAE : 1.276329871106382
+    - Correlation : 0.45846586087681107
+////////////////////////////////////////////
+Iteration 42/60 for phenotype ep_res finished
+Lambda tested : 15100.0
+Elapsed time from start: 0d 2h 3m 20s
+Results:
+    - MAE : 1.2761585291220618
+    - Correlation : 0.45854385351701654
+////////////////////////////////////////////
+Iteration 43/60 for phenotype ep_res finished
+Lambda tested : 15150.0
+Elapsed time from start: 0d 2h 6m 14s
+Results:
+    - MAE : 1.2759878360310908
+    - Correlation : 0.4586214505435471
+////////////////////////////////////////////
+Iteration 44/60 for phenotype ep_res finished
+Lambda tested : 15200.0
+Elapsed time from start: 0d 2h 9m 8s
+Results:
+    - MAE : 1.2758195676586765
+    - Correlation : 0.45869865469297333
+////////////////////////////////////////////
+Iteration 45/60 for phenotype ep_res finished
+Lambda tested : 15250.0
+Elapsed time from start: 0d 2h 12m 3s
+Results:
+    - MAE : 1.2756517962374743
+    - Correlation : 0.4587754686747368
+////////////////////////////////////////////
+Iteration 46/60 for phenotype ep_res finished
+Lambda tested : 15300.0
+Elapsed time from start: 0d 2h 14m 58s
+Results:
+    - MAE : 1.275484519044056
+    - Correlation : 0.45885189517150976
+////////////////////////////////////////////
+Iteration 47/60 for phenotype ep_res finished
+Lambda tested : 15350.0
+Elapsed time from start: 0d 2h 17m 54s
+Results:
+    - MAE : 1.275320597617434
+    - Correlation : 0.4589279368395465
+////////////////////////////////////////////
+Iteration 48/60 for phenotype ep_res finished
+Lambda tested : 15400.0
+Elapsed time from start: 0d 2h 20m 47s
+Results:
+    - MAE : 1.2751573635899927
+    - Correlation : 0.45900359630903026
+////////////////////////////////////////////
+Iteration 49/60 for phenotype ep_res finished
+Lambda tested : 15450.0
+Elapsed time from start: 0d 2h 23m 40s
+Results:
+    - MAE : 1.2749946087624162
+    - Correlation : 0.4590788761844139
+////////////////////////////////////////////
+Iteration 50/60 for phenotype ep_res finished
+Lambda tested : 15500.0
+Elapsed time from start: 0d 2h 26m 36s
+Results:
+    - MAE : 1.2748323305307254
+    - Correlation : 0.4591537790447552
+////////////////////////////////////////////
+Iteration 51/60 for phenotype ep_res finished
+Lambda tested : 15550.0
+Elapsed time from start: 0d 2h 29m 29s
+Results:
+    - MAE : 1.274670526312198
+    - Correlation : 0.45922830744404675
+////////////////////////////////////////////
+Iteration 52/60 for phenotype ep_res finished
+Lambda tested : 15600.0
+Elapsed time from start: 0d 2h 32m 23s
+Results:
+    - MAE : 1.2745091935451374
+    - Correlation : 0.45930246391153967
+////////////////////////////////////////////
+Iteration 53/60 for phenotype ep_res finished
+Lambda tested : 15650.0
+Elapsed time from start: 0d 2h 35m 18s
+Results:
+    - MAE : 1.2743493268173134
+    - Correlation : 0.45937625095206336
+////////////////////////////////////////////
+Iteration 54/60 for phenotype ep_res finished
+Lambda tested : 15700.0
+Elapsed time from start: 0d 2h 38m 11s
+Results:
+    - MAE : 1.274192217390726
+    - Correlation : 0.4594496710463392
+////////////////////////////////////////////
+Iteration 55/60 for phenotype ep_res finished
+Lambda tested : 15750.0
+Elapsed time from start: 0d 2h 41m 4s
+Results:
+    - MAE : 1.2740355610625644
+    - Correlation : 0.4595227266512897
+////////////////////////////////////////////
+Iteration 56/60 for phenotype ep_res finished
+Lambda tested : 15800.0
+Elapsed time from start: 0d 2h 43m 59s
+Results:
+    - MAE : 1.273879355422883
+    - Correlation : 0.4595954202003413
+////////////////////////////////////////////
+Iteration 57/60 for phenotype ep_res finished
+Lambda tested : 15850.0
+Elapsed time from start: 0d 2h 46m 54s
+Results:
+    - MAE : 1.2737235980809374
+    - Correlation : 0.459667754103725
+////////////////////////////////////////////
+Iteration 58/60 for phenotype ep_res finished
+Lambda tested : 15900.0
+Elapsed time from start: 0d 2h 49m 49s
+Results:
+    - MAE : 1.2735682866649818
+    - Correlation : 0.45973973074877017
+////////////////////////////////////////////
+Iteration 59/60 for phenotype ep_res finished
+Lambda tested : 15950.0
+Elapsed time from start: 0d 2h 52m 43s
+Results:
+    - MAE : 1.2734147489480365
+    - Correlation : 0.459811352500193
+////////////////////////////////////////////
+Iteration 60/60 for phenotype ep_res finished
+Lambda tested : 16000.0
+Elapsed time from start: 0d 2h 55m 35s
+Results:
+    - MAE : 1.2732624144761977
+    - Correlation : 0.45988262170038263
+////////////////////////////////////////////
+Computation finished for ep_res in 0d 2h 55m 35s
+////////////////////////////////////////////
+Iteration 1/60 for phenotype de_res finished
+Lambda tested : 13050.0
+Elapsed time from start: 0d 0h 2m 55s
+Results:
+    - MAE : 2.6118516187374707
+    - Correlation : 0.45411096376139976
+////////////////////////////////////////////
+Iteration 2/60 for phenotype de_res finished
+Lambda tested : 13100.0
+Elapsed time from start: 0d 0h 5m 51s
+Results:
+    - MAE : 2.6115468023066497
+    - Correlation : 0.4541926181635324
+////////////////////////////////////////////
+Iteration 3/60 for phenotype de_res finished
+Lambda tested : 13150.0
+Elapsed time from start: 0d 0h 8m 47s
+Results:
+    - MAE : 2.611248422264809
+    - Correlation : 0.4542737521023051
+////////////////////////////////////////////
+Iteration 4/60 for phenotype de_res finished
+Lambda tested : 13200.0
+Elapsed time from start: 0d 0h 11m 41s
+Results:
+    - MAE : 2.6109541553787174
+    - Correlation : 0.45435437001844536
+////////////////////////////////////////////
+Iteration 5/60 for phenotype de_res finished
+Lambda tested : 13250.0
+Elapsed time from start: 0d 0h 14m 35s
+Results:
+    - MAE : 2.6106612015613093
+    - Correlation : 0.45443447629992045
+////////////////////////////////////////////
+Iteration 6/60 for phenotype de_res finished
+Lambda tested : 13300.0
+Elapsed time from start: 0d 0h 17m 30s
+Results:
+    - MAE : 2.6103696088676305
+    - Correlation : 0.45451407528274684
+////////////////////////////////////////////
+Iteration 7/60 for phenotype de_res finished
+Lambda tested : 13350.0
+Elapsed time from start: 0d 0h 20m 25s
+Results:
+    - MAE : 2.610080596222614
+    - Correlation : 0.45459317125178844
+////////////////////////////////////////////
+Iteration 8/60 for phenotype de_res finished
+Lambda tested : 13400.0
+Elapsed time from start: 0d 0h 23m 19s
+Results:
+    - MAE : 2.6097927114395314
+    - Correlation : 0.45467176844153634
+////////////////////////////////////////////
+Iteration 9/60 for phenotype de_res finished
+Lambda tested : 13450.0
+Elapsed time from start: 0d 0h 26m 15s
+Results:
+    - MAE : 2.6095059464859998
+    - Correlation : 0.4547498710368761
+////////////////////////////////////////////
+Iteration 10/60 for phenotype de_res finished
+Lambda tested : 13500.0
+Elapsed time from start: 0d 0h 29m 11s
+Results:
+    - MAE : 2.6092202934139914
+    - Correlation : 0.45482748317383914
+////////////////////////////////////////////
+Iteration 11/60 for phenotype de_res finished
+Lambda tested : 13550.0
+Elapsed time from start: 0d 0h 32m 8s
+Results:
+    - MAE : 2.6089357443586634
+    - Correlation : 0.4549046089403415
+////////////////////////////////////////////
+Iteration 12/60 for phenotype de_res finished
+Lambda tested : 13600.0
+Elapsed time from start: 0d 0h 35m 2s
+Results:
+    - MAE : 2.6086522915371932
+    - Correlation : 0.4549812523769089
+////////////////////////////////////////////
+Iteration 13/60 for phenotype de_res finished
+Lambda tested : 13650.0
+Elapsed time from start: 0d 0h 37m 56s
+Results:
+    - MAE : 2.6083699272476437
+    - Correlation : 0.45505741747738604
+////////////////////////////////////////////
+Iteration 14/60 for phenotype de_res finished
+Lambda tested : 13700.0
+Elapsed time from start: 0d 0h 40m 59s
+Results:
+    - MAE : 2.6080886438678443
+    - Correlation : 0.4551331081896359
+////////////////////////////////////////////
+Iteration 15/60 for phenotype de_res finished
+Lambda tested : 13750.0
+Elapsed time from start: 0d 0h 44m 10s
+Results:
+    - MAE : 2.6078110841493207
+    - Correlation : 0.45520832841622494
+////////////////////////////////////////////
+Iteration 16/60 for phenotype de_res finished
+Lambda tested : 13800.0
+Elapsed time from start: 0d 0h 47m 8s
+Results:
+    - MAE : 2.6075399862411786
+    - Correlation : 0.4552830820150947
+////////////////////////////////////////////
+Iteration 17/60 for phenotype de_res finished
+Lambda tested : 13850.0
+Elapsed time from start: 0d 0h 50m 6s
+Results:
+    - MAE : 2.607269910202378
+    - Correlation : 0.45535737280022315
+////////////////////////////////////////////
+Iteration 18/60 for phenotype de_res finished
+Lambda tested : 13900.0
+Elapsed time from start: 0d 0h 53m 0s
+Results:
+    - MAE : 2.607000848985419
+    - Correlation : 0.4554312045422718
+////////////////////////////////////////////
+Iteration 19/60 for phenotype de_res finished
+Lambda tested : 13950.0
+Elapsed time from start: 0d 0h 56m 1s
+Results:
+    - MAE : 2.60673279561445
+    - Correlation : 0.45550458096922364
+////////////////////////////////////////////
+Iteration 20/60 for phenotype de_res finished
+Lambda tested : 14000.0
+Elapsed time from start: 0d 0h 58m 57s
+Results:
+    - MAE : 2.606465743184301
+    - Correlation : 0.4555775057670073
+////////////////////////////////////////////
+Iteration 21/60 for phenotype de_res finished
+Lambda tested : 14050.0
+Elapsed time from start: 0d 1h 1m 55s
+Results:
+    - MAE : 2.6062010643775073
+    - Correlation : 0.45564998258011075
+////////////////////////////////////////////
+Iteration 22/60 for phenotype de_res finished
+Lambda tested : 14100.0
+Elapsed time from start: 0d 1h 4m 52s
+Results:
+    - MAE : 2.605939568521605
+    - Correlation : 0.45572201501218473
+////////////////////////////////////////////
+Iteration 23/60 for phenotype de_res finished
+Lambda tested : 14150.0
+Elapsed time from start: 0d 1h 8m 6s
+Results:
+    - MAE : 2.605679037994149
+    - Correlation : 0.4557936066266346
+////////////////////////////////////////////
+Iteration 24/60 for phenotype de_res finished
+Lambda tested : 14200.0
+Elapsed time from start: 0d 1h 11m 1s
+Results:
+    - MAE : 2.6054194662528336
+    - Correlation : 0.45586476094720135
+////////////////////////////////////////////
+Iteration 25/60 for phenotype de_res finished
+Lambda tested : 14250.0
+Elapsed time from start: 0d 1h 13m 56s
+Results:
+    - MAE : 2.6051608468207847
+    - Correlation : 0.45593548145853297
+////////////////////////////////////////////
+Iteration 26/60 for phenotype de_res finished
+Lambda tested : 14300.0
+Elapsed time from start: 0d 1h 16m 52s
+Results:
+    - MAE : 2.604903173285688
+    - Correlation : 0.4560057716067461
+////////////////////////////////////////////
+Iteration 27/60 for phenotype de_res finished
+Lambda tested : 14350.0
+Elapsed time from start: 0d 1h 19m 48s
+Results:
+    - MAE : 2.604646439298938
+    - Correlation : 0.45607563479997637
+////////////////////////////////////////////
+Iteration 28/60 for phenotype de_res finished
+Lambda tested : 14400.0
+Elapsed time from start: 0d 1h 22m 43s
+Results:
+    - MAE : 2.6043906385747904
+    - Correlation : 0.45614507440892055
+////////////////////////////////////////////
+Iteration 29/60 for phenotype de_res finished
+Lambda tested : 14450.0
+Elapsed time from start: 0d 1h 25m 39s
+Results:
+    - MAE : 2.6041357648895436
+    - Correlation : 0.45621409376736755
+////////////////////////////////////////////
+Iteration 30/60 for phenotype de_res finished
+Lambda tested : 14500.0
+Elapsed time from start: 0d 1h 28m 36s
+Results:
+    - MAE : 2.603886773202032
+    - Correlation : 0.4562826961727226
+////////////////////////////////////////////
+Iteration 31/60 for phenotype de_res finished
+Lambda tested : 14550.0
+Elapsed time from start: 0d 1h 31m 33s
+Results:
+    - MAE : 2.6036429243159747
+    - Correlation : 0.4563508848865195
+////////////////////////////////////////////
+Iteration 32/60 for phenotype de_res finished
+Lambda tested : 14600.0
+Elapsed time from start: 0d 1h 34m 30s
+Results:
+    - MAE : 2.6033999545104245
+    - Correlation : 0.45641866313492574
+////////////////////////////////////////////
+Iteration 33/60 for phenotype de_res finished
+Lambda tested : 14650.0
+Elapsed time from start: 0d 1h 37m 26s
+Results:
+    - MAE : 2.6031578579749794
+    - Correlation : 0.4564860341092393
+////////////////////////////////////////////
+Iteration 34/60 for phenotype de_res finished
+Lambda tested : 14700.0
+Elapsed time from start: 0d 1h 40m 23s
+Results:
+    - MAE : 2.6029166289558296
+    - Correlation : 0.4565530009663746
+////////////////////////////////////////////
+Iteration 35/60 for phenotype de_res finished
+Lambda tested : 14750.0
+Elapsed time from start: 0d 1h 43m 18s
+Results:
+    - MAE : 2.6026762617550294
+    - Correlation : 0.4566195668293426
+////////////////////////////////////////////
+Iteration 36/60 for phenotype de_res finished
+Lambda tested : 14800.0
+Elapsed time from start: 0d 1h 46m 17s
+Results:
+    - MAE : 2.6024393367958893
+    - Correlation : 0.4566857347877216
+////////////////////////////////////////////
+Iteration 37/60 for phenotype de_res finished
+Lambda tested : 14850.0
+Elapsed time from start: 0d 1h 49m 13s
+Results:
+    - MAE : 2.602204145021408
+    - Correlation : 0.4567515078981198
+////////////////////////////////////////////
+Iteration 38/60 for phenotype de_res finished
+Lambda tested : 14900.0
+Elapsed time from start: 0d 1h 52m 9s
+Results:
+    - MAE : 2.6019698279246954
+    - Correlation : 0.4568168891846295
+////////////////////////////////////////////
+Iteration 39/60 for phenotype de_res finished
+Lambda tested : 14950.0
+Elapsed time from start: 0d 1h 55m 5s
+Results:
+    - MAE : 2.601736346538838
+    - Correlation : 0.45688188163927657
+////////////////////////////////////////////
+Iteration 40/60 for phenotype de_res finished
+Lambda tested : 15000.0
+Elapsed time from start: 0d 1h 58m 0s
+Results:
+    - MAE : 2.6015036954366186
+    - Correlation : 0.4569464882224574
+////////////////////////////////////////////
+Iteration 41/60 for phenotype de_res finished
+Lambda tested : 15050.0
+Elapsed time from start: 0d 2h 0m 55s
+Results:
+    - MAE : 2.601271869242492
+    - Correlation : 0.4570107118633735
+////////////////////////////////////////////
+Iteration 42/60 for phenotype de_res finished
+Lambda tested : 15100.0
+Elapsed time from start: 0d 2h 3m 49s
+Results:
+    - MAE : 2.6010408626319386
+    - Correlation : 0.45707455546045433
+////////////////////////////////////////////
+Iteration 43/60 for phenotype de_res finished
+Lambda tested : 15150.0
+Elapsed time from start: 0d 2h 6m 46s
+Results:
+    - MAE : 2.6008106703308194
+    - Correlation : 0.4571380218817779
+////////////////////////////////////////////
+Iteration 44/60 for phenotype de_res finished
+Lambda tested : 15200.0
+Elapsed time from start: 0d 2h 9m 43s
+Results:
+    - MAE : 2.6005812871147502
+    - Correlation : 0.4572011139654788
+////////////////////////////////////////////
+Iteration 45/60 for phenotype de_res finished
+Lambda tested : 15250.0
+Elapsed time from start: 0d 2h 12m 38s
+Results:
+    - MAE : 2.6003527078084754
+    - Correlation : 0.45726383452015446
+////////////////////////////////////////////
+Iteration 46/60 for phenotype de_res finished
+Lambda tested : 15300.0
+Elapsed time from start: 0d 2h 15m 35s
+Results:
+    - MAE : 2.6001249272852633
+    - Correlation : 0.4573261863252612
+////////////////////////////////////////////
+Iteration 47/60 for phenotype de_res finished
+Lambda tested : 15350.0
+Elapsed time from start: 0d 2h 18m 30s
+Results:
+    - MAE : 2.5998979404663
+    - Correlation : 0.4573881721315061
+////////////////////////////////////////////
+Iteration 48/60 for phenotype de_res finished
+Lambda tested : 15400.0
+Elapsed time from start: 0d 2h 21m 22s
+Results:
+    - MAE : 2.599671742320098
+    - Correlation : 0.4574497946612311
+////////////////////////////////////////////
+Iteration 49/60 for phenotype de_res finished
+Lambda tested : 15450.0
+Elapsed time from start: 0d 2h 24m 13s
+Results:
+    - MAE : 2.5994463278619153
+    - Correlation : 0.45751105660879016
+////////////////////////////////////////////
+Iteration 50/60 for phenotype de_res finished
+Lambda tested : 15500.0
+Elapsed time from start: 0d 2h 27m 9s
+Results:
+    - MAE : 2.59922169215318
+    - Correlation : 0.45757196064092237
+////////////////////////////////////////////
+Iteration 51/60 for phenotype de_res finished
+Lambda tested : 15550.0
+Elapsed time from start: 0d 2h 30m 5s
+Results:
+    - MAE : 2.598997830300924
+    - Correlation : 0.4576325093971172
+////////////////////////////////////////////
+Iteration 52/60 for phenotype de_res finished
+Lambda tested : 15600.0
+Elapsed time from start: 0d 2h 33m 1s
+Results:
+    - MAE : 2.5987747374572274
+    - Correlation : 0.45769270548997454
+////////////////////////////////////////////
+Iteration 53/60 for phenotype de_res finished
+Lambda tested : 15650.0
+Elapsed time from start: 0d 2h 35m 59s
+Results:
+    - MAE : 2.59855257913088
+    - Correlation : 0.45775255150555866
+////////////////////////////////////////////
+Iteration 54/60 for phenotype de_res finished
+Lambda tested : 15700.0
+Elapsed time from start: 0d 2h 38m 54s
+Results:
+    - MAE : 2.598337563032864
+    - Correlation : 0.45781205000374614
+////////////////////////////////////////////
+Iteration 55/60 for phenotype de_res finished
+Lambda tested : 15750.0
+Elapsed time from start: 0d 2h 41m 50s
+Results:
+    - MAE : 2.5981232701077004
+    - Correlation : 0.4578712035185692
+////////////////////////////////////////////
+Iteration 56/60 for phenotype de_res finished
+Lambda tested : 15800.0
+Elapsed time from start: 0d 2h 44m 47s
+Results:
+    - MAE : 2.5979096959241943
+    - Correlation : 0.4579300145585523
+////////////////////////////////////////////
+Iteration 57/60 for phenotype de_res finished
+Lambda tested : 15850.0
+Elapsed time from start: 0d 2h 47m 43s
+Results:
+    - MAE : 2.5976968360910755
+    - Correlation : 0.457988485607045
+////////////////////////////////////////////
+Iteration 58/60 for phenotype de_res finished
+Lambda tested : 15900.0
+Elapsed time from start: 0d 2h 50m 39s
+Results:
+    - MAE : 2.5974846862565237
+    - Correlation : 0.45804661912254646
+////////////////////////////////////////////
+Iteration 59/60 for phenotype de_res finished
+Lambda tested : 15950.0
+Elapsed time from start: 0d 2h 53m 36s
+Results:
+    - MAE : 2.5972732421076943
+    - Correlation : 0.4581044175390291
+////////////////////////////////////////////
+Iteration 60/60 for phenotype de_res finished
+Lambda tested : 16000.0
+Elapsed time from start: 0d 2h 56m 33s
+Results:
+    - MAE : 2.5970624993702605
+    - Correlation : 0.45816188326625207
+////////////////////////////////////////////
+Computation finished for de_res in 0d 2h 56m 33s
+////////////////////////////////////////////
+Iteration 1/60 for phenotype FESSEp_res finished
+Lambda tested : 13050.0
+Elapsed time from start: 0d 0h 2m 56s
+Results:
+    - MAE : 1.0208509033228088
+    - Correlation : 0.4932167603904539
+////////////////////////////////////////////
+Iteration 2/60 for phenotype FESSEp_res finished
+Lambda tested : 13100.0
+Elapsed time from start: 0d 0h 5m 51s
+Results:
+    - MAE : 1.020702969172504
+    - Correlation : 0.49326658634355414
+////////////////////////////////////////////
+Iteration 3/60 for phenotype FESSEp_res finished
+Lambda tested : 13150.0
+Elapsed time from start: 0d 0h 8m 48s
+Results:
+    - MAE : 1.020555537025951
+    - Correlation : 0.49331600660633224
+////////////////////////////////////////////
+Iteration 4/60 for phenotype FESSEp_res finished
+Lambda tested : 13200.0
+Elapsed time from start: 0d 0h 11m 45s
+Results:
+    - MAE : 1.0204089640815919
+    - Correlation : 0.49336502447756075
+////////////////////////////////////////////
+Iteration 5/60 for phenotype FESSEp_res finished
+Lambda tested : 13250.0
+Elapsed time from start: 0d 0h 14m 42s
+Results:
+    - MAE : 1.0202632570839276
+    - Correlation : 0.4934136432183239
+////////////////////////////////////////////
+Iteration 6/60 for phenotype FESSEp_res finished
+Lambda tested : 13300.0
+Elapsed time from start: 0d 0h 17m 38s
+Results:
+    - MAE : 1.020118041680551
+    - Correlation : 0.4934618660525915
+////////////////////////////////////////////
+Iteration 7/60 for phenotype FESSEp_res finished
+Lambda tested : 13350.0
+Elapsed time from start: 0d 0h 20m 32s
+Results:
+    - MAE : 1.0199733150565886
+    - Correlation : 0.4935096961677863
+////////////////////////////////////////////
+Iteration 8/60 for phenotype FESSEp_res finished
+Lambda tested : 13400.0
+Elapsed time from start: 0d 0h 23m 28s
+Results:
+    - MAE : 1.0198290744194098
+    - Correlation : 0.4935571367153377
+////////////////////////////////////////////
+Iteration 9/60 for phenotype FESSEp_res finished
+Lambda tested : 13450.0
+Elapsed time from start: 0d 0h 26m 24s
+Results:
+    - MAE : 1.0196853169984081
+    - Correlation : 0.4936041908112264
+////////////////////////////////////////////
+Iteration 10/60 for phenotype FESSEp_res finished
+Lambda tested : 13500.0
+Elapsed time from start: 0d 0h 29m 21s
+Results:
+    - MAE : 1.0195429017886073
+    - Correlation : 0.4936508615365188
+////////////////////////////////////////////
+Iteration 11/60 for phenotype FESSEp_res finished
+Lambda tested : 13550.0
+Elapsed time from start: 0d 0h 32m 16s
+Results:
+    - MAE : 1.0194012808183313
+    - Correlation : 0.4936971519378898
+////////////////////////////////////////////
+Iteration 12/60 for phenotype FESSEp_res finished
+Lambda tested : 13600.0
+Elapsed time from start: 0d 0h 35m 12s
+Results:
+    - MAE : 1.0192601297661454
+    - Correlation : 0.49374306502813725
+////////////////////////////////////////////
+Iteration 13/60 for phenotype FESSEp_res finished
+Lambda tested : 13650.0
+Elapsed time from start: 0d 0h 38m 9s
+Results:
+    - MAE : 1.0191194459913417
+    - Correlation : 0.4937886037866851
+////////////////////////////////////////////
+Iteration 14/60 for phenotype FESSEp_res finished
+Lambda tested : 13700.0
+Elapsed time from start: 0d 0h 41m 4s
+Results:
+    - MAE : 1.018982908948051
+    - Correlation : 0.4938337711600796
+////////////////////////////////////////////
+Iteration 15/60 for phenotype FESSEp_res finished
+Lambda tested : 13750.0
+Elapsed time from start: 0d 0h 43m 56s
+Results:
+    - MAE : 1.0188485291033513
+    - Correlation : 0.4938785700624734
+////////////////////////////////////////////
+Iteration 16/60 for phenotype FESSEp_res finished
+Lambda tested : 13800.0
+Elapsed time from start: 0d 0h 46m 52s
+Results:
+    - MAE : 1.018714589115545
+    - Correlation : 0.4939230033761024
+////////////////////////////////////////////
+Iteration 17/60 for phenotype FESSEp_res finished
+Lambda tested : 13850.0
+Elapsed time from start: 0d 0h 49m 47s
+Results:
+    - MAE : 1.0185810865517229
+    - Correlation : 0.4939670739517537
+////////////////////////////////////////////
+Iteration 18/60 for phenotype FESSEp_res finished
+Lambda tested : 13900.0
+Elapsed time from start: 0d 0h 52m 44s
+Results:
+    - MAE : 1.0184480189974623
+    - Correlation : 0.4940107846092239
+////////////////////////////////////////////
+Iteration 19/60 for phenotype FESSEp_res finished
+Lambda tested : 13950.0
+Elapsed time from start: 0d 0h 55m 40s
+Results:
+    - MAE : 1.0183153840566526
+    - Correlation : 0.4940541381377698
+////////////////////////////////////////////
+Iteration 20/60 for phenotype FESSEp_res finished
+Lambda tested : 14000.0
+Elapsed time from start: 0d 0h 58m 35s
+Results:
+    - MAE : 1.0181831793513225
+    - Correlation : 0.49409713729655147
+////////////////////////////////////////////
+Iteration 21/60 for phenotype FESSEp_res finished
+Lambda tested : 14050.0
+Elapsed time from start: 0d 1h 1m 29s
+Results:
+    - MAE : 1.0180514025214704
+    - Correlation : 0.49413978481506454
+////////////////////////////////////////////
+Iteration 22/60 for phenotype FESSEp_res finished
+Lambda tested : 14100.0
+Elapsed time from start: 0d 1h 4m 25s
+Results:
+    - MAE : 1.0179200512248967
+    - Correlation : 0.49418208339356834
+////////////////////////////////////////////
+Iteration 23/60 for phenotype FESSEp_res finished
+Lambda tested : 14150.0
+Elapsed time from start: 0d 1h 7m 20s
+Results:
+    - MAE : 1.0177891231370364
+    - Correlation : 0.4942240357035033
+////////////////////////////////////////////
+Iteration 24/60 for phenotype FESSEp_res finished
+Lambda tested : 14200.0
+Elapsed time from start: 0d 1h 10m 13s
+Results:
+    - MAE : 1.0176586159507928
+    - Correlation : 0.49426564438790266
+////////////////////////////////////////////
+Iteration 25/60 for phenotype FESSEp_res finished
+Lambda tested : 14250.0
+Elapsed time from start: 0d 1h 13m 8s
+Results:
+    - MAE : 1.017528527376378
+    - Correlation : 0.4943069120617959
+////////////////////////////////////////////
+Iteration 26/60 for phenotype FESSEp_res finished
+Lambda tested : 14300.0
+Elapsed time from start: 0d 1h 16m 6s
+Results:
+    - MAE : 1.0173988551411468
+    - Correlation : 0.4943478413126043
+////////////////////////////////////////////
+Iteration 27/60 for phenotype FESSEp_res finished
+Lambda tested : 14350.0
+Elapsed time from start: 0d 1h 19m 2s
+Results:
+    - MAE : 1.0172695969894425
+    - Correlation : 0.4943884347005312
+////////////////////////////////////////////
+Iteration 28/60 for phenotype FESSEp_res finished
+Lambda tested : 14400.0
+Elapsed time from start: 0d 1h 21m 58s
+Results:
+    - MAE : 1.017140750682434
+    - Correlation : 0.49442869475894413
+////////////////////////////////////////////
+Iteration 29/60 for phenotype FESSEp_res finished
+Lambda tested : 14450.0
+Elapsed time from start: 0d 1h 24m 52s
+Results:
+    - MAE : 1.0170125699991488
+    - Correlation : 0.4944686239947506
+////////////////////////////////////////////
+Iteration 30/60 for phenotype FESSEp_res finished
+Lambda tested : 14500.0
+Elapsed time from start: 0d 1h 27m 50s
+Results:
+    - MAE : 1.0168849928061408
+    - Correlation : 0.4945082248887661
+////////////////////////////////////////////
+Iteration 31/60 for phenotype FESSEp_res finished
+Lambda tested : 14550.0
+Elapsed time from start: 0d 1h 30m 44s
+Results:
+    - MAE : 1.016757814096858
+    - Correlation : 0.49454749989607827
+////////////////////////////////////////////
+Iteration 32/60 for phenotype FESSEp_res finished
+Lambda tested : 14600.0
+Elapsed time from start: 0d 1h 33m 41s
+Results:
+    - MAE : 1.0166310317676506
+    - Correlation : 0.49458645144640107
+////////////////////////////////////////////
+Iteration 33/60 for phenotype FESSEp_res finished
+Lambda tested : 14650.0
+Elapsed time from start: 0d 1h 36m 37s
+Results:
+    - MAE : 1.0165046437300895
+    - Correlation : 0.49462508194442645
+////////////////////////////////////////////
+Iteration 34/60 for phenotype FESSEp_res finished
+Lambda tested : 14700.0
+Elapsed time from start: 0d 1h 39m 31s
+Results:
+    - MAE : 1.0163786479108325
+    - Correlation : 0.4946633937701667
+////////////////////////////////////////////
+Iteration 35/60 for phenotype FESSEp_res finished
+Lambda tested : 14750.0
+Elapsed time from start: 0d 1h 42m 25s
+Results:
+    - MAE : 1.0162530422514897
+    - Correlation : 0.49470138927929413
+////////////////////////////////////////////
+Iteration 36/60 for phenotype FESSEp_res finished
+Lambda tested : 14800.0
+Elapsed time from start: 0d 1h 45m 20s
+Results:
+    - MAE : 1.01612782470849
+    - Correlation : 0.4947390708034708
+////////////////////////////////////////////
+Iteration 37/60 for phenotype FESSEp_res finished
+Lambda tested : 14850.0
+Elapsed time from start: 0d 1h 48m 16s
+Results:
+    - MAE : 1.0160029932529486
+    - Correlation : 0.4947764406506768
+////////////////////////////////////////////
+Iteration 38/60 for phenotype FESSEp_res finished
+Lambda tested : 14900.0
+Elapsed time from start: 0d 1h 51m 13s
+Results:
+    - MAE : 1.01587854587054
+    - Correlation : 0.49481350110552963
+////////////////////////////////////////////
+Iteration 39/60 for phenotype FESSEp_res finished
+Lambda tested : 14950.0
+Elapsed time from start: 0d 1h 54m 8s
+Results:
+    - MAE : 1.0157544805613639
+    - Correlation : 0.49485025442960123
+////////////////////////////////////////////
+Iteration 40/60 for phenotype FESSEp_res finished
+Lambda tested : 15000.0
+Elapsed time from start: 0d 1h 57m 3s
+Results:
+    - MAE : 1.0156307953398216
+    - Correlation : 0.4948867028617253
+////////////////////////////////////////////
+Iteration 41/60 for phenotype FESSEp_res finished
+Lambda tested : 15050.0
+Elapsed time from start: 0d 1h 59m 57s
+Results:
+    - MAE : 1.015507674471206
+    - Correlation : 0.49492284861830427
+////////////////////////////////////////////
+Iteration 42/60 for phenotype FESSEp_res finished
+Lambda tested : 15100.0
+Elapsed time from start: 0d 2h 2m 50s
+Results:
+    - MAE : 1.015387129212255
+    - Correlation : 0.4949586938936074
+////////////////////////////////////////////
+Iteration 43/60 for phenotype FESSEp_res finished
+Lambda tested : 15150.0
+Elapsed time from start: 0d 2h 5m 45s
+Results:
+    - MAE : 1.0152669513541723
+    - Correlation : 0.4949942408600659
+////////////////////////////////////////////
+Iteration 44/60 for phenotype FESSEp_res finished
+Lambda tested : 15200.0
+Elapsed time from start: 0d 2h 8m 39s
+Results:
+    - MAE : 1.0151471390116367
+    - Correlation : 0.49502949166856197
+////////////////////////////////////////////
+Iteration 45/60 for phenotype FESSEp_res finished
+Lambda tested : 15250.0
+Elapsed time from start: 0d 2h 11m 31s
+Results:
+    - MAE : 1.015027690312548
+    - Correlation : 0.49506444844871406
+////////////////////////////////////////////
+Iteration 46/60 for phenotype FESSEp_res finished
+Lambda tested : 15300.0
+Elapsed time from start: 0d 2h 14m 23s
+Results:
+    - MAE : 1.0149086033979133
+    - Correlation : 0.4950991133091557
+////////////////////////////////////////////
+Iteration 47/60 for phenotype FESSEp_res finished
+Lambda tested : 15350.0
+Elapsed time from start: 0d 2h 17m 19s
+Results:
+    - MAE : 1.0147898764217338
+    - Correlation : 0.4951334883378125
+////////////////////////////////////////////
+Iteration 48/60 for phenotype FESSEp_res finished
+Lambda tested : 15400.0
+Elapsed time from start: 0d 2h 20m 16s
+Results:
+    - MAE : 1.0146715075508947
+    - Correlation : 0.49516757560217073
+////////////////////////////////////////////
+Iteration 49/60 for phenotype FESSEp_res finished
+Lambda tested : 15450.0
+Elapsed time from start: 0d 2h 23m 13s
+Results:
+    - MAE : 1.0145534949650519
+    - Correlation : 0.4952013771495453
+////////////////////////////////////////////
+Iteration 50/60 for phenotype FESSEp_res finished
+Lambda tested : 15500.0
+Elapsed time from start: 0d 2h 26m 8s
+Results:
+    - MAE : 1.014435836856525
+    - Correlation : 0.495234895007341
+////////////////////////////////////////////
+Iteration 51/60 for phenotype FESSEp_res finished
+Lambda tested : 15550.0
+Elapsed time from start: 0d 2h 29m 4s
+Results:
+    - MAE : 1.0143185314301866
+    - Correlation : 0.4952681311833101
+////////////////////////////////////////////
+Iteration 52/60 for phenotype FESSEp_res finished
+Lambda tested : 15600.0
+Elapsed time from start: 0d 2h 32m 0s
+Results:
+    - MAE : 1.0142015769033574
+    - Correlation : 0.49530108766580533
+////////////////////////////////////////////
+Iteration 53/60 for phenotype FESSEp_res finished
+Lambda tested : 15650.0
+Elapsed time from start: 0d 2h 34m 55s
+Results:
+    - MAE : 1.0140849715056968
+    - Correlation : 0.4953337664240298
+////////////////////////////////////////////
+Iteration 54/60 for phenotype FESSEp_res finished
+Lambda tested : 15700.0
+Elapsed time from start: 0d 2h 37m 51s
+Results:
+    - MAE : 1.0139704217546153
+    - Correlation : 0.49536616940828215
+////////////////////////////////////////////
+Iteration 55/60 for phenotype FESSEp_res finished
+Lambda tested : 15750.0
+Elapsed time from start: 0d 2h 40m 48s
+Results:
+    - MAE : 1.013857402957607
+    - Correlation : 0.49539829855019735
+////////////////////////////////////////////
+Iteration 56/60 for phenotype FESSEp_res finished
+Lambda tested : 15800.0
+Elapsed time from start: 0d 2h 43m 44s
+Results:
+    - MAE : 1.0137456745433102
+    - Correlation : 0.4954301557629844
+////////////////////////////////////////////
+Iteration 57/60 for phenotype FESSEp_res finished
+Lambda tested : 15850.0
+Elapsed time from start: 0d 2h 46m 41s
+Results:
+    - MAE : 1.0136342824614155
+    - Correlation : 0.49546174294165957
+////////////////////////////////////////////
+Iteration 58/60 for phenotype FESSEp_res finished
+Lambda tested : 15900.0
+Elapsed time from start: 0d 2h 49m 37s
+Results:
+    - MAE : 1.013523225016463
+    - Correlation : 0.49549306196327714
+////////////////////////////////////////////
+Iteration 59/60 for phenotype FESSEp_res finished
+Lambda tested : 15950.0
+Elapsed time from start: 0d 2h 52m 33s
+Results:
+    - MAE : 1.0134125005246368
+    - Correlation : 0.4955241146871541
+////////////////////////////////////////////
+Iteration 60/60 for phenotype FESSEp_res finished
+Lambda tested : 16000.0
+Elapsed time from start: 0d 2h 55m 30s
+Results:
+    - MAE : 1.0133021073136654
+    - Correlation : 0.4955549029550944
+////////////////////////////////////////////
+Computation finished for FESSEp_res in 0d 2h 55m 30s
+////////////////////////////////////////////
+Iteration 1/60 for phenotype FESSEa_res finished
+Lambda tested : 13050.0
+Elapsed time from start: 0d 0h 2m 57s
+Results:
+    - MAE : 1.0440458742710377
+    - Correlation : 0.517653841205588
+////////////////////////////////////////////
+Iteration 2/60 for phenotype FESSEa_res finished
+Lambda tested : 13100.0
+Elapsed time from start: 0d 0h 5m 53s
+Results:
+    - MAE : 1.0439317214532233
+    - Correlation : 0.5177187666489241
+////////////////////////////////////////////
+Iteration 3/60 for phenotype FESSEa_res finished
+Lambda tested : 13150.0
+Elapsed time from start: 0d 0h 8m 50s
+Results:
+    - MAE : 1.043817921792725
+    - Correlation : 0.5177832446350603
+////////////////////////////////////////////
+Iteration 4/60 for phenotype FESSEa_res finished
+Lambda tested : 13200.0
+Elapsed time from start: 0d 0h 11m 44s
+Results:
+    - MAE : 1.0437056265430928
+    - Correlation : 0.5178472788750947
+////////////////////////////////////////////
+Iteration 5/60 for phenotype FESSEa_res finished
+Lambda tested : 13250.0
+Elapsed time from start: 0d 0h 14m 37s
+Results:
+    - MAE : 1.0435959377277204
+    - Correlation : 0.5179108730363615
+////////////////////////////////////////////
+Iteration 6/60 for phenotype FESSEa_res finished
+Lambda tested : 13300.0
+Elapsed time from start: 0d 0h 17m 31s
+Results:
+    - MAE : 1.0434865853122002
+    - Correlation : 0.5179740307431139
+////////////////////////////////////////////
+Iteration 7/60 for phenotype FESSEa_res finished
+Lambda tested : 13350.0
+Elapsed time from start: 0d 0h 20m 26s
+Results:
+    - MAE : 1.043377567509828
+    - Correlation : 0.5180367555771974
+////////////////////////////////////////////
+Iteration 8/60 for phenotype FESSEa_res finished
+Lambda tested : 13400.0
+Elapsed time from start: 0d 0h 23m 22s
+Results:
+    - MAE : 1.0432688825474572
+    - Correlation : 0.5180990510787091
+////////////////////////////////////////////
+Iteration 9/60 for phenotype FESSEa_res finished
+Lambda tested : 13450.0
+Elapsed time from start: 0d 0h 26m 18s
+Results:
+    - MAE : 1.0431605286653642
+    - Correlation : 0.5181609207466424
+////////////////////////////////////////////
+Iteration 10/60 for phenotype FESSEa_res finished
+Lambda tested : 13500.0
+Elapsed time from start: 0d 0h 29m 15s
+Results:
+    - MAE : 1.0430525041171155
+    - Correlation : 0.5182223680395229
+////////////////////////////////////////////
+Iteration 11/60 for phenotype FESSEa_res finished
+Lambda tested : 13550.0
+Elapsed time from start: 0d 0h 32m 11s
+Results:
+    - MAE : 1.0429448071694392
+    - Correlation : 0.5182833963760286
+////////////////////////////////////////////
+Iteration 12/60 for phenotype FESSEa_res finished
+Lambda tested : 13600.0
+Elapsed time from start: 0d 0h 35m 8s
+Results:
+    - MAE : 1.0428374361020942
+    - Correlation : 0.5183440091355994
+////////////////////////////////////////////
+Iteration 13/60 for phenotype FESSEa_res finished
+Lambda tested : 13650.0
+Elapsed time from start: 0d 0h 38m 2s
+Results:
+    - MAE : 1.0427303892077449
+    - Correlation : 0.5184042096590371
+////////////////////////////////////////////
+Iteration 14/60 for phenotype FESSEa_res finished
+Lambda tested : 13700.0
+Elapsed time from start: 0d 0h 40m 57s
+Results:
+    - MAE : 1.0426236647918343
+    - Correlation : 0.5184640012490894
+////////////////////////////////////////////
+Iteration 15/60 for phenotype FESSEa_res finished
+Lambda tested : 13750.0
+Elapsed time from start: 0d 0h 43m 52s
+Results:
+    - MAE : 1.0425172611724602
+    - Correlation : 0.5185233871710274
+////////////////////////////////////////////
+Iteration 16/60 for phenotype FESSEa_res finished
+Lambda tested : 13800.0
+Elapsed time from start: 0d 0h 46m 48s
+Results:
+    - MAE : 1.0424111766802506
+    - Correlation : 0.5185823706532089
+////////////////////////////////////////////
+Iteration 17/60 for phenotype FESSEa_res finished
+Lambda tested : 13850.0
+Elapsed time from start: 0d 0h 49m 46s
+Results:
+    - MAE : 1.0423054096582474
+    - Correlation : 0.5186409548876336
+////////////////////////////////////////////
+Iteration 18/60 for phenotype FESSEa_res finished
+Lambda tested : 13900.0
+Elapsed time from start: 0d 0h 52m 42s
+Results:
+    - MAE : 1.0421999584617792
+    - Correlation : 0.518699143030486
+////////////////////////////////////////////
+Iteration 19/60 for phenotype FESSEa_res finished
+Lambda tested : 13950.0
+Elapsed time from start: 0d 0h 55m 37s
+Results:
+    - MAE : 1.0420948214583505
+    - Correlation : 0.5187569382026695
+////////////////////////////////////////////
+Iteration 20/60 for phenotype FESSEa_res finished
+Lambda tested : 14000.0
+Elapsed time from start: 0d 0h 58m 32s
+Results:
+    - MAE : 1.0419899970275177
+    - Correlation : 0.5188143434903302
+////////////////////////////////////////////
+Iteration 21/60 for phenotype FESSEa_res finished
+Lambda tested : 14050.0
+Elapsed time from start: 0d 1h 1m 28s
+Results:
+    - MAE : 1.0418854835607787
+    - Correlation : 0.5188713619453688
+////////////////////////////////////////////
+Iteration 22/60 for phenotype FESSEa_res finished
+Lambda tested : 14100.0
+Elapsed time from start: 0d 1h 4m 25s
+Results:
+    - MAE : 1.0417812794614565
+    - Correlation : 0.5189279965859476
+////////////////////////////////////////////
+Iteration 23/60 for phenotype FESSEa_res finished
+Lambda tested : 14150.0
+Elapsed time from start: 0d 1h 7m 21s
+Results:
+    - MAE : 1.041677383144585
+    - Correlation : 0.5189842503969844
+////////////////////////////////////////////
+Iteration 24/60 for phenotype FESSEa_res finished
+Lambda tested : 14200.0
+Elapsed time from start: 0d 1h 10m 15s
+Results:
+    - MAE : 1.041573793036799
+    - Correlation : 0.5190401263306381
+////////////////////////////////////////////
+Iteration 25/60 for phenotype FESSEa_res finished
+Lambda tested : 14250.0
+Elapsed time from start: 0d 1h 13m 9s
+Results:
+    - MAE : 1.041470507576224
+    - Correlation : 0.5190956273067876
+////////////////////////////////////////////
+Iteration 26/60 for phenotype FESSEa_res finished
+Lambda tested : 14300.0
+Elapsed time from start: 0d 1h 16m 4s
+Results:
+    - MAE : 1.0413675252123662
+    - Correlation : 0.5191507562134975
+////////////////////////////////////////////
+Iteration 27/60 for phenotype FESSEa_res finished
+Lambda tested : 14350.0
+Elapsed time from start: 0d 1h 18m 59s
+Results:
+    - MAE : 1.0412648444060044
+    - Correlation : 0.5192055159074814
+////////////////////////////////////////////
+Iteration 28/60 for phenotype FESSEa_res finished
+Lambda tested : 14400.0
+Elapsed time from start: 0d 1h 21m 56s
+Results:
+    - MAE : 1.0411624636290848
+    - Correlation : 0.5192599092145502
+////////////////////////////////////////////
+Iteration 29/60 for phenotype FESSEa_res finished
+Lambda tested : 14450.0
+Elapsed time from start: 0d 1h 24m 53s
+Results:
+    - MAE : 1.0410603813646149
+    - Correlation : 0.5193139389300591
+////////////////////////////////////////////
+Iteration 30/60 for phenotype FESSEa_res finished
+Lambda tested : 14500.0
+Elapsed time from start: 0d 1h 27m 49s
+Results:
+    - MAE : 1.0409585961065582
+    - Correlation : 0.5193676078193402
+////////////////////////////////////////////
+Iteration 31/60 for phenotype FESSEa_res finished
+Lambda tested : 14550.0
+Elapsed time from start: 0d 1h 30m 44s
+Results:
+    - MAE : 1.0408571063597343
+    - Correlation : 0.5194209186181322
+////////////////////////////////////////////
+Iteration 32/60 for phenotype FESSEa_res finished
+Lambda tested : 14600.0
+Elapsed time from start: 0d 1h 33m 41s
+Results:
+    - MAE : 1.0407559106397137
+    - Correlation : 0.5194738740329997
+////////////////////////////////////////////
+Iteration 33/60 for phenotype FESSEa_res finished
+Lambda tested : 14650.0
+Elapsed time from start: 0d 1h 36m 36s
+Results:
+    - MAE : 1.0406550074727197
+    - Correlation : 0.5195264767417461
+////////////////////////////////////////////
+Iteration 34/60 for phenotype FESSEa_res finished
+Lambda tested : 14700.0
+Elapsed time from start: 0d 1h 39m 31s
+Results:
+    - MAE : 1.040554395395529
+    - Correlation : 0.51957872939382
+////////////////////////////////////////////
+Iteration 35/60 for phenotype FESSEa_res finished
+Lambda tested : 14750.0
+Elapsed time from start: 0d 1h 42m 28s
+Results:
+    - MAE : 1.04045407295537
+    - Correlation : 0.5196306346107111
+////////////////////////////////////////////
+Iteration 36/60 for phenotype FESSEa_res finished
+Lambda tested : 14800.0
+Elapsed time from start: 0d 1h 45m 23s
+Results:
+    - MAE : 1.0403550910751356
+    - Correlation : 0.5196821949863447
+////////////////////////////////////////////
+Iteration 37/60 for phenotype FESSEa_res finished
+Lambda tested : 14850.0
+Elapsed time from start: 0d 1h 48m 18s
+Results:
+    - MAE : 1.0402569789776943
+    - Correlation : 0.5197334130874639
+////////////////////////////////////////////
+Iteration 38/60 for phenotype FESSEa_res finished
+Lambda tested : 14900.0
+Elapsed time from start: 0d 1h 51m 11s
+Results:
+    - MAE : 1.0401591468784748
+    - Correlation : 0.5197842914540077
+////////////////////////////////////////////
+Iteration 39/60 for phenotype FESSEa_res finished
+Lambda tested : 14950.0
+Elapsed time from start: 0d 1h 54m 5s
+Results:
+    - MAE : 1.0400622761117424
+    - Correlation : 0.5198348325994832
+////////////////////////////////////////////
+Iteration 40/60 for phenotype FESSEa_res finished
+Lambda tested : 15000.0
+Elapsed time from start: 0d 1h 57m 2s
+Results:
+    - MAE : 1.0399666102309282
+    - Correlation : 0.5198850390113289
+////////////////////////////////////////////
+Iteration 41/60 for phenotype FESSEa_res finished
+Lambda tested : 15050.0
+Elapsed time from start: 0d 1h 59m 59s
+Results:
+    - MAE : 1.03987121579638
+    - Correlation : 0.5199349131512744
+////////////////////////////////////////////
+Iteration 42/60 for phenotype FESSEa_res finished
+Lambda tested : 15100.0
+Elapsed time from start: 0d 2h 2m 53s
+Results:
+    - MAE : 1.0397760914735037
+    - Correlation : 0.5199844574556931
+////////////////////////////////////////////
+Iteration 43/60 for phenotype FESSEa_res finished
+Lambda tested : 15150.0
+Elapsed time from start: 0d 2h 5m 46s
+Results:
+    - MAE : 1.0396812359370646
+    - Correlation : 0.5200336743359457
+////////////////////////////////////////////
+Iteration 44/60 for phenotype FESSEa_res finished
+Lambda tested : 15200.0
+Elapsed time from start: 0d 2h 8m 41s
+Results:
+    - MAE : 1.0395866478711013
+    - Correlation : 0.5200825661787241
+////////////////////////////////////////////
+Iteration 45/60 for phenotype FESSEa_res finished
+Lambda tested : 15250.0
+Elapsed time from start: 0d 2h 11m 38s
+Results:
+    - MAE : 1.0394923259688433
+    - Correlation : 0.5201311353463843
+////////////////////////////////////////////
+Iteration 46/60 for phenotype FESSEa_res finished
+Lambda tested : 15300.0
+Elapsed time from start: 0d 2h 14m 35s
+Results:
+    - MAE : 1.0393995376018716
+    - Correlation : 0.5201793841772748
+////////////////////////////////////////////
+Iteration 47/60 for phenotype FESSEa_res finished
+Lambda tested : 15350.0
+Elapsed time from start: 0d 2h 17m 30s
+Results:
+    - MAE : 1.039307323554808
+    - Correlation : 0.5202273149860611
+////////////////////////////////////////////
+Iteration 48/60 for phenotype FESSEa_res finished
+Lambda tested : 15400.0
+Elapsed time from start: 0d 2h 20m 25s
+Results:
+    - MAE : 1.0392153678146452
+    - Correlation : 0.5202749300640427
+////////////////////////////////////////////
+Iteration 49/60 for phenotype FESSEa_res finished
+Lambda tested : 15450.0
+Elapsed time from start: 0d 2h 23m 23s
+Results:
+    - MAE : 1.039123669132482
+    - Correlation : 0.5203222316794661
+////////////////////////////////////////////
+Iteration 50/60 for phenotype FESSEa_res finished
+Lambda tested : 15500.0
+Elapsed time from start: 0d 2h 26m 18s
+Results:
+    - MAE : 1.0390322262679863
+    - Correlation : 0.5203692220778319
+////////////////////////////////////////////
+Iteration 51/60 for phenotype FESSEa_res finished
+Lambda tested : 15550.0
+Elapsed time from start: 0d 2h 29m 14s
+Results:
+    - MAE : 1.038941037989316
+    - Correlation : 0.5204159034821981
+////////////////////////////////////////////
+Iteration 52/60 for phenotype FESSEa_res finished
+Lambda tested : 15600.0
+Elapsed time from start: 0d 2h 32m 8s
+Results:
+    - MAE : 1.0388501030730464
+    - Correlation : 0.520462278093475
+////////////////////////////////////////////
+Iteration 53/60 for phenotype FESSEa_res finished
+Lambda tested : 15650.0
+Elapsed time from start: 0d 2h 35m 3s
+Results:
+    - MAE : 1.0387594203040944
+    - Correlation : 0.5205083480907202
+////////////////////////////////////////////
+Iteration 54/60 for phenotype FESSEa_res finished
+Lambda tested : 15700.0
+Elapsed time from start: 0d 2h 37m 58s
+Results:
+    - MAE : 1.038668988475647
+    - Correlation : 0.5205541156314231
+////////////////////////////////////////////
+Iteration 55/60 for phenotype FESSEa_res finished
+Lambda tested : 15750.0
+Elapsed time from start: 0d 2h 40m 52s
+Results:
+    - MAE : 1.038578806389086
+    - Correlation : 0.5205995828517904
+////////////////////////////////////////////
+Iteration 56/60 for phenotype FESSEa_res finished
+Lambda tested : 15800.0
+Elapsed time from start: 0d 2h 43m 46s
+Results:
+    - MAE : 1.0384888728539194
+    - Correlation : 0.5206447518670229
+////////////////////////////////////////////
+Iteration 57/60 for phenotype FESSEa_res finished
+Lambda tested : 15850.0
+Elapsed time from start: 0d 2h 46m 44s
+Results:
+    - MAE : 1.0383991866877076
+    - Correlation : 0.5206896247715884
+////////////////////////////////////////////
+Iteration 58/60 for phenotype FESSEa_res finished
+Lambda tested : 15900.0
+Elapsed time from start: 0d 2h 49m 38s
+Results:
+    - MAE : 1.0383097467159945
+    - Correlation : 0.5207342036394921
+////////////////////////////////////////////
+Iteration 59/60 for phenotype FESSEa_res finished
+Lambda tested : 15950.0
+Elapsed time from start: 0d 2h 52m 32s
+Results:
+    - MAE : 1.0382247188360407
+    - Correlation : 0.5207784905245402
+////////////////////////////////////////////
+Iteration 60/60 for phenotype FESSEa_res finished
+Lambda tested : 16000.0
+Elapsed time from start: 0d 2h 55m 28s
+Results:
+    - MAE : 1.0381401372856038
+    - Correlation : 0.5208224874606012
+////////////////////////////////////////////
+Computation finished for FESSEa_res in 0d 2h 55m 28s
+////////////////////////////////////////////
+Iteration 1/60 for phenotype size_res finished
+Lambda tested : 13050.0
+Elapsed time from start: 0d 0h 2m 35s
+Results:
+    - MAE : 5.357109190079602
+    - Correlation : 0.44595348053509065
+////////////////////////////////////////////
+Iteration 2/60 for phenotype size_res finished
+Lambda tested : 13100.0
+Elapsed time from start: 0d 0h 5m 10s
+Results:
+    - MAE : 5.356906899348107
+    - Correlation : 0.4459859638231098
+////////////////////////////////////////////
+Iteration 3/60 for phenotype size_res finished
+Lambda tested : 13150.0
+Elapsed time from start: 0d 0h 7m 44s
+Results:
+    - MAE : 5.356705375483376
+    - Correlation : 0.4460180578040942
+////////////////////////////////////////////
+Iteration 4/60 for phenotype size_res finished
+Lambda tested : 13200.0
+Elapsed time from start: 0d 0h 10m 23s
+Results:
+    - MAE : 5.35650461251644
+    - Correlation : 0.44604976644751926
+////////////////////////////////////////////
+Iteration 5/60 for phenotype size_res finished
+Lambda tested : 13250.0
+Elapsed time from start: 0d 0h 13m 0s
+Results:
+    - MAE : 5.356304604547511
+    - Correlation : 0.44608109367113
+////////////////////////////////////////////
+Iteration 6/60 for phenotype size_res finished
+Lambda tested : 13300.0
+Elapsed time from start: 0d 0h 15m 33s
+Results:
+    - MAE : 5.356105345744944
+    - Correlation : 0.4461120433417848
+////////////////////////////////////////////
+Iteration 7/60 for phenotype size_res finished
+Lambda tested : 13350.0
+Elapsed time from start: 0d 0h 18m 8s
+Results:
+    - MAE : 5.355906830344215
+    - Correlation : 0.4461426192762804
+////////////////////////////////////////////
+Iteration 8/60 for phenotype size_res finished
+Lambda tested : 13400.0
+Elapsed time from start: 0d 0h 20m 45s
+Results:
+    - MAE : 5.355709052646914
+    - Correlation : 0.44617282524216195
+////////////////////////////////////////////
+Iteration 9/60 for phenotype size_res finished
+Lambda tested : 13450.0
+Elapsed time from start: 0d 0h 23m 23s
+Results:
+    - MAE : 5.35551200701977
+    - Correlation : 0.4462026649585174
+////////////////////////////////////////////
+Iteration 10/60 for phenotype size_res finished
+Lambda tested : 13500.0
+Elapsed time from start: 0d 0h 26m 1s
+Results:
+    - MAE : 5.355323223557449
+    - Correlation : 0.4462321420967553
+////////////////////////////////////////////
+Iteration 11/60 for phenotype size_res finished
+Lambda tested : 13550.0
+Elapsed time from start: 0d 0h 28m 40s
+Results:
+    - MAE : 5.3551392588496896
+    - Correlation : 0.44626126028136887
+////////////////////////////////////////////
+Iteration 12/60 for phenotype size_res finished
+Lambda tested : 13600.0
+Elapsed time from start: 0d 0h 31m 15s
+Results:
+    - MAE : 5.354955975392519
+    - Correlation : 0.44629002309068505
+////////////////////////////////////////////
+Iteration 13/60 for phenotype size_res finished
+Lambda tested : 13650.0
+Elapsed time from start: 0d 0h 33m 50s
+Results:
+    - MAE : 5.354773367972715
+    - Correlation : 0.4463184340575973
+////////////////////////////////////////////
+Iteration 14/60 for phenotype size_res finished
+Lambda tested : 13700.0
+Elapsed time from start: 0d 0h 36m 28s
+Results:
+    - MAE : 5.35459143143645
+    - Correlation : 0.44634649667028736
+////////////////////////////////////////////
+Iteration 15/60 for phenotype size_res finished
+Lambda tested : 13750.0
+Elapsed time from start: 0d 0h 39m 5s
+Results:
+    - MAE : 5.35441016068842
+    - Correlation : 0.4463742143729312
+////////////////////////////////////////////
+Iteration 16/60 for phenotype size_res finished
+Lambda tested : 13800.0
+Elapsed time from start: 0d 0h 41m 38s
+Results:
+    - MAE : 5.354229550690979
+    - Correlation : 0.44640159056639145
+////////////////////////////////////////////
+Iteration 17/60 for phenotype size_res finished
+Lambda tested : 13850.0
+Elapsed time from start: 0d 0h 44m 14s
+Results:
+    - MAE : 5.354049596463297
+    - Correlation : 0.4464286286088973
+////////////////////////////////////////////
+Iteration 18/60 for phenotype size_res finished
+Lambda tested : 13900.0
+Elapsed time from start: 0d 0h 46m 51s
+Results:
+    - MAE : 5.353870293080521
+    - Correlation : 0.4464553318167123
+////////////////////////////////////////////
+Iteration 19/60 for phenotype size_res finished
+Lambda tested : 13950.0
+Elapsed time from start: 0d 0h 49m 28s
+Results:
+    - MAE : 5.353691635672962
+    - Correlation : 0.4464817034647879
+////////////////////////////////////////////
+Iteration 20/60 for phenotype size_res finished
+Lambda tested : 14000.0
+Elapsed time from start: 0d 0h 52m 4s
+Results:
+    - MAE : 5.353513619425297
+    - Correlation : 0.44650774678740496
+////////////////////////////////////////////
+Iteration 21/60 for phenotype size_res finished
+Lambda tested : 14050.0
+Elapsed time from start: 0d 0h 54m 39s
+Results:
+    - MAE : 5.3533363619123175
+    - Correlation : 0.446533464978805
+////////////////////////////////////////////
+Iteration 22/60 for phenotype size_res finished
+Lambda tested : 14100.0
+Elapsed time from start: 0d 0h 57m 15s
+Results:
+    - MAE : 5.3531700396993855
+    - Correlation : 0.4465588611938075
+////////////////////////////////////////////
+Iteration 23/60 for phenotype size_res finished
+Lambda tested : 14150.0
+Elapsed time from start: 0d 0h 59m 49s
+Results:
+    - MAE : 5.353004295787565
+    - Correlation : 0.4465839385484169
+////////////////////////////////////////////
+Iteration 24/60 for phenotype size_res finished
+Lambda tested : 14200.0
+Elapsed time from start: 0d 1h 2m 24s
+Results:
+    - MAE : 5.352839126055201
+    - Correlation : 0.44660870012041776
+////////////////////////////////////////////
+Iteration 25/60 for phenotype size_res finished
+Lambda tested : 14250.0
+Elapsed time from start: 0d 1h 5m 0s
+Results:
+    - MAE : 5.352674526424677
+    - Correlation : 0.44663314894995976
+////////////////////////////////////////////
+Iteration 26/60 for phenotype size_res finished
+Lambda tested : 14300.0
+Elapsed time from start: 0d 1h 7m 35s
+Results:
+    - MAE : 5.352510492861802
+    - Correlation : 0.4466572880401307
+////////////////////////////////////////////
+Iteration 27/60 for phenotype size_res finished
+Lambda tested : 14350.0
+Elapsed time from start: 0d 1h 10m 7s
+Results:
+    - MAE : 5.352347021375212
+    - Correlation : 0.44668112035751967
+////////////////////////////////////////////
+Iteration 28/60 for phenotype size_res finished
+Lambda tested : 14400.0
+Elapsed time from start: 0d 1h 12m 42s
+Results:
+    - MAE : 5.352184108015767
+    - Correlation : 0.4467046488327706
+////////////////////////////////////////////
+Iteration 29/60 for phenotype size_res finished
+Lambda tested : 14450.0
+Elapsed time from start: 0d 1h 15m 16s
+Results:
+    - MAE : 5.352027892655191
+    - Correlation : 0.4467278763611238
+////////////////////////////////////////////
+Iteration 30/60 for phenotype size_res finished
+Lambda tested : 14500.0
+Elapsed time from start: 0d 1h 17m 52s
+Results:
+    - MAE : 5.35187956055944
+    - Correlation : 0.4467508058029494
+////////////////////////////////////////////
+Iteration 31/60 for phenotype size_res finished
+Lambda tested : 14550.0
+Elapsed time from start: 0d 1h 20m 26s
+Results:
+    - MAE : 5.3517317128221675
+    - Correlation : 0.44677343998427055
+////////////////////////////////////////////
+Iteration 32/60 for phenotype size_res finished
+Lambda tested : 14600.0
+Elapsed time from start: 0d 1h 23m 1s
+Results:
+    - MAE : 5.351584346139858
+    - Correlation : 0.44679578169727674
+////////////////////////////////////////////
+Iteration 33/60 for phenotype size_res finished
+Lambda tested : 14650.0
+Elapsed time from start: 0d 1h 25m 36s
+Results:
+    - MAE : 5.3514374572431445
+    - Correlation : 0.44681783370082884
+////////////////////////////////////////////
+Iteration 34/60 for phenotype size_res finished
+Lambda tested : 14700.0
+Elapsed time from start: 0d 1h 28m 14s
+Results:
+    - MAE : 5.351291042896361
+    - Correlation : 0.4468395987209531
+////////////////////////////////////////////
+Iteration 35/60 for phenotype size_res finished
+Lambda tested : 14750.0
+Elapsed time from start: 0d 1h 30m 47s
+Results:
+    - MAE : 5.351145099897076
+    - Correlation : 0.44686107945132936
+////////////////////////////////////////////
+Iteration 36/60 for phenotype size_res finished
+Lambda tested : 14800.0
+Elapsed time from start: 0d 1h 33m 21s
+Results:
+    - MAE : 5.35099962507565
+    - Correlation : 0.4468822785537677
+////////////////////////////////////////////
+Iteration 37/60 for phenotype size_res finished
+Lambda tested : 14850.0
+Elapsed time from start: 0d 1h 35m 55s
+Results:
+    - MAE : 5.350854615294795
+    - Correlation : 0.4469031986586781
+////////////////////////////////////////////
+Iteration 38/60 for phenotype size_res finished
+Lambda tested : 14900.0
+Elapsed time from start: 0d 1h 38m 29s
+Results:
+    - MAE : 5.350710067449145
+    - Correlation : 0.44692384236553123
+////////////////////////////////////////////
+Iteration 39/60 for phenotype size_res finished
+Lambda tested : 14950.0
+Elapsed time from start: 0d 1h 41m 2s
+Results:
+    - MAE : 5.35056601584194
+    - Correlation : 0.4469442122433113
+////////////////////////////////////////////
+Iteration 40/60 for phenotype size_res finished
+Lambda tested : 15000.0
+Elapsed time from start: 0d 1h 43m 38s
+Results:
+    - MAE : 5.350423515297352
+    - Correlation : 0.4469643108309608
+////////////////////////////////////////////
+Iteration 41/60 for phenotype size_res finished
+Lambda tested : 15050.0
+Elapsed time from start: 0d 1h 46m 15s
+Results:
+    - MAE : 5.350281463312443
+    - Correlation : 0.4469841406378177
+////////////////////////////////////////////
+Iteration 42/60 for phenotype size_res finished
+Lambda tested : 15100.0
+Elapsed time from start: 0d 1h 48m 49s
+Results:
+    - MAE : 5.350150038145032
+    - Correlation : 0.447003704144045
+////////////////////////////////////////////
+Iteration 43/60 for phenotype size_res finished
+Lambda tested : 15150.0
+Elapsed time from start: 0d 1h 51m 27s
+Results:
+    - MAE : 5.350022953992459
+    - Correlation : 0.4470230038010514
+////////////////////////////////////////////
+Iteration 44/60 for phenotype size_res finished
+Lambda tested : 15200.0
+Elapsed time from start: 0d 1h 54m 1s
+Results:
+    - MAE : 5.349896279348624
+    - Correlation : 0.4470420420319074
+////////////////////////////////////////////
+Iteration 45/60 for phenotype size_res finished
+Lambda tested : 15250.0
+Elapsed time from start: 0d 1h 56m 32s
+Results:
+    - MAE : 5.349770011473056
+    - Correlation : 0.4470608212317514
+////////////////////////////////////////////
+Iteration 46/60 for phenotype size_res finished
+Lambda tested : 15300.0
+Elapsed time from start: 0d 1h 59m 7s
+Results:
+    - MAE : 5.349650163063032
+    - Correlation : 0.44707934376819025
+////////////////////////////////////////////
+Iteration 47/60 for phenotype size_res finished
+Lambda tested : 15350.0
+Elapsed time from start: 0d 2h 1m 44s
+Results:
+    - MAE : 5.349534217206721
+    - Correlation : 0.44709761198169273
+////////////////////////////////////////////
+Iteration 48/60 for phenotype size_res finished
+Lambda tested : 15400.0
+Elapsed time from start: 0d 2h 4m 17s
+Results:
+    - MAE : 5.349418641690947
+    - Correlation : 0.44711562818597633
+////////////////////////////////////////////
+Iteration 49/60 for phenotype size_res finished
+Lambda tested : 15450.0
+Elapsed time from start: 0d 2h 6m 54s
+Results:
+    - MAE : 5.34930343400749
+    - Correlation : 0.44713339466838614
+////////////////////////////////////////////
+Iteration 50/60 for phenotype size_res finished
+Lambda tested : 15500.0
+Elapsed time from start: 0d 2h 9m 31s
+Results:
+    - MAE : 5.3491885916735935
+    - Correlation : 0.4471509136902699
+////////////////////////////////////////////
+Iteration 51/60 for phenotype size_res finished
+Lambda tested : 15550.0
+Elapsed time from start: 0d 2h 12m 6s
+Results:
+    - MAE : 5.349074112231642
+    - Correlation : 0.4471681874873431
+////////////////////////////////////////////
+Iteration 52/60 for phenotype size_res finished
+Lambda tested : 15600.0
+Elapsed time from start: 0d 2h 14m 41s
+Results:
+    - MAE : 5.3489599932488145
+    - Correlation : 0.44718521827005175
+////////////////////////////////////////////
+Iteration 53/60 for phenotype size_res finished
+Lambda tested : 15650.0
+Elapsed time from start: 0d 2h 17m 14s
+Results:
+    - MAE : 5.348846232316782
+    - Correlation : 0.4472020082239258
+////////////////////////////////////////////
+Iteration 54/60 for phenotype size_res finished
+Lambda tested : 15700.0
+Elapsed time from start: 0d 2h 19m 47s
+Results:
+    - MAE : 5.34873282705137
+    - Correlation : 0.44721855950992817
+////////////////////////////////////////////
+Iteration 55/60 for phenotype size_res finished
+Lambda tested : 15750.0
+Elapsed time from start: 0d 2h 22m 20s
+Results:
+    - MAE : 5.3486197750922635
+    - Correlation : 0.4472348742647976
+////////////////////////////////////////////
+Iteration 56/60 for phenotype size_res finished
+Lambda tested : 15800.0
+Elapsed time from start: 0d 2h 24m 55s
+Results:
+    - MAE : 5.348507074102681
+    - Correlation : 0.4472509546013858
+////////////////////////////////////////////
+Iteration 57/60 for phenotype size_res finished
+Lambda tested : 15850.0
+Elapsed time from start: 0d 2h 27m 30s
+Results:
+    - MAE : 5.348394721769088
+    - Correlation : 0.447266802608989
+////////////////////////////////////////////
+Iteration 58/60 for phenotype size_res finished
+Lambda tested : 15900.0
+Elapsed time from start: 0d 2h 30m 3s
+Results:
+    - MAE : 5.348282715800882
+    - Correlation : 0.4472824203536735
+////////////////////////////////////////////
+Iteration 59/60 for phenotype size_res finished
+Lambda tested : 15950.0
+Elapsed time from start: 0d 2h 32m 38s
+Results:
+    - MAE : 5.348171053930119
+    - Correlation : 0.44729780987859613
+////////////////////////////////////////////
+Iteration 60/60 for phenotype size_res finished
+Lambda tested : 16000.0
+Elapsed time from start: 0d 2h 35m 15s
+Results:
+    - MAE : 5.3480597339111995
+    - Correlation : 0.4473129732043198
+////////////////////////////////////////////
+Computation finished for size_res in 0d 2h 35m 15s
+////////////////////////////////////////////
+Iteration 1/60 for phenotype MUSC_res finished
+Lambda tested : 13050.0
+Elapsed time from start: 0d 0h 2m 32s
+Results:
+    - MAE : 1.1216274449979202
+    - Correlation : 0.5473237896377403
+////////////////////////////////////////////
+Iteration 2/60 for phenotype MUSC_res finished
+Lambda tested : 13100.0
+Elapsed time from start: 0d 0h 5m 4s
+Results:
+    - MAE : 1.121514156557295
+    - Correlation : 0.5473621503838517
+////////////////////////////////////////////
+Iteration 3/60 for phenotype MUSC_res finished
+Lambda tested : 13150.0
+Elapsed time from start: 0d 0h 7m 36s
+Results:
+    - MAE : 1.1214012083914446
+    - Correlation : 0.5474001585201242
+////////////////////////////////////////////
+Iteration 4/60 for phenotype MUSC_res finished
+Lambda tested : 13200.0
+Elapsed time from start: 0d 0h 10m 11s
+Results:
+    - MAE : 1.1212885986401977
+    - Correlation : 0.5474378170963439
+////////////////////////////////////////////
+Iteration 5/60 for phenotype MUSC_res finished
+Lambda tested : 13250.0
+Elapsed time from start: 0d 0h 12m 43s
+Results:
+    - MAE : 1.121176325458057
+    - Correlation : 0.5474751291255425
+////////////////////////////////////////////
+Iteration 6/60 for phenotype MUSC_res finished
+Lambda tested : 13300.0
+Elapsed time from start: 0d 0h 15m 15s
+Results:
+    - MAE : 1.1210643870140498
+    - Correlation : 0.5475120975845823
+////////////////////////////////////////////
+Iteration 7/60 for phenotype MUSC_res finished
+Lambda tested : 13350.0
+Elapsed time from start: 0d 0h 17m 49s
+Results:
+    - MAE : 1.1209527814915794
+    - Correlation : 0.5475487254147312
+////////////////////////////////////////////
+Iteration 8/60 for phenotype MUSC_res finished
+Lambda tested : 13400.0
+Elapsed time from start: 0d 0h 20m 21s
+Results:
+    - MAE : 1.120841507088279
+    - Correlation : 0.5475850155222232
+////////////////////////////////////////////
+Iteration 9/60 for phenotype MUSC_res finished
+Lambda tested : 13450.0
+Elapsed time from start: 0d 0h 22m 57s
+Results:
+    - MAE : 1.120730562015865
+    - Correlation : 0.5476209707788111
+////////////////////////////////////////////
+Iteration 10/60 for phenotype MUSC_res finished
+Lambda tested : 13500.0
+Elapsed time from start: 0d 0h 25m 33s
+Results:
+    - MAE : 1.1206199444999994
+    - Correlation : 0.5476565940223069
+////////////////////////////////////////////
+Iteration 11/60 for phenotype MUSC_res finished
+Lambda tested : 13550.0
+Elapsed time from start: 0d 0h 28m 4s
+Results:
+    - MAE : 1.120509751458599
+    - Correlation : 0.5476918880571116
+////////////////////////////////////////////
+Iteration 12/60 for phenotype MUSC_res finished
+Lambda tested : 13600.0
+Elapsed time from start: 0d 0h 30m 36s
+Results:
+    - MAE : 1.1204027279743471
+    - Correlation : 0.5477268556547341
+////////////////////////////////////////////
+Iteration 13/60 for phenotype MUSC_res finished
+Lambda tested : 13650.0
+Elapsed time from start: 0d 0h 33m 8s
+Results:
+    - MAE : 1.1202981995681198
+    - Correlation : 0.5477614995543031
+////////////////////////////////////////////
+Iteration 14/60 for phenotype MUSC_res finished
+Lambda tested : 13700.0
+Elapsed time from start: 0d 0h 35m 39s
+Results:
+    - MAE : 1.1201939711999636
+    - Correlation : 0.5477958224630642
+////////////////////////////////////////////
+Iteration 15/60 for phenotype MUSC_res finished
+Lambda tested : 13750.0
+Elapsed time from start: 0d 0h 38m 11s
+Results:
+    - MAE : 1.1200900413001713
+    - Correlation : 0.5478298270568717
+////////////////////////////////////////////
+Iteration 16/60 for phenotype MUSC_res finished
+Lambda tested : 13800.0
+Elapsed time from start: 0d 0h 40m 43s
+Results:
+    - MAE : 1.1199864083108695
+    - Correlation : 0.5478635159806697
+////////////////////////////////////////////
+Iteration 17/60 for phenotype MUSC_res finished
+Lambda tested : 13850.0
+Elapsed time from start: 0d 0h 43m 17s
+Results:
+    - MAE : 1.1198830706859018
+    - Correlation : 0.5478968918489622
+////////////////////////////////////////////
+Iteration 18/60 for phenotype MUSC_res finished
+Lambda tested : 13900.0
+Elapsed time from start: 0d 0h 45m 49s
+Results:
+    - MAE : 1.119780026890714
+    - Correlation : 0.5479299572462774
+////////////////////////////////////////////
+Iteration 19/60 for phenotype MUSC_res finished
+Lambda tested : 13950.0
+Elapsed time from start: 0d 0h 48m 20s
+Results:
+    - MAE : 1.119677275402244
+    - Correlation : 0.54796271472762
+////////////////////////////////////////////
+Iteration 20/60 for phenotype MUSC_res finished
+Lambda tested : 14000.0
+Elapsed time from start: 0d 0h 50m 55s
+Results:
+    - MAE : 1.119574814708808
+    - Correlation : 0.5479951668189189
+////////////////////////////////////////////
+Iteration 21/60 for phenotype MUSC_res finished
+Lambda tested : 14050.0
+Elapsed time from start: 0d 0h 53m 29s
+Results:
+    - MAE : 1.119472643309991
+    - Correlation : 0.5480273160174614
+////////////////////////////////////////////
+Iteration 22/60 for phenotype MUSC_res finished
+Lambda tested : 14100.0
+Elapsed time from start: 0d 0h 56m 2s
+Results:
+    - MAE : 1.1193707597165397
+    - Correlation : 0.5480591647923241
+////////////////////////////////////////////
+Iteration 23/60 for phenotype MUSC_res finished
+Lambda tested : 14150.0
+Elapsed time from start: 0d 0h 58m 34s
+Results:
+    - MAE : 1.1192691624502524
+    - Correlation : 0.5480907155847928
+////////////////////////////////////////////
+Iteration 24/60 for phenotype MUSC_res finished
+Lambda tested : 14200.0
+Elapsed time from start: 0d 1h 1m 6s
+Results:
+    - MAE : 1.1191678500438749
+    - Correlation : 0.5481219708087767
+////////////////////////////////////////////
+Iteration 25/60 for phenotype MUSC_res finished
+Lambda tested : 14250.0
+Elapsed time from start: 0d 1h 3m 39s
+Results:
+    - MAE : 1.1190668210409946
+    - Correlation : 0.5481529328512105
+////////////////////////////////////////////
+Iteration 26/60 for phenotype MUSC_res finished
+Lambda tested : 14300.0
+Elapsed time from start: 0d 1h 6m 12s
+Results:
+    - MAE : 1.1189660739959364
+    - Correlation : 0.5481836040724567
+////////////////////////////////////////////
+Iteration 27/60 for phenotype MUSC_res finished
+Lambda tested : 14350.0
+Elapsed time from start: 0d 1h 8m 45s
+Results:
+    - MAE : 1.1188656074736614
+    - Correlation : 0.5482139868066925
+////////////////////////////////////////////
+Iteration 28/60 for phenotype MUSC_res finished
+Lambda tested : 14400.0
+Elapsed time from start: 0d 1h 11m 18s
+Results:
+    - MAE : 1.1187654200496644
+    - Correlation : 0.5482440833622958
+////////////////////////////////////////////
+Iteration 29/60 for phenotype MUSC_res finished
+Lambda tested : 14450.0
+Elapsed time from start: 0d 1h 13m 52s
+Results:
+    - MAE : 1.118665510309874
+    - Correlation : 0.5482738960222195
+////////////////////////////////////////////
+Iteration 30/60 for phenotype MUSC_res finished
+Lambda tested : 14500.0
+Elapsed time from start: 0d 1h 16m 27s
+Results:
+    - MAE : 1.1185658768505542
+    - Correlation : 0.5483034270443624
+////////////////////////////////////////////
+Iteration 31/60 for phenotype MUSC_res finished
+Lambda tested : 14550.0
+Elapsed time from start: 0d 1h 18m 59s
+Results:
+    - MAE : 1.1184665182782045
+    - Correlation : 0.5483326786619321
+////////////////////////////////////////////
+Iteration 32/60 for phenotype MUSC_res finished
+Lambda tested : 14600.0
+Elapsed time from start: 0d 1h 21m 34s
+Results:
+    - MAE : 1.1183674332094669
+    - Correlation : 0.5483616530838002
+////////////////////////////////////////////
+Iteration 33/60 for phenotype MUSC_res finished
+Lambda tested : 14650.0
+Elapsed time from start: 0d 1h 24m 8s
+Results:
+    - MAE : 1.1182686202710257
+    - Correlation : 0.5483903524948531
+////////////////////////////////////////////
+Iteration 34/60 for phenotype MUSC_res finished
+Lambda tested : 14700.0
+Elapsed time from start: 0d 1h 26m 39s
+Results:
+    - MAE : 1.1181700780995165
+    - Correlation : 0.5484187790563356
+////////////////////////////////////////////
+Iteration 35/60 for phenotype MUSC_res finished
+Lambda tested : 14750.0
+Elapsed time from start: 0d 1h 29m 14s
+Results:
+    - MAE : 1.118071805341431
+    - Correlation : 0.5484469349061877
+////////////////////////////////////////////
+Iteration 36/60 for phenotype MUSC_res finished
+Lambda tested : 14800.0
+Elapsed time from start: 0d 1h 31m 46s
+Results:
+    - MAE : 1.1179738006530249
+    - Correlation : 0.548474822159377
+////////////////////////////////////////////
+Iteration 37/60 for phenotype MUSC_res finished
+Lambda tested : 14850.0
+Elapsed time from start: 0d 1h 34m 19s
+Results:
+    - MAE : 1.1178763561503333
+    - Correlation : 0.5485024429082243
+////////////////////////////////////////////
+Iteration 38/60 for phenotype MUSC_res finished
+Lambda tested : 14900.0
+Elapsed time from start: 0d 1h 36m 51s
+Results:
+    - MAE : 1.117779779635548
+    - Correlation : 0.5485297992227219
+////////////////////////////////////////////
+Iteration 39/60 for phenotype MUSC_res finished
+Lambda tested : 14950.0
+Elapsed time from start: 0d 1h 39m 25s
+Results:
+    - MAE : 1.1176847272470256
+    - Correlation : 0.5485568931508499
+////////////////////////////////////////////
+Iteration 40/60 for phenotype MUSC_res finished
+Lambda tested : 15000.0
+Elapsed time from start: 0d 1h 41m 57s
+Results:
+    - MAE : 1.1175899471506554
+    - Correlation : 0.5485837267188832
+////////////////////////////////////////////
+Iteration 41/60 for phenotype MUSC_res finished
+Lambda tested : 15050.0
+Elapsed time from start: 0d 1h 44m 29s
+Results:
+    - MAE : 1.1174967343654258
+    - Correlation : 0.548610301931696
+////////////////////////////////////////////
+Iteration 42/60 for phenotype MUSC_res finished
+Lambda tested : 15100.0
+Elapsed time from start: 0d 1h 47m 2s
+Results:
+    - MAE : 1.117405350381879
+    - Correlation : 0.54863662077306
+////////////////////////////////////////////
+Iteration 43/60 for phenotype MUSC_res finished
+Lambda tested : 15150.0
+Elapsed time from start: 0d 1h 49m 37s
+Results:
+    - MAE : 1.1173154540842105
+    - Correlation : 0.5486626852059342
+////////////////////////////////////////////
+Iteration 44/60 for phenotype MUSC_res finished
+Lambda tested : 15200.0
+Elapsed time from start: 0d 1h 52m 11s
+Results:
+    - MAE : 1.1172259853450215
+    - Correlation : 0.5486884971727582
+////////////////////////////////////////////
+Iteration 45/60 for phenotype MUSC_res finished
+Lambda tested : 15250.0
+Elapsed time from start: 0d 1h 54m 45s
+Results:
+    - MAE : 1.1171375053976218
+    - Correlation : 0.5487140585957294
+////////////////////////////////////////////
+Iteration 46/60 for phenotype MUSC_res finished
+Lambda tested : 15300.0
+Elapsed time from start: 0d 1h 57m 18s
+Results:
+    - MAE : 1.1170492563868435
+    - Correlation : 0.5487393713770845
+////////////////////////////////////////////
+Iteration 47/60 for phenotype MUSC_res finished
+Lambda tested : 15350.0
+Elapsed time from start: 0d 1h 59m 51s
+Results:
+    - MAE : 1.1169612372209263
+    - Correlation : 0.5487644373993719
+////////////////////////////////////////////
+Iteration 48/60 for phenotype MUSC_res finished
+Lambda tested : 15400.0
+Elapsed time from start: 0d 2h 2m 26s
+Results:
+    - MAE : 1.11687344681542
+    - Correlation : 0.5487892585257182
+////////////////////////////////////////////
+Iteration 49/60 for phenotype MUSC_res finished
+Lambda tested : 15450.0
+Elapsed time from start: 0d 2h 4m 58s
+Results:
+    - MAE : 1.1167858840931204
+    - Correlation : 0.5488138366000955
+////////////////////////////////////////////
+Iteration 50/60 for phenotype MUSC_res finished
+Lambda tested : 15500.0
+Elapsed time from start: 0d 2h 7m 30s
+Results:
+    - MAE : 1.1166985479840086
+    - Correlation : 0.5488381734475787
+////////////////////////////////////////////
+Iteration 51/60 for phenotype MUSC_res finished
+Lambda tested : 15550.0
+Elapsed time from start: 0d 2h 10m 2s
+Results:
+    - MAE : 1.1166114374251914
+    - Correlation : 0.5488622708746009
+////////////////////////////////////////////
+Iteration 52/60 for phenotype MUSC_res finished
+Lambda tested : 15600.0
+Elapsed time from start: 0d 2h 12m 35s
+Results:
+    - MAE : 1.1165245513608415
+    - Correlation : 0.5488861306692046
+////////////////////////////////////////////
+Iteration 53/60 for phenotype MUSC_res finished
+Lambda tested : 15650.0
+Elapsed time from start: 0d 2h 15m 10s
+Results:
+    - MAE : 1.1164378887421376
+    - Correlation : 0.5489097546012872
+////////////////////////////////////////////
+Iteration 54/60 for phenotype MUSC_res finished
+Lambda tested : 15700.0
+Elapsed time from start: 0d 2h 17m 44s
+Results:
+    - MAE : 1.1163514485272052
+    - Correlation : 0.5489331444228455
+////////////////////////////////////////////
+Iteration 55/60 for phenotype MUSC_res finished
+Lambda tested : 15750.0
+Elapsed time from start: 0d 2h 20m 17s
+Results:
+    - MAE : 1.1162652296810607
+    - Correlation : 0.5489563018682126
+////////////////////////////////////////////
+Iteration 56/60 for phenotype MUSC_res finished
+Lambda tested : 15800.0
+Elapsed time from start: 0d 2h 22m 52s
+Results:
+    - MAE : 1.116179231175552
+    - Correlation : 0.5489792286542919
+////////////////////////////////////////////
+Iteration 57/60 for phenotype MUSC_res finished
+Lambda tested : 15850.0
+Elapsed time from start: 0d 2h 25m 26s
+Results:
+    - MAE : 1.1160940962904315
+    - Correlation : 0.5490019264807889
+////////////////////////////////////////////
+Iteration 58/60 for phenotype MUSC_res finished
+Lambda tested : 15900.0
+Elapsed time from start: 0d 2h 27m 59s
+Results:
+    - MAE : 1.116010101613266
+    - Correlation : 0.5490243970304375
+////////////////////////////////////////////
+Iteration 59/60 for phenotype MUSC_res finished
+Lambda tested : 15950.0
+Elapsed time from start: 0d 2h 30m 32s
+Results:
+    - MAE : 1.1159263164509976
+    - Correlation : 0.5490466419692228
+////////////////////////////////////////////
+Iteration 60/60 for phenotype MUSC_res finished
+Lambda tested : 16000.0
+Elapsed time from start: 0d 2h 33m 7s
+Results:
+    - MAE : 1.1158427398551372
+    - Correlation : 0.5490686629466013
+////////////////////////////////////////////
+Computation finished for MUSC_res in 0d 2h 33m 7s
