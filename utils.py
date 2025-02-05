@@ -17,6 +17,7 @@ from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 import functools
 from hydra.utils import call, instantiate
+from matplotlib.ticker import FuncFormatter
 
 
 def results_heatmap(df1:      pd.DataFrame,
