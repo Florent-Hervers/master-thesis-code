@@ -8,6 +8,8 @@ from argparse import ArgumentParser
 import json
 from hydra import compose,initialize
 from hydra.utils import instantiate
+from Models.GPTransformer import EmbeddingType
+import torch
 
 class SNPResidualDataset(Dataset):
     def __init__(self, X, y):
@@ -36,7 +38,7 @@ def main():
     parser.add_argument(
         "-e",
         "--encoding",
-        choices=["categorial", "frequency"],
+        choices=["categorial", "frequency", "one_hot"],
         required=True,
         help="Encoding of the input of the model to use (see paper for more detail)"
     )
@@ -66,7 +68,8 @@ def main():
             name = args.wandb_run_name,
             tags = ["debug"],
         )
-
+        wandb.config["input_encoding"] = args.encoding
+    
     selected_phenotypes = args.phenotypes
 
     for phenotype in selected_phenotypes:
@@ -101,16 +104,30 @@ def main():
             # - 1 is used to shoft the [0,1,2] range to the [-1,0,1] used in the paper  
             train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.float32) - 1, y_train.to_numpy(dtype=np.float32))
             validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.float32) - 1, y_val.to_numpy(dtype=np.float32))
+            embedding_type = EmbeddingType.Linear
+            embedding_weight = None
         elif args.encoding == "frequency":
             train_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_train[indexes].to_numpy()), y_train.to_numpy(dtype=np.float32))
             validation_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_val[indexes].to_numpy()), y_val.to_numpy(dtype=np.float32))
+            embedding_type = EmbeddingType.Linear
+            embedding_weight = None
+        elif args.encoding == "one_hot":
+            train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
+            validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
+            embedding_type = EmbeddingType.EmbeddingTable
+            embedding_weight = torch.eye(3)
         
         train_from_config(
             phenotype,
             cfg,
             train_dataset=train_dataset,
             validation_dataset=validation_dataset,
-            model = instantiate(cfg.model_config.model, n_features = len(indexes)),
+            model = instantiate(
+                cfg.model_config.model,
+                n_features = len(indexes),
+                embedding_type = embedding_type,
+                embedding_table_weight = embedding_weight
+            ),
         )
     
 if __name__ == "__main__":

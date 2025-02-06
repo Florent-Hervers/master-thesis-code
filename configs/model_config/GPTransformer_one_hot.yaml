@@ -1,7 +1,7 @@
 batch_size : 32
 learning_rate : 5e-4
-n_embedding : 8
-n_heads : 2
+n_embedding : 3
+n_heads : 3
 n_blocks : 2
 n_hidden : 256
 mutual_info_threshold : 0.02
