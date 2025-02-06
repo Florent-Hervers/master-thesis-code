@@ -13,12 +13,16 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = list(train_dataset.phenotypes)
     
-    lambdas = np.linspace(19050, 22000, 60)
+    lambdas = np.linspace(22050, 25000, 60)
 
     MAE_results = np.zeros((len(lambdas)))
     correlation_results = np.zeros((len(lambdas)))
 
     for pheno in phenotypes:
+
+        if pheno == "size_res":
+            continue
+
         start_time = time.time()
         iteration_counter = 0
 
@@ -55,7 +59,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished for {pheno} in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/ridge_11_{pheno}.json", "w") as f:
+        with open(f"Results/ridge_12_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": lambdas.tolist(),
                 "dim_0_label": "lambda",
