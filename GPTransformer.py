@@ -38,7 +38,7 @@ def main():
     parser.add_argument(
         "-e",
         "--encoding",
-        choices=["categorial", "frequency", "one_hot"],
+        choices=["categorial", "frequency", "one_hot", "learned"],
         required=True,
         help="Encoding of the input of the model to use (see paper for more detail)"
     )
@@ -116,7 +116,11 @@ def main():
             validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
             embedding_type = EmbeddingType.EmbeddingTable
             embedding_weight = torch.eye(3)
-        
+        elif args.encoding == "learned":
+            train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
+            validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
+            embedding_type = EmbeddingType.EmbeddingTable
+            embedding_weight = None
         train_from_config(
             phenotype,
             cfg,

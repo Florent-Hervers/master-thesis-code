@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -e one_hot -m GPTransformer_one_hot -p ep_res,de_res,size_res,FESSEp_res,FESSEa_res,MUSC_res -w "GPTransformer with one hot encoding" -f basic_train_function
+python -u GPTransformer.py -e learned -m GPTransformer -p ep_res,de_res,size_res,FESSEp_res,FESSEa_res,MUSC_res -w "GPTransformer with learned embedding" -f basic_train_function

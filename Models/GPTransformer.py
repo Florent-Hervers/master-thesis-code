@@ -82,24 +82,26 @@ class GPTransformer(nn.Module):
     
 
 class PositionalEncoding(nn.Module):
-    """ Implementation of the sinusoidal positionnal encoding provided by a depreciated pytorch tutorial (source: https://stackoverflow.com/questions/77444485/using-positional-encoding-in-pytorch)
+    """ Implementation based on the sinusoidal positionnal encoding provided by d2l (source: https://d2l.ai/chapter_attention-mechanisms-and-transformers/self-attention-and-positional-encoding.html)
     """
     def __init__(self, d_model: int, dropout: float = 0, max_len: int = 5000):
         super().__init__()
         self.dropout = nn.Dropout(p=dropout)
 
-        position = torch.arange(max_len).unsqueeze(1)
-        # The torch.arrange(2, d_model, 2) create the 2k of the mathematical formulation
-        div_term = torch.exp(torch.arange(2, d_model, 2) * (-math.log(10000.0) / d_model))
-        pe = torch.zeros(max_len, 1, d_model)
-        pe[:, 0, 0::2] = torch.sin(position * div_term)
-        pe[:, 0, 1::2] = torch.cos(position * div_term)
-        self.register_buffer('pe', pe)
+        # Store the true embedding size to restore it at run time
+        self.d_model = d_model
+        
+        # Extend the argument to manage odd embedding size (which requires an extra value for the sin but not for the cos)
+        if d_model % 2 == 1:
+            d_model += 1
 
-    def forward(self, x: Tensor) -> Tensor:
-        """
-        Arguments:
-            x: Tensor, shape ``[seq_len, batch_size, embedding_dim]``
-        """
-        x = x + self.pe[:x.size(0)]
-        return self.dropout(x)
+        self.P = torch.zeros((1, max_len, d_model))
+        X = torch.arange(max_len, dtype=torch.float32).reshape(
+            -1, 1) / torch.pow(10000, torch.arange(
+            0, d_model, 2, dtype=torch.float32) / d_model)
+        self.P[:, :, 0::2] = torch.sin(X)
+        self.P[:, :, 1::2] = torch.cos(X)
+
+    def forward(self, X):
+        X = X + self.P[:, :X.shape[1], :self.d_model].to(X.device)
+        return self.dropout(X)
