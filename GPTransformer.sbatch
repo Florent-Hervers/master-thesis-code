@@ -16,4 +16,5 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -e learned -m GPTransformer -p ep_res,de_res,size_res,FESSEp_res,FESSEa_res,MUSC_res -w "GPTransformer with learned embedding" -f basic_train_function
+python -u GPTransformer.py -e learned -m GPTransformer_updated -p ep_res,de_res,size_res,FESSEp_res,FESSEa_res,MUSC_res -w "updated GPTransformer with learned embedding" -f basic_train_function
+python -u GPTransformer.py -e frequency -m GPTransformer -p ep_res,de_res,size_res,FESSEp_res,FESSEa_res,MUSC_res -w "GPTransformer with frequency encoding" -f basic_train_function
