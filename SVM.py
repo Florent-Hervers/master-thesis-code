@@ -11,10 +11,10 @@ from utils import print_elapsed_time
 def main():
     train_dataset = SNPmarkersDataset(mode="train", skip_check=True)
     validation_dataset = SNPmarkersDataset(mode="validation", skip_check=True)
-    phenotypes = list(train_dataset.phenotypes.keys())
+    phenotypes = ["de_res", "FESSEp_res"] #list(train_dataset.phenotypes.keys())
 
-    gammas = np.linspace(5.5e-5,0.0001225,4)
-    c = np.linspace(0.9, 0.8, 2)
+    gammas = np.linspace(7.75e-5, 0.0001675, 5)
+    c = np.concatenate([np.array([0.9]), np.linspace(1.0, 7.75, 4)])
 
     MAE_results = np.zeros((len(gammas), len(c)))
     correlation_results = np.zeros((len(gammas), len(c)))
@@ -58,7 +58,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/SVM_6_{pheno}.json", "w") as f:
+        with open(f"Results/SVM_7_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": gammas.tolist(),
                 "dim_0_label": "gamma",
