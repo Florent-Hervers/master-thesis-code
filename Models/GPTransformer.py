@@ -1,7 +1,6 @@
 import torch
-import math
 
-from torch import nn, Tensor
+from torch import nn
 from enum import Enum
 
 class EmbeddingType(Enum):
@@ -20,7 +19,7 @@ class TransformerBlock(nn.Module):
         self.norm2 = nn.LayerNorm(embedding_size)
     
     def forward(self, x):
-        y, _ = self.multihead(x,x,x)
+        y, _ = self.multihead(x,x,x, need_weights=False)
         y = self.norm1(x + y)
         z = self.fc1(y)
         z = self.fc2(self.relu(z))
