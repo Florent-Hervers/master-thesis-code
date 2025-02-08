@@ -13,7 +13,7 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = list(train_dataset.phenotypes)
     
-    lambdas = np.linspace(28050, 34000, 120)
+    lambdas = np.linspace(34050, 46000, 240)
 
     MAE_results = np.zeros((len(lambdas)))
     correlation_results = np.zeros((len(lambdas)))
@@ -34,6 +34,10 @@ def main():
         
         X_validation = validation_dataset.get_all_SNP()
         Y_validation = np.array(validation_dataset.phenotypes[pheno]).ravel()
+
+        max_correlation = 0
+        early_stop_counter = 0
+        EARLY_STOP_THRESHOLD = 30
 
         for i,lambda_val in enumerate(lambdas):
             model = Ridge(
@@ -56,10 +60,19 @@ def main():
             print(f"    - MAE : {MAE_results[i]}")
             print(f"    - Correlation : {correlation_results[i]}")
 
+            if correlation_results[i] >= max_correlation:
+                max_correlation = correlation_results[i]
+                early_stop_counter = 0
+            else:
+                if early_stop_counter >= EARLY_STOP_THRESHOLD:
+                    break
+                else:
+                    early_stop_counter += 1
+
         print("////////////////////////////////////////////")
         print(f"Computation finished for {pheno} in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/ridge_14_{pheno}.json", "w") as f:
+        with open(f"Results/ridge_15_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": lambdas.tolist(),
                 "dim_0_label": "lambda",
