@@ -32,6 +32,7 @@ class GPTransformer(nn.Module):
                  n_hidden,
                  n_heads,
                  n_blocks,
+                 output_hidden_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
                  embedding_table_weight = None):
         """Create the GPTransformer model with the given argument
@@ -42,6 +43,7 @@ class GPTransformer(nn.Module):
             n_hidden (int): hidden size of the feedforward block
             n_heads (int): number of heads in the multi-head attention layers
             n_blocks (int): number of transformer blocks (attention + feed-forward) of the model
+            output_hidden_size (int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
             embedding_type (EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
             EmbeddingType.EmbeddingTable will use an embedding table with a sinusoidal positionnal encoding. Defaults to EmbeddingType.Linear.
             embedding_table_weight (_type_, optional): If embedding_type is EmbeddingType.EmbeddingTable, the embeddings weigths can be provided if wanted. Defaults to None.
@@ -71,7 +73,15 @@ class GPTransformer(nn.Module):
         self.transformer = nn.Sequential(
             *[TransformerBlock(embedding_size, n_hidden, n_heads) for _ in range(n_blocks)]
         )
-        self.output = nn.Linear(embedding_size * n_features, 1)
+
+        if output_hidden_size == None or output_hidden_size <= 1:
+            self.output = nn.Linear(embedding_size * n_features, 1)
+        else:
+            self.output = nn.Sequential(
+                nn.Linear(embedding_size * n_features, output_hidden_size),
+                nn.ReLU(),
+                nn.Linear(output_hidden_size, 1)
+            )
     
     def forward(self, x):
         x = self.embedding(x)

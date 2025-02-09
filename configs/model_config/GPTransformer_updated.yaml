@@ -5,6 +5,7 @@ n_embedding : 48
 n_heads : 4
 n_blocks : 4
 n_hidden : 1024
+output_hidden_size: 1024
 mutual_info_threshold : 0.02
 model:
   _target_: Models.GPTransformer.GPTransformer
@@ -13,5 +14,6 @@ model:
   n_hidden: ${model_config.n_hidden}
   n_heads: ${model_config.n_heads}
   n_blocks: ${model_config.n_blocks}
+  output_hidden_size: ${model_config.output_hidden_size}
   embedding_type: ??
   embedding_table_weight: ??

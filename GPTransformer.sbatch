@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -e learned -m GPTransformer_updated -p ep_res,de_res,size_res,FESSEp_res,FESSEa_res,MUSC_res -w "Test bigger GPTransformer with learned embedding" -f basic_train_function
+python -u GPTransformer.py -e learned -m GPTransformer_updated -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test bigget output mlp with learned embedding" -f basic_train_function
