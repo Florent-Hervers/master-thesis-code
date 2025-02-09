@@ -38,7 +38,7 @@ def main():
     parser.add_argument(
         "-e",
         "--encoding",
-        choices=["categorial", "frequency", "one_hot", "learned"],
+        choices=["categorical", "frequency", "one_hot", "learned"],
         required=True,
         help="Encoding of the input of the model to use (see paper for more detail)"
     )

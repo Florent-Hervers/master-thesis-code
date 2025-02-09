@@ -16,4 +16,7 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -e learned -m GPTransformer_updated -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test bigget output mlp with learned embedding" -f basic_train_function
+python -u GPTransformer.py -e learned -m GPTransformer -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Expand output mlp with learned embedding" -f basic_train_function
+python -u GPTransformer.py -e frequency -m GPTransformer -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Expand output mlp with frequency embedding" -f basic_train_function
+python -u GPTransformer.py -e one_hot -m GPTransformer_one_hot -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Expand output mlp with one_hot embedding" -f basic_train_function
+python -u GPTransformer.py -e categorical -m GPTransformer -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Expand output mlp with categorical embedding" -f basic_train_function
