@@ -11,18 +11,14 @@ from utils import print_elapsed_time
 def main():
     train_dataset = SNPmarkersDataset(mode="train")
     validation_dataset = SNPmarkersDataset(mode="validation")
-    phenotypes = list(train_dataset.phenotypes)
+    phenotypes = ["ep_res"]
     
-    lambdas = np.linspace(34050, 46000, 240)
+    lambdas = np.linspace(46050, 70000, 480)
 
     MAE_results = np.zeros((len(lambdas)))
     correlation_results = np.zeros((len(lambdas)))
 
     for pheno in phenotypes:
-
-        if pheno == "size_res" or pheno == "MUSC_res" or pheno == "FESSEp_res":
-            continue
-
         start_time = time.time()
         iteration_counter = 0
 
@@ -72,12 +68,12 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished for {pheno} in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/ridge_15_{pheno}.json", "w") as f:
+        with open(f"Results/ridge_16_{pheno}.json", "w") as f:
             results = {
-                "dim_0_values": lambdas.tolist(),
+                "dim_0_values": lambdas.tolist()[0:iteration_counter],
                 "dim_0_label": "lambda",
-                "correlation": correlation_results.tolist(),
-                "MAE": MAE_results.tolist()
+                "correlation": correlation_results.tolist()[0:iteration_counter],
+                "MAE": MAE_results.tolist()[0:iteration_counter]
             }
             json.dump(results, f)
             
