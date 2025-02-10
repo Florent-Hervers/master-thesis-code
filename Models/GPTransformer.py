@@ -8,21 +8,23 @@ class EmbeddingType(Enum):
     EmbeddingTable = 2
 
 class TransformerBlock(nn.Module):
-    def __init__(self,embedding_size, n_hidden, n_heads):
+    def __init__(self,embedding_size, n_hidden, n_heads, dropout = 0):
         super(TransformerBlock, self).__init__()
 
-        self.multihead = nn.MultiheadAttention(embedding_size, n_heads, batch_first=True)
+        self.multihead = nn.MultiheadAttention(embedding_size, n_heads, batch_first=True, dropout=dropout)
         self.norm1 = nn.LayerNorm(embedding_size)
+        self.dropout1 = nn.Dropout(dropout)
         self.fc1 = nn.Linear(embedding_size, n_hidden)
         self.relu = nn.ReLU()
+        self.dropout2 = nn.Dropout(dropout)
         self.fc2 = nn.Linear(n_hidden, embedding_size)
         self.norm2 = nn.LayerNorm(embedding_size)
     
     def forward(self, x):
         y, _ = self.multihead(x,x,x, need_weights=False)
         y = self.norm1(x + y)
-        z = self.fc1(y)
-        z = self.fc2(self.relu(z))
+        z = self.fc1(self.dropout1(y))
+        z = self.fc2(self.dropout2(self.relu(z)))
         return self.norm2(y + z)
     
 class GPTransformer(nn.Module):
@@ -32,6 +34,7 @@ class GPTransformer(nn.Module):
                  n_hidden,
                  n_heads,
                  n_blocks,
+                 dropout = 0,
                  output_hidden_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
                  embedding_table_weight = None):
@@ -43,6 +46,7 @@ class GPTransformer(nn.Module):
             n_hidden (int): hidden size of the feedforward block
             n_heads (int): number of heads in the multi-head attention layers
             n_blocks (int): number of transformer blocks (attention + feed-forward) of the model
+            dropout (int ,optional): Probability for all the dropout layer of the model. Defaults to 0.
             output_hidden_size (int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
             embedding_type (EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
             EmbeddingType.EmbeddingTable will use an embedding table with a sinusoidal positionnal encoding. Defaults to EmbeddingType.Linear.
@@ -71,15 +75,20 @@ class GPTransformer(nn.Module):
             self.preprocessing = PositionalEncoding(embedding_size, max_len=36304)
 
         self.transformer = nn.Sequential(
-            *[TransformerBlock(embedding_size, n_hidden, n_heads) for _ in range(n_blocks)]
+            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout) for _ in range(n_blocks)]
         )
 
         if output_hidden_size == None or output_hidden_size <= 1:
-            self.output = nn.Linear(embedding_size * n_features, 1)
+            self.output = nn.Sequential(
+                nn.Dropout(dropout),
+                nn.Linear(embedding_size * n_features, 1),
+            )
         else:
             self.output = nn.Sequential(
+                nn.Dropout(dropout),
                 nn.Linear(embedding_size * n_features, output_hidden_size),
                 nn.ReLU(),
+                nn.Dropout(dropout),
                 nn.Linear(output_hidden_size, 1)
             )
     
