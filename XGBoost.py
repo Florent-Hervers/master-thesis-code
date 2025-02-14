@@ -2,7 +2,7 @@ from dataset import SNPmarkersDataset
 from xgboost import XGBRegressor
 from scipy.stats import pearsonr
 import numpy as np
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.metrics import mean_absolute_error
 import time
 import json
 import cupy as cp
@@ -14,7 +14,7 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = list(train_dataset.phenotypes.keys())
     
-    sub_sampling = [1, 0.5]
+    sub_sampling = [0.75, 0.25]
     learning_rates = [0.5, 0.4, 0.3, 0.2, 0.1, 0.01, 0.001, 0.0005, 0.0001]
     max_depth = [10, 9, 8, 7, 6, 5, 4, 3, 2]
 
@@ -31,12 +31,12 @@ def main():
         # Put everything on the GPU speed thing up
         X_train = cp.array(train_dataset.get_all_SNP())
         Y_train_cpu = np.array(train_dataset.phenotypes[pheno]).ravel()
-        Y_train_cpu /= train_dataset.pheno_std[pheno]
+        # Y_train_cpu /= train_dataset.pheno_std[pheno]
         Y_train_gpu = cp.array(Y_train_cpu)
         
         X_validation = cp.array(validation_dataset.get_all_SNP())
         Y_validation = np.array(validation_dataset.phenotypes[pheno]).ravel()
-        Y_validation /= validation_dataset.pheno_std[pheno]
+        # Y_validation /= validation_dataset.pheno_std[pheno]
 
 
         for i,sub_sampling_value in enumerate(sub_sampling):
@@ -71,7 +71,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/xgboost_{pheno}_normalized_1000_results.json", "w") as f:
+        with open(f"Results/xgboost_{pheno}_2_1000_results.json", "w") as f:
             results = {
                 "dim_0_values": sub_sampling,
                 "dim_0_label": "sub_sampling",

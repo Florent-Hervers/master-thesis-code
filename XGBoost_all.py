@@ -2,7 +2,7 @@ from dataset import SNPmarkersDataset
 from xgboost import XGBRegressor
 from scipy.stats import pearsonr
 import numpy as np
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.metrics import mean_absolute_error
 import time
 import json
 import cupy as cp
@@ -20,18 +20,21 @@ def main():
     # Put everything on the GPU speed thing up
     X_train = cp.array(train_dataset.get_all_SNP())
     Y_train_cpu = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in selected_phenotypes]).transpose()
+    """
     for pheno in Y_train_cpu:
         Y_train_cpu[pheno] /= train_dataset.pheno_std[pheno]
+    """
     Y_train_gpu = cp.array(Y_train_cpu)
     
     X_validation = cp.array(validation_dataset.get_all_SNP())
     Y_validation = pd.DataFrame([validation_dataset.phenotypes[pheno] for pheno in selected_phenotypes]).transpose()
+    """
     for pheno in Y_validation:
         Y_validation[pheno] /= validation_dataset.pheno_std[pheno]
-
+    """
     sub_sampling = [1, 0.5]
     learning_rates = [0.5, 0.4, 0.3, 0.2, 0.1, 0.01, 0.001, 0.0005, 0.0001]
-    max_depth = [10, 9, 8, 7, 6, 5, 4, 3, 2]
+    max_depth = [5, 4, 3, 2]
 
     nb_phenotypes = len(selected_phenotypes)
     MAE_results = np.zeros((nb_phenotypes, len(sub_sampling), len(learning_rates), len(max_depth)))
@@ -72,7 +75,7 @@ def main():
     print("////////////////////////////////////////////")
     print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-    with open("Results/xgboost_all_normelized_1000_results.json", "w") as f:
+    with open("Results/xgboost_all_2_1000_results.json", "w") as f:
         results = {
             "dim_0_values": Y_validation.columns.to_list(),
             "dim_0_label": "phenotypes",
