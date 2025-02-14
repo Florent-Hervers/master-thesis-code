@@ -1,0 +1,145 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Evaluation of model Ridge finshed for phenotype ep_res in 0d 0h 0m 39s
+Hyper parameters tested: {'lambda': 55600}
+Results:
+    -> Correlation : [np.float64(0.4896414267505786)]
+        - mean: 0.4896414267505786
+        - std: 0.0
+    -> MAE : [np.float64(1.2083661986967886)]
+        - mean: 1.2083661986967886
+        - std: 1.2083661986967886
+////////////////////////////////////////////
+Evaluation of model Ridge finshed for phenotype de_res in 0d 0h 0m 47s
+Hyper parameters tested: {'lambda': 44500}
+Results:
+    -> Correlation : [np.float64(0.4772401827755404)]
+        - mean: 0.4772401827755404
+        - std: 0.0
+    -> MAE : [np.float64(2.4207831998692595)]
+        - mean: 2.4207831998692595
+        - std: 2.4207831998692595
+////////////////////////////////////////////
+Evaluation of model Ridge finshed for phenotype FESSEp_res in 0d 0h 0m 42s
+Hyper parameters tested: {'lambda': 26250}
+Results:
+    -> Correlation : [np.float64(0.5080843734670271)]
+        - mean: 0.5080843734670271
+        - std: 0.0
+    -> MAE : [np.float64(1.0534028425022688)]
+        - mean: 1.0534028425022688
+        - std: 1.0534028425022688
+////////////////////////////////////////////
+Evaluation of model Ridge finshed for phenotype FESSEa_res in 0d 0h 0m 36s
+Hyper parameters tested: {'lambda': 34000}
+Results:
+    -> Correlation : [np.float64(0.5042176514773326)]
+        - mean: 0.5042176514773326
+        - std: 0.0
+    -> MAE : [np.float64(1.0115731162192194)]
+        - mean: 1.0115731162192194
+        - std: 1.0115731162192194
+////////////////////////////////////////////
+Evaluation of model Ridge finshed for phenotype size_res in 0d 0h 0m 37s
+Hyper parameters tested: {'lambda': 20900}
+Results:
+    -> Correlation : [np.float64(0.49061550503786705)]
+        - mean: 0.49061550503786705
+        - std: 0.0
+    -> MAE : [np.float64(5.352491764968662)]
+        - mean: 5.352491764968662
+        - std: 5.352491764968662
+////////////////////////////////////////////
+Evaluation of model Ridge finshed for phenotype MUSC_res in 0d 0h 0m 43s
+Hyper parameters tested: {'lambda': 23950}
+Results:
+    -> Correlation : [np.float64(0.5229212178147717)]
+        - mean: 0.5229212178147717
+        - std: 0.0
+    -> MAE : [np.float64(1.0980716643555768)]
+        - mean: 1.0980716643555768
+        - std: 1.0980716643555768
+////////////////////////////////////////////
+Evaluation of model Random_forest finshed for phenotype ep_res in 0d 1h 16m 29s
+Hyper parameters tested: {'max_feature': 0.1, 'max_depth': 35}
+Results:
+    -> Correlation : [np.float64(0.37994896120838834), np.float64(0.3815320933124184), np.float64(0.382418377887707), np.float64(0.3814298552263524), np.float64(0.38414842278267264)]
+        - mean: 0.38189554208350773
+        - std: 0.0013774588984312081
+    -> MAE : [np.float64(1.3254728652795096), np.float64(1.323431078927084), np.float64(1.3251565250348512), np.float64(1.3244631874240171), np.float64(1.3235790651333115)]
+        - mean: 1.3244205443597548
+        - std: 1.3244205443597548
+////////////////////////////////////////////
+Evaluation of model Random_forest finshed for phenotype de_res in 0d 4h 0m 0s
+Hyper parameters tested: {'max_feature': 0.3333333333333333, 'max_depth': 33}
+Results:
+    -> Correlation : [np.float64(0.35829394560180955), np.float64(0.35677739265013936), np.float64(0.35867849295101967), np.float64(0.3590194696588751), np.float64(0.3592492665725395)]
+        - mean: 0.3584037134868766
+        - std: 0.0008748243127098051
+    -> MAE : [np.float64(2.6355502709512946), np.float64(2.6350702222225797), np.float64(2.6348092511476935), np.float64(2.635418230445203), np.float64(2.6343724581387895)]
+        - mean: 2.6350440865811118
+        - std: 2.6350440865811118
+////////////////////////////////////////////
+Evaluation of model Random_forest finshed for phenotype FESSEp_res in 0d 0h 6m 25s
+Hyper parameters tested: {'max_feature': 0.01, 'max_depth': 17}
+Results:
+    -> Correlation : [np.float64(0.3916830144602027), np.float64(0.39337401410988676), np.float64(0.39629804094980264), np.float64(0.3939040142619544), np.float64(0.3922821134334398)]
+        - mean: 0.3935082394430573
+        - std: 0.0015995297949005767
+    -> MAE : [np.float64(1.1528798580555948), np.float64(1.151982385863132), np.float64(1.1515138690559448), np.float64(1.152801907272766), np.float64(1.1531337221207172)]
+        - mean: 1.152462348473631
+        - std: 1.152462348473631
+////////////////////////////////////////////
+Evaluation of model Random_forest finshed for phenotype FESSEa_res in 0d 3h 2m 33s
+Hyper parameters tested: {'max_feature': 0.25, 'max_depth': 23}
+Results:
+    -> Correlation : [np.float64(0.3750541151125871), np.float64(0.37283348811363587), np.float64(0.37755700181851687), np.float64(0.37276852639469876), np.float64(0.3735735826301523)]
+        - mean: 0.37435734281391814
+        - std: 0.0017991142359012307
+    -> MAE : [np.float64(1.1121172127076553), np.float64(1.111955669272576), np.float64(1.1117999905741387), np.float64(1.1137680460076131), np.float64(1.1125776241859446)]
+        - mean: 1.1124437085495855
+        - std: 1.1124437085495855
+////////////////////////////////////////////
+Evaluation of model Random_forest finshed for phenotype size_res in 0d 1h 8m 57s
+Hyper parameters tested: {'max_feature': 0.1, 'max_depth': 25}
+Results:
+    -> Correlation : [np.float64(0.3286248112685529), np.float64(0.32588483546636776), np.float64(0.3204398823031147), np.float64(0.32232124653363764), np.float64(0.3210520951330157)]
+        - mean: 0.32366457414093774
+        - std: 0.0031164635660203962
+    -> MAE : [np.float64(5.969871338051794), np.float64(5.974782058379814), np.float64(5.971067004490823), np.float64(5.977057625066567), np.float64(5.9777069742087265)]
+        - mean: 5.974097000039545
+        - std: 5.974097000039545
+////////////////////////////////////////////
+Evaluation of model Random_forest finshed for phenotype MUSC_res in 0d 1h 59m 12s
+Hyper parameters tested: {'max_feature': 0.25, 'max_depth': 15}
+Results:
+    -> Correlation : [np.float64(0.39483086067953477), np.float64(0.39544013730679317), np.float64(0.39113481597892585), np.float64(0.3949602860063103), np.float64(0.3960006365486927)]
+        - mean: 0.39447334730405137
+        - std: 0.0017191865441801304
+    -> MAE : [np.float64(1.1884792379182412), np.float64(1.185598515950723), np.float64(1.188578594474044), np.float64(1.1872990269479524), np.float64(1.1859842763841644)]
+        - mean: 1.1871879303350252
+        - std: 1.1871879303350252
+Traceback (most recent call last):
+  File "/home/fhervers/TFE/Code/run_on_test_set.py", line 108, in <module>
+    main()
+  File "/home/fhervers/TFE/Code/run_on_test_set.py", line 85, in main
+    model = SVR(gamma=hp[phenotype]["gamma"], c=hp[phenotype]["c"])
+TypeError: __init__() got an unexpected keyword argument 'c'
