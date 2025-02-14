@@ -52,7 +52,8 @@ def main():
                     model = model.fit(X_train, Y_train_gpu)
                     validation_predictions = model.predict(X_validation)
                     
-                    MAE_results[i,j,k] = mean_absolute_error(Y_validation * validation_dataset.pheno_std[pheno], validation_predictions* validation_dataset.pheno_std[pheno]) 
+                    # MAE_results[i,j,k] = mean_absolute_error(Y_validation * validation_dataset.pheno_std[pheno], validation_predictions* validation_dataset.pheno_std[pheno]) 
+                    MAE_results[i,j,k] = mean_absolute_error(Y_validation, validation_predictions) 
                     correlation_results[i,j,k] = pearsonr(Y_validation, validation_predictions).statistic
                         
                     iteration_counter += 1

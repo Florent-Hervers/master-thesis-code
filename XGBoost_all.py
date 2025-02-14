@@ -56,7 +56,8 @@ def main():
                 validation_predictions = model.predict(X_validation)
                 
                 for m in range(nb_phenotypes):
-                    MAE_results[m,i,j,k] = mean_absolute_error(Y_validation.iloc[:, m] * validation_dataset.pheno_std[selected_phenotypes[m]], validation_predictions[:, m] * validation_dataset.pheno_std[selected_phenotypes[m]]) 
+                    MAE_results[m,i,j,k] = mean_absolute_error(Y_validation.iloc[:, m], validation_predictions[:, m]) 
+                    # MAE_results[m,i,j,k] = mean_absolute_error(Y_validation.iloc[:, m] * validation_dataset.pheno_std[selected_phenotypes[m]], validation_predictions[:, m] * validation_dataset.pheno_std[selected_phenotypes[m]]) 
                     correlation_results[m,i,j,k] = pearsonr(Y_validation.iloc[:, m], validation_predictions[:, m]).statistic
                     
                 iteration_counter += 1
