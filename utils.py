@@ -95,6 +95,8 @@ def train_DL_model(
         display_evolution_threshold: float = 2.0, 
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
+    Models should be transferred to gpu at initialisation in order to allow network partionning on several GPU.
+    Models input are initially send to cuda:0 and model output is expected on cuda:0.
 
         Args:
             model (Module): The model to train.

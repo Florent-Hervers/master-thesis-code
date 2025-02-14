@@ -29,8 +29,10 @@ class ResGSModel(nn.Module):
         super(ResGSModel, self).__init__()
 
         if torch.cuda.is_available():
+            # Due to the structure of the training function, the input tensor are on cuda:0 and the output tensor should be on cuda:0
             self.IOdevice = "cuda:0"
             if torch.cuda.device_count() > 1:
+                # Enable to use a second gpu for the training of the model.
                 self.computeDevice = "cuda:1"
             else:
                 self.computeDevice = "cuda:0"
