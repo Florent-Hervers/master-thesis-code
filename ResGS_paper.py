@@ -1,8 +1,7 @@
 import torch
 import wandb
-from ResGS import ResGSModel
-from dataset import SNPmarkersDataset
-from utils import train_DL_model, print_elapsed_time
+from Models.ResGS import ResGSModel
+from utils import get_clean_config, train_DL_model, print_elapsed_time, list_of_strings, train_from_config
 from torch.utils.data import DataLoader
 from scipy.stats import pearsonr
 from sklearn.svm import SVR
@@ -11,7 +10,9 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from torch.utils.data import Dataset
 import numpy as np
 import time
-
+from argparse import ArgumentParser
+from hydra import compose, initialize
+from hydra.utils import instantiate
 
 class SNPResidualDataset(Dataset):
 
@@ -27,44 +28,51 @@ class SNPResidualDataset(Dataset):
 
 
 def main():
-    BATCH_SIZE = 64
-    LEARNING_RATE = 1e-3
-    DROPOUT = 0
-    N_LAYERS = 4
-    N_EPOCHS = 100
-    SCHEDULER_STEP_SIZE = 200
-    SCHEDULER_REDUCE_RATIO = 1
-    KERNEL_SIZE = 3
-    CHANNEL_FACTOR1 = 4
-    CHANNEL_FACTOR2 = 1.1
-    NFILTERS = 64
-    MODEL_NAME = "ResGS paper"
-    RUN_NAME = "Run ResGS paper with normalized residual"
 
-    wandb.init(
-        project = "TFE",
-        config = {
-            "model_name": MODEL_NAME,
-            "batch size": BATCH_SIZE,
-            "learning_rate": LEARNING_RATE,
-            "dropout": DROPOUT,
-            "nb layers": N_LAYERS,
-            "nb epochs": N_EPOCHS,
-            "scheduler_reduce_ratio": SCHEDULER_REDUCE_RATIO,
-            "scheduler_step_size": SCHEDULER_STEP_SIZE,
-            "kernel size" : KERNEL_SIZE,
-            "channel factor 1": CHANNEL_FACTOR1,
-            "channel factor 2": CHANNEL_FACTOR2,
-            "nfilters": NFILTERS
-        },
-        name = RUN_NAME,
-        tags = ["debug"],
+    parser = ArgumentParser()
+    parser.add_argument(
+        "--model",
+        "-m",
+        required=True,
+        type=str, 
+        help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)"
     )
-    
-    train_dataset = SNPmarkersDataset(mode = "train")
-    validation_dataset = SNPmarkersDataset(mode = "validation")
-    selected_phenotypes = ["ep_res"] #list(train_dataset.phenotypes.keys())
+    parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
+    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
+    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
+    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
 
+    args = parser.parse_args()
+    
+    with initialize(version_base=None, config_path="Configs"):
+        cfg = compose(
+            config_name="default",
+            overrides=[f"model_config={args.model}", f"data={args.data}", f"train_function_config={args.train_function}"],
+        )
+
+    if cfg.train_function_config.log_wandb:
+        wandb.init(
+            project = "TFE",
+            config = get_clean_config(cfg),
+            name = args.wandb_run_name,
+            tags = ["debug"],
+        )
+        
+    selected_phenotypes = args.phenotypes
+    
+    train_dataset = instantiate(cfg.data.train_dataset)
+    validation_dataset = instantiate(cfg.data.validation_dataset)
+
+    # Best ridge hyperparameters for all the phenotypes
+    hp = {
+        "ep_res": {"lambda": 55600},
+        "de_res": {"lambda": 44500},
+        "FESSEp_res": {"lambda": 26250},
+        "FESSEa_res": {"lambda": 34000},
+        "size_res": {"lambda": 20900},
+        "MUSC_res": {"lambda": 23950},
+    }
+    
     for phenotype in selected_phenotypes:
         start_time = time.time()
         train_dataset.set_phenotypes = phenotype
@@ -81,8 +89,9 @@ def main():
         r_max = 0  # Record the maximum Pearson value
         for model_str in ["Ridge", "support vector machine", "RandomForest", "GradientBoostingRegressor"]:
             if model_str == "Ridge":
-                model = Ridge(random_state=2307)
+                model = Ridge(alpha= hp[phenotype]["lambda"])
             elif model_str == "support vector machine":
+                continue
                 model = SVR()
             elif model_str == "RandomForest":
                 continue
@@ -113,36 +122,26 @@ def main():
         y_train = y_train.to_numpy(dtype=np.float32)
         y_val = y_val.to_numpy(dtype=np.float32)
 
+        """
         # Normalize phenotypes in order to have comparable distribution during the validation and during the training
-        y_train = (y_train - y_train.mean()) / y_train.std()
         mean_val = y_val.mean()
         std_val = y_val.std()
+        y_train = (y_train - y_train.mean()) / y_train.std()
         y_val = (y_val - y_val.mean()) / y_val.std()
+        """
 
         print(f"Sample of residual y_train: {y_train[0:10]}")
         print(f"Sample of residual y_val: {y_val[0:10]}")
-
+        
         residual_train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.float32), y_train)
         residual_validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.float32), y_val)
 
-        train_dataloader = DataLoader(residual_train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers = 4)
-        validation_dataloader = DataLoader(residual_validation_dataset, batch_size=BATCH_SIZE, num_workers = 4)
-
-        model = ResGSModel(NFILTERS, KERNEL_SIZE, CHANNEL_FACTOR1, CHANNEL_FACTOR2, N_LAYERS)
-        optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
-        criteron = torch.nn.L1Loss()
-        
-        train_DL_model(
-            model=model,
-            optimizer=optimizer,
-            train_dataloader=train_dataloader,
-            validation_dataloader=validation_dataloader,
-            criterion=criteron,
-            n_epoch=N_EPOCHS,
-            phenotype=phenotype,
+        train_from_config(
+            phenotype,
+            cfg,
+            residual_train_dataset,
+            residual_validation_dataset,
             initial_phenotype = y_pre,
-            validation_mean=mean_val,
-            validation_std=std_val
         )
 
 if __name__ == "__main__":

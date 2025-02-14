@@ -61,28 +61,28 @@ class GPTransformer(nn.Module):
         super(GPTransformer, self).__init__()
  
         if embedding_type == EmbeddingType.Linear:
-            self.embedding = nn.Linear(n_features, n_features * embedding_size)
+            self.embedding = nn.Linear(n_features, n_features * embedding_size).to("cuda:0")
             
             # Resize the vector as the Linear layer provide the vector flattened.
             self.preprocessing = lambda x: x.view((x.shape[0], n_features, embedding_size))
         elif embedding_type == EmbeddingType.EmbeddingTable:
             if embedding_table_weight != None:
-                self.embedding = nn.Embedding.from_pretrained(embedding_table_weight)
+                self.embedding = nn.Embedding.from_pretrained(embedding_table_weight).to("cuda:0")
             else:
-                self.embedding = nn.Embedding(3, embedding_size)
+                self.embedding = nn.Embedding(3, embedding_size).to("cuda:0")
             
             # Add positionnal encoding
-            self.preprocessing = PositionalEncoding(embedding_size, max_len=36304)
+            self.preprocessing = PositionalEncoding(embedding_size, max_len=36304).to("cuda:0")
 
         self.transformer = nn.Sequential(
             *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout) for _ in range(n_blocks)]
-        )
+        ).to("cuda:0")
 
         if output_hidden_size == None or output_hidden_size <= 1:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
                 nn.Linear(embedding_size * n_features, 1),
-            )
+            ).to("cuda:0")
         else:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
@@ -90,7 +90,7 @@ class GPTransformer(nn.Module):
                 nn.ReLU(),
                 nn.Dropout(dropout),
                 nn.Linear(output_hidden_size, 1)
-            )
+            ).to("cuda:0")
     
     def forward(self, x):
         x = self.embedding(x)

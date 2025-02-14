@@ -20,9 +20,9 @@ class MLP(torch.nn.Module):
         hidden_nodes_model.insert(0, 36304)
         hidden_nodes_model.append(1)
 
-        self.model = nn.Sequential(*[LinearBlock(hidden_nodes_model[i], hidden_nodes_model[i + 1], dropout=dropout) for i in range(nlayers - 1)])
-        self.dropout = nn.Dropout(dropout)
-        self.output_layer = nn.Linear(hidden_nodes_model[-2], hidden_nodes_model[-1])
+        self.model = nn.Sequential(*[LinearBlock(hidden_nodes_model[i], hidden_nodes_model[i + 1], dropout=dropout) for i in range(nlayers - 1)]).to("cuda:0")
+        self.dropout = nn.Dropout(dropout).to("cuda:0")
+        self.output_layer = nn.Linear(hidden_nodes_model[-2], hidden_nodes_model[-1]).to("cuda:0")
 
     def forward(self, x):
         return self.output_layer(self.dropout(self.model(x)))

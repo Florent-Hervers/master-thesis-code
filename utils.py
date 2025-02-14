@@ -131,9 +131,10 @@ def train_DL_model(
         assert type(optimizer) != Optimizer, \
             "The partial optimizer given don't yield a Optimizer class when the model parameters are given"
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda:0" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
-    print(f"Device used: {device}")
+    
+    print(f"Devices detected: {[f'cuda:{i}' for i in range(torch.cuda.device_count())] if torch.cuda.device_count() > 1 else device}")
     print(f"Model architecture : \n {model}")
     print(f"Numbers of parameters: {sum(p.numel() for p in model.parameters())}")
     print(f"Optimizer used: {optimizer}")
@@ -145,8 +146,6 @@ def train_DL_model(
     val_features, val_labels = next(iter(train_dataloader))
     print(f"Validation feature batch shape: {val_features.size()}")
     print(f"Validation labels batch shape: {val_labels.size()}")
-
-    model.to(device)
 
     max_correlation = 0
     early_stop_counter = 0
@@ -312,7 +311,8 @@ def train_from_config(
         run_cfg: DictConfig,
         train_dataset = None,
         validation_dataset = None,
-        model = None):
+        model = None,
+        **kwargs):
     """Launch the training based on the parameters from the hydra config files. 
     Custom datasets and model can be provided with the optionals arguments (In the case they depend they have an argument that depend on the data for example).
 
@@ -339,7 +339,8 @@ def train_from_config(
         phenotype = phenotype, 
         model= model,
         train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
-        validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset))
+        validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset),
+        **kwargs)
 
 def list_of_strings(arg):
     """Function defining a custom class for argument parsing."""
