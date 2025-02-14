@@ -1,0 +1,246 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 0.9
+Elapsed time from start: 0d 0h 48m 5s
+Results:
+    - MAE : 2.5711461930097883
+    - Correlation : 0.4436905122150805
+////////////////////////////////////////////
+Iteration 2/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 1.0
+Elapsed time from start: 0d 1h 56m 33s
+Results:
+    - MAE : 2.5664021468255425
+    - Correlation : 0.4460990027240427
+////////////////////////////////////////////
+Iteration 3/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 3.25
+Elapsed time from start: 0d 5h 53m 4s
+Results:
+    - MAE : 2.5466543013961416
+    - Correlation : 0.4601219729733467
+////////////////////////////////////////////
+Iteration 4/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 5.5
+Elapsed time from start: 0d 11h 22m 2s
+Results:
+    - MAE : 2.55695134002355
+    - Correlation : 0.4600017891243184
+////////////////////////////////////////////
+Iteration 5/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 7.75
+Elapsed time from start: 0d 14h 53m 53s
+Results:
+    - MAE : 2.5659015258579387
+    - Correlation : 0.45751423942104086
+////////////////////////////////////////////
+Iteration 6/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 0.9
+Elapsed time from start: 0d 15h 40m 39s
+Results:
+    - MAE : 2.585199976032007
+    - Correlation : 0.43646132249559094
+////////////////////////////////////////////
+Iteration 7/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 1.0
+Elapsed time from start: 0d 16h 31m 1s
+Results:
+    - MAE : 2.579187485581631
+    - Correlation : 0.43920493541982986
+////////////////////////////////////////////
+Iteration 8/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 3.25
+Elapsed time from start: 0d 18h 41m 48s
+Results:
+    - MAE : 2.542374136149118
+    - Correlation : 0.46035082896060014
+////////////////////////////////////////////
+Iteration 9/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 5.5
+Elapsed time from start: 0d 21h 38m 5s
+Results:
+    - MAE : 2.5466366319660083
+    - Correlation : 0.462485682265701
+////////////////////////////////////////////
+Iteration 10/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 7.75
+Elapsed time from start: 1d 0h 29m 36s
+Results:
+    - MAE : 2.551421870578907
+    - Correlation : 0.4619176491306606
+////////////////////////////////////////////
+Iteration 11/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 0.9
+Elapsed time from start: 1d 1h 9m 38s
+Results:
+    - MAE : 2.604402221683992
+    - Correlation : 0.42637884108378976
+////////////////////////////////////////////
+Iteration 12/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 1.0
+Elapsed time from start: 1d 1h 51m 1s
+Results:
+    - MAE : 2.5980804287783066
+    - Correlation : 0.429529247355409
+////////////////////////////////////////////
+Iteration 13/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 3.25
+Elapsed time from start: 1d 3h 58m 44s
+Results:
+    - MAE : 2.545869274462821
+    - Correlation : 0.4577978694902801
+////////////////////////////////////////////
+Iteration 14/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 5.5
+Elapsed time from start: 1d 6h 32m 13s
+Results:
+    - MAE : 2.5431664197050803
+    - Correlation : 0.462178562442774
+////////////////////////////////////////////
+Iteration 15/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 7.75
+Elapsed time from start: 1d 9h 28m 4s
+Results:
+    - MAE : 2.5484715234646655
+    - Correlation : 0.4626244891072566
+////////////////////////////////////////////
+Iteration 16/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 0.9
+Elapsed time from start: 1d 10h 11m 45s
+Results:
+    - MAE : 2.627700878456522
+    - Correlation : 0.4143825600864907
+////////////////////////////////////////////
+Iteration 17/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 1.0
+Elapsed time from start: 1d 10h 51m 39s
+Results:
+    - MAE : 2.6208373815576484
+    - Correlation : 0.41767024577415923
+////////////////////////////////////////////
+Iteration 18/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 3.25
+Elapsed time from start: 1d 12h 46m 12s
+Results:
+    - MAE : 2.557750790577031
+    - Correlation : 0.4507837994452631
+////////////////////////////////////////////
+Iteration 19/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 5.5
+Elapsed time from start: 1d 15h 34m 53s
+Results:
+    - MAE : 2.551759683969979
+    - Correlation : 0.4579367768962111
+////////////////////////////////////////////
+Iteration 20/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 7.75
+Elapsed time from start: 1d 18h 29m 39s
+Results:
+    - MAE : 2.555448569445053
+    - Correlation : 0.45923970986382284
+////////////////////////////////////////////
+Iteration 21/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 0.9
+Elapsed time from start: 1d 19h 12m 37s
+Results:
+    - MAE : 2.6523829237995815
+    - Correlation : 0.4012288719453012
+////////////////////////////////////////////
+Iteration 22/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 1.0
+Elapsed time from start: 1d 19h 55m 26s
+Results:
+    - MAE : 2.6455605219587848
+    - Correlation : 0.4045882343829383
+////////////////////////////////////////////
+Iteration 23/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 3.25
+Elapsed time from start: 1d 22h 52m 2s
+Results:
+    - MAE : 2.577697460452125
+    - Correlation : 0.44013241452941365
+////////////////////////////////////////////
+Iteration 24/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 5.5
+Elapsed time from start: 2d 1h 38m 28s
+Results:
+    - MAE : 2.5663803604860904
+    - Correlation : 0.44995001160353815
+////////////////////////////////////////////
+Iteration 25/25 for phenotype de_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 7.75
+Elapsed time from start: 2d 4h 54m 15s
+Results:
+    - MAE : 2.5690633056466368
+    - Correlation : 0.45208967826764584
+////////////////////////////////////////////
+Computation finished in 2d 4h 54m 15s
