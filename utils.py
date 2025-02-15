@@ -96,7 +96,8 @@ def train_DL_model(
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
     Models should be transferred to gpu at initialisation in order to allow network partionning on several GPU.
-    Models input are initially send to cuda:0 and model output is expected on cuda:0.
+    Models input are initially send to cuda:0 and model output is expected on cuda:0. The function as a automatic early stop if the train_loss
+    is below 0.01 for 10 epochs (ie the model as completely fit the train set and no changes are expected)
 
         Args:
             model (Module): The model to train.
@@ -151,6 +152,9 @@ def train_DL_model(
 
     max_correlation = 0
     early_stop_counter = 0
+    train_early_stop_counter = 0
+    TRAIN_EARLY_STOP_N_EPOCH = 10
+    TRAIN_EARLY_STOP_THRESHOLD = 0.01
 
     # Initially set to 2 (an unobtainable correlation) to detect easily the first iteration
     previous_correlation = 2
@@ -196,8 +200,9 @@ def train_DL_model(
                 }
             )
 
+        train_loss = np.array(train_loss).mean()
         print(f"Finished training for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''}.",
-              f"{f'Train loss: {np.array(train_loss).mean()} ' if not log_wandb else ''}")
+              f"{f'Train loss: {train_loss} ' if not log_wandb else ''}")
 
         val_loss = []
         predicted = []
@@ -279,8 +284,16 @@ def train_DL_model(
                 early_stop_counter = 0
             
             if early_stop_counter >= early_stop_n_epoch:
-                print(f"Early stop condition met. Best correlation observed: {max_correlation}")
+                print(f"Early stop condition on correlation met. Best correlation observed: {max_correlation}")
                 break
+
+            if train_loss < TRAIN_EARLY_STOP_THRESHOLD:
+                train_early_stop_counter += 1
+            
+            if train_early_stop_counter >= TRAIN_EARLY_STOP_N_EPOCH:
+                print(f"Early stop condition on train loss met. Best correlation observed: {max_correlation}")
+                break
+
 
 def print_elapsed_time(start_time: float):
     """Returns elapsed time following the format d h m s
