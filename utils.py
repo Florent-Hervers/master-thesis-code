@@ -379,6 +379,8 @@ def get_clean_config(run_cfg: DictConfig):
     for k,v in wandb_cfg["model_config"].items():
         wandb_cfg[k] = v
 
+    # Remove the layer "model_config as it's only caused by the structure of config files and isn't useful"
+    wandb_cfg.pop("model_config")
     wandb_cfg.pop("train_function_config")
     return wandb_cfg
 
