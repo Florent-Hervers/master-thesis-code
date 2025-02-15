@@ -1,5 +1,6 @@
-from torch import nn
 import torch
+import math
+from torch import nn
 
 class Conv1d_BN(nn.Module):
     def __init__(self, input_size, nb_filter, kernel_size, strides=1, padding = 1):
@@ -63,7 +64,7 @@ class ResGSModel(nn.Module):
         self.output = nn.Sequential(
             Conv1d_BN(int(nFilter * CHANNEL_FACTOR2**nlayers), nb_filter= 6400 // (int(nFilter * CHANNEL_FACTOR2**nlayers)), kernel_size=1, strides=1, padding=0),
             nn.Flatten(),
-            nn.Linear((6400 // (int(nFilter * CHANNEL_FACTOR2**nlayers))) * int(36304 / (2**nlayers)), 1)
+            nn.Linear((6400 // (int(nFilter * CHANNEL_FACTOR2**nlayers))) * math.ceil(36304 / (2**nlayers)), 1)
         ).to(self.IOdevice)
 
     def forward(self, x):
