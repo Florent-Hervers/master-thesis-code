@@ -45,21 +45,22 @@ class ResGSModel(nn.Module):
         self.input_block2 = Res_Block(nFilter, nb_filter=nFilter, kernel_size=_KERNEL_SIZE, strides=1).to(self.IOdevice)
         nFilter1 = int(nFilter * CHANNEL_FACTOR1)
 
+
         self.layer1 = nn.Sequential(
             *[nn.Sequential( 
                 Conv1d_BN(int(nFilter * CHANNEL_FACTOR2**(i-1)), nb_filter=nFilter1, kernel_size=_KERNEL_SIZE, strides=2), 
                 Conv1d_BN(nFilter1, nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=1, strides=1, padding=0), 
                 Res_Block(int(nFilter * CHANNEL_FACTOR2**i), nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=_KERNEL_SIZE, strides=1), 
                 Res_Block(int(nFilter * CHANNEL_FACTOR2**i), nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=_KERNEL_SIZE, strides=1),
-            )for i in range(1, (nlayers) // 2) ]).to(self.IOdevice)
+            )for i in range(1, 2) ]).to(self.IOdevice)
         
-        self.layer2 = nn.Sequential(
+        self.layers2 = nn.Sequential(
             *[nn.Sequential( 
                 Conv1d_BN(int(nFilter * CHANNEL_FACTOR2**(i-1)), nb_filter=nFilter1, kernel_size=_KERNEL_SIZE, strides=2), 
                 Conv1d_BN(nFilter1, nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=1, strides=1, padding=0), 
                 Res_Block(int(nFilter * CHANNEL_FACTOR2**i), nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=_KERNEL_SIZE, strides=1), 
                 Res_Block(int(nFilter * CHANNEL_FACTOR2**i), nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=_KERNEL_SIZE, strides=1),
-            )for i in range(nlayers // 2, nlayers + 1) ]).to(self.computeDevice)
+            )for i in range(2, nlayers + 1) ]).to(self.computeDevice)
 
         self.output = nn.Sequential(
             Conv1d_BN(int(nFilter * CHANNEL_FACTOR2**nlayers), nb_filter= 6400 // (int(nFilter * CHANNEL_FACTOR2**nlayers)), kernel_size=1, strides=1, padding=0),
@@ -75,7 +76,7 @@ class ResGSModel(nn.Module):
         x = self.input_block2(x)
 
         x = self.layer1(x)
-        x = self.layer2(x.to(self.computeDevice))
+        x = self.layers2(x.to(self.computeDevice))
 
         x = self.output(x.to(self.IOdevice))
         return x
