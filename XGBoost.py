@@ -10,6 +10,8 @@ from utils import print_elapsed_time
 
 def main():
     
+    NORMALIZATION = True
+
     train_dataset = SNPmarkersDataset(mode="train")
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = list(train_dataset.phenotypes.keys())
@@ -31,12 +33,14 @@ def main():
         # Put everything on the GPU speed thing up
         X_train = cp.array(train_dataset.get_all_SNP())
         Y_train_cpu = np.array(train_dataset.phenotypes[pheno]).ravel()
-        # Y_train_cpu /= train_dataset.pheno_std[pheno]
+        if NORMALIZATION:
+            Y_train_cpu /= train_dataset.pheno_std[pheno]
         Y_train_gpu = cp.array(Y_train_cpu)
         
         X_validation = cp.array(validation_dataset.get_all_SNP())
         Y_validation = np.array(validation_dataset.phenotypes[pheno]).ravel()
-        # Y_validation /= validation_dataset.pheno_std[pheno]
+        if NORMALIZATION:
+            Y_validation /= validation_dataset.pheno_std[pheno]
 
 
         for i,sub_sampling_value in enumerate(sub_sampling):
@@ -52,8 +56,11 @@ def main():
                     model = model.fit(X_train, Y_train_gpu)
                     validation_predictions = model.predict(X_validation)
                     
-                    # MAE_results[i,j,k] = mean_absolute_error(Y_validation * validation_dataset.pheno_std[pheno], validation_predictions* validation_dataset.pheno_std[pheno]) 
-                    MAE_results[i,j,k] = mean_absolute_error(Y_validation, validation_predictions) 
+                    if NORMALIZATION:
+                        MAE_results[i,j,k] = mean_absolute_error(Y_validation * validation_dataset.pheno_std[pheno], validation_predictions* validation_dataset.pheno_std[pheno]) 
+                    else:
+                        MAE_results[i,j,k] = mean_absolute_error(Y_validation, validation_predictions) 
+                    
                     correlation_results[i,j,k] = pearsonr(Y_validation, validation_predictions).statistic
                         
                     iteration_counter += 1
@@ -72,7 +79,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/xgboost_{pheno}_2_1000_results.json", "w") as f:
+        with open(f"Results/xgboost_{pheno}_2{'_normalized' if NORMALIZATION else ''}_normalized_1000_results.json", "w") as f:
             results = {
                 "dim_0_values": sub_sampling,
                 "dim_0_label": "sub_sampling",
