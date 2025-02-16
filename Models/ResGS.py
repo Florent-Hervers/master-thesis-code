@@ -62,10 +62,21 @@ class ResGSModel(nn.Module):
                 Res_Block(int(nFilter * CHANNEL_FACTOR2**i), nb_filter=int(nFilter * CHANNEL_FACTOR2**i), kernel_size=_KERNEL_SIZE, strides=1),
             )for i in range(2, nlayers + 1) ]).to(self.computeDevice)
 
+        # Size of the penultimate dimention of the tensor after all residual blocks: each layer divide this dimention by two
+        n_elements = math.ceil(36304 / (2**nlayers))
+
+        # Size of the channels (ie last dimention of the tensor after all residual blocks)
+        n_channels = int(nFilter * CHANNEL_FACTOR2**nlayers)
+
+        # Determine the number of channels to have an input dimention close to 6400 in the linear layer
+        filter_near_6400 = 6400 // n_elements
+        if filter_near_6400 == 0:
+            filter_near_6400 = 1
+
         self.output = nn.Sequential(
-            Conv1d_BN(int(nFilter * CHANNEL_FACTOR2**nlayers), nb_filter= 6400 // (int(nFilter * CHANNEL_FACTOR2**nlayers)), kernel_size=1, strides=1, padding=0),
+            Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
             nn.Flatten(),
-            nn.Linear((6400 // (int(nFilter * CHANNEL_FACTOR2**nlayers))) * math.ceil(36304 / (2**nlayers)), 1)
+            nn.Linear(filter_near_6400 * n_elements, 1)
         ).to(self.IOdevice)
 
     def forward(self, x):

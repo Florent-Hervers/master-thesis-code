@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u ResGS_paper.py -m ResGS_paper_big --data SNP_markers -w "Big ResGS_paper with optimal Ridge model" -p FESSEa_res,size_res,MUSC_res -f basic_train_function
+python -u ResGS_paper.py -m ResGS_paper_very_big --data SNP_markers -w "Very big ResGS_paper with optimal Ridge model" -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -f basic_train_function
