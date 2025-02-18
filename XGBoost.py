@@ -79,7 +79,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/xgboost_{pheno}_2{'_normalized' if NORMALIZATION else ''}_normalized_1000_results.json", "w") as f:
+        with open(f"Results/xgboost_{pheno}_2{'_normalized' if NORMALIZATION else ''}_1000_results.json", "w") as f:
             results = {
                 "dim_0_values": sub_sampling,
                 "dim_0_label": "sub_sampling",
