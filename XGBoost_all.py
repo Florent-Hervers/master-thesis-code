@@ -10,7 +10,7 @@ import pandas as pd
 from utils import print_elapsed_time
 
 def main():
-    NORMALIZATION = True
+    NORMALIZATION = False
     selected_phenotypes = ["ep_res","de_res","FESSEp_res","FESSEa_res"]
     
     train_dataset = SNPmarkersDataset(mode="train")
@@ -80,7 +80,7 @@ def main():
     print("////////////////////////////////////////////")
     print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-    with open(f"Results/xgboost_all_3_{'_normalized' if NORMALIZATION else ''}1000_results.json", "w") as f:
+    with open(f"Results/xgboost_all_3{'_normalized' if NORMALIZATION else ''}_1000_results.json", "w") as f:
         results = {
             "dim_0_values": Y_validation.columns.to_list(),
             "dim_0_label": "phenotypes",
