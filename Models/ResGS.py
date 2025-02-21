@@ -26,7 +26,16 @@ class Res_Block(nn.Module):
 
 class ResGSModel(nn.Module):
 
-    def __init__(self, nFilter, _KERNEL_SIZE, CHANNEL_FACTOR1, CHANNEL_FACTOR2, nlayers = 8):
+    def __init__(
+            self,
+            nFilter,
+            _KERNEL_SIZE,
+            CHANNEL_FACTOR1,
+            CHANNEL_FACTOR2,
+            nlayers = 8,
+            dropout = 0,
+            output_hidden_size = None
+        ):
         super(ResGSModel, self).__init__()
 
         if torch.cuda.is_available():
@@ -72,12 +81,24 @@ class ResGSModel(nn.Module):
         filter_near_6400 = 6400 // n_elements
         if filter_near_6400 == 0:
             filter_near_6400 = 1
-
-        self.output = nn.Sequential(
-            Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
-            nn.Flatten(),
-            nn.Linear(filter_near_6400 * n_elements, 1)
-        ).to(self.IOdevice)
+            
+        if output_hidden_size == None or output_hidden_size <= 1:
+            self.output = nn.Sequential(
+                Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
+                nn.Flatten(),
+                nn.Dropout(dropout),
+                nn.Linear(filter_near_6400 * n_elements, 1)
+            ).to(self.IOdevice)
+        else:
+            self.output = nn.Sequential(
+                Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
+                nn.Flatten(),
+                nn.Dropout(dropout),
+                nn.Linear(filter_near_6400 * n_elements, output_hidden_size),
+                nn.ReLU(),
+                nn.Dropout(dropout),
+                nn.Linear(output_hidden_size, 1)
+            ).to(self.IOdevice)
 
     def forward(self, x):
         # Set the number of channels to 1 as required by the conv1d layer

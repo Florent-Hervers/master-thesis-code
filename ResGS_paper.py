@@ -89,8 +89,7 @@ def main():
         r_max = 0  # Record the maximum Pearson value
         for model_str in ["Ridge", "support vector machine", "RandomForest", "GradientBoostingRegressor"]:
             if model_str == "Ridge":
-                model = Ridge()
-                #model = Ridge(alpha= hp[phenotype]["lambda"])
+                model = Ridge(alpha= hp[phenotype]["lambda"])
             elif model_str == "support vector machine":
                 continue
                 model = SVR()
