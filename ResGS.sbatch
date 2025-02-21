@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u ResGS.py
+python -u train.py -m ResGS_paper -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResGS with correct mlp input layer size" -f basic_train_function
