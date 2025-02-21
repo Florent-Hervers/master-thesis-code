@@ -34,6 +34,7 @@ class GPTransformer(nn.Module):
                  n_hidden,
                  n_heads,
                  n_blocks,
+                 sequence_length,
                  dropout = 0,
                  output_hidden_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
@@ -41,11 +42,12 @@ class GPTransformer(nn.Module):
         """Create the GPTransformer model with the given argument
 
         Args:
-            n_features (int): Number of markers selected.
-            embedding_size (int): size of the embeddding of the marker
+            n_features (int): number of possible values that the input can take. Ignored when embedding_type is equal to EmbeddingType.Linear or if embedding_table_weight is provided (the n_features will be infered from the tensor shape).
+            embedding_size (int): size of the embeddding of the markers.
             n_hidden (int): hidden size of the feedforward block
             n_heads (int): number of heads in the multi-head attention layers
             n_blocks (int): number of transformer blocks (attention + feed-forward) of the model
+            sequence_length (int): length of the sequence fed as input.
             dropout (int ,optional): Probability for all the dropout layer of the model. Defaults to 0.
             output_hidden_size (int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
             embedding_type (EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
@@ -61,47 +63,54 @@ class GPTransformer(nn.Module):
         super(GPTransformer, self).__init__()
         
         if torch.cuda.is_available():
-            self.device = "cuda:0"
+            # Due to the structure of the training function, the input tensor are on cuda:0 and the output tensor should be on cuda:0
+            self.IOdevice = "cuda:0"
+            if torch.cuda.device_count() > 1:
+                # Enable to use a second gpu for the training of the model.
+                self.computeDevice = "cuda:1"
+            else:
+                self.computeDevice = "cuda:0"
         else:
-            self.device = "cpu"
+            self.IOdevice = "cpu"
+            self.computeDevice = "cpu"
             
         if embedding_type == EmbeddingType.Linear:
-            self.embedding = nn.Linear(n_features, n_features * embedding_size).to(self.device)
+            self.embedding = nn.Linear(sequence_length, sequence_length * embedding_size).to(self.IOdevice)
             
             # Resize the vector as the Linear layer provide the vector flattened.
-            self.preprocessing = lambda x: x.view((x.shape[0], n_features, embedding_size))
+            self.preprocessing = lambda x: x.view((x.shape[0], sequence_length, embedding_size))
         elif embedding_type == EmbeddingType.EmbeddingTable:
             if embedding_table_weight != None:
-                self.embedding = nn.Embedding.from_pretrained(embedding_table_weight).to(self.device)
+                self.embedding = nn.Embedding.from_pretrained(embedding_table_weight).to(self.IOdevice)
             else:
-                self.embedding = nn.Embedding(3, embedding_size).to(self.device)
+                self.embedding = nn.Embedding(n_features, embedding_size).to(self.IOdevice)
             
             # Add positionnal encoding
-            self.preprocessing = PositionalEncoding(embedding_size, max_len=36304).to(self.device)
+            self.preprocessing = PositionalEncoding(embedding_size, max_len=36304).to(self.IOdevice)
 
         self.transformer = nn.Sequential(
             *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout) for _ in range(n_blocks)]
-        ).to(self.device)
+        ).to(self.computeDevice)
 
         if output_hidden_size == None or output_hidden_size <= 1:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
-                nn.Linear(embedding_size * n_features, 1),
-            ).to(self.device)
+                nn.Linear(embedding_size * sequence_length, 1),
+            ).to(self.computeDevice)
         else:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
-                nn.Linear(embedding_size * n_features, output_hidden_size),
+                nn.Linear(embedding_size * sequence_length, output_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
                 nn.Linear(output_hidden_size, 1)
-            ).to(self.device)
+            ).to(self.computeDevice)
     
     def forward(self, x):
         x = self.embedding(x)
         x = self.preprocessing(x)
-        x = self.transformer(x)
-        return self.output(x.view(x.shape[0], -1))
+        x = self.transformer(x.to(self.computeDevice))
+        return self.output(x.view(x.shape[0], -1)).to(self.IOdevice)
     
 
 class PositionalEncoding(nn.Module):
@@ -110,6 +119,11 @@ class PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, dropout: float = 0, max_len: int = 5000):
         super().__init__()
         self.dropout = nn.Dropout(p=dropout)
+
+        if torch.cuda.is_available():
+            self.device = "cuda:0"
+        else:
+            self.device = "cpu"
 
         # Store the true embedding size to restore it at run time
         self.d_model = d_model
@@ -126,5 +140,5 @@ class PositionalEncoding(nn.Module):
         self.P[:, :, 1::2] = torch.cos(X)
 
     def forward(self, X):
-        X = X + self.P[:, :X.shape[1], :self.d_model].to(X.device)
+        X = X + self.P[:, :X.shape[1], :self.d_model].to(self.device)
         return self.dropout(X)

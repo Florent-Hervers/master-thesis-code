@@ -4,8 +4,8 @@ n_embedding : 8
 n_heads : 2
 n_blocks : 2
 n_hidden : 256
-output_hidden_size: 1024
-dropout: 0.25
+#output_hidden_size: 1024
+#dropout: 0.25
 mutual_info_threshold : 0.02
 model:
   _target_: Models.GPTransformer.GPTransformer
@@ -14,7 +14,7 @@ model:
   n_hidden: ${model_config.n_hidden}
   n_heads: ${model_config.n_heads}
   n_blocks: ${model_config.n_blocks}
-  output_hidden_size: ${model_config.output_hidden_size}
-  dropout: ${model_config.dropout}
+  #output_hidden_size: ${model_config.output_hidden_size}
+  #dropout: ${model_config.dropout}
   embedding_type: ??
   embedding_table_weight: ??

@@ -10,6 +10,8 @@ from hydra import compose,initialize
 from hydra.utils import instantiate
 from Models.GPTransformer import EmbeddingType
 import torch
+import pandas as pd
+import warnings
 
 class SNPResidualDataset(Dataset):
     def __init__(self, X, y):
@@ -49,7 +51,24 @@ def main():
         type=str, 
         help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)"
     )
+
+    parser.add_argument(
+        "--selection",
+        "-s",
+        required=True,
+        choices = ["mutual_information", "tokenization"],
+        help="Type of sequences reduction to apply the model"
+    )
+
+    parser.add_argument(
+        "--tokenized_sequences_filepath",
+        "-t",
+        type=str,
+        default="../Data/tokenized_genotype_8.csv",
+        help="Path to the csv file containing the tokenized sequences Defaults to ../Data/tokenized_genotype_8.csv"
+    )
     parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
+    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data). Unused if mutual_info is chosen")
     parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
     parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
 
@@ -58,7 +77,7 @@ def main():
     with initialize(version_base=None, config_path="Configs"):
         cfg = compose(
             config_name="default",
-            overrides=[f"model_config={args.model}", f"train_function_config={args.train_function}"],
+            overrides=[f"model_config={args.model}", f"data={args.data}", f"train_function_config={args.train_function}"],
         )
 
     if cfg.train_function_config.log_wandb:
@@ -69,58 +88,98 @@ def main():
             tags = ["debug"],
         )
         wandb.config["input_encoding"] = args.encoding
+        wandb.config["features_processing"] = args.selection
     
     selected_phenotypes = args.phenotypes
+    for phenotype in selected_phenotypes: 
+        
+        if args.selection == "mutual_information":
+            mi = np.zeros(36304)
+            modes = ["train", "validation", "test"]
+            X_train = []
+            y_train = []
+            X_val = []
+            y_val = []
+            for mode in modes:
+                dataset = SNPmarkersDataset(mode = mode, skip_check=True)
+                dataset.set_phenotypes = phenotype
+                
+                X = dataset.get_all_SNP()
+                y = dataset.phenotypes[phenotype]
 
-    for phenotype in selected_phenotypes:
-        mi = np.zeros(36304)
-        modes = ["train", "validation", "test"]
-        X_train = []
-        y_train = []
-        X_val = []
-        y_val = []
-        for mode in modes:
-            dataset = SNPmarkersDataset(mode = mode, skip_check=True)
-            dataset.set_phenotypes = phenotype
+                # Save the results to avoid fetching two times the sames values later on
+                if mode == "train":
+                    X_train = X
+                    y_train = y 
+                if mode == "validation":
+                    X_val = X
+                    y_val = y 
+                mi += mutual_info_regression(X,y, n_jobs=-1, discrete_features=True, random_state=2307)
+
+            # Divide the number of modes to obtain the average mutual information
+            mi /= len(modes)
+            indexes = np.where(mi > cfg.model_config.mutual_info_threshold)[0]
+            print(f"Nb of selected features: {len(indexes)}")
+
+            if args.encoding == "categorical":
+                # - 1 is used to shoft the [0,1,2] range to the [-1,0,1] used in the paper  
+                train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.float32) - 1, y_train.to_numpy(dtype=np.float32))
+                validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.float32) - 1, y_val.to_numpy(dtype=np.float32))
+            elif args.encoding == "frequency":
+                train_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_train[indexes].to_numpy()), y_train.to_numpy(dtype=np.float32))
+                validation_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_val[indexes].to_numpy()), y_val.to_numpy(dtype=np.float32))
+            else:
+                train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
+                validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
             
-            X = dataset.get_all_SNP()
-            y = dataset.phenotypes[phenotype]
+            if args.encoding == "categorical" or args.encoding == "frequency":
+                n_features = 0
+            else:
+                n_features = 3
 
-            # Save the results to avoid fetching two times the sames values later on
-            if mode == "train":
-                X_train = X
-                y_train = y 
-            if mode == "validation":
-                X_val = X
-                y_val = y 
-            mi += mutual_info_regression(X,y, n_jobs=-1, discrete_features=True, random_state=2307)
+            sequence_length = len(indexes)
+            
+            
+        if args.selection == "tokenization":
 
-        # Divide the number of modes to obtain the average mutual information
-        mi /= len(modes)
-        indexes = np.where(mi > cfg.model_config.mutual_info_threshold)[0]
-        print(f"Nb of selected features: {len(indexes)}")
+            if args.encoding != "learned":
+                warnings.warn("The only encoding valid with tokenization is the learned encoding. Execution continues used the learned embedding")
+                args.encoding = "learned"
+
+            original_train_dataset = instantiate(cfg.data.train_dataset)
+            original_validation_dataset = instantiate(cfg.data.validation_dataset)
+
+            original_train_dataset.set_phenotypes = phenotype
+            original_validation_dataset.set_phenotypes = phenotype
+
+            all_sequences_tokenized = pd.read_csv(args.tokenized_sequences_filepath, index_col = 0)
+
+            X_train = all_sequences_tokenized.loc[original_train_dataset.get_all_SNP().index]
+            X_val = all_sequences_tokenized.loc[original_validation_dataset.get_all_SNP().index]
+            
+            y_train = original_train_dataset.phenotypes[phenotype]
+            y_val = original_validation_dataset.phenotypes[phenotype]
+            
+            train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
+            validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
+            
+            n_features = 5**8 + 1
+            sequence_length = len(X_train.iloc[0])
+            
 
         if args.encoding == "categorical":
-            # - 1 is used to shoft the [0,1,2] range to the [-1,0,1] used in the paper  
-            train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.float32) - 1, y_train.to_numpy(dtype=np.float32))
-            validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.float32) - 1, y_val.to_numpy(dtype=np.float32))
             embedding_type = EmbeddingType.Linear
             embedding_weight = None
         elif args.encoding == "frequency":
-            train_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_train[indexes].to_numpy()), y_train.to_numpy(dtype=np.float32))
-            validation_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_val[indexes].to_numpy()), y_val.to_numpy(dtype=np.float32))
             embedding_type = EmbeddingType.Linear
             embedding_weight = None
         elif args.encoding == "one_hot":
-            train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
-            validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
             embedding_type = EmbeddingType.EmbeddingTable
             embedding_weight = torch.eye(3)
         elif args.encoding == "learned":
-            train_dataset = SNPResidualDataset(X_train[indexes].to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
-            validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
             embedding_type = EmbeddingType.EmbeddingTable
             embedding_weight = None
+        
         train_from_config(
             phenotype,
             cfg,
@@ -128,7 +187,8 @@ def main():
             validation_dataset=validation_dataset,
             model = instantiate(
                 cfg.model_config.model,
-                n_features = len(indexes),
+                n_features = n_features,
+                sequence_length = sequence_length,
                 embedding_type = embedding_type,
                 embedding_table_weight = embedding_weight
             ),

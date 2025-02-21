@@ -5,8 +5,8 @@
 #SBATCH --job-name=GPTransformer                # Name of the job 
 #SBATCH --export=ALL                            # Export all environment variables
 #SBATCH --output=results_GPTransformer.log      # Log-file (important!)
-#SBATCH --cpus-per-task=8                       # Number of CPU cores to allocate
-#SBATCH --mem-per-cpu=1G                        # Memory to allocate per allocated CPU core
+#SBATCH --cpus-per-task=4                       # Number of CPU cores to allocate
+#SBATCH --mem-per-cpu=8G                        # Memory to allocate per allocated CPU core
 #SBATCH --gres=gpu:1                            # Number of GPU's
 #SBATCH --time=3-00:00:00                       # Max execution time
 #
@@ -16,7 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -e learned -m GPTransformer -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test learned embedding with MSE loss" -f train_MSE
-python -u GPTransformer.py -e frequency -m GPTransformer -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test frequency embedding with MSE loss" -f train_MSE
-python -u GPTransformer.py -e one_hot -m GPTransformer_one_hot -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test one_hot embedding with MSE loss" -f train_MSE
-python -u GPTransformer.py -e categorical -m GPTransformer -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test categorical embedding with MSE loss" -f train_MSE
+python -u GPTransformer.py -s tokenization -e learned -m GPTransformer -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test Tokenization with GPTransformer" -f basic_train_function
