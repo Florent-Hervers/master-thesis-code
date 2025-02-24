@@ -4,7 +4,7 @@
 #
 #SBATCH --job-name=LassoNet                     # Name of the job 
 #SBATCH --export=ALL                            # Export all environment variables
-#SBATCH --output=results_LassoNet.log           # Log-file (important!)
+#SBATCH --output=results_LassoNet_3.log         # Log-file (important!)
 #SBATCH --cpus-per-task=4                       # Number of CPU cores to allocate
 #SBATCH --mem-per-cpu=4G                        # Memory to allocate per allocated CPU core
 #SBATCH --gres=gpu:1                            # Number of GPU's

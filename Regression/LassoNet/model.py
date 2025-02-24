@@ -26,7 +26,7 @@ def cv_eval_model(ds_tuple, bo_config, **params):
     params = collate_params(bo_config, **params)
 
     model = LassoNetRegressor(
-        hidden_dims=(1024, 1024, 1024, 1024, 768 ,512, 512, 512, 512),
+        hidden_dims=(1024,),
         lambda_start= 1.0,
         path_multiplier= 1.2,
         M=params['M'],

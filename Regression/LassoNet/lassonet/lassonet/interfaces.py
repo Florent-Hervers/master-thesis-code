@@ -275,12 +275,8 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
         def validation_obj():
             with torch.no_grad():
                 model.eval()
-                return_value = (
-                    self.criterion(model(X_val), y_val).item()
-                    + lambda_ * model.l1_regularization_skip().item()
-                    + self.gamma * model.l2_regularization().item()
-                    + self.gamma_skip * model.l2_regularization_skip().item()
-                )
+                # Use correlation instead of the validation loss to determine when to stop
+                return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
                 return return_value
 
         best_val_obj = validation_obj()
@@ -337,19 +333,23 @@ class BaseLassoNet(BaseEstimator, metaclass=ABCMeta):
             if epoch == 0:
                 # fallback to running loss of first epoch
                 real_loss = loss
+
             val_obj = validation_obj()
-            if val_obj < self.tol * best_val_obj:
+            if val_obj > best_val_obj:
                 best_val_obj = val_obj
                 epochs_since_best_val_obj = 0
-            else:
-                epochs_since_best_val_obj += 1
+            else:   
+                if val_obj >= self.tol * best_val_obj:
+                    epochs_since_best_val_obj = 0
+                else:
+                    epochs_since_best_val_obj += 1
             if self.backtrack and val_obj < real_best_val_obj:
                 best_state_dict = self.model.cpu_state_dict()
                 real_best_val_obj = val_obj
                 real_loss = loss
                 n_iters = epoch + 1
             if patience is not None and epochs_since_best_val_obj == patience:
-                print(f"Final training epoch {epoch} for lambda {lambda_:.5f} finished. Train loss: {loss:.3f}. Validation objective: {val_obj:.3f}")
+                print(f"Final training epoch {epoch} for lambda {lambda_:.5f} finished. Train loss: {loss:.3f}. Correlation: {val_obj:.3f}")
                 break
            
         if self.backtrack:
