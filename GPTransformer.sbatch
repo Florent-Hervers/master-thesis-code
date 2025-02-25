@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -s tokenization -e learned -m GPTransformer -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test Tokenization with GPTransformer with AdamW" -f train_AdamW_100
+python -u GPTransformer.py -s tokenization -e learned -m GPTransformer -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test Tokenization with GPTransformer with AdamW (0.01)" -f train_AdamW_100
