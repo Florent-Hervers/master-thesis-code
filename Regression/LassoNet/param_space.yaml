@@ -4,7 +4,7 @@ output_path: outputs
 setting:
   init_random_points: 5
   random_state_seed: 42
-  bo_iterations: 35
+  bo_iterations: 25
   
 param_scope:
   learning_rate:
@@ -13,3 +13,9 @@ param_scope:
   M:
     is_discrete: false
     value: [0,30]
+  hidden_size:
+    is_discrete: true
+    value: [256, 4096]
+  dropout:
+    is_discrete: false
+    value: [0.01, 0.99]

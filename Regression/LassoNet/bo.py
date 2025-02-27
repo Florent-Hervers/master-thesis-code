@@ -6,7 +6,7 @@ from model import cv_eval_model
 import os
 from functools import partial
 from files import make_filename, make_sure_dir
-import time
+from utils import print_elapsed_time
 
 def parse_bo_param_scope(bo_param_scope):
     scope = {}
@@ -30,7 +30,8 @@ def bo_search(dataset_tuple, start_time, bo_config_filepath):
         pbounds=parse_bo_param_scope(bo_config['param_scope']),
         random_state=bo_setting['random_state_seed']
     )
-    bayesianOptCheckpointPath = os.path.join(make_sure_dir(bo_config['checkpoint_path']), make_filename(bo_setting, postfix=''))
+    logFileName = "LassoNet_bo_logs_4.json"
+    bayesianOptCheckpointPath = os.path.join(make_sure_dir(bo_config['checkpoint_path']), logFileName)
     logger = JSONLogger(path=bayesianOptCheckpointPath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
@@ -42,6 +43,6 @@ def bo_search(dataset_tuple, start_time, bo_config_filepath):
     print("-------------------------------------------------------------------------------------")
     print(f"Optimal parameters: {optimizer.max}")
 
-    print(f"Computation finished in {int((time.time() - start_time) // 3600)}h {int(((time.time() - start_time) % 3600) // 60)}m {int((time.time() - start_time) % 60)}s")
+    print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-    return optimizer.max, optimizer.max
+    return optimizer.max
