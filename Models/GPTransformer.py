@@ -36,6 +36,7 @@ class GPTransformer(nn.Module):
                  n_blocks,
                  sequence_length,
                  dropout = 0,
+                 mask_probability = 0,
                  output_hidden_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
                  embedding_table_weight = None):
@@ -49,6 +50,7 @@ class GPTransformer(nn.Module):
             n_blocks (int): number of transformer blocks (attention + feed-forward) of the model
             sequence_length (int): length of the sequence fed as input.
             dropout (int ,optional): Probability for all the dropout layer of the model. Defaults to 0.
+            mask_probability (float, optional): Probability of masking (index set to zero for this model). Defaults to 0.
             output_hidden_size (int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
             embedding_type (EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
             EmbeddingType.EmbeddingTable will use an embedding table with a sinusoidal positionnal encoding. Defaults to EmbeddingType.Linear.
@@ -73,7 +75,10 @@ class GPTransformer(nn.Module):
         else:
             self.IOdevice = "cpu"
             self.computeDevice = "cpu"
-            
+        
+        # Due to the structure of the tokenization, the 0 index isn't use so we use a dropout layer to implement the masking
+        self.mask = nn.Dropout(mask_probability)
+
         if embedding_type == EmbeddingType.Linear:
             self.embedding = nn.Linear(sequence_length, sequence_length * embedding_size).to(self.IOdevice)
             
@@ -107,6 +112,7 @@ class GPTransformer(nn.Module):
             ).to(self.computeDevice)
     
     def forward(self, x):
+        x = self.mask(x.type(torch.float32)).type(torch.int32)
         x = self.embedding(x)
         x = self.preprocessing(x)
         x = self.transformer(x.to(self.computeDevice))
