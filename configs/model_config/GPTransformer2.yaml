@@ -1,4 +1,4 @@
-batch_size : 32
+batch_size : 128
 learning_rate : 1e-4
 n_embedding : 32
 n_heads : 4
@@ -9,7 +9,7 @@ output_hidden_size:
   - 128
 dropout: 0
 weight_decay: 1e-2
-mask_probability: 0
+mask_probability: 0.3
 linear_projector_output_size: 2
 model:
   _target_: Models.GPTransformer.GPTransformer

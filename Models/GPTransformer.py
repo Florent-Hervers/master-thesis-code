@@ -3,6 +3,7 @@ import torch
 
 from torch import nn
 from enum import Enum
+from functools import partial
 
 class EmbeddingType(Enum):
     Linear = 1
@@ -22,6 +23,7 @@ class TransformerBlock(nn.Module):
         self.norm2 = nn.LayerNorm(embedding_size)
     
     def forward(self, x):
+
         y, _ = self.multihead(x,x,x, need_weights=False)
         y = self.norm1(x + y)
         z = self.fc1(self.dropout1(y))
@@ -29,7 +31,7 @@ class TransformerBlock(nn.Module):
         return self.norm2(y + z)
     
 class GPTransformer(nn.Module):
-    def __init__(self,
+    def __init__(self, 
                  n_features,
                  embedding_size,
                  n_hidden,
@@ -42,27 +44,30 @@ class GPTransformer(nn.Module):
                  linear_projector_output_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
                  embedding_table_weight = None):
-        """Create the GPTransformer model with the given argument
+        """Create the GPTransformer model with the given argument.
 
         Args:
-            n_features (int): number of possible values that the input can take. Ignored when embedding_type is equal to EmbeddingType.Linear or if embedding_table_weight is provided (the n_features will be infered from the tensor shape).
-            embedding_size (int): size of the embeddding of the markers.
-            n_hidden (int): hidden size of the feedforward block
-            n_heads (int): number of heads in the multi-head attention layers
-            n_blocks (int): number of transformer blocks (attention + feed-forward) of the model
-            sequence_length (int): length of the sequence fed as input.
-            dropout (int ,optional): Probability for all the dropout layer of the model. Defaults to 0.
-            mask_probability (float, optional): Probability of masking (index set to zero for this model). Defaults to 0.
-            output_hidden_size (int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
-            linear_projector_output_size (int, optional): Size of the linear layer output at the end of the transformer blocs designed to reduce the number of parameter for the regression mlp. \
+            n_features(int): number of possible values that the input can take. Ignored when embedding_type is equal to EmbeddingType.Linear or if embedding_table_weight is provided (the n_features will be infered from the tensor shape).
+            embedding_size(int): size of the embeddding of the markers.
+            n_hidden(int): hidden size of the feedforward block.
+            n_heads(int): number of heads in the multi-head attention layers.
+            n_blocks(int): number of transformer blocks (attention + feed-forward) of the model.
+            sequence_length(int): length of the sequence fed as input.
+            dropout(int ,optional): Probability for all the dropout layer of the model. Defaults to 0.
+            mask_probability(float, optional): Probability of masking (index set to zero for this model). Defaults to 0.
+            output_hidden_size(int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
+            linear_projector_output_size(int, optional): Size of the linear layer output at the end of the transformer blocs designed to reduce the number of parameter for the regression mlp. \
                 The input size of the layer will be the embbedding size. If None, no linear projector will be used. Defaults to None.
-            embedding_type (EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
+            embedding_type(EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
             EmbeddingType.EmbeddingTable will use an embedding table with a sinusoidal positionnal encoding. Defaults to EmbeddingType.Linear.
-            embedding_table_weight (_type_, optional): If embedding_type is EmbeddingType.EmbeddingTable, the embeddings weigths can be provided if wanted. Defaults to None.
+            embedding_table_weight(Tensor, optional): If embedding_type is EmbeddingType.EmbeddingTable, the embeddings weigths can be provided if wanted. Defaults to None.
 
         Raises:
-            ValueError: if the argument embedding_type isn't of type EmbeddingType
-        """
+            ValueError: if the argument embedding_type isn't of type EmbeddingType.
+        """    
+        
+        
+    
         if type(embedding_type) != EmbeddingType:
             raise ValueError(f"The type of argument embedding_type should be the enum EmbeddingType but got {type(embedding_type)} instead!")
         
@@ -80,8 +85,22 @@ class GPTransformer(nn.Module):
             self.IOdevice = "cpu"
             self.computeDevice = "cpu"
         
-        # Due to the structure of the tokenization, the 0 index isn't use so we use a dropout layer to implement the masking
-        self.mask = nn.Dropout(mask_probability)
+        def mask_input(x, probability):
+            """ Replace some values on the last dimention of x by 0 with the given probability.
+
+            Args:
+                x (Tensor): input tensor on which to perform the operation, the function expect a tensor of shape (batch_size, seq_len).
+                probability (float): probability of replacing the value by zero.
+
+            Returns:
+                Tensor: updated input tensor with masked values.
+            """
+            idx = torch.where(torch.rand(len(x[-1])) <= probability)[0]
+            # Due to the structure of the tokenization, the 0 index isn't used
+            x[:, idx] = 0
+            return x
+
+        self.mask = partial(mask_input, probability = mask_probability)
 
         if embedding_type == EmbeddingType.Linear:
             self.embedding = nn.Linear(sequence_length, sequence_length * embedding_size).to(self.IOdevice)
