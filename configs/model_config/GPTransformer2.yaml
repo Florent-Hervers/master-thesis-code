@@ -8,7 +8,7 @@ output_hidden_size:
   - 512
   - 128
 dropout: 0
-weight_decay: 5e-4
+weight_decay: 1e-2
 mask_probability: 0
 linear_projector_output_size: 2
 model:

@@ -15,7 +15,7 @@ param_scope:
     value: [0,30]
   hidden_size:
     is_discrete: true
-    value: [256, 4096]
+    value: [256, 3000]
   dropout:
     is_discrete: false
     value: [0.01, 0.99]
