@@ -9,18 +9,31 @@ from sklearn.metrics import mean_absolute_error
 from argparse import ArgumentParser
 from dataset import SNPmarkersDataset
 from utils import print_elapsed_time
+from xgboost import XGBRegressor
 
 def main():
     NB_RUNS = 5
-
+    suppported_models = [
+        "Ridge",
+        "XGBoost",
+        "XGBoost_all",
+        "Random_forest",
+        "Random_forest_all",
+        "SVM",
+    ]
+    
     parser = ArgumentParser()
-    parser.add_argument("-m", "--model", type=str, required=True, choices=["Ridge", "Random_forest","SVM"], help="Model on which we should train and evaluate on the test set.")
+    parser.add_argument("-m", "--model", type=str, required=True, choices=suppported_models, help="Model on which we should train and evaluate on the test set.")
 
     model_name = parser.parse_args().model
 
     train_dataset = SNPmarkersDataset(mode="train")
     test_dataset = SNPmarkersDataset(mode="test")
-    phenotypes = list(train_dataset.phenotypes.keys())
+
+    if model_name == "XGBoost_all" or model_name == "Random_forest_all":
+        phenotypes = [["ep_res", "de_res", "FESSEp_res", "FESSEa_res"]]
+    else:
+        phenotypes = list(train_dataset.phenotypes.keys())
     
     for phenotype in phenotypes:
         train_dataset.set_phenotypes = phenotype
@@ -65,10 +78,43 @@ def main():
                                               max_features=hp[phenotype]["max_feature"],
                                               random_state=2307 + i,
                                               n_jobs=-1)
+            
+            elif model_name == "Random_forest_all":
+                hp = {"max_feature": 0.1, "max_depth": 17},
+                model = RandomForestRegressor(n_estimators=1000,
+                                              max_depth=hp["max_depth"],
+                                              max_features=hp["max_feature"],
+                                              random_state=2307 + i,
+                                              n_jobs=-1)
+            
+            elif model_name == "XGBoost_all":
+                hp = {"max_depth": 7, "learning_rate": 0.01, "subsampling": 0.75, "normalization": True}
+                model = XGBRegressor(n_estimators=1000,
+                                     subsample= hp["subsampling"],
+                                     learning_rate=hp["learning_rate"],
+                                     max_depth= hp["max_depth"],
+                                     n_jobs = -1,
+                                     random_state=2307 + i)
+            
+            elif model_name == "XGBoost":
+                hp = {
+                    "ep_res": {"max_depth": 7, "learning_rate": 0.01, "subsampling": 0.75},
+                    "de_res": {"max_depth": 7, "learning_rate": 0.01, "subsampling": 0.75},
+                    "FESSEp_res": {"max_depth": 4, "learning_rate": 0.1, "subsampling": 0.75},
+                    "FESSEa_res": {"max_depth": 3, "learning_rate": 0.1, "subsampling": 0.75},
+                    "size_res": {"max_depth": 9, "learning_rate": 0.01, "subsampling": 0.25},
+                    "MUSC_res": {"max_depth": 3, "learning_rate": 0.1, "subsampling": 0.75},
+                }
+                model = XGBRegressor(n_estimators=1000,
+                                     subsample= hp[phenotype]["subsampling"],
+                                     learning_rate=hp[phenotype]["learning_rate"],
+                                     max_depth= hp[phenotype]["max_depth"],
+                                     n_jobs = -1,
+                                     random_state=2307 + i)
 
             elif model_name == "SVM":
                 # Skip others phenotypes as hyperparameters aren't defined yet
-                if phenotype != "ep_res":
+                if phenotype not in  ["ep_res", "de_res", "FESSEp_res"]:
                     break
                 
                 # There is no point to run several times this model
@@ -76,18 +122,30 @@ def main():
                     break
                 hp = {
                     "ep_res": {"C": 3.25, "gamma": 1.225e-4},
-                    "de_res": {"C": 0, "gamma": 0},
-                    "FESSEp_res": {"C": 0, "gamma": 0},
+                    "de_res": {"C": 7.25, "gamma": 1.225e-4},
+                    "FESSEp_res": {"C": 3.25, "gamma": 7.75e-5},
                     "FESSEa_res": {"C": 0, "gamma": 0},
                     "size_res": {"C": 0, "gamma": 0},
                     "MUSC_res": {"C": 0, "gamma": 0},
                 }
                 model = SVR(gamma=hp[phenotype]["gamma"], C=hp[phenotype]["C"])
 
+
+            if "normalization" in hp.keys() and hp["normalization"]:
+                for pheno in Y_train:
+                    Y_train[pheno] /= train_dataset.pheno_std[pheno]
+
             model = model.fit(X_train, Y_train)
+            
             predictions = model.predict(X_test)
             
-            MAE.append(mean_absolute_error(Y_test , predictions))
+            if "normalization" in hp.keys() and hp["normalization"]:
+                tmp = []
+                for i, pheno in enumerate(phenotype):
+                    tmp.append(mean_absolute_error(Y_test.iloc[:, i] * test_dataset.phenotypes[pheno], predictions * test_dataset.phenotypes[pheno]))
+                MAE.append(tmp)
+            else:
+                MAE.append(mean_absolute_error(Y_test , predictions))
             correlation.append(pearsonr(Y_test, predictions).statistic)
 
         # This condition enable to skip the printing when the hyperparmater to use weren't defined yet
