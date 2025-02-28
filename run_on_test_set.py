@@ -1,5 +1,6 @@
 import numpy as np
 import time
+import pandas as pd
 
 from sklearn.linear_model import Ridge
 from sklearn.svm import SVR
@@ -11,6 +12,7 @@ from dataset import SNPmarkersDataset
 from utils import print_elapsed_time
 from xgboost import XGBRegressor
 
+
 def main():
     NB_RUNS = 5
     suppported_models = [
@@ -21,7 +23,7 @@ def main():
         "Random_forest_all",
         "SVM",
     ]
-    
+
     parser = ArgumentParser()
     parser.add_argument("-m", "--model", type=str, required=True, choices=suppported_models, help="Model on which we should train and evaluate on the test set.")
 
@@ -40,10 +42,18 @@ def main():
         test_dataset.set_phenotypes = phenotype
 
         X_train = train_dataset.get_all_SNP()
-        Y_train = np.array(train_dataset.phenotypes[phenotype]).ravel()
+        
+        if model_name == "XGBoost_all" or model_name == "Random_forest_all":
+            Y_train = pd.DataFrame([train_dataset.phenotypes[pheno] for pheno in phenotype]).transpose()
+        else:
+            Y_train = np.array(train_dataset.phenotypes[phenotype]).ravel()
         
         X_test = test_dataset.get_all_SNP()
-        Y_test = np.array(test_dataset.phenotypes[phenotype]).ravel()
+        
+        if model_name == "XGBoost_all" or model_name == "Random_forest_all":
+            Y_test = pd.DataFrame([test_dataset.phenotypes[pheno] for pheno in phenotype]).transpose()
+        else:
+            Y_test = np.array(test_dataset.phenotypes[phenotype]).ravel() 
 
         correlation = []
         MAE = []
@@ -80,7 +90,7 @@ def main():
                                               n_jobs=-1)
             
             elif model_name == "Random_forest_all":
-                hp = {"max_feature": 0.1, "max_depth": 17},
+                hp = {"max_feature": 0.1, "max_depth": 17}
                 model = RandomForestRegressor(n_estimators=1000,
                                               max_depth=hp["max_depth"],
                                               max_features=hp["max_feature"],
@@ -130,36 +140,46 @@ def main():
                 }
                 model = SVR(gamma=hp[phenotype]["gamma"], C=hp[phenotype]["C"])
 
-
-            if "normalization" in hp.keys() and hp["normalization"]:
-                for pheno in Y_train:
-                    Y_train[pheno] /= train_dataset.pheno_std[pheno]
+            # Perform only one time the normalization if necessary
+            if i == 0:
+                if "normalization" in hp.keys() and hp["normalization"]:
+                    for pheno in Y_train:
+                        Y_train[pheno] /= train_dataset.pheno_std[pheno]
 
             model = model.fit(X_train, Y_train)
             
             predictions = model.predict(X_test)
             
-            if "normalization" in hp.keys() and hp["normalization"]:
-                tmp = []
+
+            if model_name == "XGBoost_all" or model_name == "Random_forest_all":
+                
+                tmp_MAE = []
+                tmp_corr = []
                 for i, pheno in enumerate(phenotype):
-                    tmp.append(mean_absolute_error(Y_test.iloc[:, i] * test_dataset.phenotypes[pheno], predictions * test_dataset.phenotypes[pheno]))
-                MAE.append(tmp)
+                    if "normalization" in hp.keys() and hp["normalization"]:
+                        tmp_MAE.append(mean_absolute_error(Y_test.iloc[:, i], predictions[:, i] * test_dataset.pheno_std[pheno]))
+                    else:
+                        tmp_MAE.append(mean_absolute_error(Y_test.iloc[:, i] , predictions[:, i]))
+                    tmp_corr.append(pearsonr(Y_test.iloc[:, i], predictions[:, i]).statistic)
+                MAE.append(tmp_MAE)
+                correlation.append(tmp_corr)
+
             else:
-                MAE.append(mean_absolute_error(Y_test , predictions))
-            correlation.append(pearsonr(Y_test, predictions).statistic)
+                MAE.append(mean_absolute_error(Y_test, predictions))
+                correlation.append(pearsonr(Y_test, predictions).statistic)
 
         # This condition enable to skip the printing when the hyperparmater to use weren't defined yet
         if len(correlation) > 0 and len(MAE) > 0:
             print("////////////////////////////////////////////")
             print(f"Evaluation of model {model_name} finshed for phenotype {phenotype} in {print_elapsed_time(start_time)}")
-            print(f"Hyper parameters tested: {hp[phenotype]}")
+            print(f"Hyper parameters tested: {hp if type(phenotype) == list else hp[phenotype]}")
             print(f"Results:")
             print(f"    -> Correlation : {correlation}")
-            print(f"        - mean: {np.array(correlation).mean()}")
-            print(f"        - std: {np.array(correlation).std()}")
+            print(f"        - mean: {np.array(correlation).mean(axis = 0)}")
+            print(f"        - std: {np.array(correlation).std(axis = 0)}")
             print(f"    -> MAE : {MAE}")
-            print(f"        - mean: {np.array(MAE).mean()}")
-            print(f"        - std: {np.array(MAE).std()}")
+            print(f"        - mean: {np.array(MAE).mean(axis = 0)}")
+            print(f"        - std: {np.array(MAE).std(axis = 0)}")
         
 
 if __name__ == "__main__":

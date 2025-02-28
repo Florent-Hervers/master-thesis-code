@@ -16,7 +16,7 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u run_on_test_set.py -m XGBoost
-python -u run_on_test_set.py -m XGBoost_all
 python -u run_on_test_set.py -m Random_forest_all
+python -u run_on_test_set.py -m XGBoost_all
+python -u run_on_test_set.py -m XGBoost
 python -u run_on_test_set.py -m SVM
