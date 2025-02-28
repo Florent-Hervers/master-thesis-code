@@ -1,0 +1,26 @@
+batch_size : 32
+learning_rate : 1e-4
+n_embedding : 32
+n_heads : 4
+n_blocks : 3
+n_hidden : 128
+output_hidden_size: 
+  - 512
+  - 128
+dropout: 0
+weight_decay: 5e-4
+mask_probability: 0
+linear_projector_output_size: 2
+model:
+  _target_: Models.GPTransformer.GPTransformer
+  n_features: ??
+  embedding_size: ${model_config.n_embedding}
+  n_hidden: ${model_config.n_hidden}
+  n_heads: ${model_config.n_heads}
+  n_blocks: ${model_config.n_blocks}
+  output_hidden_size: ${model_config.output_hidden_size}
+  dropout: ${model_config.dropout}
+  mask_probability: ${model_config.mask_probability}
+  linear_projector_output_size: ${model_config.linear_projector_output_size}
+  embedding_type: ??
+  embedding_table_weight: ??

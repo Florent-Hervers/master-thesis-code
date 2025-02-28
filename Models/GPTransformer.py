@@ -1,3 +1,4 @@
+from omegaconf import ListConfig
 import torch
 
 from torch import nn
@@ -38,6 +39,7 @@ class GPTransformer(nn.Module):
                  dropout = 0,
                  mask_probability = 0,
                  output_hidden_size = None,
+                 linear_projector_output_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
                  embedding_table_weight = None):
         """Create the GPTransformer model with the given argument
@@ -52,6 +54,8 @@ class GPTransformer(nn.Module):
             dropout (int ,optional): Probability for all the dropout layer of the model. Defaults to 0.
             mask_probability (float, optional): Probability of masking (index set to zero for this model). Defaults to 0.
             output_hidden_size (int, optional): Size of the hidden layer of the output mlp. Defaults to None (only one linear layer)
+            linear_projector_output_size (int, optional): Size of the linear layer output at the end of the transformer blocs designed to reduce the number of parameter for the regression mlp. \
+                The input size of the layer will be the embbedding size. If None, no linear projector will be used. Defaults to None.
             embedding_type (EmbeddingType, optional): Type of the embedding to use. EmbeddingType.Linear will use a linear layer to construct the embeddings. \ 
             EmbeddingType.EmbeddingTable will use an embedding table with a sinusoidal positionnal encoding. Defaults to EmbeddingType.Linear.
             embedding_table_weight (_type_, optional): If embedding_type is EmbeddingType.EmbeddingTable, the embeddings weigths can be provided if wanted. Defaults to None.
@@ -97,15 +101,42 @@ class GPTransformer(nn.Module):
             *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout) for _ in range(n_blocks)]
         ).to(self.computeDevice)
 
-        if output_hidden_size == None or output_hidden_size <= 1:
+
+        self.initial_mlp_size = embedding_size * sequence_length
+        self.linear_projector = None
+        if linear_projector_output_size != None:
+            self.initial_mlp_size = linear_projector_output_size * sequence_length
+            self.linear_projector = nn.Linear(embedding_size, linear_projector_output_size).to(self.computeDevice)
+
+        self.flatten = nn.Flatten()
+
+        # In the case where the parameters are given via hydra configs file, the type of the output_hidden_size is a ListConfig and not a list.
+        if type(output_hidden_size) == ListConfig:
+            output_hidden_size = list(output_hidden_size)
+
+        if type(output_hidden_size) == list:
+            if len(output_hidden_size) == 0:
+                raise Exception("An empty list isn't a valid input for the output_hidden_size parameter.")
+            layers = [nn.Dropout(dropout), nn.Linear(self.initial_mlp_size, output_hidden_size[0])]
+            for i in range(1, len(output_hidden_size)):
+                layers.append(nn.ReLU())
+                layers.append(nn.Dropout(dropout))
+                layers.append(nn.Linear(output_hidden_size[i-1], output_hidden_size[i]))
+            layers.append(nn.ReLU())
+            layers.append(nn.Dropout(dropout))
+            layers.append(nn.Linear(output_hidden_size[-1], 1))
+
+            self.output = nn.Sequential(*layers).to(self.computeDevice)
+
+        elif output_hidden_size == None or output_hidden_size <= 1:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
-                nn.Linear(embedding_size * sequence_length, 1),
+                nn.Linear(self.initial_mlp_size, 1),
             ).to(self.computeDevice)
         else:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
-                nn.Linear(embedding_size * sequence_length, output_hidden_size),
+                nn.Linear(self.initial_mlp_size, output_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
                 nn.Linear(output_hidden_size, 1)
@@ -116,7 +147,12 @@ class GPTransformer(nn.Module):
         x = self.embedding(x)
         x = self.preprocessing(x)
         x = self.transformer(x.to(self.computeDevice))
-        return self.output(x.view(x.shape[0], -1)).to(self.IOdevice)
+
+        if self.linear_projector != None:
+            x = self.linear_projector(x)
+        
+        x = self.flatten(x)
+        return self.output(x).to(self.IOdevice)
     
 
 class PositionalEncoding(nn.Module):
