@@ -23,12 +23,13 @@ class TransformerBlock(nn.Module):
         self.norm2 = nn.LayerNorm(embedding_size)
     
     def forward(self, x):
-
+        y = self.norm1(x)
         y, _ = self.multihead(x,x,x, need_weights=False)
-        y = self.norm1(x + y)
+        y =  x + y
+        z = self.norm2(y)
         z = self.fc1(self.dropout1(y))
         z = self.fc2(self.dropout2(self.relu(z)))
-        return self.norm2(y + z)
+        return y + z
     
 class GPTransformer(nn.Module):
     def __init__(self, 
