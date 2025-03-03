@@ -10,7 +10,7 @@ if __name__ == "__main__":
         Exception: If one of the genotype has an unknown value
     """
     BED_FILE_PATH = "../Data/BBBDL_BBB2023_MD.bed"
-    TOKEN_SIZE = 8
+    TOKEN_SIZE = 4
     OUTPUT_FILE_PATH = f"../Data/tokenized_genotype_{TOKEN_SIZE}.csv"
 
     bed = open_bed(BED_FILE_PATH, num_threads= -1)
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     results = []
     start_index = 0
     for k, sample in tqdm.tqdm(enumerate(SNP_data)):
-        def convert_bed_to_letter(tuple_data):
+        def convert_bed_to_index(tuple_data):
             values = {
                 "A": 0,
                 "T": 1,
@@ -40,13 +40,12 @@ if __name__ == "__main__":
             else:
                 raise Exception(f"Unknown genotype value detected: got {data} but expected 0, 1 or 2!")
 
-        converted_sample = list(map(convert_bed_to_letter, enumerate(sample)))
+        converted_sample = list(map(convert_bed_to_index, enumerate(sample)))
 
         tokens = []
-        token_size = 8
-        for i in range(0,len(converted_sample), token_size):
+        for i in range(0,len(converted_sample), TOKEN_SIZE):
             sum = 0
-            for j in range(token_size):
+            for j in range(TOKEN_SIZE):
                 sum += converted_sample[i + j] * (5 ** j)
             
             tokens.append(sum)
