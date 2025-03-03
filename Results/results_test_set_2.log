@@ -1,0 +1,129 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Evaluation of model Random_forest_all finshed for phenotype ['ep_res', 'de_res', 'FESSEp_res', 'FESSEa_res'] in 0d 0h 51m 51s
+Hyper parameters tested: {'max_feature': 0.1, 'max_depth': 17}
+Results:
+    -> Correlation : [[np.float64(0.3789590862172697), np.float64(0.35214818166713535), np.float64(0.36469285447365546), np.float64(0.3743677272202639)], [np.float64(0.37730284635775546), np.float64(0.351867069377281), np.float64(0.36293327172987894), np.float64(0.3683094113269547)], [np.float64(0.37853096728108726), np.float64(0.3516711650619678), np.float64(0.36355331920536155), np.float64(0.3734094021654375)], [np.float64(0.38025905601480986), np.float64(0.3524531847452723), np.float64(0.36832305276556543), np.float64(0.3736009417821674)], [np.float64(0.3764593194392329), np.float64(0.35378333443889864), np.float64(0.3607116992816419), np.float64(0.3710444839707902)]]
+        - mean: [0.37830226 0.35238459 0.36404284 0.37214639]
+        - std: [0.0013197  0.00074751 0.0025024  0.00221729]
+    -> MAE : [[np.float64(1.331253893702291), np.float64(2.6364420783552127), np.float64(1.1654845360628971), np.float64(1.124171980976698)], [np.float64(1.330807361151482), np.float64(2.639430682782815), np.float64(1.1652909311910546), np.float64(1.124480775071059)], [np.float64(1.3308627337991705), np.float64(2.6397743614456366), np.float64(1.1664898294462318), np.float64(1.1249361318235955)], [np.float64(1.3296325279029182), np.float64(2.638420546947932), np.float64(1.1655017599596382), np.float64(1.123875824022086)], [np.float64(1.3309964744974094), np.float64(2.639637538108767), np.float64(1.1669543799808113), np.float64(1.1257286981758392)]]
+        - mean: [1.3307106  2.63874104 1.16594429 1.12463868]
+        - std: [0.00056065 0.00124379 0.00065605 0.00064828]
+////////////////////////////////////////////
+Evaluation of model XGBoost_all finshed for phenotype ['ep_res', 'de_res', 'FESSEp_res', 'FESSEa_res'] in 0d 2h 3m 20s
+Hyper parameters tested: {'max_depth': 7, 'learning_rate': 0.01, 'subsampling': 0.75, 'normalization': True}
+Results:
+    -> Correlation : [[np.float64(0.4329163024196902), np.float64(0.4169260845880389), np.float64(0.4559010871276701), np.float64(0.44344134744277514)], [np.float64(0.43889124369122495), np.float64(0.4205229503494729), np.float64(0.45355517460411304), np.float64(0.4347931114781481)], [np.float64(0.4331507151082853), np.float64(0.415739050213659), np.float64(0.45833866150799824), np.float64(0.4421285017446196)], [np.float64(0.4370037022382208), np.float64(0.4137868977661857), np.float64(0.4546523512253281), np.float64(0.44459546882897416)], [np.float64(0.43933105905903874), np.float64(0.41344298679728725), np.float64(0.4524082087396328), np.float64(0.43435199093554644)]]
+        - mean: [0.4362586  0.41608359 0.4549711  0.43986208]
+        - std: [0.00274794 0.00256063 0.00204354 0.00439109]
+    -> MAE : [[np.float64(1.383869057412409), np.float64(2.612209172510544), np.float64(1.103451526811133), np.float64(1.0876562258303208)], [np.float64(1.3784775479437594), np.float64(2.6059224249767374), np.float64(1.1072227524214637), np.float64(1.0903963135461296)], [np.float64(1.380426125336353), np.float64(2.6049456211312587), np.float64(1.101205074404732), np.float64(1.088057906599177)], [np.float64(1.3774515076197609), np.float64(2.6117774130512856), np.float64(1.1035941707073638), np.float64(1.0878962181828018)], [np.float64(1.377382801603211), np.float64(2.6178772655736657), np.float64(1.1066035484102905), np.float64(1.0912375255652698)]]
+        - mean: [1.37952141 2.61054638 1.10441541 1.08904884]
+        - std: [0.00243591 0.00470684 0.00221715 0.00147349]
+////////////////////////////////////////////
+Evaluation of model XGBoost finshed for phenotype ep_res in 0d 0h 35m 58s
+Hyper parameters tested: {'max_depth': 7, 'learning_rate': 0.01, 'subsampling': 0.75}
+Results:
+    -> Correlation : [np.float64(0.43576522178607624), np.float64(0.4353798589405155), np.float64(0.43311195289745447), np.float64(0.43653571316917245), np.float64(0.43591780066163643)]
+        - mean: 0.435342109490971
+        - std: 0.0011755983609561189
+    -> MAE : [np.float64(1.2579065842419983), np.float64(1.2598656780345583), np.float64(1.2627881960459704), np.float64(1.258399645369864), np.float64(1.2597035149108373)]
+        - mean: 1.2597327237206457
+        - std: 0.0017009599889345227
+////////////////////////////////////////////
+Evaluation of model XGBoost finshed for phenotype de_res in 0d 0h 36m 34s
+Hyper parameters tested: {'max_depth': 7, 'learning_rate': 0.01, 'subsampling': 0.75}
+Results:
+    -> Correlation : [np.float64(0.4126448702805841), np.float64(0.4166991844346005), np.float64(0.4198124412391729), np.float64(0.41991008755853965), np.float64(0.4204758187831516)]
+        - mean: 0.41790848045920975
+        - std: 0.002945868723788396
+    -> MAE : [np.float64(2.5338522648503345), np.float64(2.530434002914166), np.float64(2.5326513132998336), np.float64(2.524705453402269), np.float64(2.5290749551067435)]
+        - mean: 2.530143597914669
+        - std: 0.0031888115386488314
+////////////////////////////////////////////
+Evaluation of model XGBoost finshed for phenotype FESSEp_res in 0d 0h 22m 17s
+Hyper parameters tested: {'max_depth': 4, 'learning_rate': 0.1, 'subsampling': 0.75}
+Results:
+    -> Correlation : [np.float64(0.453759761820003), np.float64(0.4506115438882741), np.float64(0.4374896458627211), np.float64(0.446640891855933), np.float64(0.4453543069132401)]
+        - mean: 0.44677123006803426
+        - std: 0.005509265848053527
+    -> MAE : [np.float64(1.0887724135047427), np.float64(1.0951792334943142), np.float64(1.0973184032777328), np.float64(1.102785056527233), np.float64(1.0965522289284333)]
+        - mean: 1.0961214671464914
+        - std: 0.004492616808381941
+////////////////////////////////////////////
+Evaluation of model XGBoost finshed for phenotype FESSEa_res in 0d 0h 19m 14s
+Hyper parameters tested: {'max_depth': 3, 'learning_rate': 0.1, 'subsampling': 0.75}
+Results:
+    -> Correlation : [np.float64(0.44282850393309076), np.float64(0.4369839034058196), np.float64(0.4461788615879133), np.float64(0.4456387454232567), np.float64(0.4320060646178176)]
+        - mean: 0.4407272157935796
+        - std: 0.005446647454685777
+    -> MAE : [np.float64(1.056556333123973), np.float64(1.0612815782869862), np.float64(1.0558480052030106), np.float64(1.0602261876572647), np.float64(1.0645340499568903)]
+        - mean: 1.059689230845625
+        - std: 0.00318955256373895
+////////////////////////////////////////////
+Evaluation of model XGBoost finshed for phenotype size_res in 0d 0h 47m 15s
+Hyper parameters tested: {'max_depth': 9, 'learning_rate': 0.01, 'subsampling': 0.25}
+Results:
+    -> Correlation : [np.float64(0.3765658894826019), np.float64(0.38298271810557966), np.float64(0.37236126114722073), np.float64(0.3722911666384259), np.float64(0.38380183333021245)]
+        - mean: 0.37760057374080813
+        - std: 0.0049826472924490925
+    -> MAE : [np.float64(5.757076987250082), np.float64(5.738382359272661), np.float64(5.762747310436456), np.float64(5.752777580822584), np.float64(5.72007783608005)]
+        - mean: 5.746212414772367
+        - std: 0.015354928118139311
+////////////////////////////////////////////
+Evaluation of model XGBoost finshed for phenotype MUSC_res in 0d 0h 19m 4s
+Hyper parameters tested: {'max_depth': 3, 'learning_rate': 0.1, 'subsampling': 0.75}
+Results:
+    -> Correlation : [np.float64(0.45956737059242864), np.float64(0.45990651670640287), np.float64(0.4654767025535937), np.float64(0.46517165635458485), np.float64(0.4617739132534416)]
+        - mean: 0.4623792318920904
+        - std: 0.002521081271596454
+    -> MAE : [np.float64(1.1382768153236147), np.float64(1.1333072132001563), np.float64(1.1352954286736912), np.float64(1.1401282813450184), np.float64(1.1439576604280652)]
+        - mean: 1.138193079794109
+        - std: 0.003721571736685705
+////////////////////////////////////////////
+Evaluation of model SVM finshed for phenotype ep_res in 0d 2h 18m 49s
+Hyper parameters tested: {'C': 3.25, 'gamma': 0.0001225}
+Results:
+    -> Correlation : [np.float64(0.48604379059124614)]
+        - mean: 0.48604379059124614
+        - std: 0.0
+    -> MAE : [np.float64(1.2114539966425042)]
+        - mean: 1.2114539966425042
+        - std: 0.0
+////////////////////////////////////////////
+Evaluation of model SVM finshed for phenotype de_res in 0d 2h 28m 9s
+Hyper parameters tested: {'C': 7.25, 'gamma': 0.0001225}
+Results:
+    -> Correlation : [np.float64(0.4754378151241324)]
+        - mean: 0.4754378151241324
+        - std: 0.0
+    -> MAE : [np.float64(2.4304576688087938)]
+        - mean: 2.4304576688087938
+        - std: 0.0
+////////////////////////////////////////////
+Evaluation of model SVM finshed for phenotype FESSEp_res in 0d 2h 27m 41s
+Hyper parameters tested: {'C': 3.25, 'gamma': 7.75e-05}
+Results:
+    -> Correlation : [np.float64(0.5122013251954413)]
+        - mean: 0.5122013251954413
+        - std: 0.0
+    -> MAE : [np.float64(1.0452320759287284)]
+        - mean: 1.0452320759287284
+        - std: 0.0
