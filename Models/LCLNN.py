@@ -24,7 +24,17 @@ class LocalLinear(nn.Module):
         return x.squeeze(2)
 
 class LCLNN(nn.Module):
-    def __init__(self, num_snp):
+    def __init__(self, 
+                 num_snp, 
+                 mlp_hidden_size = None
+                 ):
+        """ 
+        Generate a standalone LCL network proposed orginally in the deepBLUP architecture.
+
+        Args:
+            num_snp (int): size of the snp sequence
+            mlp_hidden_size (int, optional): Size of the hidden values in the mlp. Defaults to None.
+        """
         super(LCLNN, self).__init__()
 
         if torch.cuda.is_available():
@@ -38,8 +48,15 @@ class LCLNN(nn.Module):
             nn.ReLU(),
             LocalLinear(num_snp, 1, kernel_size=3,stride=1),
         ).to(self.device)         
-      
-        self.mlp = nn.Linear(num_snp,1).to(self.device)
+
+        if mlp_hidden_size == None:
+            self.mlp = nn.Linear(num_snp,1).to(self.device)
+        else:
+            self.mlp = nn.Sequential(
+                nn.Linear(num_snp, mlp_hidden_size),
+                nn.ReLU(),
+                nn.Linear(mlp_hidden_size, 1)
+            ).to(self.device)
         
         self._init_weights()
         
