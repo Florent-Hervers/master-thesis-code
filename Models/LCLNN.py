@@ -1,3 +1,4 @@
+from omegaconf import ListConfig
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -49,8 +50,25 @@ class LCLNN(nn.Module):
             LocalLinear(num_snp, 1, kernel_size=3,stride=1),
         ).to(self.device)         
 
+        # In the case where the parameters are given via hydra configs file, the type of the mlp_hidden_size is a ListConfig and not a list.
+        if type(mlp_hidden_size) == ListConfig:
+            mlp_hidden_size = list(mlp_hidden_size)
+
+
         if mlp_hidden_size == None:
             self.mlp = nn.Linear(num_snp,1).to(self.device)
+        if type(mlp_hidden_size) == list:
+            if len(mlp_hidden_size) == 0:
+                raise Exception("An empty list isn't a valid input for the mlp_hidden_size parameter.")
+            layers = [nn.Linear(num_snp, mlp_hidden_size[0])]
+            for i in range(1, len(mlp_hidden_size)):
+                layers.append(nn.ReLU())
+                layers.append(nn.Linear(mlp_hidden_size[i-1], mlp_hidden_size[i]))
+            layers.append(nn.ReLU())
+            layers.append(nn.Linear(mlp_hidden_size[-1], 1))
+
+            self.mlp = nn.Sequential(*layers).to(self.device)
+        
         else:
             self.mlp = nn.Sequential(
                 nn.Linear(num_snp, mlp_hidden_size),
