@@ -44,6 +44,9 @@ class LCLNN(nn.Module):
             self.device = "cpu"
 
         self.encoder = nn.Sequential(
+            LocalLinear(num_snp, 1, kernel_size=7,stride=1),
+            nn.LayerNorm(num_snp),
+            nn.ReLU(),
             LocalLinear(num_snp, 1, kernel_size=5,stride=1),
             nn.LayerNorm(num_snp),
             nn.ReLU(),
@@ -90,7 +93,7 @@ class LCLNN(nn.Module):
 
     def forward(self,X):
 
-        X = self.encoder(X) #+ X
+        X = self.encoder(X) + X
         b = self.mlp(X)
         
         return b
