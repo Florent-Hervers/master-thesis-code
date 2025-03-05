@@ -1,0 +1,1558 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.263. Correlation: 0.322
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.533. Correlation: 0.238
+Final training epoch 59 for lambda 1.20000 finished. Train loss: 1.496. Correlation: 0.301
+Final training epoch 38 for lambda 1.44000 finished. Train loss: 1.532. Correlation: 0.222
+Final training epoch 22 for lambda 1.72800 finished. Train loss: 1.543. Correlation: 0.264
+Final training epoch 16 for lambda 2.07360 finished. Train loss: 1.479. Correlation: 0.380
+Final training epoch 16 for lambda 2.48832 finished. Train loss: 1.515. Correlation: 0.351
+Final training epoch 36 for lambda 2.98598 finished. Train loss: 1.501. Correlation: 0.388
+Final training epoch 19 for lambda 3.58318 finished. Train loss: 1.502. Correlation: 0.387
+Final training epoch 25 for lambda 4.29982 finished. Train loss: 1.543. Correlation: 0.369
+Final training epoch 19 for lambda 5.15978 finished. Train loss: 1.555. Correlation: 0.371
+Final training epoch 33 for lambda 6.19174 finished. Train loss: 1.595. Correlation: 0.331
+Final training epoch 20 for lambda 7.43008 finished. Train loss: 1.607. Correlation: 0.340
+Final training epoch 16 for lambda 8.91610 finished. Train loss: 1.511. Correlation: 0.334
+Final training epoch 17 for lambda 10.69932 finished. Train loss: 2.063. Correlation: 0.354
+Final training epoch 12 for lambda 12.83918 finished. Train loss: 1.507. Correlation: 0.366
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 14 for lambda 15.40702 finished. Train loss: 1.564. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.4400 / Correlation: 0.222 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.238 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.264 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.301 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.322 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.331 / Nb features: 4491
+Lambda: 8.9161 / Correlation: 0.334 / Nb features: 20536
+Lambda: 7.4301 / Correlation: 0.340 / Nb features: 26545
+Lambda: 2.4883 / Correlation: 0.351 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.354 / Nb features: 35286
+Lambda: 12.8392 / Correlation: 0.366 / Nb features: 31640
+Lambda: 4.2998 / Correlation: 0.369 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.371 / Nb features: 35905
+Lambda: 2.0736 / Correlation: 0.380 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.387 / Nb features: 36304
+Best model correlation 0.3881365
+Lambda = 2.9859839999999997
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 1.445. Correlation: 0.350
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.539. Correlation: 0.248
+Final training epoch 24 for lambda 1.20000 finished. Train loss: 3.490. Correlation: 0.074
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.200.
+  warnings.warn(
+Final training epoch 12 for lambda 1.44000 finished. Train loss: 1.828. Correlation: 0.352
+Final training epoch 24 for lambda 1.72800 finished. Train loss: 9.910. Correlation: 0.199
+Final training epoch 36 for lambda 2.07360 finished. Train loss: 2.751. Correlation: 0.255
+Final training epoch 21 for lambda 2.48832 finished. Train loss: 2.017. Correlation: 0.411
+Final training epoch 18 for lambda 2.98598 finished. Train loss: 1.449. Correlation: 0.408
+Final training epoch 18 for lambda 3.58318 finished. Train loss: 1.446. Correlation: 0.408
+Final training epoch 10 for lambda 4.29982 finished. Train loss: 1.459. Correlation: 0.403
+Final training epoch 9 for lambda 5.15978 finished. Train loss: 4.375. Correlation: 0.385
+Final training epoch 25 for lambda 6.19174 finished. Train loss: 1.469. Correlation: 0.388
+Final training epoch 16 for lambda 7.43008 finished. Train loss: 1.479. Correlation: 0.404
+Final training epoch 11 for lambda 8.91610 finished. Train loss: 1.468. Correlation: 0.395
+Final training epoch 23 for lambda 10.69932 finished. Train loss: 1.469. Correlation: 0.384
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.506. Correlation: 0.380
+Final training epoch 12 for lambda 15.40702 finished. Train loss: 1.500. Correlation: 0.374
+Final training epoch 13 for lambda 18.48843 finished. Train loss: 1.508. Correlation: 0.360
+Final training epoch 22 for lambda 22.18611 finished. Train loss: 1.521. Correlation: 0.364
+Final training epoch 9 for lambda 26.62333 finished. Train loss: 1.542. Correlation: 0.334
+Final training epoch 9 for lambda 31.94800 finished. Train loss: 1.560. Correlation: 0.264
+Final training epoch 9 for lambda 38.33760 finished. Train loss: 1.566. Correlation: nan
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.2000 / Correlation: 0.074 / Nb features: 36294
+Lambda: 1.7280 / Correlation: 0.199 / Nb features: 36213
+Lambda: 1.0000 / Correlation: 0.248 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.255 / Nb features: 35558
+Lambda: 31.9480 / Correlation: 0.264 / Nb features: 51
+Lambda: 26.6233 / Correlation: 0.334 / Nb features: 376
+Lambda: 0.0000 / Correlation: 0.350 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.352 / Nb features: 24686
+Lambda: 18.4884 / Correlation: 0.360 / Nb features: 1465
+Lambda: 22.1861 / Correlation: 0.364 / Nb features: 796
+Lambda: 15.4070 / Correlation: 0.374 / Nb features: 2860
+Lambda: 12.8392 / Correlation: 0.380 / Nb features: 4094
+Lambda: 10.6993 / Correlation: 0.384 / Nb features: 7052
+Lambda: 5.1598 / Correlation: 0.385 / Nb features: 7257
+Lambda: 6.1917 / Correlation: 0.388 / Nb features: 15652
+Lambda: 8.9161 / Correlation: 0.395 / Nb features: 8424
+Lambda: 4.2998 / Correlation: 0.403 / Nb features: 28987
+Lambda: 7.4301 / Correlation: 0.404 / Nb features: 11596
+Lambda: 2.9860 / Correlation: 0.408 / Nb features: 32381
+Lambda: 3.5832 / Correlation: 0.408 / Nb features: 13565
+Best model correlation 0.41076514
+Lambda = 2.48832
+Nb features: 35420
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 1.253. Correlation: 0.336
+Final training epoch 18 for lambda 1.00000 finished. Train loss: 1.504. Correlation: 0.341
+Final training epoch 13 for lambda 1.20000 finished. Train loss: 1.485. Correlation: 0.391
+Final training epoch 11 for lambda 1.44000 finished. Train loss: 3.791. Correlation: 0.316
+Final training epoch 22 for lambda 1.72800 finished. Train loss: 1.682. Correlation: 0.373
+Final training epoch 53 for lambda 2.07360 finished. Train loss: 1.600. Correlation: 0.377
+Final training epoch 21 for lambda 2.48832 finished. Train loss: 1.564. Correlation: nan
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.4400 / Correlation: 0.316 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.336 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.341 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.373 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.377 / Nb features: 35291
+Best model correlation 0.39085928
+Lambda = 1.2
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 107 for lambda 0.00000 finished. Train loss: 0.859. Correlation: 0.358
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.659. Correlation: 0.251
+Final training epoch 9 for lambda 1.20000 finished. Train loss: 1.570. Correlation: 0.228
+Final training epoch 94 for lambda 1.44000 finished. Train loss: 1.502. Correlation: 0.385
+Final training epoch 14 for lambda 1.72800 finished. Train loss: 1.504. Correlation: 0.385
+Final training epoch 46 for lambda 2.07360 finished. Train loss: 1.513. Correlation: 0.383
+Final training epoch 29 for lambda 2.48832 finished. Train loss: 1.526. Correlation: 0.378
+Final training epoch 56 for lambda 2.98598 finished. Train loss: 1.537. Correlation: 0.379
+Final training epoch 27 for lambda 3.58318 finished. Train loss: 1.549. Correlation: 0.374
+Final training epoch 21 for lambda 4.29982 finished. Train loss: 1.549. Correlation: 0.379
+Final training epoch 31 for lambda 5.15978 finished. Train loss: 1.558. Correlation: 0.377
+Final training epoch 22 for lambda 6.19174 finished. Train loss: 1.560. Correlation: 0.377
+Final training epoch 35 for lambda 7.43008 finished. Train loss: 1.555. Correlation: 0.379
+Final training epoch 21 for lambda 8.91610 finished. Train loss: 1.464. Correlation: 0.422
+Final training epoch 14 for lambda 10.69932 finished. Train loss: 1.441. Correlation: 0.407
+Final training epoch 76 for lambda 12.83918 finished. Train loss: 1.364. Correlation: 0.432
+Final training epoch 20 for lambda 15.40702 finished. Train loss: 1.381. Correlation: 0.425
+Final training epoch 54 for lambda 18.48843 finished. Train loss: 1.591. Correlation: 0.328
+Final training epoch 44 for lambda 22.18611 finished. Train loss: 1.452. Correlation: 0.421
+Final training epoch 35 for lambda 26.62333 finished. Train loss: 1.465. Correlation: 0.422
+Final training epoch 38 for lambda 31.94800 finished. Train loss: 1.400. Correlation: 0.422
+Final training epoch 62 for lambda 38.33760 finished. Train loss: 1.391. Correlation: 0.416
+Final training epoch 54 for lambda 46.00512 finished. Train loss: 1.389. Correlation: 0.417
+Final training epoch 72 for lambda 55.20614 finished. Train loss: 1.414. Correlation: 0.421
+Final training epoch 72 for lambda 66.24737 finished. Train loss: 1.411. Correlation: 0.415
+Final training epoch 49 for lambda 79.49685 finished. Train loss: 1.408. Correlation: 0.407
+Final training epoch 15 for lambda 95.39622 finished. Train loss: 1.426. Correlation: 0.414
+Final training epoch 22 for lambda 114.47546 finished. Train loss: 1.452. Correlation: 0.410
+Final training epoch 14 for lambda 137.37055 finished. Train loss: 1.435. Correlation: 0.413
+Final training epoch 12 for lambda 164.84466 finished. Train loss: 1.475. Correlation: 0.403
+Final training epoch 26 for lambda 197.81359 finished. Train loss: 1.468. Correlation: 0.397
+Final training epoch 35 for lambda 237.37631 finished. Train loss: 1.436. Correlation: 0.405
+Final training epoch 39 for lambda 284.85158 finished. Train loss: 1.450. Correlation: 0.396
+Final training epoch 25 for lambda 341.82189 finished. Train loss: 1.454. Correlation: 0.400
+Final training epoch 22 for lambda 410.18627 finished. Train loss: 1.462. Correlation: 0.392
+Final training epoch 26 for lambda 492.22352 finished. Train loss: 1.475. Correlation: 0.397
+Final training epoch 28 for lambda 590.66823 finished. Train loss: 1.469. Correlation: 0.380
+Final training epoch 14 for lambda 708.80187 finished. Train loss: 1.486. Correlation: 0.386
+Final training epoch 37 for lambda 850.56225 finished. Train loss: 1.494. Correlation: 0.376
+Final training epoch 11 for lambda 1020.67470 finished. Train loss: 1.506. Correlation: 0.349
+Final training epoch 21 for lambda 1224.80964 finished. Train loss: 1.515. Correlation: 0.337
+Final training epoch 14 for lambda 1469.77157 finished. Train loss: 1.536. Correlation: 0.336
+Final training epoch 9 for lambda 1763.72588 finished. Train loss: 1.558. Correlation: 0.260
+Final training epoch 9 for lambda 2116.47106 finished. Train loss: 1.565. Correlation: 0.197
+Final training epoch 9 for lambda 2539.76527 finished. Train loss: 1.565. Correlation: nan
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2116.4711 / Correlation: 0.197 / Nb features: 15
+Lambda: 1.2000 / Correlation: 0.228 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.251 / Nb features: 36304
+Lambda: 1763.7259 / Correlation: 0.260 / Nb features: 251
+Lambda: 18.4884 / Correlation: 0.328 / Nb features: 35743
+Lambda: 1469.7716 / Correlation: 0.336 / Nb features: 683
+Lambda: 1224.8096 / Correlation: 0.337 / Nb features: 1174
+Lambda: 1020.6747 / Correlation: 0.349 / Nb features: 1530
+Lambda: 0.0000 / Correlation: 0.358 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.374 / Nb features: 36304
+Lambda: 850.5622 / Correlation: 0.376 / Nb features: 2317
+Lambda: 5.1598 / Correlation: 0.377 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.377 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.378 / Nb features: 36304
+Lambda: 2.9860 / Correlation: 0.379 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.379 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.379 / Nb features: 36304
+Lambda: 590.6682 / Correlation: 0.380 / Nb features: 5860
+Lambda: 2.0736 / Correlation: 0.383 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.385 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.385 / Nb features: 36304
+Lambda: 708.8019 / Correlation: 0.386 / Nb features: 4191
+Lambda: 410.1863 / Correlation: 0.392 / Nb features: 9717
+Lambda: 284.8516 / Correlation: 0.396 / Nb features: 17159
+Lambda: 492.2235 / Correlation: 0.397 / Nb features: 8669
+Lambda: 197.8136 / Correlation: 0.397 / Nb features: 16989
+Lambda: 341.8219 / Correlation: 0.400 / Nb features: 18120
+Lambda: 164.8447 / Correlation: 0.403 / Nb features: 23577
+Lambda: 237.3763 / Correlation: 0.405 / Nb features: 16142
+Lambda: 10.6993 / Correlation: 0.407 / Nb features: 30696
+Lambda: 79.4968 / Correlation: 0.407 / Nb features: 36022
+Lambda: 114.4755 / Correlation: 0.410 / Nb features: 30342
+Lambda: 137.3706 / Correlation: 0.413 / Nb features: 36272
+Lambda: 95.3962 / Correlation: 0.414 / Nb features: 36290
+Lambda: 66.2474 / Correlation: 0.415 / Nb features: 36169
+Lambda: 38.3376 / Correlation: 0.416 / Nb features: 36113
+Lambda: 46.0051 / Correlation: 0.417 / Nb features: 36299
+Lambda: 55.2061 / Correlation: 0.421 / Nb features: 36263
+Lambda: 22.1861 / Correlation: 0.421 / Nb features: 36252
+Lambda: 8.9161 / Correlation: 0.422 / Nb features: 30284
+Lambda: 31.9480 / Correlation: 0.422 / Nb features: 36167
+Lambda: 26.6233 / Correlation: 0.422 / Nb features: 36246
+Lambda: 15.4070 / Correlation: 0.425 / Nb features: 36282
+Best model correlation 0.43222067
+Lambda = 12.839184645488634
+Nb features: 36078
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 0.990. Correlation: 0.338
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.591. Correlation: 0.053
+Final training epoch 20 for lambda 1.20000 finished. Train loss: 1.559. Correlation: 0.113
+Final training epoch 52 for lambda 1.44000 finished. Train loss: 1.549. Correlation: 0.238
+Final training epoch 44 for lambda 2.07360 finished. Train loss: 1.504. Correlation: 0.386
+Final training epoch 31 for lambda 2.48832 finished. Train loss: 1.540. Correlation: 0.381
+Final training epoch 13 for lambda 2.98598 finished. Train loss: 1.548. Correlation: 0.377
+Final training epoch 26 for lambda 3.58318 finished. Train loss: 1.549. Correlation: 0.376
+Final training epoch 11 for lambda 4.29982 finished. Train loss: 1.589. Correlation: 0.367
+Final training epoch 16 for lambda 5.15978 finished. Train loss: 1.667. Correlation: 0.316
+Final training epoch 34 for lambda 6.19174 finished. Train loss: 1.720. Correlation: 0.345
+Final training epoch 44 for lambda 7.43008 finished. Train loss: 12.884. Correlation: 0.338
+Final training epoch 20 for lambda 8.91610 finished. Train loss: 1.823. Correlation: 0.304
+Final training epoch 14 for lambda 10.69932 finished. Train loss: 3.985. Correlation: 0.341
+Final training epoch 34 for lambda 12.83918 finished. Train loss: 1.663. Correlation: 0.397
+Final training epoch 9 for lambda 15.40702 finished. Train loss: 3.066. Correlation: 0.221
+Final training epoch 33 for lambda 18.48843 finished. Train loss: 1.466. Correlation: 0.412
+Final training epoch 29 for lambda 22.18611 finished. Train loss: 1.478. Correlation: 0.410
+Final training epoch 15 for lambda 26.62333 finished. Train loss: 1.491. Correlation: 0.398
+Final training epoch 26 for lambda 31.94800 finished. Train loss: 1.482. Correlation: 0.404
+Final training epoch 24 for lambda 38.33760 finished. Train loss: 1.479. Correlation: 0.393
+Final training epoch 25 for lambda 46.00512 finished. Train loss: 1.510. Correlation: 0.390
+Final training epoch 11 for lambda 55.20614 finished. Train loss: 1.485. Correlation: 0.395
+Final training epoch 22 for lambda 66.24737 finished. Train loss: 1.495. Correlation: 0.385
+Final training epoch 19 for lambda 79.49685 finished. Train loss: 1.502. Correlation: 0.379
+Final training epoch 25 for lambda 95.39622 finished. Train loss: 1.512. Correlation: 0.363
+Final training epoch 20 for lambda 114.47546 finished. Train loss: 1.529. Correlation: 0.351
+Final training epoch 12 for lambda 137.37055 finished. Train loss: 1.548. Correlation: 0.273
+Final training epoch 10 for lambda 164.84466 finished. Train loss: 1.563. Correlation: 0.218
+Final training epoch 9 for lambda 197.81359 finished. Train loss: 1.566. Correlation: nan
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.0000 / Correlation: 0.053 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.113 / Nb features: 36304
+Lambda: 164.8447 / Correlation: 0.218 / Nb features: 50
+Lambda: 15.4070 / Correlation: 0.221 / Nb features: 35801
+Lambda: 1.4400 / Correlation: 0.238 / Nb features: 36304
+Lambda: 137.3706 / Correlation: 0.273 / Nb features: 253
+Lambda: 8.9161 / Correlation: 0.304 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.316 / Nb features: 7122
+Lambda: 0.0000 / Correlation: 0.338 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.338 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.341 / Nb features: 35845
+Lambda: 6.1917 / Correlation: 0.345 / Nb features: 33396
+Lambda: 114.4755 / Correlation: 0.351 / Nb features: 1111
+Lambda: 95.3962 / Correlation: 0.363 / Nb features: 1750
+Lambda: 4.2998 / Correlation: 0.367 / Nb features: 20018
+Lambda: 3.5832 / Correlation: 0.376 / Nb features: 36023
+Lambda: 2.9860 / Correlation: 0.377 / Nb features: 36304
+Lambda: 79.4968 / Correlation: 0.379 / Nb features: 2308
+Lambda: 2.4883 / Correlation: 0.381 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.383 / Nb features: 36304
+Lambda: 66.2474 / Correlation: 0.385 / Nb features: 5870
+Lambda: 2.0736 / Correlation: 0.386 / Nb features: 36304
+Lambda: 46.0051 / Correlation: 0.390 / Nb features: 11808
+Lambda: 38.3376 / Correlation: 0.393 / Nb features: 16428
+Lambda: 55.2061 / Correlation: 0.395 / Nb features: 9459
+Lambda: 12.8392 / Correlation: 0.397 / Nb features: 29753
+Lambda: 26.6233 / Correlation: 0.398 / Nb features: 35992
+Lambda: 31.9480 / Correlation: 0.404 / Nb features: 20363
+Lambda: 22.1861 / Correlation: 0.410 / Nb features: 33280
+Best model correlation 0.41221213
+Lambda = 18.48842588950363
+Nb features: 31173
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 1.129. Correlation: 0.346
+Final training epoch 34 for lambda 1.00000 finished. Train loss: 1.495. Correlation: 0.377
+Final training epoch 31 for lambda 1.20000 finished. Train loss: 1.498. Correlation: 0.388
+Final training epoch 23 for lambda 1.44000 finished. Train loss: 1.500. Correlation: 0.389
+Final training epoch 27 for lambda 1.72800 finished. Train loss: 1.656. Correlation: 0.390
+Final training epoch 35 for lambda 2.07360 finished. Train loss: 1.535. Correlation: 0.370
+Final training epoch 15 for lambda 2.48832 finished. Train loss: 1.545. Correlation: 0.381
+Final training epoch 19 for lambda 2.98598 finished. Train loss: 1.557. Correlation: 0.363
+Final training epoch 22 for lambda 3.58318 finished. Train loss: 1.558. Correlation: 0.377
+Final training epoch 20 for lambda 4.29982 finished. Train loss: 1.559. Correlation: 0.370
+Final training epoch 46 for lambda 5.15978 finished. Train loss: 1.514. Correlation: 0.364
+Final training epoch 11 for lambda 6.19174 finished. Train loss: 2.659. Correlation: 0.354
+Final training epoch 25 for lambda 7.43008 finished. Train loss: 1.543. Correlation: 0.372
+Final training epoch 17 for lambda 8.91610 finished. Train loss: 1.534. Correlation: 0.280
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 13 for lambda 10.69932 finished. Train loss: 1.566. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 8.9161 / Correlation: 0.280 / Nb features: 35777
+Lambda: 0.0000 / Correlation: 0.346 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.354 / Nb features: 35184
+Lambda: 2.9860 / Correlation: 0.363 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.364 / Nb features: 34263
+Lambda: 4.2998 / Correlation: 0.370 / Nb features: 36300
+Lambda: 2.0736 / Correlation: 0.370 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.372 / Nb features: 35566
+Lambda: 1.0000 / Correlation: 0.377 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.377 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.381 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.388 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.389 / Nb features: 36304
+Best model correlation 0.38988405
+Lambda = 1.728
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.680. Correlation: 0.242
+Final training epoch 48 for lambda 1.00000 finished. Train loss: 1.559. Correlation: 0.418
+Final training epoch 9 for lambda 1.20000 finished. Train loss: 1.851. Correlation: 0.308
+Final training epoch 12 for lambda 1.44000 finished. Train loss: 1.952. Correlation: 0.023
+Final training epoch 21 for lambda 1.72800 finished. Train loss: 5.816. Correlation: 0.252
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 25 for lambda 2.07360 finished. Train loss: 8.638. Correlation: 0.088
+Final training epoch 12 for lambda 2.48832 finished. Train loss: 2.130. Correlation: 0.206
+Final training epoch 23 for lambda 2.98598 finished. Train loss: 1.905. Correlation: 0.321
+Final training epoch 18 for lambda 3.58318 finished. Train loss: 21.109. Correlation: 0.245
+Final training epoch 10 for lambda 4.29982 finished. Train loss: 3.740. Correlation: 0.244
+Final training epoch 31 for lambda 5.15978 finished. Train loss: 1.967. Correlation: 0.277
+Final training epoch 37 for lambda 6.19174 finished. Train loss: 1.516. Correlation: 0.380
+Final training epoch 26 for lambda 7.43008 finished. Train loss: 3.268. Correlation: 0.099
+Final training epoch 33 for lambda 8.91610 finished. Train loss: 5.334. Correlation: 0.385
+Final training epoch 11 for lambda 10.69932 finished. Train loss: 1.555. Correlation: 0.381
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.578. Correlation: 0.384
+Final training epoch 32 for lambda 15.40702 finished. Train loss: 1.649. Correlation: 0.394
+Final training epoch 13 for lambda 18.48843 finished. Train loss: 1.488. Correlation: 0.402
+Final training epoch 9 for lambda 22.18611 finished. Train loss: 1.509. Correlation: 0.386
+Final training epoch 9 for lambda 26.62333 finished. Train loss: 1.506. Correlation: 0.378
+Final training epoch 17 for lambda 31.94800 finished. Train loss: 1.497. Correlation: 0.368
+Final training epoch 14 for lambda 38.33760 finished. Train loss: 1.751. Correlation: 0.373
+Final training epoch 16 for lambda 46.00512 finished. Train loss: 1.502. Correlation: 0.365
+Final training epoch 11 for lambda 55.20614 finished. Train loss: 1.507. Correlation: 0.330
+Final training epoch 11 for lambda 66.24737 finished. Train loss: 1.523. Correlation: 0.345
+Final training epoch 9 for lambda 79.49685 finished. Train loss: 1.545. Correlation: 0.299
+Final training epoch 9 for lambda 95.39622 finished. Train loss: 1.563. Correlation: 0.116
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 12 for lambda 114.47546 finished. Train loss: 1.566. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.4400 / Correlation: 0.023 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.088 / Nb features: 17549
+Lambda: 7.4301 / Correlation: 0.099 / Nb features: 32705
+Lambda: 95.3962 / Correlation: 0.116 / Nb features: 6
+Lambda: 2.4883 / Correlation: 0.206 / Nb features: 19923
+Lambda: 0.0000 / Correlation: 0.242 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.244 / Nb features: 28062
+Lambda: 3.5832 / Correlation: 0.245 / Nb features: 35800
+Lambda: 1.7280 / Correlation: 0.252 / Nb features: 36299
+Lambda: 5.1598 / Correlation: 0.277 / Nb features: 19973
+Lambda: 79.4968 / Correlation: 0.299 / Nb features: 163
+Lambda: 1.2000 / Correlation: 0.308 / Nb features: 36304
+Lambda: 2.9860 / Correlation: 0.321 / Nb features: 20700
+Lambda: 55.2061 / Correlation: 0.330 / Nb features: 858
+Lambda: 66.2474 / Correlation: 0.345 / Nb features: 428
+Lambda: 46.0051 / Correlation: 0.365 / Nb features: 2157
+Lambda: 31.9480 / Correlation: 0.368 / Nb features: 3839
+Lambda: 38.3376 / Correlation: 0.373 / Nb features: 2466
+Lambda: 26.6233 / Correlation: 0.378 / Nb features: 6667
+Lambda: 6.1917 / Correlation: 0.380 / Nb features: 16614
+Lambda: 10.6993 / Correlation: 0.381 / Nb features: 12782
+Lambda: 12.8392 / Correlation: 0.384 / Nb features: 7074
+Lambda: 8.9161 / Correlation: 0.385 / Nb features: 33331
+Lambda: 22.1861 / Correlation: 0.386 / Nb features: 3271
+Lambda: 15.4070 / Correlation: 0.394 / Nb features: 6639
+Lambda: 18.4884 / Correlation: 0.402 / Nb features: 35574
+Best model correlation 0.41750023
+Lambda = 1.0
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 180 for lambda 0.00000 finished. Train loss: 4.351. Correlation: 0.107
+Final training epoch 20 for lambda 1.00000 finished. Train loss: 2.108. Correlation: 0.163
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.000.
+  warnings.warn(
+Final training epoch 10 for lambda 1.20000 finished. Train loss: 2.121. Correlation: 0.227
+Final training epoch 21 for lambda 1.44000 finished. Train loss: 3.132. Correlation: 0.298
+Final training epoch 26 for lambda 1.72800 finished. Train loss: 2.369. Correlation: 0.243
+Final training epoch 39 for lambda 2.07360 finished. Train loss: 1.696. Correlation: 0.083
+Final training epoch 10 for lambda 2.48832 finished. Train loss: 2.902. Correlation: 0.282
+Final training epoch 48 for lambda 2.98598 finished. Train loss: 7.629. Correlation: 0.345
+Final training epoch 11 for lambda 3.58318 finished. Train loss: 1.499. Correlation: 0.365
+Final training epoch 39 for lambda 4.29982 finished. Train loss: 1.506. Correlation: 0.370
+Final training epoch 39 for lambda 5.15978 finished. Train loss: 1.494. Correlation: 0.367
+Final training epoch 19 for lambda 6.19174 finished. Train loss: 1.513. Correlation: 0.332
+Final training epoch 22 for lambda 7.43008 finished. Train loss: 1.532. Correlation: 0.273
+Final training epoch 15 for lambda 8.91610 finished. Train loss: 1.549. Correlation: 0.291
+Final training epoch 9 for lambda 10.69932 finished. Train loss: 1.566. Correlation: 0.209
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 12.83918 finished. Train loss: 1.568. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.0736 / Correlation: 0.083 / Nb features: 35862
+Lambda: 0.0000 / Correlation: 0.107 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.163 / Nb features: 13013
+Lambda: 10.6993 / Correlation: 0.209 / Nb features: 46
+Lambda: 1.2000 / Correlation: 0.227 / Nb features: 11748
+Lambda: 1.7280 / Correlation: 0.243 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.273 / Nb features: 402
+Lambda: 2.4883 / Correlation: 0.282 / Nb features: 18112
+Lambda: 8.9161 / Correlation: 0.291 / Nb features: 173
+Lambda: 1.4400 / Correlation: 0.298 / Nb features: 35877
+Lambda: 6.1917 / Correlation: 0.332 / Nb features: 1220
+Lambda: 2.9860 / Correlation: 0.345 / Nb features: 9040
+Lambda: 3.5832 / Correlation: 0.365 / Nb features: 4240
+Lambda: 5.1598 / Correlation: 0.367 / Nb features: 1653
+Best model correlation 0.37037563
+Lambda = 4.299816959999999
+Nb features: 2399
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 0.932. Correlation: 0.359
+Final training epoch 43 for lambda 1.00000 finished. Train loss: 1.504. Correlation: 0.353
+Final training epoch 15 for lambda 1.20000 finished. Train loss: 1.497. Correlation: 0.377
+Final training epoch 41 for lambda 1.44000 finished. Train loss: 1.920. Correlation: 0.330
+Final training epoch 27 for lambda 1.72800 finished. Train loss: 2.023. Correlation: 0.345
+Final training epoch 38 for lambda 2.07360 finished. Train loss: 1.511. Correlation: 0.384
+Final training epoch 69 for lambda 2.48832 finished. Train loss: 1.612. Correlation: 0.368
+Final training epoch 43 for lambda 2.98598 finished. Train loss: 1.510. Correlation: 0.387
+Final training epoch 31 for lambda 3.58318 finished. Train loss: 1.516. Correlation: 0.375
+Final training epoch 75 for lambda 4.29982 finished. Train loss: 1.579. Correlation: 0.381
+Final training epoch 14 for lambda 5.15978 finished. Train loss: 1.522. Correlation: 0.375
+Final training epoch 21 for lambda 6.19174 finished. Train loss: 1.533. Correlation: 0.374
+Final training epoch 31 for lambda 7.43008 finished. Train loss: 1.610. Correlation: 0.372
+Final training epoch 18 for lambda 8.91610 finished. Train loss: 1.558. Correlation: 0.372
+Final training epoch 10 for lambda 10.69932 finished. Train loss: 1.544. Correlation: 0.385
+Final training epoch 22 for lambda 12.83918 finished. Train loss: 1.549. Correlation: 0.371
+Final training epoch 16 for lambda 15.40702 finished. Train loss: 1.559. Correlation: 0.376
+Final training epoch 20 for lambda 18.48843 finished. Train loss: 1.558. Correlation: 0.366
+Final training epoch 22 for lambda 22.18611 finished. Train loss: 1.562. Correlation: 0.372
+Final training epoch 19 for lambda 26.62333 finished. Train loss: 1.564. Correlation: 0.371
+Final training epoch 19 for lambda 31.94800 finished. Train loss: 1.726. Correlation: 0.356
+Final training epoch 30 for lambda 38.33760 finished. Train loss: 1.525. Correlation: 0.368
+Final training epoch 24 for lambda 46.00512 finished. Train loss: 1.616. Correlation: 0.349
+Final training epoch 13 for lambda 55.20614 finished. Train loss: 1.999. Correlation: 0.361
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 12 for lambda 66.24737 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.4400 / Correlation: 0.330 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.345 / Nb features: 36304
+Lambda: 46.0051 / Correlation: 0.349 / Nb features: 17245
+Lambda: 1.0000 / Correlation: 0.353 / Nb features: 36304
+Lambda: 31.9480 / Correlation: 0.356 / Nb features: 35670
+Lambda: 0.0000 / Correlation: 0.359 / Nb features: 36304
+Lambda: 55.2061 / Correlation: 0.361 / Nb features: 17560
+Lambda: 18.4884 / Correlation: 0.366 / Nb features: 36304
+Lambda: 38.3376 / Correlation: 0.368 / Nb features: 30471
+Lambda: 2.4883 / Correlation: 0.368 / Nb features: 36304
+Lambda: 26.6233 / Correlation: 0.371 / Nb features: 35648
+Lambda: 12.8392 / Correlation: 0.371 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.372 / Nb features: 36304
+Lambda: 22.1861 / Correlation: 0.372 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.372 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.374 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.375 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.375 / Nb features: 36304
+Lambda: 15.4070 / Correlation: 0.376 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.377 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.381 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.384 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.385 / Nb features: 36304
+Best model correlation 0.38663465
+Lambda = 2.9859839999999997
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 107 for lambda 0.00000 finished. Train loss: 0.630. Correlation: 0.353
+Final training epoch 29 for lambda 1.20000 finished. Train loss: 1.212. Correlation: 0.417
+Final training epoch 69 for lambda 1.44000 finished. Train loss: 1.185. Correlation: 0.422
+Final training epoch 77 for lambda 1.72800 finished. Train loss: 1.351. Correlation: 0.440
+Final training epoch 31 for lambda 2.07360 finished. Train loss: 1.316. Correlation: 0.440
+Final training epoch 59 for lambda 2.48832 finished. Train loss: 1.450. Correlation: 0.435
+Final training epoch 61 for lambda 2.98598 finished. Train loss: 1.737. Correlation: -0.046
+Final training epoch 45 for lambda 3.58318 finished. Train loss: 1.402. Correlation: 0.437
+Final training epoch 14 for lambda 4.29982 finished. Train loss: 1.389. Correlation: 0.448
+Final training epoch 30 for lambda 5.15978 finished. Train loss: 1.369. Correlation: 0.419
+Final training epoch 11 for lambda 6.19174 finished. Train loss: 1.352. Correlation: 0.440
+Final training epoch 21 for lambda 7.43008 finished. Train loss: 1.353. Correlation: 0.443
+Final training epoch 34 for lambda 8.91610 finished. Train loss: 1.368. Correlation: 0.449
+Final training epoch 45 for lambda 10.69932 finished. Train loss: 1.372. Correlation: 0.432
+Final training epoch 25 for lambda 12.83918 finished. Train loss: 1.553. Correlation: 0.336
+Final training epoch 67 for lambda 15.40702 finished. Train loss: 1.541. Correlation: 0.368
+Final training epoch 59 for lambda 18.48843 finished. Train loss: 1.587. Correlation: 0.312
+Final training epoch 12 for lambda 22.18611 finished. Train loss: 1.527. Correlation: 0.370
+Final training epoch 64 for lambda 26.62333 finished. Train loss: 1.372. Correlation: 0.429
+Final training epoch 30 for lambda 31.94800 finished. Train loss: 1.377. Correlation: 0.433
+Final training epoch 64 for lambda 38.33760 finished. Train loss: 1.357. Correlation: 0.432
+Final training epoch 31 for lambda 46.00512 finished. Train loss: 1.396. Correlation: 0.423
+Final training epoch 34 for lambda 55.20614 finished. Train loss: 1.381. Correlation: 0.417
+Final training epoch 34 for lambda 66.24737 finished. Train loss: 1.416. Correlation: 0.424
+Final training epoch 26 for lambda 79.49685 finished. Train loss: 1.400. Correlation: 0.423
+Final training epoch 64 for lambda 95.39622 finished. Train loss: 1.392. Correlation: 0.418
+Final training epoch 35 for lambda 114.47546 finished. Train loss: 1.397. Correlation: 0.414
+Final training epoch 21 for lambda 137.37055 finished. Train loss: 1.392. Correlation: 0.419
+Final training epoch 47 for lambda 164.84466 finished. Train loss: 1.413. Correlation: 0.410
+Final training epoch 13 for lambda 197.81359 finished. Train loss: 1.430. Correlation: 0.411
+Final training epoch 43 for lambda 237.37631 finished. Train loss: 1.440. Correlation: 0.404
+Final training epoch 25 for lambda 284.85158 finished. Train loss: 1.422. Correlation: 0.403
+Final training epoch 14 for lambda 341.82189 finished. Train loss: 1.451. Correlation: 0.407
+Final training epoch 27 for lambda 410.18627 finished. Train loss: 1.446. Correlation: 0.408
+Final training epoch 48 for lambda 492.22352 finished. Train loss: 1.448. Correlation: 0.395
+Final training epoch 40 for lambda 590.66823 finished. Train loss: 1.452. Correlation: 0.393
+Final training epoch 31 for lambda 708.80187 finished. Train loss: 1.458. Correlation: 0.401
+Final training epoch 40 for lambda 850.56225 finished. Train loss: 1.465. Correlation: 0.396
+Final training epoch 16 for lambda 1020.67470 finished. Train loss: 1.479. Correlation: 0.378
+Final training epoch 22 for lambda 1224.80964 finished. Train loss: 1.482. Correlation: 0.381
+Final training epoch 19 for lambda 1469.77157 finished. Train loss: 1.476. Correlation: 0.387
+Final training epoch 12 for lambda 1763.72588 finished. Train loss: 1.496. Correlation: 0.379
+Final training epoch 23 for lambda 2116.47106 finished. Train loss: 1.509. Correlation: 0.356
+Final training epoch 9 for lambda 2539.76527 finished. Train loss: 1.532. Correlation: 0.335
+Final training epoch 21 for lambda 3047.71832 finished. Train loss: 1.550. Correlation: 0.310
+Final training epoch 9 for lambda 3657.26199 finished. Train loss: 1.563. Correlation: 0.238
+Final training epoch 9 for lambda 4388.71439 finished. Train loss: 1.566. Correlation: 0.093
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 5266.45726 finished. Train loss: 1.566. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.9860 / Correlation: -0.046 / Nb features: 36304
+Lambda: 4388.7144 / Correlation: 0.093 / Nb features: 2
+Lambda: 3657.2620 / Correlation: 0.238 / Nb features: 34
+Lambda: 3047.7183 / Correlation: 0.310 / Nb features: 201
+Lambda: 18.4884 / Correlation: 0.312 / Nb features: 36229
+Lambda: 2539.7653 / Correlation: 0.335 / Nb features: 839
+Lambda: 12.8392 / Correlation: 0.336 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.353 / Nb features: 36304
+Lambda: 2116.4711 / Correlation: 0.356 / Nb features: 992
+Lambda: 15.4070 / Correlation: 0.368 / Nb features: 36304
+Lambda: 22.1861 / Correlation: 0.370 / Nb features: 29475
+Lambda: 1020.6747 / Correlation: 0.378 / Nb features: 8026
+Lambda: 1763.7259 / Correlation: 0.379 / Nb features: 2459
+Lambda: 1224.8096 / Correlation: 0.381 / Nb features: 5019
+Lambda: 1469.7716 / Correlation: 0.387 / Nb features: 3393
+Lambda: 590.6682 / Correlation: 0.393 / Nb features: 10563
+Lambda: 492.2235 / Correlation: 0.395 / Nb features: 33109
+Lambda: 850.5622 / Correlation: 0.396 / Nb features: 7327
+Lambda: 708.8019 / Correlation: 0.401 / Nb features: 9812
+Lambda: 284.8516 / Correlation: 0.403 / Nb features: 31685
+Lambda: 237.3763 / Correlation: 0.404 / Nb features: 32010
+Lambda: 341.8219 / Correlation: 0.407 / Nb features: 22032
+Lambda: 410.1863 / Correlation: 0.408 / Nb features: 31192
+Lambda: 164.8447 / Correlation: 0.410 / Nb features: 32197
+Lambda: 197.8136 / Correlation: 0.411 / Nb features: 22968
+Lambda: 114.4755 / Correlation: 0.414 / Nb features: 35883
+Lambda: 55.2061 / Correlation: 0.417 / Nb features: 36303
+Lambda: 1.2000 / Correlation: 0.417 / Nb features: 36304
+Lambda: 95.3962 / Correlation: 0.418 / Nb features: 36304
+Lambda: 137.3706 / Correlation: 0.419 / Nb features: 32776
+Lambda: 5.1598 / Correlation: 0.419 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.422 / Nb features: 36304
+Lambda: 79.4968 / Correlation: 0.423 / Nb features: 36269
+Lambda: 46.0051 / Correlation: 0.423 / Nb features: 36270
+Lambda: 66.2474 / Correlation: 0.424 / Nb features: 36302
+Lambda: 1.0000 / Correlation: 0.424 / Nb features: 36304
+Lambda: 26.6233 / Correlation: 0.429 / Nb features: 36299
+Lambda: 10.6993 / Correlation: 0.432 / Nb features: 36304
+Lambda: 38.3376 / Correlation: 0.432 / Nb features: 36304
+Lambda: 31.9480 / Correlation: 0.433 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.435 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.437 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.440 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.440 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.440 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.443 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.448 / Nb features: 36304
+Best model correlation 0.44869357
+Lambda = 8.916100448255998
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 1.554. Correlation: 0.321
+Final training epoch 16 for lambda 1.00000 finished. Train loss: 4.917. Correlation: -0.138
+Final training epoch 23 for lambda 1.20000 finished. Train loss: 1.487. Correlation: 0.378
+Final training epoch 19 for lambda 1.44000 finished. Train loss: 4.575. Correlation: 0.364
+Final training epoch 21 for lambda 1.72800 finished. Train loss: 1.504. Correlation: 0.371
+Final training epoch 27 for lambda 2.07360 finished. Train loss: 1.805. Correlation: 0.364
+Final training epoch 35 for lambda 2.48832 finished. Train loss: 1.503. Correlation: 0.382
+Final training epoch 18 for lambda 2.98598 finished. Train loss: 1.771. Correlation: 0.369
+Final training epoch 17 for lambda 3.58318 finished. Train loss: 1.803. Correlation: 0.242
+Final training epoch 31 for lambda 4.29982 finished. Train loss: 1.572. Correlation: 0.373
+Final training epoch 11 for lambda 5.15978 finished. Train loss: 1.584. Correlation: 0.381
+Final training epoch 15 for lambda 6.19174 finished. Train loss: 2.092. Correlation: 0.369
+Final training epoch 14 for lambda 7.43008 finished. Train loss: 1.557. Correlation: 0.371
+Final training epoch 12 for lambda 8.91610 finished. Train loss: 1.561. Correlation: 0.365
+Final training epoch 16 for lambda 10.69932 finished. Train loss: 1.565. Correlation: 0.375
+Final training epoch 9 for lambda 12.83918 finished. Train loss: 4.465. Correlation: 0.355
+Final training epoch 10 for lambda 15.40702 finished. Train loss: 2.403. Correlation: 0.358
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 16 for lambda 18.48843 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.0000 / Correlation: -0.138 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.242 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.321 / Nb features: 36304
+Lambda: 12.8392 / Correlation: 0.355 / Nb features: 5695
+Lambda: 15.4070 / Correlation: 0.358 / Nb features: 35106
+Lambda: 1.4400 / Correlation: 0.364 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.364 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.365 / Nb features: 36068
+Lambda: 6.1917 / Correlation: 0.369 / Nb features: 36302
+Lambda: 2.9860 / Correlation: 0.369 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.371 / Nb features: 36295
+Lambda: 1.7280 / Correlation: 0.371 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.373 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.375 / Nb features: 31895
+Lambda: 1.2000 / Correlation: 0.378 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.381 / Nb features: 36304
+Best model correlation 0.38246015
+Lambda = 2.48832
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 104 for lambda 0.00000 finished. Train loss: 0.958. Correlation: 0.342
+Final training epoch 41 for lambda 1.00000 finished. Train loss: 2.772. Correlation: 0.297
+Final training epoch 35 for lambda 1.20000 finished. Train loss: 1.516. Correlation: 0.357
+Final training epoch 47 for lambda 1.44000 finished. Train loss: 1.535. Correlation: 0.356
+Final training epoch 36 for lambda 1.72800 finished. Train loss: 1.517. Correlation: 0.380
+Final training epoch 12 for lambda 2.07360 finished. Train loss: 1.568. Correlation: 0.375
+Final training epoch 18 for lambda 2.48832 finished. Train loss: 1.539. Correlation: 0.372
+Final training epoch 42 for lambda 2.98598 finished. Train loss: 1.547. Correlation: 0.370
+Final training epoch 20 for lambda 3.58318 finished. Train loss: 1.552. Correlation: 0.373
+Final training epoch 28 for lambda 4.29982 finished. Train loss: 1.556. Correlation: 0.354
+Final training epoch 44 for lambda 5.15978 finished. Train loss: 1.551. Correlation: 0.366
+Final training epoch 19 for lambda 6.19174 finished. Train loss: 1.554. Correlation: 0.370
+Final training epoch 25 for lambda 7.43008 finished. Train loss: 1.488. Correlation: 0.372
+Final training epoch 15 for lambda 8.91610 finished. Train loss: 2.375. Correlation: 0.182
+Final training epoch 14 for lambda 10.69932 finished. Train loss: 1.495. Correlation: 0.358
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 32 for lambda 12.83918 finished. Train loss: 1.564. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 8.9161 / Correlation: 0.182 / Nb features: 36130
+Lambda: 1.0000 / Correlation: 0.297 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.342 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.354 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.356 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.357 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.358 / Nb features: 33952
+Lambda: 5.1598 / Correlation: 0.366 / Nb features: 25081
+Lambda: 2.9860 / Correlation: 0.370 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.370 / Nb features: 1820
+Lambda: 7.4301 / Correlation: 0.372 / Nb features: 33319
+Lambda: 2.4883 / Correlation: 0.372 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.373 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.375 / Nb features: 36304
+Best model correlation 0.37986943
+Lambda = 1.728
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 1.485. Correlation: 0.298
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.547. Correlation: 0.088
+Final training epoch 71 for lambda 1.20000 finished. Train loss: 3.693. Correlation: 0.371
+Final training epoch 28 for lambda 1.44000 finished. Train loss: 1.552. Correlation: 0.382
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.440.
+  warnings.warn(
+Final training epoch 9 for lambda 1.72800 finished. Train loss: 1.610. Correlation: 0.375
+Final training epoch 13 for lambda 2.07360 finished. Train loss: 2.445. Correlation: 0.365
+Final training epoch 10 for lambda 2.48832 finished. Train loss: 29.346. Correlation: 0.349
+Final training epoch 20 for lambda 2.98598 finished. Train loss: 62.847. Correlation: -0.170
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 26 for lambda 3.58318 finished. Train loss: 2.159. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.9860 / Correlation: -0.170 / Nb features: 36303
+Lambda: 1.0000 / Correlation: 0.088 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.298 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.349 / Nb features: 33579
+Lambda: 2.0736 / Correlation: 0.365 / Nb features: 6439
+Lambda: 1.2000 / Correlation: 0.371 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.375 / Nb features: 28295
+Best model correlation 0.38187853
+Lambda = 1.44
+Nb features: 35736
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 464 for lambda 0.00000 finished. Train loss: 1.641. Correlation: 0.042
+Final training epoch 28 for lambda 1.00000 finished. Train loss: 1.576. Correlation: 0.288
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.000.
+  warnings.warn(
+Final training epoch 9 for lambda 1.20000 finished. Train loss: 1.714. Correlation: 0.210
+Final training epoch 25 for lambda 1.44000 finished. Train loss: 2.106. Correlation: -0.111
+Final training epoch 14 for lambda 1.72800 finished. Train loss: 80.212. Correlation: 0.335
+Final training epoch 28 for lambda 2.07360 finished. Train loss: 90.597. Correlation: -0.204
+Final training epoch 10 for lambda 2.48832 finished. Train loss: 72.229. Correlation: -0.202
+Final training epoch 16 for lambda 2.98598 finished. Train loss: 80.165. Correlation: 0.255
+Final training epoch 20 for lambda 3.58318 finished. Train loss: 16.483. Correlation: 0.313
+Final training epoch 14 for lambda 4.29982 finished. Train loss: 7.572. Correlation: 0.041
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 13 for lambda 5.15978 finished. Train loss: 1.881. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.0736 / Correlation: -0.204 / Nb features: 36153
+Lambda: 2.4883 / Correlation: -0.202 / Nb features: 35891
+Lambda: 1.4400 / Correlation: -0.111 / Nb features: 15257
+Lambda: 4.2998 / Correlation: 0.041 / Nb features: 23219
+Lambda: 0.0000 / Correlation: 0.042 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.210 / Nb features: 553
+Lambda: 2.9860 / Correlation: 0.255 / Nb features: 35925
+Lambda: 1.0000 / Correlation: 0.288 / Nb features: 5514
+Lambda: 3.5832 / Correlation: 0.313 / Nb features: 9953
+Best model correlation 0.33544174
+Lambda = 1.728
+Nb features: 36302
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 120 for lambda 0.00000 finished. Train loss: 0.804. Correlation: 0.395
+Final training epoch 41 for lambda 1.00000 finished. Train loss: 1.087. Correlation: 0.419
+Final training epoch 41 for lambda 1.20000 finished. Train loss: 1.004. Correlation: 0.410
+Final training epoch 33 for lambda 1.44000 finished. Train loss: 0.995. Correlation: 0.406
+Final training epoch 38 for lambda 1.72800 finished. Train loss: 0.964. Correlation: 0.404
+Final training epoch 20 for lambda 2.07360 finished. Train loss: 0.952. Correlation: 0.398
+Final training epoch 46 for lambda 2.48832 finished. Train loss: 0.998. Correlation: 0.401
+Final training epoch 63 for lambda 2.98598 finished. Train loss: 1.036. Correlation: 0.409
+Final training epoch 23 for lambda 3.58318 finished. Train loss: 1.067. Correlation: 0.398
+Final training epoch 44 for lambda 4.29982 finished. Train loss: 1.019. Correlation: 0.406
+Final training epoch 35 for lambda 5.15978 finished. Train loss: 1.047. Correlation: 0.403
+Final training epoch 39 for lambda 6.19174 finished. Train loss: 1.049. Correlation: 0.408
+Final training epoch 31 for lambda 7.43008 finished. Train loss: 1.133. Correlation: 0.407
+Final training epoch 14 for lambda 8.91610 finished. Train loss: 1.123. Correlation: 0.411
+Final training epoch 63 for lambda 10.69932 finished. Train loss: 1.164. Correlation: 0.423
+Final training epoch 85 for lambda 12.83918 finished. Train loss: 1.298. Correlation: 0.453
+Final training epoch 96 for lambda 18.48843 finished. Train loss: 1.405. Correlation: 0.459
+Final training epoch 18 for lambda 22.18611 finished. Train loss: 1.420. Correlation: 0.456
+Final training epoch 42 for lambda 26.62333 finished. Train loss: 1.400. Correlation: 0.448
+Final training epoch 21 for lambda 31.94800 finished. Train loss: 1.421. Correlation: 0.446
+Final training epoch 22 for lambda 38.33760 finished. Train loss: 1.422. Correlation: 0.436
+Final training epoch 94 for lambda 55.20614 finished. Train loss: 1.406. Correlation: 0.440
+Final training epoch 26 for lambda 66.24737 finished. Train loss: 1.377. Correlation: 0.437
+Final training epoch 19 for lambda 79.49685 finished. Train loss: 1.389. Correlation: 0.436
+Final training epoch 32 for lambda 95.39622 finished. Train loss: 1.396. Correlation: 0.425
+Final training epoch 50 for lambda 114.47546 finished. Train loss: 1.416. Correlation: 0.427
+Final training epoch 14 for lambda 137.37055 finished. Train loss: 1.415. Correlation: 0.422
+Final training epoch 33 for lambda 164.84466 finished. Train loss: 1.442. Correlation: 0.417
+Final training epoch 26 for lambda 197.81359 finished. Train loss: 1.446. Correlation: 0.419
+Final training epoch 22 for lambda 237.37631 finished. Train loss: 1.444. Correlation: 0.420
+Final training epoch 10 for lambda 284.85158 finished. Train loss: 1.458. Correlation: 0.404
+Final training epoch 17 for lambda 341.82189 finished. Train loss: 1.441. Correlation: 0.403
+Final training epoch 39 for lambda 410.18627 finished. Train loss: 1.456. Correlation: 0.414
+Final training epoch 20 for lambda 492.22352 finished. Train loss: 1.448. Correlation: 0.412
+Final training epoch 15 for lambda 590.66823 finished. Train loss: 1.462. Correlation: 0.406
+Final training epoch 24 for lambda 708.80187 finished. Train loss: 1.474. Correlation: 0.407
+Final training epoch 16 for lambda 850.56225 finished. Train loss: 1.464. Correlation: 0.406
+Final training epoch 13 for lambda 1020.67470 finished. Train loss: 1.492. Correlation: 0.402
+Final training epoch 14 for lambda 1224.80964 finished. Train loss: 1.486. Correlation: 0.395
+Final training epoch 13 for lambda 1469.77157 finished. Train loss: 1.456. Correlation: 0.399
+Final training epoch 23 for lambda 1763.72588 finished. Train loss: 1.458. Correlation: 0.390
+Final training epoch 35 for lambda 2116.47106 finished. Train loss: 1.463. Correlation: 0.398
+Final training epoch 19 for lambda 2539.76527 finished. Train loss: 1.467. Correlation: 0.394
+Final training epoch 22 for lambda 3047.71832 finished. Train loss: 1.469. Correlation: 0.388
+Final training epoch 15 for lambda 3657.26199 finished. Train loss: 1.479. Correlation: 0.385
+Final training epoch 39 for lambda 4388.71439 finished. Train loss: 1.493. Correlation: 0.387
+Final training epoch 19 for lambda 5266.45726 finished. Train loss: 1.508. Correlation: 0.369
+Final training epoch 23 for lambda 6319.74872 finished. Train loss: 1.530. Correlation: 0.342
+Final training epoch 21 for lambda 7583.69846 finished. Train loss: 1.553. Correlation: 0.330
+Final training epoch 9 for lambda 9100.43815 finished. Train loss: 1.562. Correlation: 0.311
+Final training epoch 17 for lambda 10920.52578 finished. Train loss: 1.566. Correlation: 0.103
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 31 for lambda 13104.63094 finished. Train loss: 1.567. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 10920.5258 / Correlation: 0.103 / Nb features: 12
+Lambda: 9100.4382 / Correlation: 0.311 / Nb features: 239
+Lambda: 7583.6985 / Correlation: 0.330 / Nb features: 443
+Lambda: 6319.7487 / Correlation: 0.342 / Nb features: 1177
+Lambda: 5266.4573 / Correlation: 0.369 / Nb features: 2941
+Lambda: 3657.2620 / Correlation: 0.385 / Nb features: 5017
+Lambda: 4388.7144 / Correlation: 0.387 / Nb features: 3750
+Lambda: 3047.7183 / Correlation: 0.388 / Nb features: 8587
+Lambda: 1763.7259 / Correlation: 0.390 / Nb features: 29706
+Lambda: 2539.7653 / Correlation: 0.394 / Nb features: 15667
+Lambda: 1224.8096 / Correlation: 0.395 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.395 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.398 / Nb features: 36304
+Lambda: 2116.4711 / Correlation: 0.398 / Nb features: 27520
+Lambda: 3.5832 / Correlation: 0.398 / Nb features: 36304
+Lambda: 1469.7716 / Correlation: 0.399 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.401 / Nb features: 36304
+Lambda: 1020.6747 / Correlation: 0.402 / Nb features: 36304
+Lambda: 341.8219 / Correlation: 0.403 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.403 / Nb features: 36304
+Lambda: 284.8516 / Correlation: 0.404 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.404 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.406 / Nb features: 36304
+Lambda: 590.6682 / Correlation: 0.406 / Nb features: 36298
+Lambda: 850.5622 / Correlation: 0.406 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.406 / Nb features: 36304
+Lambda: 708.8019 / Correlation: 0.407 / Nb features: 36199
+Lambda: 7.4301 / Correlation: 0.407 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.408 / Nb features: 36304
+Lambda: 2.9860 / Correlation: 0.409 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.410 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.411 / Nb features: 36304
+Lambda: 492.2235 / Correlation: 0.412 / Nb features: 36304
+Lambda: 410.1863 / Correlation: 0.414 / Nb features: 36304
+Lambda: 164.8447 / Correlation: 0.417 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.419 / Nb features: 36304
+Lambda: 197.8136 / Correlation: 0.419 / Nb features: 36304
+Lambda: 237.3763 / Correlation: 0.420 / Nb features: 36304
+Lambda: 137.3706 / Correlation: 0.422 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.423 / Nb features: 36304
+Lambda: 95.3962 / Correlation: 0.425 / Nb features: 36304
+Lambda: 114.4755 / Correlation: 0.427 / Nb features: 36304
+Lambda: 79.4968 / Correlation: 0.436 / Nb features: 36304
+Lambda: 38.3376 / Correlation: 0.436 / Nb features: 36304
+Lambda: 46.0051 / Correlation: 0.437 / Nb features: 36304
+Lambda: 66.2474 / Correlation: 0.437 / Nb features: 36304
+Lambda: 55.2061 / Correlation: 0.440 / Nb features: 36304
+Lambda: 31.9480 / Correlation: 0.446 / Nb features: 36304
+Lambda: 26.6233 / Correlation: 0.448 / Nb features: 36304
+Lambda: 12.8392 / Correlation: 0.453 / Nb features: 36304
+Lambda: 22.1861 / Correlation: 0.456 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.459 / Nb features: 36304
+Best model correlation 0.4616266
+Lambda = 15.407021574586361
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 108 for lambda 0.00000 finished. Train loss: 1.036. Correlation: 0.338
+Final training epoch 29 for lambda 1.00000 finished. Train loss: 1.498. Correlation: 0.343
+Final training epoch 41 for lambda 1.20000 finished. Train loss: 1.516. Correlation: 0.355
+Final training epoch 40 for lambda 1.44000 finished. Train loss: 1.523. Correlation: 0.383
+Final training epoch 15 for lambda 1.72800 finished. Train loss: 1.474. Correlation: 0.385
+Final training epoch 22 for lambda 2.07360 finished. Train loss: 1.609. Correlation: 0.389
+Final training epoch 41 for lambda 2.48832 finished. Train loss: 1.543. Correlation: 0.374
+Final training epoch 28 for lambda 2.98598 finished. Train loss: 1.564. Correlation: 0.376
+Final training epoch 23 for lambda 3.58318 finished. Train loss: 1.554. Correlation: 0.369
+Final training epoch 20 for lambda 4.29982 finished. Train loss: 1.555. Correlation: 0.377
+Final training epoch 18 for lambda 5.15978 finished. Train loss: 1.544. Correlation: 0.370
+Final training epoch 40 for lambda 6.19174 finished. Train loss: 1.556. Correlation: 0.379
+Final training epoch 24 for lambda 7.43008 finished. Train loss: 1.622. Correlation: 0.331
+Final training epoch 17 for lambda 8.91610 finished. Train loss: 1.459. Correlation: 0.383
+Final training epoch 27 for lambda 10.69932 finished. Train loss: 1.698. Correlation: 0.369
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 21 for lambda 12.83918 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 7.4301 / Correlation: 0.331 / Nb features: 35113
+Lambda: 0.0000 / Correlation: 0.338 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.343 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.355 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.369 / Nb features: 35084
+Lambda: 3.5832 / Correlation: 0.369 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.370 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.374 / Nb features: 36304
+Lambda: 2.9860 / Correlation: 0.376 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.377 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.379 / Nb features: 3996
+Lambda: 8.9161 / Correlation: 0.383 / Nb features: 35561
+Lambda: 1.4400 / Correlation: 0.383 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.385 / Nb features: 36304
+Best model correlation 0.38927555
+Lambda = 2.0736
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 107 for lambda 0.00000 finished. Train loss: 0.905. Correlation: 0.400
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.586. Correlation: 0.175
+Final training epoch 9 for lambda 1.20000 finished. Train loss: 1.567. Correlation: 0.168
+Final training epoch 71 for lambda 1.72800 finished. Train loss: 1.676. Correlation: 0.355
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 65 for lambda 2.07360 finished. Train loss: 2.062. Correlation: 0.152
+Final training epoch 29 for lambda 2.48832 finished. Train loss: 1.713. Correlation: 0.204
+Final training epoch 28 for lambda 2.98598 finished. Train loss: 1.665. Correlation: 0.230
+Final training epoch 29 for lambda 3.58318 finished. Train loss: 1.707. Correlation: 0.321
+Final training epoch 23 for lambda 4.29982 finished. Train loss: 1.721. Correlation: 0.313
+Final training epoch 9 for lambda 5.15978 finished. Train loss: 1.708. Correlation: 0.118
+Final training epoch 10 for lambda 6.19174 finished. Train loss: 1.678. Correlation: -0.009
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 14 for lambda 7.43008 finished. Train loss: 1.621. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 6.1917 / Correlation: -0.009 / Nb features: 2
+Lambda: 5.1598 / Correlation: 0.118 / Nb features: 1418
+Lambda: 2.0736 / Correlation: 0.152 / Nb features: 17585
+Lambda: 1.2000 / Correlation: 0.168 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.175 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.204 / Nb features: 25639
+Lambda: 2.9860 / Correlation: 0.230 / Nb features: 23849
+Lambda: 4.2998 / Correlation: 0.313 / Nb features: 4918
+Lambda: 3.5832 / Correlation: 0.321 / Nb features: 19704
+Lambda: 1.7280 / Correlation: 0.355 / Nb features: 31848
+Lambda: 1.4400 / Correlation: 0.365 / Nb features: 36304
+Best model correlation 0.39978406
+Lambda = 0
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 1.369. Correlation: 0.325
+Final training epoch 28 for lambda 1.00000 finished. Train loss: 1.519. Correlation: 0.290
+Final training epoch 33 for lambda 1.20000 finished. Train loss: 1.464. Correlation: 0.384
+Final training epoch 25 for lambda 1.44000 finished. Train loss: 1.530. Correlation: 0.375
+Final training epoch 22 for lambda 1.72800 finished. Train loss: 1.570. Correlation: 0.381
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.728.
+  warnings.warn(
+Final training epoch 35 for lambda 2.07360 finished. Train loss: 1.466. Correlation: 0.406
+Final training epoch 22 for lambda 2.48832 finished. Train loss: 1.423. Correlation: 0.410
+Final training epoch 11 for lambda 2.98598 finished. Train loss: 1.545. Correlation: 0.372
+Final training epoch 13 for lambda 3.58318 finished. Train loss: 1.497. Correlation: 0.319
+Final training epoch 37 for lambda 4.29982 finished. Train loss: 1.426. Correlation: 0.409
+Final training epoch 15 for lambda 5.15978 finished. Train loss: 1.793. Correlation: 0.405
+Final training epoch 9 for lambda 6.19174 finished. Train loss: 1.483. Correlation: 0.397
+Final training epoch 37 for lambda 7.43008 finished. Train loss: 1.415. Correlation: 0.407
+Final training epoch 21 for lambda 8.91610 finished. Train loss: 1.459. Correlation: 0.402
+Final training epoch 25 for lambda 10.69932 finished. Train loss: 1.466. Correlation: 0.408
+Final training epoch 16 for lambda 12.83918 finished. Train loss: 1.479. Correlation: 0.380
+Final training epoch 37 for lambda 15.40702 finished. Train loss: 1.479. Correlation: 0.391
+Final training epoch 31 for lambda 18.48843 finished. Train loss: 1.479. Correlation: 0.371
+Final training epoch 17 for lambda 22.18611 finished. Train loss: 1.480. Correlation: 0.383
+Final training epoch 11 for lambda 26.62333 finished. Train loss: 1.483. Correlation: 0.376
+Final training epoch 12 for lambda 31.94800 finished. Train loss: 1.481. Correlation: 0.379
+Final training epoch 13 for lambda 38.33760 finished. Train loss: 1.496. Correlation: 0.374
+Final training epoch 22 for lambda 46.00512 finished. Train loss: 1.517. Correlation: 0.379
+Final training epoch 9 for lambda 55.20614 finished. Train loss: 1.531. Correlation: 0.341
+Final training epoch 11 for lambda 66.24737 finished. Train loss: 1.553. Correlation: 0.204
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 13 for lambda 79.49685 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 66.2474 / Correlation: 0.204 / Nb features: 198
+Lambda: 1.0000 / Correlation: 0.290 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.319 / Nb features: 29024
+Lambda: 0.0000 / Correlation: 0.325 / Nb features: 36304
+Lambda: 55.2061 / Correlation: 0.341 / Nb features: 503
+Lambda: 18.4884 / Correlation: 0.371 / Nb features: 8394
+Lambda: 2.9860 / Correlation: 0.372 / Nb features: 29428
+Lambda: 38.3376 / Correlation: 0.374 / Nb features: 1939
+Lambda: 1.4400 / Correlation: 0.375 / Nb features: 36304
+Lambda: 26.6233 / Correlation: 0.376 / Nb features: 4790
+Lambda: 46.0051 / Correlation: 0.379 / Nb features: 1091
+Lambda: 31.9480 / Correlation: 0.379 / Nb features: 2918
+Lambda: 12.8392 / Correlation: 0.380 / Nb features: 10043
+Lambda: 1.7280 / Correlation: 0.381 / Nb features: 35319
+Lambda: 22.1861 / Correlation: 0.383 / Nb features: 4658
+Lambda: 1.2000 / Correlation: 0.384 / Nb features: 36304
+Lambda: 15.4070 / Correlation: 0.391 / Nb features: 8297
+Lambda: 6.1917 / Correlation: 0.397 / Nb features: 9142
+Lambda: 8.9161 / Correlation: 0.402 / Nb features: 28345
+Lambda: 5.1598 / Correlation: 0.405 / Nb features: 10964
+Lambda: 2.0736 / Correlation: 0.406 / Nb features: 23319
+Lambda: 7.4301 / Correlation: 0.407 / Nb features: 19537
+Lambda: 10.6993 / Correlation: 0.408 / Nb features: 14825
+Lambda: 4.2998 / Correlation: 0.409 / Nb features: 23312
+Best model correlation 0.4102796
+Lambda = 2.48832
+Nb features: 27845
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.457. Correlation: 0.296
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.595. Correlation: 0.119
+Final training epoch 99 for lambda 1.20000 finished. Train loss: 1.476. Correlation: 0.357
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.200.
+  warnings.warn(
+Final training epoch 27 for lambda 1.44000 finished. Train loss: 2.651. Correlation: 0.234
+Final training epoch 13 for lambda 1.72800 finished. Train loss: 1.912. Correlation: 0.353
+Final training epoch 9 for lambda 2.07360 finished. Train loss: 26.036. Correlation: 0.334
+Final training epoch 9 for lambda 2.48832 finished. Train loss: 70.465. Correlation: 0.246
+Final training epoch 21 for lambda 2.98598 finished. Train loss: 150.593. Correlation: 0.262
+Final training epoch 14 for lambda 3.58318 finished. Train loss: 154.094. Correlation: -0.068
+Final training epoch 13 for lambda 4.29982 finished. Train loss: 3.060. Correlation: -0.170
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 16 for lambda 5.15978 finished. Train loss: 1.820. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 4.2998 / Correlation: -0.170 / Nb features: 19633
+Lambda: 3.5832 / Correlation: -0.068 / Nb features: 36278
+Lambda: 1.0000 / Correlation: 0.119 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.234 / Nb features: 31600
+Lambda: 2.4883 / Correlation: 0.246 / Nb features: 35497
+Lambda: 2.9860 / Correlation: 0.262 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.296 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.334 / Nb features: 3123
+Lambda: 1.7280 / Correlation: 0.353 / Nb features: 16177
+Best model correlation 0.35669333
+Lambda = 1.2
+Nb features: 36150
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 105 for lambda 0.00000 finished. Train loss: 1.370. Correlation: 0.323
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.557. Correlation: 0.113
+Final training epoch 43 for lambda 1.20000 finished. Train loss: 1.522. Correlation: 0.274
+Final training epoch 24 for lambda 1.44000 finished. Train loss: 1.564. Correlation: 0.144
+Final training epoch 41 for lambda 1.72800 finished. Train loss: 1.488. Correlation: 0.362
+Final training epoch 21 for lambda 2.07360 finished. Train loss: 1.479. Correlation: 0.367
+Final training epoch 15 for lambda 2.48832 finished. Train loss: 6.159. Correlation: 0.278
+Final training epoch 19 for lambda 2.98598 finished. Train loss: 1.493. Correlation: 0.375
+Final training epoch 19 for lambda 3.58318 finished. Train loss: 1.529. Correlation: 0.371
+Final training epoch 12 for lambda 4.29982 finished. Train loss: 1.520. Correlation: 0.379
+Final training epoch 35 for lambda 5.15978 finished. Train loss: 1.567. Correlation: 0.382
+Final training epoch 9 for lambda 6.19174 finished. Train loss: 8.307. Correlation: 0.311
+Final training epoch 14 for lambda 7.43008 finished. Train loss: 11.117. Correlation: 0.295
+Final training epoch 11 for lambda 8.91610 finished. Train loss: 4.151. Correlation: 0.287
+Final training epoch 39 for lambda 10.69932 finished. Train loss: 1.426. Correlation: 0.401
+Final training epoch 9 for lambda 12.83918 finished. Train loss: 2.118. Correlation: 0.364
+Final training epoch 17 for lambda 15.40702 finished. Train loss: 1.498. Correlation: 0.372
+Final training epoch 11 for lambda 18.48843 finished. Train loss: 1.510. Correlation: 0.364
+Final training epoch 27 for lambda 22.18611 finished. Train loss: 1.533. Correlation: 0.355
+Final training epoch 10 for lambda 26.62333 finished. Train loss: 1.553. Correlation: 0.316
+Final training epoch 17 for lambda 31.94800 finished. Train loss: 1.563. Correlation: 0.217
+Final training epoch 9 for lambda 38.33760 finished. Train loss: 1.565. Correlation: 0.167
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 46.00512 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.0000 / Correlation: 0.113 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.144 / Nb features: 36304
+Lambda: 38.3376 / Correlation: 0.167 / Nb features: 5
+Lambda: 31.9480 / Correlation: 0.217 / Nb features: 42
+Lambda: 1.2000 / Correlation: 0.274 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.278 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.287 / Nb features: 33655
+Lambda: 7.4301 / Correlation: 0.295 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.311 / Nb features: 31720
+Lambda: 26.6233 / Correlation: 0.316 / Nb features: 462
+Lambda: 0.0000 / Correlation: 0.323 / Nb features: 36304
+Lambda: 22.1861 / Correlation: 0.355 / Nb features: 1567
+Lambda: 1.7280 / Correlation: 0.362 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.364 / Nb features: 3658
+Lambda: 12.8392 / Correlation: 0.364 / Nb features: 12349
+Lambda: 2.0736 / Correlation: 0.367 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.371 / Nb features: 36304
+Lambda: 15.4070 / Correlation: 0.372 / Nb features: 10822
+Lambda: 2.9860 / Correlation: 0.375 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.379 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.382 / Nb features: 36021
+Best model correlation 0.40148073
+Lambda = 10.699320537907196
+Nb features: 36017
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 108 for lambda 0.00000 finished. Train loss: 0.882. Correlation: 0.383
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.656. Correlation: 0.327
+Final training epoch 9 for lambda 1.20000 finished. Train loss: 2.401. Correlation: 0.078
+Final training epoch 9 for lambda 1.44000 finished. Train loss: 2.434. Correlation: 0.029
+Final training epoch 16 for lambda 1.72800 finished. Train loss: 2.224. Correlation: 0.023
+Final training epoch 10 for lambda 2.07360 finished. Train loss: 2.106. Correlation: 0.021
+Final training epoch 46 for lambda 2.48832 finished. Train loss: 1.622. Correlation: 0.321
+Final training epoch 22 for lambda 2.98598 finished. Train loss: 1.559. Correlation: 0.428
+Final training epoch 14 for lambda 3.58318 finished. Train loss: 1.587. Correlation: 0.032
+Final training epoch 12 for lambda 4.29982 finished. Train loss: 1.571. Correlation: 0.036
+Final training epoch 19 for lambda 5.15978 finished. Train loss: 1.565. Correlation: 0.051
+Final training epoch 20 for lambda 6.19174 finished. Train loss: 1.564. Correlation: 0.069
+Final training epoch 80 for lambda 8.91610 finished. Train loss: 1.550. Correlation: 0.363
+Final training epoch 49 for lambda 10.69932 finished. Train loss: 1.560. Correlation: 0.369
+Final training epoch 19 for lambda 12.83918 finished. Train loss: 1.567. Correlation: 0.353
+Final training epoch 12 for lambda 15.40702 finished. Train loss: 1.568. Correlation: 0.322
+Final training epoch 30 for lambda 18.48843 finished. Train loss: 1.549. Correlation: 0.369
+Final training epoch 40 for lambda 22.18611 finished. Train loss: 1.554. Correlation: 0.358
+Final training epoch 29 for lambda 26.62333 finished. Train loss: 1.559. Correlation: 0.363
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 13 for lambda 31.94800 finished. Train loss: 1.566. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.0736 / Correlation: 0.021 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.023 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.029 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.032 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.036 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.051 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.069 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.078 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.321 / Nb features: 36304
+Lambda: 15.4070 / Correlation: 0.322 / Nb features: 21441
+Lambda: 1.0000 / Correlation: 0.327 / Nb features: 36304
+Lambda: 12.8392 / Correlation: 0.353 / Nb features: 36111
+Lambda: 22.1861 / Correlation: 0.358 / Nb features: 10061
+Lambda: 8.9161 / Correlation: 0.363 / Nb features: 36304
+Lambda: 26.6233 / Correlation: 0.363 / Nb features: 25975
+Lambda: 7.4301 / Correlation: 0.367 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.369 / Nb features: 35178
+Lambda: 10.6993 / Correlation: 0.369 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.383 / Nb features: 36304
+Best model correlation 0.42777923
+Lambda = 2.9859839999999997
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.212. Correlation: 0.335
+Final training epoch 34 for lambda 1.00000 finished. Train loss: 6.080. Correlation: 0.298
+Final training epoch 27 for lambda 1.20000 finished. Train loss: 1.485. Correlation: 0.388
+Final training epoch 11 for lambda 1.44000 finished. Train loss: 6.008. Correlation: -0.068
+Final training epoch 47 for lambda 1.72800 finished. Train loss: 1.513. Correlation: 0.378
+Final training epoch 19 for lambda 2.07360 finished. Train loss: 1.528. Correlation: 0.383
+Final training epoch 24 for lambda 2.48832 finished. Train loss: 1.539. Correlation: 0.369
+Final training epoch 11 for lambda 2.98598 finished. Train loss: 1.552. Correlation: 0.380
+Final training epoch 29 for lambda 3.58318 finished. Train loss: 1.562. Correlation: 0.365
+Final training epoch 20 for lambda 4.29982 finished. Train loss: 1.561. Correlation: 0.376
+Final training epoch 33 for lambda 5.15978 finished. Train loss: 1.562. Correlation: 0.356
+Final training epoch 10 for lambda 6.19174 finished. Train loss: 1.478. Correlation: 0.354
+Final training epoch 12 for lambda 7.43008 finished. Train loss: 2.138. Correlation: 0.317
+Final training epoch 10 for lambda 8.91610 finished. Train loss: 1.511. Correlation: 0.370
+Final training epoch 9 for lambda 10.69932 finished. Train loss: 1.472. Correlation: 0.365
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 25 for lambda 12.83918 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.4400 / Correlation: -0.068 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.298 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.317 / Nb features: 26827
+Lambda: 0.0000 / Correlation: 0.335 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.354 / Nb features: 34226
+Lambda: 5.1598 / Correlation: 0.356 / Nb features: 13010
+Lambda: 3.5832 / Correlation: 0.365 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.365 / Nb features: 32595
+Lambda: 2.4883 / Correlation: 0.369 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.370 / Nb features: 17986
+Lambda: 4.2998 / Correlation: 0.376 / Nb features: 34667
+Lambda: 1.7280 / Correlation: 0.378 / Nb features: 36304
+Lambda: 2.9860 / Correlation: 0.380 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.383 / Nb features: 36304
+Best model correlation 0.38818085
+Lambda = 1.2
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 102 for lambda 0.00000 finished. Train loss: 1.045. Correlation: 0.341
+Final training epoch 31 for lambda 1.00000 finished. Train loss: 1.514. Correlation: 0.307
+Final training epoch 29 for lambda 1.20000 finished. Train loss: 2.402. Correlation: 0.305
+Final training epoch 21 for lambda 1.44000 finished. Train loss: 1.502. Correlation: 0.381
+Final training epoch 28 for lambda 1.72800 finished. Train loss: 2.122. Correlation: 0.362
+Final training epoch 24 for lambda 2.07360 finished. Train loss: 1.516. Correlation: 0.386
+Final training epoch 22 for lambda 2.48832 finished. Train loss: 1.516. Correlation: 0.387
+Final training epoch 37 for lambda 2.98598 finished. Train loss: 1.533. Correlation: 0.375
+Final training epoch 15 for lambda 3.58318 finished. Train loss: 1.542. Correlation: 0.380
+Final training epoch 26 for lambda 4.29982 finished. Train loss: 1.550. Correlation: 0.367
+Final training epoch 36 for lambda 5.15978 finished. Train loss: 1.555. Correlation: 0.348
+Final training epoch 14 for lambda 6.19174 finished. Train loss: 1.563. Correlation: 0.373
+Final training epoch 14 for lambda 7.43008 finished. Train loss: 1.610. Correlation: 0.361
+Final training epoch 49 for lambda 8.91610 finished. Train loss: 1.491. Correlation: 0.407
+Final training epoch 37 for lambda 10.69932 finished. Train loss: 1.455. Correlation: 0.408
+Final training epoch 12 for lambda 12.83918 finished. Train loss: 1.443. Correlation: 0.411
+Final training epoch 19 for lambda 15.40702 finished. Train loss: 2.647. Correlation: 0.336
+Final training epoch 16 for lambda 18.48843 finished. Train loss: 1.505. Correlation: 0.382
+Final training epoch 12 for lambda 22.18611 finished. Train loss: 1.587. Correlation: 0.378
+Final training epoch 26 for lambda 26.62333 finished. Train loss: 1.516. Correlation: 0.375
+Final training epoch 29 for lambda 31.94800 finished. Train loss: 1.511. Correlation: 0.372
+Final training epoch 9 for lambda 38.33760 finished. Train loss: 1.539. Correlation: 0.351
+Final training epoch 25 for lambda 46.00512 finished. Train loss: 1.521. Correlation: 0.349
+Final training epoch 13 for lambda 55.20614 finished. Train loss: 1.548. Correlation: 0.350
+Final training epoch 9 for lambda 66.24737 finished. Train loss: 1.561. Correlation: 0.275
+Final training epoch 9 for lambda 79.49685 finished. Train loss: 1.566. Correlation: 0.221
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 95.39622 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 79.4968 / Correlation: 0.221 / Nb features: 72
+Lambda: 66.2474 / Correlation: 0.275 / Nb features: 142
+Lambda: 1.2000 / Correlation: 0.305 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.307 / Nb features: 36304
+Lambda: 15.4070 / Correlation: 0.336 / Nb features: 32808
+Lambda: 0.0000 / Correlation: 0.341 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.348 / Nb features: 36304
+Lambda: 46.0051 / Correlation: 0.349 / Nb features: 1620
+Lambda: 55.2061 / Correlation: 0.350 / Nb features: 794
+Lambda: 38.3376 / Correlation: 0.351 / Nb features: 1263
+Lambda: 7.4301 / Correlation: 0.361 / Nb features: 34338
+Lambda: 1.7280 / Correlation: 0.362 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.367 / Nb features: 36304
+Lambda: 31.9480 / Correlation: 0.372 / Nb features: 5077
+Lambda: 6.1917 / Correlation: 0.373 / Nb features: 36302
+Lambda: 26.6233 / Correlation: 0.375 / Nb features: 14123
+Lambda: 2.9860 / Correlation: 0.375 / Nb features: 36304
+Lambda: 22.1861 / Correlation: 0.378 / Nb features: 28361
+Lambda: 3.5832 / Correlation: 0.380 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.381 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.382 / Nb features: 36098
+Lambda: 2.0736 / Correlation: 0.386 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.387 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.407 / Nb features: 22085
+Lambda: 10.6993 / Correlation: 0.408 / Nb features: 15464
+Best model correlation 0.4107798
+Lambda = 12.839184645488634
+Nb features: 21104
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 105 for lambda 0.00000 finished. Train loss: 0.938. Correlation: 0.335
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.599. Correlation: 0.121
+Final training epoch 74 for lambda 1.20000 finished. Train loss: 1.540. Correlation: 0.242
+Final training epoch 38 for lambda 1.44000 finished. Train loss: 1.508. Correlation: 0.314
+Final training epoch 23 for lambda 1.72800 finished. Train loss: 1.517. Correlation: 0.317
+Final training epoch 37 for lambda 2.07360 finished. Train loss: 1.503. Correlation: 0.342
+Final training epoch 18 for lambda 2.48832 finished. Train loss: 1.541. Correlation: 0.241
+Final training epoch 21 for lambda 2.98598 finished. Train loss: 2.824. Correlation: 0.272
+Final training epoch 35 for lambda 3.58318 finished. Train loss: 1.494. Correlation: 0.384
+Final training epoch 15 for lambda 4.29982 finished. Train loss: 1.499. Correlation: 0.380
+Final training epoch 56 for lambda 5.15978 finished. Train loss: 1.529. Correlation: 0.372
+Final training epoch 36 for lambda 6.19174 finished. Train loss: 1.557. Correlation: 0.362
+Final training epoch 13 for lambda 7.43008 finished. Train loss: 1.556. Correlation: 0.370
+Final training epoch 22 for lambda 8.91610 finished. Train loss: 1.564. Correlation: 0.378
+Final training epoch 12 for lambda 10.69932 finished. Train loss: 1.647. Correlation: 0.319
+Final training epoch 25 for lambda 12.83918 finished. Train loss: 1.559. Correlation: 0.358
+Final training epoch 23 for lambda 15.40702 finished. Train loss: 2.102. Correlation: 0.344
+Final training epoch 22 for lambda 18.48843 finished. Train loss: 1.600. Correlation: 0.235
+Final training epoch 24 for lambda 22.18611 finished. Train loss: 1.573. Correlation: 0.256
+Final training epoch 24 for lambda 26.62333 finished. Train loss: 1.474. Correlation: 0.395
+Final training epoch 22 for lambda 31.94800 finished. Train loss: 1.496. Correlation: 0.386
+Final training epoch 9 for lambda 38.33760 finished. Train loss: 1.523. Correlation: 0.348
+Final training epoch 13 for lambda 46.00512 finished. Train loss: 1.522. Correlation: 0.364
+Final training epoch 20 for lambda 55.20614 finished. Train loss: 1.534. Correlation: 0.358
+Final training epoch 10 for lambda 66.24737 finished. Train loss: 1.551. Correlation: 0.328
+Final training epoch 9 for lambda 79.49685 finished. Train loss: 1.563. Correlation: 0.284
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 95.39622 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.0000 / Correlation: 0.121 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.235 / Nb features: 17444
+Lambda: 2.4883 / Correlation: 0.241 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.242 / Nb features: 36304
+Lambda: 22.1861 / Correlation: 0.256 / Nb features: 6471
+Lambda: 2.9860 / Correlation: 0.272 / Nb features: 36304
+Lambda: 79.4968 / Correlation: 0.284 / Nb features: 122
+Lambda: 1.4400 / Correlation: 0.314 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.317 / Nb features: 36304
+Lambda: 10.6993 / Correlation: 0.319 / Nb features: 21285
+Lambda: 66.2474 / Correlation: 0.328 / Nb features: 505
+Lambda: 0.0000 / Correlation: 0.335 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.342 / Nb features: 36304
+Lambda: 15.4070 / Correlation: 0.344 / Nb features: 36268
+Lambda: 38.3376 / Correlation: 0.348 / Nb features: 4339
+Lambda: 55.2061 / Correlation: 0.358 / Nb features: 1157
+Lambda: 12.8392 / Correlation: 0.358 / Nb features: 36300
+Lambda: 6.1917 / Correlation: 0.362 / Nb features: 36304
+Lambda: 46.0051 / Correlation: 0.364 / Nb features: 3260
+Lambda: 7.4301 / Correlation: 0.370 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.372 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.378 / Nb features: 34988
+Lambda: 4.2998 / Correlation: 0.380 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.384 / Nb features: 36304
+Lambda: 31.9480 / Correlation: 0.386 / Nb features: 7818
+Best model correlation 0.39514416
+Lambda = 26.62333328088523
+Nb features: 23449
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 101 for lambda 0.00000 finished. Train loss: 1.819. Correlation: 0.368
+Final training epoch 13 for lambda 1.00000 finished. Train loss: 1.494. Correlation: 0.320
+Final training epoch 19 for lambda 1.20000 finished. Train loss: 1.480. Correlation: 0.391
+Final training epoch 13 for lambda 1.44000 finished. Train loss: 1.485. Correlation: 0.381
+Final training epoch 12 for lambda 1.72800 finished. Train loss: 1.499. Correlation: 0.359
+Final training epoch 36 for lambda 2.07360 finished. Train loss: 1.501. Correlation: 0.381
+Final training epoch 16 for lambda 2.48832 finished. Train loss: 1.773. Correlation: 0.367
+Final training epoch 10 for lambda 2.98598 finished. Train loss: 1.583. Correlation: 0.356
+Final training epoch 45 for lambda 3.58318 finished. Train loss: 1.558. Correlation: 0.369
+Final training epoch 32 for lambda 4.29982 finished. Train loss: 8.052. Correlation: 0.362
+Final training epoch 9 for lambda 5.15978 finished. Train loss: 1.514. Correlation: 0.355
+Final training epoch 38 for lambda 6.19174 finished. Train loss: 1.370. Correlation: 0.387
+Final training epoch 19 for lambda 7.43008 finished. Train loss: 1.406. Correlation: 0.397
+Final training epoch 35 for lambda 8.91610 finished. Train loss: 1.450. Correlation: 0.387
+Final training epoch 30 for lambda 10.69932 finished. Train loss: 1.465. Correlation: 0.401
+Final training epoch 11 for lambda 12.83918 finished. Train loss: 1.451. Correlation: 0.384
+Final training epoch 14 for lambda 15.40702 finished. Train loss: 1.492. Correlation: 0.388
+Final training epoch 24 for lambda 18.48843 finished. Train loss: 1.491. Correlation: 0.383
+Final training epoch 25 for lambda 22.18611 finished. Train loss: 1.491. Correlation: 0.389
+Final training epoch 12 for lambda 26.62333 finished. Train loss: 1.517. Correlation: 0.370
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 13 for lambda 31.94800 finished. Train loss: 1.572. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 1.0000 / Correlation: 0.320 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.355 / Nb features: 2167
+Lambda: 2.9860 / Correlation: 0.356 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.359 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.362 / Nb features: 24000
+Lambda: 2.4883 / Correlation: 0.367 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.368 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.369 / Nb features: 36295
+Lambda: 26.6233 / Correlation: 0.370 / Nb features: 6595
+Lambda: 1.4400 / Correlation: 0.381 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.381 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.383 / Nb features: 8834
+Lambda: 12.8392 / Correlation: 0.384 / Nb features: 19121
+Lambda: 6.1917 / Correlation: 0.387 / Nb features: 34036
+Lambda: 8.9161 / Correlation: 0.387 / Nb features: 23683
+Lambda: 15.4070 / Correlation: 0.388 / Nb features: 13165
+Lambda: 22.1861 / Correlation: 0.389 / Nb features: 8721
+Lambda: 1.2000 / Correlation: 0.391 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.397 / Nb features: 25608
+Best model correlation 0.4011021
+Lambda = 10.699320537907196
+Nb features: 17003
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 100 for lambda 0.00000 finished. Train loss: 1.489. Correlation: 0.321
+Final training epoch 16 for lambda 1.00000 finished. Train loss: 1.534. Correlation: 0.231
+Final training epoch 20 for lambda 1.20000 finished. Train loss: 1.488. Correlation: 0.383
+Final training epoch 20 for lambda 1.44000 finished. Train loss: 1.492. Correlation: 0.359
+Final training epoch 16 for lambda 1.72800 finished. Train loss: 1.486. Correlation: 0.382
+Final training epoch 9 for lambda 2.07360 finished. Train loss: 1.518. Correlation: 0.342
+Final training epoch 44 for lambda 2.48832 finished. Train loss: 1.733. Correlation: 0.379
+Final training epoch 13 for lambda 2.98598 finished. Train loss: 1.520. Correlation: 0.359
+Final training epoch 13 for lambda 3.58318 finished. Train loss: 1.660. Correlation: 0.381
+Final training epoch 10 for lambda 4.29982 finished. Train loss: 1.572. Correlation: 0.377
+Final training epoch 20 for lambda 5.15978 finished. Train loss: 1.560. Correlation: 0.379
+Final training epoch 14 for lambda 6.19174 finished. Train loss: 1.565. Correlation: 0.357
+Final training epoch 10 for lambda 7.43008 finished. Train loss: 1.578. Correlation: 0.358
+Final training epoch 13 for lambda 8.91610 finished. Train loss: 1.583. Correlation: 0.334
+Final training epoch 11 for lambda 10.69932 finished. Train loss: 4.043. Correlation: 0.171
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 10 for lambda 12.83918 finished. Train loss: 1.564. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 10.6993 / Correlation: 0.171 / Nb features: 22411
+Lambda: 1.0000 / Correlation: 0.231 / Nb features: 36304
+Lambda: 0.0000 / Correlation: 0.321 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.334 / Nb features: 29649
+Lambda: 2.0736 / Correlation: 0.342 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.357 / Nb features: 34631
+Lambda: 7.4301 / Correlation: 0.358 / Nb features: 13090
+Lambda: 2.9860 / Correlation: 0.359 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.359 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.377 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.379 / Nb features: 36251
+Lambda: 2.4883 / Correlation: 0.379 / Nb features: 36304
+Lambda: 3.5832 / Correlation: 0.381 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.382 / Nb features: 36304
+Best model correlation 0.3827839
+Lambda = 1.2
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 133 for lambda 0.00000 finished. Train loss: 1.522. Correlation: 0.311
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.555. Correlation: 0.123
+Final training epoch 66 for lambda 1.20000 finished. Train loss: 8.712. Correlation: 0.302
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:490: UserWarning: lambda_start=1.000 might be too large.
+Features start to disappear at current_lambda=1.200.
+  warnings.warn(
+Final training epoch 14 for lambda 1.44000 finished. Train loss: 2.068. Correlation: 0.315
+Final training epoch 44 for lambda 1.72800 finished. Train loss: 9.833. Correlation: 0.295
+Final training epoch 11 for lambda 2.07360 finished. Train loss: 1.583. Correlation: 0.363
+Final training epoch 11 for lambda 2.48832 finished. Train loss: 274.254. Correlation: 0.372
+Final training epoch 9 for lambda 2.98598 finished. Train loss: 127.780. Correlation: 0.346
+Final training epoch 21 for lambda 3.58318 finished. Train loss: 2.459. Correlation: -0.005
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 12 for lambda 4.29982 finished. Train loss: 1.766. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 3.5832 / Correlation: -0.005 / Nb features: 6050
+Lambda: 1.0000 / Correlation: 0.123 / Nb features: 36304
+Lambda: 1.7280 / Correlation: 0.295 / Nb features: 27897
+Lambda: 1.2000 / Correlation: 0.302 / Nb features: 21246
+Lambda: 0.0000 / Correlation: 0.311 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.315 / Nb features: 11295
+Lambda: 2.9860 / Correlation: 0.346 / Nb features: 36029
+Lambda: 2.0736 / Correlation: 0.363 / Nb features: 11395
+Best model correlation 0.37215322
+Lambda = 2.48832
+Nb features: 36204
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 108 for lambda 0.00000 finished. Train loss: 1.085. Correlation: 0.360
+Final training epoch 14 for lambda 1.00000 finished. Train loss: 1.515. Correlation: 0.344
+Final training epoch 39 for lambda 1.20000 finished. Train loss: 1.498. Correlation: 0.384
+Final training epoch 30 for lambda 1.44000 finished. Train loss: 1.526. Correlation: 0.380
+Final training epoch 20 for lambda 1.72800 finished. Train loss: 1.521. Correlation: 0.387
+Final training epoch 30 for lambda 2.07360 finished. Train loss: 1.536. Correlation: 0.370
+Final training epoch 16 for lambda 2.48832 finished. Train loss: 1.554. Correlation: 0.373
+Final training epoch 16 for lambda 2.98598 finished. Train loss: 1.551. Correlation: 0.370
+Final training epoch 58 for lambda 3.58318 finished. Train loss: 1.555. Correlation: 0.373
+Final training epoch 19 for lambda 4.29982 finished. Train loss: 1.562. Correlation: 0.376
+Final training epoch 14 for lambda 5.15978 finished. Train loss: 1.562. Correlation: 0.363
+Final training epoch 19 for lambda 6.19174 finished. Train loss: 1.534. Correlation: 0.373
+Final training epoch 28 for lambda 7.43008 finished. Train loss: 1.532. Correlation: 0.346
+Final training epoch 14 for lambda 8.91610 finished. Train loss: 1.525. Correlation: 0.369
+Final training epoch 11 for lambda 10.69932 finished. Train loss: 1.522. Correlation: 0.366
+Final training epoch 29 for lambda 12.83918 finished. Train loss: 2.801. Correlation: 0.288
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 12 for lambda 15.40702 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 12.8392 / Correlation: 0.288 / Nb features: 23378
+Lambda: 1.0000 / Correlation: 0.344 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.346 / Nb features: 15260
+Lambda: 0.0000 / Correlation: 0.360 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.363 / Nb features: 36272
+Lambda: 10.6993 / Correlation: 0.366 / Nb features: 34111
+Lambda: 8.9161 / Correlation: 0.369 / Nb features: 25563
+Lambda: 2.0736 / Correlation: 0.370 / Nb features: 36304
+Lambda: 2.9860 / Correlation: 0.370 / Nb features: 36304
+Lambda: 6.1917 / Correlation: 0.373 / Nb features: 13951
+Lambda: 3.5832 / Correlation: 0.373 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.373 / Nb features: 36304
+Lambda: 4.2998 / Correlation: 0.376 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.380 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.384 / Nb features: 36304
+Best model correlation 0.3869101
+Lambda = 1.728
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 103 for lambda 0.00000 finished. Train loss: 1.256. Correlation: 0.304
+Final training epoch 9 for lambda 1.00000 finished. Train loss: 1.535. Correlation: 0.188
+Final training epoch 10 for lambda 1.44000 finished. Train loss: 1.499. Correlation: 0.385
+Final training epoch 11 for lambda 1.72800 finished. Train loss: 1.517. Correlation: 0.369
+Final training epoch 34 for lambda 2.07360 finished. Train loss: 1.694. Correlation: 0.390
+Final training epoch 13 for lambda 2.48832 finished. Train loss: 11.898. Correlation: 0.373
+Final training epoch 9 for lambda 2.98598 finished. Train loss: 19.675. Correlation: 0.072
+Final training epoch 12 for lambda 3.58318 finished. Train loss: 9.213. Correlation: 0.164
+Final training epoch 9 for lambda 4.29982 finished. Train loss: 10.165. Correlation: 0.101
+Final training epoch 34 for lambda 5.15978 finished. Train loss: 1.875. Correlation: 0.247
+Final training epoch 39 for lambda 6.19174 finished. Train loss: 1.564. Correlation: 0.328
+Final training epoch 10 for lambda 7.43008 finished. Train loss: 1.564. Correlation: 0.299
+Final training epoch 11 for lambda 8.91610 finished. Train loss: 1.564. Correlation: 0.310
+Final training epoch 9 for lambda 10.69932 finished. Train loss: 1.565. Correlation: 0.171
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 12.83918 finished. Train loss: 1.565. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 2.9860 / Correlation: 0.072 / Nb features: 6476
+Lambda: 4.2998 / Correlation: 0.101 / Nb features: 36274
+Lambda: 3.5832 / Correlation: 0.164 / Nb features: 35614
+Lambda: 10.6993 / Correlation: 0.171 / Nb features: 48
+Lambda: 1.0000 / Correlation: 0.188 / Nb features: 36304
+Lambda: 5.1598 / Correlation: 0.247 / Nb features: 21305
+Lambda: 7.4301 / Correlation: 0.299 / Nb features: 8444
+Lambda: 0.0000 / Correlation: 0.304 / Nb features: 36304
+Lambda: 8.9161 / Correlation: 0.310 / Nb features: 1912
+Lambda: 6.1917 / Correlation: 0.328 / Nb features: 868
+Lambda: 1.7280 / Correlation: 0.369 / Nb features: 36304
+Lambda: 2.4883 / Correlation: 0.373 / Nb features: 3263
+Lambda: 1.4400 / Correlation: 0.385 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.390 / Nb features: 19712
+Best model correlation 0.41030428
+Lambda = 1.2
+Nb features: 36304
+//////////////////////////////////////////////////////////////////////////////////
+Final training epoch 105 for lambda 0.00000 finished. Train loss: 1.077. Correlation: 0.337
+Final training epoch 24 for lambda 1.00000 finished. Train loss: 1.501. Correlation: 0.374
+Final training epoch 9 for lambda 1.20000 finished. Train loss: 1.508. Correlation: 0.359
+Final training epoch 32 for lambda 1.44000 finished. Train loss: 1.484. Correlation: 0.382
+Final training epoch 12 for lambda 1.72800 finished. Train loss: 1.498. Correlation: 0.378
+Final training epoch 17 for lambda 2.07360 finished. Train loss: 1.493. Correlation: 0.382
+Final training epoch 35 for lambda 2.48832 finished. Train loss: 1.555. Correlation: 0.381
+Final training epoch 18 for lambda 2.98598 finished. Train loss: 1.569. Correlation: 0.385
+Final training epoch 30 for lambda 3.58318 finished. Train loss: 1.548. Correlation: 0.371
+Final training epoch 10 for lambda 4.29982 finished. Train loss: 1.541. Correlation: 0.373
+Final training epoch 15 for lambda 5.15978 finished. Train loss: 1.552. Correlation: 0.376
+Final training epoch 26 for lambda 6.19174 finished. Train loss: 1.559. Correlation: 0.365
+Final training epoch 43 for lambda 7.43008 finished. Train loss: 1.723. Correlation: 0.376
+Final training epoch 17 for lambda 8.91610 finished. Train loss: 1.443. Correlation: 0.411
+Final training epoch 25 for lambda 10.69932 finished. Train loss: 1.412. Correlation: 0.410
+Final training epoch 18 for lambda 12.83918 finished. Train loss: 1.619. Correlation: 0.377
+Final training epoch 22 for lambda 15.40702 finished. Train loss: 3.756. Correlation: 0.331
+Final training epoch 23 for lambda 18.48843 finished. Train loss: 1.540. Correlation: 0.373
+Final training epoch 22 for lambda 22.18611 finished. Train loss: 1.690. Correlation: 0.403
+Final training epoch 39 for lambda 26.62333 finished. Train loss: 1.640. Correlation: 0.401
+Final training epoch 14 for lambda 31.94800 finished. Train loss: 1.457. Correlation: 0.385
+Final training epoch 47 for lambda 38.33760 finished. Train loss: 1.477. Correlation: 0.406
+Final training epoch 18 for lambda 46.00512 finished. Train loss: 1.440. Correlation: 0.402
+Final training epoch 14 for lambda 55.20614 finished. Train loss: 1.450. Correlation: 0.396
+Final training epoch 37 for lambda 66.24737 finished. Train loss: 1.462. Correlation: 0.399
+Final training epoch 21 for lambda 79.49685 finished. Train loss: 1.468. Correlation: 0.403
+Final training epoch 19 for lambda 95.39622 finished. Train loss: 1.467. Correlation: 0.395
+Final training epoch 11 for lambda 114.47546 finished. Train loss: 1.489. Correlation: 0.379
+Final training epoch 21 for lambda 137.37055 finished. Train loss: 1.467. Correlation: 0.401
+Final training epoch 21 for lambda 164.84466 finished. Train loss: 1.480. Correlation: 0.380
+Final training epoch 10 for lambda 197.81359 finished. Train loss: 1.481. Correlation: 0.364
+Final training epoch 18 for lambda 237.37631 finished. Train loss: 1.488. Correlation: 0.363
+Final training epoch 19 for lambda 284.85158 finished. Train loss: 1.501. Correlation: 0.368
+Final training epoch 12 for lambda 341.82189 finished. Train loss: 1.513. Correlation: 0.328
+Final training epoch 19 for lambda 410.18627 finished. Train loss: 1.534. Correlation: 0.299
+Final training epoch 11 for lambda 492.22352 finished. Train loss: 1.554. Correlation: 0.285
+Final training epoch 9 for lambda 590.66823 finished. Train loss: 1.562. Correlation: 0.226
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:279: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return_value = pearsonr(model(X_val).view((-1)).cpu(), y_val.view((-1)).cpu()).statistic
+Final training epoch 9 for lambda 708.80187 finished. Train loss: 1.566. Correlation: nan
+/home/fhervers/TFE/Code/Regression/LassoNet/lassonet/lassonet/interfaces.py:588: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return pearsonr(y.cpu(), y_pred.cpu().detach()).statistic
+//////////////////////////////////////////////////////////////////////////////////
+Lambda: 590.6682 / Correlation: 0.226 / Nb features: 23
+Lambda: 492.2235 / Correlation: 0.285 / Nb features: 134
+Lambda: 410.1863 / Correlation: 0.299 / Nb features: 386
+Lambda: 341.8219 / Correlation: 0.328 / Nb features: 948
+Lambda: 15.4070 / Correlation: 0.331 / Nb features: 35417
+Lambda: 0.0000 / Correlation: 0.337 / Nb features: 36304
+Lambda: 1.2000 / Correlation: 0.359 / Nb features: 36304
+Lambda: 237.3763 / Correlation: 0.363 / Nb features: 3280
+Lambda: 197.8136 / Correlation: 0.364 / Nb features: 3955
+Lambda: 6.1917 / Correlation: 0.365 / Nb features: 36304
+Lambda: 284.8516 / Correlation: 0.368 / Nb features: 1866
+Lambda: 3.5832 / Correlation: 0.371 / Nb features: 36304
+Lambda: 18.4884 / Correlation: 0.373 / Nb features: 36086
+Lambda: 4.2998 / Correlation: 0.373 / Nb features: 36304
+Lambda: 1.0000 / Correlation: 0.374 / Nb features: 36304
+Lambda: 7.4301 / Correlation: 0.376 / Nb features: 35785
+Lambda: 5.1598 / Correlation: 0.376 / Nb features: 36304
+Lambda: 12.8392 / Correlation: 0.377 / Nb features: 32483
+Lambda: 1.7280 / Correlation: 0.378 / Nb features: 36304
+Lambda: 114.4755 / Correlation: 0.379 / Nb features: 7109
+Lambda: 164.8447 / Correlation: 0.380 / Nb features: 7272
+Lambda: 2.4883 / Correlation: 0.381 / Nb features: 36304
+Lambda: 2.0736 / Correlation: 0.382 / Nb features: 36304
+Lambda: 1.4400 / Correlation: 0.382 / Nb features: 36304
+Lambda: 31.9480 / Correlation: 0.385 / Nb features: 36086
+Lambda: 2.9860 / Correlation: 0.385 / Nb features: 36304
+Lambda: 95.3962 / Correlation: 0.395 / Nb features: 11470
+Lambda: 55.2061 / Correlation: 0.396 / Nb features: 10157
+Lambda: 66.2474 / Correlation: 0.399 / Nb features: 28159
+Lambda: 26.6233 / Correlation: 0.401 / Nb features: 24892
+Lambda: 137.3706 / Correlation: 0.401 / Nb features: 8349
+Lambda: 46.0051 / Correlation: 0.402 / Nb features: 20396
+Lambda: 79.4968 / Correlation: 0.403 / Nb features: 19058
+Lambda: 22.1861 / Correlation: 0.403 / Nb features: 20429
+Lambda: 38.3376 / Correlation: 0.406 / Nb features: 16920
+Lambda: 10.6993 / Correlation: 0.410 / Nb features: 34336
+Best model correlation 0.41120481
+Lambda = 8.916100448255998
+Nb features: 35244
+//////////////////////////////////////////////////////////////////////////////////
+-------------------------------------------------------------------------------------
+Optimal parameters: {'target': np.float64(0.4616265892982483), 'params': {'M': np.float64(22.277972722912782), 'dropout': np.float64(0.5245825562943404), 'hidden_size': np.float64(1080.1334948450653), 'learning_rate': np.float64(2.9479811393323224e-05)}}
+Computation finished in 1d 23h 16m 48s
