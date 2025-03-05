@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m LCLNN -d SNP_markers -f basic_train_function -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Original LCLNN with deeper encoder"
+python -u train.py -m LCLNN -d SNP_markers -f basic_train_function -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Original LCLNN with GELU activation at encoder"

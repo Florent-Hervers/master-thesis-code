@@ -2,7 +2,6 @@ from omegaconf import ListConfig
 import torch
 from torch import nn
 import torch.nn.functional as F
-import numpy as np
 
 class LocalLinear(nn.Module):
     def __init__(self,in_features,local_features,kernel_size,stride=1,bias=True):
@@ -44,12 +43,9 @@ class LCLNN(nn.Module):
             self.device = "cpu"
 
         self.encoder = nn.Sequential(
-            LocalLinear(num_snp, 1, kernel_size=7,stride=1),
-            nn.LayerNorm(num_snp),
-            nn.ReLU(),
             LocalLinear(num_snp, 1, kernel_size=5,stride=1),
             nn.LayerNorm(num_snp),
-            nn.ReLU(),
+            nn.GELU(),
             LocalLinear(num_snp, 1, kernel_size=3,stride=1),
         ).to(self.device)         
 
