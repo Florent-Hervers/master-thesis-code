@@ -1,5 +1,5 @@
 batch_size : 128
-learning_rate : 5e-5
+learning_rate : 1e-5
 n_embedding : 32
 n_heads : 4
 n_blocks : 3
