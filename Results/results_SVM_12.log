@@ -1,0 +1,111 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 10.0
+Elapsed time from start: 0d 5h 24m 53s
+Results:
+    - MAE : 1.020555265820689
+    - Correlation : 0.5324503594307939
+////////////////////////////////////////////
+Iteration 2/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 12.25
+Elapsed time from start: 0d 10h 58m 36s
+Results:
+    - MAE : 1.0209166970732526
+    - Correlation : 0.5318032668262347
+////////////////////////////////////////////
+Iteration 3/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 10.0
+Elapsed time from start: 0d 16h 0m 22s
+Results:
+    - MAE : 1.0162047049039904
+    - Correlation : 0.5337079593455909
+////////////////////////////////////////////
+Iteration 4/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 12.25
+Elapsed time from start: 0d 21h 1m 42s
+Results:
+    - MAE : 1.0163853924647348
+    - Correlation : 0.5335810191311082
+////////////////////////////////////////////
+Iteration 5/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 10.0
+Elapsed time from start: 1d 1h 53m 10s
+Results:
+    - MAE : 1.019290423802126
+    - Correlation : 0.5303507635403267
+////////////////////////////////////////////
+Iteration 6/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 12.25
+Elapsed time from start: 1d 6h 50m 29s
+Results:
+    - MAE : 1.0193142039615137
+    - Correlation : 0.5304024316712773
+////////////////////////////////////////////
+Iteration 7/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 10.0
+Elapsed time from start: 1d 11h 20m 3s
+Results:
+    - MAE : 1.0257870392021793
+    - Correlation : 0.5225448501580704
+////////////////////////////////////////////
+Iteration 8/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 12.25
+Elapsed time from start: 1d 16h 4m 12s
+Results:
+    - MAE : 1.0258068438440535
+    - Correlation : 0.5226714808123385
+////////////////////////////////////////////
+Iteration 9/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 10.0
+Elapsed time from start: 1d 20h 38m 44s
+Results:
+    - MAE : 1.0349377260026476
+    - Correlation : 0.5110670716395314
+////////////////////////////////////////////
+Iteration 10/10 for phenotype FESSEa_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 12.25
+Elapsed time from start: 2d 1h 5m 19s
+Results:
+    - MAE : 1.0349045840414586
+    - Correlation : 0.5112566279334438
+////////////////////////////////////////////
+Computation finished in 2d 1h 5m 19s

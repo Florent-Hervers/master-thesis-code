@@ -14,7 +14,7 @@ def main():
     phenotypes = ["FESSEa_res"] #list(train_dataset.phenotypes.keys())
 
     gammas = np.linspace(7.75e-5, 0.0001675, 5)
-    c = np.array([10.0, 12.25])
+    c = np.array([14.5, 16.75, 19.0])
 
     MAE_results = np.zeros((len(gammas), len(c)))
     correlation_results = np.zeros((len(gammas), len(c)))
@@ -58,7 +58,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/SVM_12_{pheno}.json", "w") as f:
+        with open(f"Results/SVM_13_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": gammas.tolist(),
                 "dim_0_label": "gamma",

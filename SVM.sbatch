@@ -4,11 +4,11 @@
 #
 #SBATCH --job-name=SVM                          # Name of the job 
 #SBATCH --export=ALL                            # Export all environment variables
-#SBATCH --output=results_SVM_12.log              # Log-file (important!)
+#SBATCH --output=results_SVM_13.log             # Log-file (important!)
 #SBATCH --cpus-per-task=64                      # Number of CPU cores to allocate
-#SBATCH --mem-per-cpu=250M                        # Memory to allocate per allocated CPU core
+#SBATCH --mem-per-cpu=250M                      # Memory to allocate per allocated CPU core
 #SBATCH --gres=gpu:0                            # Number of GPU's
-#SBATCH --time=10-00:00:00                       # Max execution time
+#SBATCH --time=10-00:00:00                      # Max execution time
 #
 
 # Activate your Anaconda environment
