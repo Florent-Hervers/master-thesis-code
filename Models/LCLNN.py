@@ -90,7 +90,7 @@ class LCLNN(nn.Module):
 
     def forward(self,X):
 
-        X = self.encoder(X) + X
+        X = self.encoder(X) #+ X
         b = self.mlp(X)
         
         return b
