@@ -96,10 +96,10 @@ class GPTransformer(nn.Module):
             Returns:
                 Tensor: updated input tensor with masked values.
             """
-            if self.training:
-                idx = torch.where(torch.rand(len(x[-1])) < probability)[0]
-                # The embedding size should take into account the extra value for mask_id
-                x[:, idx] = embedding_size - 1
+
+            idx = torch.where(torch.rand(len(x[-1])) < probability)[0]
+            # The embedding size should take into account the extra value for mask_id
+            x[:, idx] = embedding_size - 1
             return x
 
         self.mask = partial(mask_input, probability = mask_probability)
