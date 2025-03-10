@@ -45,7 +45,7 @@ class LCLNN(nn.Module):
         self.encoder = nn.Sequential(
             LocalLinear(num_snp, 1, kernel_size=5,stride=1),
             nn.LayerNorm(num_snp),
-            nn.GELU(),
+            nn.ReLU(),
             LocalLinear(num_snp, 1, kernel_size=3,stride=1),
         ).to(self.device)         
 
