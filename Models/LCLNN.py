@@ -28,7 +28,8 @@ class LocalLinear(nn.Module):
 class LCLNN(nn.Module):
     def __init__(self, 
                  num_snp, 
-                 mlp_hidden_size = None
+                 mlp_hidden_size = None,
+                 dropout = 0,
                  ):
         """ 
         Generate a standalone LCL network proposed orginally in the deepBLUP architecture.
@@ -36,6 +37,7 @@ class LCLNN(nn.Module):
         Args:
             num_snp (int): size of the snp sequence
             mlp_hidden_size (int, optional): Size of the hidden values in the mlp. Defaults to None.
+            dropout (float, optional): Probability of dropout used in the whole network. Defaults to 0.
         """
         super(LCLNN, self).__init__()
 
@@ -45,13 +47,13 @@ class LCLNN(nn.Module):
             self.device = "cpu"
 
         self.encoder = nn.Sequential(
-            LocalLinear(num_snp, 1, kernel_size=5,stride=5),
-            nn.LayerNorm(math.ceil(num_snp/5)),
+            nn.Dropout(dropout),
+            LocalLinear(num_snp, 1, kernel_size=5,stride=1),
+            nn.LayerNorm(num_snp),
             nn.ReLU(),
-            LocalLinear(math.ceil(num_snp/5), 1, kernel_size=3,stride=3),
+            nn.Dropout(dropout),
+            LocalLinear(num_snp, 1, kernel_size=3,stride=1),
         ).to(self.device)         
-
-        num_snp = math.ceil(num_snp / 15)
 
         # In the case where the parameters are given via hydra configs file, the type of the mlp_hidden_size is a ListConfig and not a list.
         if type(mlp_hidden_size) == ListConfig:
@@ -63,19 +65,32 @@ class LCLNN(nn.Module):
         if type(mlp_hidden_size) == list:
             if len(mlp_hidden_size) == 0:
                 raise Exception("An empty list isn't a valid input for the mlp_hidden_size parameter.")
-            layers = [nn.Linear(num_snp, mlp_hidden_size[0])]
+            
+            if mlp_hidden_size[0] <= 0:
+                raise Exception(f"First hidden size must be a non negative integer value but got {mlp_hidden_size[0]} instead!")
+            
+            layers = [layers.append(nn.Dropout(dropout)), nn.Linear(num_snp, mlp_hidden_size[0])]
+            
             for i in range(1, len(mlp_hidden_size)):
+                # If hidden size == 0, remove the "empty" layer and continue the mlp creation to enable variating size mlp while tuning
+                if mlp_hidden_size[i] == 0:
+                    mlp_hidden_size[i] = mlp_hidden_size[i-1]
+                    continue
                 layers.append(nn.ReLU())
+                layers.append(nn.Dropout(dropout))
                 layers.append(nn.Linear(mlp_hidden_size[i-1], mlp_hidden_size[i]))
             layers.append(nn.ReLU())
+            layers.append(nn.Dropout(dropout))
             layers.append(nn.Linear(mlp_hidden_size[-1], 1))
 
             self.mlp = nn.Sequential(*layers).to(self.device)
         
         else:
             self.mlp = nn.Sequential(
+                nn.Dropout(dropout),
                 nn.Linear(num_snp, mlp_hidden_size),
                 nn.ReLU(),
+                nn.Dropout(dropout),
                 nn.Linear(mlp_hidden_size, 1)
             ).to(self.device)
         
@@ -93,7 +108,7 @@ class LCLNN(nn.Module):
 
     def forward(self,X):
 
-        X = self.encoder(X) # + X
+        X = self.encoder(X) + X
         b = self.mlp(X)
         
         return b
