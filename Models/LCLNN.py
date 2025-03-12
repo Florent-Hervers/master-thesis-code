@@ -1,3 +1,5 @@
+import math
+
 from omegaconf import ListConfig
 import torch
 from torch import nn
@@ -43,11 +45,13 @@ class LCLNN(nn.Module):
             self.device = "cpu"
 
         self.encoder = nn.Sequential(
-            LocalLinear(num_snp, 1, kernel_size=5,stride=1),
-            nn.LayerNorm(num_snp),
+            LocalLinear(num_snp, 1, kernel_size=5,stride=5),
+            nn.LayerNorm(math.ceil(num_snp/5)),
             nn.ReLU(),
-            LocalLinear(num_snp, 1, kernel_size=3,stride=1),
+            LocalLinear(math.ceil(num_snp/5), 1, kernel_size=3,stride=3),
         ).to(self.device)         
+
+        num_snp = math.ceil(num_snp / 15)
 
         # In the case where the parameters are given via hydra configs file, the type of the mlp_hidden_size is a ListConfig and not a list.
         if type(mlp_hidden_size) == ListConfig:
@@ -89,7 +93,7 @@ class LCLNN(nn.Module):
 
     def forward(self,X):
 
-        X = self.encoder(X) + X
+        X = self.encoder(X) # + X
         b = self.mlp(X)
         
         return b
