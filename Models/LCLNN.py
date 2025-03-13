@@ -69,7 +69,7 @@ class LCLNN(nn.Module):
             if mlp_hidden_size[0] <= 0:
                 raise Exception(f"First hidden size must be a non negative integer value but got {mlp_hidden_size[0]} instead!")
             
-            layers = [layers.append(nn.Dropout(dropout)), nn.Linear(num_snp, mlp_hidden_size[0])]
+            layers = [nn.Dropout(dropout), nn.Linear(num_snp, mlp_hidden_size[0])]
             
             for i in range(1, len(mlp_hidden_size)):
                 # If hidden size == 0, remove the "empty" layer and continue the mlp creation to enable variating size mlp while tuning
