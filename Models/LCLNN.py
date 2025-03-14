@@ -1,30 +1,51 @@
-import math
-
-from omegaconf import ListConfig
 import torch
-from torch import nn
 import torch.nn.functional as F
 
+from torch import nn
+from omegaconf import ListConfig
+
 class LocalLinear(nn.Module):
-    def __init__(self,in_features,local_features,kernel_size,stride=1,bias=True):
+    def __init__(self,in_features,out_channels,kernel_size,stride=1, bias=True, in_channels = 1,):
+        """Create a LCL layer. Inputs should be of size (N, C_in, L) and the output will be of size (N, C_out, L // S) where 
+        - N = batch_size
+        - C_in = in_channels
+        - L = in_features
+        - C_out = out_channels
+        - S = stride
+
+        Args:
+            in_features (int): Size of the last dimention of the input.
+            out_channels (int): Channel dimention of the output.
+            kernel_size (int): Size of the kernel using in the layer.
+            stride (int, optional): Value for the stride to use. Defaults to 1.
+            bias (int, optional): If true, add bias parameters added after the computation of the kernel. Defaults to True.
+            in_channels (int, optional): Number of channels of the input. Defaults to 1.
+        """
         super(LocalLinear, self).__init__()
         self.kernel_size = kernel_size
         self.stride = stride
         self.padding = kernel_size - 1
 
-        fold_num = (in_features+self.padding -self.kernel_size)//self.stride+1
-        self.weight = nn.Parameter(torch.randn(fold_num,kernel_size,local_features))
-        self.bias = nn.Parameter(torch.randn(fold_num,local_features)) if bias else None
+        fold_num = (in_features+self.padding -self.kernel_size) // self.stride+1
+        self.weight = nn.Parameter(torch.randn(out_channels, in_channels, fold_num,kernel_size, 1))
+        self.bias = nn.Parameter(torch.randn(out_channels, in_channels, fold_num, 1)) if bias else None
 
         nn.init.xavier_uniform_(self.weight)
         nn.init.constant_(self.bias, 0.0)
 
-    def forward(self, x:torch.Tensor):
-        x = F.pad(x,[0, self.padding],value=0)
-        x = x.unfold(-1,size=self.kernel_size,step=self.stride)
-        x = torch.matmul(x.unsqueeze(2),self.weight).squeeze(2)+self.bias
+    def _lcl1d(self, x:torch.Tensor, weights, bias):
+        x = F.pad(x,[0, self.padding], value=0)
+        x = x.unfold(-1,size= self.kernel_size,step= self.stride)
+        x = torch.matmul(x.unsqueeze(2), weights).squeeze(2)+ bias
         return x.squeeze(2)
 
+    # Modified version of the implementation provided in https://d2l.ai/chapter_convolutional-neural-networks/channels.html
+    def _lcl1d_multi_in(self, x, weigths, bias):
+        return sum(self._lcl1d(x[:,i], weigths[i], bias[i]) for i in range(x.shape[1]))
+    
+    def forward(self, x:torch.Tensor):
+        return torch.stack([self._lcl1d_multi_in(x, self.weight[i], self.bias[i]) for i in range(self.weight.shape[0])], 1)
+    
 class LCLNN(nn.Module):
     def __init__(self, 
                  num_snp, 
@@ -108,7 +129,12 @@ class LCLNN(nn.Module):
 
     def forward(self,X):
 
+        if len(X.shape) == 2:
+            X = X.view(X.shape[0], 1, X.shape[1])
+
         X = self.encoder(X) + X
+
+        X = X.view(X.shape[0], -1)
         b = self.mlp(X)
         
         return b

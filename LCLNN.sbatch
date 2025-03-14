@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m LCLNN -d SNP_markers -f basic_train_function -p FESSEp_res,FESSEa_res,size_res,MUSC_res -w "LCLNN with dropout"
+python -u train.py -m LCLNN -d SNP_markers -f basic_train_function -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test LCLNN modifications"
