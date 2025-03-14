@@ -1,0 +1,15 @@
+batch_size: 32
+learning_rate: 1e-3
+dropout: 0
+n_layers: 2
+kernel_size: 3
+channel_factor1: 0.03125
+channel_factor2: 1.1
+n_filters: 32
+model:
+  _target_: Models.ResGS_LCL.ResGSModel_LCL
+  nFilter: ${model_config.n_filters}
+  _KERNEL_SIZE: ${model_config.kernel_size}
+  CHANNEL_FACTOR1: ${model_config.channel_factor1}
+  CHANNEL_FACTOR2: ${model_config.channel_factor2}
+  nlayers: ${model_config.n_layers}
