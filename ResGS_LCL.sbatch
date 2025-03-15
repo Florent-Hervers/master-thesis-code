@@ -17,4 +17,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m ResGS_LCL_very_big_expanded -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Test very big ResGS with LCL" -f train_AdamW_100
+python -u train.py -m ResGS_LCL_very_big_expanded -d SNP_markers -p ep_res -w "Test very big ResGS with LCL and lr = 1e-3" -f train_AdamW_100

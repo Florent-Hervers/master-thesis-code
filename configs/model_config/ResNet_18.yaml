@@ -1,5 +1,5 @@
 learning_rate: 1e-4
-batch_size: 256
+batch_size: 64
 start_channel_size: 64
 kernel_size: 3
 layers_size:
@@ -8,7 +8,7 @@ layers_size:
   - 2
   - 2
 regressor_hidden_size:
-  - 1024
+  - 128
 model:
   _target_: Models.ResNet.ResNet
   start_channel_size: ${model_config.start_channel_size}
