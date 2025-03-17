@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m ResNet_18 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "Second try ResNet_18" -f basic_train_function
+python -u train.py -m ResNet_34 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "First try ResNet_34" -f basic_train_function
