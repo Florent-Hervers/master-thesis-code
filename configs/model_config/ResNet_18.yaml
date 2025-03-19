@@ -9,6 +9,7 @@ layers_size:
   - 2
 regressor_hidden_size:
   - 128
+weight_decay: 1e-4
 model:
   _target_: Models.ResNet.ResNet
   start_channel_size: ${model_config.start_channel_size}
