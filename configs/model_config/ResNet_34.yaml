@@ -10,9 +10,11 @@ layers_size:
 regressor_hidden_size:
   - 128
 weight_decay: 1e-4
+aggregation: "strided"
 model:
   _target_: Models.ResNet.ResNet
   start_channel_size: ${model_config.start_channel_size}
   kernel_size: ${model_config.kernel_size}
   layers_size: ${model_config.layers_size}
   regressor_hidden_size: ${model_config.regressor_hidden_size}
+  aggregation: ${model_config.aggregation}
