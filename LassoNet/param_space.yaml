@@ -1,5 +1,6 @@
 checkpoint_path: logs
 output_path: outputs
+log_filename: LassoNet_bo_logs_5.json
 
 setting:
   init_random_points: 5

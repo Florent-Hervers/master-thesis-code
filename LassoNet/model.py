@@ -27,8 +27,6 @@ def cv_eval_model(ds_tuple, bo_config, **params):
 
     model = LassoNetRegressor(
         hidden_dims=(params["hidden_size"],),
-        lambda_start= 1.0,
-        path_multiplier= 1.2,
         M=params['M'],
         optim=partial(torch.optim.Adam, lr=params['learning_rate']),
         batch_size= 64,

@@ -30,8 +30,8 @@ def bo_search(dataset_tuple, start_time, bo_config_filepath):
         pbounds=parse_bo_param_scope(bo_config['param_scope']),
         random_state=bo_setting['random_state_seed']
     )
-    logFileName = "LassoNet_bo_logs_4.json"
-    bayesianOptCheckpointPath = os.path.join(make_sure_dir(bo_config['checkpoint_path']), logFileName)
+
+    bayesianOptCheckpointPath = os.path.join(make_sure_dir(bo_config['checkpoint_path']), bo_config["log_filename"])
     logger = JSONLogger(path=bayesianOptCheckpointPath)
     optimizer.subscribe(Events.OPTIMIZATION_STEP, logger)
 
