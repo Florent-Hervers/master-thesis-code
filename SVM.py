@@ -13,8 +13,8 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation", skip_check=True)
     phenotypes = ["size_res"] #list(train_dataset.phenotypes.keys())
 
-    gammas = np.linspace(7.75e-5, 0.0001675, 5)
-    c = np.linspace(10,19,5)
+    gammas = np.linspace(3.25e-5, 0.0001225, 5)
+    c = np.linspace(21.25,30.25,5)
 
     MAE_results = np.zeros((len(gammas), len(c)))
     correlation_results = np.zeros((len(gammas), len(c)))
@@ -58,7 +58,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/SVM_16_{pheno}.json", "w") as f:
+        with open(f"Results/SVM_17_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": gammas.tolist(),
                 "dim_0_label": "gamma",
