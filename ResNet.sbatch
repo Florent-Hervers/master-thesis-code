@@ -16,5 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m ResNet_18 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_18 without pooling" -f train_AdamW
-python -u train.py -m ResNet_34 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_34 without pooling" -f train_AdamW
+python -u train.py -m ResNet_18 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_18 with LCL" -f train_AdamW_patient

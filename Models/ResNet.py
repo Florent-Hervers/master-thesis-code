@@ -5,6 +5,7 @@ import torch.nn.functional as F
 from torch import nn
 from typing import List
 from omegaconf import ListConfig
+from Models.LCLNN import LocalLinear
 
 class ResNetBlock(nn.Module):
     def __init__(self, kernel_size:int , input_channel_size: int, nlayers: int, reduce_first_layer: bool = False):
@@ -46,7 +47,7 @@ class ResNetBlock(nn.Module):
     
 
 class ResNet(nn.Module):
-    valid_aggregation = ["pooling", "strided"]
+    valid_aggregation = ["pooling", "strided", "strided_LCL"]
     
 
     def __init__(self, start_channel_size: int, kernel_size: int, layers_size: List[int], regressor_hidden_size: List[int], aggregation: str = "pooling"):
@@ -71,7 +72,7 @@ class ResNet(nn.Module):
         
         if aggregation == self.valid_aggregation[0]:
             self.aggreg1 = nn.MaxPool1d(3, stride=2, padding=1).to(self.device)
-        elif aggregation == self.valid_aggregation[1]:
+        elif aggregation == self.valid_aggregation[1] or aggregation == self.valid_aggregation[2]:
             self.aggreg1 = nn.Conv1d(start_channel_size, start_channel_size, 3, stride=2, padding=1).to(self.device)
 
         layers = [
@@ -91,6 +92,14 @@ class ResNet(nn.Module):
         elif aggregation == self.valid_aggregation[1]:
             self.aggreg2 = nn.Conv1d(start_channel_size * (2**(len(layers_size)-1)), 1, 1).to(self.device)
             regressor_input_size = math.ceil(36304 / (2**(len(layers_size) + 1)))
+        elif aggregation == self.valid_aggregation[2]:
+            regressor_input_size = math.ceil(36304 / (2**(len(layers_size) + 1)))
+            self.aggreg2 = LocalLinear(
+                in_channels = start_channel_size * (2**(len(layers_size)-1)),
+                out_channels = 1,
+                kernel_size = 1,
+                in_features = regressor_input_size,
+            ).to(self.device)
 
         self.flatten = nn.Flatten().to(self.device)
         
