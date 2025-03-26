@@ -7,7 +7,7 @@ layers_size:
   - 2
 regressor_hidden_size:
   - 128
-aggregation: "strided_LCL"
+aggregation: "strided"
 weight_decay: 1e-4
 model:
   _target_: Models.ResNet.ResNet
