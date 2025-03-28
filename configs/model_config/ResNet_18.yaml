@@ -10,7 +10,7 @@ layers_size:
 regressor_hidden_size:
   - 128
 aggregation: "strided"
-encoding: "convolution"
+encoding: "LCL"
 weight_decay: 1e-4
 model:
   _target_: Models.ResNet.ResNet
