@@ -7,6 +7,7 @@ layers_size:
 regressor_hidden_size:
   - 128
 aggregation: "strided_LCL"
+encoding: "convolution"
 model:
   _target_: Models.ResNet.ResNet
   start_channel_size: ${model_config.start_channel_size}
@@ -14,3 +15,4 @@ model:
   layers_size: ${model_config.layers_size}
   regressor_hidden_size: ${model_config.regressor_hidden_size}
   aggregation: ${model_config.aggregation}
+  encoding: ${model_config.encoding}

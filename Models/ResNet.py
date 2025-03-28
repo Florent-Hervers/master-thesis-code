@@ -6,6 +6,7 @@ from torch import nn
 from typing import List
 from omegaconf import ListConfig
 from Models.LCLNN import LocalLinear
+from Models.SNPEncoder import SNPEncoder
 
 class ResNetBlock(nn.Module):
     def __init__(self, kernel_size:int , input_channel_size: int, nlayers: int, reduce_first_layer: bool = False):
@@ -48,9 +49,8 @@ class ResNetBlock(nn.Module):
 
 class ResNet(nn.Module):
     valid_aggregation = ["pooling", "strided", "strided_LCL"]
-    
 
-    def __init__(self, start_channel_size: int, kernel_size: int, layers_size: List[int], regressor_hidden_size: List[int], aggregation: str = "pooling"):
+    def __init__(self, start_channel_size: int, kernel_size: int, layers_size: List[int], regressor_hidden_size: List[int], aggregation: str = "pooling", encoding: str = None):
         super(ResNet,self).__init__()
 
         # In the case where the parameters are given via hydra configs file, the type of arguments are ListConfig and not list.
@@ -68,6 +68,10 @@ class ResNet(nn.Module):
         if aggregation not in self.valid_aggregation:
             raise Exception(f"Valid aggregation values are {self.valid_aggregation} but got {aggregation} instead!")
         
+        self.encoder = None
+        if encoding != None:
+            self.encoder = SNPEncoder(mode = encoding).to(self.device)
+
         self.conv = nn.Conv1d(1, start_channel_size, 7, stride=2, padding=3).to(self.device)
         
         if aggregation == self.valid_aggregation[0]:
@@ -117,12 +121,15 @@ class ResNet(nn.Module):
 
     def forward(self, x):
 
+        if self.encoder != None:
+            x = self.encoder(x)
+
         if len(x.shape) == 2:
             x = x.view(x.shape[0], 1, x.shape[1])
         
         if len(x.shape) != 3:
             raise Exception(f"Bad dimention for the input, only 2 or 3 dimentional input are allowed but got {len(x.shape)} instead!")
-        
+
         x = self.conv(x)
         x = self.aggreg1(x)
         x = self.layers(x)
