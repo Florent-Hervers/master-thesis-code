@@ -25,27 +25,37 @@ class LocalLinear(nn.Module):
         self.kernel_size = kernel_size
         self.stride = stride
         self.padding = kernel_size - 1
+        self.in_channels = in_channels
+        self.in_features = in_features
+        self.out_channels = out_channels
 
         fold_num = (in_features+self.padding -self.kernel_size) // self.stride+1
         self.weight = nn.Parameter(torch.randn(out_channels, in_channels, fold_num,kernel_size, 1))
         self.bias = nn.Parameter(torch.randn(out_channels, in_channels, fold_num, 1)) if bias else None
 
         nn.init.xavier_uniform_(self.weight)
-        nn.init.constant_(self.bias, 0.0)
+        if bias :
+            nn.init.constant_(self.bias, 0.0)
 
     def _lcl1d(self, x:torch.Tensor, weights, bias):
         x = F.pad(x,[0, self.padding], value=0)
         x = x.unfold(-1,size= self.kernel_size,step= self.stride)
-        x = torch.matmul(x.unsqueeze(2), weights).squeeze(2)+ bias
+        x = torch.matmul(x.unsqueeze(2), weights).squeeze(2)
+        if bias != None:
+            x += bias
+        
         return x.squeeze(2)
 
     # Modified version of the implementation provided in https://d2l.ai/chapter_convolutional-neural-networks/channels.html
     def _lcl1d_multi_in(self, x, weigths, bias):
-        return sum(self._lcl1d(x[:,i], weigths[i], bias[i]) for i in range(x.shape[1]))
+        return sum(self._lcl1d(x[:,i], weigths[i], bias[i] if bias != None else None) for i in range(x.shape[1]))
     
     def forward(self, x:torch.Tensor):
-        return torch.stack([self._lcl1d_multi_in(x, self.weight[i], self.bias[i]) for i in range(self.weight.shape[0])], 1)
+        return torch.stack([self._lcl1d_multi_in(x, self.weight[i], self.bias[i] if self.bias != None else None) for i in range(self.weight.shape[0])], 1)
     
+    def extra_repr(self):
+        return f"kernel_size={self.kernel_size}, stride={self.stride}, bias={True if self.bias != None else False}, in_features={self.in_features}, in_channels={self.in_channels}, out_channels={self.out_channels}"
+
 class LCLNN(nn.Module):
     def __init__(self, 
                  num_snp, 

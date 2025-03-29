@@ -16,7 +16,7 @@ class SNPEncoder(nn.Module):
         if mode == "convolution":
             self.encoder = nn.Conv1d(1, 1, 3, stride=3)
         elif mode == "LCL":
-            self.encoder = LocalLinear(36304 * 3, 1, 3, 3)
+            self.encoder = LocalLinear(36304 * 3, 1, 3, 3, bias=False)
     
     def forward(self, x):
         x = self.one_hot(x.type(torch.int32))
