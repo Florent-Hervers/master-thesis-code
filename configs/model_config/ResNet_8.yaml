@@ -1,4 +1,4 @@
-learning_rate: 1e-4
+learning_rate: 5e-5
 batch_size: 64
 start_channel_size: 64
 kernel_size: 3
@@ -7,7 +7,7 @@ layers_size:
 regressor_hidden_size:
   - 512
 aggregation: "strided"
-weight_decay: 1e-4
+weight_decay: 5e-4
 model:
   _target_: Models.ResNet.ResNet
   start_channel_size: ${model_config.start_channel_size}
