@@ -6,7 +6,7 @@ layers_size:
   - 2
   - 2
 regressor_hidden_size:
-  - 128
+  - 512
 aggregation: "strided"
 weight_decay: 1e-4
 model:

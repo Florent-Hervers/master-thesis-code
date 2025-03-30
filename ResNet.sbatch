@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m ResNet_10_2_block -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_10_2_block with larger batch size" -f train_AdamW
+python -u train.py -m ResNet_10_2_block -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_10 2 blocks with larger batch size and hidden size" -f train_AdamW
