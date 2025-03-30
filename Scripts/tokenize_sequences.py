@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--bed_path", "-b", default="../Data/BBBDL_BBB2023_MD.bed", type=str, help="Relative filepath to the bed file")
     parser.add_argument("--token_size", "-t", required=True, type=int, help= "Size of the tokens to creates (the sequence length should be divisible by this value)")
-    parser.add_argument("--output_path", "-o", default="../Data/tokenized_genotype_enhanced", type=str, help="Relative path + filename prefix of the ouput of the script")
+    parser.add_argument("--output_path", "-o", default="../Data/tokenized_genotype", type=str, help="Relative path + filename prefix of the ouput of the script")
     parser.add_argument("--vocab_size", "-v", required=True, type=int, help="Size of the vocabulary that define the encoding to use")
 
     args = parser.parse_args()
@@ -37,6 +37,7 @@ if __name__ == "__main__":
 
     results = []
     start_index = 0
+    first = True
     for k, sample in tqdm.tqdm(enumerate(SNP_data)):
         def convert_bed_to_index(tuple_data):
             """Convert the addivitive encoding into the index to use for the tokenization
@@ -94,13 +95,19 @@ if __name__ == "__main__":
         for i in range(0,len(converted_sample), args.token_size):
             sum = 0
             for j in range(args.token_size):
-                sum += converted_sample[i + j] * (5 ** j)
+                sum += converted_sample[i + j] * (args.vocab_size ** j)
             
             tokens.append(sum)
         results.append(tokens)
 
         if k % 1000 == 0 and k != 0:
-            pd.DataFrame(results, index= bed.iid[start_index:k + 1]).to_csv(OUTPUT_FILE_PATH, mode = 'a')
+            # Clear the file to avoid doubling the sequences if the script is rerun several times
+            if first:
+                first = False
+                mode = 'w'
+            else:
+                mode = 'a'
+            pd.DataFrame(results, index= bed.iid[start_index:k + 1]).to_csv(OUTPUT_FILE_PATH, mode = mode)
             results = []
             start_index = k + 1
 

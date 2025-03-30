@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u tokenize_sequences.py
+python -u tokenize_sequences.py -v 3 -t 8
