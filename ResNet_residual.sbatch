@@ -17,4 +17,4 @@ conda activate TFE
 # Run your Python script
 cd ~/TFE/Code/
 
-python -u train_residual.py -m ResNet_8 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_8 on residuals" -f train_AdamW
+python -u train_residual.py -m ResNet_10 -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_10 on residuals" -f train_AdamW
