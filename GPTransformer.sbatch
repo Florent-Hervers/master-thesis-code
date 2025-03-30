@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -s tokenization -e learned -m GPTransformer2 -d SNP_markers -p ep_res -w "GPTransformer 2 with 4-mer tokenization and layer norm in regressor" -f train_AdamW_100 -t "../Data/tokenized_genotype_4.csv"
+python -u GPTransformer.py -s tokenization -e learned -m GPTransformer2 -d SNP_markers -p ep_res -w "GPTransformer 2 with enlarged vocab size" -f train_AdamW_100 -t "../Data/tokenized_genotype_enhanced_4.csv"

@@ -13,7 +13,6 @@ import torch
 import pandas as pd
 import warnings
 from tokenizers import Tokenizer
-from BPE_tokenization import create_words, convert_bed_to_letter
 from functools import partial
 from bed_reader import open_bed
 
@@ -60,7 +59,7 @@ def main():
         "--selection",
         "-s",
         required=True,
-        choices = ["mutual_information", "tokenization", "BPE"],
+        choices = ["mutual_information", "tokenization"],
         help="Type of sequences reduction to apply the model"
     )
 
@@ -169,59 +168,14 @@ def main():
             
 
             TOKEN_SIZE = args.tokenized_sequences_filepath.replace(".", "_").split("_")[-2]
+            VOCAB_SIZE = args.tokenized_sequences_filepath.replace(".", "_").split("_")[-3]
             try:
                 TOKEN_SIZE = int(TOKEN_SIZE)
+                VOCAB_SIZE = int(VOCAB_SIZE)
             except:
-                raise Exception("The token filename must satisfy the pattern *_TOKEN_SIZE.csv")
-            n_features = 5**TOKEN_SIZE + 1
+                raise Exception("The token filename must satisfy the pattern *_{VOCAB_SIZE}_{TOKEN_SIZE}.csv")
+            n_features = VOCAB_SIZE**TOKEN_SIZE + 1
             sequence_length = len(X_train.iloc[0])
-        
-        elif args.selection == "BPE":
-            
-            if args.encoding != "learned":
-                warnings.warn("The only encoding valid with tokenization is the learned encoding. Execution continues used the learned embedding")
-                args.encoding = "learned"
-
-            original_train_dataset = instantiate(cfg.data.train_dataset)
-            original_validation_dataset = instantiate(cfg.data.validation_dataset)
-
-            original_train_dataset.set_phenotypes = phenotype
-            original_validation_dataset.set_phenotypes = phenotype
-
-            tokenizer = Tokenizer.from_file(args.tokenized_sequences_filepath)
-
-            X_train = original_train_dataset.get_all_SNP().to_numpy()
-            X_val = original_validation_dataset.get_all_SNP().to_numpy()
-            
-            BED_FILE_PATH = "../Data/BBBDL_BBB2023_MD.bed"
-            bed = open_bed(BED_FILE_PATH, num_threads= -1)
-
-            tmp = []
-            for sequence in X_train:
-                tmp.append(list(map(partial(convert_bed_to_letter, bed = bed), enumerate(sequence))))
-            X_train = np.array(tmp)
-            X_train = list(map(partial(create_words, word_length = 16), X_train))
-            # TODO debug from here 
-            X_train = tokenizer.encode_batch(X_train)
-            X_train = list(map(lambda x: x.ids, X_train))
-
-            X_val = list(map(convert_bed_to_letter, X_val.to_numpy()))
-            X_val = list(map(create_words, X_val))
-            X_val = tokenizer.encode_batch(X_val)
-            X_val = list(map(lambda x: x.ids, X_val))
-
-            # TODO add sequences padding support
-
-            y_train = original_train_dataset.phenotypes[phenotype]
-            y_val = original_validation_dataset.phenotypes[phenotype]
-            
-            train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
-            validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
-            
-            n_features = tokenizer.get_vocab_size()
-            # TODO compute sequence length after paddings
-            sequence_length = len(X_train.iloc[0])
-
         else:
             raise Exception("The argument {args.selection} isn't supported! This shouldn't happend if the argumentParser is correctly set!")   
             
