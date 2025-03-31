@@ -140,10 +140,10 @@ class GPTransformer(nn.Module):
                 raise Exception("An empty list isn't a valid input for the output_hidden_size parameter.")
             layers = [nn.Dropout(dropout), nn.Linear(self.initial_mlp_size, output_hidden_size[0])]
             for i in range(1, len(output_hidden_size)):
-                layers.append(nn.LayerNorm(output_hidden_size[i-1])) # layers.append(nn.ReLU())
+                layers.append(nn.ReLU())
                 layers.append(nn.Dropout(dropout))
                 layers.append(nn.Linear(output_hidden_size[i-1], output_hidden_size[i]))
-            layers.append(nn.LayerNorm(output_hidden_size[-1])) # layers.append(nn.ReLU())
+            layers.append(nn.ReLU())
             layers.append(nn.Dropout(dropout))
             layers.append(nn.Linear(output_hidden_size[-1], 1))
 
