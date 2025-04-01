@@ -1,4 +1,4 @@
-batch_size : 180
+batch_size : 256  
 learning_rate : 1e-4
 n_embedding : 32
 n_heads : 4
