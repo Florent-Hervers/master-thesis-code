@@ -10,14 +10,22 @@ class EmbeddingType(Enum):
     EmbeddingTable = 2
 
 class TransformerBlock(nn.Module):
-    def __init__(self,embedding_size, n_hidden, n_heads, dropout = 0):
+    supported_activations = ["Relu", "Gelu"]
+    def __init__(self,embedding_size, n_hidden, n_heads, dropout = 0, activation = supported_activations[0] ):
         super(TransformerBlock, self).__init__()
 
         self.multihead = nn.MultiheadAttention(embedding_size, n_heads, batch_first=True, dropout=dropout)
         self.norm1 = nn.LayerNorm(embedding_size)
         self.dropout1 = nn.Dropout(dropout)
         self.fc1 = nn.Linear(embedding_size, n_hidden)
-        self.relu = nn.ReLU()
+        
+        if activation == self.supported_activations[0]:
+            self.activation = nn.ReLU()
+        elif activation == self.supported_activations[1]:
+            self.activation = nn.GELU()
+        else:
+            raise Exception(f"Unknown value for activation argument (got {activation}). The supported values are {self.supported_activations}")
+        
         self.dropout2 = nn.Dropout(dropout)
         self.fc2 = nn.Linear(n_hidden, embedding_size)
         self.norm2 = nn.LayerNorm(embedding_size)
@@ -28,7 +36,7 @@ class TransformerBlock(nn.Module):
         y =  x + y
         z = self.norm2(y)
         z = self.fc1(self.dropout1(y))
-        z = self.fc2(self.dropout2(self.relu(z)))
+        z = self.fc2(self.dropout2(self.activation(z)))
         return y + z
     
 class GPTransformer(nn.Module):
@@ -119,7 +127,7 @@ class GPTransformer(nn.Module):
             self.preprocessing = PositionalEncoding(embedding_size, max_len=36304).to(self.IOdevice)
 
         self.transformer = nn.Sequential(
-            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout) for _ in range(n_blocks)]
+            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout, "Gelu") for _ in range(n_blocks)]
         ).to(self.computeDevice)
 
 
