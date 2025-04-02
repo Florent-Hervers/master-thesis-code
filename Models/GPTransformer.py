@@ -127,7 +127,7 @@ class GPTransformer(nn.Module):
             self.preprocessing = PositionalEncoding(embedding_size, max_len=36304).to(self.IOdevice)
 
         self.transformer = nn.Sequential(
-            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout, "Gelu") for _ in range(n_blocks)]
+            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout, "Relu") for _ in range(n_blocks)]
         ).to(self.computeDevice)
 
 
