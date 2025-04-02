@@ -17,4 +17,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/
-python -u GPTransformer.py -s tokenization -e learned -m GPTransformer2 -d SNP_markers -p ep_res -w "GPTransformer 2 with reduced vocab and no stop 200 epochs" -f train_AdamW_no_stop -t "../Data/tokenized_genotype_3_8.csv"
+python -u GPTransformer.py -s tokenization -e learned -m GPTransformer2 -d SNP_markers -p ep_res -w "GPTransformer 2 with Gelu" -f train_AdamW_100 -t "../Data/tokenized_genotype_5_8.csv"
