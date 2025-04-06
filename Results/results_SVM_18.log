@@ -1,0 +1,246 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Iteration 1/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 0.9
+Elapsed time from start: 0d 2h 3m 17s
+Results:
+    - MAE : 1.1089217216993117
+    - Correlation : 0.5426333583228589
+////////////////////////////////////////////
+Iteration 2/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 1.0
+Elapsed time from start: 0d 4h 8m 38s
+Results:
+    - MAE : 1.1064357025358147
+    - Correlation : 0.5453451853137603
+////////////////////////////////////////////
+Iteration 3/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 3.25
+Elapsed time from start: 0d 9h 38m 43s
+Results:
+    - MAE : 1.098842535594877
+    - Correlation : 0.5509105978524095
+////////////////////////////////////////////
+Iteration 4/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 5.5
+Elapsed time from start: 0d 20h 42m 14s
+Results:
+    - MAE : 1.098931010854594
+    - Correlation : 0.5505167857775236
+////////////////////////////////////////////
+Iteration 5/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 7.75e-05
+    - c: 7.75
+Elapsed time from start: 1d 2h 12m 6s
+Results:
+    - MAE : 1.1012073817980141
+    - Correlation : 0.5493048691072996
+////////////////////////////////////////////
+Iteration 6/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 0.9
+Elapsed time from start: 1d 3h 55m 13s
+Results:
+    - MAE : 1.1147950735728618
+    - Correlation : 0.5344956425263794
+////////////////////////////////////////////
+Iteration 7/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 1.0
+Elapsed time from start: 1d 5h 56m 47s
+Results:
+    - MAE : 1.1121750883231254
+    - Correlation : 0.537434806540419
+////////////////////////////////////////////
+Iteration 8/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 3.25
+Elapsed time from start: 1d 10h 8m 8s
+Results:
+    - MAE : 1.0966573483988742
+    - Correlation : 0.549988016620069
+////////////////////////////////////////////
+Iteration 9/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 5.5
+Elapsed time from start: 1d 15h 26m 6s
+Results:
+    - MAE : 1.096698891582026
+    - Correlation : 0.5496816561892879
+////////////////////////////////////////////
+Iteration 10/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001
+    - c: 7.75
+Elapsed time from start: 1d 20h 24m 12s
+Results:
+    - MAE : 1.0980948079393251
+    - Correlation : 0.5489568420690347
+////////////////////////////////////////////
+Iteration 11/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 0.9
+Elapsed time from start: 1d 22h 25m 27s
+Results:
+    - MAE : 1.1236217351020543
+    - Correlation : 0.5225389035329318
+////////////////////////////////////////////
+Iteration 12/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 1.0
+Elapsed time from start: 2d 0h 30m 8s
+Results:
+    - MAE : 1.1205128047328967
+    - Correlation : 0.5260704484998491
+////////////////////////////////////////////
+Iteration 13/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 3.25
+Elapsed time from start: 2d 4h 54m 9s
+Results:
+    - MAE : 1.0996053876919138
+    - Correlation : 0.5439967178438812
+////////////////////////////////////////////
+Iteration 14/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 5.5
+Elapsed time from start: 2d 9h 26m 14s
+Results:
+    - MAE : 1.0990406812194438
+    - Correlation : 0.5439470724828482
+////////////////////////////////////////////
+Iteration 15/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001225
+    - c: 7.75
+Elapsed time from start: 2d 23h 5m 25s
+Results:
+    - MAE : 1.0995727717615975
+    - Correlation : 0.5435855631590643
+////////////////////////////////////////////
+Iteration 16/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 0.9
+Elapsed time from start: 3d 1h 4m 54s
+Results:
+    - MAE : 1.1349773226082238
+    - Correlation : 0.5074495859848702
+////////////////////////////////////////////
+Iteration 17/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 1.0
+Elapsed time from start: 3d 3h 24m 3s
+Results:
+    - MAE : 1.131888266653413
+    - Correlation : 0.5113835051217156
+////////////////////////////////////////////
+Iteration 18/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 3.25
+Elapsed time from start: 3d 7h 55m 45s
+Results:
+    - MAE : 1.1077600188378032
+    - Correlation : 0.5335871615334141
+////////////////////////////////////////////
+Iteration 19/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 5.5
+Elapsed time from start: 3d 12h 43m 24s
+Results:
+    - MAE : 1.1066420755282693
+    - Correlation : 0.5335676422778196
+////////////////////////////////////////////
+Iteration 20/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.000145
+    - c: 7.75
+Elapsed time from start: 3d 17h 20m 42s
+Results:
+    - MAE : 1.1064670091088333
+    - Correlation : 0.5333923183972492
+////////////////////////////////////////////
+Iteration 21/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 0.9
+Elapsed time from start: 3d 21h 29m 49s
+Results:
+    - MAE : 1.1484073016524536
+    - Correlation : 0.49051265442254927
+////////////////////////////////////////////
+Iteration 22/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 1.0
+Elapsed time from start: 4d 1h 40m 21s
+Results:
+    - MAE : 1.1448655659108913
+    - Correlation : 0.4945525638579668
+////////////////////////////////////////////
+Iteration 23/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 3.25
+Elapsed time from start: 4d 6h 11m 24s
+Results:
+    - MAE : 1.11924438731337
+    - Correlation : 0.5193745945514209
+////////////////////////////////////////////
+Iteration 24/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 5.5
+Elapsed time from start: 4d 10h 51m 25s
+Results:
+    - MAE : 1.1178117274469745
+    - Correlation : 0.5196195040762621
+////////////////////////////////////////////
+Iteration 25/25 for phenotype MUSC_res finished
+Hyper parameters tested:
+    - gamma: 0.0001675
+    - c: 7.75
+Elapsed time from start: 4d 19h 11m 50s
+Results:
+    - MAE : 1.1176511763597181
+    - Correlation : 0.5195530587192331
+////////////////////////////////////////////
+Computation finished in 4d 19h 11m 50s
