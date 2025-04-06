@@ -2,7 +2,7 @@ import os
 import yaml
 import wandb
 
-from argparse import ArgumentParser
+from argparse import ArgumentParser, BooleanOptionalAction
 from hydra import initialize, compose
 from functools import partial
 from utils import train_from_config, list_of_strings, get_clean_config
@@ -36,21 +36,33 @@ if __name__ == "__main__":
     parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
     parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
     parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
+    parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes")
 
     args = parser.parse_args()
     
     with open(os.path.join("Configs/sweeps",args.sweep_config + ".yaml"), "r") as f:
         sweep_cfg = yaml.safe_load(f)
     
+    if args.all:
+        # wrap the phenotypes in a list such that the following loop makes only one iteration
+        args.phenotypes = [args.phenotypes]
+
     for i,phenotype in enumerate(args.phenotypes):
 
-        # As the config isn't reset, we have to keep track of the previous phenotype for an appropriate update
-        str_to_replace = "??"
-        if i > 0:
-            str_to_replace = args.phenotypes[i-1]
-        sweep_cfg["name"] = " ".join([w.replace(str_to_replace, phenotype) for w in sweep_cfg["name"].split()])
-        sweep_cfg["metric"]["name"] = " ".join([w.replace(str_to_replace, phenotype) for w in sweep_cfg["metric"]["name"].split()])
-        
+        if not args.all:
+            # As the config isn't reset, we have to keep track of the previous phenotype for an appropriate update
+            str_to_replace = "??"
+            if i > 0:
+                str_to_replace = args.phenotypes[i-1]
+            sweep_cfg["name"] = " ".join([w.replace(str_to_replace, phenotype) for w in sweep_cfg["name"].split()])
+            sweep_cfg["metric"]["name"] = " ".join([w.replace(str_to_replace, phenotype) for w in sweep_cfg["metric"]["name"].split()])
+        else:
+            str_to_replace = "??"
+            # Use the first phenotype as the phenotype to optimize (only relevant in sweep using bayeasian opt)
+            sweep_cfg["name"] = " ".join([w.replace(str_to_replace, phenotype[0]) for w in sweep_cfg["name"].split()])
+            sweep_cfg["metric"]["name"] = " ".join([w.replace(str_to_replace, phenotype[0]) for w in sweep_cfg["metric"]["name"].split()])
+
+
         sweep_id = wandb.sweep(sweep=sweep_cfg, project="TFE")
         with initialize(version_base=None, config_path="Configs"):
             run_cfg = compose(

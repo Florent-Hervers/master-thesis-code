@@ -1,4 +1,4 @@
-name: "Shallow_MLP ?? full hyperparameter tuning"
+name: "Shallow_MLP_all full hyperparameter tuning"
 method: random
 metric: 
   goal: maximize
