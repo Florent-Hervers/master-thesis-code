@@ -10,7 +10,6 @@ layers_size:
 regressor_hidden_size:
   - 128
 aggregation: "strided"
-encoding: "LCL"
 weight_decay: 1e-4
 model:
   _target_: Models.ResNet.ResNet
@@ -19,4 +18,3 @@ model:
   layers_size: ${model_config.layers_size}
   regressor_hidden_size: ${model_config.regressor_hidden_size}
   aggregation: ${model_config.aggregation}
-  encoding: ${model_config.encoding}
