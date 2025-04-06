@@ -3,6 +3,7 @@ import math
 
 from torch import nn
 from Models.LCLNN import LocalLinear
+from Models.VariableSizeOutputModel import VariableSizeOutputModel
 
 class Conv1d_BN(nn.Module):
     def __init__(self, input_size, nb_filter, kernel_size, strides=1, padding = 1):
@@ -26,7 +27,7 @@ class Res_Block(nn.Module):
         x = x + self.block(x)
         return x
 
-class ResGSModel_LCL(nn.Module):
+class ResGSModel_LCL(VariableSizeOutputModel):
 
     def __init__(
             self,
@@ -36,9 +37,10 @@ class ResGSModel_LCL(nn.Module):
             CHANNEL_FACTOR2,
             nlayers = 8,
             dropout = 0,
-            output_hidden_size = None
+            output_hidden_size = None,
+            **kwargs
         ):
-        super(ResGSModel_LCL, self).__init__()
+        super(ResGSModel_LCL, self).__init__(**kwargs)
 
         if torch.cuda.is_available():
             # Due to the structure of the training function, the input tensor are on cuda:0 and the output tensor should be on cuda:0

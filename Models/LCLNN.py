@@ -4,6 +4,8 @@ import torch.nn.functional as F
 from torch import nn
 from omegaconf import ListConfig
 
+from Models.VariableSizeOutputModel import VariableSizeOutputModel
+
 class LocalLinear(nn.Module):
     def __init__(self,in_features,out_channels,kernel_size,stride=1, bias=True, in_channels = 1,):
         """Create a LCL layer. Inputs should be of size (N, C_in, L) and the output will be of size (N, C_out, L // S) where 
@@ -56,11 +58,12 @@ class LocalLinear(nn.Module):
     def extra_repr(self):
         return f"kernel_size={self.kernel_size}, stride={self.stride}, bias={True if self.bias != None else False}, in_features={self.in_features}, in_channels={self.in_channels}, out_channels={self.out_channels}"
 
-class LCLNN(nn.Module):
+class LCLNN(VariableSizeOutputModel):
     def __init__(self, 
                  num_snp, 
                  mlp_hidden_size = None,
                  dropout = 0,
+                 **kwargs
                  ):
         """ 
         Generate a standalone LCL network proposed orginally in the deepBLUP architecture.
@@ -70,7 +73,7 @@ class LCLNN(nn.Module):
             mlp_hidden_size (int, optional): Size of the hidden values in the mlp. Defaults to None.
             dropout (float, optional): Probability of dropout used in the whole network. Defaults to 0.
         """
-        super(LCLNN, self).__init__()
+        super(LCLNN, self).__init__(**kwargs)
 
         if torch.cuda.is_available():
             self.device = "cuda:0"

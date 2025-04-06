@@ -2,9 +2,11 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-class MLP(torch.nn.Module):
-    def __init__(self, nlayers: int = 1, hidden_nodes: list[int] = [], dropout: float = 0):
-        super(MLP, self).__init__()
+from Models.VariableSizeOutputModel import VariableSizeOutputModel
+
+class MLP(VariableSizeOutputModel):
+    def __init__(self, nlayers: int = 1, hidden_nodes: list[int] = [], dropout: float = 0, **kwargs):
+        super(MLP, self).__init__(**kwargs)
 
         if torch.cuda.is_available():
             self.device = "cuda:0"
@@ -23,7 +25,7 @@ class MLP(torch.nn.Module):
         # Use a copy to avoid modifying the hyperparameter value for future runs
         hidden_nodes_model = hidden_nodes.copy()
         hidden_nodes_model.insert(0, 36304)
-        hidden_nodes_model.append(1)
+        hidden_nodes_model.append(self.output_size)
 
         self.model = nn.Sequential(*[LinearBlock(hidden_nodes_model[i], hidden_nodes_model[i + 1], dropout=dropout) for i in range(nlayers - 1)]).to(self.device)
         self.dropout = nn.Dropout(dropout).to(self.device)

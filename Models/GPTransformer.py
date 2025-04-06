@@ -4,6 +4,7 @@ import torch
 from torch import nn
 from enum import Enum
 from functools import partial
+from Models.VariableSizeOutputModel import VariableSizeOutputModel
 
 class EmbeddingType(Enum):
     Linear = 1
@@ -39,7 +40,7 @@ class TransformerBlock(nn.Module):
         z = self.fc2(self.dropout2(self.activation(z)))
         return y + z
     
-class GPTransformer(nn.Module):
+class GPTransformer(VariableSizeOutputModel):
     def __init__(self, 
                  n_features,
                  embedding_size,
@@ -52,7 +53,8 @@ class GPTransformer(nn.Module):
                  output_hidden_size = None,
                  linear_projector_output_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
-                 embedding_table_weight = None):
+                 embedding_table_weight = None,
+                 **kwargs):
         """Create the GPTransformer model with the given argument.
 
         Args:
@@ -80,7 +82,7 @@ class GPTransformer(nn.Module):
         if type(embedding_type) != EmbeddingType:
             raise ValueError(f"The type of argument embedding_type should be the enum EmbeddingType but got {type(embedding_type)} instead!")
         
-        super(GPTransformer, self).__init__()
+        super(GPTransformer, self).__init__(**kwargs)
         
         if torch.cuda.is_available():
             # Due to the structure of the training function, the input tensor are on cuda:0 and the output tensor should be on cuda:0

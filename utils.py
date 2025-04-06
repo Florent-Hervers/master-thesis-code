@@ -64,7 +64,7 @@ def results_heatmap(df1:      pd.DataFrame,
     ax2.tick_params(rotation=0)
     plt.show()
 
-def format_batch(dict: dict):
+def format_batch(batch, phenotypes):
     """ Convert a dictonary containing x keys, each one containing a 1-D tensor of length y to a tensor of shape (y,x).
     This function is intended to be used to format SNPmarkersDataset batches created by a torch.utils.data.dataloader to be directly usable
     for a model when several phenotypes are set with the `set_phenotypes` proprety.
@@ -75,7 +75,13 @@ def format_batch(dict: dict):
     Returns:
         torch.Tensor: the resulting tensor (of shape (y,x)).
     """
-    return torch.stack([dict[key] for key in dict.keys()], dim= 1)
+    x = []
+    y = []
+    for item in batch:
+        x.append(torch.Tensor(item[0]))
+        y.append(torch.Tensor([item[1][key] for key in phenotypes]))
+    
+    return torch.stack(x), torch.stack(y)
 
 def train_DL_model(
         model: Module,
@@ -160,15 +166,26 @@ def train_DL_model(
     previous_correlation = 2
     previous_predictions = []
 
-    # Define the keys for the dictonary used by wandb to avoid mispelling mistakes
-    correlation_key = f"correlation {f'{phenotype}' if phenotype is not None else ''}"
-    train_loss_key = f"train_loss {f'{phenotype}'  if phenotype is not None else ''}"
-    epoch_key = "epoch"
-    validation_loss_key = f"validation_loss {f'{phenotype}' if phenotype is not None else ''}"
-    
     # Define metrics to improve the results display
     if log_wandb:
-        wandb.define_metric(correlation_key, step_metric=epoch_key, summary='max')
+        epoch_key = "epoch"
+        if type(phenotype) == str:
+            # Define the keys for the dictonary used by wandb to avoid mispelling mistakes
+            correlation_key = f"correlation {f'{phenotype}' if phenotype is not None else ''}"
+            train_loss_key = f"train_loss {f'{phenotype}'  if phenotype is not None else ''}"
+            validation_loss_key = f"validation_loss {f'{phenotype}' if phenotype is not None else ''}"
+            
+            wandb.define_metric(correlation_key, step_metric=epoch_key, summary='max')
+
+        else:
+            # Define the keys for the dictonary used by wandb to avoid mispelling mistakes
+            correlation_key = [f"correlation {pheno}" for pheno in phenotype]
+            train_loss_key = f"train_loss all phenotypes"
+            epoch_key = "epoch"
+            validation_loss_key = f"validation_loss all phenotypes"
+            for key in correlation_key:
+                wandb.define_metric(key, step_metric=epoch_key, summary='max')
+        
         wandb.define_metric(train_loss_key, step_metric=epoch_key, summary='none')
         wandb.define_metric(validation_loss_key, step_metric=epoch_key, summary='none')
         wandb.define_metric(epoch_key, hidden=True, summary='none')
@@ -187,7 +204,8 @@ def train_DL_model(
             x,y = x.to(device), y.to(device)
             optimizer.zero_grad()
             output = model(x)
-            y = y.view(-1,1)
+            if len(y.shape) == 1:
+                y = y.view(-1,1)
             loss = criterion(output, y)
             train_loss.append(loss.cpu().detach())
             loss.backward()
@@ -201,7 +219,7 @@ def train_DL_model(
             )
 
         train_loss = np.array(train_loss).mean()
-        print(f"Finished training for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''}.",
+        print(f"Finished training for epoch {epoch}{f' for {phenotype}' if type(phenotype) == str and phenotype is not None else ''}.",
               f"{f'Train loss: {train_loss} ' if not log_wandb else ''}")
 
         val_loss = []
@@ -212,11 +230,12 @@ def train_DL_model(
             for x,y in validation_dataloader:
                 x,y = x.to(device), y.to(device)
                 output = model(x)
-                y = y.view(-1,1)
+                if len(y.shape) == 1:
+                    y = y.view(-1,1)
                 
-                # Scale back the values in order to have the validation loss on the unscaled values
-                output = (output * validation_std) + validation_mean
-                y = (y * validation_std) + validation_mean
+                    # Scale back the values in order to have the validation loss on the unscaled values
+                    output = (output * validation_std) + validation_mean
+                    y = (y * validation_std) + validation_mean
                 
                 loss = criterion(output, y)
                 val_loss.append(loss.cpu().detach())
@@ -228,11 +247,11 @@ def train_DL_model(
                     target = np.concatenate((target, y.cpu().detach()), axis = 0)
         
             # Resize the vectors to be accepted in the pearsonr function
-            predicted = predicted.reshape((predicted.shape[0],))
-            target = target.reshape((target.shape[0],))
+            predicted = predicted.reshape((predicted.shape[0],) if type(phenotype) == str else (predicted.shape[0],len(phenotype))) 
+            target = target.reshape((target.shape[0],) if type(phenotype) == str else (target.shape[0],len(phenotype)))
 
             if initial_phenotype is not None:
-                initial_phenotype = initial_phenotype.reshape((initial_phenotype.shape[0],))
+                initial_phenotype = initial_phenotype.reshape((initial_phenotype.shape[0], ) if type(phenotype) == str else (initial_phenotype.shape[0],len(phenotype)))
                 predicted = initial_phenotype + predicted
                 target = initial_phenotype + target
             
@@ -240,7 +259,17 @@ def train_DL_model(
                 scheduler.step()
             
             with warnings.catch_warnings(record=True) as w:
-                correlation = pearsonr(predicted, target).statistic
+                if type(phenotype) == str:
+                    correlation = pearsonr(predicted, target).statistic
+                else:
+                    if log_wandb:
+                        wandb.log({validation_loss_key: np.array(val_loss).mean()})
+                    correlation = []
+                    for i in range(len(phenotype)):
+                        correlation.append(pearsonr(predicted[:,i], target[:,i]).statistic)
+                        if log_wandb:
+                            wandb.log({correlation_key[i]: correlation[-1]})
+
                 if len(w) > 0:
                     print(f"Stop execution as model converged to outputing always the same value ({predicted[0]})")
                     for warning in w:
@@ -249,12 +278,17 @@ def train_DL_model(
                         wandb.finish(1)
                     exit(1)
                 
-            if log_wandb:
+            if log_wandb and type(phenotype) == str:
                 wandb.log({validation_loss_key: np.array(val_loss).mean(), correlation_key: correlation,})
             
-            print(f"Validation step for epoch {epoch}{f' for {phenotype}' if phenotype is not None else ''} finished!",
+            print(f"Validation step for epoch {epoch}{f' for {phenotype}' if type(phenotype) == str and phenotype is not None else ''} finished!",
                 f"{f' Correlation: {correlation}. Validation loss: {np.array(val_loss).mean()}' if not log_wandb else ''}")
             
+                                
+            # Use the sum of the correlation as the stopping criterion for multitrait regression
+            if type(phenotype) != str:
+                correlation = sum(correlation)
+
             if correlation > max_correlation:
                 max_correlation = correlation
 
@@ -278,20 +312,20 @@ def train_DL_model(
             # Take the absolute value such that small oscillation arround zero doesn't reset the counter
             if abs(correlation) < early_stop_threshold * max_correlation:
                 if early_stop_counter == 0:
-                    print(f"Start early stop counter, current threshold is {early_stop_threshold * max_correlation}")
+                    print(f"Start early stop counter, current{' summed' if type(phenotype) != str else ''} correlation threshold is {early_stop_threshold * max_correlation}")
                 early_stop_counter +=1
             else:
                 early_stop_counter = 0
             
             if early_stop_counter >= early_stop_n_epoch:
-                print(f"Early stop condition on correlation met. Best correlation observed: {max_correlation}")
+                print(f"Early stop condition on correlation met. Best{' summed' if type(phenotype) != str else ''} correlation observed: {max_correlation}")
                 break
 
             if train_loss < TRAIN_EARLY_STOP_THRESHOLD:
                 train_early_stop_counter += 1
             
             if train_early_stop_counter >= TRAIN_EARLY_STOP_N_EPOCH:
-                print(f"Early stop condition on train loss met. Best correlation observed: {max_correlation}")
+                print(f"Early stop condition on train loss met. Best{' summed' if type(phenotype) != str else ''} correlation observed: {max_correlation}")
                 break
 
 
@@ -322,7 +356,7 @@ def get_partial_optimizer(optimizer_name: str, **kwargs):
     return functools.partial(getattr(torch.optim, optimizer_name), **kwargs)
 
 def train_from_config(
-        phenotype: str,
+        phenotype: Union[str, list],
         run_cfg: DictConfig,
         train_dataset = None,
         validation_dataset = None,
@@ -341,21 +375,34 @@ def train_from_config(
     Raises:
         Exception: in case of unknown dataset class
     """
+
     if model == None:
-        model = instantiate(run_cfg.model_config.model)
+        if type(phenotype) == list:
+            model = instantiate(run_cfg.model_config.model, output_size = len(phenotype))
+        else:
+            model = instantiate(run_cfg.model_config.model)
+
     if train_dataset == None:
         train_dataset= instantiate(run_cfg.data.train_dataset)
         train_dataset.set_phenotypes = phenotype
     if validation_dataset == None:
         validation_dataset = instantiate(run_cfg.data.validation_dataset)
         validation_dataset.set_phenotypes = phenotype
-
-    call(run_cfg.train_function_config,
-        phenotype = phenotype, 
-        model= model,
-        train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
-        validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset),
-        **kwargs)
+    
+    if type(phenotype) == list:
+        call(run_cfg.train_function_config,
+            phenotype = phenotype, 
+            model= model,
+            train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset, collate_fn=partial(format_batch, phenotypes=phenotype)),
+            validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset, collate_fn=partial(format_batch, phenotypes=phenotype)),
+            **kwargs)
+    else:
+        call(run_cfg.train_function_config,
+            phenotype = phenotype, 
+            model= model,
+            train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
+            validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset),
+            **kwargs)
 
 def list_of_strings(arg):
     """Function defining a custom class for argument parsing."""

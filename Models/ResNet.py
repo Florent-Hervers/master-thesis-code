@@ -7,6 +7,7 @@ from typing import List
 from omegaconf import ListConfig
 from Models.LCLNN import LocalLinear
 from Models.SNPEncoder import SNPEncoder
+from Models.VariableSizeOutputModel import VariableSizeOutputModel
 
 class ResNetBlock(nn.Module):
     def __init__(self, kernel_size:int , input_channel_size: int, nlayers: int, reduce_first_layer: bool = False):
@@ -47,11 +48,11 @@ class ResNetBlock(nn.Module):
         return F.relu(y + x)
     
 
-class ResNet(nn.Module):
+class ResNet(VariableSizeOutputModel):
     valid_aggregation = ["pooling", "strided", "strided_LCL"]
 
-    def __init__(self, start_channel_size: int, kernel_size: int, layers_size: List[int], regressor_hidden_size: List[int], aggregation: str = "pooling", encoding: str = None):
-        super(ResNet,self).__init__()
+    def __init__(self, start_channel_size: int, kernel_size: int, layers_size: List[int], regressor_hidden_size: List[int], aggregation: str = "pooling", encoding: str = None, **kwargs):
+        super(ResNet,self).__init__(**kwargs)
 
         # In the case where the parameters are given via hydra configs file, the type of arguments are ListConfig and not list.
         if type(regressor_hidden_size) == ListConfig:
@@ -115,7 +116,7 @@ class ResNet(nn.Module):
             mlp_layers.append(nn.ReLU())
             mlp_layers.append(nn.Linear(regressor_hidden_size[i-1], regressor_hidden_size[i]))
         mlp_layers.append(nn.ReLU())
-        mlp_layers.append(nn.Linear(regressor_hidden_size[-1], 1))
+        mlp_layers.append(nn.Linear(regressor_hidden_size[-1], self.output_size))
 
         self.output = nn.Sequential(*mlp_layers).to(self.device)
 
