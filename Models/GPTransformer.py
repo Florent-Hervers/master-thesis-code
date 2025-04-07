@@ -54,6 +54,7 @@ class GPTransformer(VariableSizeOutputModel):
                  linear_projector_output_size = None,
                  embedding_type: EmbeddingType = EmbeddingType.Linear,
                  embedding_table_weight = None,
+                 activation: str = TransformerBlock.supported_activations[0],
                  **kwargs):
         """Create the GPTransformer model with the given argument.
 
@@ -129,7 +130,7 @@ class GPTransformer(VariableSizeOutputModel):
             self.preprocessing = PositionalEncoding(embedding_size, max_len=36304).to(self.IOdevice)
 
         self.transformer = nn.Sequential(
-            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout, "Gelu") for _ in range(n_blocks)]
+            *[TransformerBlock(embedding_size, n_hidden, n_heads, dropout, activation) for _ in range(n_blocks)]
         ).to(self.computeDevice)
 
 

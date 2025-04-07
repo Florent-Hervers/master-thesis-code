@@ -11,6 +11,7 @@ dropout: 0
 weight_decay: 1e-2
 mask_probability: 0.3
 linear_projector_output_size: 2
+activation: "Relu"
 model:
   _target_: Models.GPTransformer.GPTransformer
   n_features: ??
@@ -22,5 +23,6 @@ model:
   dropout: ${model_config.dropout}
   mask_probability: ${model_config.mask_probability}
   linear_projector_output_size: ${model_config.linear_projector_output_size}
+  activation: ${model_config.activation}
   embedding_type: ??
   embedding_table_weight: ??
