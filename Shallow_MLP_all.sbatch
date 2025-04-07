@@ -17,4 +17,7 @@ conda activate TFE
 # Run your Python script
 cd ~/TFE/Code/
 
-python -u train.py --all -m Shallow_MLP -d SNP_markers -p ep_res,de_res,FESSEp_res,FESSEa_res -w "Retest Shallow_MLP_all" -f basic_train_function
+python -u train.py --all -m Shallow_MLP -d SNP_markers -p de_res,FESSEp_res,FESSEa_res -w "Shallow_MLP_all with de_res,FESSEp_res,FESSEa_res" -f basic_train_function
+python -u train.py --all -m Shallow_MLP -d SNP_markers -p ep_res,FESSEp_res,FESSEa_res -w "Shallow_MLP_all with ep_res,FESSEp_res,FESSEa_res" -f basic_train_function
+python -u train.py --all -m Shallow_MLP -d SNP_markers -p ep_res,de_res,FESSEa_res -w "Shallow_MLP_all with ep_res,de_res,FESSEa_res" -f basic_train_function
+python -u train.py --all -m Shallow_MLP -d SNP_markers -p ep_res,de_res,FESSEp_res -w "Shallow_MLP_all with ep_res,de_res,FESSEp_res" -f basic_train_function
