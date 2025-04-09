@@ -13,7 +13,7 @@ def main():
     validation_dataset = SNPmarkersDataset(mode="validation", skip_check=True)
     phenotypes = ["MUSC_res"] #list(train_dataset.phenotypes.keys())
 
-    gammas = np.array([1e-5, 3.25e-5, 5.5e-5])
+    gammas = np.linspace(9e-6, 6e-6, 4)
     c = np.concatenate([np.array([0.9]), np.linspace(1.0, 7.75, 4)])
 
     MAE_results = np.zeros((len(gammas), len(c)))
@@ -58,7 +58,7 @@ def main():
         print("////////////////////////////////////////////")
         print(f"Computation finished in {print_elapsed_time(start_time)}")
 
-        with open(f"Results/SVM_19_{pheno}.json", "w") as f:
+        with open(f"Results/SVM_20_{pheno}.json", "w") as f:
             results = {
                 "dim_0_values": gammas.tolist(),
                 "dim_0_label": "gamma",
