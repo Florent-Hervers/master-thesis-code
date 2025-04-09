@@ -140,6 +140,16 @@ def train_DL_model(
         assert type(optimizer) != Optimizer, \
             "The partial optimizer given don't yield a Optimizer class when the model parameters are given"
 
+    if type(scheduler) == partial:
+        try:
+            scheduler = scheduler(optimizer)
+        except Exception as e:
+            raise Exception(f"The following error occured when completing the scheduler: {e.args}")
+
+        assert type(scheduler) != LRScheduler, \
+            "The partial scheduler given don't yield a LRScheduler class when the optimizer are given"
+
+
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
     
@@ -147,6 +157,8 @@ def train_DL_model(
     print(f"Model architecture : \n {model}")
     print(f"Numbers of parameters: {sum(p.numel() for p in model.parameters())}")
     print(f"Optimizer used: {optimizer}")
+    if scheduler != None:
+        print(f"Scheduler class used: {scheduler.__class__.__name__}")
     
     train_features, train_labels = next(iter(train_dataloader))
     print(f"Train feature batch shape: {train_features.size()}")
@@ -354,6 +366,18 @@ def get_partial_optimizer(optimizer_name: str, **kwargs):
         functools.partial: a partial function waiting the model parameters to yield the torch optimizer.
     """
     return functools.partial(getattr(torch.optim, optimizer_name), **kwargs)
+
+def get_partial_scheduler(scheduler_name: str, **kwargs):
+    """Dummy function use to produced a partial scheduler from a hydra config file. This solution enable to consider \
+    the optimization class not as a string (due to hydra) but as the function to call
+
+    Args:
+        scheduler_name (str): Name of the optimizer to use (should be a class of torch.optim)
+
+    Returns:
+        functools.partial: a partial function waiting the optimize to yield the torch scheduler.
+    """
+    return functools.partial(getattr(torch.optim.lr_scheduler, scheduler_name), **kwargs)
 
 def train_from_config(
         phenotype: Union[str, list],
