@@ -90,7 +90,7 @@ class ResGSModel_MaxPooled(VariableSizeOutputModel):
                 Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
                 nn.Flatten(),
                 nn.Dropout(dropout),
-                nn.Linear(filter_near_6400 * n_elements, 1)
+                nn.Linear(filter_near_6400 * n_elements, self.output_size)
             ).to(self.IOdevice)
         else:
             self.output = nn.Sequential(
@@ -100,7 +100,7 @@ class ResGSModel_MaxPooled(VariableSizeOutputModel):
                 nn.Linear(filter_near_6400 * n_elements, output_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
-                nn.Linear(output_hidden_size, 1)
+                nn.Linear(output_hidden_size, self.output_size)
             ).to(self.IOdevice)
 
     def forward(self, x):

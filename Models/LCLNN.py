@@ -115,7 +115,7 @@ class LCLNN(VariableSizeOutputModel):
                 layers.append(nn.Linear(mlp_hidden_size[i-1], mlp_hidden_size[i]))
             layers.append(nn.ReLU())
             layers.append(nn.Dropout(dropout))
-            layers.append(nn.Linear(mlp_hidden_size[-1], 1))
+            layers.append(nn.Linear(mlp_hidden_size[-1], self.output_size))
 
             self.mlp = nn.Sequential(*layers).to(self.device)
         
