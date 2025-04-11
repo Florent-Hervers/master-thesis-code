@@ -16,4 +16,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train.py -m ResNet_8 -d SNP_markers -p  ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_8 with LinearLR 40" -f train_AdamW_LinearLR_40
+python -u train.py -m ResNet_10_2_block -d SNP_markers -p  ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -w "ResNet_10 2 blocks with LinearLR 40" -f train_AdamW_LinearLR_40
