@@ -37,6 +37,7 @@ class ResGSModel(VariableSizeOutputModel):
             nlayers = 8,
             dropout = 0,
             output_hidden_size = None,
+            target_size = 6400,
             **kwargs
         ):
         super(ResGSModel, self).__init__(**kwargs)
@@ -80,24 +81,24 @@ class ResGSModel(VariableSizeOutputModel):
         # Size of the channels (ie last dimention of the tensor after all residual blocks)
         n_channels = int(nFilter * CHANNEL_FACTOR2**nlayers)
 
-        # Determine the number of channels to have an input dimention close to 6400 in the linear layer
-        filter_near_6400 = 6400 // n_elements
-        if filter_near_6400 == 0:
-            filter_near_6400 = 1
+        # Determine the number of channels to have an input dimention close to target size in the linear layer
+        filter_near_target = target_size // n_elements
+        if filter_near_target == 0:
+            filter_near_target = 1
             
         if output_hidden_size == None or output_hidden_size <= 1:
             self.output = nn.Sequential(
-                Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
+                Conv1d_BN(n_channels, nb_filter= filter_near_target, kernel_size=1, strides=1, padding=0),
                 nn.Flatten(),
                 nn.Dropout(dropout),
-                nn.Linear(filter_near_6400 * n_elements, self.output_size)
+                nn.Linear(filter_near_target * n_elements, self.output_size)
             ).to(self.IOdevice)
         else:
             self.output = nn.Sequential(
-                Conv1d_BN(n_channels, nb_filter= filter_near_6400, kernel_size=1, strides=1, padding=0),
+                Conv1d_BN(n_channels, nb_filter= filter_near_target, kernel_size=1, strides=1, padding=0),
                 nn.Flatten(),
                 nn.Dropout(dropout),
-                nn.Linear(filter_near_6400 * n_elements, output_hidden_size),
+                nn.Linear(filter_near_target * n_elements, output_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
                 nn.Linear(output_hidden_size, self.output_size)
