@@ -17,4 +17,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u train_residual.py -m ResGS_paper_very_big_expanded --data SNP_markers -w "Test very big ResGS_paper with target size = 4400" -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -f basic_train_function
+python -u train_residual.py -m ResGS_paper_very_big_expanded --data SNP_markers -w "Test very big ResGS_paper with target size = 8400" -p ep_res,de_res,FESSEp_res,FESSEa_res,size_res,MUSC_res -f basic_train_function

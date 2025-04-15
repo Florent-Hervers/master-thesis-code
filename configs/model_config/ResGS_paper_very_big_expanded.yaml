@@ -8,7 +8,7 @@ channel_factor2: 1.1
 n_filters: 64
 output_hidden_size: 1024
 weight_decay: 5e-5
-target_size: 4400
+target_size: 8400
 model:
   _target_: Models.ResGS.ResGSModel
   nFilter: ${model_config.n_filters}
