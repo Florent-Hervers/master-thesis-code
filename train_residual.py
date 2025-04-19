@@ -27,8 +27,98 @@ class SNPResidualDataset(Dataset):
         return self.X[index], self.y[index]
 
 
-def main():
+def train_on_residuals(phenotype: str, cfg):
+    """Wrapper on the train_from_config that trains on the residual from the optimal ridge model.
 
+    Args:
+        phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
+        run_cfg (DictConfig): hydra config file fetched using the compose API. 
+    """
+
+    train_dataset = instantiate(cfg.data.train_dataset)
+    validation_dataset = instantiate(cfg.data.validation_dataset)
+
+    # Best ridge hyperparameters for all the phenotypes
+    hp = {
+        "ep_res": {"lambda": 55600},
+        "de_res": {"lambda": 44500},
+        "FESSEp_res": {"lambda": 26250},
+        "FESSEa_res": {"lambda": 34000},
+        "size_res": {"lambda": 20900},
+        "MUSC_res": {"lambda": 23950},
+    }
+    
+    start_time = time.time()
+    train_dataset.set_phenotypes = phenotype
+    validation_dataset.set_phenotypes = phenotype
+
+    X_train = train_dataset.get_all_SNP()
+    y_train = train_dataset.phenotypes[phenotype]
+
+    X_val = validation_dataset.get_all_SNP()
+    y_val = validation_dataset.phenotypes[phenotype]
+    
+    #Traditional model
+    global bestTraditionalModel
+    r_max = 0  # Record the maximum Pearson value
+    for model_str in ["Ridge", "support vector machine", "RandomForest", "GradientBoostingRegressor"]:
+        if model_str == "Ridge":
+            model = Ridge(alpha= hp[phenotype]["lambda"])
+        elif model_str == "support vector machine":
+            continue
+            model = SVR()
+        elif model_str == "RandomForest":
+            continue
+            model = RandomForestRegressor(n_jobs=-1, random_state=2307)
+        elif model_str == "GradientBoostingRegressor":
+            continue
+            model = GradientBoostingRegressor(random_state=2307)
+        model.fit(X_train, y_train)
+        y_pre = model.predict(X_val)
+        r = pearsonr(y_pre, y_val).statistic
+        print(f"Correlation of {r} obtained for model {model_str} in {print_elapsed_time(start_time)}.")
+        if r > r_max:
+            r_max = r
+            bestTraditionalModel = model
+        
+    print(f"The best model for the phenotype {phenotype} is thus {bestTraditionalModel}")
+    print(f"#########################################################################################################")
+
+    y_train_pre = bestTraditionalModel.predict(X_train)
+    y_pre = bestTraditionalModel.predict(X_val)
+
+    print(f"Sample of original y_train: {y_train[0:10]}")
+    print(f"Sample of original y_val: {y_val[0:10]}")
+    
+    y_train = y_train - y_train_pre
+    y_val = y_val - y_pre
+
+    y_train = y_train.to_numpy(dtype=np.float32)
+    y_val = y_val.to_numpy(dtype=np.float32)
+
+    """
+    # Normalize phenotypes in order to have comparable distribution during the validation and during the training
+    mean_val = y_val.mean()
+    std_val = y_val.std()
+    y_train = (y_train - y_train.mean()) / y_train.std()
+    y_val = (y_val - y_val.mean()) / y_val.std()
+    """
+
+    print(f"Sample of residual y_train: {y_train[0:10]}")
+    print(f"Sample of residual y_val: {y_val[0:10]}")
+    
+    residual_train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.float32), y_train)
+    residual_validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.float32), y_val)
+
+    train_from_config(
+        phenotype,
+        cfg,
+        residual_train_dataset,
+        residual_validation_dataset,
+        initial_phenotype = y_pre,
+    )
+
+if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument(
         "--model",
@@ -57,92 +147,5 @@ def main():
             name = args.wandb_run_name,
             tags = ["debug"],
         )
-        
-    selected_phenotypes = args.phenotypes
-    
-    train_dataset = instantiate(cfg.data.train_dataset)
-    validation_dataset = instantiate(cfg.data.validation_dataset)
-
-    # Best ridge hyperparameters for all the phenotypes
-    hp = {
-        "ep_res": {"lambda": 55600},
-        "de_res": {"lambda": 44500},
-        "FESSEp_res": {"lambda": 26250},
-        "FESSEa_res": {"lambda": 34000},
-        "size_res": {"lambda": 20900},
-        "MUSC_res": {"lambda": 23950},
-    }
-    
-    for phenotype in selected_phenotypes:
-        start_time = time.time()
-        train_dataset.set_phenotypes = phenotype
-        validation_dataset.set_phenotypes = phenotype
-
-        X_train = train_dataset.get_all_SNP()
-        y_train = train_dataset.phenotypes[phenotype]
-
-        X_val = validation_dataset.get_all_SNP()
-        y_val = validation_dataset.phenotypes[phenotype]
-        
-        #Traditional model
-        global bestTraditionalModel
-        r_max = 0  # Record the maximum Pearson value
-        for model_str in ["Ridge", "support vector machine", "RandomForest", "GradientBoostingRegressor"]:
-            if model_str == "Ridge":
-                model = Ridge(alpha= hp[phenotype]["lambda"])
-            elif model_str == "support vector machine":
-                continue
-                model = SVR()
-            elif model_str == "RandomForest":
-                continue
-                model = RandomForestRegressor(n_jobs=-1, random_state=2307)
-            elif model_str == "GradientBoostingRegressor":
-                continue
-                model = GradientBoostingRegressor(random_state=2307)
-            model.fit(X_train, y_train)
-            y_pre = model.predict(X_val)
-            r = pearsonr(y_pre, y_val).statistic
-            print(f"Correlation of {r} obtained for model {model_str} in {print_elapsed_time(start_time)}.")
-            if r > r_max:
-                r_max = r
-                bestTraditionalModel = model
-            
-        print(f"The best model for the phenotype {phenotype} is thus {bestTraditionalModel}")
-        print(f"#########################################################################################################")
-
-        y_train_pre = bestTraditionalModel.predict(X_train)
-        y_pre = bestTraditionalModel.predict(X_val)
-
-        print(f"Sample of original y_train: {y_train[0:10]}")
-        print(f"Sample of original y_val: {y_val[0:10]}")
-        
-        y_train = y_train - y_train_pre
-        y_val = y_val - y_pre
-
-        y_train = y_train.to_numpy(dtype=np.float32)
-        y_val = y_val.to_numpy(dtype=np.float32)
-
-        """
-        # Normalize phenotypes in order to have comparable distribution during the validation and during the training
-        mean_val = y_val.mean()
-        std_val = y_val.std()
-        y_train = (y_train - y_train.mean()) / y_train.std()
-        y_val = (y_val - y_val.mean()) / y_val.std()
-        """
-
-        print(f"Sample of residual y_train: {y_train[0:10]}")
-        print(f"Sample of residual y_val: {y_val[0:10]}")
-        
-        residual_train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.float32), y_train)
-        residual_validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.float32), y_val)
-
-        train_from_config(
-            phenotype,
-            cfg,
-            residual_train_dataset,
-            residual_validation_dataset,
-            initial_phenotype = y_pre,
-        )
-
-if __name__ == "__main__":
-    main()
+    for phenotype in args.phenotypes:
+        train_on_residuals(phenotype, cfg)

@@ -7,14 +7,17 @@ from hydra import initialize, compose
 from functools import partial
 from utils import train_from_config, list_of_strings, get_clean_config
 from omegaconf import DictConfig
+from train_residual import train_on_residuals
 
-def update_config_and_train(phenotype: str, run_cfg: DictConfig):
+def update_config_and_train(phenotype: str, run_cfg: DictConfig, training_function = train_from_config):
     """Wrapper launching the wandb run and that update the config file with the parameters chosen by the sweep agent.
 
     Args:
         phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
         run_cfg (DictConfig): hydra config file fetched using the compose API.
+        training_function(function): the function to run at the end 
     """
+
     run = wandb.init(
         tags = ["tuning"]
     )
@@ -25,8 +28,7 @@ def update_config_and_train(phenotype: str, run_cfg: DictConfig):
             run_cfg["model_config"][k] = wandb.config[k]
 
     run.config.update(get_clean_config(run_cfg))
-
-    train_from_config(phenotype, run_cfg)
+    training_function(phenotype, run_cfg)
 
 if __name__ == "__main__":
     parser = ArgumentParser()
@@ -37,6 +39,8 @@ if __name__ == "__main__":
     parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
     parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
     parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes")
+    parser.add_argument("--residual", default=False, action=BooleanOptionalAction, help="If True, perform the sweep on the residuals. Defaults to False")
+
 
     args = parser.parse_args()
     
@@ -70,4 +74,7 @@ if __name__ == "__main__":
                 overrides=[f"model_config={args.model}", f"data={args.data}", f"train_function_config={args.train_function}"]
             )
         
-        wandb.agent(sweep_id, function=partial(update_config_and_train, phenotype, run_cfg))
+        if args.residual:
+            wandb.agent(sweep_id, function=partial(update_config_and_train, phenotype, run_cfg, train_on_residuals))
+        else:
+            wandb.agent(sweep_id, function=partial(update_config_and_train, phenotype, run_cfg))
