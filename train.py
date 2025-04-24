@@ -1,19 +1,10 @@
 import wandb
 
-from utils import list_of_strings, train_from_config, get_clean_config
-from argparse import ArgumentParser, BooleanOptionalAction
+from utils import get_default_config_parser, train_from_config, get_clean_config
 from hydra import initialize, compose
 
 if __name__ == "__main__":
-    parser = ArgumentParser()
-
-    parser.add_argument("--model", "-m", required=True, type=str, help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)")
-    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
-    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
-    parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
-    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
-    parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes")
-
+    parser = get_default_config_parser()
     args = parser.parse_args()
 
     with initialize(version_base=None, config_path="Configs"):

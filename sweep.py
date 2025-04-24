@@ -2,10 +2,10 @@ import os
 import yaml
 import wandb
 
-from argparse import ArgumentParser, BooleanOptionalAction
+from argparse import BooleanOptionalAction
 from hydra import initialize, compose
 from functools import partial
-from utils import train_from_config, list_of_strings, get_clean_config
+from utils import train_from_config, get_clean_config, get_default_config_parser
 from omegaconf import DictConfig
 from train_residual import train_on_residuals
 
@@ -31,16 +31,8 @@ def update_config_and_train(phenotype: str, run_cfg: DictConfig, training_functi
     training_function(phenotype, run_cfg)
 
 if __name__ == "__main__":
-    parser = ArgumentParser()
-
-    parser.add_argument("--sweep_config", "-s", required=True, type=str, help="Name of the file (without file extention) to use for the sweep configuration (should be found in configs/sweeps)")
-    parser.add_argument("--model", "-m", required=True, type=str, help="Name of the file (without file extention) to create the model to train (should be found in configs/model_config)")
-    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
-    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
-    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
-    parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes")
+    parser = get_default_config_parser()
     parser.add_argument("--residual", default=False, action=BooleanOptionalAction, help="If True, perform the sweep on the residuals. Defaults to False")
-
 
     args = parser.parse_args()
     

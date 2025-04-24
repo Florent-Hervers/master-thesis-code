@@ -1,7 +1,7 @@
 import torch
 import wandb
 from Models.ResGS import ResGSModel
-from utils import get_clean_config, train_DL_model, print_elapsed_time, list_of_strings, train_from_config
+from utils import get_clean_config, get_default_config_parser, print_elapsed_time, list_of_strings, train_from_config
 from torch.utils.data import DataLoader
 from scipy.stats import pearsonr
 from sklearn.svm import SVR
@@ -119,19 +119,8 @@ def train_on_residuals(phenotype: str, cfg):
     )
 
 if __name__ == "__main__":
-    parser = ArgumentParser()
-    parser.add_argument(
-        "--model",
-        "-m",
-        required=True,
-        type=str, 
-        help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)"
-    )
-    parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
-    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
-    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
-    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
-
+    parser = get_default_config_parser()
+    
     args = parser.parse_args()
     
     with initialize(version_base=None, config_path="Configs"):

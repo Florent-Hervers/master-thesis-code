@@ -1,3 +1,5 @@
+from argparse import ArgumentParser, BooleanOptionalAction
+from copy import deepcopy
 import warnings
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -109,32 +111,34 @@ def train_DL_model(
         validation_std: float = 1,
         early_stop_threshold: float = 0,
         early_stop_n_epoch: int = 10,
-        display_evolution_threshold: float = 2.0, 
+        display_evolution_threshold: float = 2.0,
+        model_save_path: Union[str, None] = None, 
     ):
     """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
     Models should be transferred to gpu at initialisation in order to allow network partionning on several GPU.
     Models input are initially send to cuda:0 and model output is expected on cuda:0. The function as a automatic early stop if the train_loss
     is below 0.01 for 10 epochs (ie the model as completely fit the train set and no changes are expected)
 
-        Args:
-            model (Module): The model to train.
-            optimizer (Optimizer or functool.partial): Optimizer used to train the given model. \
-            A partial optimizer (without the model parameters) can be used instead of the already instansitated object.
-            train_dataloader (DataLoader): Dataloader containing the training dataset.
-            validation_dataloader (DataLoader): Dataloader containing the training dataset.
-            n_epoch (int): number of epoch to train the model
-            criterion (_type_, optional): Function to use as loss function. Defaults to L1Loss().
-            scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
-            phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
-            log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
-            initial_phenotype (np.array | None, optionnal): If the model compute a residual phenotype, you can provide the basis to see the evolution of correlation of the final prediction. Defaults to None.
-            validation_mean (float, optional): mean of the phenotypes from the validation set that was substratcted when normalizing the validation phenotype. \
-            This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 0.
-            validation_std (float, optional): standard deviation of the phenotypes from the validation set that was used as denominator when normalizing the validation phenotype. \
-            This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 1.
-            early_stop_threshold (float, optional): percentage of the maximum correlation below the early stop counter stop incrementing. This value should stay between 0 and 1 included. Defaults to 0.
-            early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
-            display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
+    Args:
+        model (Module): The model to train.
+        optimizer (Optimizer or functool.partial): Optimizer used to train the given model. \
+        A partial optimizer (without the model parameters) can be used instead of the already instansitated object.
+        train_dataloader (DataLoader): Dataloader containing the training dataset.
+        validation_dataloader (DataLoader): Dataloader containing the training dataset.
+        n_epoch (int): number of epoch to train the model
+        criterion (_type_, optional): Function to use as loss function. Defaults to L1Loss().
+        scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
+        phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
+        log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
+        initial_phenotype (np.array | None, optionnal): If the model compute a residual phenotype, you can provide the basis to see the evolution of correlation of the final prediction. Defaults to None.
+        validation_mean (float, optional): mean of the phenotypes from the validation set that was substratcted when normalizing the validation phenotype. \
+        This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 0.
+        validation_std (float, optional): standard deviation of the phenotypes from the validation set that was used as denominator when normalizing the validation phenotype. \
+        This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 1.
+        early_stop_threshold (float, optional): percentage of the maximum correlation below the early stop counter stop incrementing. This value should stay between 0 and 1 included. Defaults to 0.
+        early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
+        display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
+        model_save_path (str, optional): Path to the file where to store the best model on the validation set. If None, the model isn't saved. Defaults to None.
     """
     if early_stop_threshold > 1 and early_stop_threshold < 0:
         raise Exception("Early stop threshold should be between 0 and 1")
@@ -314,6 +318,9 @@ def train_DL_model(
 
             if correlation > max_correlation:
                 max_correlation = correlation
+                if model_save_path != None:
+                    # Use deepcopy as state_dict() only returns a shallow copy
+                    best_model_state = deepcopy(model.state_dict())
 
             if log_wandb:
 
@@ -350,6 +357,9 @@ def train_DL_model(
             if train_early_stop_counter >= TRAIN_EARLY_STOP_N_EPOCH:
                 print(f"Early stop condition on train loss met. Best{' summed' if type(phenotype) != str else ''} correlation observed: {max_correlation}")
                 break
+    
+    if model_save_path != None:
+        torch.save(best_model_state, model_save_path)
 
 
 def print_elapsed_time(start_time: float):
@@ -559,3 +569,15 @@ def compare_correlation( prediction_before:     list,
     data = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
     data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
     return data
+
+def get_default_config_parser():
+    parser = ArgumentParser()
+
+    parser.add_argument("--model", "-m", required=True, type=str, help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)")
+    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data)")
+    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
+    parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
+    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
+    parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes")
+
+    return parser

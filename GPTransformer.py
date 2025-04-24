@@ -1,10 +1,9 @@
 from dataset import SNPmarkersDataset
 import wandb
-from utils import train_from_config, list_of_strings, get_clean_config
+from utils import train_from_config, list_of_strings, get_clean_config, get_default_config_parser
 import numpy as np
 from torch.utils.data import Dataset
 from sklearn.feature_selection import mutual_info_regression
-from argparse import ArgumentParser, BooleanOptionalAction
 import json
 from hydra import compose,initialize
 from hydra.utils import instantiate
@@ -39,7 +38,8 @@ def convert_categorical_to_frequency(data, path = "gptranformer_embedding_data.j
     return np.array(results, dtype=np.float32)
 
 def main():
-    parser = ArgumentParser()
+    parser = get_default_config_parser()
+
     parser.add_argument(
         "-e",
         "--encoding",
@@ -47,14 +47,6 @@ def main():
         required=True,
         help="Encoding of the input of the model to use (see paper for more detail)"
     )
-    parser.add_argument(
-        "--model",
-        "-m",
-        required=True,
-        type=str, 
-        help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)"
-    )
-
     parser.add_argument(
         "--selection",
         "-s",
@@ -70,11 +62,6 @@ def main():
         default="../Data/tokenized_genotype_5_8.csv",
         help="Path to the csv file containing the tokenized sequences. The token filename must satisfy the pattern *_TOKEN_SIZE.csv. Defaults to ../Data/tokenized_genotype_8.csv"
     )
-    parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
-    parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data). Unused if mutual_info is chosen")
-    parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
-    parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
-    parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes.")
 
     args = parser.parse_args()
 
@@ -201,7 +188,7 @@ def main():
             n_features = VOCAB_SIZE**TOKEN_SIZE + 1
             sequence_length = len(X_train.iloc[0])
         else:
-            raise Exception("The argument {args.selection} isn't supported! This shouldn't happend if the argumentParser is correctly set!")   
+            raise Exception("The argument {args.selection} isn't supported! This shouldn't happend if the ArgumentParser is correctly set!")   
             
 
         if args.encoding == "categorical":
