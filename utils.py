@@ -75,6 +75,17 @@ def format_batch(batch, phenotypes):
     Returns:
         torch.Tensor: the resulting tensor (of shape (y,x)).
     """
+
+    # If the type of the target isn't a dict, just seperate the data of the target and return
+    if type(batch[0][1]) != dict:
+        x = []
+        y = []
+        for item in batch:
+            x.append(item[0])
+            y.append(item[1])
+        # Convert x and y to np.array to speed up computations
+        return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
+
     x = []
     y = []
     for item in batch:

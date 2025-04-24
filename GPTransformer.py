@@ -4,7 +4,7 @@ from utils import train_from_config, list_of_strings, get_clean_config
 import numpy as np
 from torch.utils.data import Dataset
 from sklearn.feature_selection import mutual_info_regression
-from argparse import ArgumentParser
+from argparse import ArgumentParser, BooleanOptionalAction
 import json
 from hydra import compose,initialize
 from hydra.utils import instantiate
@@ -67,13 +67,14 @@ def main():
         "--tokenized_sequences_filepath",
         "-t",
         type=str,
-        default="../Data/tokenized_genotype_8.csv",
+        default="../Data/tokenized_genotype_5_8.csv",
         help="Path to the csv file containing the tokenized sequences. The token filename must satisfy the pattern *_TOKEN_SIZE.csv. Defaults to ../Data/tokenized_genotype_8.csv"
     )
     parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
     parser.add_argument("--data", "-d", required=True, type=str, help="Name of the file (without file extention) to use for the data (should be found in configs/data). Unused if mutual_info is chosen")
     parser.add_argument("--phenotypes", "-p", required=True, type=list_of_strings, help="Phenotype(s) to perform the sweep (format example: ep_res,de_res,size_res)")
     parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
+    parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes.")
 
     args = parser.parse_args()
 
@@ -94,6 +95,10 @@ def main():
         wandb.config["features_processing"] = args.selection
     
     selected_phenotypes = args.phenotypes
+    
+    if args.all:
+        selected_phenotypes = [selected_phenotypes]
+    
     for phenotype in selected_phenotypes: 
         
         if args.selection == "mutual_information":
@@ -108,7 +113,15 @@ def main():
                 dataset.set_phenotypes = phenotype
                 
                 X = dataset.get_all_SNP()
-                y = dataset.phenotypes[phenotype]
+                if args.all:
+                    phenotypes = []
+                    for pheno in phenotype:
+                        phenotypes.append(dataset.phenotypes[pheno].to_numpy())
+
+                    # Convert to a Dataframe to reuse the dataset generation code without modification
+                    y = pd.DataFrame(np.stack(phenotypes, axis = 1))
+                else:
+                    y = dataset.phenotypes[phenotype]
 
                 # Save the results to avoid fetching two times the sames values later on
                 if mode == "train":
@@ -160,8 +173,19 @@ def main():
             X_train = all_sequences_tokenized.loc[original_train_dataset.get_all_SNP().index]
             X_val = all_sequences_tokenized.loc[original_validation_dataset.get_all_SNP().index]
             
-            y_train = original_train_dataset.phenotypes[phenotype]
-            y_val = original_validation_dataset.phenotypes[phenotype]
+            if args.all:
+                train_phenotypes = []
+                val_phenotypes = []
+                for pheno in phenotype:
+                    train_phenotypes.append(original_train_dataset.phenotypes[pheno].to_numpy())
+                    val_phenotypes.append(original_validation_dataset.phenotypes[pheno].to_numpy())
+                
+                # Convert to a Dataframe to reuse the dataset generation code without modification
+                y_train = pd.DataFrame(np.stack(train_phenotypes, axis = 1))
+                y_val = pd.DataFrame(np.stack(val_phenotypes, axis = 1))
+            else:
+                y_train = original_train_dataset.phenotypes[phenotype]
+                y_val = original_validation_dataset.phenotypes[phenotype]
             
             train_dataset = SNPResidualDataset(X_train.to_numpy(dtype=np.int32), y_train.to_numpy(dtype=np.float32))
             validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
@@ -203,7 +227,8 @@ def main():
                 n_features = n_features,
                 sequence_length = sequence_length,
                 embedding_type = embedding_type,
-                embedding_table_weight = embedding_weight
+                embedding_table_weight = embedding_weight,
+                output_size = len(phenotype) if args.all else 1
             ),
         )
     

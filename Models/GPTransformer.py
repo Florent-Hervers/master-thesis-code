@@ -156,14 +156,14 @@ class GPTransformer(VariableSizeOutputModel):
                 layers.append(nn.Linear(output_hidden_size[i-1], output_hidden_size[i]))
             layers.append(nn.ReLU())
             layers.append(nn.Dropout(dropout))
-            layers.append(nn.Linear(output_hidden_size[-1], 1))
+            layers.append(nn.Linear(output_hidden_size[-1], self.output_size))
 
             self.output = nn.Sequential(*layers).to(self.computeDevice)
 
         elif output_hidden_size == None or output_hidden_size <= 1:
             self.output = nn.Sequential(
                 nn.Dropout(dropout),
-                nn.Linear(self.initial_mlp_size, 1),
+                nn.Linear(self.initial_mlp_size, self.output_size),
             ).to(self.computeDevice)
         else:
             self.output = nn.Sequential(
@@ -171,7 +171,7 @@ class GPTransformer(VariableSizeOutputModel):
                 nn.Linear(self.initial_mlp_size, output_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
-                nn.Linear(output_hidden_size, 1)
+                nn.Linear(output_hidden_size, self.output_size)
             ).to(self.computeDevice)
     
     def forward(self, x):
