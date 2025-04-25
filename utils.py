@@ -1,5 +1,6 @@
 from argparse import ArgumentParser, BooleanOptionalAction
 from copy import deepcopy
+import json
 import warnings
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -138,7 +139,7 @@ def train_DL_model(
         early_stop_threshold (float, optional): percentage of the maximum correlation below the early stop counter stop incrementing. This value should stay between 0 and 1 included. Defaults to 0.
         early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
         display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
-        model_save_path (str, optional): Path to the file where to store the best model on the validation set. If None, the model isn't saved. Defaults to None.
+        model_save_path (str, optional): Path to the file where to store the best model on the validation set (the extension .pth will automatically be added). If None, the model isn't saved. Defaults to None.
     """
     if early_stop_threshold > 1 and early_stop_threshold < 0:
         raise Exception("Early stop threshold should be between 0 and 1")
@@ -359,7 +360,7 @@ def train_DL_model(
                 break
     
     if model_save_path != None:
-        torch.save(best_model_state, model_save_path)
+        torch.save(best_model_state, model_save_path + ".pth")
 
 
 def print_elapsed_time(start_time: float):
@@ -406,6 +407,7 @@ def train_from_config(
         train_dataset = None,
         validation_dataset = None,
         model = None,
+        model_save_path: Union[str, None] = None,
         **kwargs):
     """Launch the training based on the parameters from the hydra config files. 
     Custom datasets and model can be provided with the optionals arguments (In the case they depend they have an argument that depend on the data for example).
@@ -416,7 +418,8 @@ def train_from_config(
         train_dataset (optional): the ready to use train dataset object to use. If None, a default one will be created from the config. Defaults to None.
         validation_dataset (optional): the ready to use validation dataset object to use. If None, a default one will be created from the config. Defaults to None.
         model (optional): the model object to train. If None, a default one will be created from the config. Defaults to None.
-
+        model_save_path (str, optional): path where to save the resulting model (the extension .pth will automatically be added). Default to None (no saving).
+        
     Raises:
         Exception: in case of unknown dataset class
     """
@@ -440,6 +443,7 @@ def train_from_config(
             model= model,
             train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset, collate_fn=partial(format_batch, phenotypes=phenotype)),
             validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset, collate_fn=partial(format_batch, phenotypes=phenotype)),
+            model_save_path = model_save_path,
             **kwargs)
     else:
         call(run_cfg.train_function_config,
@@ -447,6 +451,7 @@ def train_from_config(
             model= model,
             train_dataloader = instantiate(run_cfg.train_function_config.train_dataloader, dataset=train_dataset),
             validation_dataloader = instantiate(run_cfg.train_function_config.validation_dataloader, dataset=validation_dataset),
+            model_save_path = model_save_path,
             **kwargs)
 
 def list_of_strings(arg):
@@ -579,5 +584,16 @@ def get_default_config_parser():
     parser.add_argument("--wandb_run_name", "-w", required=False, type=str, help="String to use for the wandb run name")
     parser.add_argument("--train_function", "-f", required=True, type=str, help="Name of the file (without file extention) to use to create the training function (should be found in configs/train_function_config)")
     parser.add_argument("--all", default=False, action=BooleanOptionalAction, help="If True, perform multi-trait regression on all given phenotypes")
+    parser.add_argument("-o", "--output_path", default=None, type=str, help="Path to store the resulting model")
 
     return parser
+
+def convert_categorical_to_frequency(data, path = "gptranformer_embedding_data.json"):
+    with open(path,"r") as f:
+        freq_data = json.load(f)
+    
+    results = []
+    for sample in data:
+        func = lambda t: [freq_data[str(t[0])]["p"]**2, 2*freq_data[str(t[0])]["p"]*freq_data[str(t[0])]["q"],freq_data[str(t[0])]["q"]**2].__getitem__(t[1])
+        results.append(list(map(func, enumerate(sample))))
+    return np.array(results, dtype=np.float32)

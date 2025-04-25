@@ -1,6 +1,6 @@
-from dataset import SNPmarkersDataset
+from dataset import SNPmarkersDataset, SNPResidualDataset
 import wandb
-from utils import train_from_config, list_of_strings, get_clean_config, get_default_config_parser
+from utils import train_from_config, convert_categorical_to_frequency, get_clean_config, get_default_config_parser
 import numpy as np
 from torch.utils.data import Dataset
 from sklearn.feature_selection import mutual_info_regression
@@ -14,28 +14,6 @@ import warnings
 from tokenizers import Tokenizer
 from functools import partial
 from bed_reader import open_bed
-
-class SNPResidualDataset(Dataset):
-    def __init__(self, X, y):
-        self.X = X
-        self.y = y
-    
-    def __len__(self):
-        return len(self.X)
-    
-    def __getitem__(self, index):
-        return self.X[index], self.y[index]
-
-
-def convert_categorical_to_frequency(data, path = "gptranformer_embedding_data.json"):
-    with open(path,"r") as f:
-        freq_data = json.load(f)
-    
-    results = []
-    for sample in data:
-        func = lambda t: [freq_data[str(t[0])]["p"]**2, 2*freq_data[str(t[0])]["p"]*freq_data[str(t[0])]["q"],freq_data[str(t[0])]["q"]**2].__getitem__(t[1])
-        results.append(list(map(func, enumerate(sample))))
-    return np.array(results, dtype=np.float32)
 
 def main():
     parser = get_default_config_parser()
@@ -217,6 +195,7 @@ def main():
                 embedding_table_weight = embedding_weight,
                 output_size = len(phenotype) if args.all else 1
             ),
+            model_save_path = args.output_path
         )
     
 if __name__ == "__main__":

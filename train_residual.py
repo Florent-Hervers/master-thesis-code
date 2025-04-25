@@ -1,3 +1,4 @@
+from typing import Union
 import torch
 import wandb
 from Models.ResGS import ResGSModel
@@ -27,12 +28,13 @@ class SNPResidualDataset(Dataset):
         return self.X[index], self.y[index]
 
 
-def train_on_residuals(phenotype: str, cfg):
+def train_on_residuals(phenotype: str, cfg, model_save_path: Union[str, None] = None):
     """Wrapper on the train_from_config that trains on the residual from the optimal ridge model.
 
     Args:
         phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
-        run_cfg (DictConfig): hydra config file fetched using the compose API. 
+        run_cfg (DictConfig): hydra config file fetched using the compose API.
+        model_save_path (str, optional): path where to save the resulting model (the extension .pth will automatically be added). Default to None (no saving).
     """
 
     train_dataset = instantiate(cfg.data.train_dataset)
@@ -116,6 +118,7 @@ def train_on_residuals(phenotype: str, cfg):
         residual_train_dataset,
         residual_validation_dataset,
         initial_phenotype = y_pre,
+        model_path = args.output_path
     )
 
 if __name__ == "__main__":
@@ -137,4 +140,4 @@ if __name__ == "__main__":
             tags = ["debug"],
         )
     for phenotype in args.phenotypes:
-        train_on_residuals(phenotype, cfg)
+        train_on_residuals(phenotype, cfg, model_save_path = args.output_path)

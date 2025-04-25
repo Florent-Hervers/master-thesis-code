@@ -175,7 +175,10 @@ class GPTransformer(VariableSizeOutputModel):
             ).to(self.computeDevice)
     
     def forward(self, x):
-        x = self.mask(x.type(torch.float32)).type(torch.int32)
+        x = self.mask(x.type(torch.float32))
+        if isinstance(self.embedding, nn.Embedding):
+            x = x.type(torch.int32)
+        
         x = self.embedding(x)
         x = self.preprocessing(x)
         x = self.transformer(x.to(self.computeDevice))

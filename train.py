@@ -24,7 +24,7 @@ if __name__ == "__main__":
         )
 
     if args.all:
-        train_from_config(args.phenotypes, run_cfg)
+        train_from_config(args.phenotypes, run_cfg, model_save_path=args.output_path)
     else:
         for phenotype in args.phenotypes:
-            train_from_config(phenotype, run_cfg)
+            train_from_config(phenotype, run_cfg, model_save_path=args.output_path)
