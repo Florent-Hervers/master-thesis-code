@@ -118,7 +118,7 @@ def train_on_residuals(phenotype: str, cfg, model_save_path: Union[str, None] = 
         residual_train_dataset,
         residual_validation_dataset,
         initial_phenotype = y_pre,
-        model_path = args.output_path
+        model_save_path=model_save_path
     )
 
 if __name__ == "__main__":

@@ -14,6 +14,6 @@ parameters:
       values: [0.1 , 0.15, 0.2 , 0.25, 0.3 , 0.35, 0.4]
   target_size:
       values: [2400, 4400, 6400, 8400, 10400, 12400]
-run_cap: 40
+run_cap: 20
 
 
