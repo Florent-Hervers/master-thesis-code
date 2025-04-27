@@ -1,4 +1,4 @@
-batch_size : 170
+batch_size : 180
 learning_rate : 1e-4
 n_embedding : 32
 n_heads : 4
@@ -25,4 +25,3 @@ model:
   linear_projector_output_size: ${model_config.linear_projector_output_size}
   activation: ${model_config.activation}
   embedding_type: ??
-  embedding_table_weight: ??

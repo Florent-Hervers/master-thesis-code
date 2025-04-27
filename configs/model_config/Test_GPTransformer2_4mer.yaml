@@ -25,4 +25,3 @@ model:
   linear_projector_output_size: ${model_config.linear_projector_output_size}
   activation: ${model_config.activation}
   embedding_type: ??
-  embedding_table_weight: ??
