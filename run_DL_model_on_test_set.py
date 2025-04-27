@@ -22,11 +22,15 @@ def evaluate_models(checkpoint_directory: str):
 
     for model_file in [f for f in listdir(checkpoint_directory) if isfile(join(checkpoint_directory, f))]:
         model_filename = model_file.split(".")[0]
-        print(f"///////////////////////////////// {model_filename} /////////////////////////////////")
-        
         model_name = model_filename.split("_")[0]
         phenotype = model_filename.split("_")[-2] + "_" + model_filename.split("_")[-1] 
-
+        
+        # Only to test that the script works as intended
+        if (model_filename != "GPTransformer_size_res" and model_name == "GPTransformer") or phenotype != "ep_res":
+            continue
+        
+        print(f"///////////////////////////////// {model_filename} /////////////////////////////////")
+        
         try:            
             if model_name == "GPTransformer" and phenotype != "size_res":
                 mi = np.zeros(36304)
@@ -73,14 +77,21 @@ def evaluate_models(checkpoint_directory: str):
                 
                 sequence_length = len(indexes) 
 
-            elif model_name == "GPTransformer" and phenotype == "size_res":
+            elif (model_name == "GPTransformer" and phenotype == "size_res") or model_name == "GPTransformer2":
                 original_train_dataset = SNPmarkersDataset(mode = "validation")
                 original_validation_dataset = SNPmarkersDataset(mode = "test")
 
                 original_train_dataset.set_phenotypes = phenotype
                 original_validation_dataset.set_phenotypes = phenotype
 
-                all_sequences_tokenized = pd.read_csv("../Data/tokenized_genotype_5_8.csv", index_col = 0)
+                if model_name == "GPTransformer" and phenotype == "size_res":
+                    token_file = "../Data/tokenized_genotype_5_8.csv" 
+                elif model_name == "GPTransformer2" and model_filename.split("_")[1] == "4mer":
+                    token_file = "../Data/tokenized_genotype_5_4.csv"
+                elif model_name == "GPTransformer2" and model_filename.split("_")[1] == "aug":
+                    token_file = "../Data/tokenized_genotype_9_4.csv"
+
+                all_sequences_tokenized = pd.read_csv(token_file, index_col = 0)
 
                 X_test = all_sequences_tokenized.loc[original_train_dataset.get_all_SNP().index]
                 X_val = all_sequences_tokenized.loc[original_validation_dataset.get_all_SNP().index]
@@ -91,7 +102,10 @@ def evaluate_models(checkpoint_directory: str):
                 test_dataset = SNPResidualDataset(X_test.to_numpy(dtype=np.int32), y_test.to_numpy(dtype=np.float32))
                 validation_dataset = SNPResidualDataset(X_val.to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
                 
-                n_features = 5**8 + 1
+                TOKEN_SIZE = int(token_file.replace(".", "_").split("_")[-2])
+                VOCAB_SIZE = int(token_file.replace(".", "_").split("_")[-3])
+                
+                n_features = VOCAB_SIZE**TOKEN_SIZE + 1
                 sequence_length = len(X_test.iloc[0])
                 embedding_type = EmbeddingType.EmbeddingTable
 
@@ -99,17 +113,20 @@ def evaluate_models(checkpoint_directory: str):
                 validation_dataset = SNPmarkersDataset(mode = "validation")
                 test_dataset = SNPmarkersDataset(mode = "test")
 
+                validation_dataset.set_phenotypes = phenotype
+                test_dataset.set_phenotypes = phenotype
+
             validation_dataloader = DataLoader(validation_dataset, batch_size=32, shuffle=False)
             test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
             
         except Exception as e:
-            print(f"The following error occured when preprocessing data for the model for {model_filename}: {e.args}")
+            print(f"The following error occured when preprocessing data for the model for {model_filename}: \n{e}")
             non_processed_files.append(model_filename)
             continue
         
         try:
             if model_name == "GPTransformer2":
-                config_filename = f"Test_GPTransformer2_{model_filename.split("_")[1]}"
+                config_filename = f"Test_GPTransformer2_{model_filename.split('_')[1]}"
             else:
                 config_filename = f"Test_{model_filename}"
 
@@ -119,7 +136,7 @@ def evaluate_models(checkpoint_directory: str):
                     overrides=[f"model_config={config_filename}"]
                 )
 
-            if model_name == "GPTransformer":
+            if model_name == "GPTransformer" or model_name == "GPTransformer2":
                 model = instantiate(
                     model_cfg.model_config.model,
                     n_features = n_features,
@@ -127,13 +144,13 @@ def evaluate_models(checkpoint_directory: str):
                     embedding_type = embedding_type
                 )
             else:
-                model = instantiate(model_cfg)
+                model = instantiate(model_cfg.model_config.model)
 
             model.load_state_dict(torch.load(join(checkpoint_directory, model_file,), weights_only=False))
             model.eval()
 
         except Exception as e:
-            print(f"The following error occured when loading the model for {model_filename}: {e.args}")
+            print(f"The following error occured when loading the model for {model_filename}: \n{e}")
             non_processed_files.append(model_filename)
             continue
         
@@ -167,12 +184,14 @@ def evaluate_models(checkpoint_directory: str):
                     print(f"    - Correlation: {pearsonr(predicted, target).statistic}")
         
         except Exception as e:
-            print(f"The following error occured when running the model for {model_filename}: {e.args}")
+            print(f"The following error occured when running the model for {model_filename}: \n{e}")
             non_processed_files.append(model_filename)
             continue
 
     if len(non_processed_files) != 0:
         print(f"WARNING : The following files wasn't processed due to an error: {non_processed_files}")
+    else:
+        print("Evaluation finished sucessfully.")
 
 if __name__ == "__main__":
     parser = ArgumentParser()
