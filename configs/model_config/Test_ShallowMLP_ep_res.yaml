@@ -1,0 +1,11 @@
+hidden_size: 8192
+batch_size: 256
+learning_rate: 0.000778
+dropout: 0.5
+
+model:
+  _target_: Models.MLP.MLP
+  dropout: ${model_config.dropout}
+  nlayers: 2
+  hidden_nodes: 
+    - ${model_config.hidden_size}
