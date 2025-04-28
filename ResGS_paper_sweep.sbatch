@@ -17,4 +17,4 @@ conda activate TFE
 
 # Run your Python script
 cd ~/TFE/Code/ 
-python -u sweep.py --residual -s "ResGS_paper tuning" -m ResGS_paper_very_big_expanded -d SNP_markers -p de_res,FESSEp_res -f basic_train_function
+python -u sweep.py --residual -s "ResGS_paper tuning" -m ResGS_paper_very_big_expanded -d SNP_markers -p ep_res,de_res,FESSEp_res -f basic_train_function

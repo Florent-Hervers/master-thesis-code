@@ -7,7 +7,7 @@ parameters:
   learning_rate: 
       values: [1.00e-02, 5.0e-03, 1.00e-03, 5.00e-04, 1.0e-5]
   #list(map(lambda v: 2**v, range(5,12))
-  hidden_size: 
+  output_hidden_size: 
       values: [32, 64, 128, 256, 512, 1024, 2048]
   #np.arange(0.1,0.4,0.05)
   dropout: 
