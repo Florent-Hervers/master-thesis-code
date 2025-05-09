@@ -1,4 +1,5 @@
 
+from omegaconf import OmegaConf
 from sklearn.linear_model import Ridge
 import torch
 import numpy as np
@@ -35,7 +36,7 @@ def evaluate_models(checkpoint_directory: str):
             
         
         # Only to test that the script works as intended
-        if (model_filename != "GPTransformer_size_res" and model_name == "GPTransformer") or phenotype != "ep_res":
+        if (model_name != "DeepMLP" and model_name != "ShallowMLP"):
             continue
         
         print(f"///////////////////////////////// {model_filename} /////////////////////////////////")
@@ -184,6 +185,10 @@ def evaluate_models(checkpoint_directory: str):
             else:
                 config_filename = f"Test_{model_filename}"
 
+            # Define custom resolver for the computation of the hidden_nodes for Deep_MLP (See https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html)
+            OmegaConf.register_new_resolver("mul", lambda x, y: int(x * y), replace= True)
+            OmegaConf.register_new_resolver("div", lambda x, y: int(x / y), replace= True)
+            
             with initialize(version_base=None, config_path="Configs"):
                 model_cfg = compose(
                     config_name="default_test",
@@ -223,8 +228,14 @@ def evaluate_models(checkpoint_directory: str):
                         if len(y.shape) == 1:
                             y = y.view(-1,1)
 
-                        loss = torch.nn.functional.l1_loss(output, y)
-                        test_MAE.append(loss.cpu().detach())
+                        if type(phenotype) == str:
+                            loss = torch.nn.functional.l1_loss(output, y).cpu().detach()
+                        else:
+                            loss = []
+                            for i in range(len(phenotype)): 
+                                loss.append(torch.nn.functional.l1_loss(output[:,i], y[:,i]).cpu().detach())
+
+                        test_MAE.append(loss)
                         if len(predicted) == 0:
                             predicted = output.cpu().detach()
                             target = y.cpu().detach()
@@ -243,10 +254,19 @@ def evaluate_models(checkpoint_directory: str):
                         elif set_name == "test":
                             predicted += y_test_pre
                             target += y_test_pre
-
+                    if type(phenotype) == str:
+                        correlation = pearsonr(predicted, target).statistic
+                        MAE = np.array(test_MAE).mean()
+                    else:
+                        correlation = []
+                        MAE = []
+                        for i in range(len(phenotype)):
+                            correlation.append(pearsonr(predicted[:,i], target[:,i]).statistic)
+                            MAE.append(np.array(test_MAE)[:,i].mean())
+    
                     print(f"{model_name} results on the {set_name} set for the phenotype {phenotype}:")
-                    print(f"    - MAE: {np.array(test_MAE).mean()}")
-                    print(f"    - Correlation: {pearsonr(predicted, target).statistic}")
+                    print(f"    - MAE: {MAE}")
+                    print(f"    - Correlation: {correlation}")
         
         except Exception as e:
             print(f"The following error occured when running the model for {model_filename}: \n{e}")
