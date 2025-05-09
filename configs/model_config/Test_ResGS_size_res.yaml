@@ -1,0 +1,21 @@
+batch_size: 64
+learning_rate: 0.00001
+dropout: 0.1
+n_layers: 11
+kernel_size: 3
+channel_factor1: 4
+channel_factor2: 1.1
+n_filters: 64
+output_hidden_size: 256
+weight_decay: 0.00005
+target_size: 4400
+model:
+  _target_: Models.ResGS.ResGSModel
+  nFilter: ${model_config.n_filters}
+  _KERNEL_SIZE: ${model_config.kernel_size}
+  CHANNEL_FACTOR1: ${model_config.channel_factor1}
+  CHANNEL_FACTOR2: ${model_config.channel_factor2}
+  output_hidden_size: ${model_config.output_hidden_size}
+  dropout: ${model_config.dropout}
+  nlayers: ${model_config.n_layers}
+  target_size: ${model_config.target_size}
