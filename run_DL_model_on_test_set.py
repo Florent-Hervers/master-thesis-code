@@ -94,12 +94,16 @@ def evaluate_models(checkpoint_directory: str):
                 original_train_dataset.set_phenotypes = phenotype
                 original_validation_dataset.set_phenotypes = phenotype
 
-                if model_name == "GPTransformer" and phenotype == "size_res":
+                if (model_name == "GPTransformer" and phenotype == "size_res") or (model_name == "GPTransformer2" and model_filename.split("_")[1] == "paper"):
                     token_file = "../Data/tokenized_genotype_5_8.csv" 
                 elif model_name == "GPTransformer2" and model_filename.split("_")[1] == "4mer":
                     token_file = "../Data/tokenized_genotype_5_4.csv"
                 elif model_name == "GPTransformer2" and model_filename.split("_")[1] == "aug":
                     token_file = "../Data/tokenized_genotype_9_4.csv"
+                elif model_name == "GPTransformer2" and model_filename.split("_")[1] == "2red":
+                    token_file = "../Data/tokenized_genotype_3_4.csv"
+                elif model_name == "GPTransformer2" and model_filename.split("_")[1] == "red":
+                    token_file = "../Data/tokenized_genotype_3_8.csv"
 
                 all_sequences_tokenized = pd.read_csv(token_file, index_col = 0)
 
