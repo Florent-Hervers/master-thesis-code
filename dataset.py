@@ -73,7 +73,7 @@ class SNPmarkersDataset(Dataset):
         except Exception as e:
             raise IOError(f"The following error occured when trying to read the masked phenotype file: {e.args}")
         
-        valid_modes = set(["train", "validation", "test", "local_train", "train_5k", "train_all", "validation_all", "train_2k", "train_10k", "train_500", "train_200"])
+        valid_modes = set(["train", "validation", "test", "local_train", "train_5k", "train_all", "validation_all", "train_2k", "train_10k", "train_500", "train_200", "train_1k"])
         if mode not in valid_modes:
             raise AttributeError(f"the mode argument must be a value of {valid_modes}!")
         self.mode = mode
