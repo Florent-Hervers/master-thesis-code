@@ -73,7 +73,7 @@ class SNPmarkersDataset(Dataset):
         except Exception as e:
             raise IOError(f"The following error occured when trying to read the masked phenotype file: {e.args}")
         
-        valid_modes = set(["train", "validation", "test", "local_train", "train_5k", "train_all", "validation_all"])
+        valid_modes = set(["train", "validation", "test", "local_train", "train_5k", "train_all", "validation_all", "train_2k", "train_10k", "train_500", "train_200"])
         if mode not in valid_modes:
             raise AttributeError(f"the mode argument must be a value of {valid_modes}!")
         self.mode = mode
@@ -97,7 +97,7 @@ class SNPmarkersDataset(Dataset):
         pheno_masked_df = pheno_masked_df.dropna(how="all")
 
         self.phenotypes = {}        
-        if mode == "local_train":
+        if mode == "local_train" or "train_1k":
             for pheno in pheno_masked_df.columns:
                 self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:1000]
 
@@ -108,6 +108,22 @@ class SNPmarkersDataset(Dataset):
         elif mode == "train_5k":
             for pheno in pheno_masked_df.columns:
                 self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:5000]
+
+        elif mode == "train_2k":
+            for pheno in pheno_masked_df.columns:
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:2000]
+        
+        elif mode == "train_10k":
+            for pheno in pheno_masked_df.columns:
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:10000]
+        
+        elif mode == "train_500":
+            for pheno in pheno_masked_df.columns:
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:500]
+        
+        elif mode == "train_200":
+            for pheno in pheno_masked_df.columns:
+                self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:200]
         
         elif mode == "train_all":
             pheno_without_na = pheno_masked_df.dropna().iloc[:-self._VALIDATION_SIZE]

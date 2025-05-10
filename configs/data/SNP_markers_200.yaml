@@ -1,0 +1,8 @@
+train_dataset:
+    _target_: dataset.SNPmarkersDataset
+    mode: "train_200"
+    skip_check: True
+validation_dataset:
+    _target_: dataset.SNPmarkersDataset
+    mode: "validation"
+    skip_check: True
