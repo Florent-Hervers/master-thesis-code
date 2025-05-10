@@ -97,7 +97,7 @@ class SNPmarkersDataset(Dataset):
         pheno_masked_df = pheno_masked_df.dropna(how="all")
 
         self.phenotypes = {}        
-        if mode == "local_train" or "train_1k":
+        if mode == "local_train" or mode == "train_1k":
             for pheno in pheno_masked_df.columns:
                 self.phenotypes[pheno] = pheno_masked_df[pheno].dropna().iloc[:1000]
 
