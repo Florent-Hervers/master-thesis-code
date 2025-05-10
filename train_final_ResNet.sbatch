@@ -23,4 +23,4 @@ python -u train.py -m Test_ResNet_de_res -d SNP_markers -p de_res -w "Final ResN
 python -u train.py -m Test_ResNet_FESSEp_res -d SNP_markers -p FESSEp_res -w "Final ResNet for FESSEp_res" -f train_AdamW -o "Trained_models/ResNet_FESSEp_res"
 python -u train.py -m Test_ResNet_FESSEa_res -d SNP_markers -p FESSEa_res -w "Final ResNet for FESSEa_res" -f train_AdamW_LinearLR_40 -o "Trained_models/ResNet_FESSEa_res"
 python -u train.py -m Test_ResNet_size_res -d SNP_markers -p size_res -w "Final ResNet for size_res" -f train_AdamW -o "Trained_models/ResNet_size_res"
-python -u train.py -m Test_ResNet_MUSC_res -d SNP_markers -p MUSC_res -w "Final ResNet for MUSC_res" -f train_AdamW _LinearLR -o "Trained_models/ResNet_MUSC_res"
+python -u train.py -m Test_ResNet_MUSC_res -d SNP_markers -p MUSC_res -w "Final ResNet for MUSC_res" -f train_AdamW_LinearLR -o "Trained_models/ResNet_MUSC_res"
