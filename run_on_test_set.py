@@ -123,8 +123,8 @@ def main():
                                      random_state=2307 + i)
 
             elif model_name == "SVM":
-                # Skip others phenotypes as hyperparameters aren't defined yet
-                if phenotype not in  ["ep_res", "de_res", "FESSEp_res"]:
+                # Skip phenotypes already evaluated
+                if phenotype in  ["ep_res", "de_res", "FESSEp_res"]:
                     break
                 
                 # There is no point to run several times this model
@@ -134,9 +134,9 @@ def main():
                     "ep_res": {"C": 3.25, "gamma": 1.225e-4},
                     "de_res": {"C": 7.25, "gamma": 1.225e-4},
                     "FESSEp_res": {"C": 3.25, "gamma": 7.75e-5},
-                    "FESSEa_res": {"C": 0, "gamma": 0},
-                    "size_res": {"C": 0, "gamma": 0},
-                    "MUSC_res": {"C": 0, "gamma": 0},
+                    "FESSEa_res": {"C": 5.5, "gamma": 1e-4},
+                    "size_res": {"C": 21.25, "gamma": 1e-4},
+                    "MUSC_res": {"C": 3.25, "gamma": 1e-5},
                 }
                 model = SVR(gamma=hp[phenotype]["gamma"], C=hp[phenotype]["C"])
 
