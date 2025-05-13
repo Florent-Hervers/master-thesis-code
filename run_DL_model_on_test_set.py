@@ -36,7 +36,9 @@ def evaluate_models(checkpoint_directory: str):
             
         
         # Only to test that the script works as intended
-        if (model_name != "DeepMLP" and model_name != "ShallowMLP"):
+        if model_name == "GPTransformer2":
+            pass
+        else:
             continue
         
         print(f"///////////////////////////////// {model_filename} /////////////////////////////////")
@@ -66,7 +68,7 @@ def evaluate_models(checkpoint_directory: str):
                 mi /= len(modes)
                 indexes = np.where(mi > 0.02)[0]
                 
-                if phenotype in  ["de_res", "FESSEp_Res", "FESSEa_res", "MUSC_res"] :
+                if phenotype in  ["de_res", "FESSEp_res", "FESSEa_res", "MUSC_res"] :
                     # - 1 is used to shoft the [0,1,2] range to the [-1,0,1] used in the paper  
                     test_dataset = SNPResidualDataset(X_test[indexes].to_numpy(dtype=np.float32) - 1, y_test.to_numpy(dtype=np.float32))
                     validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.float32) - 1, y_val.to_numpy(dtype=np.float32))
@@ -77,11 +79,6 @@ def evaluate_models(checkpoint_directory: str):
                     validation_dataset = SNPResidualDataset(convert_categorical_to_frequency(X_val[indexes].to_numpy()), y_val.to_numpy(dtype=np.float32))
                     n_features = 0
                     embedding_type = EmbeddingType.Linear
-                elif phenotype == "size_res":
-                    test_dataset = SNPResidualDataset(X_test[indexes].to_numpy(dtype=np.int32), y_test.to_numpy(dtype=np.float32))
-                    validation_dataset = SNPResidualDataset(X_val[indexes].to_numpy(dtype=np.int32), y_val.to_numpy(dtype=np.float32))
-                    n_features = 3
-                    embedding_type = EmbeddingType.EmbeddingTable
                 else:
                     raise Exception(f"Phenotype {phenotype} isn't recognized!")  
                 
@@ -123,7 +120,7 @@ def evaluate_models(checkpoint_directory: str):
                 sequence_length = len(X_test.iloc[0])
                 embedding_type = EmbeddingType.EmbeddingTable
 
-            elif model_name == "ReGS":
+            elif model_name == "ResGS":
                 original_train_dataset = SNPmarkersDataset(mode = "train")
                 original_test_dataset = SNPmarkersDataset(mode = "test")
                 original_validation_dataset = SNPmarkersDataset(mode = "validation")
@@ -140,12 +137,16 @@ def evaluate_models(checkpoint_directory: str):
                 
                 original_test_dataset.set_phenotypes = phenotype
                 original_validation_dataset.set_phenotypes = phenotype
+                original_train_dataset.set_phenotypes = phenotype
 
                 X_train = original_train_dataset.get_all_SNP()
                 y_train = original_train_dataset.phenotypes[phenotype]
 
                 X_val = original_validation_dataset.get_all_SNP()
                 y_val = original_validation_dataset.phenotypes[phenotype]
+
+                X_test = original_test_dataset.get_all_SNP()
+                y_test = original_test_dataset.phenotypes[phenotype]
                 
                 ridge_model = Ridge(alpha= hp[phenotype]["lambda"])
                     
@@ -204,7 +205,8 @@ def evaluate_models(checkpoint_directory: str):
                     model_cfg.model_config.model,
                     n_features = n_features,
                     sequence_length = sequence_length,
-                    embedding_type = embedding_type
+                    embedding_type = embedding_type,
+                    embedding_table_weight = None
                 )
             else:
                 model = instantiate(
