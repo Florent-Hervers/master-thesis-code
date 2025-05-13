@@ -1,0 +1,49 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+////////////////////////////////////////////
+Evaluation of model SVM finshed for phenotype FESSEa_res in 0d 5h 39m 5s
+Hyper parameters tested: {'C': 5.5, 'gamma': 0.0001}
+Results:
+    -> Correlation : [np.float64(0.4996346728214089)]
+        - mean: 0.4996346728214089
+        - std: 0.0
+    -> MAE : [np.float64(1.0128842211926812)]
+        - mean: 1.0128842211926812
+        - std: 0.0
+////////////////////////////////////////////
+Evaluation of model SVM finshed for phenotype size_res in 0d 5h 53m 38s
+Hyper parameters tested: {'C': 21.25, 'gamma': 0.0001}
+Results:
+    -> Correlation : [np.float64(0.4898246616134824)]
+        - mean: 0.4898246616134824
+        - std: 0.0
+    -> MAE : [np.float64(5.39115947329593)]
+        - mean: 5.39115947329593
+        - std: 0.0
+////////////////////////////////////////////
+Evaluation of model SVM finshed for phenotype MUSC_res in 0d 1h 20m 5s
+Hyper parameters tested: {'C': 3.25, 'gamma': 1e-05}
+Results:
+    -> Correlation : [np.float64(0.5175393487141011)]
+        - mean: 0.5175393487141011
+        - std: 0.0
+    -> MAE : [np.float64(1.1045318707640506)]
+        - mean: 1.1045318707640506
+        - std: 0.0
