@@ -8,7 +8,11 @@ import pandas as pd
 from utils import print_elapsed_time
 
 def main():
-
+    """ 
+    Trained the random forest algorithm on the phenotypes of the phenotype variable with 
+    the hardcoded range of hyperparameters in the variables max_depth and max_features.
+    The results are stored in pandas Dataframes with the value of max depth as index and the max features as columns.
+    """
     train_dataset = SNPmarkersDataset(mode="train")
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = list(train_dataset.phenotypes.keys())

@@ -4,6 +4,8 @@ from utils import get_default_config_parser, train_from_config, get_clean_config
 from hydra import initialize, compose
 
 if __name__ == "__main__":
+    """ Launch the training of the model based on the configuration provided in argument.
+    """
     parser = get_default_config_parser()
     args = parser.parse_args()
 

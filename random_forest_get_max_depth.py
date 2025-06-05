@@ -1,13 +1,14 @@
+import numpy as np
+import time
+
 from dataset import SNPmarkersDataset
 from sklearn.ensemble import RandomForestRegressor
-from scipy.stats import pearsonr
-import numpy as np
-from sklearn.metrics import mean_absolute_error
-import time
-import pandas as pd
+
 
 def main():
-
+    """ 
+    Train an unconstrained random forest models to evaluate the maximum and average tree depth
+    """
     train_dataset = SNPmarkersDataset(mode="train")
     phenotypes = list(train_dataset.phenotypes.keys())
 

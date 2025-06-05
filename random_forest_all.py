@@ -1,13 +1,19 @@
+import time
+import pandas as pd
+import numpy as np
+
 from dataset import SNPmarkersDataset
 from sklearn.ensemble import RandomForestRegressor
 from scipy.stats import pearsonr
-import numpy as np
 from sklearn.metrics import mean_absolute_error
-import time
-import pandas as pd
 from utils import print_elapsed_time
 
 def main():
+    """ 
+    Trained the random forest algorithm on the multi-trait regression problem with 
+    the hardcoded range of hyperparameters in the variables max_depth and max_features.
+    The results are stored in pandas Dataframes with the value of max depth as index and the max features as columns.
+    """
     selected_phenotypes = ["ep_res","de_res","FESSEp_res","FESSEa_res"]
 
     train_dataset = SNPmarkersDataset(mode="train")

@@ -15,7 +15,7 @@ def update_config_and_train(phenotype: str, run_cfg: DictConfig, training_functi
     Args:
         phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
         run_cfg (DictConfig): hydra config file fetched using the compose API.
-        training_function(function): the function to run at the end 
+        training_function (function): the function to run at the end. Defaults to train_from_config.
     """
 
     run = wandb.init(
@@ -31,12 +31,28 @@ def update_config_and_train(phenotype: str, run_cfg: DictConfig, training_functi
     training_function(phenotype, run_cfg)
 
 if __name__ == "__main__":
+    """ 
+    Script that setup and launch a sweep on wandb based on the configuration given in arguments.
+    """
     parser = get_default_config_parser()
-    parser.add_argument("--residual", default=False, action=BooleanOptionalAction, help="If True, perform the sweep on the residuals. Defaults to False")
-
+    
+    parser.add_argument(
+        "--residual", 
+        default=False, 
+        action=BooleanOptionalAction, 
+        help="If True, perform the sweep on the residuals. Defaults to False"
+    )
+    
+    parser.add_argument(
+        "--sweep_config", 
+        "-s", 
+        required=True, 
+        type=str, 
+        help="Name of the file (without file extention) to use for the sweep configuration (should be found in configs/sweeps)"
+    )
     args = parser.parse_args()
     
-    with open(os.path.join("Configs/sweeps",args.sweep_config + ".yaml"), "r") as f:
+    with open(os.path.join("Configs/sweeps", args.sweep_config + ".yaml"), "r") as f:
         sweep_cfg = yaml.safe_load(f)
     
     if args.all:

@@ -1,40 +1,28 @@
-from typing import Union
-import torch
 import wandb
-from Models.ResGS import ResGSModel
-from utils import get_clean_config, get_default_config_parser, print_elapsed_time, list_of_strings, train_from_config
-from torch.utils.data import DataLoader
+import numpy as np
+import time
+
+from typing import Union
+from utils import get_clean_config, get_default_config_parser, print_elapsed_time, train_from_config
 from scipy.stats import pearsonr
 from sklearn.svm import SVR
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from torch.utils.data import Dataset
-import numpy as np
-import time
-from argparse import ArgumentParser
 from hydra import compose, initialize
 from hydra.utils import instantiate
-
-class SNPResidualDataset(Dataset):
-
-    def __init__(self, X, y):
-        self.X = X
-        self.y = y
-    
-    def __len__(self):
-        return len(self.X)
-    
-    def __getitem__(self, index):
-        return self.X[index], self.y[index]
+from dataset import SNPResidualDataset
 
 
 def train_on_residuals(phenotype: str, cfg, model_save_path: Union[str, None] = None):
     """Wrapper on the train_from_config that trains on the residual from the optimal ridge model.
 
     Args:
-        phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
-        run_cfg (DictConfig): hydra config file fetched using the compose API.
-        model_save_path (str, optional): path where to save the resulting model (the extension .pth will automatically be added). Default to None (no saving).
+        phenotype (str):
+            phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
+        run_cfg (DictConfig): 
+            hydra config file fetched using the compose API.
+        model_save_path (str, optional): 
+            path where to save the resulting model (the extension .pth will automatically be added). Default to None (no saving).
     """
 
     train_dataset = instantiate(cfg.data.train_dataset)
@@ -122,6 +110,9 @@ def train_on_residuals(phenotype: str, cfg, model_save_path: Union[str, None] = 
     )
 
 if __name__ == "__main__":
+    """ Launch the training of the model defined in the configuration on the residuals
+    """
+
     parser = get_default_config_parser()
     
     args = parser.parse_args()

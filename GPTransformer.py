@@ -1,21 +1,24 @@
-from dataset import SNPmarkersDataset, SNPResidualDataset
-import wandb
-from utils import train_from_config, convert_categorical_to_frequency, get_clean_config, get_default_config_parser
-import numpy as np
-from torch.utils.data import Dataset
-from sklearn.feature_selection import mutual_info_regression
-import json
-from hydra import compose,initialize
-from hydra.utils import instantiate
-from Models.GPTransformer import EmbeddingType
 import torch
 import pandas as pd
 import warnings
-from tokenizers import Tokenizer
-from functools import partial
-from bed_reader import open_bed
+import wandb
+import numpy as np
+
+from dataset import SNPmarkersDataset, SNPResidualDataset
+from utils import train_from_config, convert_categorical_to_frequency, get_clean_config, get_default_config_parser
+from sklearn.feature_selection import mutual_info_regression
+from hydra import compose,initialize
+from hydra.utils import instantiate
+from Models.GPTransformer import EmbeddingType
 
 def main():
+    """Prepare the dataset depending on the arguments of the script and launch the training of the GPTransformer model.
+
+    Raises:
+        Exception: 
+            if the selection argument is tokenization and the token filename doesn't 
+            satisfy the pattern *_{VOCAB_SIZE}_{TOKEN_SIZE}.csv
+    """
     parser = get_default_config_parser()
 
     parser.add_argument(

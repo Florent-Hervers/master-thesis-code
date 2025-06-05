@@ -1,15 +1,37 @@
-from dataset import SNPmarkersDataset
-from xgboost import XGBRegressor
-from scipy.stats import pearsonr
-import numpy as np
-from sklearn.metrics import mean_absolute_error
 import time
 import json
 import cupy as cp
+import numpy as np
+
+from dataset import SNPmarkersDataset
+from xgboost import XGBRegressor
+from scipy.stats import pearsonr
+from sklearn.metrics import mean_absolute_error
 from utils import print_elapsed_time
 
 def main():
+    """ 
+    Trained the ridge regression model on the phenotypes of the phenotype variable with 
+    the hardcoded range of hyperparameters in the variables sub_sampling, learning_rates, and max_depth.
+    The results are stored in a json file, the keys of the json object are: 
     
+    - dim_0_values: contain the values for the subsampling hyperparameter.
+    - dim_0_label: contain the name of the hyperparamter to ease the plotting of the results.
+    - dim_1_values: contain the values for the learning_rate hyperparameter.
+    - dim_1_label: contain the name of the hyperparamter to ease the plotting of the results.
+    - dim_2_values: contain the values for the max_depth hyperparameter.
+    - dim_2_label: contain the name of the hyperparamter to ease the plotting of the results.
+    - correlation: 3D multi-dimentional array that contains 
+        at index i, j, k the correlation on the validation set for the model that uses:
+        - the sub_sampling at index i of dim_0_values.
+        - the learning rate at index j of dim_1_values.
+        - the max_depth at index k of dim_2_values.
+    - MAE: 3D multi-dimentional array that contains 
+        at index i, j, k the mean average error on the validation set for the model that uses:
+        - the sub_sampling at index i of dim_0_values. 
+        - the learning rate at index j of dim_1_values.
+        - the max_depth at index k of dim_2_values.
+    """
     NORMALIZATION = True
 
     train_dataset = SNPmarkersDataset(mode="train")

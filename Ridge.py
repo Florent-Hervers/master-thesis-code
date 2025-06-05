@@ -9,6 +9,20 @@ from sklearn.linear_model import Ridge
 from utils import print_elapsed_time
 
 def main():
+    """ 
+    Trained the ridge regression model on the phenotypes of the phenotype variable with 
+    the hardcoded range of hyperparameters in the variables lambdas.
+    The results are stored in a json file, the keys of the json object are: 
+    
+    - dim_0_values: contain the values of lamdba tested.
+    - dim_0_label: contain the name of the hyperparamter to ease the plotting of the results.
+    - correlation: array of the same size than dim_0_values that contains 
+        at index i the correlation on the validation set for the model that uses
+        the value of lambda at index i of dim_0_values.
+    - MAE: array of the same size than dim_0_values that contains 
+        at index i the mean average error on the validation set for the model that uses
+        the value of lambda at index i of dim_0_values.
+    """
     train_dataset = SNPmarkersDataset(mode="train")
     validation_dataset = SNPmarkersDataset(mode="validation")
     phenotypes = ["ep_res"]

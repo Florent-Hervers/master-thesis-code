@@ -8,17 +8,24 @@ import os
 import time
 
 class SNPmarkersDataset(Dataset):
-    """Create a class following the pytorch template to manage the data. \
-    Note: SNP data should be fetched using the `get_all_SNP()` function.
+    """Create a class following the pytorch template to manage the data.
 
     Attributes:
-        mode (str, optional): type of the dataset represented. Only 'train' or 'test' or 'validation' are accepted values. \
-        Modifying this value will not change the type of dataset as this variable is designed to be "read-only". Defaults to "train".
-        phenotypes (dict[str, pd.Series]): contain the phenotypes data for the given mode. Keys are phenotypes label used in the original phenotype files. \
-        Phenotypes are exposed as an attribute to ease the data analysis while SNP_array can only be accessed via `get_all_SNP` or `__getItem` methods.
-        set_phenotypes(str | list[str]): Default to None. Should be definied before using the dataset class by the user. Accepted string are the keys of ´self.phenotypes´
-        pheno_std(dict[str, float]): Store the standard deviasion of the selected phenotypes. Keys are phenotypes label used in the original phenotype files. \
-        Return a empty dictonary if set_phenotypes isn't set.
+        phenotypes (dict[str, pd.Series]): 
+            contain the phenotypes data for the given mode. 
+            Keys are phenotypes label used in the original phenotype files.
+            Phenotypes are exposed as an attribute to ease the data analysis
+            while SNP_array can only be accessed via `get_all_SNP` or `__getItem__` methods.
+        
+        set_phenotypes(str | list[str]): 
+            Default to None. 
+            Should be definied before using the dataset class. 
+            Accepted string are the keys of ´self.phenotypes´
+
+        pheno_std(dict[str, float]): 
+            Store the standard deviasion of the selected phenotypes. 
+            Keys are phenotypes label used in the original phenotype files.
+            Return a empty dictonary if set_phenotypes isn't set.
     """
     
     def __init__(
@@ -32,22 +39,48 @@ class SNPmarkersDataset(Dataset):
         normalize = False,
     ):
         """Create a class following the pytorch template.
-
+        
         Args:
-            mode (str, optional): type of the data stored. Only train, validation, test and local_train are accepted values. Defaults to "train".
-            dir_path (str, optional): Argument used to specify the path to the data directory. Defaults to "../Data/".
-            skip_check (bool, optional): Option to skip the checking used to speed object creation when testing. Defaults to False.
-            bed_filename (str, optional): name of the bed file containing the snp array data. Defaults to "BBBDL_BBB2023_MD.bed".
-            pheno_filename (str, optional): File containing the phenotypes in csv format. The file must have an unused column as first column. \
-            The second one will be the one used as index. A header containing the name of each column must be provided with the first empty column named "col_1". \
-            Keys to access phenotypes will be infered from this header. Defaults to "BBBDL_pheno_20000bbb_6traits_processed.csv".
-            mask_pheno_filename (str,optional): File where phenotypes of all samples that must be used for the test dataset are masked (ie set to NA). \
-            This file must follow the same format than the one given in pheno_filename.
-            date_filename (str | None, optional): File used to sort samples by their birth dates. The file must be a csv file with three columns separated by tabs \
-            The first columns must contain the id of the animal and the birth date must be the thrid and last columns formated in yyyymmdd (where y=year, m=month, d=day). \
-            The second columns will be used. Note that the all masked samples must be born after the ones in the training/validation set for the sorting to be relevant. \
-            Setting this parameter to None will prevent the sorting.
-            normalize (bool): define if the phenotypes outputed by the function getitem should be normalized. Defaults to True.
+            mode (str, optional): type of the data stored. Defaults to "train".
+            The accepted mode are:
+              - train_all and validation_all: create a train set and validation set where all six phenotypes can be predicted at the same time.
+              - train_\<size\>: create the training set containing the \<size\> first samples. Supported size are 200, 500, 1k, 2k, 5k, 10k.
+              - local_train: create the same dataset than train_1k. Used to test the models locally.
+              - train, validation, and test: create the three sets used for the majority of the models. 
+              
+            dir_path (str, optional): 
+                Argument used to specify the path to the data directory. Defaults to "../Data/".
+            
+            skip_check (bool, optional): 
+                Option to skip the checking used to speed up object creation when testing. Defaults to False.
+            
+            bed_filename (str, optional): 
+                name of the bed file containing the snp marker data. Defaults to "BBBDL_BBB2023_MD.bed".
+            
+            pheno_filename (str, optional): 
+                File containing the phenotypes in csv format. The file must have an unused column as first column.
+                The second one will be the one used as index. 
+                A header containing the name of each column must be provided with the first empty column named "col_1". 
+                Keys to access phenotypes will be infered from this header. 
+                Defaults to "BBBDL_pheno_20000bbb_6traits_processed.csv".
+            
+            mask_pheno_filename (str,optional): 
+                File where phenotypes of all samples that must be used for the test dataset are masked (ie set to NA).
+                This file must follow the same format than the one given in pheno_filename.
+                Defaults to "BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv".
+
+            date_filename (str | None, optional): 
+                File used to sort samples by their birth dates. 
+                The file must be a csv file with three columns separated by tabs.
+                The first columns must contain the id of the animal and the birth date must be 
+                the thrid and last columns formated in yyyymmdd (where y=year, m=month, d=day).
+                The second columns will be used. Note that the all masked samples must be born 
+                after the ones in the training/validation set for the sorting to be relevant.
+                Setting this parameter to None will prevent the sorting.
+                Defaults to "BBBDL_pedi_full_list.txt".
+
+            normalize (bool): 
+                define if the phenotypes outputed by the function getitem should be normalized. Defaults to False.
 
         Raises:
             AttributeError: if the mode doesn't respect the described format.
@@ -157,7 +190,7 @@ class SNPmarkersDataset(Dataset):
                 raise e
     
     def get_all_SNP(self):
-        """ Retruns all snp arrays that have values for the phenotypes defined via `set_phenotypes proprety`
+        """ Retruns all snp arrays that have values for the phenotypes defined via `set_phenotypes` attribute.
 
         Raises:
             Exception: If the proprety `set_phenotypes` isn't set.
@@ -179,7 +212,8 @@ class SNPmarkersDataset(Dataset):
 
         
     def check_data(self):
-        """Perform some verifications on the data (of the current object) to be sure that no mistake is introduced by the preprocessing of the data.
+        """Perform some verifications on the data (of the current object) 
+        to be sure that no mistake is introduced by the preprocessing of the data.
 
         Raises:
             Exception: If an incoherency is detected, the argument of the error indicate where the error is detected
@@ -234,7 +268,10 @@ class SNPmarkersDataset(Dataset):
             Exception: If the proprety `set_phenotypes` isn't set.
 
         Returns:
-            (pd.Series, float | dict): first item is the snp array, the second one type depend on the number of phenoype wanted. If more than one return a dict, otherwise a float
+            (pd.Series, float | dict): 
+                first item is the snp array, the second one type depend on the number of phenoype wanted. 
+                If more the proprety `set_phenotypes` is set to more than one phenotype 
+                return a dict with the phenotype as key, otherwise return the phenotypic values as a float
         """
         if self._wantedPhenotypes == None:
             raise Exception("The proprety set_phenotypes must be set before using the dataset")
@@ -263,8 +300,11 @@ class SNPmarkersDataset(Dataset):
     
     @property
     def set_phenotypes(self):
-        """Define the phenotype(s) to returns when using getItem functions. Note that the inputed string should be the name of the columns of the original dataframe.
-        If several phenotypes are entered, only combinaision allowed are the one where all samples in the dataset have a value for all selected phenotypes in order to avoid introducing nan in the loss.
+        """Define the phenotype(s) to returns when using getItem functions. 
+        Note that the inputed string should be the name of the columns of the original dataframe.
+        If several phenotypes are entered, only combinaision allowed are the one 
+        where all samples in the dataset have a value for all selected phenotypes in 
+        order to avoid introducing nan in the loss.
 
         Returns:
             str/List[str]: the name of the phenotype returned (or the list of phenotypes if user selected more than one)
@@ -307,7 +347,15 @@ class SNPmarkersDataset(Dataset):
         del self._wantedPhenotypes
 
 class SNPResidualDataset(Dataset):
+    """ Very basic Pytorch dataset class used for the transformers and the residual training of ResGS.
+    """
     def __init__(self, X, y):
+        """ Create the Pytorch dataset class
+
+        Args:
+            X (list | np.ndarray): inputs features for the dataset.
+            y (list | np.ndarray): target values for every input.
+        """
         self.X = X
         self.y = y
     

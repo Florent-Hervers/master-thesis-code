@@ -1,5 +1,4 @@
-from argparse import ArgumentParser, BooleanOptionalAction
-from copy import deepcopy
+import functools
 import json
 import warnings
 import pandas as pd
@@ -8,19 +7,20 @@ import seaborn as sns
 import torch
 import time
 import numpy as np
+import wandb
+
+from argparse import ArgumentParser, BooleanOptionalAction
+from copy import deepcopy
 from scipy.stats import pearsonr
 from torch.nn import Module, L1Loss
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
-import wandb
-from typing import Union
+from typing import Union, Tuple, List
 from functools import partial
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
-import functools
 from hydra.utils import call, instantiate
-from matplotlib.ticker import FuncFormatter
 
 
 def results_heatmap(df1:      pd.DataFrame,
@@ -30,18 +30,36 @@ def results_heatmap(df1:      pd.DataFrame,
                     title2:   str,
                     x_label:  str,
                     y_label:  str,
-                    vertical: bool = False):
+                    vertical: bool = False) -> None:
     """Display the heatmap of the two given dataframes. They should have the
     same index and columns values for a appropriate comparaison.
 
     Args:
-        df1 (pd.DataFrame): first dataframe to display
-        df2 (pd.DataFrame): second dataframe to display
-        suptitle (str): title of the whole plot
-        title1 (str): title for the first dataframe heatmap
-        title2 (str): title for the second dataframe heatmap
-        x_label (str): label for the x-axis (ie label of the index of the dataframes)
-        y_label (str): label for the y-axis (ie label of the columns of the dataframes)
+        df1 (pd.DataFrame): 
+            first dataframe to display
+
+        df2 (pd.DataFrame): 
+            second dataframe to display
+
+        suptitle (str): 
+            title of the whole plot
+
+        title1 (str): 
+            title for the first dataframe heatmap
+
+        title2 (str): 
+            title for the second dataframe heatmap
+
+        x_label (str): 
+            label for the x-axis (ie label of the index of the dataframes)
+
+        y_label (str): 
+            label for the y-axis (ie label of the columns of the dataframes)
+        
+        vertical (bool, optional): 
+            if true, the heatmap will be display one above the other, 
+            if False, the two heatmap will be next to each other. 
+            Defaults to False.
     """
     
     subtitle_font =  {"size": 14}
@@ -67,35 +85,46 @@ def results_heatmap(df1:      pd.DataFrame,
     ax2.tick_params(rotation=0)
     plt.show()
 
-def format_batch(batch, phenotypes):
-    """ Convert a dictonary containing x keys, each one containing a 1-D tensor of length y to a tensor of shape (y,x).
-    This function is intended to be used to format SNPmarkersDataset batches created by a torch.utils.data.dataloader to be directly usable
-    for a model when several phenotypes are set with the `set_phenotypes` proprety.
+def format_batch(batch: List[Tuple], phenotypes: List[str]) -> Tuple[torch.Tensor]:
+    """ This function converts the output of the `getItem` method of the `SNPmarkersDataset` 
+    to tuple of torch.tensor whatever the number of phenotypes set via the proprety `set_phenotypes`.
+    This function is designed to be given to a Dataloader of pytorch via the collate_fn function.
 
     Args:
-        dict (dict): dictionary(containing x keys, each one containing a 1-D tensor of length y) to transform to tensor. 
-
+        batch (List[Tuple]): The list contains all samples selected for the current batch. 
+          Each element of batch is a tuple:
+          
+          - The first element is the array with the input features.
+          - The second element is the phenotypic value if the proprety `set_phenotypes` 
+            is set with a single phenotype, otherwise a dictionary the phenotype as key and the phenotypic value as value.
+        
+        phenotypes (List[str]): 
+            Used to define the order of the phenotypes in the target tensor if several phenotypes are used.
+            In this case, should be the list used to set the proprety `set_phenotypes`.
+            This argument is unused if the proprety `set_phenotypes` is set with a single phenotype. 
+          
     Returns:
-        torch.Tensor: the resulting tensor (of shape (y,x)).
+        Tuple[torch.Tensor]: 
+            The formatted batch with the first element containing the tensor of the input feature 
+            and the second element the tensor of the target values.
     """
-
+    x = []
+    y = []
+    
     # If the type of the target isn't a dict, just seperate the data of the target and return
     if type(batch[0][1]) != dict:
-        x = []
-        y = []
         for item in batch:
             x.append(item[0])
             y.append(item[1])
         # Convert x and y to np.array to speed up computations
         return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
-
-    x = []
-    y = []
-    for item in batch:
-        x.append(torch.Tensor(item[0]))
-        y.append(torch.Tensor([item[1][key] for key in phenotypes]))
     
-    return torch.stack(x), torch.stack(y)
+    else: 
+        for item in batch:
+            x.append(torch.Tensor(item[0]))
+            y.append(torch.Tensor([item[1][key] for key in phenotypes]))
+        
+        return torch.stack(x), torch.stack(y)
 
 def train_DL_model(
         model: Module,
@@ -103,7 +132,7 @@ def train_DL_model(
         train_dataloader: DataLoader,
         validation_dataloader: DataLoader,
         n_epoch: int,
-        criterion = L1Loss(),
+        criterion: Module = L1Loss(),
         scheduler: Union[None, LRScheduler] = None,
         phenotype: Union[str, None] = None,
         log_wandb: bool = True,
@@ -114,32 +143,80 @@ def train_DL_model(
         early_stop_n_epoch: int = 10,
         display_evolution_threshold: float = 2.0,
         model_save_path: Union[str, None] = None, 
-    ):
-    """Define a basic universal training function that support wandb logging. Evaluation on the validation dataset is performed every epoch.
+    ) -> None:
+    """Define a basic universal training function that support wandb logging. 
+    Evaluation on the validation dataset is performed every epoch.
     Models should be transferred to gpu at initialisation in order to allow network partionning on several GPU.
-    Models input are initially send to cuda:0 and model output is expected on cuda:0. The function as a automatic early stop if the train_loss
-    is below 0.01 for 10 epochs (ie the model as completely fit the train set and no changes are expected)
+    Models input are initially send to cuda:0 and model output is expected on cuda:0. 
+    The function as a automatic early stop if the train_loss is below 0.01 for 10 epochs 
+    (ie the model as completely fit the train set and no changes are expected)
 
     Args:
         model (Module): The model to train.
-        optimizer (Optimizer or functool.partial): Optimizer used to train the given model. \
-        A partial optimizer (without the model parameters) can be used instead of the already instansitated object.
-        train_dataloader (DataLoader): Dataloader containing the training dataset.
-        validation_dataloader (DataLoader): Dataloader containing the training dataset.
-        n_epoch (int): number of epoch to train the model
-        criterion (_type_, optional): Function to use as loss function. Defaults to L1Loss().
-        scheduler (None | LRScheduler, optional): LR scheduler object to perform lr Scheduling. Defaults to None.
-        phenotype (str | None, optional): String containing the current phenotype studied. This is only used for logging. Defaults to None.
-        log_wandb (bool, optional): If true, the loss and correlation are logged into wandb, otherwise they are printed after every epoch. Defaults to True.
-        initial_phenotype (np.array | None, optionnal): If the model compute a residual phenotype, you can provide the basis to see the evolution of correlation of the final prediction. Defaults to None.
-        validation_mean (float, optional): mean of the phenotypes from the validation set that was substratcted when normalizing the validation phenotype. \
-        This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 0.
-        validation_std (float, optional): standard deviation of the phenotypes from the validation set that was used as denominator when normalizing the validation phenotype. \
-        This value will be added back to the validation target and the model prediction on the validation set to have comparable validation loss. Defaults to 1.
-        early_stop_threshold (float, optional): percentage of the maximum correlation below the early stop counter stop incrementing. This value should stay between 0 and 1 included. Defaults to 0.
-        early_stop_n_epoch (int, optional): number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. Defaults to 10.
-        display_evolution_threshold (float, optional): If the modification in correlation previous_correlation - correlation is greater than this value times the max_correlation, display the graph of the two computation in order to see this evolution. Defaults to 2.0 (ie no logging).
-        model_save_path (str, optional): Path to the file where to store the best model on the validation set (the extension .pth will automatically be added). If None, the model isn't saved. Defaults to None.
+
+        optimizer (Optimizer or functool.partial): 
+            Optimizer used to train the given model.
+            A partial optimizer (where the model parameters are the only missing parameter) 
+            can be used instead of the already instansitated object.
+        
+        train_dataloader (DataLoader): 
+            Dataloader containing the training dataset.
+
+        validation_dataloader (DataLoader): 
+            Dataloader containing the training dataset.
+
+        n_epoch (int): 
+            number of epoch to train the model
+
+        criterion (Module, optional): 
+            Pytorch class defining the loss function to be used. Defaults to L1Loss().
+
+        scheduler (None | LRScheduler, optional): 
+            Pytorch LRScheduler object to perform learning rate Scheduling. Defaults to None.
+        
+        phenotype (str | None, optional): 
+            String containing the current phenotype studied. 
+            This argument is only used for logging purposes. Defaults to None.
+
+        log_wandb (bool, optional): 
+            If true, the loss and correlation are logged into wandb, 
+            otherwise they are printed after every epoch. Defaults to True.
+
+        initial_phenotype (np.array | None, optionnal): 
+            If the model compute a residual phenotype, 
+            you can provide the basis to see the evolution of correlation of the final prediction. 
+            Defaults to None.
+
+        validation_mean (float, optional): 
+            mean of the phenotypes from the validation set that was substratcted when normalizing the validation phenotype.
+            This value will be added back to the validation target and the model prediction on the validation set 
+            to be able to compare validation loss when non centered models. 
+            Defaults to 0 (no recentering).
+        
+        validation_std (float, optional): 
+            standard deviation of the phenotypes from the validation set 
+            that was used as denominator when normalizing the validation phenotype. 
+            This value will be added back to the validation target and the model prediction 
+            on the validation set to be able to compare validation loss when non centered models. 
+            Defaults to 1 (no standarization).
+
+        early_stop_threshold (float, optional):
+             percentage of the maximum correlation below the early stop counter stop incrementing. 
+             This value should stay between 0 and 1 included. Defaults to 0.
+            
+        early_stop_n_epoch (int, optional): 
+            number of consecutive epoch where the correlation is below early_stop_threshold*max_correlation. 
+            Defaults to 10.
+        
+        display_evolution_threshold (float, optional): 
+            If the modification in correlation previous_correlation - correlation is greater than 
+            this value times the max_correlation, display the graph of the two computation 
+            in order to see this evolution. Defaults to 2.0 (ie no logging).
+
+        model_save_path (str, optional): 
+            Path to the file where to store the best model on the validation set 
+            (the extension .pth will automatically be added). 
+            If None, the model isn't saved. Defaults to None.
     """
     if early_stop_threshold > 1 and early_stop_threshold < 0:
         raise Exception("Early stop threshold should be between 0 and 1")
@@ -363,7 +440,7 @@ def train_DL_model(
         torch.save(best_model_state, model_save_path + ".pth")
 
 
-def print_elapsed_time(start_time: float):
+def print_elapsed_time(start_time: float) -> str:
     """Returns elapsed time following the format d h m s
 
     Args:
@@ -377,21 +454,23 @@ def print_elapsed_time(start_time: float):
     minutes, secondes = divmod(rem, 60)
     return f"{int(days)}d {int(hours)}h {int(minutes)}m {int(secondes)}s"
 
-def get_partial_optimizer(optimizer_name: str, **kwargs):
-    """Dummy function use to produced a partial optimizer from a hydra config file. This solution enable to consider \
-    the optimization class not as a string (due to hydra) but as the function to call
+def get_partial_optimizer(optimizer_name: str, **kwargs) -> functools.partial:
+    """Dummy function use to produced a partial optimizer from a hydra config file. 
+    This solution enable to consider 
+    the optimization class not as a string (due to hydra) but as the function to be called.
 
     Args:
-        optimizer_name (str): Name of the optimizer to use (should be a class of torch.optim)
+        optimizer_name (str): Name of the optimizer to use (should be a optimizer class of torch.optim)
 
     Returns:
         functools.partial: a partial function waiting the model parameters to yield the torch optimizer.
     """
     return functools.partial(getattr(torch.optim, optimizer_name), **kwargs)
 
-def get_partial_scheduler(scheduler_name: str, **kwargs):
-    """Dummy function use to produced a partial scheduler from a hydra config file. This solution enable to consider \
-    the optimization class not as a string (due to hydra) but as the function to call
+def get_partial_scheduler(scheduler_name: str, **kwargs) -> functools.partial:
+    """Dummy function use to produced a partial scheduler from a hydra config file. 
+    This solution enable to consider 
+    the optimization class not as a string (due to hydra) but as the function to be called.
 
     Args:
         scheduler_name (str): Name of the optimizer to use (should be a class of torch.optim)
@@ -404,24 +483,38 @@ def get_partial_scheduler(scheduler_name: str, **kwargs):
 def train_from_config(
         phenotype: Union[str, list],
         run_cfg: DictConfig,
-        train_dataset = None,
-        validation_dataset = None,
-        model = None,
+        train_dataset: Dataset = None,
+        validation_dataset: Dataset = None,
+        model: Module = None,
         model_save_path: Union[str, None] = None,
         **kwargs):
     """Launch the training based on the parameters from the hydra config files. 
-    Custom datasets and model can be provided with the optionals arguments (In the case they depend they have an argument that depend on the data for example).
+    Custom datasets and model can be provided with the optionals arguments 
+    (In the case they depend they have an argument that depend on the data for example).
 
     Args:
-        phenotype (str): phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
-        run_cfg (DictConfig): DictConfig object build from the hydra config. This object should be the output of the `hydra.compose` function with the default config file.
-        train_dataset (optional): the ready to use train dataset object to use. If None, a default one will be created from the config. Defaults to None.
-        validation_dataset (optional): the ready to use validation dataset object to use. If None, a default one will be created from the config. Defaults to None.
-        model (optional): the model object to train. If None, a default one will be created from the config. Defaults to None.
-        model_save_path (str, optional): path where to save the resulting model (the extension .pth will automatically be added). Default to None (no saving).
+        phenotype (str): 
+            phenotype on which the model should be trained on (should be a key of SNPmarkersDataset.phenotypes).
         
-    Raises:
-        Exception: in case of unknown dataset class
+        run_cfg (DictConfig): 
+            DictConfig object build from the hydra config. 
+            This object should be the output of the `hydra.compose` function based on the arguments of the script.
+
+        train_dataset (Dataset, optional): 
+            the ready to use train dataset object to use. 
+            If None, a default one will be created from the config. Defaults to None.
+        
+        validation_dataset (Dataset, optional): 
+            the ready to use validation dataset object to use. 
+            If None, a default one will be created from the config. Defaults to None.
+
+        model (Module, optional): 
+            the model object to train. 
+            If None, a default one will be created from the config. Defaults to None.
+
+        model_save_path (str, optional): 
+            path where to save the resulting model 
+            (the extension .pth will automatically be added). Default to None (no saving).
     """
 
     if model == None:
@@ -458,8 +551,8 @@ def list_of_strings(arg):
     """Function defining a custom class for argument parsing."""
     return arg.split(',')
 
-def get_clean_config(run_cfg: DictConfig):
-    """Create a clean dictionary can only contain useful info on the current run based on the hydra config.
+def get_clean_config(run_cfg: DictConfig) -> dict:
+    """Create a clean dictionary can only contain useful configuration infomations on the current run based on the given hydra config.
 
     Args:
         run_cfg (DictConfig): hydra config file fetch using the compose API.
@@ -491,8 +584,8 @@ def results_1_dimentions(array1:      list,
                          x_label:     str,
                          y1_label:    str,
                          y2_label:    str,
-                         vertical:    bool = False):
-    """Display the evolution of two given metrics given a parameter.
+                         vertical:    bool = False) -> None:
+    """Display the evolution of two given metrics given a single parameter.
 
     Args:
         array1 (list): first letric data array
@@ -532,7 +625,7 @@ def results_1_dimentions(array1:      list,
 def compare_correlation( prediction_before:     list,
                          prediction_after:      list, 
                          target:                list,
-                         epoch:                 int):
+                         epoch:                 int) -> None:
     """Display the comparaison of two sucessive output of the model.
 
     Args:
@@ -575,7 +668,12 @@ def compare_correlation( prediction_before:     list,
     data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
     return data
 
-def get_default_config_parser():
+def get_default_config_parser() -> ArgumentParser:
+    """ Create a default argument parser with the appropriate format for the scripts
+
+    Returns:
+        ArgumentParser: The ready to use default argument parset.
+    """
     parser = ArgumentParser()
 
     parser.add_argument("--model", "-m", required=True, type=str, help="Name of the file (without file extention) to define the model to train (should be found in configs/model_config)")
@@ -588,7 +686,19 @@ def get_default_config_parser():
 
     return parser
 
-def convert_categorical_to_frequency(data, path = "gptranformer_embedding_data.json"):
+def convert_categorical_to_frequency(data: List[List[int]], path = "../Data/gptranformer_embedding_data.json") -> np.ndarray:
+    """Function that convert the catergorical encoding to the frequency one based on the precomputed statistics.
+
+    Args:
+        data (List[List[int]]):
+            The data to convert. The first dimention defines the number of individuals. For every individual, the SNP markers should be provided. 
+        path (str, optional): 
+            Path to the precomputed statistics. 
+            Defaults to "../Data/gptranformer_embedding_data.json".
+
+    Returns:
+        np.ndarray: Converted dataset for categorical to frequency.
+    """
     with open(path,"r") as f:
         freq_data = json.load(f)
     

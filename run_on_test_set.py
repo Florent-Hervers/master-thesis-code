@@ -14,6 +14,11 @@ from xgboost import XGBRegressor
 
 
 def main():
+    """ 
+    Evaluate the models trained with the sklearn interface on the test set with their best hyperparameters.
+    For XGBoost and Random Forest, performs five runs with different seed to evaluate the variance of the model.
+    """
+
     NB_RUNS = 5
     suppported_models = [
         "Ridge",
@@ -123,10 +128,6 @@ def main():
                                      random_state=2307 + i)
 
             elif model_name == "SVM":
-                # Skip phenotypes already evaluated
-                if phenotype in  ["ep_res", "de_res", "FESSEp_res"]:
-                    break
-                
                 # There is no point to run several times this model
                 if i >= 1:
                     break
