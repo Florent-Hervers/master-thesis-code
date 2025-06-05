@@ -7,18 +7,18 @@ To set up an environment to run the files of this repo. You can simply run the i
 ## Repository structure
 
 ### Folders:
- - **Analysis notebooks:** Contain notebooks used to visualize the results obtained by the different models. Note that I use [Weigth & biases](https://wandb.ai/flo230702/TFE/overview) to collect and visualize the results from models trained using Pytorch.
- - **Configs**: Contain the hydra configuration files used during the experiments. More information about the structure of the folder can be found in the README found in this folder.
- - **deepGBULP:** Contain the source code used for the paper [deepGBLUP: Integration of deep learning and GBLUP for accurate genomic prediction](https://gsejournal.biomedcentral.com/articles/10.1186/s12711-023-00825-y), modified to fit the project. The original source code can be found [here](https://github.com/gywns6287/deepGBLUP).
- - **GBLUP**: Folder containing all output of the GBLUP computation. The software used is [ldak6](https://dougspeed.com/downloads2/). The script used to perform the computations can be found in `GBLUP.sh`. (Note that only the relevant files used in the analysis are stored here as some generated files are heavy and not used).
- - **LassoNet**: Contain the source code for the LassoNet used in the paper [Tabular deep learning: a comparative study
+- **Analysis notebooks:** Contain notebooks used to visualize the results obtained by the different models. Note that I use [Weigth & biases](https://wandb.ai/flo230702/TFE/overview) to collect and visualize the results from models trained using Pytorch.
+- **Configs**: Contain the hydra configuration files used during the experiments. More information about the structure of the folder can be found in the README found in this folder.
+- **deepGBULP:** Contain the source code used for the paper [deepGBLUP: Integration of deep learning and GBLUP for accurate genomic prediction](https://gsejournal.biomedcentral.com/articles/10.1186/s12711-023-00825-y), modified to fit the project. The original source code can be found [here](https://github.com/gywns6287/deepGBLUP).
+- **GBLUP**: Folder containing all output of the GBLUP computation. The software used is [ldak6](https://dougspeed.com/downloads2/). The script used to perform the computations can be found in `GBLUP.sh`. (Note that only the relevant files used in the analysis are stored here as some generated files are heavy and not used).
+- **LassoNet**: Contain the source code for the LassoNet used in the paper [Tabular deep learning: a comparative study
 applied to multi-task genome-wide prediction](https://pubmed.ncbi.nlm.nih.gov/39367318/), modified to fit the project. The original source code can be found [here](https://github.com/angelYHF/Tabular-deep-learning-for-GWP). The LassoNet implementation used for this paper is the one used in the paper [introducing the LassoNet architecture](https://arxiv.org/abs/1907.12207). The original repository of this code can be found [here](https://github.com/lasso-net/lassonet/blob/master/lassonet/interfaces.py)
- - **Models**: This folder contains the PyTorch implementation of the different models used in this thesis.
- - **Old files**: This folder contains files used during the thesis but that become obsolete after some refactoring of the repository/codebase.
- - **Results**: This folder contains all files that contain the results not saved in the weight and biases.
- - **Scripts:** This folder contains all Slurm scripts used to run the scripts. These files provide information about the hardware resources used for every experiment and provide examples to execute the Python scripts. The scripts containing the prefix `train_final` are the ones used to train the best configuration. 
+- **Models**: This folder contains the PyTorch implementation of the different models used in this thesis.
+- **Old files**: This folder contains files used during the thesis but that become obsolete after some refactoring of the repository/codebase.
+- **Results**: This folder contains all files that contain the results not saved in the weight and biases.
+- **Scripts:** This folder contains all Slurm scripts used to run the scripts. These files provide information about the hardware resources used for every experiment and provide examples to execute the Python scripts. The scripts containing the prefix `train_final` are the ones used to train the best configuration. 
 
- ### File Description:
+### File Description:
 The main files will be described here, a docstring is available for every less important script to explain the purpose of the file. A majority of the scripts require arguments when called, an explanation of all arguments can be found by executing the script with the `-h` flag.
 - **dataset.py**: implements the Python classes representing the dataset that is usable by ML models and by pytorch deep learning models.
 - **GPTransformer.py**: implements the different tokenization methods described in the paper and starts the training of the model based on the given configuration. 
