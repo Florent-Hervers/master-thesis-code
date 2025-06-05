@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Script used to execute the GBLUP model with the ldak software
 
 # ---------------------------------------------------------------------------------------
 #                               Parameters defintions

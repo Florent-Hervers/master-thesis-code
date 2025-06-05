@@ -37,7 +37,8 @@ def compute_gptransformer_embedding_data(data_path: str, output_path: str) -> No
 
 if __name__ == "__main__":
     """
-    Launch the generation of the tokenisation of the sequence of SNP markers
+    Launch the precomputing of sequences statistics used for the frequency encoding of GPTransformer models
+    and save the results in a new file
     """
     parser = ArgumentParser()
     parser.add_argument(
