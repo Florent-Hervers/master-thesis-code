@@ -17,12 +17,21 @@ conda activate TFE
 # Run your Python script
 cd ~/TFE/Code/
 
-model="ShallowMLP"
-
-for phenotype in "ep_res" # "de_res" "FESSEp_res" "FESSEa_res" "size_res" "MUSC_res"
-do 
-    for dataset in "200" "500" "1k" "2k" "5k" "10k"
-    do
-        python -u train.py -m Test_${model}_$phenotype -d SNP_markers_$dataset -p $phenotype -w "Try $model with $dataset training examples on $phenotype" -f basic_train_function -o "Dataset_models/${dataset}dataset_$model_$phenotype"
+for model in "ResNet" "ShallowMLP"
+do
+    for phenotype in "ep_res" 
+    do 
+        for dataset in "200" "500" "1k" "2k" "5k" "10k"    
+        do
+            if [ "$model" = "ShallowMLP" ]; then
+                train_function="basic_train_function"
+            elif [ "$model" = "ResNet" ]; then
+                train_function="train_AdamW_LinearLR"
+            else
+                echo "Erreur : modèle inconnu '$model'."
+                exit 1
+            fi
+            python -u train.py -m Test_${model}_$phenotype -d SNP_markers_$dataset -p $phenotype -w "Try $model with $dataset training examples on $phenotype" -f $train_function -o "Dataset_models/${dataset}dataset_${model}_$phenotype"
+        done
     done
 done

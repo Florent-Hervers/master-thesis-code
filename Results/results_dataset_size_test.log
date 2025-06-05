@@ -1,0 +1,104 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+///////////////////////////////// 200dataset_ResNet_ep_res /////////////////////////////////
+ResNet results trained on the 200dataset on the validation set for the phenotype ep_res:
+    - MAE: 2.417936247929752
+    - Correlation: 0.3028526009846591
+ResNet results trained on the 200dataset on the test set for the phenotype ep_res:
+    - MAE: 2.4740446089914307
+    - Correlation: 0.26080959131762416
+///////////////////////////////// 500dataset_ResNet_ep_res /////////////////////////////////
+ResNet results trained on the 500dataset on the validation set for the phenotype ep_res:
+    - MAE: 1.3725241255970149
+    - Correlation: 0.31128748893527897
+ResNet results trained on the 500dataset on the test set for the phenotype ep_res:
+    - MAE: 1.3519018842588835
+    - Correlation: 0.2715462210111411
+///////////////////////////////// 1kdataset_ResNet_ep_res /////////////////////////////////
+ResNet results trained on the 1kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.3241602292767762
+    - Correlation: 0.35234590660906806
+ResNet results trained on the 1kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.3087050995725709
+    - Correlation: 0.31294498700849055
+///////////////////////////////// 2kdataset_ResNet_ep_res /////////////////////////////////
+ResNet results trained on the 2kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.3043390523209197
+    - Correlation: 0.3608594332302795
+ResNet results trained on the 2kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.2884108558152507
+    - Correlation: 0.3460253063651
+///////////////////////////////// 5kdataset_ResNet_ep_res /////////////////////////////////
+ResNet results trained on the 5kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.2961681246911512
+    - Correlation: 0.3973719090006241
+ResNet results trained on the 5kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.2837441886760161
+    - Correlation: 0.37771659995476026
+///////////////////////////////// 10kdataset_ResNet_ep_res /////////////////////////////////
+ResNet results trained on the 10kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.2974252711104897
+    - Correlation: 0.4152292224235604
+ResNet results trained on the 10kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.2762591314866276
+    - Correlation: 0.4034731635530794
+///////////////////////////////// 200dataset_ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results trained on the 200dataset on the validation set for the phenotype ep_res:
+    - MAE: 18.498502336407064
+    - Correlation: 0.1385353287381452
+ShallowMLP results trained on the 200dataset on the test set for the phenotype ep_res:
+    - MAE: 18.368618715145644
+    - Correlation: 0.09304113076581244
+///////////////////////////////// 500dataset_ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results trained on the 500dataset on the validation set for the phenotype ep_res:
+    - MAE: 1.4282329807330818
+    - Correlation: 0.3401535641336671
+ShallowMLP results trained on the 500dataset on the test set for the phenotype ep_res:
+    - MAE: 1.407408046415383
+    - Correlation: 0.3087424247930582
+///////////////////////////////// 1kdataset_ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results trained on the 1kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.3029875092173517
+    - Correlation: 0.36819225209940487
+ShallowMLP results trained on the 1kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.2954871916411392
+    - Correlation: 0.34430439131473345
+///////////////////////////////// 2kdataset_ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results trained on the 2kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.3428322708157525
+    - Correlation: 0.3965847251165808
+ShallowMLP results trained on the 2kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.3223636988415872
+    - Correlation: 0.3782353493991595
+///////////////////////////////// 5kdataset_ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results trained on the 5kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.3272018126663119
+    - Correlation: 0.4263848408344121
+ShallowMLP results trained on the 5kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.2985848284453247
+    - Correlation: 0.42619496217111574
+///////////////////////////////// 10kdataset_ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results trained on the 10kdataset on the validation set for the phenotype ep_res:
+    - MAE: 1.2549950111823602
+    - Correlation: 0.4418862140101611
+ShallowMLP results trained on the 10kdataset on the test set for the phenotype ep_res:
+    - MAE: 1.2466003478230743
+    - Correlation: 0.4342195461802795
+Evaluation finished sucessfully.
