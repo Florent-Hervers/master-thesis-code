@@ -1,11 +1,11 @@
 
-from omegaconf import OmegaConf
-from sklearn.linear_model import Ridge
 import torch
 import numpy as np
 import pandas as pd
 
 from os import listdir
+from omegaconf import OmegaConf
+from sklearn.linear_model import Ridge
 from hydra import compose, initialize
 from hydra.utils import instantiate
 from argparse import ArgumentParser
@@ -19,6 +19,23 @@ from sklearn.feature_selection import mutual_info_regression
 from functools import partial
 
 def evaluate_models(checkpoint_directory: str):
+    """ Evaluate the models on the validation and the test set.
+    The filename of all models should be structured like this: 
+    - GPTransformer2_\<tokenization\>_\<phenotype\>.pth for GPTransformer2 models.
+    - \<model_name\>_\<phenotype\>.pth otherwise. 
+
+    The name of configuration file should respect the following structure: 
+    - Test_GPTransformer2_\<tokenization\> for GPTransformer2 models.
+    - Test_\<model_name\>_all for the multi-trait regression models
+    - Test_\<model_name\>_\<phenotype\> otherwise.
+
+    In case of error, the error will be printed and the next model will be evaluated. 
+    At the end, all models that failed will be indicated to help debugging.
+
+    Args:
+        checkpoint_directory (str): The path to the directory where the models are stored
+    """
+
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     torch.cuda.empty_cache()
     non_processed_files = []
@@ -33,14 +50,7 @@ def evaluate_models(checkpoint_directory: str):
         else:
             print(f"WARNING: Bad structured filename for {model_file}")
             continue
-            
-        
-        # Only to test that the script works as intended
-        if model_name == "GPTransformer2":
-            pass
-        else:
-            continue
-        
+
         print(f"///////////////////////////////// {model_filename} /////////////////////////////////")
         
         try:            

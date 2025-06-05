@@ -1,0 +1,489 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+///////////////////////////////// GPTransformer_ep_res /////////////////////////////////
+GPTransformer results on the validation set for the phenotype ep_res:
+    - MAE: 1.2475014925003052
+    - Correlation: 0.4527248740196228
+GPTransformer results on the test set for the phenotype ep_res:
+    - MAE: 1.262150764465332
+    - Correlation: 0.4152795970439911
+///////////////////////////////// GPTransformer_de_res /////////////////////////////////
+GPTransformer results on the validation set for the phenotype de_res:
+    - MAE: 2.705246686935425
+    - Correlation: 0.3986130952835083
+GPTransformer results on the test set for the phenotype de_res:
+    - MAE: 2.5891263484954834
+    - Correlation: 0.3696960210800171
+///////////////////////////////// GPTransformer_FESSEp_res /////////////////////////////////
+GPTransformer results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.0395221710205078
+    - Correlation: 0.45121118426322937
+GPTransformer results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.0880731344223022
+    - Correlation: 0.45280322432518005
+///////////////////////////////// GPTransformer_FESSEa_res /////////////////////////////////
+GPTransformer results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.0698415040969849
+    - Correlation: 0.4776662290096283
+GPTransformer results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.0596764087677002
+    - Correlation: 0.452448308467865
+///////////////////////////////// GPTransformer_size_res /////////////////////////////////
+GPTransformer results on the validation set for the phenotype size_res:
+    - MAE: 5.9504828453063965
+    - Correlation: 0.31055209040641785
+GPTransformer results on the test set for the phenotype size_res:
+    - MAE: 5.893749713897705
+    - Correlation: 0.3121652901172638
+///////////////////////////////// GPTransformer_MUSC_res /////////////////////////////////
+GPTransformer results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.1948333978652954
+    - Correlation: 0.4930303990840912
+GPTransformer results on the test set for the phenotype MUSC_res:
+    - MAE: 1.187270164489746
+    - Correlation: 0.44971293210983276
+///////////////////////////////// ShallowMLP_ep_res /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype ep_res:
+    - MAE: 1.287546011783406
+    - Correlation: 0.46945782027507177
+ShallowMLP results on the test set for the phenotype ep_res:
+    - MAE: 1.2648626269423089
+    - Correlation: 0.4770408128494284
+///////////////////////////////// GPTransformer2_4mer_ep_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype ep_res:
+    - MAE: 1.275670051574707
+    - Correlation: 0.371906578540802
+GPTransformer2 results on the test set for the phenotype ep_res:
+    - MAE: 1.2794209718704224
+    - Correlation: 0.39870238304138184
+///////////////////////////////// ShallowMLP_de_res /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype de_res:
+    - MAE: 2.580418305807263
+    - Correlation: 0.46083475127793755
+ShallowMLP results on the test set for the phenotype de_res:
+    - MAE: 2.445045324385286
+    - Correlation: 0.4640729113227285
+///////////////////////////////// ShallowMLP_FESSEp_res /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.0007945457479654
+    - Correlation: 0.49469648211211603
+ShallowMLP results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.0598910701173356
+    - Correlation: 0.49556125785457367
+///////////////////////////////// ShallowMLP_FESSEa_res /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.0685101642028987
+    - Correlation: 0.5190055405868595
+ShallowMLP results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.1054358789744752
+    - Correlation: 0.4983143085318104
+///////////////////////////////// ShallowMLP_size_res /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype size_res:
+    - MAE: 5.8858846070356075
+    - Correlation: 0.39985918321951486
+ShallowMLP results on the test set for the phenotype size_res:
+    - MAE: 5.967932690072337
+    - Correlation: 0.4245549674127152
+///////////////////////////////// DeepMLP_ep_res /////////////////////////////////
+DeepMLP results on the validation set for the phenotype ep_res:
+    - MAE: 1.250851315364927
+    - Correlation: 0.46808446789777214
+DeepMLP results on the test set for the phenotype ep_res:
+    - MAE: 1.2358673966566034
+    - Correlation: 0.46355310513130116
+///////////////////////////////// DeepMLP_de_res /////////////////////////////////
+DeepMLP results on the validation set for the phenotype de_res:
+    - MAE: 2.9884006821254046
+    - Correlation: 0.449782515488933
+DeepMLP results on the test set for the phenotype de_res:
+    - MAE: 2.8011970862153737
+    - Correlation: 0.4595409457580012
+///////////////////////////////// DeepMLP_FESSEp_res /////////////////////////////////
+DeepMLP results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.049691675141275
+    - Correlation: 0.49067605307466233
+DeepMLP results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.088221365643255
+    - Correlation: 0.5004398762571461
+///////////////////////////////// GPTransformer2_4mer_de_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype de_res:
+    - MAE: 2.6949238777160645
+    - Correlation: 0.34443020820617676
+GPTransformer2 results on the test set for the phenotype de_res:
+    - MAE: 2.7777786254882812
+    - Correlation: 0.3592841625213623
+///////////////////////////////// DeepMLP_FESSEa_res /////////////////////////////////
+DeepMLP results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.0307090662686305
+    - Correlation: 0.520233763340975
+DeepMLP results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.0605635966042597
+    - Correlation: 0.4931348553282177
+///////////////////////////////// DeepMLP_size_res /////////////////////////////////
+DeepMLP results on the validation set for the phenotype size_res:
+    - MAE: 5.623609935571881
+    - Correlation: 0.42588361069501646
+DeepMLP results on the test set for the phenotype size_res:
+    - MAE: 5.523952429547787
+    - Correlation: 0.4670274594234406
+///////////////////////////////// DeepMLP_MUSC_res /////////////////////////////////
+DeepMLP results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.1133404848886999
+    - Correlation: 0.5449212590361978
+DeepMLP results on the test set for the phenotype MUSC_res:
+    - MAE: 1.1143878423952889
+    - Correlation: 0.5069579504055122
+///////////////////////////////// GPTransformer2_4mer_FESSEp_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.234303593635559
+    - Correlation: 0.3622944951057434
+GPTransformer2 results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.2237132787704468
+    - Correlation: 0.373569518327713
+///////////////////////////////// GPTransformer2_4mer_FESSEa_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.220198392868042
+    - Correlation: 0.38275089859962463
+GPTransformer2 results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.1722428798675537
+    - Correlation: 0.42292913794517517
+///////////////////////////////// GPTransformer2_4mer_size_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype size_res:
+    - MAE: 5.899418830871582
+    - Correlation: 0.2976304590702057
+GPTransformer2 results on the test set for the phenotype size_res:
+    - MAE: 5.7243876457214355
+    - Correlation: 0.34531646966934204
+///////////////////////////////// GPTransformer2_4mer_MUSC_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.222422480583191
+    - Correlation: 0.41917139291763306
+GPTransformer2 results on the test set for the phenotype MUSC_res:
+    - MAE: 1.224380612373352
+    - Correlation: 0.4525585174560547
+///////////////////////////////// GPTransformer2_aug_ep_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype ep_res:
+    - MAE: 1.443820834159851
+    - Correlation: 0.34914979338645935
+GPTransformer2 results on the test set for the phenotype ep_res:
+    - MAE: 1.4323821067810059
+    - Correlation: 0.3818952143192291
+///////////////////////////////// ShallowMLP_all /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype ['ep_res', 'de_res', 'FESSEp_res', 'FESSEa_res']:
+    - MAE: [np.float32(1.2761276), np.float32(2.728754), np.float32(1.0446644), np.float32(1.0854175)]
+    - Correlation: [np.float32(0.48772708), np.float32(0.46092546), np.float32(0.4866889), np.float32(0.5177354)]
+ShallowMLP results on the test set for the phenotype ['ep_res', 'de_res', 'FESSEp_res', 'FESSEa_res']:
+    - MAE: [np.float32(1.2562311), np.float32(2.5588603), np.float32(1.0807632), np.float32(1.046069)]
+    - Correlation: [np.float32(0.48730057), np.float32(0.46427688), np.float32(0.50501704), np.float32(0.49842277)]
+///////////////////////////////// GPTransformer2_aug_de_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype de_res:
+    - MAE: 2.6437199115753174
+    - Correlation: 0.34097036719322205
+GPTransformer2 results on the test set for the phenotype de_res:
+    - MAE: 2.739345073699951
+    - Correlation: 0.3441022038459778
+///////////////////////////////// GPTransformer2_aug_FESSEp_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.2356432676315308
+    - Correlation: 0.40542373061180115
+GPTransformer2 results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.2255417108535767
+    - Correlation: 0.39337509870529175
+///////////////////////////////// GPTransformer2_aug_FESSEa_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.1611576080322266
+    - Correlation: 0.37966275215148926
+GPTransformer2 results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.1213105916976929
+    - Correlation: 0.4310506582260132
+///////////////////////////////// GPTransformer2_aug_size_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype size_res:
+    - MAE: 5.9023871421813965
+    - Correlation: 0.29233482480049133
+GPTransformer2 results on the test set for the phenotype size_res:
+    - MAE: 5.805812835693359
+    - Correlation: 0.3150269687175751
+///////////////////////////////// GPTransformer2_aug_MUSC_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.2961887121200562
+    - Correlation: 0.4022049605846405
+GPTransformer2 results on the test set for the phenotype MUSC_res:
+    - MAE: 1.3100429773330688
+    - Correlation: 0.45848846435546875
+///////////////////////////////// ShallowMLP_MUSC_res /////////////////////////////////
+ShallowMLP results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.1203722442401667
+    - Correlation: 0.5480870193348313
+ShallowMLP results on the test set for the phenotype MUSC_res:
+    - MAE: 1.124597031517397
+    - Correlation: 0.5161383113613544
+///////////////////////////////// ResNet_ep_res /////////////////////////////////
+ResNet results on the validation set for the phenotype ep_res:
+    - MAE: 1.3170780174711683
+    - Correlation: 0.4367681875845152
+ResNet results on the test set for the phenotype ep_res:
+    - MAE: 1.2886782996917383
+    - Correlation: 0.4346353254921149
+///////////////////////////////// ResNet_de_res /////////////////////////////////
+ResNet results on the validation set for the phenotype de_res:
+    - MAE: 2.5721746951637714
+    - Correlation: 0.4449950881134154
+ResNet results on the test set for the phenotype de_res:
+    - MAE: 2.483436150216397
+    - Correlation: 0.4265397296585997
+///////////////////////////////// ResNet_FESSEp_res /////////////////////////////////
+ResNet results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.0356514582168757
+    - Correlation: 0.44472450666875674
+ResNet results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.0774074237544
+    - Correlation: 0.47456187751072326
+///////////////////////////////// GPTransformer2_paper_ep_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype ep_res:
+    - MAE: 1.3072481155395508
+    - Correlation: 0.3258954882621765
+GPTransformer2 results on the test set for the phenotype ep_res:
+    - MAE: 1.314209222793579
+    - Correlation: 0.3547714352607727
+///////////////////////////////// ResNet_FESSEa_res /////////////////////////////////
+ResNet results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.0601274248837083
+    - Correlation: 0.4738669771902143
+ResNet results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.060631193159689
+    - Correlation: 0.45043304827581104
+///////////////////////////////// ResNet_size_res /////////////////////////////////
+ResNet results on the validation set for the phenotype size_res:
+    - MAE: 6.180570641116942
+    - Correlation: 0.39204379438329634
+ResNet results on the test set for the phenotype size_res:
+    - MAE: 6.05526723666849
+    - Correlation: 0.4370033037906197
+///////////////////////////////// LCLNN_ep_res /////////////////////////////////
+LCLNN results on the validation set for the phenotype ep_res:
+    - MAE: 1.699253371042177
+    - Correlation: 0.4736764407675946
+LCLNN results on the test set for the phenotype ep_res:
+    - MAE: 1.7047731476629553
+    - Correlation: 0.4643804685306446
+///////////////////////////////// GPTransformer2_paper_de_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype de_res:
+    - MAE: 2.6201350688934326
+    - Correlation: 0.30774402618408203
+GPTransformer2 results on the test set for the phenotype de_res:
+    - MAE: 2.6914730072021484
+    - Correlation: 0.3425717055797577
+///////////////////////////////// GPTransformer2_paper_FESSEp_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.1527670621871948
+    - Correlation: 0.3201116621494293
+GPTransformer2 results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.094186544418335
+    - Correlation: 0.31739550828933716
+///////////////////////////////// LCLNN_de_res /////////////////////////////////
+LCLNN results on the validation set for the phenotype de_res:
+    - MAE: 3.112914807384051
+    - Correlation: 0.4653745758329328
+LCLNN results on the test set for the phenotype de_res:
+    - MAE: 3.0846428624917026
+    - Correlation: 0.4696308957227049
+///////////////////////////////// GPTransformer2_paper_FESSEa_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.1355477571487427
+    - Correlation: 0.34506726264953613
+GPTransformer2 results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.1207033395767212
+    - Correlation: 0.369393527507782
+///////////////////////////////// GPTransformer2_paper_size_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype size_res:
+    - MAE: 6.7808332443237305
+    - Correlation: 0.21430067718029022
+GPTransformer2 results on the test set for the phenotype size_res:
+    - MAE: 6.704538345336914
+    - Correlation: 0.2442825585603714
+///////////////////////////////// LCLNN_FESSEa_res /////////////////////////////////
+LCLNN results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.0482517117715813
+    - Correlation: 0.525051034654108
+LCLNN results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.08520053957749
+    - Correlation: 0.4983700732432557
+///////////////////////////////// GPTransformer2_paper_MUSC_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.2093908786773682
+    - Correlation: 0.34987685084342957
+GPTransformer2 results on the test set for the phenotype MUSC_res:
+    - MAE: 1.2203176021575928
+    - Correlation: 0.4084712564945221
+///////////////////////////////// LCLNN_size_res /////////////////////////////////
+LCLNN results on the validation set for the phenotype size_res:
+    - MAE: 5.434607118181076
+    - Correlation: 0.42600997817798175
+LCLNN results on the test set for the phenotype size_res:
+    - MAE: 5.394125914018504
+    - Correlation: 0.4732805562558965
+///////////////////////////////// LCLNN_MUSC_res /////////////////////////////////
+LCLNN results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.367711634355778
+    - Correlation: 0.5413315078034882
+LCLNN results on the test set for the phenotype MUSC_res:
+    - MAE: 1.4042665330876698
+    - Correlation: 0.5053820992281232
+///////////////////////////////// GPTransformer2_2red_ep_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype ep_res:
+    - MAE: 1.27802312374115
+    - Correlation: 0.3682374358177185
+GPTransformer2 results on the test set for the phenotype ep_res:
+    - MAE: 1.2839348316192627
+    - Correlation: 0.39513733983039856
+///////////////////////////////// GPTransformer2_2red_de_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype de_res:
+    - MAE: 2.564807891845703
+    - Correlation: 0.3535843789577484
+GPTransformer2 results on the test set for the phenotype de_res:
+    - MAE: 2.6489346027374268
+    - Correlation: 0.38265594840049744
+///////////////////////////////// ResNet_MUSC_res /////////////////////////////////
+ResNet results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.1562475634445466
+    - Correlation: 0.5170075045708854
+ResNet results on the test set for the phenotype MUSC_res:
+    - MAE: 1.1552220919167502
+    - Correlation: 0.4714669457571953
+///////////////////////////////// GPTransformer2_2red_FESSEp_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.1459964513778687
+    - Correlation: 0.38780033588409424
+GPTransformer2 results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.07132887840271
+    - Correlation: 0.3895615339279175
+///////////////////////////////// ResGS_ep_res /////////////////////////////////
+ResGS results on the validation set for the phenotype ep_res:
+    - MAE: 1.2228096723556519
+    - Correlation: 0.48155394196510315
+ResGS results on the test set for the phenotype ep_res:
+    - MAE: 1.2089272737503052
+    - Correlation: 0.4818645715713501
+///////////////////////////////// GPTransformer2_2red_FESSEa_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.0913037061691284
+    - Correlation: 0.4028467833995819
+GPTransformer2 results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.076294183731079
+    - Correlation: 0.4262046813964844
+///////////////////////////////// ResGS_de_res /////////////////////////////////
+ResGS results on the validation set for the phenotype de_res:
+    - MAE: 2.556955337524414
+    - Correlation: 0.46793583035469055
+ResGS results on the test set for the phenotype de_res:
+    - MAE: 2.4086296558380127
+    - Correlation: 0.47723302245140076
+///////////////////////////////// LCLNN_FESSEp_res /////////////////////////////////
+LCLNN results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.2474305242389663
+    - Correlation: 0.49423999769501975
+LCLNN results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.3682035355094178
+    - Correlation: 0.5023714672687997
+///////////////////////////////// GPTransformer2_2red_size_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype size_res:
+    - MAE: 6.056996822357178
+    - Correlation: 0.3078565001487732
+GPTransformer2 results on the test set for the phenotype size_res:
+    - MAE: 5.868795394897461
+    - Correlation: 0.3453507721424103
+///////////////////////////////// ResGS_FESSEa_res /////////////////////////////////
+ResGS results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.023118257522583
+    - Correlation: 0.5304614305496216
+ResGS results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.015201210975647
+    - Correlation: 0.49724337458610535
+///////////////////////////////// ResGS_size_res /////////////////////////////////
+ResGS results on the validation set for the phenotype size_res:
+    - MAE: 5.361226558685303
+    - Correlation: 0.4512193202972412
+ResGS results on the test set for the phenotype size_res:
+    - MAE: 5.348701477050781
+    - Correlation: 0.49152737855911255
+///////////////////////////////// GPTransformer2_2red_MUSC_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.196249008178711
+    - Correlation: 0.4039045572280884
+GPTransformer2 results on the test set for the phenotype MUSC_res:
+    - MAE: 1.2207565307617188
+    - Correlation: 0.4357207119464874
+///////////////////////////////// GPTransformer2_red_ep_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype ep_res:
+    - MAE: 1.3245744705200195
+    - Correlation: 0.3132053315639496
+GPTransformer2 results on the test set for the phenotype ep_res:
+    - MAE: 1.3242558240890503
+    - Correlation: 0.3572033941745758
+///////////////////////////////// GPTransformer2_red_de_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype de_res:
+    - MAE: 2.6121087074279785
+    - Correlation: 0.30368033051490784
+GPTransformer2 results on the test set for the phenotype de_res:
+    - MAE: 2.685051441192627
+    - Correlation: 0.3405808210372925
+///////////////////////////////// GPTransformer2_red_FESSEp_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.2089812755584717
+    - Correlation: 0.32459262013435364
+GPTransformer2 results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.104722499847412
+    - Correlation: 0.3509777784347534
+///////////////////////////////// GPTransformer2_red_FESSEa_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype FESSEa_res:
+    - MAE: 1.1238501071929932
+    - Correlation: 0.33383870124816895
+GPTransformer2 results on the test set for the phenotype FESSEa_res:
+    - MAE: 1.1520931720733643
+    - Correlation: 0.36996325850486755
+///////////////////////////////// GPTransformer2_red_size_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype size_res:
+    - MAE: 6.023489952087402
+    - Correlation: 0.22942662239074707
+GPTransformer2 results on the test set for the phenotype size_res:
+    - MAE: 5.949132919311523
+    - Correlation: 0.23293223977088928
+///////////////////////////////// GPTransformer2_red_MUSC_res /////////////////////////////////
+GPTransformer2 results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.2395201921463013
+    - Correlation: 0.3424121141433716
+GPTransformer2 results on the test set for the phenotype MUSC_res:
+    - MAE: 1.2379093170166016
+    - Correlation: 0.4059186577796936
+///////////////////////////////// ResGS_FESSEp_res /////////////////////////////////
+ResGS results on the validation set for the phenotype FESSEp_res:
+    - MAE: 1.0106178522109985
+    - Correlation: 0.5015823841094971
+ResGS results on the test set for the phenotype FESSEp_res:
+    - MAE: 1.0572134256362915
+    - Correlation: 0.5051509737968445
+///////////////////////////////// ResGS_MUSC_res /////////////////////////////////
+ResGS results on the validation set for the phenotype MUSC_res:
+    - MAE: 1.1119964122772217
+    - Correlation: 0.5519684553146362
+ResGS results on the test set for the phenotype MUSC_res:
+    - MAE: 1.1046968698501587
+    - Correlation: 0.524872899055481
+Evaluation finished sucessfully.
