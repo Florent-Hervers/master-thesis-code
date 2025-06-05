@@ -5,10 +5,13 @@ from argparse import ArgumentParser
 
 if __name__ == "__main__":
     """Create a csv compatible file where the data is tokenize by the given size (token_size argument).
-    The bed_path argument must be the path to the source bed file and the output will be stored in {output_path}_{vocab_size}_{token_size}.csv.
+    The bed_path argument must be the path to the source bed file 
+    and the output will be stored in {output_path}_{vocab_size}_{token_size}.csv.
 
     Raises:
-        Exception: If an error occured, one of the genotype has an unknown value or the sequences isn't divisible by the token size or the vocab size isn't supported.
+        Exception: 
+            If an error occured, one of the genotype has an unknown value or 
+            the sequences isn't divisible by the token size or the vocab size isn't supported.
     """
     parser = ArgumentParser()
 

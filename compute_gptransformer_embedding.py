@@ -4,14 +4,19 @@ import numpy as np
 from argparse import ArgumentParser
 from bed_reader import open_bed
 
-def compute_gptransformer_embedding_data(data_path, output_path):
-    """ Generate the p and q (see paper https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.761402/full) \
-        value of for every marker of the given bed file. Output the results in a json file to avoid redundant computations
+def compute_gptransformer_embedding_data(data_path: str, output_path: str) -> None:
+    """ Generate the p and q 
+    (see paper https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.761402/full) 
+    value of for every marker of the given bed file. Output the results in a json file to avoid redundant computations
 
     Args:
-        data_path (str): Path to the bed file to process
-        output_path (str): Path of the file generating the output (must include the filename and extension). 
-        Every markers index is a key. For every key, a dictonary with keys ("p", "q") is available with corresponding values.
+        data_path (str): 
+            Path to the bed file to process
+
+        output_path (str): 
+            Path of the file generating the output (must include the filename and extension). 
+            Every markers index is a key. 
+            For every key, a dictonary with keys ("p", "q") is available with corresponding values.
     """
     bed_file_data = np.array(open_bed(data_path).read(dtype="int8", num_threads= 8))
 
@@ -31,6 +36,9 @@ def compute_gptransformer_embedding_data(data_path, output_path):
         json.dump(dict(results), f)
 
 if __name__ == "__main__":
+    """
+    Launch the generation of the tokenisation of the sequence of SNP markers
+    """
     parser = ArgumentParser()
     parser.add_argument(
         "-d",

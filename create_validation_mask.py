@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
 
-import sys
-import os
-sys.path.append(os.path.abspath('../Code/'))
 from dataset import SNPmarkersDataset
 
 if __name__ == "__main__":
+    """
+    Create a new file where the validation samples are also for the GBLUP
+    """
     df = pd.read_csv("../Data/BBBDL_pheno_2023bbb_0twins_6traits_mask_processed.csv", index_col = 1)
     validation_dataset = SNPmarkersDataset(mode = "validation")
 
