@@ -6,6 +6,10 @@ deepGBLUP/outputs/
 GBLUP/*.*
 GBLUP/*/*.*
 !GBLUP/*/*.pred
+Test_smaller_Datasets_GBLUP/*.*
+Test_smaller_Datasets_GBLUP/*/*.*
+Test_smaller_Datasets_GBLUP/*/*/*.*
+!Test_smaller_Datasets_GBLUP/*/*/*.pred
 LassoNet/*.*
 !LassoNet/bo.py
 !LassoNet/entry.py

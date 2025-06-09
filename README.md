@@ -7,7 +7,7 @@ To set up an environment to run the files of this repo. You can simply run the i
 ## Repository structure
 
 ### Folders:
-- **Analysis notebooks:** Contain notebooks used to visualize the results obtained by the different models. Note that I use [Weigth & biases](https://wandb.ai/flo230702/TFE/overview) to collect and visualize the results from models trained using Pytorch.
+- **Analysis notebooks:** Contain notebooks used to visualize the results obtained by the different models. Note that I use the Weigths & biases sofware to collect and visualize the results from models trained using Pytorch.
 - **Configs**: Contain the hydra configuration files used during the experiments. More information about the structure of the folder can be found in the README found in this folder.
 - **deepGBULP:** Contain the source code used for the paper [deepGBLUP: Integration of deep learning and GBLUP for accurate genomic prediction](https://gsejournal.biomedcentral.com/articles/10.1186/s12711-023-00825-y), modified to fit the project. The original source code can be found [here](https://github.com/gywns6287/deepGBLUP).
 - **GBLUP**: Folder containing all output of the GBLUP computation. The software used is [ldak6](https://dougspeed.com/downloads2/). The script used to perform the computations can be found in `GBLUP.sh`. (Note that only the relevant files used in the analysis are stored here as some generated files are heavy and not used).
@@ -17,6 +17,7 @@ applied to multi-task genome-wide prediction](https://pubmed.ncbi.nlm.nih.gov/39
 - **Old files**: This folder contains files used during the thesis but that become obsolete after some refactoring of the repository/codebase.
 - **Results**: This folder contains all files that contain the results not saved in the weight and biases.
 - **Scripts:** This folder contains all Slurm scripts used to run the scripts. These files provide information about the hardware resources used for every experiment and provide examples to execute the Python scripts. The scripts containing the prefix `train_final` are the ones used to train the best configuration. 
+- **Test_smaller_Datasets_GBLUP**: This folder contain all results obtained when trained the GBLUP model with a smaller training set. A subfolder have been created for every tested size of dataset.
 
 ### File Description:
 The main files will be described here, a docstring is available for every less important script to explain the purpose of the file. A majority of the scripts require arguments when called, an explanation of all arguments can be found by executing the script with the `-h` flag.
@@ -28,7 +29,6 @@ The main files will be described here, a docstring is available for every less i
 - **utils.py**: contains all functions that may be used by several scripts.
 - Notebooks ending by `_local.ipynb` are designed to be used to test and debug models locally (without any GPU available).
 - `random_forest.py`, `random_forest_all.py`, `Ridge.py`, `SVM.py`, `XGBoost.py`, and `XGBoost_all.py` implements the data processing, the training, and the saving of the results of their respective models.
-- `_all.py` implements the same models but instead of having one model per phenotype, we use one model to predict four phenotypes directly
 - Pythons files are implementing the model that runs on the cluster. All results are generated from the models described in those files.
 
 ### Citation/acknowledgments
