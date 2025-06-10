@@ -19,6 +19,7 @@ LassoNet/*.*
 !LassoNet/param_space.yaml
 !LassoNet/lassonet/lassonet/*.py
 *.zip
+*.pth
 .VSCodeCounter/
 outputs/
 __pycache__/
