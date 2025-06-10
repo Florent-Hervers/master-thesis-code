@@ -2,7 +2,7 @@
 This repository contains all the files used for my master's thesis. Note that the phenotypes in the thesis were referenced as shoulder, top, buttock (rear), buttock (side), size, and musculature but in this repository, the original name, respectively ep_res, de_res, FESSEp_res, FESSEa_res, size_res, MUSC_res. 
 
 ## Environment setup
-To set up an environment to run the files of this repo. You can simply run the instructions in `Scripts/setup_main_config.sh` if you use a conda environment. There is no need to install Cupy or the GPU version of Pytorch if your computer doesn't have access to a Cuda GPU. To install the dependency of all files of the repo with the versions used for this thesis, just run `pip install -r requirements.txt`.
+To set up an environment to run the files of this repo. You can simply run the instructions in `setup_main_config.sh` if you use a conda environment. There is no need to install Cupy or the GPU version of Pytorch if your computer doesn't have access to a Cuda GPU. To install the dependency of all files of the repo with the versions used for this thesis, just run `pip install -r requirements.txt`.
 
 ## Repository structure
 
